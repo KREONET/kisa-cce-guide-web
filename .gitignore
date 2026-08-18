@@ -6,3 +6,4 @@ dist/
 .ty/
 __pycache__/
 *.py[cod]
+work/codex/

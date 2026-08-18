@@ -1,0 +1,202 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zeroday0619.github.io/kisa-cce-guide/schemas/codex-criterion-result.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "taskIdentifier",
+    "taskChecksum",
+    "criterionCode",
+    "criterionSlug",
+    "sourceDocumentIdentifier",
+    "sourceDocumentChecksum",
+    "sourcePageStart",
+    "sourcePageEnd",
+    "analysisStatus",
+    "contentModelRecommendation",
+    "title",
+    "targetScope",
+    "targetIdentifiers",
+    "sourceTargetText",
+    "nodes",
+    "sourceAnnotations",
+    "quality"
+  ],
+  "properties": {
+    "schemaVersion": {"type": "integer", "const": 1},
+    "taskIdentifier": {"type": "string", "minLength": 1},
+    "taskChecksum": {"$ref": "#/$defs/checksum"},
+    "criterionCode": {"type": "string", "minLength": 1},
+    "criterionSlug": {"type": "string", "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$"},
+    "sourceDocumentIdentifier": {"type": "string", "minLength": 1},
+    "sourceDocumentChecksum": {"$ref": "#/$defs/checksum"},
+    "sourcePageStart": {"type": "integer", "minimum": 1},
+    "sourcePageEnd": {"type": "integer", "minimum": 1},
+    "analysisStatus": {"type": "string", "enum": ["complete", "needsSourceReview"]},
+    "contentModelRecommendation": {
+      "type": "string",
+      "enum": ["systemCriterion", "webApplicationCriterion", "mobileNetworkCriterion"]
+    },
+    "title": {"type": "string", "minLength": 1},
+    "targetScope": {"type": "string", "enum": ["exhaustive", "nonExhaustive"]},
+    "targetIdentifiers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "sourceTargetText": {"type": "string", "minLength": 1},
+    "nodes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/node"}
+    },
+    "sourceAnnotations": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/annotation"}
+    },
+    "quality": {"$ref": "#/$defs/quality"}
+  },
+  "$defs": {
+    "checksum": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "sourceSpan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["physicalPage", "pageRegionIdentifier", "sourceTextExcerpt"],
+      "properties": {
+        "physicalPage": {"type": "integer", "minimum": 1},
+        "pageRegionIdentifier": {"type": "string", "minLength": 1},
+        "sourceTextExcerpt": {"type": "string", "minLength": 1}
+      }
+    },
+    "node": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "nodeIdentifier",
+        "nodeType",
+        "semanticRole",
+        "content",
+        "headingLevel",
+        "listType",
+        "listDepth",
+        "sourceMarker",
+        "codeLanguage",
+        "codeContentType",
+        "tableCaption",
+        "tableHeaders",
+        "tableRows",
+        "noteType",
+        "assetPath",
+        "alternativeText",
+        "sourceSpans",
+        "publicationDisposition"
+      ],
+      "properties": {
+        "nodeIdentifier": {"type": "string", "pattern": "^[a-z][a-z0-9]*(?:[.-][a-z0-9]+)*$"},
+        "nodeType": {
+          "type": "string",
+          "enum": ["heading", "paragraph", "listItem", "codeBlock", "table", "note", "image"]
+        },
+        "semanticRole": {"type": "string", "minLength": 1},
+        "content": {"type": "string"},
+        "headingLevel": {"type": ["integer", "null"], "minimum": 2, "maximum": 6},
+        "listType": {"type": ["string", "null"], "enum": ["ordered", "unordered", null]},
+        "listDepth": {"type": ["integer", "null"], "minimum": 1},
+        "sourceMarker": {"type": ["string", "null"]},
+        "codeLanguage": {"type": ["string", "null"], "minLength": 1},
+        "codeContentType": {
+          "type": ["string", "null"],
+          "enum": ["command", "configuration", "output", "literal", null]
+        },
+        "tableCaption": {"type": ["string", "null"], "minLength": 1},
+        "tableHeaders": {
+          "type": ["array", "null"],
+          "minItems": 1,
+          "items": {"type": "string"}
+        },
+        "tableRows": {
+          "type": ["array", "null"],
+          "items": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string"}
+          }
+        },
+        "noteType": {
+          "type": ["string", "null"],
+          "enum": ["참고", "주의", "경고", "편집자 주", null]
+        },
+        "assetPath": {"type": ["string", "null"], "minLength": 1},
+        "alternativeText": {"type": ["string", "null"], "minLength": 1},
+        "sourceSpans": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/sourceSpan"}
+        },
+        "publicationDisposition": {
+          "type": "string",
+          "enum": ["published", "derived"]
+        }
+      }
+    },
+    "annotation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "annotationIdentifier",
+        "annotationType",
+        "targetReference",
+        "physicalPages",
+        "sourceText",
+        "explanation",
+        "disposition"
+      ],
+      "properties": {
+        "annotationIdentifier": {"type": "string", "minLength": 1},
+        "annotationType": {
+          "type": "string",
+          "enum": ["sourceInconsistency", "sourceTypo", "sourceDuplication", "conversionUncertainty"]
+        },
+        "targetReference": {"type": "string", "minLength": 1},
+        "physicalPages": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "integer", "minimum": 1}
+        },
+        "sourceText": {"type": "string", "minLength": 1},
+        "explanation": {"type": "string", "minLength": 1},
+        "disposition": {
+          "type": "string",
+          "enum": ["preserved", "unresolved", "reviewRequired"]
+        }
+      }
+    },
+    "quality": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reviewedPhysicalPages",
+        "preservedTechnicalLiterals",
+        "unresolvedQuestions",
+        "confidenceLevel"
+      ],
+      "properties": {
+        "reviewedPhysicalPages": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "integer", "minimum": 1}
+        },
+        "preservedTechnicalLiterals": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1}
+        },
+        "unresolvedQuestions": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1}
+        },
+        "confidenceLevel": {"type": "string", "enum": ["high", "medium", "low"]}
+      }
+    }
+  }
+}

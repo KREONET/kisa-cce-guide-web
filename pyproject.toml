@@ -52,6 +52,15 @@ ignore = [
   "PLR0915",
   "PLR2004",
 ]
+"conversion/codex_result_importer.py" = [
+  "C901",
+  "PLR0911",
+  "PLR0912",
+  "PLR0915",
+  "T201",
+]
+"conversion/codex_runner.py" = ["S603", "T201"]
+"conversion/codex_task_builder.py" = ["T201"]
 "conversion/common.py" = ["C901", "PLR0912", "PLR0913", "PLR0915", "S105"]
 "conversion/generate_corpus.py" = [
   "A002",

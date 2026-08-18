@@ -141,6 +141,44 @@ uv run python -m conversion.generate_corpus
 
 현재 보존 목록은 U-01과 U-02뿐입니다. 추가 항목을 사람이 구조화한 후에는 해당 항목을 generator의 보존 대상으로 등록한 다음 생성기를 실행해야 합니다.
 
+## Codex 의미 구조화
+
+자동 전사 항목은 구현 코드가 만든 immutable evidence task와 Codex read-only 분석을 결합해 review candidate로 변환할 수 있습니다.
+
+```text
+PDF evidence
+  -> deterministic task builder
+  -> Codex read-only structured output
+  -> deterministic importer validation
+  -> review-only Markdown candidate
+```
+
+U-03 task를 생성합니다.
+
+```bash
+uv run python -m conversion.codex_task_builder u-03
+```
+
+Task의 모든 원문 이미지를 Codex에 첨부하고, JSON Schema 결과를 생성합니다.
+
+```bash
+uv run python -m conversion.codex_runner u-03
+```
+
+모델을 고정해야 하는 재현 가능한 실행에서는 `--model`을 지정합니다.
+
+```bash
+uv run python -m conversion.codex_runner u-03 --model <model-identifier>
+```
+
+결과를 검증하고 review-only Markdown candidate를 생성합니다.
+
+```bash
+uv run python -m conversion.codex_result_importer u-03
+```
+
+Task, JSONL event, structured result, run manifest, candidate는 `work/codex/` 아래에 생성되며 Git에서 제외됩니다. Importer는 page coverage, page-region reference, source excerpt, technical literal, heading hierarchy, annotation target을 검사합니다. Canonical Markdown과 review registry는 자동으로 변경하지 않습니다.
+
 ## 검증 및 빌드
 
 Canonical 콘텐츠, registry, asset 경로·해시·크기를 검증합니다.

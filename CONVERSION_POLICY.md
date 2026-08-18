@@ -88,6 +88,12 @@ SHOULD 예외는 `data/policy-exceptions.yaml`에 기록한다. 예외 record는
 원본 PDF
   -> 원본 텍스트 추출물과 페이지 렌더링(QA evidence)
 
+Codex semantic candidate
+  -> read-only evidence inspection
+  -> schema-constrained structured result
+  -> deterministic candidate rendering
+  -> automated fidelity checks
+
 Canonical criterion package
   -> Markdown parse
   -> validated AST
@@ -103,6 +109,17 @@ Canonical criterion package
 - 원본 파일의 SHA-256 checksum, 파일 크기, 페이지 수, 발행일, 원문 URL을 source registry에 기록한다.
 - 원본 텍스트 추출물과 페이지 렌더링은 감사와 QA에 사용한다.
 - 텍스트 추출 결과를 최종 판정 근거로 사용해서는 안 된다.
+
+### Codex semantic candidate 계층
+
+- 변환 코드는 항목별 source page, transcript, image, checksum, policy version, schema version을 immutable task로 생성한다.
+- Codex는 read-only sandbox에서 task와 모든 source page image를 검사하고 schema-constrained JSON만 생성한다.
+- Codex는 canonical Markdown, provenance, registry, review status를 직접 수정해서는 안 된다.
+- Codex 결과의 source page coverage, source excerpt, technical literal, heading hierarchy, annotation target을 deterministic importer가 검증한다.
+- Schema 또는 semantic validation에 실패한 결과는 candidate로 렌더링하거나 canonical 콘텐츠에 반영해서는 안 된다.
+- 검증된 결과는 `work/codex/candidates/<criterionSlug>/` 아래의 review-only artifact로 생성한다.
+- Codex 결과는 `structured`, `visuallyReviewed`, `approved` 상태를 자동으로 부여해서는 안 된다.
+- Candidate를 canonical criterion package로 반영하는 단계는 별도 사람 검토와 명시적 적용 작업을 요구한다.
 
 ### Canonical 콘텐츠 계층
 
