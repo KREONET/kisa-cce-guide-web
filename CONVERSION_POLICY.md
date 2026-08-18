@@ -1,0 +1,942 @@
+# 문서 변환 정책
+
+| 항목 | 값 |
+| --- | --- |
+| 상태 | Draft |
+| 버전 | 0.1 |
+| 대상 | KISA CCE 가이드 2026 웹 변환 콘텐츠 |
+| 기준 원문 | `kisa-cce-criteria-2026.pdf` |
+
+## 목적
+
+이 문서는 `주요정보통신기반시설 기술적 취약점 분석·평가 방법 상세가이드`를 웹 콘텐츠로 변환할 때 적용할 기준을 정의한다.
+
+변환 결과는 다음 요구사항을 동시에 충족해야 한다.
+
+- **가독성:** 사용자가 긴 기술 문서의 구조와 내용을 정확하게 이해할 수 있어야 한다.
+- **시인성:** 사용자가 중요도, 판단 기준, 명령어, 주의사항을 빠르게 식별할 수 있어야 한다.
+- **머신 리더블:** metadata, 본문 구조, 검색 데이터가 명시적인 schema로 검증되어야 한다.
+- **원문 추적성:** 모든 변환 내용은 원본 문서와 페이지 범위를 추적할 수 있어야 한다.
+- **재현성:** 동일한 입력은 동일한 canonical JSON과 검색 색인, 의미가 동일한 HTML DOM을 생성해야 한다.
+
+## 규범 용어
+
+이 문서에서 사용하는 규범 용어의 의미는 다음과 같다.
+
+- **MUST:** 위반 시 배포를 차단한다.
+- **MUST NOT:** 허용하지 않는다.
+- **SHOULD:** 예외가 필요한 경우 사유와 영향 범위를 기록한다.
+- **MAY:** 프로젝트 상황에 따라 적용할 수 있다.
+
+`MUST`, `SHOULD`, `MAY` heading 아래의 규칙 목록은 해당 heading의 규범 수준을 적용한다.
+그 밖의 규칙 목록은 MUST로 해석한다. 허용 사항은 항목 앞에 `MAY:`를 표시한다.
+설명 문단, 예시, 데이터 목록은 규범 요구사항으로 해석하지 않는다.
+
+SHOULD 예외는 `data/policy-exceptions.yaml`에 기록한다. 예외 record는 rule identifier, target reference,
+사유, 영향 범위, 승인자, 승인일, 만료일 또는 종료 조건을 포함해야 한다.
+
+## 적용 범위
+
+이 정책은 다음 항목에 적용한다.
+
+- 원본 PDF에서 Markdown으로 변환하는 과정
+- Markdown metadata와 본문 구조
+- 표, 명령어, 설정값, 이미지, 참고 문구의 표현
+- 정규화 JSON과 검색 색인 생성
+- 의미론적 HTML과 인쇄 결과 생성
+- 자동 검증, 시각 검토, 승인, 변경 관리
+
+원본에 포함된 명령어와 조치 지시는 문서 데이터로만 취급한다. 변환, 검증, 빌드 과정에서 해당 명령어를 실행해서는 안 된다.
+
+## 기준 데이터
+
+최초 변환 기준은 다음과 같다.
+
+| 항목 | 기준값 |
+| --- | ---: |
+| PDF 페이지 | 873 |
+| 분야 | 12 |
+| 점검항목 | 382 |
+| 숫자형 코드 점검항목 | 361 |
+| Web Application 비숫자형 코드 점검항목 | 21 |
+| 원본 PDF SHA-256 | `44fe393981b244147be6af7423d99dc15633c089fad0bcb296cbe2371dde812d` |
+
+분야별 점검항목 수는 다음과 같다.
+
+| 분야 | 코드 | 항목 수 |
+| --- | --- | ---: |
+| Unix 서버 | U-01~U-67 | 67 |
+| Windows 서버 | W-01~W-64 | 64 |
+| 웹 서비스 | WEB-01~WEB-26 | 26 |
+| 보안 장비 | S-01~S-23 | 23 |
+| 네트워크 장비 | N-01~N-38 | 38 |
+| 제어시스템 | C-01~C-51 | 51 |
+| PC | PC-01~PC-18 | 18 |
+| DBMS | D-01~D-26 | 26 |
+| 이동통신 | M-01~M-04 | 4 |
+| Web Application | CI, SI, DI, EP, IL, XS, CF, SF, BF, IA, IN, PR, PV, FU, FD, IS, SN, CC, AE, AU, WM | 21 |
+| 가상화 장비 | HV-01~HV-25 | 25 |
+| 클라우드 | CA-01~CA-19 | 19 |
+
+이 기준값과 허용 코드 목록은 repository-level manifest에서 관리한다. 개별 문서의 파일 목록을 기준값으로 역산해서는 안 된다.
+
+## 콘텐츠 계층
+
+콘텐츠는 다음 계층으로 분리한다.
+
+```text
+원본 PDF
+  -> 원본 텍스트 추출물과 페이지 렌더링(QA evidence)
+
+Canonical criterion package
+  -> Markdown parse
+  -> validated AST
+  -> normalized JSON
+     -> 의미론적 HTML
+     -> 검색 색인과 JSON dataset
+     -> 인쇄 결과
+```
+
+### 원본 계층
+
+- 원본 PDF는 변경하지 않는다.
+- 원본 파일의 SHA-256 checksum, 파일 크기, 페이지 수, 발행일, 원문 URL을 source registry에 기록한다.
+- 원본 텍스트 추출물과 페이지 렌더링은 감사와 QA에 사용한다.
+- 텍스트 추출 결과를 최종 판정 근거로 사용해서는 안 된다.
+
+### Canonical 콘텐츠 계층
+
+- 점검항목별 criterion package를 사람이 수정하는 canonical 콘텐츠로 사용한다.
+- Criterion package는 Markdown, YAML front matter, 필수 provenance sidecar, 선택적 table sidecar, 원본 asset으로 구성한다.
+- 기본 파일은 `<domainIdentifier>/<criterionSlug>.md` 형식을 사용한다.
+- 복잡한 표는 `<domainIdentifier>/<criterionSlug>.tables.yaml`에 저장한다.
+- Block-level provenance와 asset metadata는 `<domainIdentifier>/<criterionSlug>.provenance.yaml`에 저장해야 한다.
+- 원본 asset은 `assets/<criterionSlug>/` 아래에 저장한다.
+- Markdown은 CommonMark 문법을 기본으로 사용한다.
+- 허용 확장은 YAML front matter와 GFM table로 제한한다.
+- 유형별 note는 이 문서에서 정의한 CommonMark blockquote profile로 표현한다.
+- 명령, 설정, 출력, literal은 이 문서에서 정의한 fenced code info string으로 구분한다.
+- raw HTML과 MDX 실행 코드는 기본적으로 허용하지 않는다.
+- 예외 문법을 추가하기 전에 전체 PDF의 콘텐츠 유형과 parser 영향을 검토해야 한다.
+
+### 정규화 데이터 계층
+
+- 빌드 과정은 `criterion package -> Markdown first-pass AST -> sidecar reference 병합 -> validated AST -> normalized JSON`
+  단일 경로를 사용한다.
+- Renderer, 검색 색인 생성기, 인쇄 생성기는 Markdown을 직접 읽지 않고 정규화 JSON만 사용한다.
+- metadata와 정규화 JSON은 JSON Schema Draft 2020-12로 검증한다.
+- 정규화 JSON은 본문 의미 구조와 원문 출처 정보를 포함해야 한다.
+- 정규화 JSON을 직접 수정해서는 안 된다.
+
+### 표시 계층
+
+- HTML, 검색 색인, 최적화 이미지, 인쇄 결과는 정규화 JSON과 canonical asset에서 생성한다.
+- 표시 계층은 원문의 의미와 순서를 변경해서는 안 된다.
+- 생성 파일을 직접 수정해서는 안 된다.
+
+### Canonical registry
+
+다음 registry와 schema를 canonical 입력으로 관리한다.
+
+- `data/source-registry.yaml`
+- `data/taxonomy.yaml`
+- `data/criteria-manifest.yaml`
+- `data/page-region-inventory.yaml`
+- `data/review-registry.yaml`
+- `data/source-annotations.yaml`
+- `data/policy-exceptions.yaml`
+- `data/test-profile.yaml`
+- `schemas/source-registry.schema.json`
+- `schemas/taxonomy.schema.json`
+- `schemas/criteria-manifest.schema.json`
+- `schemas/page-region-inventory.schema.json`
+- `schemas/review-registry.schema.json`
+- `schemas/source-annotations.schema.json`
+- `schemas/policy-exceptions.schema.json`
+- `schemas/test-profile.schema.json`
+- `schemas/criterion-metadata.schema.json`
+- `schemas/table-sidecar.schema.json`
+- `schemas/provenance-sidecar.schema.json`
+- `schemas/normalized-criterion.schema.json`
+- `schemas/search-index.schema.json`
+
+모든 YAML과 JSON property는 lower camel case와 영문 full word를 사용한다.
+
+### YAML profile
+
+- YAML 1.2 Core Schema를 사용한다.
+- UTF-8과 LF line ending을 사용하고, 파일 끝에 newline을 둔다.
+- Duplicate key, anchor, alias, merge key를 허용하지 않는다.
+- 날짜, 숫자, boolean으로 오인될 수 있는 문자열은 명시적으로 quote한다.
+- YAML 1.2 Core Schema의 표준 scalar type resolution을 적용한다.
+- JSON Schema의 기대 자료형과 다른 resolution 결과는 validation error로 처리한다.
+- Metadata key와 일반 prose는 Unicode NFC로 정규화한다.
+- 명령어, 경로, 설정값 같은 technical literal은 Unicode 정규화 대상에서 제외한다.
+
+## Source registry
+
+Source registry는 원본 문서별로 다음 정보를 한 번만 보관한다.
+
+- 문서 식별자
+- 원문 제목
+- 발행 기관
+- 발행일
+- 원문 게시 URL
+- 저장소 내 파일 경로
+- 파일 크기
+- 전체 physical page 수
+- checksum algorithm
+- checksum value
+- 라이선스 유형
+- 이용 조건
+- 라이선스 근거 URL
+- 필수 출처 표시문
+- 라이선스 검토자
+- 라이선스 검토일
+- 라이선스 승인 상태
+
+Source registry는 schema version을 가져야 한다. 문서 식별자와 checksum은 repository 전체에서 유일해야 한다.
+라이선스 승인 상태는 `pending`, `approved`, `rejected` 중 하나를 사용한다.
+
+라이선스 근거와 이용 조건이 확인되지 않은 상태에서는 공개 배포를 승인할 수 없다.
+
+Taxonomy registry는 분야, 분류, 대상의 identifier, 표시 label, source label, order를 관리한다.
+Criterion metadata는 taxonomy identifier만 저장하고, 표시 label과 order는 registry에서 생성한다.
+
+Criteria manifest는 각 점검항목에 대해 다음 기준값을 저장한다.
+
+- 원문 코드와 제목
+- 원문 중요도
+- 분야와 분류 identifier
+- content model과 content model version
+- source 시작·종료 page region
+- 기대 route
+- 예상 technical literal inventory의 위치
+
+`data/source-annotations.yaml`은 document, navigation, page region 수준의 원문 이상을 저장한다.
+Criterion 본문 또는 metadata에 한정된 원문 이상은 해당 criterion front matter의 `sourceAnnotations`에 저장한다.
+공개 anomaly register는 두 canonical annotation source에서 생성한다.
+
+## Canonical metadata
+
+모든 점검항목은 다음 구조와 동등한 metadata를 포함해야 한다.
+
+```yaml
+---
+schemaVersion: 1
+contentModel: systemCriterion
+contentModelVersion: 1
+
+criterion:
+  code: U-01
+  slug: u-01
+  title: root 계정 원격 접속 제한
+  severity:
+    level: high
+    sourceLabel: 상
+
+classification:
+  domainIdentifier: unix
+  categoryIdentifier: account-management
+
+targetScope: nonExhaustive
+targetIdentifiers:
+  - solaris
+  - linux
+  - aix
+  - hp-ux
+sourceTargetText: "SOLARIS, LINUX, AIX, HP-UX 등"
+
+provenance:
+  sourceDocumentIdentifier: kisa-cce-criteria-2026
+  sourcePageRanges:
+    - physicalPageStart: 12
+      physicalPageEnd: 14
+      printedPageStart: "12"
+      printedPageEnd: "14"
+
+sourceAnnotations:
+  - annotationIdentifier: u-01-source-001
+    annotationType: sourceInconsistency
+    targetType: astNode
+    targetReference: "u-01:remediation.hp-ux.telnet.step:1"
+    sourceLocation:
+      physicalPage: 14
+      printedPage: "14"
+      pageRegionIdentifier: p14-u-01
+    sourceText: "etc/securetty"
+    explanation: "다음 참고 문구에서는 /etc/securetty를 사용한다."
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - "PDF physical page 14의 절차와 바로 다음 참고 문구를 대조했다."
+    reviewedBy: null
+    reviewedAt: null
+    approvedBy: null
+    approvedAt: null
+  - annotationIdentifier: u-01-source-002
+    annotationType: sourceDuplication
+    targetType: astNode
+    targetReference: "u-01:remediation.linux.telnet.step:3"
+    sourceLocation:
+      physicalPage: 13
+      printedPage: "13"
+      pageRegionIdentifier: p13-u-01
+    sourceText: "auth required /lib/security/pam_securetty.so"
+    explanation: "Step 1과 Step 3에 같은 PAM 설정이 반복된다."
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - "PDF physical page 13의 Linux Telnet Step 1과 Step 3을 대조했다."
+    reviewedBy: null
+    reviewedAt: null
+    approvedBy: null
+    approvedAt: null
+---
+```
+
+### Metadata 규칙
+
+- 모든 식별자 이름은 영문 full word를 사용한다.
+- YAML, registry, manifest, 정규화 JSON, 검색 색인은 lower camel case를 사용한다.
+- `cate`, `cfg`, `src`, `ref`, `desc` 같은 축약 필드를 사용해서는 안 된다.
+- `criterion.code`는 원문의 대문자 코드를 보존해야 한다.
+- `criterion.slug`는 파일 경로와 URL에 사용한다.
+- `criterion.title`에는 코드와 중요도를 중복해서 포함하지 않는다.
+- `classification`은 breadcrumb 문자열이 아니라 taxonomy identifier를 포함해야 한다.
+- 분야, 분류, 대상의 label과 order를 criterion metadata에 중복 저장해서는 안 된다.
+- `targetScope`은 `exhaustive` 또는 `nonExhaustive` 중 하나여야 한다.
+- `sourceTargetText`는 원문의 `등`과 같은 비한정 표현을 보존해야 한다.
+- `severity.level`은 `high`, `medium`, `low` 중 하나여야 한다.
+- `severity.sourceLabel`은 원문의 `상`, `중`, `하`를 보존해야 한다.
+- source page range는 inclusive 범위로 기록한다.
+- physical page는 PDF의 1-based page index로 기록한다.
+- printed page는 로마 숫자와 비숫자 label을 보존할 수 있도록 문자열로 기록한다.
+- schema에 선언되지 않은 metadata field는 허용하지 않는다.
+
+### 코드와 경로
+
+- 코드의 유효성은 단일 정규식이 아니라 기준 manifest의 허용 코드 목록으로 검증한다.
+- `U-01`과 `CI`처럼 형식이 다른 원문 코드를 모두 지원해야 한다.
+- `criterion.code`는 최초 배포 후 변경해서는 안 된다.
+- `criterion.slug`는 원문 code를 ASCII lowercase로 변환한 값이어야 한다. `U-01`은 `u-01`, `CI`는 `ci`로 변환한다.
+- Slug는 `^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$` 형식을 충족해야 한다.
+- Slug와 route는 repository 전체에서 유일해야 한다.
+- 파일 경로는 `<domainIdentifier>/<criterionSlug>.md` 형식을 사용한다.
+- Criterion route는 `/<domainIdentifier>/<criterionSlug>/` 형식을 사용한다.
+- Reserved route와의 충돌은 build error로 처리한다.
+- route와 anchor는 제목이 아니라 코드와 의미 역할에서 생성한다.
+- 제목 변경으로 route와 anchor가 변경되어서는 안 된다.
+- 배포된 route를 변경할 경우 redirect manifest를 제공해야 한다.
+
+## 본문 구조
+
+렌더러는 metadata를 이용해 H1을 생성한다. Markdown 본문은 H2부터 시작한다.
+
+시스템 점검항목의 기본 구조는 다음과 같다.
+
+```markdown
+## 개요
+
+### 점검 내용
+
+### 점검 목적
+
+### 보안 위협
+
+### 참고
+
+## 점검 대상 및 판단 기준
+
+### 대상
+
+### 판단 기준
+
+### 조치 방법
+
+### 조치 시 영향
+
+## 점검 및 조치 사례
+
+### 운영체제 또는 제품군
+
+#### 서비스, 프로토콜 또는 세부 환경
+```
+
+### 구조 규칙
+
+- 렌더링 결과에는 H1이 정확히 하나만 존재해야 한다.
+- heading level을 건너뛰어서는 안 된다.
+- heading을 시각적 글자 크기 조절 용도로 사용해서는 안 된다.
+- 기본 heading의 이름과 순서는 content model schema로 검증한다.
+- `systemCriterion`은 Unix, Windows, 웹 서비스, 보안 장비, 네트워크 장비, 제어시스템, PC, DBMS, 이동통신, 가상화 장비, 클라우드에 사용한다.
+- `webApplicationCriterion`은 Web Application 21개 항목에 사용한다.
+- 두 model은 공통 H2 구조를 사용하되, `점검 및 조치 사례` 아래의 허용 역할과 heading 계층을 별도 schema로 검증한다.
+- `systemCriterion`의 동적 heading은 taxonomy에 등록된 운영체제, 제품군, 서비스, 프로토콜이어야 한다.
+- `webApplicationCriterion`의 동적 heading은 공격 유형, 점검 방법, 조치 방법, 구현 언어, 제품 역할 중 하나여야 한다.
+- 모든 분야를 U-01 구조에 강제로 맞춰서는 안 된다.
+- Schema에 등록되지 않은 역할의 자유 형식 heading은 허용하지 않는다.
+- 새로운 content model을 추가하려면 metadata schema, AST schema, parser, renderer, validator, reference fixture를 함께 추가해야 한다.
+- 배포된 anchor를 삭제하거나 재사용해서는 안 된다.
+
+## 원문 충실도
+
+### 허용하는 자동 정규화
+
+다음 변경은 원문의 의미를 변경하지 않는 범위에서 자동 적용할 수 있다.
+
+- 반복 머리말, 꼬리말, 페이지 번호 제거
+- 시각적 줄바꿈으로 분리된 문장의 결합
+- 일반 문단의 연속 공백 정리
+- 시각적 bullet을 의미론적 list로 변환
+- `Step 1)` 형식의 절차를 ordered list로 변환
+- 표지, 목차, 장 표지, 항목 요약표를 점검항목 본문과 분리
+- 장식용 배경과 반복 브랜드 요소 제거
+
+### 허용하지 않는 자동 변경
+
+다음 내용은 자동 변경해서는 안 된다.
+
+- 코드, 제목, 중요도, 판단 기준, 항목 순서
+- 명령어, 경로, 설정 키, 옵션, URL
+- 대소문자, 슬래시, 따옴표, 대시, 주석 문자
+- 숫자, 단위, 버전 문자열
+- 표의 행·열 순서와 header 관계
+- 원문의 반복 단계와 중복 문장
+- 원문에 없는 사전 조건, 검증 명령, 재시작 명령
+
+기술 literal의 공백과 줄바꿈은 실행 의미에 영향을 줄 수 있다. 자동 정규화 대상에서 제외한다.
+
+### Block-level provenance
+
+- 정규화 AST의 모든 leaf block은 하나 이상의 source span을 가져야 한다.
+- Markdown first-pass parser는 각 block에 `<criterionSlug>:<semanticPath>:<ordinal>` 형식의 `blockReference`를 생성한다.
+- `.provenance.yaml`은 모든 `blockReference`를 하나 이상의 source span에 연결해야 한다.
+- Markdown block과 provenance sidecar 사이에 누락되거나 사용되지 않는 reference가 있으면 build를 실패시킨다.
+- Source span은 physical page, printed page, page region identifier를 포함해야 한다.
+- 필요한 경우 source bounding box 또는 extraction offset을 포함해야 한다.
+- 시스템은 한 페이지에 여러 점검항목 또는 navigation과 점검항목이 함께 존재하는 구조를 지원해야 한다.
+- Page 전체에 단일 역할을 강제하지 않고, page region별로 역할과 소유권을 기록한다.
+- Page region bounding box는 physical page 좌상단을 원점으로 하는 정규화 좌표 `[xMinimum, yMinimum, xMaximum, yMaximum]`을 사용한다.
+- 좌표값은 0 이상 1 이하이며, minimum은 대응하는 maximum보다 작아야 한다.
+- Page region 역할은 `frontMatter`, `navigation`, `criterion`, `backMatter`, `excludedDecoration` 중 하나여야 한다.
+- 각 content region은 정확히 하나의 역할과 소유권을 가져야 한다.
+- 추출된 text block과 수동 식별된 정보성 visual block은 정확히 하나의 content region에 소속되어야 한다.
+- Region bounding box는 겹칠 수 있지만, content block 소유권은 중복될 수 없다.
+- 미분류 text block과 정보성 visual block이 0개일 때 page-region 분류율을 100%로 판정한다.
+- Region은 `published`, `derived`, `excluded` publication disposition 중 하나를 가져야 한다.
+- `published`와 `derived` region은 원문 시각 대조를 완료해야 한다.
+- `excluded` region은 제외 근거를 기록해야 한다.
+
+## 원문 이상과 변환 오류
+
+원문 이상과 변환 오류를 분리해서 관리한다.
+
+| 유형 | 정의 | 처리 |
+| --- | --- | --- |
+| 변환 오류 | 웹 콘텐츠가 원본 PDF와 다름 | 릴리스 전에 수정 |
+| 원문 이상 | PDF 내부 표기가 상충하거나 기술적으로 의심됨 | 원문 보존 후 annotation 등록 |
+| 편집자 보정 | 검증된 대체 표기 또는 설명 제공 | 원문과 분리하고 근거 표시 |
+
+원문 이상을 본문에서 조용히 수정해서는 안 된다. Annotation은 다음 정보를 포함해야 한다.
+
+- annotation identifier
+- annotation type
+- 대상 유형과 대상 reference
+- 원본 physical page와 printed page
+- page region identifier
+- 원문 표기
+- 설명
+- 처리 상태
+- 보정 표기가 있는 경우 대체 내용과 검증 근거
+- 승인자와 승인일
+
+처리 상태는 `preserved`, `correctedWithNotice`, `unresolved` 중 하나를 사용한다.
+
+Annotation target type은 `astNode`, `metadata`, `pageRegion`, `navigation`, `document` 중 하나를 사용한다.
+Annotation type은 `sourceInconsistency`, `sourceDuplication`, `sourceOmission`, `sourceTypographicalError`,
+`missingReference`, `conversionDecision` 중 하나를 사용한다.
+`metadata` target은 JSON Pointer를 사용한다. `pageRegion` target은 page region identifier를 사용한다.
+AST node identifier는 `<criterionSlug>:<semanticPath>:<ordinal>` 형식으로 생성한다.
+Annotation이 연결된 node identifier를 변경할 경우 alias 또는 migration mapping을 제공해야 한다.
+`correctedWithNotice`에는 `replacementText` 문자열, 비어 있지 않은 `verificationEvidence` 배열,
+`approvedBy` 문자열, ISO 8601 UTC `approvedAt` 값이 필요하다.
+모든 annotation은 `reviewStatus` 값을 가져야 하며, 값은 `pending` 또는 `reviewed` 중 하나여야 한다.
+`preserved`와 `unresolved`에는 처리 근거를 설명하는 `verificationEvidence` 배열이 필요하다.
+`preserved` 또는 `unresolved` annotation을 `reviewStatus: reviewed`로 변경하려면 비어 있지 않은 `reviewedBy`와
+ISO 8601 UTC `reviewedAt` 값이 필요하다.
+Annotation identifier는 repository 전체에서 유일해야 한다.
+
+U-01의 다음 항목은 annotation 동작을 검증하는 fixture로 사용한다.
+
+- HP-UX Telnet 절차의 `etc/securetty`와 다음 참고 문구의 `/etc/securetty` 불일치
+- Linux Telnet Step 1과 Step 3의 PAM 설정 반복
+
+## 절차와 명령어
+
+### MUST
+
+- 절차는 ordered list로 표현한다.
+- Ordered list의 한 항목은 원문의 한 Step을 보존한다.
+- 원문 Step 안에 여러 하위 작업이 있으면 nested list로 표현하고 원문 Step 번호를 변경하지 않는다.
+- 명령, 설정값, 예상 출력, 설명을 서로 다른 의미 단위로 분리한다.
+- 원문의 주의사항은 영향을 받는 단계와 인접하게 배치한다.
+- 명령어와 설정값은 fenced code block으로 표현한다.
+- 모든 fenced code block에 `shell`, `ini`, `yaml`, `text` 등 정확한 언어를 지정한다.
+- Fenced code info string의 두 번째 token은 `command`, `configuration`, `output`, `literal` 중 하나를 사용한다.
+- 명령과 실행 결과를 같은 code block에 혼합해서는 안 된다.
+- 파일 경로, 설정 키, 명령 이름은 inline code로 표현한다.
+- 코드 블록의 원문 대소문자, 공백, 경로, 따옴표, 주석, 줄바꿈을 보존한다.
+- 화면에서는 code block 내부에서만 가로 스크롤을 허용한다.
+- 복사 기능은 원문 code 내용만 복사해야 한다.
+- 복사 기능의 접근 가능한 이름과 완료 상태를 제공해야 한다.
+- 색상만으로 token 종류와 오류 상태를 구분해서는 안 된다.
+
+### SHOULD
+
+- 설정 파일 조각은 `shell`이 아니라 실제 형식 또는 `text`로 표시한다.
+- line number는 원문 의미에 필요한 경우에만 표시한다.
+- 인쇄에서는 긴 줄이 잘리지 않도록 표시하되 canonical text는 변경하지 않는다.
+
+## 참고와 주의 문구
+
+### MUST
+
+- 문구 유형을 `참고`, `주의`, `경고`, `편집자 주`로 구분한다.
+- 문구는 다음 CommonMark blockquote profile로 작성한다.
+
+  ```markdown
+  > **참고**
+  >
+  > 참고 내용
+  ```
+
+- Blockquote의 첫 strong label은 `참고`, `주의`, `경고`, `편집자 주` 중 하나여야 한다.
+- 유형을 텍스트 label과 시각 표시로 함께 표현한다.
+- 색상만으로 유형을 구분해서는 안 된다.
+- 원문 경고와 편집자 주를 같은 유형으로 표시해서는 안 된다.
+- 위험 작업 관련 경고는 작업 단계보다 먼저 읽을 수 있어야 한다.
+- 인쇄 결과에서도 label과 본문이 유지되어야 한다.
+
+### SHOULD
+
+- 하나의 note에는 하나의 주제만 포함한다.
+- 일반 설명을 불필요하게 note로 변환하지 않는다.
+
+## 표
+
+### MUST
+
+- 비교 또는 행렬 데이터에만 표를 사용한다.
+- 화면 배치를 위해 표를 사용해서는 안 된다.
+- 모든 표에 header row 또는 header column을 지정한다.
+- 원문 caption과 각주를 보존한다.
+- caption이 없으면 인접 heading을 accessible name으로 연결한다.
+- 행·열 순서와 header-cell 관계를 보존한다.
+- 모바일에서는 표 컨테이너만 가로 스크롤해야 한다.
+- 전체 페이지에 표로 인한 가로 스크롤이 발생해서는 안 된다.
+- 인쇄 시 header row를 반복하고, 가능한 경우 행 내부 page break를 방지한다.
+
+### 복잡한 표
+
+- MAY: 단순 표는 GFM table로 작성할 수 있다.
+- 병합 셀 또는 다단 header가 있는 표는 schema로 검증되는 구조화 데이터로 관리한다.
+- 복잡한 표의 canonical data는 criterion의 `.tables.yaml` sidecar에 저장한다.
+- Markdown은 `[표: <caption>](<criterionSlug>.tables.yaml#<tableIdentifier>)` 형식으로 sidecar를 참조한다.
+- Parser는 `.tables.yaml` link를 일반 링크가 아니라 typed table AST node로 변환한다.
+- 구조화 데이터에서 접근 가능한 HTML table을 생성한다.
+- 표 구조가 확인되지 않은 상태에서는 원본 페이지 이미지와 전사본을 함께 제공하고 `sourceAnomalyStatus: reviewRequired`로 표시한다.
+
+## 이미지
+
+### MUST
+
+- 의미 있는 이미지는 원본 PDF에서 원본 해상도로 추출하거나 source crop으로 생성한다.
+- 생성형 이미지로 원본 이미지를 대체해서는 안 된다.
+- 원본 이미지와 웹 최적화 파생 이미지를 구분한다.
+- 정보성 이미지에 목적과 핵심 상태를 설명하는 대체 텍스트를 제공한다.
+- 장식 이미지는 빈 대체 텍스트로 표시한다.
+- 복잡한 도표에는 인접한 상세 설명을 제공한다.
+- 명령어, 설정값, 판단 기준을 이미지로만 제공해서는 안 된다.
+- 원문 caption과 source page를 기록한다.
+- Asset provenance는 source page, crop 좌표, pixel dimensions, checksum, caption, alternative text를 포함해야 한다.
+- Markdown image path는 `.provenance.yaml`의 asset path와 정확히 일치해야 한다.
+- Asset provenance checksum과 실제 canonical asset byte의 SHA-256 checksum이 일치해야 한다.
+- 원본보다 확대된 pixel dimensions를 원본 해상도로 간주해서는 안 된다.
+- 작은 글자와 경계선이 최적화 과정에서 손실되어서는 안 된다.
+- 확대 기능은 키보드로 열고 닫을 수 있어야 한다.
+- 이미지 파일명은 항목 코드와 내용을 나타내는 영문 full word를 사용한다.
+
+### SHOULD
+
+- 화면 캡처에는 PNG를 사용한다.
+- 이미지 내부 문자는 200% 확대 상태에서도 판독할 수 있어야 한다.
+
+## 가독성과 시인성
+
+### 문서 구조
+
+- 본문 최대 폭은 `68ch` 이상 `78ch` 이하로 설정한다.
+- 기본 본문 글자 크기는 16 CSS px 이상으로 설정한다.
+- 기본 line height는 1.5 이상으로 설정한다.
+- 본문과 고정폭 font stack은 시각 테스트 profile에서 고정한다.
+- H2와 H3가 합계 6개 이상이면 문서 내 목차를 제공한다.
+- 중요도는 `상`, `중`, `하` 또는 동등한 텍스트를 표시한다.
+- 중요도를 색상만으로 표시해서는 안 된다.
+- 긴 절차를 기본적으로 닫힌 tab 또는 accordion에 배치해서는 안 된다.
+- 접기 기능을 제공하더라도 검색, deep link, 인쇄에서 전체 내용에 접근할 수 있어야 한다.
+
+### 반응형
+
+- 320 CSS px 폭에서 page-level horizontal scroll이 발생해서는 안 된다.
+- 표와 code block의 내부 가로 스크롤은 허용한다.
+- 좁은 화면에서는 sidebar를 닫을 수 있는 navigation으로 전환한다.
+- anchor 이동 시 고정 header가 heading을 가려서는 안 된다.
+- 화면 크기에 따라 검색, navigation, breadcrumb, 본문의 의미 순서가 변경되어서는 안 된다.
+- breakpoint는 특정 기기명이 아니라 콘텐츠가 깨지는 지점으로 정의한다.
+
+### 접근성
+
+- WCAG 2.2 AA를 최소 품질 기준으로 사용한다.
+- `header`, `nav`, `main`, `aside`, `footer` landmark를 사용한다.
+- 본문 바로가기를 첫 keyboard focus 대상으로 제공한다.
+- HTML 문서의 기본 언어를 `ko`로 설정한다.
+- 독립적인 영문 구문은 필요한 경우 `lang="en"`을 사용한다.
+- 모든 기능을 keyboard만으로 사용할 수 있어야 한다.
+- focus indicator를 제거해서는 안 된다.
+- 일반 텍스트 대비는 4.5:1 이상이어야 한다.
+- 큰 텍스트와 UI 경계 대비는 3:1 이상이어야 한다.
+- 200% 확대와 400% reflow에서 내용과 기능을 잃어서는 안 된다.
+- 애니메이션은 `prefers-reduced-motion` 설정을 준수해야 한다.
+- Focus order는 DOM의 의미 순서와 일치해야 하고, focus indicator는 고정 UI에 가려져서는 안 된다.
+- 검색 결과 수와 빈 결과 상태는 screen reader가 인식할 수 있도록 상태 변화를 알린다.
+- Interactive target은 WCAG 2.2 AA의 예외를 제외하고 최소 24×24 CSS px를 확보한다.
+- 화면 방향을 portrait 또는 landscape로 제한해서는 안 된다.
+- 사용자 text spacing override를 적용해도 내용과 기능을 잃어서는 안 된다.
+- Test profile은 적용 가능한 WCAG 2.2 AA success criterion을 자동 검사, 수동 검사, 증거 artifact에 매핑해야 한다.
+- 자동 접근성 검사만으로 승인해서는 안 된다.
+
+### 인쇄
+
+- 기본 인쇄 용지 크기는 A4로 설정한다.
+- navigation, 검색 입력, 복사 기능, 접기 기능을 인쇄 결과에서 제거한다.
+- 항목 코드, 제목, 원문 문서명, source page range, 원문 URL을 표시한다.
+- 접힌 콘텐츠가 있으면 인쇄 시 모두 펼친다.
+- heading을 다음 본문과 분리된 페이지 하단에 남겨서는 안 된다.
+- 인쇄 가능 영역보다 작은 code block, note, 이미지, 표 행은 페이지 경계에서 분할하지 않는다.
+- 인쇄 가능 영역보다 큰 요소는 내용 손실 없이 분할한다. 표는 header를 반복하고, code block은 인쇄 표시에서만 줄바꿈할 수 있다.
+- 흑백 인쇄에서도 중요도와 note 유형을 판독할 수 있어야 한다.
+
+## 머신 리더블 출력
+
+### 정규화 JSON
+
+- 점검항목마다 하나의 정규화 JSON record를 생성한다.
+- 정규화 JSON은 metadata, 본문 AST, provenance, source annotation을 포함한다.
+- AST leaf block은 block-level source span을 포함한다.
+- 정규화 JSON schema는 version을 가져야 한다.
+- schema에 선언되지 않은 property는 허용하지 않는다.
+- 동일한 canonical 콘텐츠에서 byte-identical JSON을 생성해야 한다.
+
+### Deterministic serialization
+
+- 정규화 JSON과 검색 색인은 RFC 8785 JSON Canonicalization Scheme으로 직렬화한다.
+- RFC 8785 입력은 I-JSON 제약을 충족해야 하며, canonical JSON 뒤에 newline이나 추가 whitespace를 붙이지 않는다.
+- Array는 manifest 또는 원문 순서를 사용한다. Set 성격의 exact term은 정렬하고 중복을 제거한 뒤 직렬화한다.
+- Wall-clock timestamp, absolute path, hostname을 deterministic output에 포함해서는 안 된다.
+- Locale은 `ko-KR`, timezone은 `UTC`로 고정한다.
+- Generator와 parser version은 lockfile 또는 build manifest로 고정한다.
+- 동일 입력의 clean build를 두 번 실행하고 canonical JSON, 검색 색인, normalized DOM snapshot의 checksum을 비교한다.
+- HTML byte, screenshot, PDF binary는 byte-identical 대상에서 제외한다. HTML은 고정된 serializer의 normalized DOM
+  snapshot과 visual diff로 검증한다.
+
+Checksum 이름은 다음 의미로 구분한다.
+
+- `sourceDocumentChecksum`: 원본 PDF checksum
+- `criterionSourceChecksum`: criterion Markdown, sidecar, canonical asset byte의 aggregate checksum
+- `canonicalCorpusChecksum`: 모든 criterion package, `data/` registry, `schemas/` schema의 aggregate checksum
+- `generatorVersion`: 정규화 및 렌더링 도구 version
+
+모든 checksum은 SHA-256을 사용하고 lowercase hexadecimal로 저장한다. Aggregate checksum은 다음 방식으로 계산한다.
+
+1. 포함 파일의 repository-relative POSIX path와 실제 file byte의 SHA-256을 구한다.
+2. Path를 UTF-8 byte 순서로 정렬한다.
+3. 각 파일을 `<sha256><two spaces><relativePath><LF>` record로 직렬화한다.
+4. 전체 record byte의 SHA-256을 aggregate checksum으로 사용한다.
+
+`criterionSourceChecksum`에는 해당 criterion의 Markdown, `.tables.yaml`, `.provenance.yaml`, canonical asset을 포함한다.
+`canonicalCorpusChecksum`에는 모든 criterion source와 `data/`, `schemas/` 아래의 canonical 파일을 포함한다.
+원본 PDF, 생성물, raw extraction, page render, screenshot은 corpus aggregate에서 제외한다.
+원본 PDF는 `sourceDocumentChecksum`으로 별도 검증한다.
+
+### 의미론적 HTML
+
+- 점검항목 하나를 `<article>` 하나로 렌더링한다.
+- 문서당 `<h1>`을 하나만 생성한다.
+- 주요 구역은 `<section>`과 연결된 heading identifier를 사용한다.
+- 분류 경로는 `<nav aria-label="분류 경로">`로 렌더링한다.
+- 점검 내용, 목적, 위협, 대상, 판단 기준의 label-value 관계는 `<dl>`로 렌더링한다.
+- 절차는 `<ol>`과 `<li>`로 렌더링한다.
+- 참고 항목은 `<ul>` 또는 `<aside>`로 렌더링한다.
+- 명령어와 설정은 `<pre><code>`로 렌더링한다.
+- 파일 경로와 설정 키는 inline `<code>`로 렌더링한다.
+- source annotation은 본문 수정으로 위장하지 않고 별도 영역에 표시한다.
+- provenance 영역에서 원본 문서와 page range를 확인할 수 있어야 한다.
+- `<article>`에 `data-criterion-code`, `data-severity`, `data-content-model`, `data-source-document` 속성을 제공해야 한다.
+
+### 검색 색인
+
+- 점검항목마다 정확히 하나의 record를 생성한다.
+- 기준 manifest 순서로 deterministic하게 정렬한다.
+- 코드, 제목, 분야, 분류, 중요도, 대상, heading, 본문을 포함한다.
+- 명령어, 경로, 설정 키, 제품명, 버전을 검색 대상으로 포함한다.
+- Markdown과 HTML markup은 searchable text에서 제거한다.
+- 한국어 텍스트는 Unicode NFC로 정규화한다.
+- literal command와 path는 원문 대소문자를 보존한 exact term으로 저장한다.
+- 일반 검색용 case-folded token과 exact term을 분리한다.
+- Tokenizer와 case-folding algorithm version을 검색 색인에 포함한다.
+- 검색 record는 schema version, record identifier, route, source page range, heading anchor, searchable text, exact term을 포함해야 한다.
+- route와 heading anchor는 실제 HTML과 일치해야 한다.
+- `criterionSourceChecksum`과 `canonicalCorpusChecksum`을 포함하고 stale output을 검출해야 한다.
+- 검색 색인을 직접 수정해서는 안 된다.
+
+검색 구현은 다음 query fixture를 통과해야 한다.
+
+| Query | 필수 결과 |
+| --- | --- |
+| `U-01`, `u-01`, `u01` | U-01이 첫 번째 결과 |
+| `root`, `원격 접속` | U-01이 결과에 포함 |
+| `PermitRootLogin` | U-01이 첫 번째 결과 |
+| `/etc/ssh/sshd_config` | U-01이 첫 번째 exact match 결과 |
+
+Criteria manifest에서 382개 코드와 slug의 exact lookup fixture를 생성하고, 모두 해당 항목을 첫 번째 결과로 반환해야 한다.
+각 criterion의 원문 제목은 해당 항목을 결과에 포함해야 한다. Expected technical literal inventory의 각 literal은
+소유 criterion을 exact match 결과에 포함해야 한다. 분야별 대표 한국어 질의와 ranking fixture는 manifest에서 관리한다.
+
+## 검증
+
+### Metadata validator
+
+- JSON Schema Draft 2020-12로 YAML front matter를 검증한다.
+- YAML 1.2 profile, duplicate key 금지, alias 금지 규칙을 검사한다.
+- 추가 property를 허용하지 않는다.
+- 중요도와 검토 상태를 enum으로 검증한다.
+- 분야, 분류, 대상, 원본 문서가 registry에 존재하는지 검사한다.
+- 코드가 기준 manifest의 허용 목록에 존재하는지 검사한다.
+- Manifest의 제목, 중요도, 분야, 분류, content model, source 시작 region, route와 criterion metadata를 대조한다.
+
+### Repository validator
+
+- 코드, slug, filename, route의 일관성을 검사한다.
+- 코드, slug, route, anchor, annotation identifier의 중복을 검사한다.
+- 기준 manifest와 점검항목 파일 목록을 대조한다.
+- 382개 코드의 누락과 예상하지 않은 파일을 검사한다.
+- source page range의 누락, 역전, PDF 범위 초과를 검사한다.
+- PDF의 873쪽에 page region inventory가 존재하는지 검사한다.
+- 모든 content region이 정확히 하나의 역할, 소유권, publication disposition을 갖는지 검사한다.
+- Region 좌표의 역전과 허용되지 않은 중첩을 검사한다.
+
+### Markdown AST validator
+
+- content model별 필수 heading과 순서를 검사한다.
+- Markdown source에 H1이 존재하지 않는지 검사한다.
+- heading level 누락을 검사한다.
+- `Step 숫자)` 형식이 일반 문단에 남아 있는지 검사한다.
+- 언어가 지정되지 않은 fenced code block을 검사한다.
+- 명령어와 설정값이 일반 prose로 유실되었는지 검사한다.
+- 반복 머리말, 꼬리말, 페이지 번호의 본문 유입을 검사한다.
+- 비정상 한글 공백과 줄바꿈 결합 오류를 검사한다.
+- replacement character와 깨진 bullet을 검사한다.
+- Fenced code info string의 language와 content type을 검사한다.
+- Expected technical literal inventory와 AST의 command, path, setting key, option, version token을 대조한다.
+
+### Provenance validator
+
+- Source registry의 `sourceDocumentChecksum`과 실제 PDF checksum을 비교한다.
+- source page range가 PDF 전체 범위 안에 있는지 검사한다.
+- Criterion annotation은 source page가 해당 criterion source span 안에 있는지 검사한다.
+- Page region annotation은 source page와 region identifier가 target region과 일치하는지 검사한다.
+- Navigation과 document annotation은 source page가 source document 범위 안에 있는지 검사한다.
+- Annotation target type에 따라 AST node, metadata JSON Pointer, page region, navigation, document reference를 검사한다.
+- `correctedWithNotice`에 대체 내용과 검증 근거가 있는지 검사한다.
+
+### Generated output validator
+
+- 정규화 JSON을 자체 schema로 검증한다.
+- HTML heading, landmark, link, language 속성을 검사한다.
+- 검색 색인 record 수와 점검항목 수가 일치하는지 검사한다.
+- 모든 검색 route와 heading anchor가 실제 HTML에 존재하는지 검사한다.
+- 두 번의 clean build에서 deterministic artifact checksum이 일치하는지 검사한다.
+- 생성물이 최신 `criterionSourceChecksum`, `canonicalCorpusChecksum`, `generatorVersion`을 참조하는지 검사한다.
+- 내부 링크, 이미지 파일, 외부 URL 문법을 검사한다.
+- 외부 URL reachability는 scheduled check로 분리하고 deterministic build의 차단 조건으로 사용하지 않는다.
+
+### 시각 및 접근성 validator
+
+- 320, 768, 1280 CSS px viewport에서 핵심 화면을 검사한다.
+- 허용된 표와 code block 외 horizontal overflow가 없는지 검사한다.
+- desktop과 mobile screenshot diff를 검사한다.
+- 자동 접근성 검사에서 critical과 serious 오류가 없는지 검사한다.
+- keyboard-only 시나리오를 수동 검증한다.
+- 200% 확대와 400% reflow를 수동 검증한다.
+- A4 인쇄 미리보기에서 잘림과 overflow를 검사한다.
+- 시각 테스트 profile은 browser engine과 version, viewport width와 height, device pixel ratio, font, tool version, rule set, screenshot diff threshold, 인쇄 설정을 고정해야 한다.
+- 핵심 화면은 홈, 분야 목록, 검색 결과, 단순 항목, 장문 항목, 표 포함 항목, 이미지 포함 항목, 원문 이상 표시, 404, 인쇄 결과를 포함한다.
+
+## 검토 상태
+
+검토 workflow, 전사 품질, 원문 이상 상태를 서로 다른 field로 관리한다.
+
+### Workflow 상태
+
+`review.workflowStatus`는 다음 상태를 순서대로 사용한다.
+
+```text
+extracted
+  -> structured
+  -> automatedChecksPassed
+  -> visuallyReviewed
+  -> approved
+```
+
+### 전사 품질 상태
+
+Review registry record의 `transcriptionStatus`는 다음 상태를 사용한다.
+
+```text
+verificationRequired
+  -> machineChecked
+  -> visuallyVerified
+```
+
+### 원문 이상 상태
+
+`review.sourceAnomalyStatus`는 다음 상태 중 하나를 사용한다.
+
+- `none`
+- `reviewRequired`
+- `reviewedWithOpenAnnotations`
+- `resolved`
+
+`reviewRequired`는 `approved` 전환을 차단한다. 원문 이상을 검토하고 `preserved` 또는 공개 `unresolved`로 결정하면
+`reviewedWithOpenAnnotations`로 변경하고 workflow 검토를 계속할 수 있다.
+`approved` 항목은 `reviewedWithOpenAnnotations` 상태와 공개 annotation을 가질 수 있다.
+
+Review 정보는 `data/review-registry.yaml`에 기록한다. Review record는 criterion과 page region에 공통으로 사용한다.
+
+- `subjectType`
+- `subjectIdentifier`
+- `subjectSourceChecksum`
+- `transcriptionStatus`
+- `workflowStatus`
+- `sourceAnomalyStatus`
+- `reviewers`
+- `reviewedAt`
+- `sourceDocumentChecksum`
+- `automatedValidationResult`
+- `unresolvedConversionErrorCount`
+- `unresolvedSourceAnomalyCount`
+- `validationReportIdentifier`
+- `visualEvidenceIdentifiers`
+- `testProfileVersion`
+
+분야 또는 페이지 단위의 포괄 승인만으로 개별 점검항목 승인을 대체해서는 안 된다.
+`subjectType`은 `criterion` 또는 `pageRegion` 중 하나여야 한다.
+Criterion record의 `subjectSourceChecksum`은 현재 `criterionSourceChecksum`이어야 한다.
+Page region record의 `subjectSourceChecksum`은 현재 `regionSourceChecksum`이어야 한다.
+
+`regionSourceChecksum`은 page-region inventory record와 해당 region이 참조하는 canonical content record를
+RFC 8785로 직렬화한 뒤, 이 문서의 aggregate checksum record 방식으로 계산한다.
+
+### 상태 전이 조건
+
+- `workflowStatus: automatedChecksPassed`에는 `automatedValidationResult: passed`와 `validationReportIdentifier`가 필요하다.
+- `workflowStatus: visuallyReviewed` 또는 `approved`에는 `transcriptionStatus: visuallyVerified`가 필요하다.
+- `workflowStatus: visuallyReviewed` 또는 `approved`에는 현재 `subjectSourceChecksum`과 연결된 visual evidence가 필요하다.
+- `workflowStatus: approved`에는 한 명 이상의 reviewer, `reviewedAt`, `testProfileVersion`이 필요하다.
+- `workflowStatus: approved`에는 `unresolvedConversionErrorCount: 0`이 필요하다.
+- `sourceAnomalyStatus: reviewedWithOpenAnnotations`에는 모든 공개 annotation의 `reviewStatus: reviewed`와
+  완결된 reviewer 정보가 필요하다.
+- Review subject source, validator rule set, test profile이 변경되면 연결 checksum을 비교하고 영향을 받은 상태를 무효화해야 한다.
+
+### 항목 승인 조건
+
+항목 승인은 전체 릴리스와 독립적으로 수행한다. 다음 조건을 충족한 항목만 `workflowStatus: approved`로 전환한다.
+
+- 해당 항목의 metadata, AST, provenance, generated output 검증이 통과해야 한다.
+- 해당 항목의 source page와 변환 결과 시각 대조가 완료되어야 한다.
+- `unresolvedConversionErrorCount`가 0이어야 한다.
+- `sourceAnomalyStatus`가 `none`, `reviewedWithOpenAnnotations`, `resolved` 중 하나여야 한다.
+- Review record가 현재 `criterionSourceChecksum`과 검증 증거를 참조해야 한다.
+
+## QA workflow
+
+1. 원본 PDF를 고정하고 checksum과 기준 manifest를 생성한다.
+2. 전체 페이지의 raw text, 이미지, 페이지 렌더링을 추출한다.
+3. 표지, 목차, 장, 분류, 점검항목, 뒤표지 경계를 구조화한다.
+4. Page region 좌표와 장 경계를 이용해 항목 범위를 결정한다. 다음 코드만으로 범위를 결정해서는 안 된다.
+5. 허용된 정규화만 적용하고 모든 원문 이상을 등록한다.
+6. metadata, repository, AST, provenance 자동 검사를 실행한다.
+7. 자동 검사에 실패한 항목은 시각 검토 단계로 이동하지 않는다.
+8. 원본 페이지와 변환 결과를 나란히 놓고 382개 항목과 모든 `published`·`derived` region을 전수 검토한다.
+9. 명령어, 경로, 설정값, 표, 이미지, 판단 기준을 문자 및 구조 단위로 대조한다.
+10. 원문 이상과 편집자 보정은 2차 검토한다.
+11. HTML, 검색, 접근성, 반응형, 인쇄 회귀 검사를 실행한다.
+12. 항목 승인 조건을 충족한 항목만 `approved`로 변경한다.
+
+최초 릴리스에는 샘플 검토를 적용하지 않는다. 샘플링은 전수 승인 이후의 비영향 레이아웃 회귀 검사에만 사용할 수 있다.
+
+## 릴리스 조건
+
+다음 조건을 모두 충족해야 배포할 수 있다.
+
+- PDF 873쪽의 분류율이 100%여야 한다.
+- 모든 content region의 역할, 소유권, publication disposition이 확인되어야 한다.
+- 모든 `published`·`derived` region의 시각 대조가 완료되어야 한다.
+- 모든 `published`·`derived` region review record의 `workflowStatus`가 `approved`여야 한다.
+- `sourceAnomalyStatus: reviewRequired`인 공개 region이 0건이어야 한다.
+- 기준 manifest에 382개 점검항목이 존재해야 한다.
+- 382개 점검항목의 자동 검사와 원문 시각 대조가 완료되어야 한다.
+- 382개 점검항목의 `workflowStatus`가 `approved`여야 한다.
+- `sourceAnomalyStatus: reviewRequired`인 항목이 0건이어야 한다.
+- 미해결 변환 오류가 0건이어야 한다.
+- 미해결 원문 이상은 `sourceAnnotations` 또는 `data/source-annotations.yaml`에 기록되고, 생성된 공개 anomaly register에 표시되어야 한다.
+- metadata와 정규화 JSON의 schema 오류가 0건이어야 한다.
+- H1 중복, heading 누락, 깨진 내부 링크, 중복 anchor가 0건이어야 한다.
+- 언어가 지정되지 않은 fenced code block이 0건이어야 한다.
+- header가 없거나 accessible name이 없는 표가 0건이어야 한다.
+- 정보성 이미지의 대체 텍스트 누락이 0건이어야 한다.
+- 검색 색인 record가 정확히 382개여야 한다.
+- 정의된 검색 query fixture가 모두 통과해야 한다.
+- 자동 접근성 검사에서 critical과 serious 오류가 0건이어야 한다.
+- 허용된 표와 code block 외 page-level horizontal overflow가 0건이어야 한다.
+- canonical 콘텐츠만으로 모든 생성물을 재생성할 수 있어야 한다.
+- 두 번의 clean build에서 deterministic artifact checksum이 일치해야 한다.
+- Source registry의 `licenseApprovalStatus`가 `approved`이고, 라이선스 유형, 이용 조건, 근거 URL,
+  출처 표시문, 검토자, 검토일이 모두 존재해야 한다.
+- 승인되지 않았거나 만료된 policy exception이 0건이어야 한다.
+
+각 validator는 안정적인 rule identifier를 포함한 machine-readable report를 생성해야 한다.
+릴리스는 현재 schema version에 해당하는 전체 rule set의 통과 report를 참조해야 한다.
+
+## 변경 관리
+
+- Metadata schema와 정규화 JSON schema는 version을 가져야 한다.
+- Breaking schema 변경에는 migration 절차를 제공해야 한다.
+- Parser, renderer, taxonomy 변경은 영향 항목을 계산해야 한다.
+- 영향 항목은 원문 대조와 시각 검토를 다시 수행해야 한다.
+- 전역 parser 변경은 전체 manifest와 자동 검사를 다시 실행해야 한다.
+- 승인본 대비 field-level diff와 screenshot diff를 생성해야 한다.
+- 시각 테스트 profile과 접근성 rule set 변경은 영향 범위와 재승인 기준을 기록해야 한다.
+- 제목 변경으로 기존 route와 anchor가 변경되어서는 안 된다.
+- 원본 PDF 교체 시 checksum, 판본, manifest, source page range를 모두 다시 검증해야 한다.
+
+## 참고 자료
+
+- [KISA CCE 가이드 2026 원본 PDF](kisa-cce-criteria-2026.pdf)
+- [저장소 README](README.md)
+- [CommonMark Specification](https://spec.commonmark.org/spec)
+- [JSON Schema Draft 2020-12](https://json-schema.org/draft/2020-12)
+- [RFC 8785 JSON Canonicalization Scheme](https://www.rfc-editor.org/rfc/rfc8785.html)
+- [WCAG 2.2](https://www.w3.org/TR/WCAG22/)
+- [W3C Page Structure Tutorial](https://www.w3.org/WAI/tutorials/page-structure/)
