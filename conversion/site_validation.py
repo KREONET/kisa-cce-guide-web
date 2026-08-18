@@ -116,12 +116,23 @@ def _page_facts(path: Path) -> _PageFacts:
     return parser.facts
 
 
-def _resolved_site_path(site_root: Path, public_path: str) -> Path:
+def _resolved_site_path(
+    site_root: Path,
+    public_path: str,
+    *,
+    base_path: str,
+) -> Path:
     """Resolve one root-hosted public path to a generated file."""
 
-    if public_path.endswith("/"):
-        return site_root / public_path.lstrip("/") / "index.html"
-    return site_root / public_path.lstrip("/")
+    normalized_base_path = "/" + base_path.strip("/") if base_path.strip("/") else ""
+    relative_public_path = public_path
+    if normalized_base_path and (
+        public_path == normalized_base_path or public_path.startswith(normalized_base_path + "/")
+    ):
+        relative_public_path = public_path[len(normalized_base_path) :] or "/"
+    if relative_public_path.endswith("/"):
+        return site_root / relative_public_path.lstrip("/") / "index.html"
+    return site_root / relative_public_path.lstrip("/")
 
 
 def validate_site(
@@ -129,6 +140,7 @@ def validate_site(
     site_root: Path,
     manifest: dict[str, JsonValue],
     expected_html_page_count: int,
+    base_path: str = "",
 ) -> list[SiteValidationIssue]:
     """Validate semantic HTML, public resources, anchors, and search fixtures."""
 
@@ -192,7 +204,11 @@ def validate_site(
                         )
                     )
                 continue
-            resolved_path = _resolved_site_path(site_root, parsed.path)
+            resolved_path = _resolved_site_path(
+                site_root,
+                parsed.path,
+                base_path=base_path,
+            )
             if not resolved_path.exists():
                 issues.append(
                     SiteValidationIssue(
@@ -219,7 +235,7 @@ def validate_site(
         route = record.get("route")
         if not isinstance(route, str):
             continue
-        detail_path = _resolved_site_path(site_root, route)
+        detail_path = _resolved_site_path(site_root, route, base_path="")
         facts = facts_by_path.get(detail_path)
         if (
             facts is None
@@ -280,7 +296,7 @@ def validate_site(
             route = record.get("route")
             if not isinstance(route, str):
                 continue
-            detail_path = _resolved_site_path(site_root, route)
+            detail_path = _resolved_site_path(site_root, route, base_path="")
             facts = facts_by_path.get(detail_path)
             if facts is None:
                 continue

@@ -116,6 +116,12 @@ def test_all_html_pages_have_required_landmarks(generated_site: Path) -> None:
         assert {"header", "nav", "main", "footer"} <= set(inspector.tags), html_path
 
 
+def test_github_pages_marker_is_generated(generated_site: Path) -> None:
+    """GitHub Pages must bypass Jekyll processing for generated static assets."""
+
+    assert (generated_site / ".nojekyll").is_file()
+
+
 def test_generated_site_passes_static_validation(generated_site: Path) -> None:
     """The complete site must pass semantic, link, image, and search checks."""
 
@@ -177,11 +183,21 @@ def test_subpath_build_prefixes_links() -> None:
 
     with TemporaryDirectory() as directory:
         output_root = Path(directory)
-        build(output_root=output_root, base_path="/kisa-cce")
+        build(output_root=output_root, base_path="/kisa-cce-guide-web")
         inspector = _inspect(output_root / "site" / "index.html")
-        assert "/kisa-cce/search/" in inspector.links
+        assert "/kisa-cce-guide-web/search/" in inspector.links
         detail_inspector = _inspect(output_root / "site" / "unix" / "u-01" / "index.html")
-        assert "/kisa-cce/unix/" in detail_inspector.links
+        assert "/kisa-cce-guide-web/unix/" in detail_inspector.links
+        manifest = load_yaml(repository_root() / "data/criteria-manifest.yaml")
+        assert (
+            validate_site(
+                site_root=output_root / "site",
+                manifest=manifest,
+                expected_html_page_count=EXPECTED_HTML_PAGE_COUNT,
+                base_path="/kisa-cce-guide-web",
+            )
+            == []
+        )
 
 
 def test_structured_tables_and_code_are_semantic(generated_site: Path) -> None:

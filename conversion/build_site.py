@@ -608,6 +608,8 @@ def build_site(
     if site_root.exists():
         shutil.rmtree(site_root)
     site_root.mkdir(parents=True)
+    nojekyll_path = site_root / ".nojekyll"
+    nojekyll_path.write_text("", encoding="utf-8")
     domains, categories, targets = _taxonomy_maps(taxonomy)
     manifest_values = as_sequence(manifest["criteria"], location="manifest.criteria")
     manifest_records = [
@@ -621,7 +623,7 @@ def build_site(
         source_documents[0],
         location="sourceRegistry.documents[0]",
     )
-    generated_paths: list[Path] = []
+    generated_paths: list[Path] = [nojekyll_path]
 
     asset_directory = site_root / "assets"
     asset_directory.mkdir()

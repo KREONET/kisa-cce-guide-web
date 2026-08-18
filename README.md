@@ -155,19 +155,33 @@ uv run python -m conversion.validate_content
 uv run python -m conversion.build_content
 ```
 
-하위 경로에 배포할 URL을 생성하려면 base path를 지정합니다.
+하위 경로에 배포할 URL을 생성하려면 base path를 지정합니다. GitHub Pages 프로젝트 사이트의 기본 경로는 저장소 이름입니다.
 
 ```bash
-uv run python -m conversion.build_content --base-path /kisa-cce
+uv run python -m conversion.build_content --base-path /kisa-cce-guide-web
 ```
 
-로컬에서 결과를 확인합니다.
+로컬 서버는 canonical 검증과 사이트 빌드를 실행한 다음, loopback 주소에서 결과를 제공합니다.
 
 ```bash
-uv run python -m http.server 8000 --directory build/site
+uv run python -m conversion.serve_site
 ```
 
 브라우저에서 <http://localhost:8000/>에 접속합니다.
+
+기존 빌드를 즉시 다시 열려면 다음 명령을 사용합니다.
+
+```bash
+uv run python -m conversion.serve_site --no-build
+```
+
+GitHub Pages 하위 경로를 로컬에서 확인할 수도 있습니다.
+
+```bash
+uv run python -m conversion.serve_site --base-path /kisa-cce-guide-web
+```
+
+기본 listen 주소는 `127.0.0.1`입니다. 같은 네트워크의 다른 장치에서 접근해야 하는 경우에만 `--host 0.0.0.0`을 명시합니다.
 
 ## 정적 사이트 구성
 
@@ -189,6 +203,18 @@ uv run python -m http.server 8000 --directory build/site
 생성된 사이트는 469개 HTML 페이지를 포함합니다. 모든 HTML 페이지의 언어, 단일 H1, landmark, skip link, 고유 anchor, 내부 링크, 이미지, 표, 검색 anchor는 정적 검사 대상입니다.
 
 라이선스 승인 전에는 원본 PDF를 사이트 산출물에 복사하지 않습니다. 상세 페이지는 KISA 원문 게시물로 연결됩니다.
+
+## GitHub Pages
+
+`.github/workflows/pages-build.yaml`은 수동 실행에서 GitHub Pages용 사이트를 빌드하고 검토 artifact로 저장합니다.
+
+- 실행 입력의 `base_path`를 빌드에 전달
+- 프로젝트 사이트는 `/kisa-cce-guide-web`, 커스텀 도메인은 빈 경로를 사용
+- Canonical 검증과 회귀 테스트 후 검토 artifact 생성
+- `.nojekyll`을 포함해 생성 파일을 그대로 게시
+- GitHub Pages 공개 권한 없이 검토 artifact만 생성
+
+현재 라이선스와 사람 검토가 완료되지 않았으므로 공개 배포 job은 구성하지 않습니다. GitHub Pages 공개 배포를 추가하려면 공개 범위와 라이선스 위험을 별도로 승인해야 합니다.
 
 ## 품질 검사
 
