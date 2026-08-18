@@ -1,0 +1,65 @@
+schemaVersion: 1
+criterionSlug: s-03
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: s-03:sourceTranscription.heading:1
+    publicationDisposition: derived
+    derivationType: structuralHeading
+    sourceSpans:
+      - physicalPage: 360
+        printedPage: '360'
+        pageRegionIdentifier: p360-s-03
+  - blockReference: s-03:sourceTranscription.sourcePage360.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 360
+        printedPage: '360'
+        pageRegionIdentifier: p360-s-03
+  - blockReference: s-03:sourceTranscription.sourcePage360.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 360
+        printedPage: '360'
+        pageRegionIdentifier: p360-s-03
+  - blockReference: s-03:sourceTranscription.sourcePage360.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 360
+        printedPage: '360'
+        pageRegionIdentifier: p360-s-03
+        sourceBoundingBox:
+          - 0.05
+          - 0.1724
+          - 0.95
+          - 0.95
+assets:
+  - path: ../assets/s-03/s-03-page-360-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: 3dc25b3f104af560f48962b1c32eb88c386e9791dce3de80d1b0c97f897be9fd
+    alternativeText: PDF 페이지 360의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 360 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 872
+    outputPixelDimensions:
+      - 714
+      - 872
+    sourceCrop:
+      - 0.05
+      - 0.1724
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 360
+        printedPage: '360'
+        pageRegionIdentifier: p360-s-03
+        sourceBoundingBox:
+          - 0.05
+          - 0.1724
+          - 0.95
+          - 0.95

@@ -1,0 +1,514 @@
+schemaVersion: 1
+annotations:
+  - annotationIdentifier: inventory-anomaly-001
+    annotationType: sourceInconsistency
+    targetType: document
+    targetReference: U-11
+    sourceDocumentIdentifier: kisa-cce-criteria-2026
+    physicalPage: 35
+    sourceText: 사용자 shell 점검
+    explanation: '{"anomalyType": "detailHeaderTitleMismatch", "code": "U-11", "detailHeaderTitle": "사용자 shell 점검", "physicalPage": 35, "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation.", "summaryTitle": "사용자 Shell 점검"}'
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - 장별 항목표와 상세 머리글 또는 목차 원문을 대조했다.
+    reviewedBy:
+    reviewedAt:
+    approvedBy:
+    approvedAt:
+  - annotationIdentifier: inventory-anomaly-002
+    annotationType: sourceInconsistency
+    targetType: document
+    targetReference: U-55
+    sourceDocumentIdentifier: kisa-cce-criteria-2026
+    physicalPage: 134
+    sourceText: FTP 계정 shell 제한
+    explanation: '{"anomalyType": "detailHeaderTitleMismatch", "code": "U-55", "detailHeaderTitle": "FTP 계정 shell 제한", "physicalPage": 134, "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation.", "summaryTitle": "FTP 계정 Shell 제한"}'
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - 장별 항목표와 상세 머리글 또는 목차 원문을 대조했다.
+    reviewedBy:
+    reviewedAt:
+    approvedBy:
+    approvedAt:
+  - annotationIdentifier: inventory-anomaly-003
+    annotationType: sourceInconsistency
+    targetType: document
+    targetReference: W-07
+    sourceDocumentIdentifier: kisa-cce-criteria-2026
+    physicalPage: 184
+    sourceText: Everyone 사용 권한을 익명 사용자에 적용
+    explanation: '{"anomalyType": "detailHeaderTitleMismatch", "code": "W-07", "detailHeaderTitle": "Everyone 사용 권한을 익명 사용자에 적용", "physicalPage": 184, "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation.", "summaryTitle": "Everyone 사용 권한을 익명 사용자에게 적용"}'
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - 장별 항목표와 상세 머리글 또는 목차 원문을 대조했다.
+    reviewedBy:
+    reviewedAt:
+    approvedBy:
+    approvedAt:
+  - annotationIdentifier: inventory-anomaly-004
+    annotationType: sourceInconsistency
+    targetType: document
+    targetReference: W-31
+    sourceDocumentIdentifier: kisa-cce-criteria-2026
+    physicalPage: 222
+    sourceText: SNMP Access Control 설정
+    explanation: '{"anomalyType": "detailHeaderTitleMismatch", "code": "W-31", "detailHeaderTitle": "SNMP Access Control 설정", "physicalPage": 222, "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation.", "summaryTitle": "SNMP Access control 설정"}'
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - 장별 항목표와 상세 머리글 또는 목차 원문을 대조했다.
+    reviewedBy:
+    reviewedAt:
+    approvedBy:
+    approvedAt:
+  - annotationIdentifier: inventory-anomaly-005
+    annotationType: sourceInconsistency
+    targetType: document
+    targetReference: W-47
+    sourceDocumentIdentifier: kisa-cce-criteria-2026
+    physicalPage: 244
+    sourceText: 하
+    explanation: '{"anomalyType": "detailHeaderSeverityMismatch", "code": "W-47", "detailHeaderSeveritySourceLabel": "하", "physicalPage": 244, "resolution": "Use the valid severity from the chapter summary table and preserve the detail header value as an annotation.", "summarySeveritySourceLabel": "상"}'
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - 장별 항목표와 상세 머리글 또는 목차 원문을 대조했다.
+    reviewedBy:
+    reviewedAt:
+    approvedBy:
+    approvedAt:
+  - annotationIdentifier: inventory-anomaly-006
+    annotationType: sourceInconsistency
+    targetType: document
+    targetReference: WEB-17
+    sourceDocumentIdentifier: kisa-cce-criteria-2026
+    physicalPage: 320
+    sourceText: 웹 서비스 가상 디렉로리 삭제
+    explanation: '{"anomalyType": "detailHeaderTitleMismatch", "code": "WEB-17", "detailHeaderTitle": "웹 서비스 가상 디렉로리 삭제", "physicalPage": 320, "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation.", "summaryTitle": "웹 서비스 가상 디렉토리 삭제"}'
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - 장별 항목표와 상세 머리글 또는 목차 원문을 대조했다.
+    reviewedBy:
+    reviewedAt:
+    approvedBy:
+    approvedAt:
+  - annotationIdentifier: inventory-anomaly-007
+    annotationType: sourceInconsistency
+    targetType: document
+    targetReference: N-03
+    sourceDocumentIdentifier: kisa-cce-criteria-2026
+    physicalPage: 397
+    sourceText: 암호화된 비밀번호 사용
+    explanation: '{"anomalyType": "detailHeaderTitleMismatch", "code": "N-03", "detailHeaderTitle": "암호화된 비밀번호 사용", "physicalPage": 397, "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation.", "summaryTitle": "암호화된 비밀번호 가용"}'
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - 장별 항목표와 상세 머리글 또는 목차 원문을 대조했다.
+    reviewedBy:
+    reviewedAt:
+    approvedBy:
+    approvedAt:
+  - annotationIdentifier: inventory-anomaly-008
+    annotationType: sourceInconsistency
+    targetType: document
+    targetReference: N-05
+    sourceDocumentIdentifier: kisa-cce-criteria-2026
+    physicalPage: 401
+    sourceText: 사용자·명령어별 권한 설정
+    explanation: '{"anomalyType": "detailHeaderTitleMismatch", "code": "N-05", "detailHeaderTitle": "사용자·명령어별 권한 설정", "physicalPage": 401, "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation.", "summaryTitle": "사용자, 명령어별 권한 수준 설정"}'
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - 장별 항목표와 상세 머리글 또는 목차 원문을 대조했다.
+    reviewedBy:
+    reviewedAt:
+    approvedBy:
+    approvedAt:
+  - annotationIdentifier: inventory-anomaly-009
+    annotationType: sourceInconsistency
+    targetType: document
+    targetReference: N-07
+    sourceDocumentIdentifier: kisa-cce-criteria-2026
+    physicalPage: 410
+    sourceText: Session Timeout 설정
+    explanation: '{"anomalyType": "detailHeaderTitleMismatch", "code": "N-07", "detailHeaderTitle": "Session Timeout 설정", "physicalPage": 410, "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation.", "summaryTitle": "세션 종료 시간 설정"}'
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - 장별 항목표와 상세 머리글 또는 목차 원문을 대조했다.
+    reviewedBy:
+    reviewedAt:
+    approvedBy:
+    approvedAt:
+  - annotationIdentifier: inventory-anomaly-010
+    annotationType: sourceInconsistency
+    targetType: document
+    targetReference: N-10
+    sourceDocumentIdentifier: kisa-cce-criteria-2026
+    physicalPage: 417
+    sourceText: 로그인 시 경고 메시지 설정
+    explanation: '{"anomalyType": "detailHeaderTitleMismatch", "code": "N-10", "detailHeaderTitle": "로그인 시 경고 메시지 설정", "physicalPage": 417, "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation.", "summaryTitle": "로그온 시 경고 메시지 설정"}'
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - 장별 항목표와 상세 머리글 또는 목차 원문을 대조했다.
+    reviewedBy:
+    reviewedAt:
+    approvedBy:
+    approvedAt:
+  - annotationIdentifier: inventory-anomaly-011
+    annotationType: sourceInconsistency
+    targetType: document
+    targetReference: N-32
+    sourceDocumentIdentifier: kisa-cce-criteria-2026
+    physicalPage: 459
+    sourceText: Source Routing 차단
+    explanation: '{"anomalyType": "detailHeaderTitleMismatch", "code": "N-32", "detailHeaderTitle": "Source Routing 차단", "physicalPage": 459, "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation.", "summaryTitle": "Source 라우팅 차단"}'
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - 장별 항목표와 상세 머리글 또는 목차 원문을 대조했다.
+    reviewedBy:
+    reviewedAt:
+    approvedBy:
+    approvedAt:
+  - annotationIdentifier: inventory-anomaly-012
+    annotationType: sourceInconsistency
+    targetType: document
+    targetReference: N-34
+    sourceDocumentIdentifier: kisa-cce-criteria-2026
+    physicalPage: 461
+    sourceText: ICMP unreachable, redirect 차단
+    explanation: '{"anomalyType": "detailHeaderTitleMismatch", "code": "N-34", "detailHeaderTitle": "ICMP unreachable, redirect 차단", "physicalPage": 461, "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation.", "summaryTitle": "ICMP unreachable, Redirect 차단"}'
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - 장별 항목표와 상세 머리글 또는 목차 원문을 대조했다.
+    reviewedBy:
+    reviewedAt:
+    approvedBy:
+    approvedAt:
+  - annotationIdentifier: inventory-anomaly-013
+    annotationType: sourceInconsistency
+    targetType: document
+    targetReference: C-07
+    sourceDocumentIdentifier: kisa-cce-criteria-2026
+    physicalPage: 484
+    sourceText: 제어시스템 구성요소에 대한 시각 동기화 수행
+    explanation: '{"anomalyType": "detailHeaderTitleMismatch", "code": "C-07", "detailHeaderTitle": "제어시스템 구성요소에 대한 시각 동기화 수행", "physicalPage": 484, "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation.", "summaryTitle": "제어시스템 구성요소에 대한 시간 동기화 수행"}'
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - 장별 항목표와 상세 머리글 또는 목차 원문을 대조했다.
+    reviewedBy:
+    reviewedAt:
+    approvedBy:
+    approvedAt:
+  - annotationIdentifier: inventory-anomaly-014
+    annotationType: sourceInconsistency
+    targetType: document
+    targetReference: C-15
+    sourceDocumentIdentifier: kisa-cce-criteria-2026
+    physicalPage: 499
+    sourceText: GPS 스푸핑/재밍 공격 등 시간 동기화 서비스를 교란하기 위한 공격에 대비한 보안 조치 수행
+    explanation: '{"anomalyType": "detailHeaderTitleMismatch", "code": "C-15", "detailHeaderTitle": "GPS 스푸핑/재밍 공격 등 시간 동기화 서비스를 교란하기 위한 공격에 대비한 보안 조치 수행", "physicalPage": 499, "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation.", "summaryTitle": "GPS 스푸핑/재밍 공격 등 시각 동기화 서비스를 교란하기 위한 공격에 대비한 보안 조치 수행"}'
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - 장별 항목표와 상세 머리글 또는 목차 원문을 대조했다.
+    reviewedBy:
+    reviewedAt:
+    approvedBy:
+    approvedAt:
+  - annotationIdentifier: inventory-anomaly-015
+    annotationType: sourceInconsistency
+    targetType: document
+    targetReference: C-39
+    sourceDocumentIdentifier: kisa-cce-criteria-2026
+    physicalPage: 535
+    sourceText: 히
+    explanation: '{"anomalyType": "detailHeaderSeverityMismatch", "code": "C-39", "detailHeaderSeveritySourceLabel": "히", "physicalPage": 535, "resolution": "Use the valid severity from the chapter summary table and preserve the detail header value as an annotation.", "summarySeveritySourceLabel": "하"}'
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - 장별 항목표와 상세 머리글 또는 목차 원문을 대조했다.
+    reviewedBy:
+    reviewedAt:
+    approvedBy:
+    approvedAt:
+  - annotationIdentifier: inventory-anomaly-016
+    annotationType: sourceInconsistency
+    targetType: document
+    targetReference: C-43
+    sourceDocumentIdentifier: kisa-cce-criteria-2026
+    physicalPage: 539
+    sourceText: 제어시스템 구성요소에 대한 자산정보(담당자, 제조사, 모델명, 펌웨어 버전, 설치 SW 등)를 항상 최신으로 유지관리
+    explanation: '{"anomalyType": "detailHeaderTitleMismatch", "code": "C-43", "detailHeaderTitle": "제어시스템 구성요소에 대한 자산정보(담당자, 제조사, 모델명, 펌웨어 버전, 설치 SW 등)를 항상 최신으로 유지관리", "physicalPage": 539, "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation.", "summaryTitle": "제어시스템 구성요소에 대한 자산정보(담당자, 펌웨어 버전, 설치 SW 등)를 항상 최신으로 유지관리"}'
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - 장별 항목표와 상세 머리글 또는 목차 원문을 대조했다.
+    reviewedBy:
+    reviewedAt:
+    approvedBy:
+    approvedAt:
+  - annotationIdentifier: inventory-anomaly-017
+    annotationType: sourceInconsistency
+    targetType: document
+    targetReference: PC-18
+    sourceDocumentIdentifier: kisa-cce-criteria-2026
+    physicalPage: 591
+    sourceText: 원격 지원을 금지하도록 정책이 설정
+    explanation: '{"anomalyType": "detailHeaderTitleMismatch", "code": "PC-18", "detailHeaderTitle": "원격 지원을 금지하도록 정책이 설정", "physicalPage": 591, "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation.", "summaryTitle": "원격 지원을 금지하도록 정책을 설정"}'
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - 장별 항목표와 상세 머리글 또는 목차 원문을 대조했다.
+    reviewedBy:
+    reviewedAt:
+    approvedBy:
+    approvedAt:
+  - annotationIdentifier: inventory-anomaly-018
+    annotationType: sourceInconsistency
+    targetType: document
+    targetReference: D-03
+    sourceDocumentIdentifier: kisa-cce-criteria-2026
+    physicalPage: 603
+    sourceText: 비밀번호 사용 기간 및 복잡도를 기관의 정책에 맞도록 설정
+    explanation: '{"anomalyType": "detailHeaderTitleMismatch", "code": "D-03", "detailHeaderTitle": "비밀번호 사용 기간 및 복잡도를 기관의 정책에 맞도록 설정", "physicalPage": 603, "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation.", "summaryTitle": "비밀번호의 사용기간 및 복잡도를 기관의 정책에 맞도록 설정"}'
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - 장별 항목표와 상세 머리글 또는 목차 원문을 대조했다.
+    reviewedBy:
+    reviewedAt:
+    approvedBy:
+    approvedAt:
+  - annotationIdentifier: inventory-anomaly-019
+    annotationType: sourceInconsistency
+    targetType: document
+    targetReference: D-17
+    sourceDocumentIdentifier: kisa-cce-criteria-2026
+    physicalPage: 646
+    sourceText: Audit Table은 데이터베이스 관리자 계정으로 접근하도록 제한
+    explanation: '{"anomalyType": "detailHeaderTitleMismatch", "code": "D-17", "detailHeaderTitle": "Audit Table은 데이터베이스 관리자 계정으로 접근하도록 제한", "physicalPage": 646, "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation.", "summaryTitle": "Audit Table은 데이터베이스 관리자 계정에 접근하도록 제한"}'
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - 장별 항목표와 상세 머리글 또는 목차 원문을 대조했다.
+    reviewedBy:
+    reviewedAt:
+    approvedBy:
+    approvedAt:
+  - annotationIdentifier: inventory-anomaly-020
+    annotationType: sourceInconsistency
+    targetType: document
+    targetReference: D-20
+    sourceDocumentIdentifier: kisa-cce-criteria-2026
+    physicalPage: 652
+    sourceText: 인가되지 않은 Object Owner의 제한
+    explanation: '{"anomalyType": "detailHeaderTitleMismatch", "code": "D-20", "detailHeaderTitle": "인가되지 않은 Object Owner의 제한", "physicalPage": 652, "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation.", "summaryTitle": "인가되지 않은 Object owner의 제한"}'
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - 장별 항목표와 상세 머리글 또는 목차 원문을 대조했다.
+    reviewedBy:
+    reviewedAt:
+    approvedBy:
+    approvedAt:
+  - annotationIdentifier: inventory-anomaly-021
+    annotationType: sourceInconsistency
+    targetType: document
+    targetReference: AU
+    sourceDocumentIdentifier: kisa-cce-criteria-2026
+    physicalPage: 777
+    sourceText: CC
+    explanation: '{"anomalyType": "detailHeaderCodeMismatch", "code": "AU", "detailHeaderCode": "CC", "physicalPage": 777, "resolution": "Use the unique code from the chapter summary table and preserve the detail header value as an annotation.", "summaryCode": "AU"}'
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - 장별 항목표와 상세 머리글 또는 목차 원문을 대조했다.
+    reviewedBy:
+    reviewedAt:
+    approvedBy:
+    approvedAt:
+  - annotationIdentifier: inventory-anomaly-022
+    annotationType: sourceInconsistency
+    targetType: document
+    targetReference: HV-09
+    sourceDocumentIdentifier: kisa-cce-criteria-2026
+    physicalPage: 816
+    sourceText: 증
+    explanation: '{"anomalyType": "detailHeaderSeverityMismatch", "code": "HV-09", "detailHeaderSeveritySourceLabel": "증", "physicalPage": 816, "resolution": "Use the valid severity from the chapter summary table and preserve the detail header value as an annotation.", "summarySeveritySourceLabel": "중"}'
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - 장별 항목표와 상세 머리글 또는 목차 원문을 대조했다.
+    reviewedBy:
+    reviewedAt:
+    approvedBy:
+    approvedAt:
+  - annotationIdentifier: inventory-anomaly-023
+    annotationType: sourceInconsistency
+    targetType: document
+    targetReference: kisa-cce-criteria-2026
+    sourceDocumentIdentifier: kisa-cce-criteria-2026
+    physicalPage: 39
+    sourceText: 파일 및 디렉토리 관리
+    explanation: '{"affectedCodes": ["U-14", "U-15", "U-16", "U-17", "U-18", "U-19", "U-20", "U-21", "U-22", "U-23", "U-24", "U-25", "U-26", "U-27", "U-28", "U-29", "U-30", "U-31", "U-32", "U-33"], "anomalyType": "detailHeaderCategoryMismatch", "detailHeaderCategoryOrdinal": 2, "detailHeaderCategorySourceLabel": "파일 및 디렉토리 관리", "summaryCategoryOrdinal": 2, "summaryCategorySourceLabel": "파일 및 디렉터리 관리"}'
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - 장별 항목표와 상세 머리글 또는 목차 원문을 대조했다.
+    reviewedBy:
+    reviewedAt:
+    approvedBy:
+    approvedAt:
+  - annotationIdentifier: inventory-anomaly-024
+    annotationType: sourceInconsistency
+    targetType: document
+    targetReference: kisa-cce-criteria-2026
+    sourceDocumentIdentifier: kisa-cce-criteria-2026
+    physicalPage: 500
+    sourceText: 서비스 관리
+    explanation: '{"affectedCodes": ["C-16"], "anomalyType": "detailHeaderCategoryMismatch", "detailHeaderCategoryOrdinal": 2, "detailHeaderCategorySourceLabel": "서비스 관리", "summaryCategoryOrdinal": 3, "summaryCategorySourceLabel": "패치 관리"}'
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - 장별 항목표와 상세 머리글 또는 목차 원문을 대조했다.
+    reviewedBy:
+    reviewedAt:
+    approvedBy:
+    approvedAt:
+  - annotationIdentifier: inventory-anomaly-025
+    annotationType: sourceInconsistency
+    targetType: document
+    targetReference: kisa-cce-criteria-2026
+    sourceDocumentIdentifier: kisa-cce-criteria-2026
+    physicalPage: 519
+    sourceText: 물리적 접근 통제
+    explanation: '{"affectedCodes": ["C-27", "C-28"], "anomalyType": "detailHeaderCategoryMismatch", "detailHeaderCategoryOrdinal": 5, "detailHeaderCategorySourceLabel": "물리적 접근 통제", "summaryCategoryOrdinal": 5, "summaryCategorySourceLabel": "물리적 접근통제"}'
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - 장별 항목표와 상세 머리글 또는 목차 원문을 대조했다.
+    reviewedBy:
+    reviewedAt:
+    approvedBy:
+    approvedAt:
+  - annotationIdentifier: inventory-anomaly-026
+    annotationType: sourceInconsistency
+    targetType: document
+    targetReference: kisa-cce-criteria-2026
+    sourceDocumentIdentifier: kisa-cce-criteria-2026
+    physicalPage: 541
+    sourceText: 복구 대응
+    explanation: '{"affectedCodes": ["C-44", "C-46", "C-47", "C-48"], "anomalyType": "detailHeaderCategoryMismatch", "detailHeaderCategoryOrdinal": 8, "detailHeaderCategorySourceLabel": "복구 대응", "summaryCategoryOrdinal": 8, "summaryCategorySourceLabel": "보안 관리"}'
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - 장별 항목표와 상세 머리글 또는 목차 원문을 대조했다.
+    reviewedBy:
+    reviewedAt:
+    approvedBy:
+    approvedAt:
+  - annotationIdentifier: inventory-anomaly-027
+    annotationType: sourceInconsistency
+    targetType: document
+    targetReference: kisa-cce-criteria-2026
+    sourceDocumentIdentifier: kisa-cce-criteria-2026
+    physicalPage: 551
+    sourceText: 교육훈련
+    explanation: '{"affectedCodes": ["C-51"], "anomalyType": "detailHeaderCategoryMismatch", "detailHeaderCategoryOrdinal": 9, "detailHeaderCategorySourceLabel": "교육훈련", "summaryCategoryOrdinal": 9, "summaryCategorySourceLabel": "교육 훈련"}'
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - 장별 항목표와 상세 머리글 또는 목차 원문을 대조했다.
+    reviewedBy:
+    reviewedAt:
+    approvedBy:
+    approvedAt:
+  - annotationIdentifier: inventory-anomaly-028
+    annotationType: sourceInconsistency
+    targetType: document
+    targetReference: kisa-cce-criteria-2026
+    sourceDocumentIdentifier: kisa-cce-criteria-2026
+    physicalPage: 559
+    sourceText: 계정관리
+    explanation: '{"affectedCodes": ["PC-03"], "anomalyType": "detailHeaderCategoryMismatch", "detailHeaderCategoryOrdinal": 1, "detailHeaderCategorySourceLabel": "계정관리", "summaryCategoryOrdinal": 1, "summaryCategorySourceLabel": "계정 관리"}'
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - 장별 항목표와 상세 머리글 또는 목차 원문을 대조했다.
+    reviewedBy:
+    reviewedAt:
+    approvedBy:
+    approvedAt:
+  - annotationIdentifier: inventory-anomaly-029
+    annotationType: sourceInconsistency
+    targetType: document
+    targetReference: kisa-cce-criteria-2026
+    sourceDocumentIdentifier: kisa-cce-criteria-2026
+    physicalPage: 775
+    sourceText: 관리자페이지 노출
+    explanation: '{"affectedCodes": ["AE"], "anomalyType": "detailHeaderCategoryMismatch", "detailHeaderCategoryOrdinal": 19, "detailHeaderCategorySourceLabel": "관리자페이지 노출", "summaryCategoryOrdinal": 19, "summaryCategorySourceLabel": "관리자 페이지 노출"}'
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - 장별 항목표와 상세 머리글 또는 목차 원문을 대조했다.
+    reviewedBy:
+    reviewedAt:
+    approvedBy:
+    approvedAt:
+  - annotationIdentifier: inventory-anomaly-030
+    annotationType: sourceInconsistency
+    targetType: document
+    targetReference: kisa-cce-criteria-2026
+    sourceDocumentIdentifier: kisa-cce-criteria-2026
+    physicalPage: 837
+    sourceText: 가상머신 관리
+    explanation: '{"affectedCodes": ["HV-17", "HV-18", "HV-19", "HV-20"], "anomalyType": "detailHeaderCategoryMismatch", "detailHeaderCategoryOrdinal": 3, "detailHeaderCategorySourceLabel": "가상머신 관리", "summaryCategoryOrdinal": 3, "summaryCategorySourceLabel": "가상 머신 관리"}'
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - 장별 항목표와 상세 머리글 또는 목차 원문을 대조했다.
+    reviewedBy:
+    reviewedAt:
+    approvedBy:
+    approvedAt:
+  - annotationIdentifier: inventory-anomaly-031
+    annotationType: sourceInconsistency
+    targetType: document
+    targetReference: kisa-cce-criteria-2026
+    sourceDocumentIdentifier: kisa-cce-criteria-2026
+    physicalPage: 353
+    sourceText: The local chapter contents lists 472, 484, 501, 507, and 519; actual category starts are 356, 363, 367, 368, and 373.
+    explanation: '{"anomalyType": "chapterContentsPageNumberMismatch", "detail": "The local chapter contents lists 472, 484, 501, 507, and 519; actual category starts are 356, 363, 367, 368, and 373.", "domainIdentifier": "security-device", "physicalPage": 353}'
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - 장별 항목표와 상세 머리글 또는 목차 원문을 대조했다.
+    reviewedBy:
+    reviewedAt:
+    approvedBy:
+    approvedAt:
+  - annotationIdentifier: inventory-anomaly-032
+    annotationType: sourceInconsistency
+    targetType: document
+    targetReference: kisa-cce-criteria-2026
+    sourceDocumentIdentifier: kisa-cce-criteria-2026
+    physicalPage: 5
+    sourceText: The global contents labels PC category 2 as 접근 관리; the chapter summary and all criterion headers use 서비스 관리.
+    explanation: '{"anomalyType": "globalContentsCategoryMismatch", "detail": "The global contents labels PC category 2 as 접근 관리; the chapter summary and all criterion headers use 서비스 관리.", "domainIdentifier": "pc", "physicalPage": 5}'
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - 장별 항목표와 상세 머리글 또는 목차 원문을 대조했다.
+    reviewedBy:
+    reviewedAt:
+    approvedBy:
+    approvedAt:

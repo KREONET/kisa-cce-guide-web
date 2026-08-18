@@ -1,0 +1,65 @@
+schemaVersion: 1
+criterionSlug: w-30
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: w-30:sourceTranscription.heading:1
+    publicationDisposition: derived
+    derivationType: structuralHeading
+    sourceSpans:
+      - physicalPage: 221
+        printedPage: '221'
+        pageRegionIdentifier: p221-w-30
+  - blockReference: w-30:sourceTranscription.sourcePage221.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 221
+        printedPage: '221'
+        pageRegionIdentifier: p221-w-30
+  - blockReference: w-30:sourceTranscription.sourcePage221.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 221
+        printedPage: '221'
+        pageRegionIdentifier: p221-w-30
+  - blockReference: w-30:sourceTranscription.sourcePage221.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 221
+        printedPage: '221'
+        pageRegionIdentifier: p221-w-30
+        sourceBoundingBox:
+          - 0.05
+          - 0.1741
+          - 0.95
+          - 0.95
+assets:
+  - path: ../assets/w-30/w-30-page-221-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: 35e00d089e38b52083243c46f7231e35e54627587768d19448c1911d92fe9aff
+    alternativeText: PDF 페이지 221의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 221 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 870
+    outputPixelDimensions:
+      - 714
+      - 870
+    sourceCrop:
+      - 0.05
+      - 0.1741
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 221
+        printedPage: '221'
+        pageRegionIdentifier: p221-w-30
+        sourceBoundingBox:
+          - 0.05
+          - 0.1741
+          - 0.95
+          - 0.95

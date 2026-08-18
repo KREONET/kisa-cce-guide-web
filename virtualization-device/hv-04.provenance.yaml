@@ -1,0 +1,118 @@
+schemaVersion: 1
+criterionSlug: hv-04
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: hv-04:sourceTranscription.heading:1
+    publicationDisposition: derived
+    derivationType: structuralHeading
+    sourceSpans:
+      - physicalPage: 798
+        printedPage: '798'
+        pageRegionIdentifier: p798-hv-04
+  - blockReference: hv-04:sourceTranscription.sourcePage798.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 798
+        printedPage: '798'
+        pageRegionIdentifier: p798-hv-04
+  - blockReference: hv-04:sourceTranscription.sourcePage798.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 798
+        printedPage: '798'
+        pageRegionIdentifier: p798-hv-04
+  - blockReference: hv-04:sourceTranscription.sourcePage798.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 798
+        printedPage: '798'
+        pageRegionIdentifier: p798-hv-04
+        sourceBoundingBox:
+          - 0.05
+          - 0.1724
+          - 0.95
+          - 0.95
+  - blockReference: hv-04:sourceTranscription.sourcePage799.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 799
+        printedPage: '799'
+        pageRegionIdentifier: p799-hv-04
+  - blockReference: hv-04:sourceTranscription.sourcePage799.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 799
+        printedPage: '799'
+        pageRegionIdentifier: p799-hv-04
+  - blockReference: hv-04:sourceTranscription.sourcePage799.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 799
+        printedPage: '799'
+        pageRegionIdentifier: p799-hv-04
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+assets:
+  - path: ../assets/hv-04/hv-04-page-798-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: 371a4310a6f304e142ebb3099bb5f1a6b4bd79a8b12eea0155ab71aafee7f4b1
+    alternativeText: PDF 페이지 798의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 798 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 872
+    outputPixelDimensions:
+      - 714
+      - 872
+    sourceCrop:
+      - 0.05
+      - 0.1724
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 798
+        printedPage: '798'
+        pageRegionIdentifier: p798-hv-04
+        sourceBoundingBox:
+          - 0.05
+          - 0.1724
+          - 0.95
+          - 0.95
+  - path: ../assets/hv-04/hv-04-page-799-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: 266bea7e7fb2cd76177fc2f869eba5059e04f63a9e02dace74253b050c60c338
+    alternativeText: PDF 페이지 799의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 799 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 953
+    outputPixelDimensions:
+      - 714
+      - 953
+    sourceCrop:
+      - 0.05
+      - 0.1
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 799
+        printedPage: '799'
+        pageRegionIdentifier: p799-hv-04
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95

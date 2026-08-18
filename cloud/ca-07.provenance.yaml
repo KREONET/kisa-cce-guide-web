@@ -1,0 +1,65 @@
+schemaVersion: 1
+criterionSlug: ca-07
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: ca-07:sourceTranscription.heading:1
+    publicationDisposition: derived
+    derivationType: structuralHeading
+    sourceSpans:
+      - physicalPage: 860
+        printedPage: '860'
+        pageRegionIdentifier: p860-ca-07
+  - blockReference: ca-07:sourceTranscription.sourcePage860.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 860
+        printedPage: '860'
+        pageRegionIdentifier: p860-ca-07
+  - blockReference: ca-07:sourceTranscription.sourcePage860.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 860
+        printedPage: '860'
+        pageRegionIdentifier: p860-ca-07
+  - blockReference: ca-07:sourceTranscription.sourcePage860.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 860
+        printedPage: '860'
+        pageRegionIdentifier: p860-ca-07
+        sourceBoundingBox:
+          - 0.05
+          - 0.1741
+          - 0.95
+          - 0.95
+assets:
+  - path: ../assets/ca-07/ca-07-page-860-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: 9a78cef461a9a4a272dcb60d91d1246e51a793f93cacf8a0d920a4e670ec4dba
+    alternativeText: PDF 페이지 860의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 860 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 870
+    outputPixelDimensions:
+      - 714
+      - 870
+    sourceCrop:
+      - 0.05
+      - 0.1741
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 860
+        printedPage: '860'
+        pageRegionIdentifier: p860-ca-07
+        sourceBoundingBox:
+          - 0.05
+          - 0.1741
+          - 0.95
+          - 0.95

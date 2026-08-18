@@ -1,0 +1,171 @@
+schemaVersion: 1
+criterionSlug: il
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: il:sourceTranscription.heading:1
+    publicationDisposition: derived
+    derivationType: structuralHeading
+    sourceSpans:
+      - physicalPage: 708
+        printedPage: '708'
+        pageRegionIdentifier: p708-il
+  - blockReference: il:sourceTranscription.sourcePage708.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 708
+        printedPage: '708'
+        pageRegionIdentifier: p708-il
+  - blockReference: il:sourceTranscription.sourcePage708.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 708
+        printedPage: '708'
+        pageRegionIdentifier: p708-il
+  - blockReference: il:sourceTranscription.sourcePage708.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 708
+        printedPage: '708'
+        pageRegionIdentifier: p708-il
+        sourceBoundingBox:
+          - 0.05
+          - 0.1724
+          - 0.95
+          - 0.95
+  - blockReference: il:sourceTranscription.sourcePage709.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 709
+        printedPage: '709'
+        pageRegionIdentifier: p709-il
+  - blockReference: il:sourceTranscription.sourcePage709.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 709
+        printedPage: '709'
+        pageRegionIdentifier: p709-il
+  - blockReference: il:sourceTranscription.sourcePage709.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 709
+        printedPage: '709'
+        pageRegionIdentifier: p709-il
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - blockReference: il:sourceTranscription.sourcePage710.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 710
+        printedPage: '710'
+        pageRegionIdentifier: p710-il
+  - blockReference: il:sourceTranscription.sourcePage710.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 710
+        printedPage: '710'
+        pageRegionIdentifier: p710-il
+  - blockReference: il:sourceTranscription.sourcePage710.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 710
+        printedPage: '710'
+        pageRegionIdentifier: p710-il
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+assets:
+  - path: ../assets/il/il-page-708-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: 704862cdaef06687a598b1c2cc4cd6c0438c030dd9c569dd7aaa701ce94a838f
+    alternativeText: PDF 페이지 708의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 708 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 872
+    outputPixelDimensions:
+      - 714
+      - 872
+    sourceCrop:
+      - 0.05
+      - 0.1724
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 708
+        printedPage: '708'
+        pageRegionIdentifier: p708-il
+        sourceBoundingBox:
+          - 0.05
+          - 0.1724
+          - 0.95
+          - 0.95
+  - path: ../assets/il/il-page-709-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: a46c4d8f5b5465e088fb9bf06c845266ced732b43afb218f751573361aff867a
+    alternativeText: PDF 페이지 709의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 709 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 953
+    outputPixelDimensions:
+      - 714
+      - 953
+    sourceCrop:
+      - 0.05
+      - 0.1
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 709
+        printedPage: '709'
+        pageRegionIdentifier: p709-il
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - path: ../assets/il/il-page-710-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: 31bb9b96227ae9d74d7dc2d201f3a9cf874c934742c55558043b282bc1d2ffd9
+    alternativeText: PDF 페이지 710의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 710 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 953
+    outputPixelDimensions:
+      - 714
+      - 953
+    sourceCrop:
+      - 0.05
+      - 0.1
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 710
+        printedPage: '710'
+        pageRegionIdentifier: p710-il
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95

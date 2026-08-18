@@ -1,0 +1,277 @@
+schemaVersion: 1
+criterionSlug: n-05
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: n-05:sourceTranscription.heading:1
+    publicationDisposition: derived
+    derivationType: structuralHeading
+    sourceSpans:
+      - physicalPage: 401
+        printedPage: '401'
+        pageRegionIdentifier: p401-n-05
+  - blockReference: n-05:sourceTranscription.sourcePage401.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 401
+        printedPage: '401'
+        pageRegionIdentifier: p401-n-05
+  - blockReference: n-05:sourceTranscription.sourcePage401.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 401
+        printedPage: '401'
+        pageRegionIdentifier: p401-n-05
+  - blockReference: n-05:sourceTranscription.sourcePage401.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 401
+        printedPage: '401'
+        pageRegionIdentifier: p401-n-05
+        sourceBoundingBox:
+          - 0.05
+          - 0.1741
+          - 0.95
+          - 0.95
+  - blockReference: n-05:sourceTranscription.sourcePage402.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 402
+        printedPage: '402'
+        pageRegionIdentifier: p402-n-05
+  - blockReference: n-05:sourceTranscription.sourcePage402.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 402
+        printedPage: '402'
+        pageRegionIdentifier: p402-n-05
+  - blockReference: n-05:sourceTranscription.sourcePage402.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 402
+        printedPage: '402'
+        pageRegionIdentifier: p402-n-05
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - blockReference: n-05:sourceTranscription.sourcePage403.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 403
+        printedPage: '403'
+        pageRegionIdentifier: p403-n-05
+  - blockReference: n-05:sourceTranscription.sourcePage403.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 403
+        printedPage: '403'
+        pageRegionIdentifier: p403-n-05
+  - blockReference: n-05:sourceTranscription.sourcePage403.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 403
+        printedPage: '403'
+        pageRegionIdentifier: p403-n-05
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - blockReference: n-05:sourceTranscription.sourcePage404.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 404
+        printedPage: '404'
+        pageRegionIdentifier: p404-n-05
+  - blockReference: n-05:sourceTranscription.sourcePage404.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 404
+        printedPage: '404'
+        pageRegionIdentifier: p404-n-05
+  - blockReference: n-05:sourceTranscription.sourcePage404.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 404
+        printedPage: '404'
+        pageRegionIdentifier: p404-n-05
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - blockReference: n-05:sourceTranscription.sourcePage405.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 405
+        printedPage: '405'
+        pageRegionIdentifier: p405-n-05
+  - blockReference: n-05:sourceTranscription.sourcePage405.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 405
+        printedPage: '405'
+        pageRegionIdentifier: p405-n-05
+  - blockReference: n-05:sourceTranscription.sourcePage405.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 405
+        printedPage: '405'
+        pageRegionIdentifier: p405-n-05
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+assets:
+  - path: ../assets/n-05/n-05-page-401-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: 38154472d97b543e002dc0a57a07f6ddce5e0462991f1a836a6ba56effe73a3b
+    alternativeText: PDF 페이지 401의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 401 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 870
+    outputPixelDimensions:
+      - 714
+      - 870
+    sourceCrop:
+      - 0.05
+      - 0.1741
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 401
+        printedPage: '401'
+        pageRegionIdentifier: p401-n-05
+        sourceBoundingBox:
+          - 0.05
+          - 0.1741
+          - 0.95
+          - 0.95
+  - path: ../assets/n-05/n-05-page-402-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: 2ddf7b87089c328c856847d659ef5423665df73946cd379441bf5f99d28c46f1
+    alternativeText: PDF 페이지 402의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 402 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 953
+    outputPixelDimensions:
+      - 714
+      - 953
+    sourceCrop:
+      - 0.05
+      - 0.1
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 402
+        printedPage: '402'
+        pageRegionIdentifier: p402-n-05
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - path: ../assets/n-05/n-05-page-403-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: 8f84bf86f49037925e964fa9bf420c7c9d6f7e95b96fefb5db8b2676fad63385
+    alternativeText: PDF 페이지 403의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 403 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 953
+    outputPixelDimensions:
+      - 714
+      - 953
+    sourceCrop:
+      - 0.05
+      - 0.1
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 403
+        printedPage: '403'
+        pageRegionIdentifier: p403-n-05
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - path: ../assets/n-05/n-05-page-404-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: 17bcd434da8ccd091d6d28e6f6f4096f88b594be73f68ddc933da6baf0feb96d
+    alternativeText: PDF 페이지 404의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 404 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 953
+    outputPixelDimensions:
+      - 714
+      - 953
+    sourceCrop:
+      - 0.05
+      - 0.1
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 404
+        printedPage: '404'
+        pageRegionIdentifier: p404-n-05
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - path: ../assets/n-05/n-05-page-405-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: eec442999efdf612747d0c6de7ac0bebe471ae81090ddfff744c2719a2d2c8bf
+    alternativeText: PDF 페이지 405의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 405 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 953
+    outputPixelDimensions:
+      - 714
+      - 953
+    sourceCrop:
+      - 0.05
+      - 0.1
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 405
+        printedPage: '405'
+        pageRegionIdentifier: p405-n-05
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95

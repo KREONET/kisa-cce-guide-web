@@ -1,0 +1,118 @@
+schemaVersion: 1
+criterionSlug: u-51
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: u-51:sourceTranscription.heading:1
+    publicationDisposition: derived
+    derivationType: structuralHeading
+    sourceSpans:
+      - physicalPage: 122
+        printedPage: '122'
+        pageRegionIdentifier: p122-u-51
+  - blockReference: u-51:sourceTranscription.sourcePage122.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 122
+        printedPage: '122'
+        pageRegionIdentifier: p122-u-51
+  - blockReference: u-51:sourceTranscription.sourcePage122.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 122
+        printedPage: '122'
+        pageRegionIdentifier: p122-u-51
+  - blockReference: u-51:sourceTranscription.sourcePage122.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 122
+        printedPage: '122'
+        pageRegionIdentifier: p122-u-51
+        sourceBoundingBox:
+          - 0.05
+          - 0.1741
+          - 0.95
+          - 0.95
+  - blockReference: u-51:sourceTranscription.sourcePage123.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 123
+        printedPage: '123'
+        pageRegionIdentifier: p123-u-51
+  - blockReference: u-51:sourceTranscription.sourcePage123.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 123
+        printedPage: '123'
+        pageRegionIdentifier: p123-u-51
+  - blockReference: u-51:sourceTranscription.sourcePage123.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 123
+        printedPage: '123'
+        pageRegionIdentifier: p123-u-51
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+assets:
+  - path: ../assets/u-51/u-51-page-122-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: a47a156a42e9eed90f38550c6d87503ca746b59d09854f8492bffbf39585c5c2
+    alternativeText: PDF 페이지 122의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 122 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 870
+    outputPixelDimensions:
+      - 714
+      - 870
+    sourceCrop:
+      - 0.05
+      - 0.1741
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 122
+        printedPage: '122'
+        pageRegionIdentifier: p122-u-51
+        sourceBoundingBox:
+          - 0.05
+          - 0.1741
+          - 0.95
+          - 0.95
+  - path: ../assets/u-51/u-51-page-123-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: ecd3cd037aacc49fc79ef8752fa2207afbe8ebe321e3c22854c882d822b8b00b
+    alternativeText: PDF 페이지 123의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 123 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 953
+    outputPixelDimensions:
+      - 714
+      - 953
+    sourceCrop:
+      - 0.05
+      - 0.1
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 123
+        printedPage: '123'
+        pageRegionIdentifier: p123-u-51
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95

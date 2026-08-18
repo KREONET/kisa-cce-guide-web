@@ -1,0 +1,4971 @@
+schemaVersion: 1
+completionStatus: complete
+expectedCriterionCount: 382
+registeredCriterionCount: 382
+criteria:
+  - code: U-01
+    slug: u-01
+    title: root 계정 원격 접속 제한
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-account-management
+    contentModel: systemCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p12-u-01
+    sourceEndRegionIdentifier: p14-u-01
+    route: /unix/u-01/
+    technicalLiteralInventoryMode: extractedFromTypedAst
+  - code: U-02
+    slug: u-02
+    title: 비밀번호 관리정책 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-account-management
+    contentModel: systemCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p15-u-02
+    sourceEndRegionIdentifier: p20-u-02
+    route: /unix/u-02/
+    technicalLiteralInventoryMode: extractedFromTypedAst
+  - code: U-03
+    slug: u-03
+    title: 계정 잠금 임계값 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p21-u-03
+    sourceEndRegionIdentifier: p24-u-03
+    route: /unix/u-03/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-04
+    slug: u-04
+    title: 비밀번호 파일 보호
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p25-u-04
+    sourceEndRegionIdentifier: p26-u-04
+    route: /unix/u-04/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-05
+    slug: u-05
+    title: root 이외의 UID가 ‘0’ 금지
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p27-u-05
+    sourceEndRegionIdentifier: p28-u-05
+    route: /unix/u-05/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-06
+    slug: u-06
+    title: 사용자 계정 su 기능 제한
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p29-u-06
+    sourceEndRegionIdentifier: p30-u-06
+    route: /unix/u-06/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-07
+    slug: u-07
+    title: 불필요한 계정 제거
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: unix
+    categoryIdentifier: unix-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p31-u-07
+    sourceEndRegionIdentifier: p31-u-07
+    route: /unix/u-07/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-08
+    slug: u-08
+    title: 관리자 그룹에 최소한의 계정 포함
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: unix
+    categoryIdentifier: unix-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p32-u-08
+    sourceEndRegionIdentifier: p32-u-08
+    route: /unix/u-08/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-09
+    slug: u-09
+    title: 계정이 존재하지 않는 GID 금지
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: unix
+    categoryIdentifier: unix-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p33-u-09
+    sourceEndRegionIdentifier: p33-u-09
+    route: /unix/u-09/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-10
+    slug: u-10
+    title: 동일한 UID 금지
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: unix
+    categoryIdentifier: unix-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p34-u-10
+    sourceEndRegionIdentifier: p34-u-10
+    route: /unix/u-10/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-11
+    slug: u-11
+    title: 사용자 shell 점검
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: unix
+    categoryIdentifier: unix-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p35-u-11
+    sourceEndRegionIdentifier: p35-u-11
+    route: /unix/u-11/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-12
+    slug: u-12
+    title: 세션 종료 시간 설정
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: unix
+    categoryIdentifier: unix-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p36-u-12
+    sourceEndRegionIdentifier: p36-u-12
+    route: /unix/u-12/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-13
+    slug: u-13
+    title: 안전한 비밀번호 암호화 알고리즘 사용
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: unix
+    categoryIdentifier: unix-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p37-u-13
+    sourceEndRegionIdentifier: p38-u-13
+    route: /unix/u-13/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-14
+    slug: u-14
+    title: root 홈, 패스 디렉터리 권한 및 패스 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-file-directory-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p39-u-14
+    sourceEndRegionIdentifier: p39-u-14
+    route: /unix/u-14/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-15
+    slug: u-15
+    title: 파일 및 디렉터리 소유자 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-file-directory-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p40-u-15
+    sourceEndRegionIdentifier: p40-u-15
+    route: /unix/u-15/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-16
+    slug: u-16
+    title: /etc/passwd 파일 소유자 및 권한 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-file-directory-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p41-u-16
+    sourceEndRegionIdentifier: p41-u-16
+    route: /unix/u-16/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-17
+    slug: u-17
+    title: 시스템 시작 스크립트 권한 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-file-directory-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p42-u-17
+    sourceEndRegionIdentifier: p43-u-17
+    route: /unix/u-17/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-18
+    slug: u-18
+    title: /etc/shadow 파일 소유자 및 권한 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-file-directory-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p44-u-18
+    sourceEndRegionIdentifier: p44-u-18
+    route: /unix/u-18/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-19
+    slug: u-19
+    title: /etc/hosts 파일 소유자 및 권한 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-file-directory-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p45-u-19
+    sourceEndRegionIdentifier: p45-u-19
+    route: /unix/u-19/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-20
+    slug: u-20
+    title: /etc/(x)inetd.conf 파일 소유자 및 권한 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-file-directory-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p46-u-20
+    sourceEndRegionIdentifier: p47-u-20
+    route: /unix/u-20/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-21
+    slug: u-21
+    title: /etc/(r)syslog.conf 파일 소유자 및 권한 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-file-directory-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p48-u-21
+    sourceEndRegionIdentifier: p48-u-21
+    route: /unix/u-21/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-22
+    slug: u-22
+    title: /etc/services 파일 소유자 및 권한 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-file-directory-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p49-u-22
+    sourceEndRegionIdentifier: p49-u-22
+    route: /unix/u-22/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-23
+    slug: u-23
+    title: SUID, SGID, Sticky bit 설정 파일 점검
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-file-directory-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p50-u-23
+    sourceEndRegionIdentifier: p50-u-23
+    route: /unix/u-23/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-24
+    slug: u-24
+    title: 사용자, 시스템 환경변수 파일 소유자 및 권한 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-file-directory-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p51-u-24
+    sourceEndRegionIdentifier: p51-u-24
+    route: /unix/u-24/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-25
+    slug: u-25
+    title: world writable 파일 점검
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-file-directory-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p52-u-25
+    sourceEndRegionIdentifier: p52-u-25
+    route: /unix/u-25/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-26
+    slug: u-26
+    title: /dev에 존재하지 않는 device 파일 점검
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-file-directory-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p53-u-26
+    sourceEndRegionIdentifier: p53-u-26
+    route: /unix/u-26/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-27
+    slug: u-27
+    title: $HOME/.rhosts, hosts.equiv 사용 금지
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-file-directory-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p54-u-27
+    sourceEndRegionIdentifier: p55-u-27
+    route: /unix/u-27/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-28
+    slug: u-28
+    title: 접속 IP 및 포트 제한
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-file-directory-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p56-u-28
+    sourceEndRegionIdentifier: p60-u-28
+    route: /unix/u-28/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-29
+    slug: u-29
+    title: hosts.lpd 파일 소유자 및 권한 설정
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: unix
+    categoryIdentifier: unix-file-directory-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p61-u-29
+    sourceEndRegionIdentifier: p61-u-29
+    route: /unix/u-29/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-30
+    slug: u-30
+    title: UMASK 설정 관리
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: unix
+    categoryIdentifier: unix-file-directory-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p62-u-30
+    sourceEndRegionIdentifier: p64-u-30
+    route: /unix/u-30/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-31
+    slug: u-31
+    title: 홈디렉토리 소유자 및 권한 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: unix
+    categoryIdentifier: unix-file-directory-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p65-u-31
+    sourceEndRegionIdentifier: p65-u-31
+    route: /unix/u-31/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-32
+    slug: u-32
+    title: 홈 디렉토리로 지정한 디렉토리의 존재 관리
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: unix
+    categoryIdentifier: unix-file-directory-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p66-u-32
+    sourceEndRegionIdentifier: p66-u-32
+    route: /unix/u-32/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-33
+    slug: u-33
+    title: 숨겨진 파일 및 디렉토리 검색 및 제거
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: unix
+    categoryIdentifier: unix-file-directory-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p67-u-33
+    sourceEndRegionIdentifier: p67-u-33
+    route: /unix/u-33/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-34
+    slug: u-34
+    title: Finger 서비스 비활성화
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p68-u-34
+    sourceEndRegionIdentifier: p69-u-34
+    route: /unix/u-34/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-35
+    slug: u-35
+    title: 공유 서비스에 대한 익명 접근 제한 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p70-u-35
+    sourceEndRegionIdentifier: p76-u-35
+    route: /unix/u-35/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-36
+    slug: u-36
+    title: r 계열 서비스 비활성화
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p77-u-36
+    sourceEndRegionIdentifier: p79-u-36
+    route: /unix/u-36/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-37
+    slug: u-37
+    title: crontab 설정파일 권한 설정 미흡
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p80-u-37
+    sourceEndRegionIdentifier: p82-u-37
+    route: /unix/u-37/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-38
+    slug: u-38
+    title: DoS 공격에 취약한 서비스 비활성화
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p83-u-38
+    sourceEndRegionIdentifier: p85-u-38
+    route: /unix/u-38/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-39
+    slug: u-39
+    title: 불필요한 NFS 서비스 비활성화
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p86-u-39
+    sourceEndRegionIdentifier: p88-u-39
+    route: /unix/u-39/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-40
+    slug: u-40
+    title: NFS 접근 통제
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p89-u-40
+    sourceEndRegionIdentifier: p92-u-40
+    route: /unix/u-40/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-41
+    slug: u-41
+    title: 불필요한 automountd 제거
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p93-u-41
+    sourceEndRegionIdentifier: p95-u-41
+    route: /unix/u-41/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-42
+    slug: u-42
+    title: 불필요한 RPC 서비스 비활성화
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p96-u-42
+    sourceEndRegionIdentifier: p98-u-42
+    route: /unix/u-42/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-43
+    slug: u-43
+    title: NIS, NIS+ 점검
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p99-u-43
+    sourceEndRegionIdentifier: p101-u-43
+    route: /unix/u-43/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-44
+    slug: u-44
+    title: tftp, talk 서비스 비활성화
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p102-u-44
+    sourceEndRegionIdentifier: p104-u-44
+    route: /unix/u-44/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-45
+    slug: u-45
+    title: 메일 서비스 버전 점검
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p105-u-45
+    sourceEndRegionIdentifier: p110-u-45
+    route: /unix/u-45/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-46
+    slug: u-46
+    title: 일반 사용자의 메일 서비스 실행 방지
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p111-u-46
+    sourceEndRegionIdentifier: p112-u-46
+    route: /unix/u-46/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-47
+    slug: u-47
+    title: 스팸 메일 릴레이 제한
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p113-u-47
+    sourceEndRegionIdentifier: p115-u-47
+    route: /unix/u-47/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-48
+    slug: u-48
+    title: expn, vrfy 명령어 제한
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: unix
+    categoryIdentifier: unix-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p116-u-48
+    sourceEndRegionIdentifier: p117-u-48
+    route: /unix/u-48/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-49
+    slug: u-49
+    title: DNS 보안 버전 패치
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p118-u-49
+    sourceEndRegionIdentifier: p120-u-49
+    route: /unix/u-49/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-50
+    slug: u-50
+    title: DNS ZoneTransfer 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p121-u-50
+    sourceEndRegionIdentifier: p121-u-50
+    route: /unix/u-50/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-51
+    slug: u-51
+    title: DNS 서비스의 취약한 동적 업데이트 설정 금지
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: unix
+    categoryIdentifier: unix-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p122-u-51
+    sourceEndRegionIdentifier: p123-u-51
+    route: /unix/u-51/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-52
+    slug: u-52
+    title: Telnet 서비스 비활성화
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: unix
+    categoryIdentifier: unix-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p124-u-52
+    sourceEndRegionIdentifier: p126-u-52
+    route: /unix/u-52/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-53
+    slug: u-53
+    title: FTP 서비스 정보 노출 제한
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: unix
+    categoryIdentifier: unix-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p127-u-53
+    sourceEndRegionIdentifier: p130-u-53
+    route: /unix/u-53/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-54
+    slug: u-54
+    title: 암호화되지 않는 FTP 서비스 비활성화
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: unix
+    categoryIdentifier: unix-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p131-u-54
+    sourceEndRegionIdentifier: p133-u-54
+    route: /unix/u-54/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-55
+    slug: u-55
+    title: FTP 계정 shell 제한
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: unix
+    categoryIdentifier: unix-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p134-u-55
+    sourceEndRegionIdentifier: p134-u-55
+    route: /unix/u-55/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-56
+    slug: u-56
+    title: FTP 서비스 접근 제어 설정
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: unix
+    categoryIdentifier: unix-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p135-u-56
+    sourceEndRegionIdentifier: p138-u-56
+    route: /unix/u-56/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-57
+    slug: u-57
+    title: Ftpusers 파일 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: unix
+    categoryIdentifier: unix-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p139-u-57
+    sourceEndRegionIdentifier: p140-u-57
+    route: /unix/u-57/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-58
+    slug: u-58
+    title: 불필요한 SNMP 서비스 구동 점검
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: unix
+    categoryIdentifier: unix-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p141-u-58
+    sourceEndRegionIdentifier: p142-u-58
+    route: /unix/u-58/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-59
+    slug: u-59
+    title: 안전한 SNMP 버전 사용
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p143-u-59
+    sourceEndRegionIdentifier: p144-u-59
+    route: /unix/u-59/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-60
+    slug: u-60
+    title: SNMP Community String 복잡성 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: unix
+    categoryIdentifier: unix-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p145-u-60
+    sourceEndRegionIdentifier: p147-u-60
+    route: /unix/u-60/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-61
+    slug: u-61
+    title: SNMP Access Control 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p148-u-61
+    sourceEndRegionIdentifier: p149-u-61
+    route: /unix/u-61/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-62
+    slug: u-62
+    title: 로그인 시 경고 메시지 설정
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: unix
+    categoryIdentifier: unix-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p150-u-62
+    sourceEndRegionIdentifier: p158-u-62
+    route: /unix/u-62/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-63
+    slug: u-63
+    title: sudo 명령어 접근 관리
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: unix
+    categoryIdentifier: unix-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p159-u-63
+    sourceEndRegionIdentifier: p159-u-63
+    route: /unix/u-63/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-64
+    slug: u-64
+    title: 주기적 보안 패치 및 벤더 권고사항 적용
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: unix
+    categoryIdentifier: unix-patch-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p160-u-64
+    sourceEndRegionIdentifier: p163-u-64
+    route: /unix/u-64/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-65
+    slug: u-65
+    title: NTP 및 시각 동기화 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: unix
+    categoryIdentifier: unix-log-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p164-u-65
+    sourceEndRegionIdentifier: p165-u-65
+    route: /unix/u-65/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-66
+    slug: u-66
+    title: 정책에 따른 시스템 로깅 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: unix
+    categoryIdentifier: unix-log-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p166-u-66
+    sourceEndRegionIdentifier: p170-u-66
+    route: /unix/u-66/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: U-67
+    slug: u-67
+    title: 로그 디렉터리 소유자 및 권한 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: unix
+    categoryIdentifier: unix-log-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p171-u-67
+    sourceEndRegionIdentifier: p171-u-67
+    route: /unix/u-67/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-01
+    slug: w-01
+    title: Administrator 계정 이름 변경 등 보안성 강화
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: windows
+    categoryIdentifier: windows-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p177-w-01
+    sourceEndRegionIdentifier: p177-w-01
+    route: /windows/w-01/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-02
+    slug: w-02
+    title: Guest 계정 비활성화
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: windows
+    categoryIdentifier: windows-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p178-w-02
+    sourceEndRegionIdentifier: p178-w-02
+    route: /windows/w-02/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-03
+    slug: w-03
+    title: 불필요한 계정 제거
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: windows
+    categoryIdentifier: windows-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p179-w-03
+    sourceEndRegionIdentifier: p179-w-03
+    route: /windows/w-03/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-04
+    slug: w-04
+    title: 계정 잠금 임계값 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: windows
+    categoryIdentifier: windows-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p180-w-04
+    sourceEndRegionIdentifier: p180-w-04
+    route: /windows/w-04/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-05
+    slug: w-05
+    title: 해독 가능한 암호화를 사용하여 암호 저장 해제
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: windows
+    categoryIdentifier: windows-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p181-w-05
+    sourceEndRegionIdentifier: p181-w-05
+    route: /windows/w-05/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-06
+    slug: w-06
+    title: 관리자 그룹에 최소한의 사용자 포함
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: windows
+    categoryIdentifier: windows-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p182-w-06
+    sourceEndRegionIdentifier: p183-w-06
+    route: /windows/w-06/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-07
+    slug: w-07
+    title: Everyone 사용 권한을 익명 사용자에 적용
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: windows
+    categoryIdentifier: windows-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p184-w-07
+    sourceEndRegionIdentifier: p184-w-07
+    route: /windows/w-07/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-08
+    slug: w-08
+    title: 계정 잠금 기간 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: windows
+    categoryIdentifier: windows-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p185-w-08
+    sourceEndRegionIdentifier: p186-w-08
+    route: /windows/w-08/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-09
+    slug: w-09
+    title: 비밀번호 관리 정책 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: windows
+    categoryIdentifier: windows-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p187-w-09
+    sourceEndRegionIdentifier: p188-w-09
+    route: /windows/w-09/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-10
+    slug: w-10
+    title: 마지막 사용자 이름 표시 안 함
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: windows
+    categoryIdentifier: windows-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p189-w-10
+    sourceEndRegionIdentifier: p190-w-10
+    route: /windows/w-10/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-11
+    slug: w-11
+    title: 로컬 로그온 허용
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: windows
+    categoryIdentifier: windows-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p191-w-11
+    sourceEndRegionIdentifier: p191-w-11
+    route: /windows/w-11/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-12
+    slug: w-12
+    title: 익명 SID/이름 변환 허용 해제
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: windows
+    categoryIdentifier: windows-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p192-w-12
+    sourceEndRegionIdentifier: p192-w-12
+    route: /windows/w-12/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-13
+    slug: w-13
+    title: 콘솔 로그온 시 로컬 계정에서 빈 암호 사용 제한
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: windows
+    categoryIdentifier: windows-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p193-w-13
+    sourceEndRegionIdentifier: p193-w-13
+    route: /windows/w-13/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-14
+    slug: w-14
+    title: 원격터미널 접속 가능한 사용자 그룹 제한
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: windows
+    categoryIdentifier: windows-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p194-w-14
+    sourceEndRegionIdentifier: p195-w-14
+    route: /windows/w-14/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-15
+    slug: w-15
+    title: 사용자 개인키 사용 시 암호 입력
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: windows
+    categoryIdentifier: windows-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p196-w-15
+    sourceEndRegionIdentifier: p196-w-15
+    route: /windows/w-15/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-16
+    slug: w-16
+    title: 공유 권한 및 사용자 그룹 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: windows
+    categoryIdentifier: windows-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p197-w-16
+    sourceEndRegionIdentifier: p197-w-16
+    route: /windows/w-16/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-17
+    slug: w-17
+    title: 하드디스크 기본 공유 제거
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: windows
+    categoryIdentifier: windows-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p198-w-17
+    sourceEndRegionIdentifier: p199-w-17
+    route: /windows/w-17/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-18
+    slug: w-18
+    title: 불필요한 서비스 제거
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: windows
+    categoryIdentifier: windows-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p200-w-18
+    sourceEndRegionIdentifier: p203-w-18
+    route: /windows/w-18/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-19
+    slug: w-19
+    title: 불필요한 IIS 서비스 구동 점검
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: windows
+    categoryIdentifier: windows-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p204-w-19
+    sourceEndRegionIdentifier: p204-w-19
+    route: /windows/w-19/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-20
+    slug: w-20
+    title: NetBIOS 바인딩 서비스 구동 점검
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: windows
+    categoryIdentifier: windows-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p205-w-20
+    sourceEndRegionIdentifier: p206-w-20
+    route: /windows/w-20/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-21
+    slug: w-21
+    title: 암호화되지 않는 FTP 서비스 비활성화
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: windows
+    categoryIdentifier: windows-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p207-w-21
+    sourceEndRegionIdentifier: p207-w-21
+    route: /windows/w-21/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-22
+    slug: w-22
+    title: FTP 디렉토리 접근권한 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: windows
+    categoryIdentifier: windows-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p208-w-22
+    sourceEndRegionIdentifier: p209-w-22
+    route: /windows/w-22/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-23
+    slug: w-23
+    title: 공유 서비스에 대한 익명 접근 제한 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: windows
+    categoryIdentifier: windows-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p210-w-23
+    sourceEndRegionIdentifier: p211-w-23
+    route: /windows/w-23/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-24
+    slug: w-24
+    title: FTP 접근 제어 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: windows
+    categoryIdentifier: windows-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p212-w-24
+    sourceEndRegionIdentifier: p213-w-24
+    route: /windows/w-24/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-25
+    slug: w-25
+    title: DNS Zone Transfer 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: windows
+    categoryIdentifier: windows-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p214-w-25
+    sourceEndRegionIdentifier: p215-w-25
+    route: /windows/w-25/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-26
+    slug: w-26
+    title: RDS(Remote Data Services)제거
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: windows
+    categoryIdentifier: windows-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p216-w-26
+    sourceEndRegionIdentifier: p216-w-26
+    route: /windows/w-26/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-27
+    slug: w-27
+    title: 최신 Windows OS Build 버전 적용
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: windows
+    categoryIdentifier: windows-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p217-w-27
+    sourceEndRegionIdentifier: p217-w-27
+    route: /windows/w-27/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-28
+    slug: w-28
+    title: 터미널 서비스 암호화 수준 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: windows
+    categoryIdentifier: windows-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p218-w-28
+    sourceEndRegionIdentifier: p219-w-28
+    route: /windows/w-28/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-29
+    slug: w-29
+    title: 불필요한 SNMP 서비스 구동 점검
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: windows
+    categoryIdentifier: windows-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p220-w-29
+    sourceEndRegionIdentifier: p220-w-29
+    route: /windows/w-29/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-30
+    slug: w-30
+    title: SNMP Community String 복잡성 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: windows
+    categoryIdentifier: windows-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p221-w-30
+    sourceEndRegionIdentifier: p221-w-30
+    route: /windows/w-30/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-31
+    slug: w-31
+    title: SNMP Access Control 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: windows
+    categoryIdentifier: windows-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p222-w-31
+    sourceEndRegionIdentifier: p222-w-31
+    route: /windows/w-31/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-32
+    slug: w-32
+    title: DNS 서비스 구동 점검
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: windows
+    categoryIdentifier: windows-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p223-w-32
+    sourceEndRegionIdentifier: p224-w-32
+    route: /windows/w-32/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-33
+    slug: w-33
+    title: HTTP/FTP/SMTP 배너 차단
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: windows
+    categoryIdentifier: windows-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p225-w-33
+    sourceEndRegionIdentifier: p227-w-33
+    route: /windows/w-33/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-34
+    slug: w-34
+    title: Telnet 서비스 비활성화
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: windows
+    categoryIdentifier: windows-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p228-w-34
+    sourceEndRegionIdentifier: p228-w-34
+    route: /windows/w-34/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-35
+    slug: w-35
+    title: 불필요한 ODBC/OLE-DB 데이터 소스와 드라이브 제거
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: windows
+    categoryIdentifier: windows-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p229-w-35
+    sourceEndRegionIdentifier: p229-w-35
+    route: /windows/w-35/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-36
+    slug: w-36
+    title: 원격터미널 접속 타임아웃 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: windows
+    categoryIdentifier: windows-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p230-w-36
+    sourceEndRegionIdentifier: p231-w-36
+    route: /windows/w-36/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-37
+    slug: w-37
+    title: 예약된 작업에 의심스러운 명령이 등록되어 있는지 점검
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: windows
+    categoryIdentifier: windows-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p232-w-37
+    sourceEndRegionIdentifier: p232-w-37
+    route: /windows/w-37/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-38
+    slug: w-38
+    title: 주기적 보안 패치 및 벤더 권고사항 적용
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: windows
+    categoryIdentifier: windows-patch-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p233-w-38
+    sourceEndRegionIdentifier: p233-w-38
+    route: /windows/w-38/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-39
+    slug: w-39
+    title: 백신 프로그램 업데이트
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: windows
+    categoryIdentifier: windows-patch-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p234-w-39
+    sourceEndRegionIdentifier: p234-w-39
+    route: /windows/w-39/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-40
+    slug: w-40
+    title: 정책에 따른 시스템 로깅 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: windows
+    categoryIdentifier: windows-log-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p235-w-40
+    sourceEndRegionIdentifier: p236-w-40
+    route: /windows/w-40/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-41
+    slug: w-41
+    title: NTP 및 시각 동기화 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: windows
+    categoryIdentifier: windows-log-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p237-w-41
+    sourceEndRegionIdentifier: p238-w-41
+    route: /windows/w-41/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-42
+    slug: w-42
+    title: 이벤트 로그 관리 설정
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: windows
+    categoryIdentifier: windows-log-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p239-w-42
+    sourceEndRegionIdentifier: p239-w-42
+    route: /windows/w-42/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-43
+    slug: w-43
+    title: 이벤트 로그 파일 접근 통제 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: windows
+    categoryIdentifier: windows-log-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p240-w-43
+    sourceEndRegionIdentifier: p240-w-43
+    route: /windows/w-43/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-44
+    slug: w-44
+    title: 원격으로 액세스할 수 있는 레지스트리 경로
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: windows
+    categoryIdentifier: windows-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p241-w-44
+    sourceEndRegionIdentifier: p241-w-44
+    route: /windows/w-44/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-45
+    slug: w-45
+    title: 백신 프로그램 설치
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: windows
+    categoryIdentifier: windows-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p242-w-45
+    sourceEndRegionIdentifier: p242-w-45
+    route: /windows/w-45/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-46
+    slug: w-46
+    title: SAM 파일 접근 통제 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: windows
+    categoryIdentifier: windows-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p243-w-46
+    sourceEndRegionIdentifier: p243-w-46
+    route: /windows/w-46/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-47
+    slug: w-47
+    title: 화면 보호기 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: windows
+    categoryIdentifier: windows-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p244-w-47
+    sourceEndRegionIdentifier: p245-w-47
+    route: /windows/w-47/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-48
+    slug: w-48
+    title: 로그온하지 않고 시스템 종료 허용
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: windows
+    categoryIdentifier: windows-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p246-w-48
+    sourceEndRegionIdentifier: p247-w-48
+    route: /windows/w-48/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-49
+    slug: w-49
+    title: 원격 시스템에서 강제로 시스템 종료
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: windows
+    categoryIdentifier: windows-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p248-w-49
+    sourceEndRegionIdentifier: p248-w-49
+    route: /windows/w-49/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-50
+    slug: w-50
+    title: 보안 감사를 로그 할 수 없는 경우 즉시 시스템 종료
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: windows
+    categoryIdentifier: windows-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p249-w-50
+    sourceEndRegionIdentifier: p250-w-50
+    route: /windows/w-50/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-51
+    slug: w-51
+    title: SAM 계정과 공유의 익명 열거 허용 안 함
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: windows
+    categoryIdentifier: windows-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p251-w-51
+    sourceEndRegionIdentifier: p252-w-51
+    route: /windows/w-51/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-52
+    slug: w-52
+    title: Autologon 기능 제어
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: windows
+    categoryIdentifier: windows-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p253-w-52
+    sourceEndRegionIdentifier: p253-w-52
+    route: /windows/w-52/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-53
+    slug: w-53
+    title: 이동식 미디어 포맷 및 꺼내기 허용
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: windows
+    categoryIdentifier: windows-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p254-w-53
+    sourceEndRegionIdentifier: p254-w-53
+    route: /windows/w-53/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-54
+    slug: w-54
+    title: Dos 공격 방어 레지스트리 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: windows
+    categoryIdentifier: windows-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p255-w-54
+    sourceEndRegionIdentifier: p255-w-54
+    route: /windows/w-54/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-55
+    slug: w-55
+    title: 사용자가 프린터 드라이버를 설치할 수 없게 함
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: windows
+    categoryIdentifier: windows-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p256-w-55
+    sourceEndRegionIdentifier: p256-w-55
+    route: /windows/w-55/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-56
+    slug: w-56
+    title: SMB 세션 중단 관리 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: windows
+    categoryIdentifier: windows-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p257-w-56
+    sourceEndRegionIdentifier: p258-w-56
+    route: /windows/w-56/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-57
+    slug: w-57
+    title: 로그온 시 경고 메시지 설정
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: windows
+    categoryIdentifier: windows-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p259-w-57
+    sourceEndRegionIdentifier: p260-w-57
+    route: /windows/w-57/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-58
+    slug: w-58
+    title: 사용자별 홈 디렉터리 권한 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: windows
+    categoryIdentifier: windows-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p261-w-58
+    sourceEndRegionIdentifier: p262-w-58
+    route: /windows/w-58/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-59
+    slug: w-59
+    title: LAN Manager 인증 수준
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: windows
+    categoryIdentifier: windows-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p263-w-59
+    sourceEndRegionIdentifier: p264-w-59
+    route: /windows/w-59/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-60
+    slug: w-60
+    title: 보안 채널 데이터 디지털 암호화 또는 서명
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: windows
+    categoryIdentifier: windows-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p265-w-60
+    sourceEndRegionIdentifier: p266-w-60
+    route: /windows/w-60/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-61
+    slug: w-61
+    title: 파일 및 디렉토리 보호
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: windows
+    categoryIdentifier: windows-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p267-w-61
+    sourceEndRegionIdentifier: p267-w-61
+    route: /windows/w-61/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-62
+    slug: w-62
+    title: 시작 프로그램 목록 분석
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: windows
+    categoryIdentifier: windows-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p268-w-62
+    sourceEndRegionIdentifier: p268-w-62
+    route: /windows/w-62/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-63
+    slug: w-63
+    title: 도메인 컨트롤러-사용자의 시간 동기화
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: windows
+    categoryIdentifier: windows-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p269-w-63
+    sourceEndRegionIdentifier: p269-w-63
+    route: /windows/w-63/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: W-64
+    slug: w-64
+    title: 윈도우 방화벽 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: windows
+    categoryIdentifier: windows-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p270-w-64
+    sourceEndRegionIdentifier: p270-w-64
+    route: /windows/w-64/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: WEB-01
+    slug: web-01
+    title: Default 관리자 계정명 변경
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-service
+    categoryIdentifier: web-service-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p274-web-01
+    sourceEndRegionIdentifier: p275-web-01
+    route: /web-service/web-01/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: WEB-02
+    slug: web-02
+    title: 취약한 비밀번호 사용 제한
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-service
+    categoryIdentifier: web-service-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p276-web-02
+    sourceEndRegionIdentifier: p277-web-02
+    route: /web-service/web-02/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: WEB-03
+    slug: web-03
+    title: 비밀번호 파일 권한 관리
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-service
+    categoryIdentifier: web-service-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p278-web-03
+    sourceEndRegionIdentifier: p279-web-03
+    route: /web-service/web-03/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: WEB-04
+    slug: web-04
+    title: 웹 서비스 디렉터리 리스팅 방지 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-service
+    categoryIdentifier: web-service-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p280-web-04
+    sourceEndRegionIdentifier: p282-web-04
+    route: /web-service/web-04/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: WEB-05
+    slug: web-05
+    title: 지정하지 않은 CGI/ISAPI 실행 제한
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-service
+    categoryIdentifier: web-service-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p283-web-05
+    sourceEndRegionIdentifier: p285-web-05
+    route: /web-service/web-05/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: WEB-06
+    slug: web-06
+    title: 웹 서비스 상위 디렉터리 접근 제한 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-service
+    categoryIdentifier: web-service-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p286-web-06
+    sourceEndRegionIdentifier: p289-web-06
+    route: /web-service/web-06/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: WEB-07
+    slug: web-07
+    title: 웹 서비스 경로 내 불필요한 파일 제거
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: web-service
+    categoryIdentifier: web-service-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p290-web-07
+    sourceEndRegionIdentifier: p291-web-07
+    route: /web-service/web-07/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: WEB-08
+    slug: web-08
+    title: 웹 서비스 파일 업로드 및 다운로드 용량 제한
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: web-service
+    categoryIdentifier: web-service-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p292-web-08
+    sourceEndRegionIdentifier: p294-web-08
+    route: /web-service/web-08/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: WEB-09
+    slug: web-09
+    title: 웹 서비스 프로세스 권한 제한
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-service
+    categoryIdentifier: web-service-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p295-web-09
+    sourceEndRegionIdentifier: p299-web-09
+    route: /web-service/web-09/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: WEB-10
+    slug: web-10
+    title: 불필요한 프록시 설정 제한
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-service
+    categoryIdentifier: web-service-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p300-web-10
+    sourceEndRegionIdentifier: p302-web-10
+    route: /web-service/web-10/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: WEB-11
+    slug: web-11
+    title: 웹 서비스 경로 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: web-service
+    categoryIdentifier: web-service-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p303-web-11
+    sourceEndRegionIdentifier: p304-web-11
+    route: /web-service/web-11/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: WEB-12
+    slug: web-12
+    title: 웹 서비스 링크 사용 금지
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: web-service
+    categoryIdentifier: web-service-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p305-web-12
+    sourceEndRegionIdentifier: p307-web-12
+    route: /web-service/web-12/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: WEB-13
+    slug: web-13
+    title: 웹 서비스 설정 파일 노출 제한
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-service
+    categoryIdentifier: web-service-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p308-web-13
+    sourceEndRegionIdentifier: p310-web-13
+    route: /web-service/web-13/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: WEB-14
+    slug: web-14
+    title: 웹 서비스 경로 내 파일의 접근 통제
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-service
+    categoryIdentifier: web-service-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p311-web-14
+    sourceEndRegionIdentifier: p312-web-14
+    route: /web-service/web-14/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: WEB-15
+    slug: web-15
+    title: 웹 서비스의 불필요한 스크립트 매핑 제거
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-service
+    categoryIdentifier: web-service-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p313-web-15
+    sourceEndRegionIdentifier: p315-web-15
+    route: /web-service/web-15/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: WEB-16
+    slug: web-16
+    title: 웹 서비스 헤더 정보 노출 제한
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: web-service
+    categoryIdentifier: web-service-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p316-web-16
+    sourceEndRegionIdentifier: p319-web-16
+    route: /web-service/web-16/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: WEB-17
+    slug: web-17
+    title: 웹 서비스 가상 디렉로리 삭제
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: web-service
+    categoryIdentifier: web-service-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p320-web-17
+    sourceEndRegionIdentifier: p321-web-17
+    route: /web-service/web-17/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: WEB-18
+    slug: web-18
+    title: 웹 서비스 WebDAV 비활성화
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-service
+    categoryIdentifier: web-service-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p322-web-18
+    sourceEndRegionIdentifier: p324-web-18
+    route: /web-service/web-18/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: WEB-19
+    slug: web-19
+    title: 웹 서비스 SSI(Server Side Includes) 사용 제한
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: web-service
+    categoryIdentifier: web-service-security-configuration
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p325-web-19
+    sourceEndRegionIdentifier: p328-web-19
+    route: /web-service/web-19/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: WEB-20
+    slug: web-20
+    title: SSL/TLS 활성화
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-service
+    categoryIdentifier: web-service-security-configuration
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p329-web-20
+    sourceEndRegionIdentifier: p333-web-20
+    route: /web-service/web-20/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: WEB-21
+    slug: web-21
+    title: HTTP 리디렉션
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: web-service
+    categoryIdentifier: web-service-security-configuration
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p334-web-21
+    sourceEndRegionIdentifier: p337-web-21
+    route: /web-service/web-21/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: WEB-22
+    slug: web-22
+    title: 에러 페이지 관리
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: web-service
+    categoryIdentifier: web-service-security-configuration
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p338-web-22
+    sourceEndRegionIdentifier: p341-web-22
+    route: /web-service/web-22/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: WEB-23
+    slug: web-23
+    title: LDAP 알고리즘 적절하게 구성
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: web-service
+    categoryIdentifier: web-service-security-configuration
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p342-web-23
+    sourceEndRegionIdentifier: p342-web-23
+    route: /web-service/web-23/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: WEB-24
+    slug: web-24
+    title: 별도의 업로드 경로 사용 및 권한 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: web-service
+    categoryIdentifier: web-service-security-configuration
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p343-web-24
+    sourceEndRegionIdentifier: p346-web-24
+    route: /web-service/web-24/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: WEB-25
+    slug: web-25
+    title: 주기적 보안 패치 및 벤더 권고사항 적용
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-service
+    categoryIdentifier: web-service-patch-log-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p347-web-25
+    sourceEndRegionIdentifier: p349-web-25
+    route: /web-service/web-25/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: WEB-26
+    slug: web-26
+    title: 로그 디렉터리 및 파일 권한 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: web-service
+    categoryIdentifier: web-service-patch-log-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p350-web-26
+    sourceEndRegionIdentifier: p352-web-26
+    route: /web-service/web-26/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: S-01
+    slug: s-01
+    title: 보안장비 Default 계정 변경
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: security-device
+    categoryIdentifier: security-device-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p356-s-01
+    sourceEndRegionIdentifier: p357-s-01
+    route: /security-device/s-01/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: S-02
+    slug: s-02
+    title: 비밀번호 관리정책 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: security-device
+    categoryIdentifier: security-device-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p358-s-02
+    sourceEndRegionIdentifier: p359-s-02
+    route: /security-device/s-02/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: S-03
+    slug: s-03
+    title: 보안장비 계정별 권한 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: security-device
+    categoryIdentifier: security-device-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p360-s-03
+    sourceEndRegionIdentifier: p360-s-03
+    route: /security-device/s-03/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: S-04
+    slug: s-04
+    title: 보안장비 계정 관리
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: security-device
+    categoryIdentifier: security-device-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p361-s-04
+    sourceEndRegionIdentifier: p361-s-04
+    route: /security-device/s-04/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: S-05
+    slug: s-05
+    title: 계정 잠금 임계값 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: security-device
+    categoryIdentifier: security-device-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p362-s-05
+    sourceEndRegionIdentifier: p362-s-05
+    route: /security-device/s-05/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: S-06
+    slug: s-06
+    title: 보안 장비 원격 관리 접근 통제
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: security-device
+    categoryIdentifier: security-device-access-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p363-s-06
+    sourceEndRegionIdentifier: p363-s-06
+    route: /security-device/s-06/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: S-07
+    slug: s-07
+    title: 보안장비 보안 접속
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: security-device
+    categoryIdentifier: security-device-access-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p364-s-07
+    sourceEndRegionIdentifier: p364-s-07
+    route: /security-device/s-07/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: S-08
+    slug: s-08
+    title: 세션 종료 시간 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: security-device
+    categoryIdentifier: security-device-access-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p365-s-08
+    sourceEndRegionIdentifier: p366-s-08
+    route: /security-device/s-08/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: S-09
+    slug: s-09
+    title: 주기적 보안 패치 및 벤더 권고사항 적용
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: security-device
+    categoryIdentifier: security-device-patch-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p367-s-09
+    sourceEndRegionIdentifier: p367-s-09
+    route: /security-device/s-09/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: S-10
+    slug: s-10
+    title: 보안장비 로그 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: security-device
+    categoryIdentifier: security-device-log-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p368-s-10
+    sourceEndRegionIdentifier: p368-s-10
+    route: /security-device/s-10/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: S-11
+    slug: s-11
+    title: 보안장비 로그 보관
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: security-device
+    categoryIdentifier: security-device-log-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p369-s-11
+    sourceEndRegionIdentifier: p369-s-11
+    route: /security-device/s-11/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: S-12
+    slug: s-12
+    title: 보안장비 정책 백업 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: security-device
+    categoryIdentifier: security-device-log-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p370-s-12
+    sourceEndRegionIdentifier: p370-s-12
+    route: /security-device/s-12/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: S-13
+    slug: s-13
+    title: 원격 로그 서버 사용
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: security-device
+    categoryIdentifier: security-device-log-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p371-s-13
+    sourceEndRegionIdentifier: p371-s-13
+    route: /security-device/s-13/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: S-14
+    slug: s-14
+    title: NTP 및 시각 동기화 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: security-device
+    categoryIdentifier: security-device-log-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p372-s-14
+    sourceEndRegionIdentifier: p372-s-14
+    route: /security-device/s-14/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: S-15
+    slug: s-15
+    title: 정책 관리
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: security-device
+    categoryIdentifier: security-device-function-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p373-s-15
+    sourceEndRegionIdentifier: p373-s-15
+    route: /security-device/s-15/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: S-16
+    slug: s-16
+    title: NAT 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: security-device
+    categoryIdentifier: security-device-function-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p374-s-16
+    sourceEndRegionIdentifier: p375-s-16
+    route: /security-device/s-16/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: S-17
+    slug: s-17
+    title: DMZ 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: security-device
+    categoryIdentifier: security-device-function-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p376-s-17
+    sourceEndRegionIdentifier: p377-s-17
+    route: /security-device/s-17/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: S-18
+    slug: s-18
+    title: 최소한의 서비스만 제공
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: security-device
+    categoryIdentifier: security-device-function-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p378-s-18
+    sourceEndRegionIdentifier: p378-s-18
+    route: /security-device/s-18/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: S-19
+    slug: s-19
+    title: 이상징후 탐지 모니터링 수행
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: security-device
+    categoryIdentifier: security-device-function-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p379-s-19
+    sourceEndRegionIdentifier: p380-s-19
+    route: /security-device/s-19/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: S-20
+    slug: s-20
+    title: 장비 사용량 검토
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: security-device
+    categoryIdentifier: security-device-function-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p381-s-20
+    sourceEndRegionIdentifier: p382-s-20
+    route: /security-device/s-20/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: S-21
+    slug: s-21
+    title: SNMP 서비스 확인
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: security-device
+    categoryIdentifier: security-device-function-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p383-s-21
+    sourceEndRegionIdentifier: p383-s-21
+    route: /security-device/s-21/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: S-22
+    slug: s-22
+    title: SNMP Community String 복잡성 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: security-device
+    categoryIdentifier: security-device-function-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p384-s-22
+    sourceEndRegionIdentifier: p384-s-22
+    route: /security-device/s-22/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: S-23
+    slug: s-23
+    title: 유해 트래픽 탐지/차단 정책 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: security-device
+    categoryIdentifier: security-device-function-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p385-s-23
+    sourceEndRegionIdentifier: p386-s-23
+    route: /security-device/s-23/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-01
+    slug: n-01
+    title: 비밀번호 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p391-n-01
+    sourceEndRegionIdentifier: p394-n-01
+    route: /network-device/n-01/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-02
+    slug: n-02
+    title: 비밀번호 복잡성 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p395-n-02
+    sourceEndRegionIdentifier: p396-n-02
+    route: /network-device/n-02/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-03
+    slug: n-03
+    title: 암호화된 비밀번호 사용
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p397-n-03
+    sourceEndRegionIdentifier: p398-n-03
+    route: /network-device/n-03/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-04
+    slug: n-04
+    title: 계정 잠금 임계값 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p399-n-04
+    sourceEndRegionIdentifier: p400-n-04
+    route: /network-device/n-04/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-05
+    slug: n-05
+    title: 사용자·명령어별 권한 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p401-n-05
+    sourceEndRegionIdentifier: p405-n-05
+    route: /network-device/n-05/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-06
+    slug: n-06
+    title: VTY 접근(ACL) 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-access-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p406-n-06
+    sourceEndRegionIdentifier: p409-n-06
+    route: /network-device/n-06/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-07
+    slug: n-07
+    title: Session Timeout 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-access-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p410-n-07
+    sourceEndRegionIdentifier: p411-n-07
+    route: /network-device/n-07/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-08
+    slug: n-08
+    title: VTY 접속 시 안전한 프로토콜 사용
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-access-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p412-n-08
+    sourceEndRegionIdentifier: p414-n-08
+    route: /network-device/n-08/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-09
+    slug: n-09
+    title: 불필요한 보조 입출력 포트 사용 금지
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-access-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p415-n-09
+    sourceEndRegionIdentifier: p416-n-09
+    route: /network-device/n-09/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-10
+    slug: n-10
+    title: 로그인 시 경고 메시지 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-access-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p417-n-10
+    sourceEndRegionIdentifier: p418-n-10
+    route: /network-device/n-10/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-11
+    slug: n-11
+    title: 원격로그 서버 사용
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-access-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p419-n-11
+    sourceEndRegionIdentifier: p421-n-11
+    route: /network-device/n-11/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-12
+    slug: n-12
+    title: 주기적 보안 패치 및 벤더 권고사항 적용
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-patch-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p422-n-12
+    sourceEndRegionIdentifier: p423-n-12
+    route: /network-device/n-12/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-13
+    slug: n-13
+    title: 로깅 버퍼 크기 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-log-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p424-n-13
+    sourceEndRegionIdentifier: p425-n-13
+    route: /network-device/n-13/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-14
+    slug: n-14
+    title: 정책에 따른 로깅 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-log-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p426-n-14
+    sourceEndRegionIdentifier: p427-n-14
+    route: /network-device/n-14/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-15
+    slug: n-15
+    title: NTP 및 시각 동기화 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-log-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p428-n-15
+    sourceEndRegionIdentifier: p429-n-15
+    route: /network-device/n-15/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-16
+    slug: n-16
+    title: Timestamp 로그 설정
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-log-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p430-n-16
+    sourceEndRegionIdentifier: p430-n-16
+    route: /network-device/n-16/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-17
+    slug: n-17
+    title: SNMP 서비스 확인
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-function-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p431-n-17
+    sourceEndRegionIdentifier: p432-n-17
+    route: /network-device/n-17/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-18
+    slug: n-18
+    title: SNMP Community String 복잡성 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-function-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p433-n-18
+    sourceEndRegionIdentifier: p434-n-18
+    route: /network-device/n-18/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-19
+    slug: n-19
+    title: SNMP ACL 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-function-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p435-n-19
+    sourceEndRegionIdentifier: p437-n-19
+    route: /network-device/n-19/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-20
+    slug: n-20
+    title: SNMP Community 권한 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-function-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p438-n-20
+    sourceEndRegionIdentifier: p439-n-20
+    route: /network-device/n-20/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-21
+    slug: n-21
+    title: TFTP 서비스 차단
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-function-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p440-n-21
+    sourceEndRegionIdentifier: p440-n-21
+    route: /network-device/n-21/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-22
+    slug: n-22
+    title: Spoofing 방지 필터링 적용
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-function-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p441-n-22
+    sourceEndRegionIdentifier: p443-n-22
+    route: /network-device/n-22/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-23
+    slug: n-23
+    title: DDoS 공격 방어 설정 또는 DDoS 장비 사용
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-function-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p444-n-23
+    sourceEndRegionIdentifier: p445-n-23
+    route: /network-device/n-23/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-24
+    slug: n-24
+    title: 사용하지 않는 인터페이스 비활성화
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-function-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p446-n-24
+    sourceEndRegionIdentifier: p447-n-24
+    route: /network-device/n-24/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-25
+    slug: n-25
+    title: TCP Keepalive 서비스 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-function-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p448-n-25
+    sourceEndRegionIdentifier: p448-n-25
+    route: /network-device/n-25/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-26
+    slug: n-26
+    title: Finger 서비스 차단
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-function-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p449-n-26
+    sourceEndRegionIdentifier: p450-n-26
+    route: /network-device/n-26/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-27
+    slug: n-27
+    title: 웹 서비스 차단
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-function-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p451-n-27
+    sourceEndRegionIdentifier: p452-n-27
+    route: /network-device/n-27/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-28
+    slug: n-28
+    title: TCP/UDP small 서비스 차단
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-function-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p453-n-28
+    sourceEndRegionIdentifier: p453-n-28
+    route: /network-device/n-28/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-29
+    slug: n-29
+    title: Bootp 서비스 차단
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-function-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p454-n-29
+    sourceEndRegionIdentifier: p455-n-29
+    route: /network-device/n-29/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-30
+    slug: n-30
+    title: CDP 서비스 차단
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-function-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p456-n-30
+    sourceEndRegionIdentifier: p456-n-30
+    route: /network-device/n-30/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-31
+    slug: n-31
+    title: Directed-broadcast 차단
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-function-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p457-n-31
+    sourceEndRegionIdentifier: p458-n-31
+    route: /network-device/n-31/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-32
+    slug: n-32
+    title: Source Routing 차단
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-function-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p459-n-32
+    sourceEndRegionIdentifier: p459-n-32
+    route: /network-device/n-32/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-33
+    slug: n-33
+    title: Proxy ARP 차단
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-function-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p460-n-33
+    sourceEndRegionIdentifier: p460-n-33
+    route: /network-device/n-33/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-34
+    slug: n-34
+    title: ICMP unreachable, redirect 차단
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-function-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p461-n-34
+    sourceEndRegionIdentifier: p462-n-34
+    route: /network-device/n-34/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-35
+    slug: n-35
+    title: identd 서비스 차단
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-function-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p463-n-35
+    sourceEndRegionIdentifier: p463-n-35
+    route: /network-device/n-35/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-36
+    slug: n-36
+    title: Domain Lookup 차단
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-function-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p464-n-36
+    sourceEndRegionIdentifier: p464-n-36
+    route: /network-device/n-36/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-37
+    slug: n-37
+    title: pad 차단
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-function-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p465-n-37
+    sourceEndRegionIdentifier: p465-n-37
+    route: /network-device/n-37/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: N-38
+    slug: n-38
+    title: mask-reply 차단
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: network-device
+    categoryIdentifier: network-device-function-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p466-n-38
+    sourceEndRegionIdentifier: p466-n-38
+    route: /network-device/n-38/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-01
+    slug: c-01
+    title: 계정 기능이 있는 제어시스템 구성요소에 대해 계정을 안전하게 설정하여 사용
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p472-c-01
+    sourceEndRegionIdentifier: p474-c-01
+    route: /control-system/c-01/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-02
+    slug: c-02
+    title: 제어시스템 계정의 로그인/로그아웃, 사용 명령 등 사용기록을 저장
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p475-c-02
+    sourceEndRegionIdentifier: p476-c-02
+    route: /control-system/c-02/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-03
+    slug: c-03
+    title: 제어시스템 계정입력 시 비밀번호 마스킹 처리, 입력값 에러 발생 시 제공 정보 제한 수행
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p477-c-03
+    sourceEndRegionIdentifier: p478-c-03
+    route: /control-system/c-03/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-04
+    slug: c-04
+    title: 제어시스템 계정을 관리, 운영, 유지보수 등 용도에 따라 분리하고 운용
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p479-c-04
+    sourceEndRegionIdentifier: p479-c-04
+    route: /control-system/c-04/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-05
+    slug: c-05
+    title: 제어시스템 계정에 대해 관리, 운영, 유지보수 등 용도에 맞는 최소 권한 부여
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p480-c-05
+    sourceEndRegionIdentifier: p481-c-05
+    route: /control-system/c-05/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-06
+    slug: c-06
+    title: 제어시스템 운전원별 유일 계정 부여 또는 시간별 사용자 기록 유지
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p482-c-06
+    sourceEndRegionIdentifier: p483-c-06
+    route: /control-system/c-06/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-07
+    slug: c-07
+    title: 제어시스템 구성요소에 대한 시각 동기화 수행
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p484-c-07
+    sourceEndRegionIdentifier: p486-c-07
+    route: /control-system/c-07/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-08
+    slug: c-08
+    title: 제어시스템에 불필요한 서비스 및 취약한 서비스 제거 또는 보완대책 수행
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p487-c-08
+    sourceEndRegionIdentifier: p489-c-08
+    route: /control-system/c-08/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-09
+    slug: c-09
+    title: 제어시스템 구성요소에 대한 관리자 페이지 운영 시 이에 대한 접근통제(사전인가 접근만 허용) 수행
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p490-c-09
+    sourceEndRegionIdentifier: p491-c-09
+    route: /control-system/c-09/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-10
+    slug: c-10
+    title: 제어시스템 내 파일/디렉터리 접근 권한 및 신뢰 관계를 적절히 부여
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p492-c-10
+    sourceEndRegionIdentifier: p493-c-10
+    route: /control-system/c-10/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-11
+    slug: c-11
+    title: 제어시스템 내 제어와 직접적인 관련이 없는 불필요 프로그램 삭제
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p494-c-11
+    sourceEndRegionIdentifier: p494-c-11
+    route: /control-system/c-11/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-12
+    slug: c-12
+    title: 제어시스템 운영 정보, 제어 명령 등 중요 정보에 대한 위변조 및 replay 공격 방지 대책 적용
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p495-c-12
+    sourceEndRegionIdentifier: p496-c-12
+    route: /control-system/c-12/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-13
+    slug: c-13
+    title: 제어시스템 내 전달되는 제어 명령 및 파라미터의 정상 범위를 식별하고 관리
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p497-c-13
+    sourceEndRegionIdentifier: p497-c-13
+    route: /control-system/c-13/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-14
+    slug: c-14
+    title: 제어시스템 내 사용자 통신 세션에 대해 세션 타임아웃 적용
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p498-c-14
+    sourceEndRegionIdentifier: p498-c-14
+    route: /control-system/c-14/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-15
+    slug: c-15
+    title: GPS 스푸핑/재밍 공격 등 시간 동기화 서비스를 교란하기 위한 공격에 대비한 보안 조치 수행
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p499-c-15
+    sourceEndRegionIdentifier: p499-c-15
+    route: /control-system/c-15/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-16
+    slug: c-16
+    title: 제어시스템에 대한 최신 업데이트, 보안패치를 안전하게 적용하기 위한 제조사 협력방안, 테스트 방안 등의 절차 수립
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-patch-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p500-c-16
+    sourceEndRegionIdentifier: p500-c-16
+    route: /control-system/c-16/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-17
+    slug: c-17
+    title: 외부 업체, 인터넷을 통한 다운로드 등의 경로로 반입된 각종 패치·업데이트 파일에 대해 무결성 검증 및 클린 PC를 통한 악성코드 존재 여부 검사 수행
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-patch-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p501-c-17
+    sourceEndRegionIdentifier: p501-c-17
+    route: /control-system/c-17/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-18
+    slug: c-18
+    title: 제어시스템 구성요소의 알려진 취약점에 대해 보안패치 적용 또는 상응하는 대응책 적용
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-patch-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p502-c-18
+    sourceEndRegionIdentifier: p504-c-18
+    route: /control-system/c-18/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-19
+    slug: c-19
+    title: 운영체제, 응용프로그램, 펌웨어 등에 대한 안정성이 확인된 최신 버전의 소프트웨어 사용 및 기술지원이 종료된 제품 미사용
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-patch-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p505-c-19
+    sourceEndRegionIdentifier: p505-c-19
+    route: /control-system/c-19/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-20
+    slug: c-20
+    title: 제어시스템 개선, 신규 시스템 도입, 패치 및 수정 시, 안전성을 테스트하기 위한 테스트베드 또는 시험환경을 구축
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-patch-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p506-c-20
+    sourceEndRegionIdentifier: p506-c-20
+    route: /control-system/c-20/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-21
+    slug: c-21
+    title: 제어 네트워크는 업무망, 인터넷, CCTV 망 등 외부망과 물리적으로 분리하여 사용
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-network-access-control
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p507-c-21
+    sourceEndRegionIdentifier: p508-c-21
+    route: /control-system/c-21/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-22
+    slug: c-22
+    title: 제어 네트워크 외부로 자료전달 시 물리적 일방향 자료전달 환경을 구축하여 외부에서 제어 네트워크로의 침입을 차단
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-network-access-control
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p509-c-22
+    sourceEndRegionIdentifier: p510-c-22
+    route: /control-system/c-22/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-23
+    slug: c-23
+    title: 제어 네트워크에 무선인터넷, 테더링, 외부 유선망 등의 외부망 연결을 제한하고 주기적으로 점검
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-network-access-control
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p511-c-23
+    sourceEndRegionIdentifier: p512-c-23
+    route: /control-system/c-23/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-24
+    slug: c-24
+    title: 제어 네트워크에 비인가된 시스템/기기에 대한 연결 및 접속을 차단
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-network-access-control
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p513-c-24
+    sourceEndRegionIdentifier: p514-c-24
+    route: /control-system/c-24/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-25
+    slug: c-25
+    title: 물리적 일방향 자료전달 환경의 올바른 동작 및 운용에 대한 주기적인 점검 수행
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-network-access-control
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p515-c-25
+    sourceEndRegionIdentifier: p516-c-25
+    route: /control-system/c-25/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-26
+    slug: c-26
+    title: 제어 네트워크를 용도에 따라 세분화하고, 접근제어를 수행하여 제어시스템 운영에 필요한 네트워크, 시스템 간의 통신만 허용
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-network-access-control
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p517-c-26
+    sourceEndRegionIdentifier: p518-c-26
+    route: /control-system/c-26/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-27
+    slug: c-27
+    title: 제어시스템에 대해 네트워크 포트, USB 포트 등 외부 연결 접점에 대해 허가받은 사항을 제외하고 모두 물리적 또는 논리적으로 차단
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-physical-access-control
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p519-c-27
+    sourceEndRegionIdentifier: p520-c-27
+    route: /control-system/c-27/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-28
+    slug: c-28
+    title: 제어시스템 구성요소를 물리적으로 보호할 수 있는 조치 적용(잠금장치가 있는 함체, 랙, 수납 책상 등)
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-physical-access-control
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p521-c-28
+    sourceEndRegionIdentifier: p521-c-28
+    route: /control-system/c-28/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-29
+    slug: c-29
+    title: 백신 프로그램 설치가 가능한 제어시스템 구성요소에 대해 악성코드 감염 및 차단을 위한 백신 프로그램 설치
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-security-threat-detection
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p522-c-29
+    sourceEndRegionIdentifier: p523-c-29
+    route: /control-system/c-29/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-30
+    slug: c-30
+    title: 이상 트래픽 발생 탐지 등 제어시스템 내의 보안 관리를 위해 적합한 침입탐지시스템 등을 구축 및 운용하고, 구축된 보안 솔루션 및 보안 장비에서 탐지한 보안 이벤트에 대해 모니터링 수행
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-security-threat-detection
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p524-c-30
+    sourceEndRegionIdentifier: p524-c-30
+    route: /control-system/c-30/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-31
+    slug: c-31
+    title: 제어시스템 대상 사이버 위기대응 매뉴얼을 수립
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-recovery-response
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p525-c-31
+    sourceEndRegionIdentifier: p526-c-31
+    route: /control-system/c-31/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-32
+    slug: c-32
+    title: 제어시스템 대상 사이버 위기대응 훈련을 정기적으로 시행
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-recovery-response
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p527-c-32
+    sourceEndRegionIdentifier: p527-c-32
+    route: /control-system/c-32/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-33
+    slug: c-33
+    title: 제어시스템 침해사고 대응을 위한 제어시스템 설정, 중요 데이터 등을 백업 및 관리
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-recovery-response
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p528-c-33
+    sourceEndRegionIdentifier: p528-c-33
+    route: /control-system/c-33/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-34
+    slug: c-34
+    title: 제어시스템의 장애 발생, 사이버 공격, 물리적 테러 등에 대한 비상계획 수립
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-recovery-response
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p529-c-34
+    sourceEndRegionIdentifier: p529-c-34
+    route: /control-system/c-34/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-35
+    slug: c-35
+    title: 제어시스템의 장애 발생, 사이버 공격, 물리적 테러 등에 대한 비상계획 훈련을 정기적으로 시행
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-recovery-response
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p530-c-35
+    sourceEndRegionIdentifier: p530-c-35
+    route: /control-system/c-35/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-36
+    slug: c-36
+    title: 제어시스템 조작 불능에 대비하여 수작업 운전 매뉴얼 작성 및 교육 훈련 시행
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-recovery-response
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p531-c-36
+    sourceEndRegionIdentifier: p531-c-36
+    route: /control-system/c-36/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-37
+    slug: c-37
+    title: 제어시스템의 각종 이벤트에 대한 로그를 관리하기 위한 중앙집중식 로그관리 수행
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-recovery-response
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p532-c-37
+    sourceEndRegionIdentifier: p532-c-37
+    route: /control-system/c-37/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-38
+    slug: c-38
+    title: 제어시스템 구성요소의 기준 형상을 설정하고 변경 및 업데이트 시 형상관리 수행
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-recovery-response
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p533-c-38
+    sourceEndRegionIdentifier: p534-c-38
+    route: /control-system/c-38/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-39
+    slug: c-39
+    title: 제어시스템 주요 장비 및 제어 네트워크 장비에 대해 이중화
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-recovery-response
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p535-c-39
+    sourceEndRegionIdentifier: p535-c-39
+    route: /control-system/c-39/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-40
+    slug: c-40
+    title: 제어시스템 보호를 위한 화재탐지 설비 및 화재 진압설비를 구비
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-recovery-response
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p536-c-40
+    sourceEndRegionIdentifier: p536-c-40
+    route: /control-system/c-40/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-41
+    slug: c-41
+    title: 제어시스템 보호를 위한 누수탐지 설비 및 침수 대응 장비 구비
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-recovery-response
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p537-c-41
+    sourceEndRegionIdentifier: p537-c-41
+    route: /control-system/c-41/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-42
+    slug: c-42
+    title: 제어시스템에 대하여 정기적으로 사이버 위험 시나리오를 식별하고, 완화방안 수립
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-recovery-response
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p538-c-42
+    sourceEndRegionIdentifier: p538-c-42
+    route: /control-system/c-42/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-43
+    slug: c-43
+    title: 제어시스템 구성요소에 대한 자산정보(담당자, 제조사, 모델명, 펌웨어 버전, 설치 SW 등)를 항상 최신으로 유지관리
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p539-c-43
+    sourceEndRegionIdentifier: p540-c-43
+    route: /control-system/c-43/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-44
+    slug: c-44
+    title: 제어시스템 중요 구성요소가 설치된 장소를 보호구역으로 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p541-c-44
+    sourceEndRegionIdentifier: p541-c-44
+    route: /control-system/c-44/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-45
+    slug: c-45
+    title: 제어시스템에서 USB 등 이동형 저장 매체를 사용해야 하는 경우, 사전 정의된 정책에 따라 사용
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p542-c-45
+    sourceEndRegionIdentifier: p543-c-45
+    route: /control-system/c-45/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-46
+    slug: c-46
+    title: 제어 네트워크에 연결되는 외부 정보통신기기 반‧출입 시 클린존 통과, 관리대장 작성 등 관리절차 마련
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p544-c-46
+    sourceEndRegionIdentifier: p544-c-46
+    route: /control-system/c-46/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-47
+    slug: c-47
+    title: 제어시스템의 특성을 반영한 정보보안 정책, 지침을 수립
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p545-c-47
+    sourceEndRegionIdentifier: p546-c-47
+    route: /control-system/c-47/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-48
+    slug: c-48
+    title: 제어시스템 운영 업무에 대해 표준업무 절차서를 작성하고 적용
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p547-c-48
+    sourceEndRegionIdentifier: p547-c-48
+    route: /control-system/c-48/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-49
+    slug: c-49
+    title: 제어시스템 유지보수를 위한 전용 장비(노트북 등)를 마련하고 관련 정책을 시행
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p548-c-49
+    sourceEndRegionIdentifier: p548-c-49
+    route: /control-system/c-49/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-50
+    slug: c-50
+    title: 허가에 의한 로직 변경 정책 수립
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p549-c-50
+    sourceEndRegionIdentifier: p550-c-50
+    route: /control-system/c-50/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: C-51
+    slug: c-51
+    title: 제어시스템 운전원, 관리자, 유지보수인력, 보안 인력에 대해 직무별 직무교육을 정기적으로 실시
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: control-system
+    categoryIdentifier: control-system-education-training
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p551-c-51
+    sourceEndRegionIdentifier: p551-c-51
+    route: /control-system/c-51/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: PC-01
+    slug: pc-01
+    title: 비밀번호의 주기적 변경
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: pc
+    categoryIdentifier: pc-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p555-pc-01
+    sourceEndRegionIdentifier: p556-pc-01
+    route: /pc/pc-01/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: PC-02
+    slug: pc-02
+    title: 비밀번호 관리정책 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: pc
+    categoryIdentifier: pc-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p557-pc-02
+    sourceEndRegionIdentifier: p558-pc-02
+    route: /pc/pc-02/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: PC-03
+    slug: pc-03
+    title: 복구 콘솔에서 자동 로그온을 금지하도록 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: pc
+    categoryIdentifier: pc-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p559-pc-03
+    sourceEndRegionIdentifier: p560-pc-03
+    route: /pc/pc-03/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: PC-04
+    slug: pc-04
+    title: 공유 폴더 제거
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: pc
+    categoryIdentifier: pc-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p561-pc-04
+    sourceEndRegionIdentifier: p565-pc-04
+    route: /pc/pc-04/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: PC-05
+    slug: pc-05
+    title: 항목의 불필요한 서비스 제거
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: pc
+    categoryIdentifier: pc-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p566-pc-05
+    sourceEndRegionIdentifier: p569-pc-05
+    route: /pc/pc-05/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: PC-06
+    slug: pc-06
+    title: 비인가 상용 메신저 사용 금지
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: pc
+    categoryIdentifier: pc-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p570-pc-06
+    sourceEndRegionIdentifier: p570-pc-06
+    route: /pc/pc-06/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: PC-07
+    slug: pc-07
+    title: 파일 시스템이 NTFS 포맷으로 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: pc
+    categoryIdentifier: pc-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p571-pc-07
+    sourceEndRegionIdentifier: p572-pc-07
+    route: /pc/pc-07/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: PC-08
+    slug: pc-08
+    title: 대상 시스템이 Windows 서버를 제외한 다른 OS로 멀티 부팅이 가능하지 않도록 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: pc
+    categoryIdentifier: pc-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p573-pc-08
+    sourceEndRegionIdentifier: p574-pc-08
+    route: /pc/pc-08/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: PC-09
+    slug: pc-09
+    title: 브라우저 종료 시 임시 인터넷 파일 폴더의 내용을 삭제하도록 설정
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: pc
+    categoryIdentifier: pc-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p575-pc-09
+    sourceEndRegionIdentifier: p576-pc-09
+    route: /pc/pc-09/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: PC-10
+    slug: pc-10
+    title: 주기적 보안 패치 및 벤더 권고사항 적용
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: pc
+    categoryIdentifier: pc-patch-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p577-pc-10
+    sourceEndRegionIdentifier: p578-pc-10
+    route: /pc/pc-10/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: PC-11
+    slug: pc-11
+    title: 지원이 종료되지 않은 Windows OS Build 적용
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: pc
+    categoryIdentifier: pc-patch-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p579-pc-11
+    sourceEndRegionIdentifier: p579-pc-11
+    route: /pc/pc-11/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: PC-12
+    slug: pc-12
+    title: Windows 자동 로그인 점검
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: pc
+    categoryIdentifier: pc-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p580-pc-12
+    sourceEndRegionIdentifier: p581-pc-12
+    route: /pc/pc-12/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: PC-13
+    slug: pc-13
+    title: 바이러스 백신 프로그램 설치 및 주기적 업데이트
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: pc
+    categoryIdentifier: pc-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p582-pc-13
+    sourceEndRegionIdentifier: p583-pc-13
+    route: /pc/pc-13/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: PC-14
+    slug: pc-14
+    title: 바이러스 백신 프로그램에서 제공하는 실시간 감시 기능 활성화
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: pc
+    categoryIdentifier: pc-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p584-pc-14
+    sourceEndRegionIdentifier: p584-pc-14
+    route: /pc/pc-14/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: PC-15
+    slug: pc-15
+    title: OS에서 제공하는 침입차단 기능 활성화
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: pc
+    categoryIdentifier: pc-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p585-pc-15
+    sourceEndRegionIdentifier: p586-pc-15
+    route: /pc/pc-15/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: PC-16
+    slug: pc-16
+    title: 화면보호기 대기 시간 설정 및 재시작 시 암호 보호 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: pc
+    categoryIdentifier: pc-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p587-pc-16
+    sourceEndRegionIdentifier: p588-pc-16
+    route: /pc/pc-16/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: PC-17
+    slug: pc-17
+    title: CD, DVD, USB 메모리 등과 같은 미디어의 자동 실행 방지 등 이동식 미디어에 대한 보안대책 수립
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: pc
+    categoryIdentifier: pc-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p589-pc-17
+    sourceEndRegionIdentifier: p590-pc-17
+    route: /pc/pc-17/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: PC-18
+    slug: pc-18
+    title: 원격 지원을 금지하도록 정책이 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: pc
+    categoryIdentifier: pc-security-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p591-pc-18
+    sourceEndRegionIdentifier: p592-pc-18
+    route: /pc/pc-18/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: D-01
+    slug: d-01
+    title: 기본 계정의 비밀번호, 정책 등을 변경하여 사용
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: dbms
+    categoryIdentifier: dbms-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p596-d-01
+    sourceEndRegionIdentifier: p599-d-01
+    route: /dbms/d-01/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: D-02
+    slug: d-02
+    title: 데이터베이스의 불필요 계정을 제거하거나, 잠금설정 후 사용
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: dbms
+    categoryIdentifier: dbms-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p600-d-02
+    sourceEndRegionIdentifier: p602-d-02
+    route: /dbms/d-02/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: D-03
+    slug: d-03
+    title: 비밀번호 사용 기간 및 복잡도를 기관의 정책에 맞도록 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: dbms
+    categoryIdentifier: dbms-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p603-d-03
+    sourceEndRegionIdentifier: p607-d-03
+    route: /dbms/d-03/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: D-04
+    slug: d-04
+    title: 데이터베이스 관리자 권한을 꼭 필요한 계정 및 그룹에 대해서만 허용
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: dbms
+    categoryIdentifier: dbms-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p608-d-04
+    sourceEndRegionIdentifier: p612-d-04
+    route: /dbms/d-04/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: D-05
+    slug: d-05
+    title: 비밀번호 재사용에 대한 제약 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: dbms
+    categoryIdentifier: dbms-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p613-d-05
+    sourceEndRegionIdentifier: p615-d-05
+    route: /dbms/d-05/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: D-06
+    slug: d-06
+    title: DB 사용자 계정을 개별적으로 부여하여 사용
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: dbms
+    categoryIdentifier: dbms-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p616-d-06
+    sourceEndRegionIdentifier: p618-d-06
+    route: /dbms/d-06/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: D-07
+    slug: d-07
+    title: root 권한으로 서비스 구동 제한
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: dbms
+    categoryIdentifier: dbms-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p619-d-07
+    sourceEndRegionIdentifier: p620-d-07
+    route: /dbms/d-07/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: D-08
+    slug: d-08
+    title: 안전한 암호화 알고리즘 사용
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: dbms
+    categoryIdentifier: dbms-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p621-d-08
+    sourceEndRegionIdentifier: p624-d-08
+    route: /dbms/d-08/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: D-09
+    slug: d-09
+    title: 일정 횟수의 로그인 실패 시 이에 대한 잠금정책 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: dbms
+    categoryIdentifier: dbms-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p625-d-09
+    sourceEndRegionIdentifier: p627-d-09
+    route: /dbms/d-09/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: D-10
+    slug: d-10
+    title: 원격에서 DB 서버로의 접속 제한
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: dbms
+    categoryIdentifier: dbms-access-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p628-d-10
+    sourceEndRegionIdentifier: p632-d-10
+    route: /dbms/d-10/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: D-11
+    slug: d-11
+    title: DBA 이외의 인가되지 않은 사용자가 시스템 테이블에 접근할 수 없도록 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: dbms
+    categoryIdentifier: dbms-access-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p633-d-11
+    sourceEndRegionIdentifier: p634-d-11
+    route: /dbms/d-11/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: D-12
+    slug: d-12
+    title: 안전한 리스너 비밀번호 설정 및 사용
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: dbms
+    categoryIdentifier: dbms-access-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p635-d-12
+    sourceEndRegionIdentifier: p636-d-12
+    route: /dbms/d-12/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: D-13
+    slug: d-13
+    title: 불필요한 ODBC/OLE-DB 데이터 소스와 드라이브를 제거하여 사용
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: dbms
+    categoryIdentifier: dbms-access-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p637-d-13
+    sourceEndRegionIdentifier: p638-d-13
+    route: /dbms/d-13/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: D-14
+    slug: d-14
+    title: 데이터베이스의 주요 설정 파일, 비밀번호 파일 등과 같은 주요 파일들의 접근 권한이 적절하게 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: dbms
+    categoryIdentifier: dbms-access-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p639-d-14
+    sourceEndRegionIdentifier: p641-d-14
+    route: /dbms/d-14/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: D-15
+    slug: d-15
+    title: 관리자 이외의 사용자가 오라클 리스너의 접속을 통해 리스너 로그 및 trace 파일에 대한 변경 제한
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: dbms
+    categoryIdentifier: dbms-access-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p642-d-15
+    sourceEndRegionIdentifier: p643-d-15
+    route: /dbms/d-15/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: D-16
+    slug: d-16
+    title: Windows 인증 모드 사용
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: dbms
+    categoryIdentifier: dbms-access-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p644-d-16
+    sourceEndRegionIdentifier: p645-d-16
+    route: /dbms/d-16/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: D-17
+    slug: d-17
+    title: Audit Table은 데이터베이스 관리자 계정으로 접근하도록 제한
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: dbms
+    categoryIdentifier: dbms-option-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p646-d-17
+    sourceEndRegionIdentifier: p647-d-17
+    route: /dbms/d-17/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: D-18
+    slug: d-18
+    title: 응용프로그램 또는 DBA 계정의 Role이 Public으로 설정되지 않도록 조정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: dbms
+    categoryIdentifier: dbms-option-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p648-d-18
+    sourceEndRegionIdentifier: p649-d-18
+    route: /dbms/d-18/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: D-19
+    slug: d-19
+    title: OS_ROLES, REMOTE_OS_AUTHENTICATION, REMOTE_OS_ROLES를 FALSE로 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: dbms
+    categoryIdentifier: dbms-option-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p650-d-19
+    sourceEndRegionIdentifier: p651-d-19
+    route: /dbms/d-19/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: D-20
+    slug: d-20
+    title: 인가되지 않은 Object Owner의 제한
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: dbms
+    categoryIdentifier: dbms-option-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p652-d-20
+    sourceEndRegionIdentifier: p653-d-20
+    route: /dbms/d-20/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: D-21
+    slug: d-21
+    title: 인가되지 않은 GRANT OPTION 사용 제한
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: dbms
+    categoryIdentifier: dbms-option-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p654-d-21
+    sourceEndRegionIdentifier: p655-d-21
+    route: /dbms/d-21/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: D-22
+    slug: d-22
+    title: 데이터베이스의 자원 제한 기능을 TRUE로 설정
+    severityLevel: low
+    severitySourceLabel: 하
+    domainIdentifier: dbms
+    categoryIdentifier: dbms-option-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p656-d-22
+    sourceEndRegionIdentifier: p656-d-22
+    route: /dbms/d-22/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: D-23
+    slug: d-23
+    title: xp_cmdshell 사용 제한
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: dbms
+    categoryIdentifier: dbms-option-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p657-d-23
+    sourceEndRegionIdentifier: p660-d-23
+    route: /dbms/d-23/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: D-24
+    slug: d-24
+    title: Registry Procedure 권한 제한
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: dbms
+    categoryIdentifier: dbms-option-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p661-d-24
+    sourceEndRegionIdentifier: p662-d-24
+    route: /dbms/d-24/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: D-25
+    slug: d-25
+    title: 주기적 보안 패치 및 벤더 권고 사항 적용
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: dbms
+    categoryIdentifier: dbms-patch-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p663-d-25
+    sourceEndRegionIdentifier: p665-d-25
+    route: /dbms/d-25/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: D-26
+    slug: d-26
+    title: 데이터베이스의 접근, 변경, 삭제 등의 감사 기록이 기관의 감사 기록 정책에 적합하도록 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: dbms
+    categoryIdentifier: dbms-patch-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p666-d-26
+    sourceEndRegionIdentifier: p669-d-26
+    route: /dbms/d-26/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: M-01
+    slug: m-01
+    title: 이동통신망 엣지 네트워크 운영 시 인터넷 연결 등을 고려한 보안기술을 적용
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: mobile-communication
+    categoryIdentifier: mobile-communication-operations-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p672-m-01
+    sourceEndRegionIdentifier: p672-m-01
+    route: /mobile-communication/m-01/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: M-02
+    slug: m-02
+    title: 이동통신망에서 가상화 기술 적용 시 계정 관리, 이상징후 탐지 등 보안 설정 또는 기술 적용
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: mobile-communication
+    categoryIdentifier: mobile-communication-operations-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p673-m-02
+    sourceEndRegionIdentifier: p673-m-02
+    route: /mobile-communication/m-02/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: M-03
+    slug: m-03
+    title: 이동통신망 장비 및 SW 제조사 등과 보안 정책을 마련하여 운영
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: mobile-communication
+    categoryIdentifier: mobile-communication-operations-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p674-m-03
+    sourceEndRegionIdentifier: p674-m-03
+    route: /mobile-communication/m-03/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: M-04
+    slug: m-04
+    title: 이동통신망 장비 구축과 네트워크 설계 시 보안 내재화를 수행
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: mobile-communication
+    categoryIdentifier: mobile-communication-operations-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p675-m-04
+    sourceEndRegionIdentifier: p675-m-04
+    route: /mobile-communication/m-04/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: CI
+    slug: ci
+    title: 코드 인젝션 (Code Injection)
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-application
+    categoryIdentifier: web-application-code-injection
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p679-ci
+    sourceEndRegionIdentifier: p692-ci
+    route: /web-application/ci/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: SI
+    slug: si
+    title: SQL 인젝션 (SQL Injection)
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-application
+    categoryIdentifier: web-application-sql-injection
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p693-si
+    sourceEndRegionIdentifier: p699-si
+    route: /web-application/si/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: DI
+    slug: di
+    title: 디렉터리 인덱싱
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-application
+    categoryIdentifier: web-application-directory-indexing
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p700-di
+    sourceEndRegionIdentifier: p702-di
+    route: /web-application/di/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: EP
+    slug: ep
+    title: 에러 페이지 적용 미흡
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-application
+    categoryIdentifier: web-application-error-page
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p703-ep
+    sourceEndRegionIdentifier: p707-ep
+    route: /web-application/ep/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: IL
+    slug: il
+    title: 정보 누출
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-application
+    categoryIdentifier: web-application-information-disclosure
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p708-il
+    sourceEndRegionIdentifier: p710-il
+    route: /web-application/il/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: XS
+    slug: xs
+    title: 크로스사이트 스크립트
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-application
+    categoryIdentifier: web-application-cross-site-scripting
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p711-xs
+    sourceEndRegionIdentifier: p714-xs
+    route: /web-application/xs/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: CF
+    slug: cf
+    title: 크로스사이트 요청 위조(CSRF)
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-application
+    categoryIdentifier: web-application-csrf
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p715-cf
+    sourceEndRegionIdentifier: p718-cf
+    route: /web-application/cf/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: SF
+    slug: sf
+    title: 서버사이드 요청 위조(SSRF)
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-application
+    categoryIdentifier: web-application-ssrf
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p719-sf
+    sourceEndRegionIdentifier: p725-sf
+    route: /web-application/sf/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: BF
+    slug: bf
+    title: 약한 비밀번호 정책
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-application
+    categoryIdentifier: web-application-weak-password-policy
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p726-bf
+    sourceEndRegionIdentifier: p728-bf
+    route: /web-application/bf/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: IA
+    slug: ia
+    title: 불충분한 인증 절차
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-application
+    categoryIdentifier: web-application-insufficient-authentication
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p729-ia
+    sourceEndRegionIdentifier: p732-ia
+    route: /web-application/ia/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: IN
+    slug: in
+    title: 불충분한 권한 검증
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-application
+    categoryIdentifier: web-application-insufficient-authorization
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p733-in
+    sourceEndRegionIdentifier: p734-in
+    route: /web-application/in/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: PR
+    slug: pr
+    title: 취약한 비밀번호 복구 절차
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-application
+    categoryIdentifier: web-application-weak-password-recovery
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p735-pr
+    sourceEndRegionIdentifier: p738-pr
+    route: /web-application/pr/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: PV
+    slug: pv
+    title: 프로세스 검증 누락
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-application
+    categoryIdentifier: web-application-missing-process-validation
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p739-pv
+    sourceEndRegionIdentifier: p743-pv
+    route: /web-application/pv/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: FU
+    slug: fu
+    title: 악성 파일 업로드
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-application
+    categoryIdentifier: web-application-malicious-file-upload
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p744-fu
+    sourceEndRegionIdentifier: p752-fu
+    route: /web-application/fu/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: FD
+    slug: fd
+    title: 파일 다운로드
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-application
+    categoryIdentifier: web-application-file-download
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p753-fd
+    sourceEndRegionIdentifier: p758-fd
+    route: /web-application/fd/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: IS
+    slug: is
+    title: 불충분한 세션 관리
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-application
+    categoryIdentifier: web-application-insufficient-session-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p759-is
+    sourceEndRegionIdentifier: p765-is
+    route: /web-application/is/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: SN
+    slug: sn
+    title: 데이터 평문 전송
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-application
+    categoryIdentifier: web-application-plaintext-transmission
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p766-sn
+    sourceEndRegionIdentifier: p768-sn
+    route: /web-application/sn/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: CC
+    slug: cc
+    title: 쿠키 변조
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-application
+    categoryIdentifier: web-application-cookie-tampering
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p769-cc
+    sourceEndRegionIdentifier: p774-cc
+    route: /web-application/cc/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: AE
+    slug: ae
+    title: 관리자페이지 노출
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-application
+    categoryIdentifier: web-application-administrator-page-exposure
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p775-ae
+    sourceEndRegionIdentifier: p776-ae
+    route: /web-application/ae/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: AU
+    slug: au
+    title: 자동화 공격
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-application
+    categoryIdentifier: web-application-automated-attack
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p777-au
+    sourceEndRegionIdentifier: p778-au
+    route: /web-application/au/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: WM
+    slug: wm
+    title: 불필요한 Method 악용
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: web-application
+    categoryIdentifier: web-application-unnecessary-method
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p779-wm
+    sourceEndRegionIdentifier: p786-wm
+    route: /web-application/wm/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: HV-01
+    slug: hv-01
+    title: 계정 로그오프/세션 관리
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: virtualization-device
+    categoryIdentifier: virtualization-device-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p790-hv-01
+    sourceEndRegionIdentifier: p792-hv-01
+    route: /virtualization-device/hv-01/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: HV-02
+    slug: hv-02
+    title: 가상화 장비 외부접속 차단
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: virtualization-device
+    categoryIdentifier: virtualization-device-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p793-hv-02
+    sourceEndRegionIdentifier: p795-hv-02
+    route: /virtualization-device/hv-02/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: HV-03
+    slug: hv-03
+    title: 가상화 장비 루트계정 관리
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: virtualization-device
+    categoryIdentifier: virtualization-device-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p796-hv-03
+    sourceEndRegionIdentifier: p797-hv-03
+    route: /virtualization-device/hv-03/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: HV-04
+    slug: hv-04
+    title: 가상화 장비 계정 권한 관리
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: virtualization-device
+    categoryIdentifier: virtualization-device-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p798-hv-04
+    sourceEndRegionIdentifier: p799-hv-04
+    route: /virtualization-device/hv-04/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: HV-05
+    slug: hv-05
+    title: 가상화 장비 사용자 인증 강화
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: virtualization-device
+    categoryIdentifier: virtualization-device-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p800-hv-05
+    sourceEndRegionIdentifier: p803-hv-05
+    route: /virtualization-device/hv-05/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: HV-06
+    slug: hv-06
+    title: 비밀번호 관리정책 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: virtualization-device
+    categoryIdentifier: virtualization-device-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p804-hv-06
+    sourceEndRegionIdentifier: p808-hv-06
+    route: /virtualization-device/hv-06/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: HV-07
+    slug: hv-07
+    title: 계정 잠금 임계값 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: virtualization-device
+    categoryIdentifier: virtualization-device-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p809-hv-07
+    sourceEndRegionIdentifier: p811-hv-07
+    route: /virtualization-device/hv-07/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: HV-08
+    slug: hv-08
+    title: 시스템 사용 주의사항 출력 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: virtualization-device
+    categoryIdentifier: virtualization-device-system-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p812-hv-08
+    sourceEndRegionIdentifier: p815-hv-08
+    route: /virtualization-device/hv-08/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: HV-09
+    slug: hv-09
+    title: NTP 및 시각 동기화 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: virtualization-device
+    categoryIdentifier: virtualization-device-system-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p816-hv-09
+    sourceEndRegionIdentifier: p818-hv-09
+    route: /virtualization-device/hv-09/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: HV-10
+    slug: hv-10
+    title: SNMP Community String 복잡성 적용
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: virtualization-device
+    categoryIdentifier: virtualization-device-system-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p819-hv-10
+    sourceEndRegionIdentifier: p823-hv-10
+    route: /virtualization-device/hv-10/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: HV-11
+    slug: hv-11
+    title: MOB(Managed Object Browser) 서비스 비활성화
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: virtualization-device
+    categoryIdentifier: virtualization-device-system-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p824-hv-11
+    sourceEndRegionIdentifier: p825-hv-11
+    route: /virtualization-device/hv-11/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: HV-12
+    slug: hv-12
+    title: ESXi Shell 비활성화
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: virtualization-device
+    categoryIdentifier: virtualization-device-system-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p826-hv-12
+    sourceEndRegionIdentifier: p826-hv-12
+    route: /virtualization-device/hv-12/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: HV-13
+    slug: hv-13
+    title: ESXi Shell 세션 종료 시간 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: virtualization-device
+    categoryIdentifier: virtualization-device-system-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p827-hv-13
+    sourceEndRegionIdentifier: p828-hv-13
+    route: /virtualization-device/hv-13/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: HV-14
+    slug: hv-14
+    title: 원격 로그 서버 이용
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: virtualization-device
+    categoryIdentifier: virtualization-device-system-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p829-hv-14
+    sourceEndRegionIdentifier: p832-hv-14
+    route: /virtualization-device/hv-14/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: HV-15
+    slug: hv-15
+    title: 시스템 주요 이벤트 로그 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: virtualization-device
+    categoryIdentifier: virtualization-device-system-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p833-hv-15
+    sourceEndRegionIdentifier: p835-hv-15
+    route: /virtualization-device/hv-15/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: HV-16
+    slug: hv-16
+    title: 비휘발성 경로 내 로그 파일 저장
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: virtualization-device
+    categoryIdentifier: virtualization-device-system-service-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p836-hv-16
+    sourceEndRegionIdentifier: p836-hv-16
+    route: /virtualization-device/hv-16/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: HV-17
+    slug: hv-17
+    title: 코어덤프 수집 기능 활성화
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: virtualization-device
+    categoryIdentifier: virtualization-device-virtual-machine-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p837-hv-17
+    sourceEndRegionIdentifier: p837-hv-17
+    route: /virtualization-device/hv-17/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: HV-18
+    slug: hv-18
+    title: 가상머신의 장치 변경 제한 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: virtualization-device
+    categoryIdentifier: virtualization-device-virtual-machine-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p838-hv-18
+    sourceEndRegionIdentifier: p839-hv-18
+    route: /virtualization-device/hv-18/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: HV-19
+    slug: hv-19
+    title: 가상 머신의 불필요한 장치 제거
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: virtualization-device
+    categoryIdentifier: virtualization-device-virtual-machine-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p840-hv-19
+    sourceEndRegionIdentifier: p841-hv-19
+    route: /virtualization-device/hv-19/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: HV-20
+    slug: hv-20
+    title: 가상머신 콘솔 클립보드 복사&붙여넣기 기능 비활성화
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: virtualization-device
+    categoryIdentifier: virtualization-device-virtual-machine-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p842-hv-20
+    sourceEndRegionIdentifier: p843-hv-20
+    route: /virtualization-device/hv-20/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: HV-21
+    slug: hv-21
+    title: 가상머신 콘솔 드래그 앤 드롭 기능 비활성화
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: virtualization-device
+    categoryIdentifier: virtualization-device-virtual-machine-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p844-hv-21
+    sourceEndRegionIdentifier: p844-hv-21
+    route: /virtualization-device/hv-21/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: HV-22
+    slug: hv-22
+    title: 가상스위치 MAC 주소 변경 정책 비활성화
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: virtualization-device
+    categoryIdentifier: virtualization-device-virtual-network-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p845-hv-22
+    sourceEndRegionIdentifier: p845-hv-22
+    route: /virtualization-device/hv-22/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: HV-23
+    slug: hv-23
+    title: 가상스위치 무차별(Promiscuous) 모드 정책 비활성화
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: virtualization-device
+    categoryIdentifier: virtualization-device-virtual-network-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p846-hv-23
+    sourceEndRegionIdentifier: p847-hv-23
+    route: /virtualization-device/hv-23/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: HV-24
+    slug: hv-24
+    title: 가상스위치 위조전송(Forged Transmits) 모드 정책 비활성화
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: virtualization-device
+    categoryIdentifier: virtualization-device-virtual-network-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p848-hv-24
+    sourceEndRegionIdentifier: p849-hv-24
+    route: /virtualization-device/hv-24/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: HV-25
+    slug: hv-25
+    title: 주기적 보안 패치 및 벤더 권고사항 적용
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: virtualization-device
+    categoryIdentifier: virtualization-device-virtual-network-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p850-hv-25
+    sourceEndRegionIdentifier: p850-hv-25
+    route: /virtualization-device/hv-25/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: CA-01
+    slug: ca-01
+    title: 사용자 계정 관리
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: cloud
+    categoryIdentifier: cloud-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p854-ca-01
+    sourceEndRegionIdentifier: p854-ca-01
+    route: /cloud/ca-01/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: CA-02
+    slug: ca-02
+    title: 사용자 정책 관리
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: cloud
+    categoryIdentifier: cloud-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p855-ca-02
+    sourceEndRegionIdentifier: p855-ca-02
+    route: /cloud/ca-02/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: CA-03
+    slug: ca-03
+    title: MFA(Multi-Factor Authentication) 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: cloud
+    categoryIdentifier: cloud-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p856-ca-03
+    sourceEndRegionIdentifier: p856-ca-03
+    route: /cloud/ca-03/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: CA-04
+    slug: ca-04
+    title: 클라우드 계정 비밀번호 정책 관리
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: cloud
+    categoryIdentifier: cloud-account-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p857-ca-04
+    sourceEndRegionIdentifier: p857-ca-04
+    route: /cloud/ca-04/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: CA-05
+    slug: ca-05
+    title: 인스턴스 서비스 정책 관리
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: cloud
+    categoryIdentifier: cloud-permission-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p858-ca-05
+    sourceEndRegionIdentifier: p858-ca-05
+    route: /cloud/ca-05/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: CA-06
+    slug: ca-06
+    title: 네트워크 서비스 정책 관리
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: cloud
+    categoryIdentifier: cloud-permission-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p859-ca-06
+    sourceEndRegionIdentifier: p859-ca-06
+    route: /cloud/ca-06/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: CA-07
+    slug: ca-07
+    title: VPC 네트워크 서브넷 관리
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: cloud
+    categoryIdentifier: cloud-virtual-resource-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p860-ca-07
+    sourceEndRegionIdentifier: p860-ca-07
+    route: /cloud/ca-07/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: CA-08
+    slug: ca-08
+    title: 가상 네트워크 리소스 관리
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: cloud
+    categoryIdentifier: cloud-virtual-resource-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p861-ca-08
+    sourceEndRegionIdentifier: p861-ca-08
+    route: /cloud/ca-08/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: CA-09
+    slug: ca-09
+    title: 접근 제어 설정 관리
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: cloud
+    categoryIdentifier: cloud-virtual-resource-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p862-ca-09
+    sourceEndRegionIdentifier: p862-ca-09
+    route: /cloud/ca-09/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: CA-10
+    slug: ca-10
+    title: 스토리지 리소스 퍼블릭 접근 관리
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: cloud
+    categoryIdentifier: cloud-virtual-resource-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p863-ca-10
+    sourceEndRegionIdentifier: p863-ca-10
+    route: /cloud/ca-10/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: CA-11
+    slug: ca-11
+    title: 관계형 데이터베이스 암호화 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: cloud
+    categoryIdentifier: cloud-operations-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p864-ca-11
+    sourceEndRegionIdentifier: p864-ca-11
+    route: /cloud/ca-11/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: CA-12
+    slug: ca-12
+    title: 통신구간 암호화 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: cloud
+    categoryIdentifier: cloud-operations-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p865-ca-12
+    sourceEndRegionIdentifier: p865-ca-12
+    route: /cloud/ca-12/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: CA-13
+    slug: ca-13
+    title: 클라우드 서비스 사용자 계정 로깅 설정
+    severityLevel: high
+    severitySourceLabel: 상
+    domainIdentifier: cloud
+    categoryIdentifier: cloud-operations-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p866-ca-13
+    sourceEndRegionIdentifier: p866-ca-13
+    route: /cloud/ca-13/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: CA-14
+    slug: ca-14
+    title: 인스턴스 로깅 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: cloud
+    categoryIdentifier: cloud-operations-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p867-ca-14
+    sourceEndRegionIdentifier: p867-ca-14
+    route: /cloud/ca-14/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: CA-15
+    slug: ca-15
+    title: 관계형 데이터베이스 로깅 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: cloud
+    categoryIdentifier: cloud-operations-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p868-ca-15
+    sourceEndRegionIdentifier: p868-ca-15
+    route: /cloud/ca-15/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: CA-16
+    slug: ca-16
+    title: 오브젝트 스토리지 버킷 로깅 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: cloud
+    categoryIdentifier: cloud-operations-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p869-ca-16
+    sourceEndRegionIdentifier: p869-ca-16
+    route: /cloud/ca-16/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: CA-17
+    slug: ca-17
+    title: 로그 보관 기간 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: cloud
+    categoryIdentifier: cloud-operations-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p870-ca-17
+    sourceEndRegionIdentifier: p870-ca-17
+    route: /cloud/ca-17/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: CA-18
+    slug: ca-18
+    title: 백업 사용 여부
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: cloud
+    categoryIdentifier: cloud-operations-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p871-ca-18
+    sourceEndRegionIdentifier: p871-ca-18
+    route: /cloud/ca-18/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText
+  - code: CA-19
+    slug: ca-19
+    title: 가상 리소스 이상징후 알림 설정
+    severityLevel: medium
+    severitySourceLabel: 중
+    domainIdentifier: cloud
+    categoryIdentifier: cloud-operations-management
+    contentModel: extractedCriterion
+    contentModelVersion: 1
+    sourceStartRegionIdentifier: p872-ca-19
+    sourceEndRegionIdentifier: p872-ca-19
+    route: /cloud/ca-19/
+    technicalLiteralInventoryMode: sourceTranscriptSearchableText

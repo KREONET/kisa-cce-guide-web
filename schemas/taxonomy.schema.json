@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zeroday0619.github.io/kisa-cce-guide/schemas/taxonomy.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "domains", "categories", "targets", "protocols", "productFamilies"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "domains": {"type": "array", "items": {"$ref": "#/$defs/orderedTerm"}},
+    "categories": {"type": "array", "items": {"$ref": "#/$defs/category"}},
+    "targets": {"type": "array", "items": {"$ref": "#/$defs/term"}},
+    "protocols": {"type": "array", "items": {"$ref": "#/$defs/term"}},
+    "productFamilies": {"type": "array", "items": {"$ref": "#/$defs/term"}}
+  },
+  "$defs": {
+    "identifier": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "term": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["identifier", "label", "sourceLabel"],
+      "properties": {
+        "identifier": {"$ref": "#/$defs/identifier"},
+        "label": {"type": "string", "minLength": 1},
+        "sourceLabel": {"type": "string", "minLength": 1}
+      }
+    },
+    "orderedTerm": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["identifier", "label", "sourceLabel", "order"],
+      "properties": {
+        "identifier": {"$ref": "#/$defs/identifier"},
+        "label": {"type": "string", "minLength": 1},
+        "sourceLabel": {"type": "string", "minLength": 1},
+        "order": {"type": "integer", "minimum": 1}
+      }
+    },
+    "category": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["identifier", "domainIdentifier", "label", "sourceLabel", "order"],
+      "properties": {
+        "identifier": {"$ref": "#/$defs/identifier"},
+        "domainIdentifier": {"$ref": "#/$defs/identifier"},
+        "label": {"type": "string", "minLength": 1},
+        "sourceLabel": {"type": "string", "minLength": 1},
+        "order": {"type": "integer", "minimum": 1}
+      }
+    }
+  }
+}

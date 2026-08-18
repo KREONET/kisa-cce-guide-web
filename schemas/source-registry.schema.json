@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zeroday0619.github.io/kisa-cce-guide/schemas/source-registry.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "documents"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "documents": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/sourceDocument"}
+    }
+  },
+  "$defs": {
+    "nullableString": {"type": ["string", "null"]},
+    "checksum": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "license": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "licenseType",
+        "permittedUses",
+        "licenseEvidenceUrl",
+        "requiredAttributionText",
+        "reviewedBy",
+        "reviewedAt",
+        "approvalStatus"
+      ],
+      "properties": {
+        "licenseType": {"$ref": "#/$defs/nullableString"},
+        "permittedUses": {"type": "array", "items": {"type": "string"}},
+        "licenseEvidenceUrl": {"type": "string", "format": "uri"},
+        "requiredAttributionText": {"$ref": "#/$defs/nullableString"},
+        "reviewedBy": {"$ref": "#/$defs/nullableString"},
+        "reviewedAt": {"type": ["string", "null"], "format": "date-time"},
+        "approvalStatus": {"enum": ["pending", "approved", "rejected"]}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"approvalStatus": {"const": "approved"}}},
+          "then": {
+            "properties": {
+              "licenseType": {"type": "string", "minLength": 1},
+              "permittedUses": {"minItems": 1},
+              "requiredAttributionText": {"type": "string", "minLength": 1},
+              "reviewedBy": {"type": "string", "minLength": 1},
+              "reviewedAt": {"type": "string", "format": "date-time"}
+            }
+          }
+        }
+      ]
+    },
+    "sourceDocument": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sourceDocumentIdentifier",
+        "title",
+        "publisher",
+        "publicationDate",
+        "sourceUrl",
+        "repositoryPath",
+        "fileSizeBytes",
+        "physicalPageCount",
+        "checksumAlgorithm",
+        "checksumValue",
+        "license"
+      ],
+      "properties": {
+        "sourceDocumentIdentifier": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "title": {"type": "string", "minLength": 1},
+        "publisher": {"type": "string", "minLength": 1},
+        "publicationDate": {"type": "string", "format": "date"},
+        "sourceUrl": {"type": "string", "format": "uri"},
+        "repositoryPath": {"type": "string", "minLength": 1},
+        "fileSizeBytes": {"type": "integer", "minimum": 1},
+        "physicalPageCount": {"type": "integer", "minimum": 1},
+        "checksumAlgorithm": {"const": "sha256"},
+        "checksumValue": {"$ref": "#/$defs/checksum"},
+        "license": {"$ref": "#/$defs/license"}
+      }
+    }
+  }
+}

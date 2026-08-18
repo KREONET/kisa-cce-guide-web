@@ -1,0 +1,171 @@
+schemaVersion: 1
+criterionSlug: sn
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: sn:sourceTranscription.heading:1
+    publicationDisposition: derived
+    derivationType: structuralHeading
+    sourceSpans:
+      - physicalPage: 766
+        printedPage: '766'
+        pageRegionIdentifier: p766-sn
+  - blockReference: sn:sourceTranscription.sourcePage766.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 766
+        printedPage: '766'
+        pageRegionIdentifier: p766-sn
+  - blockReference: sn:sourceTranscription.sourcePage766.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 766
+        printedPage: '766'
+        pageRegionIdentifier: p766-sn
+  - blockReference: sn:sourceTranscription.sourcePage766.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 766
+        printedPage: '766'
+        pageRegionIdentifier: p766-sn
+        sourceBoundingBox:
+          - 0.05
+          - 0.1724
+          - 0.95
+          - 0.95
+  - blockReference: sn:sourceTranscription.sourcePage767.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 767
+        printedPage: '767'
+        pageRegionIdentifier: p767-sn
+  - blockReference: sn:sourceTranscription.sourcePage767.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 767
+        printedPage: '767'
+        pageRegionIdentifier: p767-sn
+  - blockReference: sn:sourceTranscription.sourcePage767.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 767
+        printedPage: '767'
+        pageRegionIdentifier: p767-sn
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - blockReference: sn:sourceTranscription.sourcePage768.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 768
+        printedPage: '768'
+        pageRegionIdentifier: p768-sn
+  - blockReference: sn:sourceTranscription.sourcePage768.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 768
+        printedPage: '768'
+        pageRegionIdentifier: p768-sn
+  - blockReference: sn:sourceTranscription.sourcePage768.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 768
+        printedPage: '768'
+        pageRegionIdentifier: p768-sn
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+assets:
+  - path: ../assets/sn/sn-page-766-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: d47ea75aebf7b177aaf508af86b5db038896238fcc43bf27604ec57aa2ccf64b
+    alternativeText: PDF 페이지 766의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 766 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 872
+    outputPixelDimensions:
+      - 714
+      - 872
+    sourceCrop:
+      - 0.05
+      - 0.1724
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 766
+        printedPage: '766'
+        pageRegionIdentifier: p766-sn
+        sourceBoundingBox:
+          - 0.05
+          - 0.1724
+          - 0.95
+          - 0.95
+  - path: ../assets/sn/sn-page-767-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: 78c2faeba5547e3b224a8fb0eb94b3f01d42463723428a573a3b30e776781653
+    alternativeText: PDF 페이지 767의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 767 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 953
+    outputPixelDimensions:
+      - 714
+      - 953
+    sourceCrop:
+      - 0.05
+      - 0.1
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 767
+        printedPage: '767'
+        pageRegionIdentifier: p767-sn
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - path: ../assets/sn/sn-page-768-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: 592a7627e870227e02904a78cd6fff7237ced50c4c583c05f3fa2e896686bed6
+    alternativeText: PDF 페이지 768의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 768 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 953
+    outputPixelDimensions:
+      - 714
+      - 953
+    sourceCrop:
+      - 0.05
+      - 0.1
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 768
+        printedPage: '768'
+        pageRegionIdentifier: p768-sn
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95

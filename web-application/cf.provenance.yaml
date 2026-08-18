@@ -1,0 +1,224 @@
+schemaVersion: 1
+criterionSlug: cf
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: cf:sourceTranscription.heading:1
+    publicationDisposition: derived
+    derivationType: structuralHeading
+    sourceSpans:
+      - physicalPage: 715
+        printedPage: '715'
+        pageRegionIdentifier: p715-cf
+  - blockReference: cf:sourceTranscription.sourcePage715.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 715
+        printedPage: '715'
+        pageRegionIdentifier: p715-cf
+  - blockReference: cf:sourceTranscription.sourcePage715.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 715
+        printedPage: '715'
+        pageRegionIdentifier: p715-cf
+  - blockReference: cf:sourceTranscription.sourcePage715.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 715
+        printedPage: '715'
+        pageRegionIdentifier: p715-cf
+        sourceBoundingBox:
+          - 0.05
+          - 0.1724
+          - 0.95
+          - 0.95
+  - blockReference: cf:sourceTranscription.sourcePage716.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 716
+        printedPage: '716'
+        pageRegionIdentifier: p716-cf
+  - blockReference: cf:sourceTranscription.sourcePage716.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 716
+        printedPage: '716'
+        pageRegionIdentifier: p716-cf
+  - blockReference: cf:sourceTranscription.sourcePage716.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 716
+        printedPage: '716'
+        pageRegionIdentifier: p716-cf
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - blockReference: cf:sourceTranscription.sourcePage717.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 717
+        printedPage: '717'
+        pageRegionIdentifier: p717-cf
+  - blockReference: cf:sourceTranscription.sourcePage717.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 717
+        printedPage: '717'
+        pageRegionIdentifier: p717-cf
+  - blockReference: cf:sourceTranscription.sourcePage717.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 717
+        printedPage: '717'
+        pageRegionIdentifier: p717-cf
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - blockReference: cf:sourceTranscription.sourcePage718.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 718
+        printedPage: '718'
+        pageRegionIdentifier: p718-cf
+  - blockReference: cf:sourceTranscription.sourcePage718.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 718
+        printedPage: '718'
+        pageRegionIdentifier: p718-cf
+  - blockReference: cf:sourceTranscription.sourcePage718.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 718
+        printedPage: '718'
+        pageRegionIdentifier: p718-cf
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+assets:
+  - path: ../assets/cf/cf-page-715-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: a5ee50561cba6bfaace43d7d38811ac5a917012130fa0bf1ad5bfe32a65be903
+    alternativeText: PDF 페이지 715의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 715 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 872
+    outputPixelDimensions:
+      - 714
+      - 872
+    sourceCrop:
+      - 0.05
+      - 0.1724
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 715
+        printedPage: '715'
+        pageRegionIdentifier: p715-cf
+        sourceBoundingBox:
+          - 0.05
+          - 0.1724
+          - 0.95
+          - 0.95
+  - path: ../assets/cf/cf-page-716-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: a971fd9f0d020dcb43de63846c73378205c0d18be69933e4d9fee7e5af153d29
+    alternativeText: PDF 페이지 716의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 716 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 953
+    outputPixelDimensions:
+      - 714
+      - 953
+    sourceCrop:
+      - 0.05
+      - 0.1
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 716
+        printedPage: '716'
+        pageRegionIdentifier: p716-cf
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - path: ../assets/cf/cf-page-717-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: a9d72f7e88f09057e0544615cb980c677f42de8a0a580ae69d9b8dc462ccc48f
+    alternativeText: PDF 페이지 717의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 717 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 953
+    outputPixelDimensions:
+      - 714
+      - 953
+    sourceCrop:
+      - 0.05
+      - 0.1
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 717
+        printedPage: '717'
+        pageRegionIdentifier: p717-cf
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - path: ../assets/cf/cf-page-718-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: 1ffc8402048ecdf3db15c0723922fb38eeb9848fa2a5518988bc6a737a3e7c0d
+    alternativeText: PDF 페이지 718의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 718 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 953
+    outputPixelDimensions:
+      - 714
+      - 953
+    sourceCrop:
+      - 0.05
+      - 0.1
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 718
+        printedPage: '718'
+        pageRegionIdentifier: p718-cf
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95

@@ -1,0 +1,65 @@
+schemaVersion: 1
+criterionSlug: hv-12
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: hv-12:sourceTranscription.heading:1
+    publicationDisposition: derived
+    derivationType: structuralHeading
+    sourceSpans:
+      - physicalPage: 826
+        printedPage: '826'
+        pageRegionIdentifier: p826-hv-12
+  - blockReference: hv-12:sourceTranscription.sourcePage826.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 826
+        printedPage: '826'
+        pageRegionIdentifier: p826-hv-12
+  - blockReference: hv-12:sourceTranscription.sourcePage826.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 826
+        printedPage: '826'
+        pageRegionIdentifier: p826-hv-12
+  - blockReference: hv-12:sourceTranscription.sourcePage826.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 826
+        printedPage: '826'
+        pageRegionIdentifier: p826-hv-12
+        sourceBoundingBox:
+          - 0.05
+          - 0.1724
+          - 0.95
+          - 0.95
+assets:
+  - path: ../assets/hv-12/hv-12-page-826-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: 3187445e631cd4efc3c9c909c4a0813faabc4925860a913d8e84768d63417f9e
+    alternativeText: PDF 페이지 826의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 826 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 872
+    outputPixelDimensions:
+      - 714
+      - 872
+    sourceCrop:
+      - 0.05
+      - 0.1724
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 826
+        printedPage: '826'
+        pageRegionIdentifier: p826-hv-12
+        sourceBoundingBox:
+          - 0.05
+          - 0.1724
+          - 0.95
+          - 0.95

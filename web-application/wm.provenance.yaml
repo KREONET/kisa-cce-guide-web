@@ -1,0 +1,436 @@
+schemaVersion: 1
+criterionSlug: wm
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: wm:sourceTranscription.heading:1
+    publicationDisposition: derived
+    derivationType: structuralHeading
+    sourceSpans:
+      - physicalPage: 779
+        printedPage: '779'
+        pageRegionIdentifier: p779-wm
+  - blockReference: wm:sourceTranscription.sourcePage779.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 779
+        printedPage: '779'
+        pageRegionIdentifier: p779-wm
+  - blockReference: wm:sourceTranscription.sourcePage779.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 779
+        printedPage: '779'
+        pageRegionIdentifier: p779-wm
+  - blockReference: wm:sourceTranscription.sourcePage779.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 779
+        printedPage: '779'
+        pageRegionIdentifier: p779-wm
+        sourceBoundingBox:
+          - 0.05
+          - 0.1924
+          - 0.95
+          - 0.95
+  - blockReference: wm:sourceTranscription.sourcePage780.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 780
+        printedPage: '780'
+        pageRegionIdentifier: p780-wm
+  - blockReference: wm:sourceTranscription.sourcePage780.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 780
+        printedPage: '780'
+        pageRegionIdentifier: p780-wm
+  - blockReference: wm:sourceTranscription.sourcePage780.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 780
+        printedPage: '780'
+        pageRegionIdentifier: p780-wm
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - blockReference: wm:sourceTranscription.sourcePage781.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 781
+        printedPage: '781'
+        pageRegionIdentifier: p781-wm
+  - blockReference: wm:sourceTranscription.sourcePage781.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 781
+        printedPage: '781'
+        pageRegionIdentifier: p781-wm
+  - blockReference: wm:sourceTranscription.sourcePage781.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 781
+        printedPage: '781'
+        pageRegionIdentifier: p781-wm
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - blockReference: wm:sourceTranscription.sourcePage782.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 782
+        printedPage: '782'
+        pageRegionIdentifier: p782-wm
+  - blockReference: wm:sourceTranscription.sourcePage782.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 782
+        printedPage: '782'
+        pageRegionIdentifier: p782-wm
+  - blockReference: wm:sourceTranscription.sourcePage782.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 782
+        printedPage: '782'
+        pageRegionIdentifier: p782-wm
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - blockReference: wm:sourceTranscription.sourcePage783.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 783
+        printedPage: '783'
+        pageRegionIdentifier: p783-wm
+  - blockReference: wm:sourceTranscription.sourcePage783.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 783
+        printedPage: '783'
+        pageRegionIdentifier: p783-wm
+  - blockReference: wm:sourceTranscription.sourcePage783.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 783
+        printedPage: '783'
+        pageRegionIdentifier: p783-wm
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - blockReference: wm:sourceTranscription.sourcePage784.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 784
+        printedPage: '784'
+        pageRegionIdentifier: p784-wm
+  - blockReference: wm:sourceTranscription.sourcePage784.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 784
+        printedPage: '784'
+        pageRegionIdentifier: p784-wm
+  - blockReference: wm:sourceTranscription.sourcePage784.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 784
+        printedPage: '784'
+        pageRegionIdentifier: p784-wm
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - blockReference: wm:sourceTranscription.sourcePage785.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 785
+        printedPage: '785'
+        pageRegionIdentifier: p785-wm
+  - blockReference: wm:sourceTranscription.sourcePage785.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 785
+        printedPage: '785'
+        pageRegionIdentifier: p785-wm
+  - blockReference: wm:sourceTranscription.sourcePage785.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 785
+        printedPage: '785'
+        pageRegionIdentifier: p785-wm
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - blockReference: wm:sourceTranscription.sourcePage786.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 786
+        printedPage: '786'
+        pageRegionIdentifier: p786-wm
+  - blockReference: wm:sourceTranscription.sourcePage786.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 786
+        printedPage: '786'
+        pageRegionIdentifier: p786-wm
+  - blockReference: wm:sourceTranscription.sourcePage786.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 786
+        printedPage: '786'
+        pageRegionIdentifier: p786-wm
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+assets:
+  - path: ../assets/wm/wm-page-779-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: fdeab0fe48674e84c92e41e8bb8c48788240b9b33dd12fd08fb5a558028d4811
+    alternativeText: PDF 페이지 779의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 779 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 850
+    outputPixelDimensions:
+      - 714
+      - 850
+    sourceCrop:
+      - 0.05
+      - 0.1924
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 779
+        printedPage: '779'
+        pageRegionIdentifier: p779-wm
+        sourceBoundingBox:
+          - 0.05
+          - 0.1924
+          - 0.95
+          - 0.95
+  - path: ../assets/wm/wm-page-780-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: beadb683377953df4266d36a8a879592e2c2a54a350520042853071e87f9800b
+    alternativeText: PDF 페이지 780의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 780 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 953
+    outputPixelDimensions:
+      - 714
+      - 953
+    sourceCrop:
+      - 0.05
+      - 0.1
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 780
+        printedPage: '780'
+        pageRegionIdentifier: p780-wm
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - path: ../assets/wm/wm-page-781-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: 0714600f26ebac4598e74e304069f8462abc65ee26a03e6002db77563dded81b
+    alternativeText: PDF 페이지 781의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 781 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 953
+    outputPixelDimensions:
+      - 714
+      - 953
+    sourceCrop:
+      - 0.05
+      - 0.1
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 781
+        printedPage: '781'
+        pageRegionIdentifier: p781-wm
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - path: ../assets/wm/wm-page-782-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: 7917a131d97846f86c3abdc444c5fea189c0ea71334f754559cec81734f8d8a2
+    alternativeText: PDF 페이지 782의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 782 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 953
+    outputPixelDimensions:
+      - 714
+      - 953
+    sourceCrop:
+      - 0.05
+      - 0.1
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 782
+        printedPage: '782'
+        pageRegionIdentifier: p782-wm
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - path: ../assets/wm/wm-page-783-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: 1aa1dc2347ac6af26734a316dc0b91bb8f24a94562dc2ea66c189d9bdeb1f7aa
+    alternativeText: PDF 페이지 783의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 783 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 953
+    outputPixelDimensions:
+      - 714
+      - 953
+    sourceCrop:
+      - 0.05
+      - 0.1
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 783
+        printedPage: '783'
+        pageRegionIdentifier: p783-wm
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - path: ../assets/wm/wm-page-784-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: 65dbdcb69d85d1045db9dfb8ec508c5fe7acfbc69d8002036801c400f5da9b49
+    alternativeText: PDF 페이지 784의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 784 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 953
+    outputPixelDimensions:
+      - 714
+      - 953
+    sourceCrop:
+      - 0.05
+      - 0.1
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 784
+        printedPage: '784'
+        pageRegionIdentifier: p784-wm
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - path: ../assets/wm/wm-page-785-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: b19131ae85a1f5e13a824ebe9820d001e709a86c6d0a35c11237b4d81d9d029a
+    alternativeText: PDF 페이지 785의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 785 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 953
+    outputPixelDimensions:
+      - 714
+      - 953
+    sourceCrop:
+      - 0.05
+      - 0.1
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 785
+        printedPage: '785'
+        pageRegionIdentifier: p785-wm
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - path: ../assets/wm/wm-page-786-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: 84fae6c3476346891ed4f4ff2396cfedec60245594e193ba6c28f0a28637ada4
+    alternativeText: PDF 페이지 786의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 786 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 953
+    outputPixelDimensions:
+      - 714
+      - 953
+    sourceCrop:
+      - 0.05
+      - 0.1
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 786
+        printedPage: '786'
+        pageRegionIdentifier: p786-wm
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95

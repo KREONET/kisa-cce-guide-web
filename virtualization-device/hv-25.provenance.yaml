@@ -1,0 +1,65 @@
+schemaVersion: 1
+criterionSlug: hv-25
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: hv-25:sourceTranscription.heading:1
+    publicationDisposition: derived
+    derivationType: structuralHeading
+    sourceSpans:
+      - physicalPage: 850
+        printedPage: '850'
+        pageRegionIdentifier: p850-hv-25
+  - blockReference: hv-25:sourceTranscription.sourcePage850.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 850
+        printedPage: '850'
+        pageRegionIdentifier: p850-hv-25
+  - blockReference: hv-25:sourceTranscription.sourcePage850.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 850
+        printedPage: '850'
+        pageRegionIdentifier: p850-hv-25
+  - blockReference: hv-25:sourceTranscription.sourcePage850.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 850
+        printedPage: '850'
+        pageRegionIdentifier: p850-hv-25
+        sourceBoundingBox:
+          - 0.05
+          - 0.1741
+          - 0.95
+          - 0.95
+assets:
+  - path: ../assets/hv-25/hv-25-page-850-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: 11cf5cf9e1dfbccc01e7993ab1d7d6c48c5c830bc0bebdd774ebf1ac92d10954
+    alternativeText: PDF 페이지 850의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 850 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 870
+    outputPixelDimensions:
+      - 714
+      - 870
+    sourceCrop:
+      - 0.05
+      - 0.1741
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 850
+        printedPage: '850'
+        pageRegionIdentifier: p850-hv-25
+        sourceBoundingBox:
+          - 0.05
+          - 0.1741
+          - 0.95
+          - 0.95

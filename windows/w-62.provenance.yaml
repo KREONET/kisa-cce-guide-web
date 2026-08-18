@@ -1,0 +1,65 @@
+schemaVersion: 1
+criterionSlug: w-62
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: w-62:sourceTranscription.heading:1
+    publicationDisposition: derived
+    derivationType: structuralHeading
+    sourceSpans:
+      - physicalPage: 268
+        printedPage: '268'
+        pageRegionIdentifier: p268-w-62
+  - blockReference: w-62:sourceTranscription.sourcePage268.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 268
+        printedPage: '268'
+        pageRegionIdentifier: p268-w-62
+  - blockReference: w-62:sourceTranscription.sourcePage268.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 268
+        printedPage: '268'
+        pageRegionIdentifier: p268-w-62
+  - blockReference: w-62:sourceTranscription.sourcePage268.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 268
+        printedPage: '268'
+        pageRegionIdentifier: p268-w-62
+        sourceBoundingBox:
+          - 0.05
+          - 0.1741
+          - 0.95
+          - 0.95
+assets:
+  - path: ../assets/w-62/w-62-page-268-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: d54f01d0cac38938936eea1f32b3036d211693d1ee89d9b9c62b3104e0a4ec4c
+    alternativeText: PDF 페이지 268의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 268 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 870
+    outputPixelDimensions:
+      - 714
+      - 870
+    sourceCrop:
+      - 0.05
+      - 0.1741
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 268
+        printedPage: '268'
+        pageRegionIdentifier: p268-w-62
+        sourceBoundingBox:
+          - 0.05
+          - 0.1741
+          - 0.95
+          - 0.95

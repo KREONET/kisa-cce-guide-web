@@ -199,6 +199,7 @@ Source registry는 schema version을 가져야 한다. 문서 식별자와 check
 라이선스 승인 상태는 `pending`, `approved`, `rejected` 중 하나를 사용한다.
 
 라이선스 근거와 이용 조건이 확인되지 않은 상태에서는 공개 배포를 승인할 수 없다.
+라이선스 승인 전에는 생성 사이트 artifact에 원본 PDF를 복사하지 않고, 원문 게시물 URL만 제공한다.
 
 Taxonomy registry는 분야, 분류, 대상의 identifier, 표시 label, source label, order를 관리한다.
 Criterion metadata는 taxonomy identifier만 저장하고, 표시 label과 order는 registry에서 생성한다.
@@ -373,7 +374,10 @@ sourceAnnotations:
 - `webApplicationCriterion`은 Web Application 21개 항목에 사용한다.
 - 두 model은 공통 H2 구조를 사용하되, `점검 및 조치 사례` 아래의 허용 역할과 heading 계층을 별도 schema로 검증한다.
 - `systemCriterion`의 동적 heading은 taxonomy에 등록된 운영체제, 제품군, 서비스, 프로토콜이어야 한다.
+- `systemCriterion`은 플랫폼 공통 보충 내용을 위해 `추가 지침` H3 역할과 그 아래 `guidanceTopic` H4 역할을 허용한다.
 - `webApplicationCriterion`의 동적 heading은 공격 유형, 점검 방법, 조치 방법, 구현 언어, 제품 역할 중 하나여야 한다.
+- `extractedCriterion`은 전체 검색·열람을 위한 자동 전사 상태다. `원문 전사` H2와 `PDF 페이지 N` H3만 허용하며, 사람 검토 전에는 `structured` 또는 `approved`로 승격할 수 없다.
+- `extractedCriterion`의 `technicalLiteralInventoryMode`는 `sourceTranscriptSearchableText`를 사용한다. 기술 literal의 typed AST 추출이 완료된 것으로 표시해서는 안 된다.
 - 모든 분야를 U-01 구조에 강제로 맞춰서는 안 된다.
 - Schema에 등록되지 않은 역할의 자유 형식 heading은 허용하지 않는다.
 - 새로운 content model을 추가하려면 metadata schema, AST schema, parser, renderer, validator, reference fixture를 함께 추가해야 한다.
@@ -483,7 +487,7 @@ U-01의 다음 항목은 annotation 동작을 검증하는 fixture로 사용한�
 - 원문의 주의사항은 영향을 받는 단계와 인접하게 배치한다.
 - 명령어와 설정값은 fenced code block으로 표현한다.
 - 모든 fenced code block에 `shell`, `ini`, `yaml`, `text` 등 정확한 언어를 지정한다.
-- Fenced code info string의 두 번째 token은 `command`, `configuration`, `output`, `literal` 중 하나를 사용한다.
+- Fenced code info string의 두 번째 token은 `command`, `configuration`, `output`, `literal`, `transcription` 중 하나를 사용한다.
 - 명령과 실행 결과를 같은 code block에 혼합해서는 안 된다.
 - 파일 경로, 설정 키, 명령 이름은 inline code로 표현한다.
 - 코드 블록의 원문 대소문자, 공백, 경로, 따옴표, 주석, 줄바꿈을 보존한다.
@@ -560,6 +564,7 @@ U-01의 다음 항목은 annotation 동작을 검증하는 fixture로 사용한�
 - 명령어, 설정값, 판단 기준을 이미지로만 제공해서는 안 된다.
 - 원문 caption과 source page를 기록한다.
 - Asset provenance는 source page, crop 좌표, pixel dimensions, checksum, caption, alternative text를 포함해야 한다.
+- PDF page crop은 `assetType: sourcePageCrop`과 고정된 `renderingProfileIdentifier`를 기록한다. 최초 생성한 canonical crop의 pixel dimensions를 원본과 출력 dimensions로 기록하고, embedded image의 원본 해상도로 표현해서는 안 된다.
 - Markdown image path는 `.provenance.yaml`의 asset path와 정확히 일치해야 한다.
 - Asset provenance checksum과 실제 canonical asset byte의 SHA-256 checksum이 일치해야 한다.
 - 원본보다 확대된 pixel dimensions를 원본 해상도로 간주해서는 안 된다.
@@ -896,6 +901,7 @@ RFC 8785로 직렬화한 뒤, 이 문서의 aggregate checksum record 방식으�
 - 모든 `published`·`derived` region review record의 `workflowStatus`가 `approved`여야 한다.
 - `sourceAnomalyStatus: reviewRequired`인 공개 region이 0건이어야 한다.
 - 기준 manifest에 382개 점검항목이 존재해야 한다.
+- `extractedCriterion` 상태의 점검항목이 0건이어야 한다.
 - 382개 점검항목의 자동 검사와 원문 시각 대조가 완료되어야 한다.
 - 382개 점검항목의 `workflowStatus`가 `approved`여야 한다.
 - `sourceAnomalyStatus: reviewRequired`인 항목이 0건이어야 한다.
@@ -911,6 +917,7 @@ RFC 8785로 직렬화한 뒤, 이 문서의 aggregate checksum record 방식으�
 - 자동 접근성 검사에서 critical과 serious 오류가 0건이어야 한다.
 - 허용된 표와 code block 외 page-level horizontal overflow가 0건이어야 한다.
 - canonical 콘텐츠만으로 모든 생성물을 재생성할 수 있어야 한다.
+- 브라우저 QA 보고서는 빌드 산출물과 분리해 저장하고, 현재 canonical corpus checksum과 test profile version을 참조해야 한다. 빌드가 QA 보고서를 생성하거나 덮어써서는 안 된다.
 - 두 번의 clean build에서 deterministic artifact checksum이 일치해야 한다.
 - Source registry의 `licenseApprovalStatus`가 `approved`이고, 라이선스 유형, 이용 조건, 근거 URL,
   출처 표시문, 검토자, 검토일이 모두 존재해야 한다.

@@ -1,0 +1,224 @@
+schemaVersion: 1
+criterionSlug: n-06
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: n-06:sourceTranscription.heading:1
+    publicationDisposition: derived
+    derivationType: structuralHeading
+    sourceSpans:
+      - physicalPage: 406
+        printedPage: '406'
+        pageRegionIdentifier: p406-n-06
+  - blockReference: n-06:sourceTranscription.sourcePage406.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 406
+        printedPage: '406'
+        pageRegionIdentifier: p406-n-06
+  - blockReference: n-06:sourceTranscription.sourcePage406.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 406
+        printedPage: '406'
+        pageRegionIdentifier: p406-n-06
+  - blockReference: n-06:sourceTranscription.sourcePage406.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 406
+        printedPage: '406'
+        pageRegionIdentifier: p406-n-06
+        sourceBoundingBox:
+          - 0.05
+          - 0.1741
+          - 0.95
+          - 0.95
+  - blockReference: n-06:sourceTranscription.sourcePage407.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 407
+        printedPage: '407'
+        pageRegionIdentifier: p407-n-06
+  - blockReference: n-06:sourceTranscription.sourcePage407.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 407
+        printedPage: '407'
+        pageRegionIdentifier: p407-n-06
+  - blockReference: n-06:sourceTranscription.sourcePage407.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 407
+        printedPage: '407'
+        pageRegionIdentifier: p407-n-06
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - blockReference: n-06:sourceTranscription.sourcePage408.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 408
+        printedPage: '408'
+        pageRegionIdentifier: p408-n-06
+  - blockReference: n-06:sourceTranscription.sourcePage408.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 408
+        printedPage: '408'
+        pageRegionIdentifier: p408-n-06
+  - blockReference: n-06:sourceTranscription.sourcePage408.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 408
+        printedPage: '408'
+        pageRegionIdentifier: p408-n-06
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - blockReference: n-06:sourceTranscription.sourcePage409.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 409
+        printedPage: '409'
+        pageRegionIdentifier: p409-n-06
+  - blockReference: n-06:sourceTranscription.sourcePage409.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 409
+        printedPage: '409'
+        pageRegionIdentifier: p409-n-06
+  - blockReference: n-06:sourceTranscription.sourcePage409.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 409
+        printedPage: '409'
+        pageRegionIdentifier: p409-n-06
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+assets:
+  - path: ../assets/n-06/n-06-page-406-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: f3e1898f61630ffbde2a0ae32abaf5652d2446ad82b804d018836b5c4cb57d3c
+    alternativeText: PDF 페이지 406의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 406 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 870
+    outputPixelDimensions:
+      - 714
+      - 870
+    sourceCrop:
+      - 0.05
+      - 0.1741
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 406
+        printedPage: '406'
+        pageRegionIdentifier: p406-n-06
+        sourceBoundingBox:
+          - 0.05
+          - 0.1741
+          - 0.95
+          - 0.95
+  - path: ../assets/n-06/n-06-page-407-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: fe359259631dd2d5b79e2d7b77ea246e2da666001f3679d1c3957b4780bf37b6
+    alternativeText: PDF 페이지 407의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 407 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 953
+    outputPixelDimensions:
+      - 714
+      - 953
+    sourceCrop:
+      - 0.05
+      - 0.1
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 407
+        printedPage: '407'
+        pageRegionIdentifier: p407-n-06
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - path: ../assets/n-06/n-06-page-408-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: e241198fe788ef22559f5c6a410774a49a5d33aa9b3026a409407121bbb562f8
+    alternativeText: PDF 페이지 408의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 408 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 953
+    outputPixelDimensions:
+      - 714
+      - 953
+    sourceCrop:
+      - 0.05
+      - 0.1
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 408
+        printedPage: '408'
+        pageRegionIdentifier: p408-n-06
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - path: ../assets/n-06/n-06-page-409-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: 9d3118e2b58b0b668941603f144f6bbc17c0faf385894d6e827b2f016cd6036a
+    alternativeText: PDF 페이지 409의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 409 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 953
+    outputPixelDimensions:
+      - 714
+      - 953
+    sourceCrop:
+      - 0.05
+      - 0.1
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 409
+        printedPage: '409'
+        pageRegionIdentifier: p409-n-06
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95

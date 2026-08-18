@@ -1,0 +1,171 @@
+schemaVersion: 1
+criterionSlug: c-18
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: c-18:sourceTranscription.heading:1
+    publicationDisposition: derived
+    derivationType: structuralHeading
+    sourceSpans:
+      - physicalPage: 502
+        printedPage: '502'
+        pageRegionIdentifier: p502-c-18
+  - blockReference: c-18:sourceTranscription.sourcePage502.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 502
+        printedPage: '502'
+        pageRegionIdentifier: p502-c-18
+  - blockReference: c-18:sourceTranscription.sourcePage502.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 502
+        printedPage: '502'
+        pageRegionIdentifier: p502-c-18
+  - blockReference: c-18:sourceTranscription.sourcePage502.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 502
+        printedPage: '502'
+        pageRegionIdentifier: p502-c-18
+        sourceBoundingBox:
+          - 0.05
+          - 0.1741
+          - 0.95
+          - 0.95
+  - blockReference: c-18:sourceTranscription.sourcePage503.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 503
+        printedPage: '503'
+        pageRegionIdentifier: p503-c-18
+  - blockReference: c-18:sourceTranscription.sourcePage503.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 503
+        printedPage: '503'
+        pageRegionIdentifier: p503-c-18
+  - blockReference: c-18:sourceTranscription.sourcePage503.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 503
+        printedPage: '503'
+        pageRegionIdentifier: p503-c-18
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - blockReference: c-18:sourceTranscription.sourcePage504.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 504
+        printedPage: '504'
+        pageRegionIdentifier: p504-c-18
+  - blockReference: c-18:sourceTranscription.sourcePage504.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 504
+        printedPage: '504'
+        pageRegionIdentifier: p504-c-18
+  - blockReference: c-18:sourceTranscription.sourcePage504.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 504
+        printedPage: '504'
+        pageRegionIdentifier: p504-c-18
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+assets:
+  - path: ../assets/c-18/c-18-page-502-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: 7623f8df8bb12b23c20601155ffa4df72a1c779bfc0df2b2422258698601107e
+    alternativeText: PDF 페이지 502의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 502 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 870
+    outputPixelDimensions:
+      - 714
+      - 870
+    sourceCrop:
+      - 0.05
+      - 0.1741
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 502
+        printedPage: '502'
+        pageRegionIdentifier: p502-c-18
+        sourceBoundingBox:
+          - 0.05
+          - 0.1741
+          - 0.95
+          - 0.95
+  - path: ../assets/c-18/c-18-page-503-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: 917aedae08fa546665c0084a042be9fa2e2124deabea9bcc309cc73173cec300
+    alternativeText: PDF 페이지 503의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 503 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 953
+    outputPixelDimensions:
+      - 714
+      - 953
+    sourceCrop:
+      - 0.05
+      - 0.1
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 503
+        printedPage: '503'
+        pageRegionIdentifier: p503-c-18
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - path: ../assets/c-18/c-18-page-504-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: 0ffbb8da99481bceb4587345828ccb16c30f3790ac67d8564f4e015532d238ac
+    alternativeText: PDF 페이지 504의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 504 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 953
+    outputPixelDimensions:
+      - 714
+      - 953
+    sourceCrop:
+      - 0.05
+      - 0.1
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 504
+        printedPage: '504'
+        pageRegionIdentifier: p504-c-18
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95

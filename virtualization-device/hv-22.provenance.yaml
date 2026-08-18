@@ -1,0 +1,65 @@
+schemaVersion: 1
+criterionSlug: hv-22
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: hv-22:sourceTranscription.heading:1
+    publicationDisposition: derived
+    derivationType: structuralHeading
+    sourceSpans:
+      - physicalPage: 845
+        printedPage: '845'
+        pageRegionIdentifier: p845-hv-22
+  - blockReference: hv-22:sourceTranscription.sourcePage845.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 845
+        printedPage: '845'
+        pageRegionIdentifier: p845-hv-22
+  - blockReference: hv-22:sourceTranscription.sourcePage845.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 845
+        printedPage: '845'
+        pageRegionIdentifier: p845-hv-22
+  - blockReference: hv-22:sourceTranscription.sourcePage845.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 845
+        printedPage: '845'
+        pageRegionIdentifier: p845-hv-22
+        sourceBoundingBox:
+          - 0.05
+          - 0.1724
+          - 0.95
+          - 0.95
+assets:
+  - path: ../assets/hv-22/hv-22-page-845-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: 248d3d5214b7ccbd06f7f5415e7cef4301fbc8b6da26227eb05d69542da9bb71
+    alternativeText: PDF 페이지 845의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 845 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 872
+    outputPixelDimensions:
+      - 714
+      - 872
+    sourceCrop:
+      - 0.05
+      - 0.1724
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 845
+        printedPage: '845'
+        pageRegionIdentifier: p845-hv-22
+        sourceBoundingBox:
+          - 0.05
+          - 0.1724
+          - 0.95
+          - 0.95

@@ -1,0 +1,65 @@
+schemaVersion: 1
+criterionSlug: ca-01
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: ca-01:sourceTranscription.heading:1
+    publicationDisposition: derived
+    derivationType: structuralHeading
+    sourceSpans:
+      - physicalPage: 854
+        printedPage: '854'
+        pageRegionIdentifier: p854-ca-01
+  - blockReference: ca-01:sourceTranscription.sourcePage854.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 854
+        printedPage: '854'
+        pageRegionIdentifier: p854-ca-01
+  - blockReference: ca-01:sourceTranscription.sourcePage854.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 854
+        printedPage: '854'
+        pageRegionIdentifier: p854-ca-01
+  - blockReference: ca-01:sourceTranscription.sourcePage854.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 854
+        printedPage: '854'
+        pageRegionIdentifier: p854-ca-01
+        sourceBoundingBox:
+          - 0.05
+          - 0.1741
+          - 0.95
+          - 0.95
+assets:
+  - path: ../assets/ca-01/ca-01-page-854-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: 0e62bea2021f98b08cf36557be004c9b1c4ab12b211d508e390a497f085f253e
+    alternativeText: PDF 페이지 854의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 854 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 870
+    outputPixelDimensions:
+      - 714
+      - 870
+    sourceCrop:
+      - 0.05
+      - 0.1741
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 854
+        printedPage: '854'
+        pageRegionIdentifier: p854-ca-01
+        sourceBoundingBox:
+          - 0.05
+          - 0.1741
+          - 0.95
+          - 0.95

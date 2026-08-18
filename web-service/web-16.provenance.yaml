@@ -1,0 +1,224 @@
+schemaVersion: 1
+criterionSlug: web-16
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: web-16:sourceTranscription.heading:1
+    publicationDisposition: derived
+    derivationType: structuralHeading
+    sourceSpans:
+      - physicalPage: 316
+        printedPage: '316'
+        pageRegionIdentifier: p316-web-16
+  - blockReference: web-16:sourceTranscription.sourcePage316.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 316
+        printedPage: '316'
+        pageRegionIdentifier: p316-web-16
+  - blockReference: web-16:sourceTranscription.sourcePage316.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 316
+        printedPage: '316'
+        pageRegionIdentifier: p316-web-16
+  - blockReference: web-16:sourceTranscription.sourcePage316.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 316
+        printedPage: '316'
+        pageRegionIdentifier: p316-web-16
+        sourceBoundingBox:
+          - 0.05
+          - 0.1724
+          - 0.95
+          - 0.95
+  - blockReference: web-16:sourceTranscription.sourcePage317.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 317
+        printedPage: '317'
+        pageRegionIdentifier: p317-web-16
+  - blockReference: web-16:sourceTranscription.sourcePage317.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 317
+        printedPage: '317'
+        pageRegionIdentifier: p317-web-16
+  - blockReference: web-16:sourceTranscription.sourcePage317.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 317
+        printedPage: '317'
+        pageRegionIdentifier: p317-web-16
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - blockReference: web-16:sourceTranscription.sourcePage318.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 318
+        printedPage: '318'
+        pageRegionIdentifier: p318-web-16
+  - blockReference: web-16:sourceTranscription.sourcePage318.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 318
+        printedPage: '318'
+        pageRegionIdentifier: p318-web-16
+  - blockReference: web-16:sourceTranscription.sourcePage318.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 318
+        printedPage: '318'
+        pageRegionIdentifier: p318-web-16
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - blockReference: web-16:sourceTranscription.sourcePage319.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 319
+        printedPage: '319'
+        pageRegionIdentifier: p319-web-16
+  - blockReference: web-16:sourceTranscription.sourcePage319.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 319
+        printedPage: '319'
+        pageRegionIdentifier: p319-web-16
+  - blockReference: web-16:sourceTranscription.sourcePage319.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 319
+        printedPage: '319'
+        pageRegionIdentifier: p319-web-16
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+assets:
+  - path: ../assets/web-16/web-16-page-316-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: 8c3d9795c617dffb415449441bd28f41733f321e702044d57b7236dbfe080465
+    alternativeText: PDF 페이지 316의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 316 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 872
+    outputPixelDimensions:
+      - 714
+      - 872
+    sourceCrop:
+      - 0.05
+      - 0.1724
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 316
+        printedPage: '316'
+        pageRegionIdentifier: p316-web-16
+        sourceBoundingBox:
+          - 0.05
+          - 0.1724
+          - 0.95
+          - 0.95
+  - path: ../assets/web-16/web-16-page-317-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: 6e28f20303eb599468f9ba11a8f7891c10546d8fa8de2a8117ca4a92897c1f80
+    alternativeText: PDF 페이지 317의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 317 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 953
+    outputPixelDimensions:
+      - 714
+      - 953
+    sourceCrop:
+      - 0.05
+      - 0.1
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 317
+        printedPage: '317'
+        pageRegionIdentifier: p317-web-16
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - path: ../assets/web-16/web-16-page-318-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: d4fc0a21b03469d17f3a368db05e77d8828412d29efa633ebfe452aeacf58a26
+    alternativeText: PDF 페이지 318의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 318 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 953
+    outputPixelDimensions:
+      - 714
+      - 953
+    sourceCrop:
+      - 0.05
+      - 0.1
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 318
+        printedPage: '318'
+        pageRegionIdentifier: p318-web-16
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - path: ../assets/web-16/web-16-page-319-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: 0ea8a7e2b3bc8ea13331408fbd391d212e222e9bb6628a6546351f97a1a27581
+    alternativeText: PDF 페이지 319의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 319 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 953
+    outputPixelDimensions:
+      - 714
+      - 953
+    sourceCrop:
+      - 0.05
+      - 0.1
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 319
+        printedPage: '319'
+        pageRegionIdentifier: p319-web-16
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95

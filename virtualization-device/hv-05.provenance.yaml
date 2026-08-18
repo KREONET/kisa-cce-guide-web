@@ -1,0 +1,224 @@
+schemaVersion: 1
+criterionSlug: hv-05
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: hv-05:sourceTranscription.heading:1
+    publicationDisposition: derived
+    derivationType: structuralHeading
+    sourceSpans:
+      - physicalPage: 800
+        printedPage: '800'
+        pageRegionIdentifier: p800-hv-05
+  - blockReference: hv-05:sourceTranscription.sourcePage800.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 800
+        printedPage: '800'
+        pageRegionIdentifier: p800-hv-05
+  - blockReference: hv-05:sourceTranscription.sourcePage800.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 800
+        printedPage: '800'
+        pageRegionIdentifier: p800-hv-05
+  - blockReference: hv-05:sourceTranscription.sourcePage800.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 800
+        printedPage: '800'
+        pageRegionIdentifier: p800-hv-05
+        sourceBoundingBox:
+          - 0.05
+          - 0.1724
+          - 0.95
+          - 0.95
+  - blockReference: hv-05:sourceTranscription.sourcePage801.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 801
+        printedPage: '801'
+        pageRegionIdentifier: p801-hv-05
+  - blockReference: hv-05:sourceTranscription.sourcePage801.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 801
+        printedPage: '801'
+        pageRegionIdentifier: p801-hv-05
+  - blockReference: hv-05:sourceTranscription.sourcePage801.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 801
+        printedPage: '801'
+        pageRegionIdentifier: p801-hv-05
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - blockReference: hv-05:sourceTranscription.sourcePage802.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 802
+        printedPage: '802'
+        pageRegionIdentifier: p802-hv-05
+  - blockReference: hv-05:sourceTranscription.sourcePage802.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 802
+        printedPage: '802'
+        pageRegionIdentifier: p802-hv-05
+  - blockReference: hv-05:sourceTranscription.sourcePage802.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 802
+        printedPage: '802'
+        pageRegionIdentifier: p802-hv-05
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - blockReference: hv-05:sourceTranscription.sourcePage803.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 803
+        printedPage: '803'
+        pageRegionIdentifier: p803-hv-05
+  - blockReference: hv-05:sourceTranscription.sourcePage803.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 803
+        printedPage: '803'
+        pageRegionIdentifier: p803-hv-05
+  - blockReference: hv-05:sourceTranscription.sourcePage803.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 803
+        printedPage: '803'
+        pageRegionIdentifier: p803-hv-05
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+assets:
+  - path: ../assets/hv-05/hv-05-page-800-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: 8071cae79dc6dff1d6ac951bbf0d3b1eaf262356cb09c3d99a4f08427310e167
+    alternativeText: PDF 페이지 800의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 800 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 872
+    outputPixelDimensions:
+      - 714
+      - 872
+    sourceCrop:
+      - 0.05
+      - 0.1724
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 800
+        printedPage: '800'
+        pageRegionIdentifier: p800-hv-05
+        sourceBoundingBox:
+          - 0.05
+          - 0.1724
+          - 0.95
+          - 0.95
+  - path: ../assets/hv-05/hv-05-page-801-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: 56009bae2ad3182d2387cb56edd447d92641325201e8df58d4297fe566c11c45
+    alternativeText: PDF 페이지 801의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 801 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 953
+    outputPixelDimensions:
+      - 714
+      - 953
+    sourceCrop:
+      - 0.05
+      - 0.1
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 801
+        printedPage: '801'
+        pageRegionIdentifier: p801-hv-05
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - path: ../assets/hv-05/hv-05-page-802-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: 06528376a84f8c51cf2e59ba310a9eb9462185658996f771e2ef216ef06331e9
+    alternativeText: PDF 페이지 802의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 802 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 953
+    outputPixelDimensions:
+      - 714
+      - 953
+    sourceCrop:
+      - 0.05
+      - 0.1
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 802
+        printedPage: '802'
+        pageRegionIdentifier: p802-hv-05
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95
+  - path: ../assets/hv-05/hv-05-page-803-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: cf679866a9d05b1c064f4f28e3844b68e1d5e1e050ffbd6b156ca329cdec3e1c
+    alternativeText: PDF 페이지 803의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 803 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 953
+    outputPixelDimensions:
+      - 714
+      - 953
+    sourceCrop:
+      - 0.05
+      - 0.1
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 803
+        printedPage: '803'
+        pageRegionIdentifier: p803-hv-05
+        sourceBoundingBox:
+          - 0.05
+          - 0.1
+          - 0.95
+          - 0.95

@@ -1,0 +1,65 @@
+schemaVersion: 1
+criterionSlug: u-19
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: u-19:sourceTranscription.heading:1
+    publicationDisposition: derived
+    derivationType: structuralHeading
+    sourceSpans:
+      - physicalPage: 45
+        printedPage: '45'
+        pageRegionIdentifier: p45-u-19
+  - blockReference: u-19:sourceTranscription.sourcePage45.heading:1
+    publicationDisposition: derived
+    derivationType: sourcePageHeading
+    sourceSpans:
+      - physicalPage: 45
+        printedPage: '45'
+        pageRegionIdentifier: p45-u-19
+  - blockReference: u-19:sourceTranscription.sourcePage45.transcription:1
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 45
+        printedPage: '45'
+        pageRegionIdentifier: p45-u-19
+  - blockReference: u-19:sourceTranscription.sourcePage45.image:1
+    publicationDisposition: derived
+    derivationType: pdfPageSourceCrop
+    sourceSpans:
+      - physicalPage: 45
+        printedPage: '45'
+        pageRegionIdentifier: p45-u-19
+        sourceBoundingBox:
+          - 0.05
+          - 0.1724
+          - 0.95
+          - 0.95
+assets:
+  - path: ../assets/u-19/u-19-page-45-source-region.png
+    assetType: sourcePageCrop
+    renderingProfileIdentifier: pdfium-png-indexed-96-v1
+    checksumAlgorithm: sha256
+    checksumValue: 7e2b50fa9a3a5e7cc3a71641d1dd6e2e24161dc72956ab769aca8bfc10958027
+    alternativeText: PDF 페이지 45의 원문 점검항목 영역
+    alternativeTextStatus: verificationRequired
+    caption: PDF 페이지 45 원문 점검항목 영역
+    originalPixelDimensions:
+      - 714
+      - 872
+    outputPixelDimensions:
+      - 714
+      - 872
+    sourceCrop:
+      - 0.05
+      - 0.1724
+      - 0.95
+      - 0.95
+    sourceSpans:
+      - physicalPage: 45
+        printedPage: '45'
+        pageRegionIdentifier: p45-u-19
+        sourceBoundingBox:
+          - 0.05
+          - 0.1724
+          - 0.95
+          - 0.95
