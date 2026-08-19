@@ -7,6 +7,8 @@ import json
 import shutil
 import subprocess
 import sys
+import time
+from collections import Counter
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import cast
@@ -29,7 +31,17 @@ from conversion.common import (
     repository_root,
     sha256_file,
 )
-from conversion.runtime_logging import add_logging_arguments, configure_runtime_logging
+from conversion.runtime_logging import (
+    RuntimeLogger,
+    add_logging_arguments,
+    configure_runtime_logging,
+)
+
+_CODEX_TYPE_NAME_CHARACTERS = frozenset(
+    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789._-"
+)
+_MAXIMUM_CODEX_TYPE_NAME_LENGTH = 64
+_MAXIMUM_THREAD_IDENTIFIER_LENGTH = 128
 
 
 def _codex_binary() -> Path:
@@ -54,20 +66,164 @@ def _codex_version(executable: Path) -> str:
     return completed_process.stdout.strip()
 
 
-def _last_event_error(events_path: Path) -> str | None:
-    """Return the final structured Codex error when a run fails."""
+def _safe_codex_type_name(value: object) -> str | None:
+    """Return one bounded event or item type without reading adjacent body fields."""
 
-    if not events_path.is_file():
+    if (
+        not isinstance(value, str)
+        or not value
+        or len(value) > _MAXIMUM_CODEX_TYPE_NAME_LENGTH
+        or any(character not in _CODEX_TYPE_NAME_CHARACTERS for character in value)
+    ):
         return None
-    for line in reversed(events_path.read_text(encoding="utf-8").splitlines()):
-        try:
-            event = json.loads(line)
-        except json.JSONDecodeError:
-            continue
-        if isinstance(event, dict) and event.get("type") == "error":
-            message = event.get("message")
-            return message if isinstance(message, str) else None
-    return None
+    return value
+
+
+def _safe_thread_identifier(value: object) -> str | None:
+    """Return a bounded identifier from a thread-started event."""
+
+    if (
+        not isinstance(value, str)
+        or not value
+        or len(value) > _MAXIMUM_THREAD_IDENTIFIER_LENGTH
+        or any(character not in _CODEX_TYPE_NAME_CHARACTERS for character in value)
+    ):
+        return None
+    return value
+
+
+def _codex_event_summary(events_path: Path) -> dict[str, object]:  # noqa: C901
+    """Summarize allowlisted metadata without retaining Codex content bodies."""
+
+    event_type_counts: Counter[str] = Counter()
+    item_type_counts: Counter[str] = Counter()
+    usage_token_counts: Counter[str] = Counter()
+    thread_identifier: str | None = None
+    total_event_count = 0
+    invalid_json_line_count = 0
+    if events_path.is_file():
+        with events_path.open("r", encoding="utf-8", errors="replace") as events_stream:
+            for line in events_stream:
+                try:
+                    event = json.loads(line)
+                except json.JSONDecodeError:
+                    invalid_json_line_count += 1
+                    continue
+                if not isinstance(event, dict):
+                    continue
+                total_event_count += 1
+                event_type = _safe_codex_type_name(event.get("type"))
+                if event_type is not None:
+                    event_type_counts[event_type] += 1
+                    if event_type == "thread.started" and thread_identifier is None:
+                        thread_identifier = _safe_thread_identifier(event.get("thread_id"))
+                item = event.get("item")
+                if isinstance(item, dict):
+                    item_type = _safe_codex_type_name(item.get("type"))
+                    if item_type is not None:
+                        item_type_counts[item_type] += 1
+                if event_type != "turn.completed":
+                    continue
+                usage = event.get("usage")
+                if not isinstance(usage, dict):
+                    continue
+                for key, value in usage.items():
+                    if (
+                        isinstance(key, str)
+                        and key.endswith("_tokens")
+                        and _safe_codex_type_name(key) is not None
+                        and isinstance(value, int)
+                        and not isinstance(value, bool)
+                        and value >= 0
+                    ):
+                        usage_token_counts[key] += value
+    return {
+        "event_type_counts": dict(sorted(event_type_counts.items())),
+        "invalid_json_line_count": invalid_json_line_count,
+        "item_type_counts": dict(sorted(item_type_counts.items())),
+        "thread_id": thread_identifier,
+        "total_event_count": total_event_count,
+        "usage": dict(sorted(usage_token_counts.items())),
+    }
+
+
+def _duration_seconds(started_at: float) -> float:
+    """Return a compact non-negative communication duration."""
+
+    return round(max(0.0, time.perf_counter() - started_at), 6)
+
+
+def _request_log_fields(  # noqa: PLR0913
+    *,
+    slug: str,
+    model: str | None,
+    codex_version: str,
+    image_count: int,
+    schema_path: Path,
+    task_identifier: JsonValue,
+    task_checksum: JsonValue,
+    result_path: Path,
+    events_path: Path,
+    error_path: Path,
+    run_path: Path,
+) -> dict[str, object]:
+    """Build the safe metadata shared by Codex request lifecycle records."""
+
+    return {
+        "slug": slug,
+        "model": model or "configured-default",
+        "codex_version": codex_version,
+        "image_count": image_count,
+        "schema_path": schema_path.resolve().as_posix(),
+        "task_identifier": task_identifier,
+        "task_checksum": task_checksum,
+        "output_paths": {
+            "events": events_path.resolve().as_posix(),
+            "result": result_path.resolve().as_posix(),
+            "run": run_path.resolve().as_posix(),
+            "stderr": error_path.resolve().as_posix(),
+        },
+    }
+
+
+def _log_response(  # noqa: PLR0913
+    runtime_logger: RuntimeLogger | None,
+    *,
+    completed: bool,
+    request_fields: dict[str, object],
+    exit_code: int | None,
+    duration_seconds: float,
+    result_checksum: str | None,
+    schema_validation: str,
+    event_summary: dict[str, object],
+    error_type: str | None = None,
+) -> None:
+    """Record one terminal response event using only allowlisted metadata."""
+
+    if runtime_logger is None:
+        return
+    fields = {
+        **request_fields,
+        **event_summary,
+        "exit_code": exit_code,
+        "duration_seconds": duration_seconds,
+        "result_checksum": result_checksum,
+        "schema_validation": schema_validation,
+    }
+    if error_type is not None:
+        fields["error_type"] = error_type
+    if completed:
+        runtime_logger.info(
+            "Codex response completed",
+            event="codex.response.completed",
+            **fields,
+        )
+    else:
+        runtime_logger.error(
+            "Codex response failed",
+            event="codex.response.failed",
+            **fields,
+        )
 
 
 def _task_image_paths(task: dict[str, JsonValue], *, root: Path) -> list[Path]:
@@ -161,13 +317,14 @@ def _validate_result_schema(result_path: Path, *, root: Path) -> dict[str, JsonV
     return result
 
 
-def run_codex_task(
+def run_codex_task(  # noqa: PLR0913, PLR0915
     slug: str,
     *,
     root: Path | None = None,
     work_directory: Path | None = None,
     model: str | None = None,
     dry_run: bool = False,
+    runtime_logger: RuntimeLogger | None = None,
 ) -> Path:
     """Build and run one criterion task, returning its structured result path."""
 
@@ -191,6 +348,27 @@ def run_codex_task(
         model=model,
     )
     codex_version = "not-executed" if dry_run else _codex_version(Path(command[0]))
+    request_fields = _request_log_fields(
+        slug=slug,
+        model=model,
+        codex_version=codex_version,
+        image_count=len(
+            as_sequence(task["sourcePageEvidence"], location="task.sourcePageEvidence")
+        ),
+        schema_path=repository / RESULT_SCHEMA_PATH,
+        task_identifier=task["taskIdentifier"],
+        task_checksum=task["taskChecksum"],
+        result_path=result_path,
+        events_path=events_path,
+        error_path=error_path,
+        run_path=run_path,
+    )
+    if runtime_logger is not None:
+        runtime_logger.info(
+            "Codex request prepared",
+            event="codex.request.prepared",
+            **request_fields,
+        )
     started_at = datetime.now(tz=UTC)
     if dry_run:
         run_document: dict[str, JsonValue] = {
@@ -210,25 +388,57 @@ def run_codex_task(
             json.dumps(run_document, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
             encoding="utf-8",
         )
+        if runtime_logger is not None:
+            runtime_logger.info(
+                "Codex request planned",
+                event="codex.request.planned",
+                **request_fields,
+            )
         return run_path
 
-    with (
-        events_path.open("w", encoding="utf-8") as events_stream,
-        error_path.open(
-            "w",
-            encoding="utf-8",
-        ) as error_stream,
-    ):
-        completed_process = subprocess.run(
-            command,
-            input=_prompt(task_path, task, root=repository),
-            text=True,
-            stdout=events_stream,
-            stderr=error_stream,
-            check=False,
-            cwd=repository,
+    prompt = _prompt(task_path, task, root=repository)
+    request_started_at = time.perf_counter()
+    if runtime_logger is not None:
+        runtime_logger.info(
+            "Codex request started",
+            event="codex.request.started",
+            **request_fields,
         )
+    try:
+        with (
+            events_path.open("w", encoding="utf-8") as events_stream,
+            error_path.open(
+                "w",
+                encoding="utf-8",
+            ) as error_stream,
+        ):
+            completed_process = subprocess.run(
+                command,
+                input=prompt,
+                text=True,
+                stdout=events_stream,
+                stderr=error_stream,
+                check=False,
+                cwd=repository,
+            )
+    except (OSError, RuntimeError, subprocess.SubprocessError) as error:
+        _log_response(
+            runtime_logger,
+            completed=False,
+            request_fields=request_fields,
+            exit_code=None,
+            duration_seconds=_duration_seconds(request_started_at),
+            result_checksum=sha256_file(result_path) if result_path.is_file() else None,
+            schema_validation="not_run",
+            event_summary=_codex_event_summary(events_path),
+            error_type=type(error).__name__,
+        )
+        message = "Codex process could not be started; inspect generated Codex artifacts"
+        raise RuntimeError(message) from None
     completed_at = datetime.now(tz=UTC)
+    result_checksum = sha256_file(result_path) if result_path.is_file() else None
+    event_summary = _codex_event_summary(events_path)
+    duration_seconds = _duration_seconds(request_started_at)
     run_document = {
         "schemaVersion": 1,
         "taskIdentifier": task["taskIdentifier"],
@@ -240,19 +450,55 @@ def run_codex_task(
         "startedAt": started_at.isoformat(),
         "completedAt": completed_at.isoformat(),
         "exitCode": completed_process.returncode,
-        "resultChecksum": sha256_file(result_path) if result_path.is_file() else None,
+        "resultChecksum": result_checksum,
     }
     run_path.write_text(
         json.dumps(run_document, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
         encoding="utf-8",
     )
     if completed_process.returncode != 0:
-        event_error = _last_event_error(events_path)
-        error_tail = error_path.read_text(encoding="utf-8")[-2000:]
-        failure_detail = event_error or error_tail
-        msg = f"Codex task failed with exit code {completed_process.returncode}: {failure_detail}"
-        raise RuntimeError(msg)
-    _validate_result_schema(result_path, root=repository)
+        _log_response(
+            runtime_logger,
+            completed=False,
+            request_fields=request_fields,
+            exit_code=completed_process.returncode,
+            duration_seconds=duration_seconds,
+            result_checksum=result_checksum,
+            schema_validation="not_run",
+            event_summary=event_summary,
+            error_type="CodexProcessError",
+        )
+        message = (
+            f"Codex task failed with exit code {completed_process.returncode}; "
+            "inspect generated Codex artifacts"
+        )
+        raise RuntimeError(message)
+    try:
+        _validate_result_schema(result_path, root=repository)
+    except (KeyError, OSError, TypeError, ValueError) as error:
+        _log_response(
+            runtime_logger,
+            completed=False,
+            request_fields=request_fields,
+            exit_code=completed_process.returncode,
+            duration_seconds=duration_seconds,
+            result_checksum=result_checksum,
+            schema_validation="failed",
+            event_summary=event_summary,
+            error_type=type(error).__name__,
+        )
+        message = "Codex result failed schema validation; inspect generated Codex artifacts"
+        raise ValueError(message) from None
+    _log_response(
+        runtime_logger,
+        completed=True,
+        request_fields=request_fields,
+        exit_code=completed_process.returncode,
+        duration_seconds=duration_seconds,
+        result_checksum=result_checksum,
+        schema_validation="passed",
+        event_summary=event_summary,
+    )
     return result_path
 
 
@@ -293,12 +539,14 @@ def main() -> int:
                 work_directory=arguments.work_directory,
                 model=arguments.model,
                 dry_run=arguments.dry_run,
+                runtime_logger=logger,
             )
         except (FileNotFoundError, RuntimeError, TypeError, ValueError) as error:
-            logger.exception(
+            # Exception tracebacks can contain untrusted Codex response details.
+            logger.error(  # noqa: TRY400
                 "Codex task run failed",
                 event="command.failed",
-                error=error,
+                error_type=type(error).__name__,
                 dry_run=arguments.dry_run,
             )
             print(str(error), file=sys.stderr)

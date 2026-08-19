@@ -2,19 +2,34 @@
 
 from __future__ import annotations
 
+import io
 import json
+import subprocess
+import sys
 from pathlib import Path
-from typing import cast
+from typing import TextIO, cast
 
 import pytest
 
 from conversion import codex_runner
 from conversion.codex_result_importer import render_codex_candidate, validate_codex_result
 from conversion.codex_task_builder import build_codex_task, load_codex_task
-from conversion.common import JsonValue, as_mapping, as_sequence, repository_root
+from conversion.common import JsonValue, as_mapping, as_sequence, repository_root, sha256_file
+from conversion.runtime_logging import REDACTED_VALUE, RuntimeLogger, configure_runtime_logging
 
 EXPECTED_U_03_PAGE_COUNT = 4
 EXPECTED_CODEX_SCHEMA_VERSION = 2
+CODEX_PROCESS_FAILURE_EXIT_CODE = 17
+
+
+def _read_runner_log(logger: RuntimeLogger) -> list[dict[str, JsonValue]]:
+    """Load the structured records written by one test runner logger."""
+
+    return [
+        cast("dict[str, JsonValue]", json.loads(line))
+        for line in logger.log_path.read_text(encoding="utf-8").splitlines()
+        if line
+    ]
 
 
 def _fake_result(task: dict[str, JsonValue]) -> dict[str, JsonValue]:  # noqa: C901
@@ -632,6 +647,465 @@ def test_runner_dry_run_uses_read_only_schema_and_images(
     model_option_index = command.index("--model")
     assert command[model_option_index : model_option_index + 2] == ["--model", "test-model"]
     assert command[-1] == "-"
+
+
+def test_runner_dry_run_logs_prepared_and_planned_without_starting_codex(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    """A dry run must describe the planned boundary without claiming communication."""
+
+    def unexpected_subprocess(
+        *_arguments: object,
+        **_keywords: object,
+    ) -> subprocess.CompletedProcess[str]:
+        """Fail if a dry run attempts to start any subprocess."""
+
+        pytest.fail("dry-run Codex execution unexpectedly started a subprocess")
+
+    console_stream = io.StringIO()
+    monkeypatch.setattr(codex_runner.shutil, "which", lambda _name: "/usr/bin/codex")
+    monkeypatch.setattr(codex_runner.subprocess, "run", unexpected_subprocess)
+    with configure_runtime_logging(
+        "codex-runner-test",
+        log_directory=tmp_path / "logs",
+        console_stream=console_stream,
+        run_identifier="dry-run",
+    ) as logger:
+        run_path = codex_runner.run_codex_task(
+            "u-03",
+            work_directory=tmp_path / "work",
+            model="test-model",
+            dry_run=True,
+            runtime_logger=logger,
+        )
+
+    captured_output = capsys.readouterr()
+    assert captured_output.out == ""
+    assert captured_output.err == ""
+    assert run_path.is_file()
+    records = _read_runner_log(logger)
+    assert [record["event"] for record in records] == [
+        "codex.request.prepared",
+        "codex.request.planned",
+    ]
+    prepared_context = as_mapping(records[0]["context"], location="log.context")
+    assert prepared_context["slug"] == "u-03"
+    assert prepared_context["model"] == "test-model"
+    assert prepared_context["codex_version"] == "not-executed"
+    assert prepared_context["image_count"] == EXPECTED_U_03_PAGE_COUNT
+    assert prepared_context["task_identifier"] == "u-03-codex-structure-v2"
+    assert "event_type_counts" not in prepared_context
+
+
+def test_runner_logs_allowlisted_success_metadata_and_aggregated_events(  # noqa: PLR0915
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    """Successful communication logs must summarize JSONL without retaining bodies."""
+
+    prompt_marker = "PROMPT-CONTENT-CANARY"
+    event_body_marker = "EVENT-BODY-CANARY"
+    error_body_marker = "STDERR-BODY-CANARY"
+    item_identifier_marker = "item-identifier-canary"
+    credential_marker = "event-auth-value"
+    model_value = "Authorization: Bearer model-auth-value"
+    observed_prompt = ""
+    observed_image_paths: list[str] = []
+
+    event_documents: list[object] = [
+        {
+            "type": "thread.started",
+            "thread_id": "thread-abc_123",
+            "body": event_body_marker,
+        },
+        {"type": "turn.started"},
+        {
+            "type": "item.started",
+            "item": {
+                "id": item_identifier_marker,
+                "type": "reasoning",
+                "text": event_body_marker,
+            },
+        },
+        {
+            "type": "item.completed",
+            "item": {
+                "id": item_identifier_marker,
+                "type": "reasoning",
+                "text": event_body_marker,
+            },
+        },
+        {
+            "type": "item.completed",
+            "item": {"id": "message-1", "type": "agent_message", "text": event_body_marker},
+        },
+        {
+            "type": "item.completed",
+            "item": {"type": "tool_call", "arguments": event_body_marker},
+        },
+        {
+            "type": "turn.completed",
+            "usage": {
+                "input_tokens": 100,
+                "cached_input_tokens": 20,
+                "output_tokens": 25,
+                "total_tokens": 125,
+                "invalid_tokens": "900",
+                "boolean_tokens": True,
+                "negative_tokens": -1,
+                "floating_tokens": 1.5,
+                "latency_ms": 12,
+            },
+        },
+        {
+            "type": "turn.completed",
+            "usage": {
+                "input_tokens": 7,
+                "output_tokens": 3,
+                "reasoning_output_tokens": 4,
+                "total_tokens": 10,
+            },
+        },
+        {
+            "type": f"unsafe type Authorization: Bearer {credential_marker}",
+            "body": event_body_marker,
+        },
+    ]
+
+    def fake_subprocess_run(
+        command: list[str],
+        **arguments: object,
+    ) -> subprocess.CompletedProcess[str]:
+        """Write deterministic Codex artifacts through the supplied streams."""
+
+        nonlocal observed_prompt
+        observed_prompt = cast("str", arguments["input"])
+        assert arguments["text"] is True
+        assert arguments["check"] is False
+        assert arguments["cwd"] == repository_root()
+        events_stream = cast("TextIO", arguments["stdout"])
+        error_stream = cast("TextIO", arguments["stderr"])
+        for event_document in event_documents:
+            events_stream.write(json.dumps(event_document, ensure_ascii=False) + "\n")
+        events_stream.write("{invalid-json\n")
+        events_stream.write("[]\n")
+        error_stream.write(error_body_marker + "\n")
+        observed_image_paths.extend(
+            command[index + 1] for index, value in enumerate(command) if value == "--image"
+        )
+        result_path = Path(command[command.index("--output-last-message") + 1])
+        task = load_codex_task(tmp_path / "work" / "tasks" / "u-03" / "task.json")
+        result_path.write_text(
+            json.dumps(_fake_result(task), ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+            encoding="utf-8",
+        )
+        return subprocess.CompletedProcess(command, 0, "", "")
+
+    console_stream = io.StringIO()
+    monkeypatch.setattr(codex_runner, "_codex_version", lambda _executable: "codex 1.2.3")
+    monkeypatch.setattr(codex_runner, "_prompt", lambda *_args, **_kwargs: prompt_marker)
+    monkeypatch.setattr(codex_runner.subprocess, "run", fake_subprocess_run)
+    with configure_runtime_logging(
+        "codex-runner-test",
+        log_directory=tmp_path / "logs",
+        console_stream=console_stream,
+        run_identifier="success",
+    ) as logger:
+        result_path = codex_runner.run_codex_task(
+            "u-03",
+            work_directory=tmp_path / "work",
+            model=model_value,
+            runtime_logger=logger,
+        )
+
+    captured_output = capsys.readouterr()
+    assert captured_output.out == ""
+    assert captured_output.err == ""
+    assert observed_prompt == prompt_marker
+    assert len(observed_image_paths) == EXPECTED_U_03_PAGE_COUNT
+    records = _read_runner_log(logger)
+    assert [record["event"] for record in records] == [
+        "codex.request.prepared",
+        "codex.request.started",
+        "codex.response.completed",
+    ]
+    response_context = as_mapping(records[-1]["context"], location="log.context")
+    assert response_context["exit_code"] == 0
+    assert response_context["schema_validation"] == "passed"
+    assert response_context["result_checksum"] == sha256_file(result_path)
+    assert response_context["thread_id"] == "thread-abc_123"
+    assert response_context["total_event_count"] == len(event_documents)
+    assert response_context["invalid_json_line_count"] == 1
+    assert response_context["event_type_counts"] == {
+        "item.completed": 3,
+        "item.started": 1,
+        "thread.started": 1,
+        "turn.completed": 2,
+        "turn.started": 1,
+    }
+    assert response_context["item_type_counts"] == {
+        "agent_message": 1,
+        "reasoning": 2,
+        "tool_call": 1,
+    }
+    assert response_context["usage"] == {
+        "cached_input_tokens": 20,
+        "input_tokens": 107,
+        "output_tokens": 28,
+        "reasoning_output_tokens": 4,
+        "total_tokens": 135,
+    }
+    assert isinstance(response_context["duration_seconds"], float)
+    assert response_context["duration_seconds"] >= 0
+
+    combined_log_output = logger.log_path.read_text(encoding="utf-8") + console_stream.getvalue()
+    for marker in (
+        prompt_marker,
+        event_body_marker,
+        error_body_marker,
+        item_identifier_marker,
+        credential_marker,
+        "model-auth-value",
+        *observed_image_paths,
+    ):
+        assert marker not in combined_log_output
+    assert "--image" not in combined_log_output
+    assert REDACTED_VALUE in combined_log_output
+
+
+def test_runner_logs_nonzero_process_failure_without_raw_error_bodies(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    """A failed Codex process must expose diagnostics by artifact, not by raw body."""
+
+    event_marker = "PROCESS-EVENT-BODY-CANARY"
+    error_marker = "PROCESS-STDERR-BODY-CANARY"
+
+    def fake_subprocess_run(
+        command: list[str],
+        **arguments: object,
+    ) -> subprocess.CompletedProcess[str]:
+        """Return a deterministic nonzero Codex process result."""
+
+        events_stream = cast("TextIO", arguments["stdout"])
+        error_stream = cast("TextIO", arguments["stderr"])
+        events_stream.write(
+            json.dumps(
+                {
+                    "type": "thread.started",
+                    "thread_id": "thread-failed",
+                    "body": event_marker,
+                }
+            )
+            + "\n"
+        )
+        events_stream.write(
+            json.dumps(
+                {
+                    "type": "item.completed",
+                    "item": {"type": "command_execution", "output": event_marker},
+                }
+            )
+            + "\n"
+        )
+        events_stream.write(
+            json.dumps(
+                {
+                    "type": "turn.completed",
+                    "usage": {"input_tokens": 9, "total_tokens": 9},
+                }
+            )
+            + "\n"
+        )
+        events_stream.write(
+            json.dumps(
+                {
+                    "type": "error",
+                    "message": f"Authorization: Bearer {event_marker}",
+                }
+            )
+            + "\n"
+        )
+        error_stream.write(error_marker + "\n")
+        return subprocess.CompletedProcess(command, CODEX_PROCESS_FAILURE_EXIT_CODE, "", "")
+
+    console_stream = io.StringIO()
+    monkeypatch.setattr(codex_runner, "_codex_version", lambda _executable: "codex 1.2.3")
+    monkeypatch.setattr(codex_runner, "_prompt", lambda *_args, **_kwargs: "test prompt")
+    monkeypatch.setattr(codex_runner.subprocess, "run", fake_subprocess_run)
+    with (
+        configure_runtime_logging(
+            "codex-runner-test",
+            log_directory=tmp_path / "logs",
+            console_stream=console_stream,
+            run_identifier="process-failure",
+        ) as logger,
+        pytest.raises(RuntimeError, match="inspect generated Codex artifacts") as error_info,
+    ):
+        codex_runner.run_codex_task(
+            "u-03",
+            work_directory=tmp_path / "work",
+            runtime_logger=logger,
+        )
+
+    captured_output = capsys.readouterr()
+    assert captured_output.out == ""
+    assert captured_output.err == ""
+    assert event_marker not in str(error_info.value)
+    assert error_marker not in str(error_info.value)
+    records = _read_runner_log(logger)
+    assert [record["event"] for record in records] == [
+        "codex.request.prepared",
+        "codex.request.started",
+        "codex.response.failed",
+    ]
+    response_context = as_mapping(records[-1]["context"], location="log.context")
+    assert response_context["exit_code"] == CODEX_PROCESS_FAILURE_EXIT_CODE
+    assert response_context["schema_validation"] == "not_run"
+    assert response_context["result_checksum"] is None
+    assert response_context["error_type"] == "CodexProcessError"
+    assert response_context["event_type_counts"] == {
+        "error": 1,
+        "item.completed": 1,
+        "thread.started": 1,
+        "turn.completed": 1,
+    }
+    assert response_context["item_type_counts"] == {"command_execution": 1}
+    assert response_context["thread_id"] == "thread-failed"
+    assert response_context["usage"] == {"input_tokens": 9, "total_tokens": 9}
+    combined_log_output = logger.log_path.read_text(encoding="utf-8") + console_stream.getvalue()
+    assert event_marker not in combined_log_output
+    assert error_marker not in combined_log_output
+
+
+def test_runner_logs_failed_schema_validation_without_result_body(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    """A schema-invalid result must record validation status without response content."""
+
+    result_body_marker = "INVALID-RESULT-BODY-CANARY"
+
+    def fake_subprocess_run(
+        command: list[str],
+        **arguments: object,
+    ) -> subprocess.CompletedProcess[str]:
+        """Write a schema-invalid model response after a successful process exit."""
+
+        events_stream = cast("TextIO", arguments["stdout"])
+        events_stream.write(
+            json.dumps(
+                {
+                    "type": "item.completed",
+                    "item": {"type": "agent_message", "text": result_body_marker},
+                }
+            )
+            + "\n"
+        )
+        result_path = Path(command[command.index("--output-last-message") + 1])
+        result_path.write_text(
+            json.dumps({"unexpected": result_body_marker}) + "\n",
+            encoding="utf-8",
+        )
+        return subprocess.CompletedProcess(command, 0, "", "")
+
+    console_stream = io.StringIO()
+    monkeypatch.setattr(codex_runner, "_codex_version", lambda _executable: "codex 1.2.3")
+    monkeypatch.setattr(codex_runner, "_prompt", lambda *_args, **_kwargs: "test prompt")
+    monkeypatch.setattr(codex_runner.subprocess, "run", fake_subprocess_run)
+    with (
+        configure_runtime_logging(
+            "codex-runner-test",
+            log_directory=tmp_path / "logs",
+            console_stream=console_stream,
+            run_identifier="schema-failure",
+        ) as logger,
+        pytest.raises(ValueError, match="failed schema validation") as error_info,
+    ):
+        codex_runner.run_codex_task(
+            "u-03",
+            work_directory=tmp_path / "work",
+            runtime_logger=logger,
+        )
+
+    captured_output = capsys.readouterr()
+    assert captured_output.out == ""
+    assert captured_output.err == ""
+    assert result_body_marker not in str(error_info.value)
+    records = _read_runner_log(logger)
+    assert [record["event"] for record in records] == [
+        "codex.request.prepared",
+        "codex.request.started",
+        "codex.response.failed",
+    ]
+    response_context = as_mapping(records[-1]["context"], location="log.context")
+    result_path = tmp_path / "work" / "results" / "u-03" / "result.json"
+    assert response_context["exit_code"] == 0
+    assert response_context["schema_validation"] == "failed"
+    assert response_context["error_type"] == "ValueError"
+    assert response_context["result_checksum"] == sha256_file(result_path)
+    assert response_context["total_event_count"] == 1
+    assert response_context["event_type_counts"] == {"item.completed": 1}
+    assert response_context["item_type_counts"] == {"agent_message": 1}
+    combined_log_output = logger.log_path.read_text(encoding="utf-8") + console_stream.getvalue()
+    assert result_body_marker not in combined_log_output
+
+
+def test_runner_main_forwards_logger_and_preserves_stdout_contract(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    """CLI logging must stay on stderr while stdout remains one machine-readable path."""
+
+    result_path = tmp_path / "work" / "results" / "u-03" / "result.json"
+    observed_loggers: list[RuntimeLogger] = []
+
+    def fake_run_codex_task(
+        slug: str,
+        *,
+        work_directory: Path | None,
+        model: str | None,
+        dry_run: bool,
+        runtime_logger: RuntimeLogger | None,
+    ) -> Path:
+        """Capture the CLI-owned logger without executing Codex."""
+
+        assert slug == "u-03"
+        assert work_directory == tmp_path / "work"
+        assert model is None
+        assert not dry_run
+        assert runtime_logger is not None
+        observed_loggers.append(runtime_logger)
+        return result_path
+
+    monkeypatch.setattr(codex_runner, "run_codex_task", fake_run_codex_task)
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "codex_runner.py",
+            "u-03",
+            "--work-directory",
+            str(tmp_path / "work"),
+            "--log-directory",
+            str(tmp_path / "logs"),
+        ],
+    )
+
+    assert codex_runner.main() == 0
+
+    captured_output = capsys.readouterr()
+    assert captured_output.out == f"{result_path}\n"
+    assert "Codex task run started" in captured_output.err
+    assert "Codex task run completed" in captured_output.err
+    assert len(observed_loggers) == 1
 
 
 def test_importer_validates_and_renders_review_candidate(tmp_path: Path) -> None:

@@ -21,7 +21,7 @@ from conversion.common import (
     repository_root,
     sha256_file,
 )
-from conversion.runtime_logging import LOG_DIRECTORY_ENVIRONMENT_VARIABLE
+from conversion.runtime_logging import LOG_DIRECTORY_ENVIRONMENT_VARIABLE, RuntimeLogger
 
 if TYPE_CHECKING:
     from conversion.codex_bulk_runner import BulkItemRequest
@@ -386,6 +386,7 @@ def test_resume_reuses_only_current_validated_artifacts(  # noqa: PLR0915
         work_directory: Path,
         model: str | None,
         dry_run: bool,
+        runtime_logger: RuntimeLogger | None,
     ) -> Path:
         """Record when stale result validation requires a new vision run."""
 
@@ -393,6 +394,8 @@ def test_resume_reuses_only_current_validated_artifacts(  # noqa: PLR0915
         assert work_directory == expected_work_directory.resolve()
         assert model is None
         assert not dry_run
+        assert runtime_logger is not None
+        assert runtime_logger.tool_name == "codex_bulk_worker"
         calls["vision"] += 1
         return result_path
 
@@ -732,6 +735,7 @@ def test_worker_log_is_isolated_and_records_pipeline_stages(
         work_directory: Path,
         model: str | None,
         dry_run: bool,
+        runtime_logger: RuntimeLogger | None,
     ) -> Path:
         """Return the worker-owned result path without invoking Codex."""
 
@@ -739,6 +743,8 @@ def test_worker_log_is_isolated_and_records_pipeline_stages(
         assert work_directory == tmp_path / "work"
         assert model is None
         assert not dry_run
+        assert runtime_logger is not None
+        assert runtime_logger.tool_name == "codex_bulk_worker"
         return result_path
 
     def fake_render_candidate(

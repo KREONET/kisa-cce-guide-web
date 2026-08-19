@@ -357,6 +357,7 @@ def _run_vision_with_retries(
                 work_directory=work_directory,
                 model=request.model,
                 dry_run=request.dry_run,
+                runtime_logger=logger,
             )
         except Exception as error:
             if attempts > request.retries:

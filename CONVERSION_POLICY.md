@@ -148,6 +148,30 @@ Canonical criterion package
 - 모든 실행 도구는 `--log-level`, `--log-directory`를 지원해야 한다. Bulk runner는 진행률을 비활성화하는 `--no-progress`를 추가로 지원해야 한다.
 - 기본 file log 경로인 `work/logs/`와 변환 작업 경로인 `work/codex/`는 생성 산출물이며 Git에 포함해서는 안 된다.
 
+#### Codex 통신 로그
+
+- `codex exec --json`의 stdout은 `work/codex/results/<criterionSlug>/events.jsonl`에 변형 없이 저장해야 한다. 이 raw artifact는 runtime JSONL이 아니며 redaction 또는 content filtering을 적용한 운영 로그로 취급해서는 안 된다.
+- Upstream Codex event의 `type`은 `thread.started`, `turn.started`, `turn.completed`, `turn.failed`, `item.*`, `error`를 포함한다. Event type이 추가되더라도 content body를 runtime JSONL로 전달해서는 안 된다.
+- `thread.started.thread_id`, event와 `item.type`별 count, JSON object와 invalid JSON line count, `turn.completed.usage`의 non-negative integer `*_tokens` field만 raw event stream에서 runtime aggregate로 추출해야 한다.
+- `item_type_counts`는 `item.type`이 있는 event 수를 세어야 한다. Agent message, reasoning, command execution 등 item의 content body를 읽거나 저장해서는 안 된다.
+- `events.jsonl`은 agent message, reasoning, command, file change, tool call 등 content-bearing item을 포함할 수 있으므로 생성 작업 artifact와 같은 접근·보존 정책을 적용해야 한다.
+
+Runtime logger가 기록하는 Codex communication event와 communication-specific context field는 다음 allowlist로 제한한다. Bulk worker의 공통 context인 `process_role`은 추가로 포함할 수 있다.
+
+| Runtime event | 필수 context field | 추가 context field |
+| --- | --- | --- |
+| `codex.request.prepared` | `slug`, `model`, `codex_version`, `image_count`, `schema_path`, `task_identifier`, `task_checksum`, `output_paths` | 없음 |
+| `codex.request.planned` | `slug`, `model`, `codex_version`, `image_count`, `schema_path`, `task_identifier`, `task_checksum`, `output_paths` | 없음 |
+| `codex.request.started` | `slug`, `model`, `codex_version`, `image_count`, `schema_path`, `task_identifier`, `task_checksum`, `output_paths` | 없음 |
+| `codex.response.completed` | 공통 request field, `exit_code`, `duration_seconds`, `result_checksum`, `schema_validation`, `thread_id`, `total_event_count`, `invalid_json_line_count`, `event_type_counts`, `item_type_counts`, `usage` | 없음 |
+| `codex.response.failed` | 공통 request field, `exit_code`, `duration_seconds`, `result_checksum`, `schema_validation`, `thread_id`, `total_event_count`, `invalid_json_line_count`, `event_type_counts`, `item_type_counts`, `usage` | `error_type` |
+
+`output_paths`는 `events`, `result`, `run`, `stderr` 경로만 포함해야 한다. `schema_validation`은 `passed`, `failed`, `not_run` 중 하나여야 한다. `usage`는 모든 `turn.completed` event에서 검증한 `*_tokens` 값을 합산해야 한다. Runtime record의 공통 envelope는 기존 `schema_version`, `timestamp`, `level`, `tool`, `event`, `message`, `process_id`, `run_id`, `thread`, `context` 계약을 유지해야 한다. `message`는 고정된 lifecycle 설명만 포함해야 하며 upstream content를 포함해서는 안 된다.
+
+- Runtime JSONL은 prompt, task 또는 source content, upstream agent나 error message body, reasoning 또는 reasoning summary, command·argument·stdout·stderr body, file change나 patch body, tool input·output, raw event나 item을 포함해서는 안 된다.
+- Runtime JSONL은 API key, authorization value, token, password, credential URL 또는 알려진 credential 형식을 포함해서는 안 된다. Redaction은 allowlist 밖의 Codex content field를 기록할 수 있는 근거가 아니다.
+- Codex 실패를 상위 command, retry, stage 또는 worker event에 전달할 때도 content-bearing error detail을 복제해서는 안 된다. Generic failure status, error type, exit code, aggregate와 raw artifact 위치만 기록해야 한다.
+
 ### Canonical 콘텐츠 계층
 
 - 점검항목별 criterion package를 사람이 수정하는 canonical 콘텐츠로 사용한다.
@@ -992,6 +1016,7 @@ RFC 8785로 직렬화한 뒤, 이 문서의 aggregate checksum record 방식으�
 
 - [KISA CCE 가이드 2026 원본 PDF](kisa-cce-criteria-2026.pdf)
 - [저장소 README](README.md)
+- [OpenAI Codex non-interactive mode](https://developers.openai.com/codex/noninteractive)
 - [CommonMark Specification](https://spec.commonmark.org/spec)
 - [JSON Schema Draft 2020-12](https://json-schema.org/draft/2020-12)
 - [RFC 8785 JSON Canonicalization Scheme](https://www.rfc-editor.org/rfc/rfc8785.html)

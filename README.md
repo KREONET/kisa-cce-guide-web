@@ -257,6 +257,28 @@ uv run python -m conversion.codex_bulk_runner \
 - Bulk 진행률은 완료 항목 수, 전체 항목 수, 백분율, 경과 시간, 처리율, outcome 집계를 표시합니다. TTY에서는 한 줄을 갱신하고, CI와 non-TTY에서는 줄 단위 기록을 사용합니다.
 - 모든 도구에서 `--log-level`, `--log-directory`를 사용할 수 있습니다. `KISA_CCE_LOG_LEVEL`, `KISA_CCE_LOG_DIRECTORY` 환경변수도 같은 기본값을 제공합니다.
 
+#### Codex 통신 로그
+
+`codex exec --json`은 실행 중 발생한 이벤트를 stdout의 JSON Lines로 출력합니다. 공식 이벤트에는 `thread.started`, `turn.started`, `turn.completed`, `turn.failed`, `item.*`, `error`가 포함되며, `turn.completed.usage`는 token 사용량을 제공합니다. 자세한 upstream 계약은 [OpenAI Codex non-interactive mode 문서](https://developers.openai.com/codex/noninteractive)를 참조합니다.
+
+`work/codex/results/<criterionSlug>/events.jsonl`은 이 stdout을 그대로 저장하는 기존 raw artifact입니다. 이 파일에는 agent message, reasoning, command execution과 같은 content-bearing `item` body가 포함될 수 있습니다. 공통 runtime JSONL로 복사하거나 redaction된 운영 로그로 간주하지 않습니다.
+
+Runtime logger는 raw body를 복제하지 않고, 다음 Codex lifecycle event를 기록합니다.
+
+| Runtime event | 기록 시점 | Communication context |
+| --- | --- | --- |
+| `codex.request.prepared` | Task와 의존성을 검증하고 요청 metadata를 준비한 때 | 공통 request field |
+| `codex.request.planned` | Dry run에서 Codex를 실행하지 않고 `run.json`을 생성한 때 | 공통 request field |
+| `codex.request.started` | 실제 Codex process를 시작하기 직전 | 공통 request field |
+| `codex.response.completed` | Process가 성공하고 result schema validation이 통과한 때 | 공통 request field와 response aggregate |
+| `codex.response.failed` | Process 시작, exit status 또는 schema validation이 실패한 때 | 공통 request field와 response aggregate, 선택적인 `error_type` |
+
+공통 request field는 `slug`, `model`, `codex_version`, `image_count`, `schema_path`, `task_identifier`, `task_checksum`, `output_paths`입니다. `output_paths`는 `events`, `result`, `run`, `stderr` artifact의 경로만 포함합니다.
+
+Response aggregate는 `exit_code`, `duration_seconds`, `result_checksum`, `schema_validation`, `thread_id`, `total_event_count`, `invalid_json_line_count`, `event_type_counts`, `item_type_counts`, `usage`입니다. `thread_id`는 첫 `thread.started` event에서 가져옵니다. `item_type_counts`는 content body를 읽지 않고 `item.type`별 event 수만 셉니다. `usage`는 `turn.completed.usage`의 non-negative integer `*_tokens` field만 합산합니다. 공식 예시는 `input_tokens`, `cached_input_tokens`, `output_tokens`, `reasoning_output_tokens`를 사용합니다.
+
+Runtime JSONL의 `message`는 고정된 lifecycle 설명만 사용합니다. Prompt 또는 task 본문, upstream agent와 error message 본문, reasoning, command와 command output, file change, tool input·output, raw event 또는 item, credential은 기록하지 않습니다. 실패 로그도 generic failure status, `error_type`, exit code와 aggregate만 사용하며, 상세 내용은 Git에서 제외된 Codex artifact에서 확인합니다.
+
 ```bash
 uv run python -m conversion.codex_bulk_runner \
   --model <model-identifier> \
