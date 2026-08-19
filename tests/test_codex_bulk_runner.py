@@ -3,7 +3,9 @@
 from __future__ import annotations
 
 import inspect
+import io
 import json
+import sys
 import threading
 from concurrent.futures import Executor, ProcessPoolExecutor, ThreadPoolExecutor
 from pathlib import Path
@@ -19,6 +21,7 @@ from conversion.common import (
     repository_root,
     sha256_file,
 )
+from conversion.runtime_logging import LOG_DIRECTORY_ENVIRONMENT_VARIABLE
 
 if TYPE_CHECKING:
     from conversion.codex_bulk_runner import BulkItemRequest
@@ -30,6 +33,17 @@ ISOLATED_SUCCESS_COUNT = 2
 CANCELLED_ITEM_COUNT = 2
 MIXED_SUCCESS_COUNT = 3
 DRY_RUN_ITEM_COUNT = 2
+PIPELINE_STAGE_COUNT = 3
+
+
+@pytest.fixture(autouse=True)
+def _isolate_runtime_logs(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """Keep default runtime logs inside each test's temporary directory."""
+
+    monkeypatch.setenv(LOG_DIRECTORY_ENVIRONMENT_VARIABLE, str(tmp_path / "logs"))
 
 
 def _write_manifest(root: Path, criteria: list[tuple[str, str]]) -> None:
@@ -123,6 +137,17 @@ def _completed_worker(request: BulkItemRequest) -> dict[str, JsonValue]:
     """Return a minimal valid worker result without invoking Codex."""
 
     return _worker_item(request, outcome="completed")
+
+
+def _read_log_records(log_directory: Path, pattern: str) -> list[dict[str, JsonValue]]:
+    """Load every JSONL record matching one runtime log filename pattern."""
+
+    records: list[dict[str, JsonValue]] = []
+    for log_path in sorted(log_directory.glob(pattern)):
+        records.extend(
+            json.loads(line) for line in log_path.read_text(encoding="utf-8").splitlines() if line
+        )
+    return records
 
 
 def test_extracted_slug_selection_is_filtered_ordered_and_unique(tmp_path: Path) -> None:
@@ -554,3 +579,250 @@ def test_workers_outside_the_hard_bound_are_rejected(
             executor_factory=unexpected_executor_factory,
             worker_callable=_completed_worker,
         )
+
+
+def test_parent_progress_reports_every_terminal_outcome_without_stdout(
+    tmp_path: Path,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    """Non-TTY progress must advance once per item and never write to stdout."""
+
+    _write_manifest(
+        tmp_path,
+        [
+            ("u-03", "extractedCriterion"),
+            ("u-04", "extractedCriterion"),
+            ("u-05", "extractedCriterion"),
+        ],
+    )
+    outcomes = {"u-03": "completed", "u-04": "dryRun", "u-05": "skipped"}
+
+    def terminal_outcome_worker(request: BulkItemRequest) -> dict[str, JsonValue]:
+        """Return one deterministic terminal outcome for each selected item."""
+
+        return _worker_item(request, outcome=outcomes[request.slug])
+
+    summary = codex_bulk_runner.run_bulk_conversion(
+        root=tmp_path,
+        work_directory=tmp_path / "work",
+        workers=1,
+        log_directory=tmp_path / "logs",
+        executor_factory=ThreadPoolExecutor,
+        worker_callable=terminal_outcome_worker,
+    )
+
+    captured = capsys.readouterr()
+    progress_lines = [
+        line for line in captured.err.splitlines() if line.startswith("Codex bulk conversion ")
+    ]
+    assert captured.out == ""
+    assert [line.split()[3] for line in progress_lines[:3]] == ["1/3", "2/3", "3/3"]
+    assert "completed:1" in progress_lines[0]
+    assert "dryRun:1" in progress_lines[1]
+    assert "skipped:1" in progress_lines[2]
+    configuration = as_mapping(summary["configuration"], location="summary.configuration")
+    assert configuration["progressEnabled"] is True
+
+
+def test_progress_can_be_disabled_and_runtime_configuration_remains_valid(
+    tmp_path: Path,
+) -> None:
+    """The opt-out must suppress progress and remain represented in the summary schema."""
+
+    _write_manifest(tmp_path, [("u-03", "extractedCriterion")])
+    progress_stream = io.StringIO()
+    summary = codex_bulk_runner.run_bulk_conversion(
+        root=tmp_path,
+        work_directory=tmp_path / "work",
+        workers=1,
+        progress_enabled=False,
+        progress_stream=progress_stream,
+        log_directory=tmp_path / "custom-logs",
+        log_level="debug",
+        executor_factory=ThreadPoolExecutor,
+        worker_callable=_completed_worker,
+    )
+
+    assert progress_stream.getvalue() == ""
+    configuration = as_mapping(summary["configuration"], location="summary.configuration")
+    assert configuration["logDirectory"] == "custom-logs"
+    assert configuration["logLevel"] == "DEBUG"
+    assert configuration["progressEnabled"] is False
+    codex_bulk_runner.validate_bulk_summary(summary, root=tmp_path)
+
+
+def test_parent_log_captures_scheduler_lifecycle_and_failure_events(
+    tmp_path: Path,
+) -> None:
+    """Parent logs must explain submission, outcome, fail-fast, and summary state."""
+
+    _write_manifest(
+        tmp_path,
+        [
+            ("u-03", "extractedCriterion"),
+            ("u-04", "extractedCriterion"),
+        ],
+    )
+    log_directory = tmp_path / "logs"
+
+    def failing_worker(_request: BulkItemRequest) -> dict[str, JsonValue]:
+        """Raise immediately so the parent records a worker-process failure."""
+
+        message = "logged fixture failure"
+        raise RuntimeError(message)
+
+    summary = codex_bulk_runner.run_bulk_conversion(
+        root=tmp_path,
+        work_directory=tmp_path / "work",
+        workers=1,
+        fail_fast=True,
+        progress_enabled=False,
+        log_directory=log_directory,
+        executor_factory=ThreadPoolExecutor,
+        worker_callable=failing_worker,
+    )
+
+    records = _read_log_records(log_directory, "codex_bulk_runner-*.jsonl")
+    events = [record["event"] for record in records]
+    assert events[0:2] == ["command.started", "bulk.configuration"]
+    assert {
+        "item.submitted",
+        "item.completed",
+        "item.outcome",
+        "item.failed",
+        "scheduler.fail_fast",
+        "summary.written",
+        "command.completed",
+    }.issubset(events)
+    summary_record = next(record for record in records if record["event"] == "summary.written")
+    summary_context = as_mapping(summary_record["context"], location="log.context")
+    assert summary_context["counts"] == summary["counts"]
+    assert summary_context["summary_path"] == str(tmp_path / "work" / "bulk-summary.json")
+
+
+def test_worker_log_is_isolated_and_records_pipeline_stages(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """The production worker must write item and stage events to its own JSONL log."""
+
+    slug = "u-03"
+    work_directory = tmp_path / "work"
+    task_path = work_directory / "tasks" / slug / "task.json"
+    result_path = work_directory / "results" / slug / "result.json"
+    candidate_path = work_directory / "candidates" / slug / "candidate.md"
+    log_directory = tmp_path / "logs"
+
+    def fake_build_task(
+        _slug: str,
+        *,
+        root: Path,
+        work_directory: Path,
+    ) -> Path:
+        """Return the worker-owned task path without exercising task generation."""
+
+        assert root == tmp_path
+        assert work_directory == tmp_path / "work"
+        return task_path
+
+    def fake_run_task(
+        _slug: str,
+        *,
+        root: Path,
+        work_directory: Path,
+        model: str | None,
+        dry_run: bool,
+    ) -> Path:
+        """Return the worker-owned result path without invoking Codex."""
+
+        assert root == tmp_path
+        assert work_directory == tmp_path / "work"
+        assert model is None
+        assert not dry_run
+        return result_path
+
+    def fake_render_candidate(
+        _result_path: Path,
+        _task_path: Path,
+        *,
+        root: Path,
+        work_directory: Path,
+    ) -> Path:
+        """Return the worker-owned candidate path without importing content."""
+
+        assert root == tmp_path
+        assert work_directory == tmp_path / "work"
+        return candidate_path
+
+    monkeypatch.setattr(codex_bulk_runner, "build_codex_task", fake_build_task)
+    monkeypatch.setattr(codex_bulk_runner, "run_codex_task", fake_run_task)
+    monkeypatch.setattr(codex_bulk_runner, "render_codex_candidate", fake_render_candidate)
+    request = codex_bulk_runner.BulkItemRequest(
+        slug=slug,
+        repository=tmp_path.as_posix(),
+        work_directory=work_directory.as_posix(),
+        model=None,
+        dry_run=False,
+        resume=False,
+        retries=0,
+        retry_backoff_seconds=0.0,
+        log_directory=log_directory.as_posix(),
+        log_level="DEBUG",
+        log_run_identifier="isolated-worker-test",
+    )
+
+    result = codex_bulk_runner._process_item(request)  # noqa: SLF001
+
+    assert result["outcome"] == "completed"
+    records = _read_log_records(log_directory, "codex_bulk_worker-*.jsonl")
+    events = [record["event"] for record in records]
+    assert events[0] == "item.started"
+    assert events.count("stage.started") == PIPELINE_STAGE_COUNT
+    assert events.count("stage.completed") == PIPELINE_STAGE_COUNT
+    assert events[-2:] == ["item.completed", "item.outcome"]
+    assert not list(log_directory.glob("codex_bulk_runner-*.jsonl"))
+
+
+def test_main_forwards_progress_and_logging_options_without_changing_stdout(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    """The CLI must preserve the one-line summary path contract on stdout."""
+
+    observed_arguments: dict[str, object] = {}
+
+    def fake_bulk_conversion(**arguments: object) -> dict[str, JsonValue]:
+        """Capture CLI forwarding and return the minimal result consumed by main."""
+
+        observed_arguments.update(arguments)
+        return {
+            "summaryPath": "work/codex/bulk-summary.json",
+            "status": "completed",
+            "counts": {"failed": 0, "cancelled": 0},
+        }
+
+    log_directory = tmp_path / "cli-logs"
+    monkeypatch.setattr(codex_bulk_runner, "run_bulk_conversion", fake_bulk_conversion)
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "codex_bulk_runner.py",
+            "--no-progress",
+            "--log-directory",
+            str(log_directory),
+            "--log-level",
+            "debug",
+        ],
+    )
+
+    exit_code = codex_bulk_runner.main()
+
+    captured = capsys.readouterr()
+    assert exit_code == 0
+    assert captured.out == "work/codex/bulk-summary.json\n"
+    assert captured.err == ""
+    assert observed_arguments["progress_enabled"] is False
+    assert observed_arguments["log_directory"] == log_directory
+    assert observed_arguments["log_level"] == "DEBUG"

@@ -14,6 +14,7 @@ from urllib.parse import urlsplit, urlunsplit
 
 from conversion.build_content import build
 from conversion.common import repository_root
+from conversion.runtime_logging import add_logging_arguments, configure_runtime_logging
 
 DEFAULT_HOST = "127.0.0.1"
 DEFAULT_PORT = 8000
@@ -162,6 +163,7 @@ def _argument_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="serve the existing build/site directory without rebuilding",
     )
+    add_logging_arguments(parser)
     return parser
 
 
@@ -169,33 +171,81 @@ def main() -> int:
     """Build the site and run the local HTTP server until interrupted."""
 
     arguments = _argument_parser().parse_args()
-    repository = repository_root()
-    site_directory = repository / "build" / "site"
-    if not arguments.no_build:
-        build(root=repository, base_path=arguments.base_path)
-    elif not (site_directory / "index.html").is_file():
-        print("build/site/index.html is missing; run without --no-build", file=sys.stderr)
-        return 1
-    try:
-        server = create_local_server(
-            site_directory=site_directory,
-            host=arguments.host,
-            port=arguments.port,
+    with configure_runtime_logging(
+        "serve_site",
+        level=arguments.log_level,
+        log_directory=arguments.log_directory,
+    ) as logger:
+        logger.info(
+            "Local site server command started",
+            event="command.started",
             base_path=arguments.base_path,
+            build_enabled=not arguments.no_build,
+            host=arguments.host,
+            requested_port=arguments.port,
         )
-    except OSError as error:
-        print(f"failed to start local server: {error}", file=sys.stderr)
-        return 1
-    actual_port = int(server.server_address[1])
-    public_path = arguments.base_path + "/" if arguments.base_path else "/"
-    print(f"local site: http://{arguments.host}:{actual_port}{public_path}")
-    print("press Ctrl-C to stop")
-    try:
-        server.serve_forever()
-    except KeyboardInterrupt:
-        print("stopping local server")
-    finally:
-        server.server_close()
+        repository = repository_root()
+        site_directory = repository / "build" / "site"
+        if not arguments.no_build:
+            logger.info("Local site build started", event="site.build_started")
+            build(root=repository, base_path=arguments.base_path)
+            logger.info("Local site build completed", event="site.build_completed")
+        elif not (site_directory / "index.html").is_file():
+            message = "build/site/index.html is missing; run without --no-build"
+            logger.error(
+                "Generated local site is missing",
+                event="command.failed",
+                site_directory=str(site_directory),
+            )
+            print(message, file=sys.stderr)
+            return 1
+        try:
+            server = create_local_server(
+                site_directory=site_directory,
+                host=arguments.host,
+                port=arguments.port,
+                base_path=arguments.base_path,
+            )
+        except OSError as error:
+            logger.exception(
+                "Local site server failed to start",
+                event="command.failed",
+                error=error,
+                host=arguments.host,
+                requested_port=arguments.port,
+            )
+            print(f"failed to start local server: {error}", file=sys.stderr)
+            return 1
+        actual_port = int(server.server_address[1])
+        public_path = arguments.base_path + "/" if arguments.base_path else "/"
+        logger.info(
+            "Local site server started",
+            event="server.started",
+            host=arguments.host,
+            port=actual_port,
+            public_path=public_path,
+        )
+        print(f"local site: http://{arguments.host}:{actual_port}{public_path}")
+        print("press Ctrl-C to stop")
+        interrupted = False
+        try:
+            server.serve_forever()
+        except KeyboardInterrupt:
+            interrupted = True
+            logger.info("Local site server interrupted", event="server.interrupted")
+            print("stopping local server")
+        finally:
+            server.server_close()
+            logger.info(
+                "Local site server stopped",
+                event="server.stopped",
+                interrupted=interrupted,
+            )
+        logger.info(
+            "Local site server command completed",
+            event="command.completed",
+            interrupted=interrupted,
+        )
     return 0
 
 

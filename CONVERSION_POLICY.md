@@ -136,6 +136,18 @@ Canonical criterion package
 - Codex 재시도 기본값은 0이어야 하며 명시적인 재시도만 허용한다. 재시도 횟수는 최대 5, deterministic exponential backoff base와 각 대기 시간은 0초부터 300초까지로 제한해야 한다.
 - Worker 수를 늘리기 전에 Codex 서비스의 rate limit, 동시 요청 한도, 항목별 PDF page image 수, model context와 input token 사용량, 프로세스별 메모리 사용량을 확인해야 한다. Rate limit 또는 자원 압박이 발생하면 worker 수를 줄이고 checksum 기반 재개를 사용해야 한다.
 
+### 실행 로그와 진행률
+
+- `conversion/` 아래의 모든 실행 도구는 시작, 완료, 실패와 주요 단계 상태를 공통 runtime logger로 기록해야 한다.
+- 기존 command 결과와 artifact path의 stdout 계약을 변경해서는 안 된다. 사람이 읽는 console log와 진행률은 stderr로 출력해야 한다.
+- File log는 UTF-8 JSON Lines를 사용하고, UTC timestamp, level, tool, event, process identifier, thread identifier, context를 포함해야 한다.
+- 병렬 worker는 process별 log file을 사용해야 한다. 여러 process가 같은 file에 직접 기록해서는 안 된다.
+- API key, authorization 값, token, password, credential URL과 알려진 credential 형식은 console과 file log 양쪽에서 제거해야 한다.
+- Bulk 진행률은 부모 process만 갱신하고, 완료 수, 전체 수, 백분율, 경과 시간, 처리율, outcome별 건수를 제공해야 한다.
+- TTY에서는 한 줄을 갱신하고 종료 시 newline을 기록해야 한다. CI와 non-TTY에서는 carriage return 없이 완전한 line을 기록해야 한다.
+- 모든 실행 도구는 `--log-level`, `--log-directory`를 지원해야 한다. Bulk runner는 진행률을 비활성화하는 `--no-progress`를 추가로 지원해야 한다.
+- 기본 file log 경로인 `work/logs/`와 변환 작업 경로인 `work/codex/`는 생성 산출물이며 Git에 포함해서는 안 된다.
+
 ### Canonical 콘텐츠 계층
 
 - 점검항목별 criterion package를 사람이 수정하는 canonical 콘텐츠로 사용한다.

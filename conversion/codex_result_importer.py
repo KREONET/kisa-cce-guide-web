@@ -26,6 +26,7 @@ from conversion.common import (
     repository_root,
     sha256_file,
 )
+from conversion.runtime_logging import add_logging_arguments, configure_runtime_logging
 
 SYSTEM_LEVEL_TWO_HEADINGS = (
     "개요",
@@ -908,6 +909,7 @@ def _argument_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("slug", help="criterion slug such as u-03")
     parser.add_argument("--work-directory", type=Path, help="generated Codex work directory")
+    add_logging_arguments(parser)
     return parser
 
 
@@ -915,21 +917,46 @@ def main() -> int:
     """Validate and render one Codex result candidate."""
 
     arguments = _argument_parser().parse_args()
-    repository = repository_root()
-    output_root = arguments.work_directory or repository / DEFAULT_WORK_DIRECTORY
-    task_path = output_root / "tasks" / arguments.slug / "task.json"
-    result_path = output_root / "results" / arguments.slug / "result.json"
-    try:
-        candidate_path = render_codex_candidate(
-            result_path,
-            task_path,
-            root=repository,
-            work_directory=output_root,
+    with configure_runtime_logging(
+        "codex_result_importer",
+        level=arguments.log_level,
+        log_directory=arguments.log_directory,
+        context={"slug": arguments.slug},
+    ) as logger:
+        logger.info(
+            "Codex result import started",
+            event="command.started",
+            work_directory=(
+                str(arguments.work_directory) if arguments.work_directory is not None else None
+            ),
         )
-    except (FileNotFoundError, TypeError, ValueError) as error:
-        print(str(error), file=sys.stderr)
-        return 1
-    print(candidate_path)
+        repository = repository_root()
+        output_root = arguments.work_directory or repository / DEFAULT_WORK_DIRECTORY
+        task_path = output_root / "tasks" / arguments.slug / "task.json"
+        result_path = output_root / "results" / arguments.slug / "result.json"
+        try:
+            candidate_path = render_codex_candidate(
+                result_path,
+                task_path,
+                root=repository,
+                work_directory=output_root,
+            )
+        except (FileNotFoundError, TypeError, ValueError) as error:
+            logger.exception(
+                "Codex result import failed",
+                event="command.failed",
+                error=error,
+                result_path=str(result_path),
+                task_path=str(task_path),
+            )
+            print(str(error), file=sys.stderr)
+            return 1
+        logger.info(
+            "Codex result import completed",
+            event="command.completed",
+            output_path=str(candidate_path),
+        )
+        print(candidate_path)
     return 0
 
 

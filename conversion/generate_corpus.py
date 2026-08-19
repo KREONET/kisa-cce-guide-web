@@ -25,6 +25,7 @@ from conversion.common import (
     repository_root,
     sha256_file,
 )
+from conversion.runtime_logging import add_logging_arguments, configure_runtime_logging
 
 SOURCE_DOCUMENT_IDENTIFIER = "kisa-cce-criteria-2026"
 SOURCE_DOCUMENT_CHECKSUM = "44fe393981b244147be6af7423d99dc15633c089fad0bcb296cbe2371dde812d"
@@ -1029,15 +1030,29 @@ def load_criterion_metadata(path: Path) -> dict[str, JsonValue]:
 def _argument_parser() -> argparse.ArgumentParser:
     """Build the command-line parser."""
 
-    return argparse.ArgumentParser(description=__doc__)
+    parser = argparse.ArgumentParser(description=__doc__)
+    add_logging_arguments(parser)
+    return parser
 
 
 def main() -> int:
     """Generate the complete extracted corpus."""
 
-    _argument_parser().parse_args()
-    generate()
-    print("generated 382 criterion packages and the 873-page inventory")
+    arguments = _argument_parser().parse_args()
+    with configure_runtime_logging(
+        "generate_corpus",
+        level=arguments.log_level,
+        log_directory=arguments.log_directory,
+    ) as logger:
+        logger.info("Corpus generation started", event="command.started")
+        generate()
+        logger.info(
+            "Corpus generation completed",
+            event="command.completed",
+            criterion_count=382,
+            physical_page_count=873,
+        )
+        print("generated 382 criterion packages and the 873-page inventory")
     return 0
 
 

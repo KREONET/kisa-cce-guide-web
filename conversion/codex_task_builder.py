@@ -26,6 +26,7 @@ from conversion.common import (
     repository_root,
     sha256_file,
 )
+from conversion.runtime_logging import add_logging_arguments, configure_runtime_logging
 
 PROMPT_VERSION = 2
 DEFAULT_WORK_DIRECTORY = Path("work/codex")
@@ -330,6 +331,7 @@ def _argument_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("slug", help="criterion slug such as u-03")
     parser.add_argument("--work-directory", type=Path, help="generated Codex work directory")
+    add_logging_arguments(parser)
     return parser
 
 
@@ -337,11 +339,29 @@ def main() -> int:
     """Build one Codex task package."""
 
     arguments = _argument_parser().parse_args()
-    task_path = build_codex_task(
-        arguments.slug,
-        work_directory=arguments.work_directory,
-    )
-    print(task_path)
+    with configure_runtime_logging(
+        "codex_task_builder",
+        level=arguments.log_level,
+        log_directory=arguments.log_directory,
+        context={"slug": arguments.slug},
+    ) as logger:
+        logger.info(
+            "Codex task build started",
+            event="command.started",
+            work_directory=(
+                str(arguments.work_directory) if arguments.work_directory is not None else None
+            ),
+        )
+        task_path = build_codex_task(
+            arguments.slug,
+            work_directory=arguments.work_directory,
+        )
+        logger.info(
+            "Codex task build completed",
+            event="command.completed",
+            output_path=str(task_path),
+        )
+        print(task_path)
     return 0
 
 

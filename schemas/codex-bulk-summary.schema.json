@@ -45,7 +45,10 @@
         "failFast",
         "retries",
         "retryBackoffSeconds",
-        "workDirectory"
+        "workDirectory",
+        "logDirectory",
+        "logLevel",
+        "progressEnabled"
       ],
       "properties": {
         "workers": {"type": "integer", "minimum": 1, "maximum": 16},
@@ -55,7 +58,13 @@
         "failFast": {"type": "boolean"},
         "retries": {"type": "integer", "minimum": 0, "maximum": 5},
         "retryBackoffSeconds": {"type": "number", "minimum": 0, "maximum": 300},
-        "workDirectory": {"type": "string", "minLength": 1}
+        "workDirectory": {"type": "string", "minLength": 1},
+        "logDirectory": {"type": "string", "minLength": 1},
+        "logLevel": {
+          "type": "string",
+          "enum": ["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"]
+        },
+        "progressEnabled": {"type": "boolean"}
       }
     },
     "counts": {

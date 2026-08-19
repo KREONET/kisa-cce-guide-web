@@ -234,14 +234,36 @@ uv run python -m conversion.codex_bulk_runner \
 | `--retry-backoff-seconds <0-300>` | 재시도의 deterministic exponential backoff base. 각 대기 시간도 최대 300초이며, 기본값은 `0` |
 | `--work-directory <path>` | 기본 `work/codex/` 대신 사용할 격리된 artifact root 지정 |
 | `--summary-path <path>` | 기본 `<work-directory>/bulk-summary.json` 대신 summary 경로 지정 |
+| `--no-progress` | stderr의 실시간 진행률 표시 비활성화 |
+| `--log-level <level>` | `DEBUG`, `INFO`, `WARNING`, `ERROR`, `CRITICAL` 중 로그 수준 지정 |
+| `--log-directory <path>` | 기본 `work/logs/` 대신 JSONL 로그 경로 지정 |
 
 기본 worker 수는 최대 2인 보수적인 값이며, 설정 가능한 절대 상한은 16입니다. 전체 corpus의 첫 실행에는 작은 기본값을 권장합니다. 항목마다 여러 page image와 별도 Codex process를 사용하므로, 큰 병렬값은 API rate limit, 동시 요청 한도, input token 사용량, model context, 메모리 압박을 키울 수 있습니다. 제한에 도달하면 `--workers 1`로 낮추고 `--resume`으로 이어서 실행합니다.
 
 재개 실행도 현재 입력에서 task를 다시 생성합니다. Task identifier와 checksum, result와 candidate checksum, `validationStatus: passed`, `canonicalApplied: false`가 모두 일치하는 candidate는 `skipped`로 기록합니다. 현재 task에 유효한 result만 있으면 importer부터 재개하고 `resumedImport`로 기록합니다. 누락되거나 오래된 artifact는 vision 단계부터 다시 처리합니다.
 
-한 항목의 실패는 다른 항목의 artifact를 손상시키지 않습니다. 기본 실행은 나머지 항목을 계속 처리하고 `work/codex/bulk-summary.json`에 `taskBuild`, `visionRun`, `importer`의 상태, 오류, `completed`, `resumedImport`, `skipped`, `dryRun`, `failed`, `cancelled` outcome을 manifest 순서로 기록합니다. Schema version 1 summary는 `schemas/codex-bulk-summary.schema.json` 검증을 통과한 뒤 원자적으로 교체됩니다. 실패 또는 취소가 하나라도 있으면 command는 non-zero exit code를 반환합니다.
+한 항목의 실패는 다른 항목의 artifact를 손상시키지 않습니다. 기본 실행은 나머지 항목을 계속 처리하고 `work/codex/bulk-summary.json`에 `taskBuild`, `visionRun`, `importer`의 상태, 오류, `completed`, `resumedImport`, `skipped`, `dryRun`, `failed`, `cancelled` outcome을 manifest 순서로 기록합니다. Schema version 1 summary는 로그 디렉터리, 로그 수준, 진행률 활성화 상태를 포함하고 `schemas/codex-bulk-summary.schema.json` 검증을 통과한 뒤 원자적으로 교체됩니다. 실패 또는 취소가 하나라도 있으면 command는 non-zero exit code를 반환합니다.
 
 전체 실행도 canonical Markdown, provenance, review registry를 적용하거나 승인하지 않습니다. `work/codex/candidates/`의 결과는 별도 사람 검토와 명시적 적용 작업이 필요한 review-only artifact입니다.
+
+### 공통 실행 로그
+
+`conversion/` 아래의 모든 실행 도구는 공통 런타임 로그를 사용합니다. 기존 machine-readable 결과와 경로는 stdout에 유지하고, 사람이 읽는 로그와 진행률은 stderr로 분리합니다.
+
+- 기본 로그 경로는 `work/logs/`이며 Git에서 제외됩니다.
+- 각 process는 `<tool>-<runIdentifier>-p<processIdentifier>.jsonl` 파일을 별도로 사용합니다. Bulk worker가 같은 run identifier를 공유해도 파일 쓰기가 충돌하지 않습니다.
+- JSONL record는 UTC timestamp, level, tool, event, process와 thread identifier, context, 예외 정보를 포함합니다.
+- API key, authorization header, token, password, credential URL과 알려진 credential 형식은 콘솔과 JSONL에 기록하기 전에 제거합니다.
+- Bulk 진행률은 완료 항목 수, 전체 항목 수, 백분율, 경과 시간, 처리율, outcome 집계를 표시합니다. TTY에서는 한 줄을 갱신하고, CI와 non-TTY에서는 줄 단위 기록을 사용합니다.
+- 모든 도구에서 `--log-level`, `--log-directory`를 사용할 수 있습니다. `KISA_CCE_LOG_LEVEL`, `KISA_CCE_LOG_DIRECTORY` 환경변수도 같은 기본값을 제공합니다.
+
+```bash
+uv run python -m conversion.codex_bulk_runner \
+  --model <model-identifier> \
+  --log-level INFO \
+  --log-directory work/logs \
+  --resume
+```
 
 ## 검증 및 빌드
 

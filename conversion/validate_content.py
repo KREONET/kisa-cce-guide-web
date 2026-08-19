@@ -37,6 +37,7 @@ from conversion.common import (
     repository_root,
     sha256_file,
 )
+from conversion.runtime_logging import add_logging_arguments, configure_runtime_logging
 
 SCHEMA_BINDINGS = {
     "data/source-registry.yaml": "schemas/source-registry.schema.json",
@@ -1853,6 +1854,7 @@ def _argument_parser() -> argparse.ArgumentParser:
         default=Path("build/reports/content-validation.json"),
         help="validation report output path",
     )
+    add_logging_arguments(parser)
     return parser
 
 
@@ -1860,18 +1862,49 @@ def main() -> int:
     """Run scoped or release validation."""
 
     arguments = _argument_parser().parse_args()
-    root = repository_root()
-    issues = validate_repository(root=root, release=arguments.release)
-    report_path = arguments.report
-    if not report_path.is_absolute():
-        report_path = root / report_path
-    write_report(issues, report_path=report_path, release=arguments.release)
-    if issues:
-        for issue in issues:
-            print(f"{issue.rule_identifier}: {issue.location}: {issue.message}", file=sys.stderr)
-        return 1
-    scope = "release" if arguments.release else "canonical corpus"
-    print(f"{scope} validation passed")
+    with configure_runtime_logging(
+        "validate_content",
+        level=arguments.log_level,
+        log_directory=arguments.log_directory,
+    ) as logger:
+        scope = "release" if arguments.release else "canonical corpus"
+        logger.info(
+            "Content validation started",
+            event="command.started",
+            validation_scope=scope,
+        )
+        root = repository_root()
+        issues = validate_repository(root=root, release=arguments.release)
+        report_path = arguments.report
+        if not report_path.is_absolute():
+            report_path = root / report_path
+        write_report(issues, report_path=report_path, release=arguments.release)
+        logger.info(
+            "Validation report written",
+            event="validation.report_written",
+            issue_count=len(issues),
+            report_path=str(report_path),
+        )
+        if issues:
+            logger.error(
+                "Content validation failed",
+                event="command.failed",
+                issue_count=len(issues),
+                validation_scope=scope,
+            )
+            for issue in issues:
+                print(
+                    f"{issue.rule_identifier}: {issue.location}: {issue.message}",
+                    file=sys.stderr,
+                )
+            return 1
+        logger.info(
+            "Content validation completed",
+            event="command.completed",
+            issue_count=0,
+            validation_scope=scope,
+        )
+        print(f"{scope} validation passed")
     return 0
 
 

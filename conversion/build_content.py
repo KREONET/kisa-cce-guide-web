@@ -30,6 +30,7 @@ from conversion.common import (
     provenance_by_reference,
     repository_root,
 )
+from conversion.runtime_logging import add_logging_arguments, configure_runtime_logging
 from conversion.validate_content import validate_repository
 
 
@@ -458,8 +459,8 @@ def build(
     return generated_paths
 
 
-def main() -> int:
-    """Run the deterministic corpus build."""
+def _argument_parser() -> argparse.ArgumentParser:
+    """Build the corpus-builder command-line parser."""
 
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -467,21 +468,50 @@ def main() -> int:
         default="",
         help="optional hosting path prefix such as /kisa-cce",
     )
-    arguments = parser.parse_args()
-    try:
-        generated_paths = build(base_path=arguments.base_path)
-    except ValueError as error:
-        print(str(error), file=sys.stderr)
-        return 1
-    root = repository_root()
-    output_roots = sorted(
-        {
-            str(path.relative_to(root).parts[0])
-            for path in generated_paths
-            if path.is_relative_to(root)
-        }
-    )
-    print(f"generated {len(generated_paths)} artifacts under {', '.join(output_roots)}")
+    add_logging_arguments(parser)
+    return parser
+
+
+def main() -> int:
+    """Run the deterministic corpus build."""
+
+    arguments = _argument_parser().parse_args()
+    with configure_runtime_logging(
+        "build_content",
+        level=arguments.log_level,
+        log_directory=arguments.log_directory,
+    ) as logger:
+        logger.info(
+            "Corpus build started",
+            event="command.started",
+            base_path=arguments.base_path,
+        )
+        try:
+            generated_paths = build(base_path=arguments.base_path)
+        except ValueError as error:
+            logger.exception(
+                "Corpus build failed",
+                event="command.failed",
+                error=error,
+                base_path=arguments.base_path,
+            )
+            print(str(error), file=sys.stderr)
+            return 1
+        root = repository_root()
+        output_roots = sorted(
+            {
+                str(path.relative_to(root).parts[0])
+                for path in generated_paths
+                if path.is_relative_to(root)
+            }
+        )
+        logger.info(
+            "Corpus build completed",
+            event="command.completed",
+            artifact_count=len(generated_paths),
+            output_roots=output_roots,
+        )
+        print(f"generated {len(generated_paths)} artifacts under {', '.join(output_roots)}")
     return 0
 
 

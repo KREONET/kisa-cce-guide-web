@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import io
 import json
 import math
 import os
@@ -14,7 +15,7 @@ from collections.abc import Callable, Sequence
 from concurrent.futures import FIRST_COMPLETED, Executor, Future, ProcessPoolExecutor, wait
 from dataclasses import dataclass
 from pathlib import Path
-from typing import cast
+from typing import TextIO, cast
 
 from jsonschema import Draft202012Validator, FormatChecker
 
@@ -23,6 +24,12 @@ from conversion.codex_runner import run_codex_task
 from conversion.codex_task_builder import DEFAULT_WORK_DIRECTORY, build_codex_task
 from conversion.common import JsonValue, as_mapping, as_sequence, load_json, load_yaml, sha256_file
 from conversion.common import repository_root as default_repository_root
+from conversion.runtime_logging import (
+    ProgressReporter,
+    RuntimeLogger,
+    add_logging_arguments,
+    configure_runtime_logging,
+)
 
 MAXIMUM_WORKERS = 16
 MAXIMUM_RETRIES = 5
@@ -47,10 +54,17 @@ class BulkItemRequest:
     resume: bool
     retries: int
     retry_backoff_seconds: float
+    log_directory: str | None = None
+    log_level: str | None = None
+    log_run_identifier: str | None = None
 
 
 type WorkerCallable = Callable[[BulkItemRequest], dict[str, JsonValue]]
 type ExecutorFactory = Callable[..., Executor]
+type TerminalResultObserver = Callable[
+    [BulkItemRequest, dict[str, JsonValue]],
+    None,
+]
 
 
 def default_worker_count(cpu_count: int | None = None) -> int:
@@ -281,11 +295,54 @@ def _resume_state(
     return "verifiedResult"
 
 
+def _log_stage_started(
+    logger: RuntimeLogger,
+    request: BulkItemRequest,
+    *,
+    stage: str,
+    path: Path,
+) -> None:
+    """Record the start of one worker-owned pipeline stage."""
+
+    logger.info(
+        "Worker stage started",
+        event="stage.started",
+        slug=request.slug,
+        stage=stage,
+        path=path.as_posix(),
+    )
+
+
+def _log_stage_completed(  # noqa: PLR0913
+    logger: RuntimeLogger,
+    request: BulkItemRequest,
+    *,
+    stage: str,
+    status: str,
+    path: Path,
+    duration_seconds: float = 0.0,
+    reason: str | None = None,
+) -> None:
+    """Record the terminal status of one worker-owned pipeline stage."""
+
+    fields: dict[str, JsonValue] = {
+        "slug": request.slug,
+        "stage": stage,
+        "status": status,
+        "path": path.as_posix(),
+        "duration_seconds": duration_seconds,
+    }
+    if reason is not None:
+        fields["reason"] = reason
+    logger.info("Worker stage completed", event="stage.completed", **fields)
+
+
 def _run_vision_with_retries(
     request: BulkItemRequest,
     *,
     root: Path,
     work_directory: Path,
+    logger: RuntimeLogger,
 ) -> tuple[Path, int, list[float]]:
     """Run Codex with only the explicitly requested deterministic retries."""
 
@@ -301,11 +358,21 @@ def _run_vision_with_retries(
                 model=request.model,
                 dry_run=request.dry_run,
             )
-        except Exception:
+        except Exception as error:
             if attempts > request.retries:
                 raise
             delay_seconds = _retry_delay_seconds(request, failed_attempt=attempts)
             retry_delays_seconds.append(delay_seconds)
+            logger.warning(
+                "Vision retry scheduled",
+                event="stage.retry_scheduled",
+                slug=request.slug,
+                stage="visionRun",
+                failed_attempt=attempts,
+                retry_delay_seconds=delay_seconds,
+                error_type=type(error).__name__,
+                error_message=str(error),
+            )
             if delay_seconds:
                 time.sleep(delay_seconds)
         else:
@@ -321,7 +388,11 @@ def _retry_delay_seconds(request: BulkItemRequest, *, failed_attempt: int) -> fl
     )
 
 
-def _process_item(request: BulkItemRequest) -> dict[str, JsonValue]:
+def _process_item_pipeline(  # noqa: PLR0915
+    request: BulkItemRequest,
+    *,
+    logger: RuntimeLogger,
+) -> dict[str, JsonValue]:
     """Run one isolated task-build, vision, and importer pipeline in a worker process."""
 
     item_started_at = time.perf_counter()
@@ -333,16 +404,31 @@ def _process_item(request: BulkItemRequest) -> dict[str, JsonValue]:
     retry_delays_seconds: list[float] = []
     try:
         stage_started_at = time.perf_counter()
+        _log_stage_started(
+            logger,
+            request,
+            stage="taskBuild",
+            path=paths["task"],
+        )
         task_path = build_codex_task(
             request.slug,
             root=repository,
             work_directory=output_root,
         )
+        stage_duration_seconds = _duration_seconds(stage_started_at)
         stages["taskBuild"] = _stage_document(
             "completed",
             path=task_path,
             root=repository,
-            duration_seconds=_duration_seconds(stage_started_at),
+            duration_seconds=stage_duration_seconds,
+        )
+        _log_stage_completed(
+            logger,
+            request,
+            stage="taskBuild",
+            status="completed",
+            path=task_path,
+            duration_seconds=stage_duration_seconds,
         )
 
         resume_state = _resume_state(paths=paths, root=repository) if request.resume else "none"
@@ -361,6 +447,22 @@ def _process_item(request: BulkItemRequest) -> dict[str, JsonValue]:
                 root=repository,
                 reason="verifiedCandidate",
             )
+            _log_stage_completed(
+                logger,
+                request,
+                stage="visionRun",
+                status="skipped",
+                path=paths["result"],
+                reason="verifiedCandidate",
+            )
+            _log_stage_completed(
+                logger,
+                request,
+                stage="importer",
+                status="skipped",
+                path=paths["candidate"],
+                reason="verifiedCandidate",
+            )
             return _finish_item(item, outcome="skipped", started_at=item_started_at)
 
         if resume_state == "verifiedResult":
@@ -371,6 +473,14 @@ def _process_item(request: BulkItemRequest) -> dict[str, JsonValue]:
                 reason="verifiedResult",
                 attempts=0,
             )
+            _log_stage_completed(
+                logger,
+                request,
+                stage="visionRun",
+                status="skipped",
+                path=paths["result"],
+                reason="verifiedResult",
+            )
             active_stage = "importer"
             if request.dry_run:
                 stages["importer"] = _stage_document(
@@ -379,37 +489,78 @@ def _process_item(request: BulkItemRequest) -> dict[str, JsonValue]:
                     root=repository,
                     reason="wouldResumeImport",
                 )
+                _log_stage_completed(
+                    logger,
+                    request,
+                    stage="importer",
+                    status="dryRun",
+                    path=paths["candidate"],
+                    reason="wouldResumeImport",
+                )
                 return _finish_item(item, outcome="dryRun", started_at=item_started_at)
             stage_started_at = time.perf_counter()
+            _log_stage_started(
+                logger,
+                request,
+                stage="importer",
+                path=paths["candidate"],
+            )
             candidate_path = render_codex_candidate(
                 paths["result"],
                 task_path,
                 root=repository,
                 work_directory=output_root,
             )
+            stage_duration_seconds = _duration_seconds(stage_started_at)
             stages["importer"] = _stage_document(
                 "completed",
                 path=candidate_path,
                 root=repository,
-                duration_seconds=_duration_seconds(stage_started_at),
+                duration_seconds=stage_duration_seconds,
+                reason="resumedFromVerifiedResult",
+            )
+            _log_stage_completed(
+                logger,
+                request,
+                stage="importer",
+                status="completed",
+                path=candidate_path,
+                duration_seconds=stage_duration_seconds,
                 reason="resumedFromVerifiedResult",
             )
             return _finish_item(item, outcome="resumedImport", started_at=item_started_at)
 
         active_stage = "visionRun"
         stage_started_at = time.perf_counter()
+        _log_stage_started(
+            logger,
+            request,
+            stage="visionRun",
+            path=paths["result"],
+        )
         vision_output_path, vision_attempts, retry_delays_seconds = _run_vision_with_retries(
             request,
             root=repository,
             work_directory=output_root,
+            logger=logger,
         )
+        stage_duration_seconds = _duration_seconds(stage_started_at)
+        vision_status = "dryRun" if request.dry_run else "completed"
         stages["visionRun"] = _stage_document(
-            "dryRun" if request.dry_run else "completed",
+            vision_status,
             path=vision_output_path,
             root=repository,
-            duration_seconds=_duration_seconds(stage_started_at),
+            duration_seconds=stage_duration_seconds,
             attempts=vision_attempts,
             retry_delays_seconds=retry_delays_seconds,
+        )
+        _log_stage_completed(
+            logger,
+            request,
+            stage="visionRun",
+            status=vision_status,
+            path=vision_output_path,
+            duration_seconds=stage_duration_seconds,
         )
         if request.dry_run:
             stages["importer"] = _stage_document(
@@ -418,23 +569,46 @@ def _process_item(request: BulkItemRequest) -> dict[str, JsonValue]:
                 root=repository,
                 reason="visionDryRun",
             )
+            _log_stage_completed(
+                logger,
+                request,
+                stage="importer",
+                status="notRun",
+                path=paths["candidate"],
+                reason="visionDryRun",
+            )
             return _finish_item(item, outcome="dryRun", started_at=item_started_at)
 
         active_stage = "importer"
         stage_started_at = time.perf_counter()
+        _log_stage_started(
+            logger,
+            request,
+            stage="importer",
+            path=paths["candidate"],
+        )
         candidate_path = render_codex_candidate(
             vision_output_path,
             task_path,
             root=repository,
             work_directory=output_root,
         )
+        stage_duration_seconds = _duration_seconds(stage_started_at)
         stages["importer"] = _stage_document(
             "completed",
             path=candidate_path,
             root=repository,
-            duration_seconds=_duration_seconds(stage_started_at),
+            duration_seconds=stage_duration_seconds,
         )
-    except Exception as error:  # noqa: BLE001
+        _log_stage_completed(
+            logger,
+            request,
+            stage="importer",
+            status="completed",
+            path=candidate_path,
+            duration_seconds=stage_duration_seconds,
+        )
+    except Exception as error:
         stage_path = {
             "taskBuild": paths["task"],
             "visionRun": paths["result"],
@@ -458,8 +632,67 @@ def _process_item(request: BulkItemRequest) -> dict[str, JsonValue]:
             "type": type(error).__name__,
             "message": str(error),
         }
+        logger.exception(
+            "Worker stage failed",
+            event="stage.failed",
+            error=error,
+            slug=request.slug,
+            stage=active_stage,
+            path=stage_path.as_posix(),
+        )
         return _finish_item(item, outcome="failed", started_at=item_started_at)
     return _finish_item(item, outcome="completed", started_at=item_started_at)
+
+
+def _process_item(request: BulkItemRequest) -> dict[str, JsonValue]:
+    """Configure an isolated worker log and execute one conversion item."""
+
+    log_directory = Path(request.log_directory) if request.log_directory is not None else None
+    logger = configure_runtime_logging(
+        "codex_bulk_worker",
+        level=request.log_level,
+        log_directory=log_directory,
+        run_identifier=request.log_run_identifier,
+        context={"process_role": "worker", "slug": request.slug},
+        console_stream=io.StringIO(),
+    )
+    try:
+        logger.info("Worker item started", event="item.started", slug=request.slug)
+        result = _process_item_pipeline(request, logger=logger)
+        outcome = result.get("outcome")
+        if outcome == "failed":
+            error_document = result.get("error")
+            logger.error(
+                "Worker item failed",
+                event="item.failed",
+                slug=request.slug,
+                outcome=outcome,
+                error=error_document,
+            )
+        logger.info(
+            "Worker item completed",
+            event="item.completed",
+            slug=request.slug,
+            outcome=outcome,
+            duration_seconds=result.get("durationSeconds"),
+        )
+        logger.info(
+            "Worker item outcome recorded",
+            event="item.outcome",
+            slug=request.slug,
+            outcome=outcome,
+        )
+        return result  # noqa: TRY300
+    except BaseException as error:
+        logger.exception(
+            "Worker item terminated unexpectedly",
+            event="item.failed",
+            error=error,
+            slug=request.slug,
+        )
+        raise
+    finally:
+        logger.close()
 
 
 def _cancelled_item(request: BulkItemRequest, *, reason: str) -> dict[str, JsonValue]:
@@ -524,17 +757,36 @@ def _validated_worker_result(
     return normalized_result
 
 
+def _record_terminal_result(
+    results: dict[str, dict[str, JsonValue]],
+    request: BulkItemRequest,
+    result: dict[str, JsonValue],
+    *,
+    on_terminal_result: TerminalResultObserver,
+) -> None:
+    """Store one terminal result and notify the parent-process observer once."""
+
+    results[request.slug] = result
+    on_terminal_result(request, result)
+
+
 def _cancel_pending_requests(
     pending_requests: deque[BulkItemRequest],
     results: dict[str, dict[str, JsonValue]],
     *,
     reason: str,
+    on_terminal_result: TerminalResultObserver,
 ) -> None:
     """Record every request that was never submitted."""
 
     while pending_requests:
         request = pending_requests.popleft()
-        results[request.slug] = _cancelled_item(request, reason=reason)
+        _record_terminal_result(
+            results,
+            request,
+            _cancelled_item(request, reason=reason),
+            on_terminal_result=on_terminal_result,
+        )
 
 
 def _cancel_queued_futures(
@@ -542,13 +794,37 @@ def _cancel_queued_futures(
     results: dict[str, dict[str, JsonValue]],
     *,
     reason: str,
+    on_terminal_result: TerminalResultObserver,
 ) -> None:
     """Cancel executor work that has not started and retain running futures."""
 
     for future, request in list(active_futures.items()):
         if future.cancel():
             active_futures.pop(future)
-            results[request.slug] = _cancelled_item(request, reason=reason)
+            _record_terminal_result(
+                results,
+                request,
+                _cancelled_item(request, reason=reason),
+                on_terminal_result=on_terminal_result,
+            )
+
+
+def _log_parent_event(
+    logger: RuntimeLogger,
+    progress_reporter: ProgressReporter,
+    level: str,
+    message: str,
+    *,
+    event: str,
+    **fields: object,
+) -> None:
+    """Preserve an active TTY progress line around one parent log event."""
+
+    progress_reporter.clear()
+    try:
+        logger.log(level, message, event=event, **fields)
+    finally:
+        progress_reporter.refresh()
 
 
 def _submit_available_requests(  # noqa: PLR0913
@@ -560,6 +836,9 @@ def _submit_available_requests(  # noqa: PLR0913
     results: dict[str, dict[str, JsonValue]],
     workers: int,
     stop_after_failure: bool,
+    logger: RuntimeLogger,
+    progress_reporter: ProgressReporter,
+    on_terminal_result: TerminalResultObserver,
 ) -> bool:
     """Fill the bounded executor queue and report whether submission failed."""
 
@@ -569,22 +848,40 @@ def _submit_available_requests(  # noqa: PLR0913
         try:
             future = executor.submit(worker_callable, request)
         except Exception as error:  # noqa: BLE001
-            results[request.slug] = _worker_failure_item(request, error=error)
+            _record_terminal_result(
+                results,
+                request,
+                _worker_failure_item(request, error=error),
+                on_terminal_result=on_terminal_result,
+            )
             submission_failed = True
             if stop_after_failure:
                 return submission_failed
         else:
             active_futures[cast("Future[object]", future)] = request
+            _log_parent_event(
+                logger,
+                progress_reporter,
+                "INFO",
+                "Bulk item submitted",
+                event="item.submitted",
+                slug=request.slug,
+                active_item_count=len(active_futures),
+                pending_item_count=len(pending_requests),
+            )
     return submission_failed
 
 
-def _execute_requests(  # noqa: C901, PLR0912
+def _execute_requests(  # noqa: C901, PLR0912, PLR0913
     requests: Sequence[BulkItemRequest],
     *,
     workers: int,
     fail_fast: bool,
     executor_factory: ExecutorFactory,
     worker_callable: WorkerCallable,
+    logger: RuntimeLogger,
+    progress_reporter: ProgressReporter,
+    on_terminal_result: TerminalResultObserver,
 ) -> tuple[dict[str, dict[str, JsonValue]], bool, bool]:
     """Execute requests with bounded submission, isolation, and cancellation."""
 
@@ -599,7 +896,21 @@ def _execute_requests(  # noqa: C901, PLR0912
         executor = executor_factory(max_workers=workers)
     except Exception as error:  # noqa: BLE001
         for request in requests:
-            results[request.slug] = _worker_failure_item(request, error=error)
+            _record_terminal_result(
+                results,
+                request,
+                _worker_failure_item(request, error=error),
+                on_terminal_result=on_terminal_result,
+            )
+        if fail_fast:
+            _log_parent_event(
+                logger,
+                progress_reporter,
+                "WARNING",
+                "Fail-fast triggered by executor initialization failure",
+                event="scheduler.fail_fast",
+                cause="executor_initialization",
+            )
         return results, fail_fast, False
 
     try:
@@ -613,18 +924,33 @@ def _execute_requests(  # noqa: C901, PLR0912
                     results=results,
                     workers=workers,
                     stop_after_failure=fail_fast,
+                    logger=logger,
+                    progress_reporter=progress_reporter,
+                    on_terminal_result=on_terminal_result,
                 )
+                fail_fast_was_triggered = fail_fast_triggered
                 fail_fast_triggered = fail_fast and submission_failed
+                if fail_fast_triggered and not fail_fast_was_triggered:
+                    _log_parent_event(
+                        logger,
+                        progress_reporter,
+                        "WARNING",
+                        "Fail-fast triggered by item submission failure",
+                        event="scheduler.fail_fast",
+                        cause="item_submission",
+                    )
             if fail_fast_triggered:
                 _cancel_pending_requests(
                     pending_requests,
                     results,
                     reason="not started after fail-fast",
+                    on_terminal_result=on_terminal_result,
                 )
                 _cancel_queued_futures(
                     active_futures,
                     results,
                     reason="cancelled after fail-fast",
+                    on_terminal_result=on_terminal_result,
                 )
             if not active_futures:
                 continue
@@ -639,31 +965,70 @@ def _execute_requests(  # noqa: C901, PLR0912
             for future in ordered_futures:
                 request = active_futures.pop(future)
                 result = _validated_worker_result(request, future)
-                results[request.slug] = result
+                _record_terminal_result(
+                    results,
+                    request,
+                    result,
+                    on_terminal_result=on_terminal_result,
+                )
                 if fail_fast and result.get("outcome") == "failed":
+                    if not fail_fast_triggered:
+                        _log_parent_event(
+                            logger,
+                            progress_reporter,
+                            "WARNING",
+                            "Fail-fast triggered by an item failure",
+                            event="scheduler.fail_fast",
+                            cause="item_failure",
+                            slug=request.slug,
+                        )
                     fail_fast_triggered = True
     except KeyboardInterrupt:
         interrupted = True
+        _log_parent_event(
+            logger,
+            progress_reporter,
+            "WARNING",
+            "Bulk execution interrupted",
+            event="scheduler.interrupted",
+            active_item_count=len(active_futures),
+            pending_item_count=len(pending_requests),
+        )
         _cancel_pending_requests(
             pending_requests,
             results,
             reason="not started after keyboard interrupt",
+            on_terminal_result=on_terminal_result,
         )
         _cancel_queued_futures(
             active_futures,
             results,
             reason="cancelled after keyboard interrupt",
+            on_terminal_result=on_terminal_result,
         )
         for request in active_futures.values():
-            results[request.slug] = _cancelled_item(
+            _record_terminal_result(
+                results,
                 request,
-                reason="interrupted while worker was running",
+                _cancelled_item(
+                    request,
+                    reason="interrupted while worker was running",
+                ),
+                on_terminal_result=on_terminal_result,
             )
     finally:
         try:
             executor.shutdown(wait=True, cancel_futures=True)
         except KeyboardInterrupt:
             interrupted = True
+            _log_parent_event(
+                logger,
+                progress_reporter,
+                "WARNING",
+                "Bulk executor shutdown interrupted",
+                event="scheduler.interrupted",
+                phase="executor_shutdown",
+            )
             executor.shutdown(wait=False, cancel_futures=True)
     return results, fail_fast_triggered, interrupted
 
@@ -771,6 +1136,45 @@ def _selected_requested_slugs(
     return tuple(slug for slug in available_slugs if slug in requested_slug_set)
 
 
+def _terminal_result_observer(
+    *,
+    logger: RuntimeLogger,
+    progress_reporter: ProgressReporter,
+) -> TerminalResultObserver:
+    """Build the parent-only terminal result observer for logs and progress."""
+
+    def observe_terminal_result(
+        request: BulkItemRequest,
+        result: dict[str, JsonValue],
+    ) -> None:
+        outcome_value = result.get("outcome")
+        outcome = outcome_value if isinstance(outcome_value, str) else "invalid"
+        progress_reporter.clear()
+        logger.info(
+            "Bulk item completed",
+            event="item.completed",
+            slug=request.slug,
+            outcome=outcome,
+            duration_seconds=result.get("durationSeconds"),
+        )
+        logger.info(
+            "Bulk item outcome recorded",
+            event="item.outcome",
+            slug=request.slug,
+            outcome=outcome,
+        )
+        if outcome == "failed":
+            logger.error(
+                "Bulk item failed",
+                event="item.failed",
+                slug=request.slug,
+                error=result.get("error"),
+            )
+        progress_reporter.update(outcome=outcome)
+
+    return observe_terminal_result
+
+
 def run_bulk_conversion(  # noqa: PLR0913
     *,
     slugs: Sequence[str] | None = None,
@@ -784,6 +1188,10 @@ def run_bulk_conversion(  # noqa: PLR0913
     retries: int = 0,
     retry_backoff_seconds: float = 0.0,
     summary_path: Path | None = None,
+    progress_enabled: bool = True,
+    progress_stream: TextIO | None = None,
+    log_directory: Path | None = None,
+    log_level: str | None = None,
     executor_factory: ExecutorFactory = ProcessPoolExecutor,
     worker_callable: WorkerCallable = _process_item,
 ) -> dict[str, JsonValue]:
@@ -792,64 +1200,135 @@ def run_bulk_conversion(  # noqa: PLR0913
     started_at = time.perf_counter()
     repository = (root or default_repository_root()).resolve()
     output_root = (work_directory or repository / DEFAULT_WORK_DIRECTORY).resolve()
-    worker_count = workers if workers is not None else default_worker_count()
-    _validate_configuration(
-        workers=worker_count,
-        retries=retries,
-        retry_backoff_seconds=retry_backoff_seconds,
+    logger = configure_runtime_logging(
+        "codex_bulk_runner",
+        level=log_level,
+        log_directory=log_directory,
+        context={"process_role": "parent", "repository": repository.as_posix()},
     )
-    available_slugs = selected_extracted_criterion_slugs(root=repository)
-    selected_slugs = _selected_requested_slugs(available_slugs, slugs)
-    requests = [
-        BulkItemRequest(
-            slug=slug,
-            repository=repository.as_posix(),
+    progress_reporter: ProgressReporter | None = None
+    try:
+        logger.info(
+            "Bulk conversion command started",
+            event="command.started",
             work_directory=output_root.as_posix(),
-            model=model,
-            dry_run=dry_run,
-            resume=resume,
+        )
+        worker_count = workers if workers is not None else default_worker_count()
+        _validate_configuration(
+            workers=worker_count,
             retries=retries,
             retry_backoff_seconds=retry_backoff_seconds,
         )
-        for slug in selected_slugs
-    ]
-    results, fail_fast_triggered, interrupted = _execute_requests(
-        requests,
-        workers=worker_count,
-        fail_fast=fail_fast,
-        executor_factory=executor_factory,
-        worker_callable=worker_callable,
-    )
-    items = [results[slug] for slug in selected_slugs]
-    counts = _summary_counts(items)
-    output_summary_path = (summary_path or output_root / SUMMARY_FILENAME).resolve()
-    configuration: dict[str, JsonValue] = {
-        "workers": worker_count,
-        "model": model or "configured-default",
-        "dryRun": dry_run,
-        "resume": resume,
-        "failFast": fail_fast,
-        "retries": retries,
-        "retryBackoffSeconds": retry_backoff_seconds,
-        "workDirectory": _summary_path_value(output_root, root=repository),
-    }
-    summary: dict[str, JsonValue] = {
-        "schemaVersion": SUMMARY_SCHEMA_VERSION,
-        "status": _overall_status(
+        available_slugs = selected_extracted_criterion_slugs(root=repository)
+        selected_slugs = _selected_requested_slugs(available_slugs, slugs)
+        output_summary_path = (summary_path or output_root / SUMMARY_FILENAME).resolve()
+        configuration: dict[str, JsonValue] = {
+            "workers": worker_count,
+            "model": model or "configured-default",
+            "dryRun": dry_run,
+            "resume": resume,
+            "failFast": fail_fast,
+            "retries": retries,
+            "retryBackoffSeconds": retry_backoff_seconds,
+            "workDirectory": _summary_path_value(output_root, root=repository),
+            "logDirectory": _summary_path_value(logger.log_directory, root=repository),
+            "logLevel": logger.level,
+            "progressEnabled": progress_enabled,
+        }
+        logger.info(
+            "Bulk conversion configuration resolved",
+            event="bulk.configuration",
+            item_count=len(selected_slugs),
+            configuration=configuration,
+            summary_path=output_summary_path.as_posix(),
+        )
+        requests = [
+            BulkItemRequest(
+                slug=slug,
+                repository=repository.as_posix(),
+                work_directory=output_root.as_posix(),
+                model=model,
+                dry_run=dry_run,
+                resume=resume,
+                retries=retries,
+                retry_backoff_seconds=retry_backoff_seconds,
+                log_directory=logger.log_directory.resolve().as_posix(),
+                log_level=logger.level,
+                log_run_identifier=logger.run_identifier,
+            )
+            for slug in selected_slugs
+        ]
+        progress_reporter = ProgressReporter(
+            len(requests),
+            description="Codex bulk conversion",
+            stream=progress_stream,
+            enabled=progress_enabled,
+        )
+        results, fail_fast_triggered, interrupted = _execute_requests(
+            requests,
+            workers=worker_count,
+            fail_fast=fail_fast,
+            executor_factory=executor_factory,
+            worker_callable=worker_callable,
+            logger=logger,
+            progress_reporter=progress_reporter,
+            on_terminal_result=_terminal_result_observer(
+                logger=logger,
+                progress_reporter=progress_reporter,
+            ),
+        )
+        items = [results[slug] for slug in selected_slugs]
+        counts = _summary_counts(items)
+        overall_status = _overall_status(
             counts,
             dry_run=dry_run,
             fail_fast_triggered=fail_fast_triggered,
             interrupted=interrupted,
-        ),
-        "durationSeconds": _duration_seconds(started_at),
-        "configuration": configuration,
-        "counts": counts,
-        "items": cast("JsonValue", items),
-        "summaryPath": _summary_path_value(output_summary_path, root=repository),
-    }
-    validate_bulk_summary(summary, root=repository)
-    _write_summary(output_summary_path, summary)
-    return summary
+        )
+        progress_reporter.finish(outcome=overall_status)
+        summary: dict[str, JsonValue] = {
+            "schemaVersion": SUMMARY_SCHEMA_VERSION,
+            "status": overall_status,
+            "durationSeconds": _duration_seconds(started_at),
+            "configuration": configuration,
+            "counts": counts,
+            "items": cast("JsonValue", items),
+            "summaryPath": _summary_path_value(output_summary_path, root=repository),
+        }
+        validate_bulk_summary(summary, root=repository)
+        _write_summary(output_summary_path, summary)
+        logger.info(
+            "Bulk summary written",
+            event="summary.written",
+            summary_path=output_summary_path.as_posix(),
+            counts=counts,
+            status=overall_status,
+        )
+        logger.info(
+            "Bulk conversion command completed",
+            event="command.completed",
+            status=overall_status,
+            counts=counts,
+            summary_path=output_summary_path.as_posix(),
+        )
+        return summary  # noqa: TRY300
+    except KeyboardInterrupt:
+        logger.warning(
+            "Bulk conversion command interrupted",
+            event="scheduler.interrupted",
+        )
+        raise
+    except BaseException as error:
+        logger.exception(
+            "Bulk conversion command failed",
+            event="command.failed",
+            error=error,
+        )
+        raise
+    finally:
+        if progress_reporter is not None:
+            progress_reporter.close()
+        logger.close()
 
 
 def _bounded_integer(argument: str, *, minimum: int, maximum: int, name: str) -> int:
@@ -933,6 +1412,13 @@ def _argument_parser() -> argparse.ArgumentParser:
         help="deterministic exponential retry backoff base in seconds",
     )
     parser.add_argument("--summary-path", type=Path, help="bulk summary JSON output path")
+    parser.add_argument(
+        "--no-progress",
+        action="store_false",
+        dest="progress_enabled",
+        help="disable stderr progress updates",
+    )
+    add_logging_arguments(parser)
     return parser
 
 
@@ -952,6 +1438,9 @@ def main() -> int:
             retries=arguments.retries,
             retry_backoff_seconds=arguments.retry_backoff_seconds,
             summary_path=arguments.summary_path,
+            progress_enabled=arguments.progress_enabled,
+            log_directory=arguments.log_directory,
+            log_level=arguments.log_level,
         )
     except (KeyError, OSError, TypeError, ValueError) as error:
         sys.stderr.write(f"{error}\n")

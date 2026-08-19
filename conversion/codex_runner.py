@@ -29,6 +29,7 @@ from conversion.common import (
     repository_root,
     sha256_file,
 )
+from conversion.runtime_logging import add_logging_arguments, configure_runtime_logging
 
 
 def _codex_binary() -> Path:
@@ -263,6 +264,7 @@ def _argument_parser() -> argparse.ArgumentParser:
     parser.add_argument("--work-directory", type=Path, help="generated Codex work directory")
     parser.add_argument("--model", help="optional Codex model override")
     parser.add_argument("--dry-run", action="store_true", help="write the run plan only")
+    add_logging_arguments(parser)
     return parser
 
 
@@ -270,17 +272,44 @@ def main() -> int:
     """Run one Codex task from the command line."""
 
     arguments = _argument_parser().parse_args()
-    try:
-        output_path = run_codex_task(
-            arguments.slug,
-            work_directory=arguments.work_directory,
-            model=arguments.model,
+    with configure_runtime_logging(
+        "codex_runner",
+        level=arguments.log_level,
+        log_directory=arguments.log_directory,
+        context={"slug": arguments.slug},
+    ) as logger:
+        logger.info(
+            "Codex task run started",
+            event="command.started",
             dry_run=arguments.dry_run,
+            model=arguments.model or "configured-default",
+            work_directory=(
+                str(arguments.work_directory) if arguments.work_directory is not None else None
+            ),
         )
-    except (FileNotFoundError, RuntimeError, TypeError, ValueError) as error:
-        print(str(error), file=sys.stderr)
-        return 1
-    print(output_path)
+        try:
+            output_path = run_codex_task(
+                arguments.slug,
+                work_directory=arguments.work_directory,
+                model=arguments.model,
+                dry_run=arguments.dry_run,
+            )
+        except (FileNotFoundError, RuntimeError, TypeError, ValueError) as error:
+            logger.exception(
+                "Codex task run failed",
+                event="command.failed",
+                error=error,
+                dry_run=arguments.dry_run,
+            )
+            print(str(error), file=sys.stderr)
+            return 1
+        logger.info(
+            "Codex task run completed",
+            event="command.completed",
+            dry_run=arguments.dry_run,
+            output_path=str(output_path),
+        )
+        print(output_path)
     return 0
 
 

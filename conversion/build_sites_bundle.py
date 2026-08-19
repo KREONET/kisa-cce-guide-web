@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import argparse
 import json
 import re
 import shutil
@@ -12,6 +13,7 @@ from PIL import Image
 
 from conversion.build_content import build
 from conversion.common import repository_root
+from conversion.runtime_logging import add_logging_arguments, configure_runtime_logging
 
 HOSTING_IMAGE_SCALE_DIVISOR = 2
 HOSTING_IMAGE_COLOR_COUNT = 128
@@ -126,11 +128,31 @@ def build_sites_bundle(*, root: Path | None = None) -> list[Path]:
     ]
 
 
+def _argument_parser() -> argparse.ArgumentParser:
+    """Build the Sites deployment command-line parser."""
+
+    parser = argparse.ArgumentParser(description=__doc__)
+    add_logging_arguments(parser)
+    return parser
+
+
 def main() -> int:
     """Build the Sites deployment bundle."""
 
-    generated_paths = build_sites_bundle()
-    print(f"generated {len(generated_paths)} Sites deployment artifacts")
+    arguments = _argument_parser().parse_args()
+    with configure_runtime_logging(
+        "build_sites_bundle",
+        level=arguments.log_level,
+        log_directory=arguments.log_directory,
+    ) as logger:
+        logger.info("Sites deployment build started", event="command.started")
+        generated_paths = build_sites_bundle()
+        logger.info(
+            "Sites deployment build completed",
+            event="command.completed",
+            artifact_count=len(generated_paths),
+        )
+        print(f"generated {len(generated_paths)} Sites deployment artifacts")
     return 0
 
 
