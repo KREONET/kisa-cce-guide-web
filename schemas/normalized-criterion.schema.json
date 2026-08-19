@@ -44,6 +44,18 @@
   },
   "$defs": {
     "identifier": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "blockReference": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*:[A-Za-z0-9]+(?:[.-][A-Za-z0-9]+)*:[1-9][0-9]*$"
+    },
+    "semanticPathSegment": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*$"
+    },
+    "semanticRole": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9]*(?:[.-][A-Za-z0-9]+)*$"
+    },
     "checksum": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
     "nullableString": {"type": ["string", "null"]},
     "criterion": {
@@ -105,7 +117,7 @@
       "properties": {
         "physicalPage": {"type": "integer", "minimum": 1},
         "printedPage": {"type": "string", "minLength": 1},
-        "pageRegionIdentifier": {"type": "string", "minLength": 1}
+        "pageRegionIdentifier": {"$ref": "#/$defs/identifier"}
       }
     },
     "annotation": {
@@ -165,7 +177,7 @@
       "properties": {
         "physicalPage": {"type": "integer", "minimum": 1},
         "printedPage": {"type": "string", "minLength": 1},
-        "pageRegionIdentifier": {"type": "string", "minLength": 1},
+        "pageRegionIdentifier": {"$ref": "#/$defs/identifier"},
         "sourceBoundingBox": {
           "type": "array",
           "prefixItems": [
@@ -194,22 +206,22 @@
         "publicationDisposition"
       ],
       "properties": {
-        "blockReference": {"type": "string", "minLength": 1},
+        "blockReference": {"$ref": "#/$defs/blockReference"},
         "blockType": {
           "enum": ["heading", "paragraph", "listItem", "noteLabel", "noteContent", "codeBlock", "table", "image"]
         },
-        "content": {"type": "string"},
-        "semanticRole": {"type": "string", "minLength": 1},
+        "content": {"type": "string", "minLength": 1},
+        "semanticRole": {"$ref": "#/$defs/semanticRole"},
         "semanticPath": {
           "type": "array",
           "minItems": 1,
-          "items": {"type": "string", "minLength": 1}
+          "items": {"$ref": "#/$defs/semanticPathSegment"}
         },
-        "parentBlockReference": {"type": "string", "minLength": 1},
+        "parentBlockReference": {"$ref": "#/$defs/blockReference"},
         "headingLevel": {"type": "integer", "minimum": 2, "maximum": 6},
         "listType": {"enum": ["ordered", "unordered"]},
         "listDepth": {"type": "integer", "minimum": 1},
-        "codeLanguage": {"type": "string", "minLength": 1},
+        "codeLanguage": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9+.#-]*$"},
         "codeContentType": {
           "enum": ["command", "configuration", "output", "literal", "transcription"]
         },
@@ -220,6 +232,7 @@
         },
         "tableRows": {
           "type": "array",
+          "minItems": 1,
           "items": {
             "type": "array",
             "minItems": 1,
@@ -252,14 +265,21 @@
           "minItems": 2,
           "maxItems": 2
         },
-        "caption": {"type": ["string", "null"]},
+        "caption": {"type": ["string", "null"], "minLength": 1},
         "alternativeText": {"type": "string", "minLength": 1},
         "alternativeTextStatus": {"enum": ["verificationRequired", "reviewed"]}
       },
       "allOf": [
         {
           "if": {"properties": {"blockType": {"const": "heading"}}},
-          "then": {"required": ["headingLevel"]}
+          "then": {
+            "required": ["headingLevel"],
+            "properties": {"semanticRole": {"const": "heading"}}
+          }
+        },
+        {
+          "if": {"properties": {"blockType": {"const": "paragraph"}}},
+          "then": {"properties": {"semanticRole": {"const": "paragraph"}}}
         },
         {
           "if": {"properties": {"blockType": {"const": "listItem"}}},
@@ -267,15 +287,61 @@
         },
         {
           "if": {"properties": {"blockType": {"const": "codeBlock"}}},
-          "then": {"required": ["codeLanguage", "codeContentType"]}
+          "then": {
+            "required": ["codeLanguage", "codeContentType"],
+            "oneOf": [
+              {
+                "properties": {
+                  "codeContentType": {"const": "command"},
+                  "semanticRole": {"const": "command"}
+                }
+              },
+              {
+                "properties": {
+                  "codeContentType": {"const": "configuration"},
+                  "semanticRole": {"const": "configuration"}
+                }
+              },
+              {
+                "properties": {
+                  "codeContentType": {"const": "output"},
+                  "semanticRole": {"const": "output"}
+                }
+              },
+              {
+                "properties": {
+                  "codeContentType": {"const": "literal"},
+                  "semanticRole": {"const": "literal"}
+                }
+              },
+              {
+                "properties": {
+                  "codeContentType": {"const": "transcription"},
+                  "semanticRole": {"const": "transcription"}
+                }
+              }
+            ]
+          }
         },
         {
           "if": {"properties": {"blockType": {"const": "table"}}},
-          "then": {"required": ["tableHeaders", "tableRows"]}
+          "then": {
+            "required": ["tableHeaders", "tableRows"],
+            "properties": {"semanticRole": {"const": "table"}}
+          }
+        },
+        {
+          "if": {"properties": {"blockType": {"const": "noteLabel"}}},
+          "then": {"properties": {"semanticRole": {"const": "note.label"}}}
+        },
+        {
+          "if": {"properties": {"blockType": {"const": "noteContent"}}},
+          "then": {"properties": {"semanticRole": {"const": "note.content"}}}
         },
         {
           "if": {"properties": {"blockType": {"const": "image"}}},
           "then": {
+            "properties": {"semanticRole": {"const": "image"}},
             "required": [
               "assetPath",
               "assetType",

@@ -46,6 +46,46 @@ SYSTEM_ASSESSMENT_LEVEL_THREE_HEADINGS = (
 )
 LEVEL_TWO = 2
 LEVEL_THREE = 3
+FORBIDDEN_CATCH_ALL_ROLES = frozenset(
+    {
+        "rawtranscript",
+        "sourceevidence",
+        "sourcetranscript",
+        "transcript",
+        "transcription",
+    }
+)
+NODE_TYPE_FIELDS = frozenset(
+    {
+        "headingLevel",
+        "listType",
+        "listDepth",
+        "codeLanguage",
+        "codeContentType",
+        "tableCaption",
+        "tableHeaders",
+        "tableRows",
+        "noteType",
+        "assetPath",
+        "alternativeText",
+    }
+)
+COMMAND_LINE_PATTERN = re.compile(r"(?m)^#[ \t]+\S.*$")
+CONFIGURATION_LINE_PATTERN = re.compile(
+    r"(?m)^(?:"
+    r"(?:auth|account|password|session)[ \t]+"
+    r"(?:required|requisite|sufficient|optional)\b.*|"
+    r"[A-Za-z_][A-Za-z0-9_]*[ \t]*(?:=|#)[ \t]*\S.*"
+    r")$"
+)
+CODE_LINE_PATTERN = re.compile(
+    r"(?m)^(?:"
+    r"#[ \t]+\S.*|"
+    r"(?:auth|account|password|session)[ \t]+"
+    r"(?:required|requisite|sufficient|optional)\b.*|"
+    r"[A-Za-z_][A-Za-z0-9_]*[ \t]*(?:=|#)[ \t]*\S.*"
+    r")$"
+)
 
 
 def _require_unique(values: list[JsonValue], *, location: str) -> None:
@@ -70,10 +110,10 @@ def _schema_errors(
     ]
 
 
-def _page_transcripts(task: dict[str, JsonValue]) -> dict[int, str]:
-    """Index immutable task transcripts by physical page."""
+def _page_evidence(task: dict[str, JsonValue]) -> dict[int, dict[str, JsonValue]]:
+    """Index immutable task image and navigation evidence by physical page."""
 
-    transcripts: dict[int, str] = {}
+    page_evidence: dict[int, dict[str, JsonValue]] = {}
     for evidence_value in as_sequence(
         task["sourcePageEvidence"],
         location="task.sourcePageEvidence",
@@ -84,33 +124,98 @@ def _page_transcripts(task: dict[str, JsonValue]) -> dict[int, str]:
         if not isinstance(physical_page, int) or not isinstance(transcript, str):
             msg = "task page evidence requires a physical page and transcript"
             raise TypeError(msg)
-        transcripts[physical_page] = transcript
-    return transcripts
+        if physical_page in page_evidence:
+            msg = f"task contains duplicate source page evidence: {physical_page}"
+            raise ValueError(msg)
+        page_evidence[physical_page] = evidence
+    return page_evidence
 
 
-def _validate_node_profile(node: dict[str, JsonValue]) -> None:
-    """Enforce node-type fields that Structured Outputs cannot express conditionally."""
+def _normalized_text(value: str) -> str:
+    """Normalize whitespace only for declared transcript-alignment checks."""
+
+    return " ".join(value.split())
+
+
+def _node_searchable_content(node: dict[str, JsonValue]) -> str:
+    """Return all source-bearing text represented by one semantic node."""
+
+    values: list[str] = []
+    content = node.get("content")
+    if isinstance(content, str):
+        values.append(content)
+    for field_name in ("tableCaption", "alternativeText"):
+        value = node.get(field_name)
+        if isinstance(value, str):
+            values.append(value)
+    table_headers = node.get("tableHeaders")
+    if isinstance(table_headers, list):
+        values.extend(value for value in table_headers if isinstance(value, str))
+    table_rows = node.get("tableRows")
+    if isinstance(table_rows, list):
+        for row in table_rows:
+            if isinstance(row, list):
+                values.extend(value for value in row if isinstance(value, str))
+    return "\n".join(values)
+
+
+def _node_observed_content_types(node: dict[str, JsonValue]) -> set[str]:
+    """Map one node profile to the visual content types it represents."""
+
+    node_type = node.get("nodeType")
+    if node_type == "heading":
+        content_types = {"heading"}
+    elif node_type == "listItem":
+        content_types = {"procedure"} if node.get("listType") == "ordered" else {"prose"}
+    elif node_type == "codeBlock":
+        content_type = node.get("codeContentType")
+        content_types = {content_type} if isinstance(content_type, str) else set()
+    elif node_type == "table":
+        content_types = {"table"}
+    elif node_type == "image":
+        content_types = {"meaningfulVisual"}
+    else:
+        content_types = {"prose"}
+    if node.get("sourceContentType") == "embeddedImageText":
+        content_types.add("embeddedImageText")
+    return content_types
+
+
+def _validate_node_profile(
+    node: dict[str, JsonValue],
+    *,
+    typed_code_contents: tuple[str, ...],
+) -> None:
+    """Enforce exclusive typed-node fields and reject flattened technical content."""
 
     node_type = node.get("nodeType")
     required_types: dict[str, tuple[type[object], ...]]
+    allowed_non_null_fields: set[str]
     if node_type == "heading":
         required_types = {"headingLevel": (int,)}
+        allowed_non_null_fields = {"headingLevel"}
     elif node_type == "listItem":
         required_types = {"listType": (str,), "listDepth": (int,)}
+        allowed_non_null_fields = {"listType", "listDepth"}
     elif node_type == "codeBlock":
         required_types = {"codeLanguage": (str,), "codeContentType": (str,)}
+        allowed_non_null_fields = {"codeLanguage", "codeContentType"}
     elif node_type == "table":
         required_types = {
             "tableCaption": (str,),
             "tableHeaders": (list,),
             "tableRows": (list,),
         }
+        allowed_non_null_fields = {"tableCaption", "tableHeaders", "tableRows"}
     elif node_type == "note":
         required_types = {"noteType": (str,)}
+        allowed_non_null_fields = {"noteType"}
     elif node_type == "image":
         required_types = {"assetPath": (str,), "alternativeText": (str,)}
+        allowed_non_null_fields = {"assetPath", "alternativeText"}
     else:
         required_types = {}
+        allowed_non_null_fields = set()
     invalid_fields = [
         field_name
         for field_name, allowed_types in required_types.items()
@@ -119,6 +224,231 @@ def _validate_node_profile(node: dict[str, JsonValue]) -> None:
     if invalid_fields:
         msg = f"{node_type} node has invalid type-specific fields: {', '.join(invalid_fields)}"
         raise ValueError(msg)
+    unexpected_fields = sorted(
+        field_name
+        for field_name in NODE_TYPE_FIELDS - allowed_non_null_fields
+        if node.get(field_name) is not None
+    )
+    if unexpected_fields:
+        msg = (
+            f"{node_type} node has non-null fields for another node type: "
+            f"{', '.join(unexpected_fields)}"
+        )
+        raise ValueError(msg)
+
+    content = node.get("content")
+    if not isinstance(content, str):
+        msg = f"{node_type} node content must be a string"
+        raise TypeError(msg)
+    if node_type in {"table", "image"}:
+        if content:
+            msg = f"{node_type} node content must be empty; use its typed fields"
+            raise ValueError(msg)
+    elif not content:
+        msg = f"{node_type} node content must not be empty"
+        raise ValueError(msg)
+
+    if node_type == "table":
+        headers = cast("list[JsonValue]", node["tableHeaders"])
+        rows = cast("list[JsonValue]", node["tableRows"])
+        if not rows:
+            msg = "table node must contain at least one row"
+            raise ValueError(msg)
+        header_count = len(headers)
+        if any(not isinstance(row, list) or len(row) != header_count for row in rows):
+            msg = "table node rows must have the same column count as its headers"
+            raise ValueError(msg)
+
+    source_content_type = node.get("sourceContentType")
+    if node_type == "image" and source_content_type != "meaningfulVisual":
+        msg = "image node must represent a meaningfulVisual"
+        raise ValueError(msg)
+    if node_type != "image" and source_content_type == "meaningfulVisual":
+        msg = "meaningfulVisual content must use an image node"
+        raise ValueError(msg)
+    if node_type == "image" and source_content_type == "embeddedImageText":
+        msg = "embedded image text must use a typed text, code, or table node"
+        raise ValueError(msg)
+    if (
+        source_content_type == "derivedStructure"
+        and node.get("publicationDisposition") != "derived"
+    ):
+        msg = "derivedStructure node must have a derived publication disposition"
+        raise ValueError(msg)
+
+    semantic_role = node.get("semanticRole")
+    normalized_role = (
+        re.sub(r"[^a-z]", "", semantic_role.casefold()) if isinstance(semantic_role, str) else ""
+    )
+    if normalized_role in FORBIDDEN_CATCH_ALL_ROLES:
+        msg = f"Codex result uses a forbidden transcript catch-all role: {semantic_role}"
+        raise ValueError(msg)
+
+    if node_type != "codeBlock":
+        for match in CODE_LINE_PATTERN.finditer(content):
+            matched_line = match.group(0)
+            if not any(code_content in matched_line for code_content in typed_code_contents):
+                msg = (
+                    f"{node_type} node contains command or configuration text "
+                    "that requires codeBlock"
+                )
+                raise ValueError(msg)
+    if node_type != "table" and "옵션 설명" in content and len(content.splitlines()) > 1:
+        msg = f"{node_type} node flattens visually tabular option text"
+        raise ValueError(msg)
+
+
+def _navigation_semantic_hints(transcript: str) -> set[str]:
+    """Return conservative structure hints from the non-authoritative transcript."""
+
+    hints: set[str] = set()
+    if re.search(r"(?m)^Step[ \t]+[0-9]+\)", transcript):
+        hints.add("procedure")
+    if "옵션 설명" in transcript:
+        hints.add("table")
+    if CONFIGURATION_LINE_PATTERN.search(transcript):
+        hints.add("configuration")
+    if COMMAND_LINE_PATTERN.search(transcript):
+        hints.add("command")
+    if re.search(r"(?m)^(?:Profile ID|Enabled features):", transcript):
+        hints.add("output")
+    return hints
+
+
+def _validate_no_transcript_dump(
+    nodes: list[dict[str, JsonValue]],
+    page_evidence: dict[int, dict[str, JsonValue]],
+    node_pages: dict[str, set[int]],
+) -> None:
+    """Reject raw transcript publication and missing conservative semantic structure."""
+
+    for physical_page, evidence in page_evidence.items():
+        transcript = cast("str", evidence["transcript"])
+        normalized_transcript = _normalized_text(transcript)
+        page_nodes = [
+            node
+            for node in nodes
+            if physical_page in node_pages[cast("str", node["nodeIdentifier"])]
+        ]
+        for node in page_nodes:
+            if node.get("nodeType") in {"codeBlock", "table", "image"}:
+                continue
+            if _normalized_text(_node_searchable_content(node)) == normalized_transcript:
+                msg = f"page {physical_page} transcript was emitted as one untyped node"
+                raise ValueError(msg)
+        paragraph_text = "\n".join(
+            cast("str", node["content"])
+            for node in page_nodes
+            if node.get("nodeType") == "paragraph"
+            and node.get("sourceContentType") != "derivedStructure"
+        )
+        if paragraph_text and _normalized_text(paragraph_text) == normalized_transcript:
+            msg = f"page {physical_page} transcript was split only into paragraphs"
+            raise ValueError(msg)
+
+        represented_types: set[str] = set()
+        for node in page_nodes:
+            represented_types.update(_node_observed_content_types(node))
+        missing_hints = _navigation_semantic_hints(transcript) - represented_types
+        if missing_hints:
+            msg = (
+                f"page {physical_page} lacks typed nodes for conservative transcript navigation "
+                f"hints: {sorted(missing_hints)!r}"
+            )
+            raise ValueError(msg)
+
+
+def _validate_source_page_inspections(
+    result: dict[str, JsonValue],
+    page_evidence: dict[int, dict[str, JsonValue]],
+    nodes: list[dict[str, JsonValue]],
+    node_pages: dict[str, set[int]],
+) -> set[int]:
+    """Bind one vision-inspection attestation to every image and its semantic nodes."""
+
+    nodes_by_identifier = {cast("str", node["nodeIdentifier"]): node for node in nodes}
+    inspections: dict[int, dict[str, JsonValue]] = {}
+    uncertain_pages: set[int] = set()
+    for inspection_value in as_sequence(
+        result["sourcePageInspections"],
+        location="result.sourcePageInspections",
+    ):
+        inspection = as_mapping(
+            inspection_value,
+            location="result.sourcePageInspections[]",
+        )
+        physical_page = inspection.get("physicalPage")
+        if not isinstance(physical_page, int):
+            msg = "source page inspection physical page must be an integer"
+            raise TypeError(msg)
+        if physical_page in inspections:
+            msg = f"Codex result contains duplicate source page inspection: {physical_page}"
+            raise ValueError(msg)
+        inspections[physical_page] = inspection
+        expected_evidence = page_evidence.get(physical_page)
+        if expected_evidence is None:
+            msg = f"source page inspection references a page outside the task: {physical_page}"
+            raise ValueError(msg)
+        for field_name in ("pageRegionIdentifier", "imagePath", "imageChecksum"):
+            if inspection.get(field_name) != expected_evidence.get(field_name):
+                msg = (
+                    f"source page inspection {physical_page} {field_name} "
+                    "differs from task evidence"
+                )
+                raise ValueError(msg)
+
+        observed_identifiers = as_sequence(
+            inspection["observedNodeIdentifiers"],
+            location="sourcePageInspection.observedNodeIdentifiers",
+        )
+        _require_unique(
+            observed_identifiers,
+            location="sourcePageInspection.observedNodeIdentifiers",
+        )
+        expected_identifiers = {
+            node_identifier
+            for node_identifier, physical_pages in node_pages.items()
+            if physical_page in physical_pages
+        }
+        if set(cast("list[str]", observed_identifiers)) != expected_identifiers:
+            msg = (
+                f"source page inspection {physical_page} observed nodes differ from node provenance"
+            )
+            raise ValueError(msg)
+
+        observed_content_types = as_sequence(
+            inspection["observedContentTypes"],
+            location="sourcePageInspection.observedContentTypes",
+        )
+        _require_unique(
+            observed_content_types,
+            location="sourcePageInspection.observedContentTypes",
+        )
+        expected_content_types: set[str] = set()
+        for node_identifier in expected_identifiers:
+            expected_content_types.update(
+                _node_observed_content_types(nodes_by_identifier[node_identifier])
+            )
+        if set(cast("list[str]", observed_content_types)) != expected_content_types:
+            msg = f"source page inspection {physical_page} content types differ from typed nodes"
+            raise ValueError(msg)
+
+        inspection_status = inspection.get("inspectionStatus")
+        uncertainty_description = inspection.get("uncertaintyDescription")
+        if inspection_status == "visionInspected":
+            if uncertainty_description is not None:
+                msg = f"source page inspection {physical_page} is clear but describes uncertainty"
+                raise ValueError(msg)
+        elif not isinstance(uncertainty_description, str):
+            msg = f"source page inspection {physical_page} must describe its uncertainty"
+            raise ValueError(msg)
+        else:
+            uncertain_pages.add(physical_page)
+
+    if set(inspections) != set(page_evidence):
+        msg = "Codex result must include one vision inspection for every source page image"
+        raise ValueError(msg)
+    return uncertain_pages
 
 
 def validate_codex_result(
@@ -163,8 +493,8 @@ def validate_codex_result(
         location="result.targetIdentifiers",
     )
 
-    transcripts = _page_transcripts(task)
-    expected_pages = set(transcripts)
+    page_evidence = _page_evidence(task)
+    expected_pages = set(page_evidence)
     quality = as_mapping(result["quality"], location="result.quality")
     for quality_field in (
         "reviewedPhysicalPages",
@@ -185,20 +515,30 @@ def validate_codex_result(
         )
     )
     if reviewed_pages != expected_pages:
-        msg = "Codex result must confirm every source page as reviewed"
+        msg = "Codex result must confirm every source page image as vision inspected"
         raise ValueError(msg)
 
     nodes = [
         as_mapping(value, location="result.nodes[]")
         for value in as_sequence(result["nodes"], location="result.nodes")
     ]
+    typed_code_contents = tuple(
+        cast("str", node["content"])
+        for node in nodes
+        if node.get("nodeType") == "codeBlock" and isinstance(node.get("content"), str)
+    )
     node_identifiers = [node.get("nodeIdentifier") for node in nodes]
     if len(node_identifiers) != len(set(node_identifiers)):
         msg = "Codex result contains duplicate node identifiers"
         raise ValueError(msg)
-    slug = cast("str", task["criterionSlug"])
+    node_pages: dict[str, set[int]] = {}
+    uncertain_node_identifiers: set[str] = set()
+    uncertain_span_pages: set[int] = set()
     for node in nodes:
-        _validate_node_profile(node)
+        _validate_node_profile(node, typed_code_contents=typed_code_contents)
+        node_identifier = cast("str", node["nodeIdentifier"])
+        node_pages[node_identifier] = set()
+        evidence_origins: set[str] = set()
         for span_value in as_sequence(node["sourceSpans"], location="node.sourceSpans"):
             span = as_mapping(span_value, location="node.sourceSpans[]")
             physical_page = span.get("physicalPage")
@@ -206,23 +546,77 @@ def validate_codex_result(
             if not isinstance(physical_page, int):
                 msg = "node source span physical page must be an integer"
                 raise TypeError(msg)
-            expected_region = f"p{physical_page}-{slug}"
             if physical_page not in expected_pages:
                 msg = f"node references page outside the task: {physical_page}"
                 raise ValueError(msg)
+            evidence = page_evidence[physical_page]
+            expected_region = evidence["pageRegionIdentifier"]
             if span.get("pageRegionIdentifier") != expected_region:
                 msg = (
                     f"node references an unexpected page region: {span.get('pageRegionIdentifier')}"
                 )
                 raise ValueError(msg)
-            if (
-                not isinstance(source_excerpt, str)
-                or source_excerpt not in transcripts[physical_page]
-            ):
-                msg = f"node source excerpt is absent from page {physical_page} transcript"
+            if not isinstance(source_excerpt, str):
+                msg = "node source excerpt must be a string"
+                raise TypeError(msg)
+            transcript = cast("str", evidence["transcript"])
+            transcript_alignment = span.get("transcriptAlignment")
+            if transcript_alignment == "exact" and source_excerpt not in transcript:
+                msg = f"node exact source excerpt is absent from page {physical_page} transcript"
+                raise ValueError(msg)
+            if transcript_alignment == "notPresent" and _normalized_text(
+                source_excerpt
+            ) in _normalized_text(transcript):
+                msg = (
+                    f"node source excerpt on page {physical_page} is present in the transcript but "
+                    "declared notPresent"
+                )
                 raise ValueError(msg)
 
+            evidence_origin = span.get("evidenceOrigin")
+            if isinstance(evidence_origin, str):
+                evidence_origins.add(evidence_origin)
+            recognition_status = span.get("recognitionStatus")
+            uncertainty_description = span.get("uncertaintyDescription")
+            if recognition_status == "clear":
+                if uncertainty_description is not None:
+                    msg = f"clear source span for {node_identifier} describes uncertainty"
+                    raise ValueError(msg)
+            elif not isinstance(uncertainty_description, str):
+                msg = f"uncertain source span for {node_identifier} needs a description"
+                raise ValueError(msg)
+            else:
+                uncertain_node_identifiers.add(node_identifier)
+                uncertain_span_pages.add(physical_page)
+            node_pages[node_identifier].add(physical_page)
+
+        source_content_type = node.get("sourceContentType")
+        if source_content_type == "embeddedImageText" and not evidence_origins.intersection(
+            {"embeddedImage", "mixed"}
+        ):
+            msg = f"embedded image text node {node_identifier} lacks embedded-image provenance"
+            raise ValueError(msg)
+        if source_content_type == "pageText" and "embeddedImage" in evidence_origins:
+            msg = f"page text node {node_identifier} has embedded-image-only provenance"
+            raise ValueError(msg)
+
+    referenced_pages = set().union(*node_pages.values()) if node_pages else set()
+    if referenced_pages != expected_pages:
+        msg = "Codex result must emit semantic nodes from every source page image"
+        raise ValueError(msg)
+
+    inspection_uncertain_pages = _validate_source_page_inspections(
+        result,
+        page_evidence,
+        nodes,
+        node_pages,
+    )
+    _validate_no_transcript_dump(nodes, page_evidence, node_pages)
+
     annotation_identifiers: list[JsonValue] = []
+    review_annotation_pages: set[int] = set()
+    vision_uncertain_annotation_pages: set[int] = set()
+    uncertain_annotation_targets: set[str] = set()
     for annotation_value in as_sequence(
         result["sourceAnnotations"],
         location="result.sourceAnnotations",
@@ -248,8 +642,46 @@ def validate_codex_result(
         if not annotation_pages <= expected_pages:
             msg = f"annotation references pages outside the task: {sorted(annotation_pages)}"
             raise ValueError(msg)
+        if annotation.get("annotationType") == "conversionUncertainty":
+            vision_uncertain_annotation_pages.update(annotation_pages)
+            review_annotation_pages.update(annotation_pages)
+            if isinstance(target_reference, str):
+                uncertain_annotation_targets.add(target_reference)
+        elif annotation.get("disposition") in {"unresolved", "reviewRequired"}:
+            review_annotation_pages.update(annotation_pages)
+            if isinstance(target_reference, str):
+                uncertain_annotation_targets.add(target_reference)
     if len(annotation_identifiers) != len(set(annotation_identifiers)):
         msg = "Codex result contains duplicate annotation identifiers"
+        raise ValueError(msg)
+
+    unresolved_questions = as_sequence(
+        quality["unresolvedQuestions"],
+        location="result.quality.unresolvedQuestions",
+    )
+    uncertainty_pages = uncertain_span_pages | inspection_uncertain_pages | review_annotation_pages
+    if (uncertain_span_pages | vision_uncertain_annotation_pages) - inspection_uncertain_pages:
+        msg = "pages with uncertain OCR or annotations need uncertain vision inspections"
+        raise ValueError(msg)
+    if (
+        (uncertain_node_identifiers or inspection_uncertain_pages)
+        and not unresolved_questions
+        and not uncertain_annotation_targets
+    ):
+        msg = "vision or OCR uncertainty needs an annotation or unresolved question"
+        raise ValueError(msg)
+    has_uncertainty = bool(uncertainty_pages or unresolved_questions)
+    analysis_status = result.get("analysisStatus")
+    semantic_coverage_status = quality.get("semanticCoverageStatus")
+    if analysis_status == "complete":
+        if has_uncertainty or semantic_coverage_status != "complete":
+            msg = "complete analysis cannot contain unresolved vision or OCR uncertainty"
+            raise ValueError(msg)
+    elif not has_uncertainty or semantic_coverage_status != "completeWithUncertainty":
+        msg = "needsSourceReview requires explicit uncertainty and incomplete certainty coverage"
+        raise ValueError(msg)
+    if has_uncertainty and quality.get("confidenceLevel") == "high":
+        msg = "vision or OCR uncertainty cannot have high confidence"
         raise ValueError(msg)
 
     required_literals = set(
@@ -270,9 +702,7 @@ def validate_codex_result(
             ),
         )
     )
-    combined_result_content = "\n".join(
-        cast("str", node["content"]) for node in nodes if isinstance(node.get("content"), str)
-    )
+    combined_result_content = "\n".join(_node_searchable_content(node) for node in nodes)
     combined_result_content += "\n" + "\n".join(
         cast("str", annotation["sourceText"])
         for annotation in (
@@ -457,7 +887,7 @@ def render_codex_candidate(
         lines.append("")
     candidate_path.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
     report = {
-        "schemaVersion": 1,
+        "schemaVersion": 2,
         "taskIdentifier": result["taskIdentifier"],
         "taskChecksum": result["taskChecksum"],
         "resultChecksum": sha256_file(result_path),

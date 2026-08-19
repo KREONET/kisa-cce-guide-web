@@ -11,7 +11,7 @@
 
 이 문서는 `주요정보통신기반시설 기술적 취약점 분석·평가 방법 상세가이드`를 웹 콘텐츠로 변환할 때 적용할 기준을 정의한다.
 
-변환 결과는 다음 요구사항을 동시에 충족해야 한다.
+변환 결과는 원문의 시각적 배치나 줄바꿈을 복제한 평면 전사문이 아니라 의미 구조여야 하며, 다음 요구사항을 동시에 충족해야 한다.
 
 - **가독성:** 사용자가 긴 기술 문서의 구조와 내용을 정확하게 이해할 수 있어야 한다.
 - **시인성:** 사용자가 중요도, 판단 기준, 명령어, 주의사항을 빠르게 식별할 수 있어야 한다.
@@ -107,19 +107,34 @@ Canonical criterion package
 
 - 원본 PDF는 변경하지 않는다.
 - 원본 파일의 SHA-256 checksum, 파일 크기, 페이지 수, 발행일, 원문 URL을 source registry에 기록한다.
-- 원본 텍스트 추출물과 페이지 렌더링은 감사와 QA에 사용한다.
-- 텍스트 추출 결과를 최종 판정 근거로 사용해서는 안 된다.
+- 원본 text layer 추출물, OCR transcript, 페이지 렌더링은 원문 위치 탐색, 검색, 감사, QA에 사용한다.
+- OCR 범위에는 스크린샷, 도표, 표를 포함해 PDF 내부 이미지에 시각적으로 포함된 모든 관련 문자가 들어가야 한다.
+- Transcript는 원문 위치를 찾기 위한 navigation aid이며 권위 있는 원문이 아니다. Transcript 또는 text layer 추출 결과만으로 내용을 판정해서는 안 된다.
+- 최종 내용과 구조는 checksum이 고정된 원본 PDF와 해당 PDF에서 생성한 관련 페이지 이미지를 시각 대조해 판정한다.
 
 ### Codex semantic candidate 계층
 
-- 변환 코드는 항목별 source page, transcript, image, checksum, policy version, schema version을 immutable task로 생성한다.
-- Codex는 read-only sandbox에서 task와 모든 source page image를 검사하고 schema-constrained JSON만 생성한다.
+- 변환 코드는 항목별 source page, transcript, 관련된 모든 PDF page image, checksum, policy version, schema version을 immutable task로 생성한다.
+- Codex는 read-only sandbox에서 관련된 모든 PDF page image를 vision으로 직접 검사하고 schema-constrained JSON만 생성한다. Transcript만 검사하거나 page image를 표본 추출해서는 안 된다.
+- Codex 결과는 가독성과 머신 리더블 요구사항을 함께 충족하도록 heading, paragraph, list, note, typed code block, semantic table, image를 명시적인 semantic node로 표현해야 한다. Typed code block과 semantic table에는 이 정책의 `절차와 명령어` 및 `표` 규칙을 적용한다.
+- 모든 node에 provenance인 source span을 기록한다. 판독이나 구조가 불확실하면 내용을 추정하지 않고 `analysisStatus`, `sourceAnnotations`, `quality.unresolvedQuestions`에 불확실성을 보존한다.
 - Codex는 canonical Markdown, provenance, registry, review status를 직접 수정해서는 안 된다.
 - Codex 결과의 source page coverage, source excerpt, technical literal, heading hierarchy, annotation target을 deterministic importer가 검증한다.
 - Schema 또는 semantic validation에 실패한 결과는 candidate로 렌더링하거나 canonical 콘텐츠에 반영해서는 안 된다.
 - 검증된 결과는 `work/codex/candidates/<criterionSlug>/` 아래의 review-only artifact로 생성한다.
 - Codex 결과는 `structured`, `visuallyReviewed`, `approved` 상태를 자동으로 부여해서는 안 된다.
 - Candidate를 canonical criterion package로 반영하는 단계는 별도 사람 검토와 명시적 적용 작업을 요구한다.
+
+### 전체 corpus 병렬 변환
+
+- 전체 변환 대상은 `data/criteria-manifest.yaml`의 record 순서대로 선택한 모든 `extractedCriterion` 항목이다. 일부 slug allowlist를 지정해도 대상은 manifest 순서로 filtering해야 한다. 실행 순서와 summary item 순서는 이 순서를 유지해야 하며, worker 완료 순서에 의존해서는 안 된다.
+- 각 항목은 `taskBuild`, `visionRun`, `importer`의 세 단계를 순서대로 실행한다. 한 항목의 단계별 artifact는 `work/codex/tasks/<criterionSlug>/`, `work/codex/results/<criterionSlug>/`, `work/codex/candidates/<criterionSlug>/`에 격리해야 한다.
+- 병렬 worker 수는 1부터 16까지 설정 가능해야 한다. 기본값은 `min(2, max(1, logicalCpuCount))`로 계산하고, 전체 corpus 실행에는 이 작은 기본값을 사용해야 한다.
+- 병렬 실행은 항목별 read-only Codex 분석만 동시 수행해야 한다. Candidate를 canonical Markdown, provenance, registry에 적용하거나 review status를 변경하는 작업을 포함해서는 안 된다.
+- 재개 실행도 각 task를 현재 입력에서 다시 생성해야 한다. `schemaVersion`, task identifier와 checksum, result와 candidate checksum, `validationStatus: passed`, `canonicalApplied: false`를 모두 검증한 candidate만 건너뛸 수 있다. Result만 현재 task에 유효하면 importer부터 재개하고, 검증이 누락되거나 불일치하면 Codex vision 분석부터 다시 처리해야 한다.
+- 한 항목의 실패는 다른 항목의 artifact와 상태를 변경해서는 안 된다. 기본 실행은 독립 항목을 계속 처리하고, 최종 summary에 `taskBuild`, `visionRun`, `importer` 상태, 항목 outcome, 오류를 manifest 순서로 기록해야 한다. Summary는 `schemas/codex-bulk-summary.schema.json`으로 검증한 뒤 원자적으로 교체해야 한다. Fail-fast 실행도 이미 실행 중인 worker를 정리하고 아직 시작하지 않은 항목을 `cancelled`로 기록해야 한다.
+- Codex 재시도 기본값은 0이어야 하며 명시적인 재시도만 허용한다. 재시도 횟수는 최대 5, deterministic exponential backoff base와 각 대기 시간은 0초부터 300초까지로 제한해야 한다.
+- Worker 수를 늘리기 전에 Codex 서비스의 rate limit, 동시 요청 한도, 항목별 PDF page image 수, model context와 input token 사용량, 프로세스별 메모리 사용량을 확인해야 한다. Rate limit 또는 자원 압박이 발생하면 worker 수를 줄이고 checksum 기반 재개를 사용해야 한다.
 
 ### Canonical 콘텐츠 계층
 
@@ -147,7 +162,7 @@ Canonical criterion package
 
 ### 표시 계층
 
-- HTML, 검색 색인, 최적화 이미지, 인쇄 결과는 정규화 JSON과 canonical asset에서 생성한다.
+- 의미론적 HTML, 항목별 공개 JSON dataset, 검색 색인, 최적화 이미지, 인쇄 결과는 정규화 JSON과 canonical asset에서 생성한다.
 - 표시 계층은 원문의 의미와 순서를 변경해서는 안 된다.
 - 생성 파일을 직접 수정해서는 안 된다.
 
@@ -502,9 +517,9 @@ U-01의 다음 항목은 annotation 동작을 검증하는 fixture로 사용한�
 - 원문 Step 안에 여러 하위 작업이 있으면 nested list로 표현하고 원문 Step 번호를 변경하지 않는다.
 - 명령, 설정값, 예상 출력, 설명을 서로 다른 의미 단위로 분리한다.
 - 원문의 주의사항은 영향을 받는 단계와 인접하게 배치한다.
-- 명령어와 설정값은 fenced code block으로 표현한다.
+- 코드, 명령어, 설정 조각, 예상 출력은 서로 분리된 typed fenced code block으로 표현한다.
 - 모든 fenced code block에 `shell`, `ini`, `yaml`, `text` 등 정확한 언어를 지정한다.
-- Fenced code info string의 두 번째 token은 `command`, `configuration`, `output`, `literal`, `transcription` 중 하나를 사용한다.
+- Fenced code info string의 두 번째 token은 명령에 `command`, 설정에 `configuration`, 출력에 `output`, 그 밖의 원문 code와 technical literal에 `literal`을 사용한다. 초기 전사 block에만 `transcription`을 사용할 수 있다.
 - 명령과 실행 결과를 같은 code block에 혼합해서는 안 된다.
 - 파일 경로, 설정 키, 명령 이름은 inline code로 표현한다.
 - 코드 블록의 원문 대소문자, 공백, 경로, 따옴표, 주석, 줄바꿈을 보존한다.
@@ -548,6 +563,7 @@ U-01의 다음 항목은 annotation 동작을 검증하는 fixture로 사용한�
 
 ### MUST
 
+- 원문에서 행과 열의 관계로 표현된 정보는 OCR 평문, preformatted text, 이미지로만 남기지 않고 semantic table로 변환한다.
 - 비교 또는 행렬 데이터에만 표를 사용한다.
 - 화면 배치를 위해 표를 사용해서는 안 된다.
 - 모든 표에 header row 또는 header column을 지정한다.
@@ -654,6 +670,7 @@ U-01의 다음 항목은 annotation 동작을 검증하는 fixture로 사용한�
 ### 정규화 JSON
 
 - 점검항목마다 하나의 정규화 JSON record를 생성한다.
+- 항목별 공개 JSON dataset은 정규화 JSON에서 생성하고 semantic node, provenance, source annotation을 유지해야 한다.
 - 정규화 JSON은 metadata, 본문 AST, provenance, source annotation을 포함한다.
 - AST leaf block은 block-level source span을 포함한다.
 - 정규화 JSON schema는 version을 가져야 한다.
@@ -702,9 +719,13 @@ Checksum 이름은 다음 의미로 구분한다.
 - 참고 항목은 `<ul>` 또는 `<aside>`로 렌더링한다.
 - 명령어와 설정은 `<pre><code>`로 렌더링한다.
 - 파일 경로와 설정 키는 inline `<code>`로 렌더링한다.
+- 표는 `<table>`, `<caption>`, `<thead>`, `<tbody>`, `<th>`, `<td>`와 올바른 header-cell 관계로 렌더링한다.
 - source annotation은 본문 수정으로 위장하지 않고 별도 영역에 표시한다.
 - provenance 영역에서 원본 문서와 page range를 확인할 수 있어야 한다.
 - `<article>`에 `data-criterion-code`, `data-severity`, `data-content-model`, `data-source-document` 속성을 제공해야 한다.
+- 각 leaf block의 실제 의미 요소에 `data-block-reference`, `data-block-type`, `data-semantic-role`, `data-semantic-path`, `data-publication-disposition`, `data-source-region-identifiers`, `data-source-physical-pages`, `data-source-printed-pages` 속성을 제공해야 한다.
+- Code block은 `data-code-content-type`과 `data-code-language`를 `<pre>`와 `<code>`에 제공해야 한다.
+- 항목 상세 페이지는 같은 canonical record에서 생성한 정규화 JSON을 `rel="alternate"`와 `application/json`으로 연결해야 한다.
 
 ### 검색 색인
 
@@ -894,7 +915,7 @@ RFC 8785로 직렬화한 뒤, 이 문서의 aggregate checksum record 방식으�
 ## QA workflow
 
 1. 원본 PDF를 고정하고 checksum과 기준 manifest를 생성한다.
-2. 전체 페이지의 raw text, 이미지, 페이지 렌더링을 추출한다.
+2. 전체 페이지의 raw text, 페이지 렌더링, 원본 이미지를 추출하고 embedded image text를 포함하는 OCR transcript를 생성한다.
 3. 표지, 목차, 장, 분류, 점검항목, 뒤표지 경계를 구조화한다.
 4. Page region 좌표와 장 경계를 이용해 항목 범위를 결정한다. 다음 코드만으로 범위를 결정해서는 안 된다.
 5. 허용된 정규화만 적용하고 모든 원문 이상을 등록한다.

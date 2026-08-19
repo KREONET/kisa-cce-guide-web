@@ -27,12 +27,21 @@ from conversion.common import (
     sha256_file,
 )
 
-PROMPT_VERSION = 1
+PROMPT_VERSION = 2
 DEFAULT_WORK_DIRECTORY = Path("work/codex")
-PROMPT_TEMPLATE_PATH = Path("codex_prompts/criterion-structure-v1.md")
+PROMPT_TEMPLATE_PATH = Path("codex_prompts/criterion-structure-v2.md")
 RESULT_SCHEMA_PATH = Path("schemas/codex-criterion-result.schema.json")
 TASK_SCHEMA_PATH = Path("schemas/codex-criterion-task.schema.json")
 CONVERSION_POLICY_PATH = Path("CONVERSION_POLICY.md")
+EVIDENCE_CONTRACT: dict[str, JsonValue] = {
+    "visualAuthority": "sourcePageImages",
+    "transcriptRole": "navigationAid",
+    "visionInspectionRequired": True,
+    "typedSemanticNodesRequired": True,
+    "transcriptOnlyResultAllowed": False,
+    "uncertaintyMustBePreserved": True,
+    "provenanceMustBePreserved": True,
+}
 PATH_LITERAL_PATTERN = re.compile(
     r"(?<![A-Za-z0-9_])/?(?:etc|var|usr|lib|tcb)(?:/[A-Za-z0-9.*_+~-]+)+"
 )
@@ -273,7 +282,7 @@ def build_codex_task(
         "structuredExemplars": ["unix/u-01.md", "unix/u-02.md"],
     }
     task: dict[str, JsonValue] = {
-        "schemaVersion": 1,
+        "schemaVersion": 2,
         "taskIdentifier": f"{slug}-codex-structure-v{PROMPT_VERSION}",
         "taskChecksum": "0" * 64,
         "promptVersion": PROMPT_VERSION,
@@ -298,6 +307,7 @@ def build_codex_task(
         "sourceDocumentChecksum": source_checksum,
         "sourcePageStart": page_range["physicalPageStart"],
         "sourcePageEnd": page_range["physicalPageEnd"],
+        "evidenceContract": EVIDENCE_CONTRACT,
         "sourcePageEvidence": evidence,
         "requiredTechnicalLiterals": cast("JsonValue", _technical_literals(transcripts)),
         "paths": paths,

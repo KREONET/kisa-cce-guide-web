@@ -158,6 +158,69 @@ def _block_identifier(block: Mapping[str, JsonValue]) -> str:
     return _text(block["blockReference"], location="block.blockReference")
 
 
+def _html_attributes(attributes: Mapping[str, str]) -> str:
+    """Serialize deterministic escaped HTML attributes."""
+
+    return " ".join(
+        f'{name}="{html.escape(value, quote=True)}"' for name, value in attributes.items()
+    )
+
+
+def _block_attributes(
+    block: Mapping[str, JsonValue],
+    *,
+    extra: Mapping[str, str] | None = None,
+) -> str:
+    """Expose normalized identity, semantics, hierarchy, and provenance on one element."""
+
+    identifier = _block_identifier(block)
+    semantic_path = as_sequence(block["semanticPath"], location="block.semanticPath")
+    source_spans = as_sequence(block["sourceSpans"], location="block.sourceSpans")
+    source_region_identifiers: list[str] = []
+    source_physical_pages: list[str] = []
+    source_printed_pages: list[str] = []
+    for span_value in source_spans:
+        span = as_mapping(span_value, location="block.sourceSpans[]")
+        region_identifier = _text(
+            span["pageRegionIdentifier"],
+            location="block.sourceSpans[].pageRegionIdentifier",
+        )
+        physical_page = str(int(cast("int", span["physicalPage"])))
+        printed_page = _text(
+            span["printedPage"],
+            location="block.sourceSpans[].printedPage",
+        )
+        if region_identifier not in source_region_identifiers:
+            source_region_identifiers.append(region_identifier)
+        if physical_page not in source_physical_pages:
+            source_physical_pages.append(physical_page)
+        if printed_page not in source_printed_pages:
+            source_printed_pages.append(printed_page)
+
+    attributes = {
+        "id": identifier,
+        "data-block-reference": identifier,
+        "data-block-type": _text(block["blockType"], location="block.blockType"),
+        "data-semantic-role": _text(block["semanticRole"], location="block.semanticRole"),
+        "data-semantic-path": "/".join(
+            _text(value, location="block.semanticPath[]") for value in semantic_path
+        ),
+        "data-publication-disposition": _text(
+            block["publicationDisposition"],
+            location="block.publicationDisposition",
+        ),
+        "data-source-region-identifiers": " ".join(source_region_identifiers),
+        "data-source-physical-pages": " ".join(source_physical_pages),
+        "data-source-printed-pages": " ".join(source_printed_pages),
+    }
+    parent_reference = block.get("parentBlockReference")
+    if isinstance(parent_reference, str):
+        attributes["data-parent-block-reference"] = parent_reference
+    if extra is not None:
+        attributes.update(extra)
+    return _html_attributes(attributes)
+
+
 def _render_table(
     block: Mapping[str, JsonValue],
     *,
@@ -175,16 +238,33 @@ def _render_table(
     row_html = []
     for row_value in rows:
         row = as_sequence(row_value, location="table.row")
+        if len(row) != len(headers):
+            msg = f"{identifier} table row has {len(row)} cells; expected {len(headers)} cells"
+            raise ValueError(msg)
         cells = "".join(
             f"<td>{_inline_html(_text(value, location='table.cell'), parser=parser)}</td>"
             for value in row
         )
         row_html.append(f"<tr>{cells}</tr>")
-    label = f"원문 표 {_text(block['semanticRole'], location='block.semanticRole')}"
+    caption_value = block.get("caption")
+    label = (
+        caption_value
+        if isinstance(caption_value, str) and caption_value
+        else f"원문 표 {_text(block['semanticRole'], location='block.semanticRole')}"
+    )
+    caption_identifier = f"caption-{identifier}"
+    table_attributes = _block_attributes(
+        block,
+        extra={
+            "data-table-column-count": str(len(headers)),
+            "data-table-row-count": str(len(rows)),
+        },
+    )
     return (
-        f'<div class="table-scroll" id="{html.escape(identifier, quote=True)}" '
-        f'role="region" aria-label="{html.escape(label, quote=True)}" tabindex="0">'
-        f"<table><caption>{html.escape(label)}</caption><thead><tr>{header_html}</tr></thead>"
+        '<div class="table-scroll" role="region" '
+        f'aria-labelledby="{html.escape(caption_identifier, quote=True)}" tabindex="0">'
+        f'<table {table_attributes}><caption id="{html.escape(caption_identifier, quote=True)}">'
+        f"{html.escape(label)}</caption><thead><tr>{header_html}</tr></thead>"
         f"<tbody>{''.join(row_html)}</tbody></table>"
         "</div>"
     )
@@ -202,12 +282,27 @@ def _render_code(block: Mapping[str, JsonValue]) -> str:
     )
     content = _text(block["content"], location="block.content")
     transcription_class = " code-block--transcription" if content_type == "transcription" else ""
+    content_label = {
+        "command": "명령",
+        "configuration": "설정",
+        "output": "출력",
+        "literal": "리터럴",
+        "transcription": "원문 전사",
+    }.get(content_type, content_type)
+    code_profile_attributes = {
+        "data-code-content-type": content_type,
+        "data-code-language": language,
+    }
+    pre_attributes = _block_attributes(block, extra=code_profile_attributes)
+    code_attributes = _html_attributes(code_profile_attributes)
     return (
-        f'<div class="code-block{transcription_class}" id="{html.escape(identifier, quote=True)}">'
+        f'<div class="code-block{transcription_class}">'
         f'<button class="copy-button" type="button" data-copy-button="{html.escape(code_identifier, quote=True)}" '
-        f'aria-label="{html.escape(content_type)} 복사">복사</button>'
-        f'<pre tabindex="0" aria-label="{html.escape(content_type, quote=True)} 내용"><code '
-        f'id="{html.escape(code_identifier, quote=True)}" class="language-{html.escape(language, quote=True)}">'
+        f'aria-controls="{html.escape(code_identifier, quote=True)}" '
+        f'aria-label="{html.escape(content_label)} 복사">복사</button>'
+        f'<pre {pre_attributes} tabindex="0" aria-label="{html.escape(content_label, quote=True)} 내용"><code '
+        f'id="{html.escape(code_identifier, quote=True)}" class="language-{html.escape(language, quote=True)}" '
+        f"{code_attributes}>"
         f"{html.escape(content)}</code></pre></div>"
     )
 
@@ -240,13 +335,27 @@ def _render_image(
         if alternative_text_status == "verificationRequired"
         else '<span class="badge">대체 텍스트 검토 완료</span>'
     )
+    caption_identifier = f"caption-{identifier}"
+    figure_attributes = _block_attributes(
+        block,
+        extra={
+            "data-asset-type": _text(block["assetType"], location="block.assetType"),
+            "data-rendering-profile": _text(
+                block["renderingProfileIdentifier"],
+                location="block.renderingProfileIdentifier",
+            ),
+            "data-alternative-text-status": alternative_text_status,
+        },
+    )
     return (
-        f'<figure class="source-visual" id="{html.escape(identifier, quote=True)}">'
+        f'<figure class="source-visual" {figure_attributes} '
+        f'aria-labelledby="{html.escape(caption_identifier, quote=True)}">'
         f'<a href="{html.escape(asset_url, quote=True)}" aria-label="{html.escape(alternative_text, quote=True)} 원본 크기로 보기">'
         f'<img src="{html.escape(asset_url, quote=True)}" alt="{html.escape(alternative_text, quote=True)}" '
         f'width="{pixel_width}" height="{pixel_height}" '
         'loading="lazy" decoding="async"></a>'
-        f"<figcaption>{html.escape(caption)} {review_status}</figcaption></figure>"
+        f'<figcaption id="{html.escape(caption_identifier, quote=True)}">'
+        f"{html.escape(caption)} {review_status}</figcaption></figure>"
     )
 
 
@@ -268,29 +377,35 @@ def _render_blocks(block_values: list[JsonValue], *, base_path: str) -> str:
 
     def render_list_item(block: dict[str, JsonValue]) -> str:
         identifier = _block_identifier(block)
+        list_type = _text(block["listType"], location="block.listType")
+        list_depth = str(int(cast("int", block["listDepth"])))
         content = _inline_html(
             _text(block["content"], location="block.content"),
             parser=parser,
         )
         child_values = children.get(identifier, [])
         child_html = render_sequence(child_values)
-        return f'<li id="{html.escape(identifier, quote=True)}">{content}{child_html}</li>'
+        attributes = _block_attributes(
+            block,
+            extra={"data-list-type": list_type, "data-list-depth": list_depth},
+        )
+        return f"<li {attributes}>{content}{child_html}</li>"
 
     def render_single(block: dict[str, JsonValue]) -> str:
-        identifier = _block_identifier(block)
         block_type = _text(block["blockType"], location="block.blockType")
         content = _text(block["content"], location="block.content")
         if block_type == "heading":
             heading_level = int(cast("int", block["headingLevel"]))
+            attributes = _block_attributes(
+                block,
+                extra={"data-heading-level": str(heading_level)},
+            )
             return (
-                f'<h{heading_level} id="{html.escape(identifier, quote=True)}">'
+                f"<h{heading_level} {attributes}>"
                 f"{_inline_html(content, parser=parser)}</h{heading_level}>"
             )
         if block_type == "paragraph":
-            return (
-                f'<p id="{html.escape(identifier, quote=True)}">'
-                f"{_inline_html(content, parser=parser)}</p>"
-            )
+            return f"<p {_block_attributes(block)}>{_inline_html(content, parser=parser)}</p>"
         if block_type == "codeBlock":
             return _render_code(block)
         if block_type == "table":
@@ -300,19 +415,14 @@ def _render_blocks(block_values: list[JsonValue], *, base_path: str) -> str:
         if block_type == "listItem":
             return render_list_item(block)
         if block_type == "noteContent":
-            return (
-                f'<p id="{html.escape(identifier, quote=True)}">'
-                f"{_inline_html(content, parser=parser)}</p>"
-            )
+            return f"<p {_block_attributes(block)}>{_inline_html(content, parser=parser)}</p>"
         if block_type == "noteLabel":
             return (
-                f'<span class="note__label" id="{html.escape(identifier, quote=True)}">'
-                f"{_inline_html(content, parser=parser)}</span>"
+                f'<p class="note__label" {_block_attributes(block)}>'
+                f"{_inline_html(content, parser=parser)}</p>"
             )
-        return (
-            f'<p id="{html.escape(identifier, quote=True)}">'
-            f"{_inline_html(content, parser=parser)}</p>"
-        )
+        msg = f"unsupported normalized block type: {block_type}"
+        raise ValueError(msg)
 
     def render_sequence(sequence: Sequence[dict[str, JsonValue]]) -> str:
         parts: list[str] = []
@@ -335,8 +445,12 @@ def _render_blocks(block_values: list[JsonValue], *, base_path: str) -> str:
                     grouped.append(candidate)
                     index += 1
                 tag = "ol" if list_type == "ordered" else "ul"
+                first_list_depth = str(int(cast("int", grouped[0]["listDepth"])))
                 parts.append(
-                    f"<{tag}>" + "".join(render_list_item(item) for item in grouped) + f"</{tag}>"
+                    f'<{tag} data-list-type="{html.escape(_text(list_type, location="block.listType"), quote=True)}" '
+                    f'data-list-depth="{html.escape(first_list_depth, quote=True)}">'
+                    + "".join(render_list_item(item) for item in grouped)
+                    + f"</{tag}>"
                 )
                 continue
             if block_type == "noteLabel":
@@ -348,12 +462,12 @@ def _render_blocks(block_values: list[JsonValue], *, base_path: str) -> str:
                 }:
                     note_blocks.append(sequence[index])
                     index += 1
+                note_label_identifier = _block_identifier(note_blocks[0])
                 parts.append(
-                    '<aside class="note" aria-label="'
-                    + html.escape(
-                        _text(note_blocks[0]["content"], location="noteLabel.content"),
-                        quote=True,
-                    )
+                    '<aside class="note" role="note" aria-labelledby="'
+                    + html.escape(note_label_identifier, quote=True)
+                    + '" data-note-label-reference="'
+                    + html.escape(note_label_identifier, quote=True)
                     + '">'
                     + render_single(note_blocks[0])
                     + render_sequence(note_blocks[1:])

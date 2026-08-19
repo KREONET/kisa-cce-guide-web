@@ -153,13 +153,22 @@ PDF evidence
   -> review-only Markdown candidate
 ```
 
+이 단계의 기준은 단순 전사문이 아니라, 가독성과 머신 리더블 요구사항을 함께 충족하는 의미 구조입니다.
+
+- Task builder는 항목과 관련된 모든 PDF 페이지 이미지를 첨부해야 하며, Codex는 각 이미지를 vision으로 직접 검사해야 합니다.
+- `transcript`는 페이지 탐색, 검색, 원문 위치 확인을 돕는 보조 자료이며 판정 근거가 아닙니다. OCR 범위에는 스크린샷, 도표, 표 등 PDF 내부 이미지에 포함된 문자도 들어가야 합니다.
+- 제목, 문단, 목록, note, 이미지는 의미 역할에 맞는 node로 변환합니다. 코드, 명령어, 설정, 출력은 언어와 content type을 지정한 fenced code block으로 분리합니다.
+- 원문의 표는 header, caption, cell 관계를 가진 semantic table로 변환합니다. 구조가 불확실하면 추정하지 않고 원문 이미지, provenance, `quality.unresolvedQuestions`를 보존합니다.
+- 같은 의미 구조에서 semantic HTML과 항목별 공개 JSON dataset을 생성합니다.
+- 현재 Codex task와 result contract는 schema version 2이며, 페이지별 vision inspection과 node별 image provenance를 필수로 검증합니다.
+
 U-03 task를 생성합니다.
 
 ```bash
 uv run python -m conversion.codex_task_builder u-03
 ```
 
-Task의 모든 원문 이미지를 Codex에 첨부하고, JSON Schema 결과를 생성합니다.
+생성된 task를 읽어 JSON Schema 결과를 생성합니다.
 
 ```bash
 uv run python -m conversion.codex_runner u-03
@@ -178,6 +187,61 @@ uv run python -m conversion.codex_result_importer u-03
 ```
 
 Task, JSONL event, structured result, run manifest, candidate는 `work/codex/` 아래에 생성되며 Git에서 제외됩니다. Importer는 page coverage, page-region reference, source excerpt, technical literal, heading hierarchy, annotation target을 검사합니다. Canonical Markdown과 review registry는 자동으로 변경하지 않습니다.
+
+### 전체 corpus 병렬 변환
+
+전체 실행은 `data/criteria-manifest.yaml`의 record 순서대로 모든 `extractedCriterion` 항목을 선택합니다. Positional slug를 지정하면 해당 allowlist만 선택하되 manifest 순서를 유지합니다. Worker가 완료되는 순서는 실행 순서와 summary 순서에 영향을 주지 않습니다.
+
+각 항목은 다음 세 단계를 독립적으로 수행합니다.
+
+| Summary stage | 항목별 경로 | 역할 |
+| --- | --- | --- |
+| `taskBuild` | `work/codex/tasks/<criterionSlug>/task.json` | 현재 원문, 정책, prompt, schema checksum에 결합된 immutable evidence task 생성 |
+| `visionRun` | `work/codex/results/<criterionSlug>/` | 모든 관련 PDF page image를 첨부한 read-only Codex 분석과 structured result 생성 |
+| `importer` | `work/codex/candidates/<criterionSlug>/` | Result 검증, review-only Markdown candidate와 validation report 생성 |
+
+실제 Codex 요청 없이 전체 실행 계획과 task를 확인합니다. Dry run은 필요한 `visionRun` 계획을 기록하지만 importer를 실행하지 않습니다.
+
+```bash
+uv run python -m conversion.codex_bulk_runner --dry-run
+```
+
+전체 corpus를 변환합니다. 재현 가능한 실행은 모델 identifier를 고정합니다.
+
+```bash
+uv run python -m conversion.codex_bulk_runner --model <model-identifier>
+```
+
+중단되었거나 일부 항목이 실패한 실행을 검증된 artifact부터 재개합니다.
+
+```bash
+uv run python -m conversion.codex_bulk_runner \
+  --model <model-identifier> \
+  --resume
+```
+
+주요 옵션은 다음과 같습니다.
+
+| 옵션 | 동작 |
+| --- | --- |
+| `<slug>...` | 선택적인 `extractedCriterion` allowlist. 입력 순서와 관계없이 manifest 순서로 실행 |
+| `--workers <1-16>` | 병렬 worker 수 지정. 기본값은 `min(2, max(1, logicalCpuCount))` |
+| `--model <identifier>` | 모든 Codex vision run의 model 고정 |
+| `--dry-run` | Task와 vision run plan만 기록하고 importer 생략 |
+| `--resume` | 현재 checksum으로 검증된 result 또는 candidate만 재사용 |
+| `--fail-fast` | 첫 실패 후 새 항목 scheduling 중단. 실행 중인 worker는 완료를 기다리고, 시작하지 않은 항목은 `cancelled`로 기록 |
+| `--retries <0-5>` | 첫 vision run 실패 후 명시적 재시도 횟수. 기본값은 `0` |
+| `--retry-backoff-seconds <0-300>` | 재시도의 deterministic exponential backoff base. 각 대기 시간도 최대 300초이며, 기본값은 `0` |
+| `--work-directory <path>` | 기본 `work/codex/` 대신 사용할 격리된 artifact root 지정 |
+| `--summary-path <path>` | 기본 `<work-directory>/bulk-summary.json` 대신 summary 경로 지정 |
+
+기본 worker 수는 최대 2인 보수적인 값이며, 설정 가능한 절대 상한은 16입니다. 전체 corpus의 첫 실행에는 작은 기본값을 권장합니다. 항목마다 여러 page image와 별도 Codex process를 사용하므로, 큰 병렬값은 API rate limit, 동시 요청 한도, input token 사용량, model context, 메모리 압박을 키울 수 있습니다. 제한에 도달하면 `--workers 1`로 낮추고 `--resume`으로 이어서 실행합니다.
+
+재개 실행도 현재 입력에서 task를 다시 생성합니다. Task identifier와 checksum, result와 candidate checksum, `validationStatus: passed`, `canonicalApplied: false`가 모두 일치하는 candidate는 `skipped`로 기록합니다. 현재 task에 유효한 result만 있으면 importer부터 재개하고 `resumedImport`로 기록합니다. 누락되거나 오래된 artifact는 vision 단계부터 다시 처리합니다.
+
+한 항목의 실패는 다른 항목의 artifact를 손상시키지 않습니다. 기본 실행은 나머지 항목을 계속 처리하고 `work/codex/bulk-summary.json`에 `taskBuild`, `visionRun`, `importer`의 상태, 오류, `completed`, `resumedImport`, `skipped`, `dryRun`, `failed`, `cancelled` outcome을 manifest 순서로 기록합니다. Schema version 1 summary는 `schemas/codex-bulk-summary.schema.json` 검증을 통과한 뒤 원자적으로 교체됩니다. 실패 또는 취소가 하나라도 있으면 command는 non-zero exit code를 반환합니다.
+
+전체 실행도 canonical Markdown, provenance, review registry를 적용하거나 승인하지 않습니다. `work/codex/candidates/`의 결과는 별도 사람 검토와 명시적 적용 작업이 필요한 review-only artifact입니다.
 
 ## 검증 및 빌드
 
