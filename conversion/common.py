@@ -22,11 +22,32 @@ type JsonValue = JsonScalar | list[JsonValue] | dict[str, JsonValue]
 ALLOWED_CODE_CONTENT_TYPES = frozenset(
     {"command", "configuration", "output", "literal", "transcription"}
 )
+# The canonical format contract applies to every content model that represents a completed
+# conversion. The Codex result importer and the repository validator must both read these
+# constants so that a contract change cannot be applied to only one enforcement layer.
+CANONICAL_FORMAT_CONTENT_MODELS = frozenset({"systemCriterion", "webApplicationCriterion"})
 REQUIRED_LEVEL_TWO_HEADINGS = (
     "개요",
     "점검 대상 및 판단 기준",
     "점검 및 조치 사례",
 )
+REQUIRED_OVERVIEW_LEVEL_THREE_HEADINGS = (
+    "점검 내용",
+    "점검 목적",
+    "보안 위협",
+    "참고",
+)
+REQUIRED_ASSESSMENT_LEVEL_THREE_HEADINGS = (
+    "대상",
+    "판단 기준",
+    "조치 방법",
+    "조치 시 영향",
+)
+EXTRACTED_LEVEL_TWO_HEADINGS = ("원문 전사",)
+# Supplementary guidance is platform independent, so it must trail the per-target sections
+# instead of interrupting them.
+SUPPLEMENTARY_GUIDANCE_HEADING = "추가 지침"
+ALLOWED_NOTE_LABELS = frozenset({"참고", "주의", "경고", "편집자 주"})
 CHECKSUM_PATTERN = re.compile(r"^[0-9a-f]{64}$")
 
 

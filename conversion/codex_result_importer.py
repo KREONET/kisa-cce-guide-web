@@ -19,6 +19,9 @@ from conversion.codex_task_builder import (
     verify_codex_task_dependencies,
 )
 from conversion.common import (
+    REQUIRED_ASSESSMENT_LEVEL_THREE_HEADINGS,
+    REQUIRED_LEVEL_TWO_HEADINGS,
+    REQUIRED_OVERVIEW_LEVEL_THREE_HEADINGS,
     JsonValue,
     as_mapping,
     as_sequence,
@@ -28,23 +31,12 @@ from conversion.common import (
 )
 from conversion.runtime_logging import add_logging_arguments, configure_runtime_logging
 
-SYSTEM_LEVEL_TWO_HEADINGS = (
-    "개요",
-    "점검 대상 및 판단 기준",
-    "점검 및 조치 사례",
-)
-SYSTEM_OVERVIEW_LEVEL_THREE_HEADINGS = (
-    "점검 내용",
-    "점검 목적",
-    "보안 위협",
-    "참고",
-)
-SYSTEM_ASSESSMENT_LEVEL_THREE_HEADINGS = (
-    "대상",
-    "판단 기준",
-    "조치 방법",
-    "조치 시 영향",
-)
+# These aliases keep the historical importer names while sourcing the canonical format
+# contract from conversion.common, which is the single source of truth shared with the
+# repository validator.
+SYSTEM_LEVEL_TWO_HEADINGS = REQUIRED_LEVEL_TWO_HEADINGS
+SYSTEM_OVERVIEW_LEVEL_THREE_HEADINGS = REQUIRED_OVERVIEW_LEVEL_THREE_HEADINGS
+SYSTEM_ASSESSMENT_LEVEL_THREE_HEADINGS = REQUIRED_ASSESSMENT_LEVEL_THREE_HEADINGS
 LEVEL_TWO = 2
 LEVEL_THREE = 3
 FORBIDDEN_CATCH_ALL_ROLES = frozenset(

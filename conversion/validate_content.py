@@ -13,11 +13,18 @@ from tempfile import TemporaryDirectory
 from typing import cast
 
 from jsonschema import Draft202012Validator, FormatChecker
+from markdown_it.token import Token
 from PIL import Image, UnidentifiedImageError
 
 from conversion.common import (
     ALLOWED_CODE_CONTENT_TYPES,
+    ALLOWED_NOTE_LABELS,
+    CANONICAL_FORMAT_CONTENT_MODELS,
+    EXTRACTED_LEVEL_TWO_HEADINGS,
+    REQUIRED_ASSESSMENT_LEVEL_THREE_HEADINGS,
     REQUIRED_LEVEL_TWO_HEADINGS,
+    REQUIRED_OVERVIEW_LEVEL_THREE_HEADINGS,
+    SUPPLEMENTARY_GUIDANCE_HEADING,
     JsonValue,
     LeafBlock,
     as_mapping,
@@ -89,6 +96,13 @@ WEB_APPLICATION_CODES = frozenset(
         "WM",
     }
 )
+# The canonical exemplar unix/u-01.md writes judgment items with the colon inside the strong
+# span and exactly one space after it, so the validator matches that literal notation instead
+# of accepting any emphasis arrangement.
+JUDGMENT_ITEM_PATTERN = re.compile(r"^\*\*(양호|취약):\*\* (?=\S)")
+NOTE_LABEL_PATTERN = re.compile(r"^\*\*([^*]+)\*\*$")
+HEADING_TOKEN_SPAN = 3
+EXPECTED_JUDGMENT_LABELS = ("양호", "취약")
 
 
 @dataclass(frozen=True)
@@ -744,6 +758,221 @@ def _validate_assets(
     return issues
 
 
+def _level_three_headings_by_section(tokens: list[Token]) -> dict[str, list[str]]:
+    """Group H3 headings under the H2 section that introduces them."""
+
+    sections: dict[str, list[str]] = {}
+    current_section: str | None = None
+    for token_index, token in enumerate(tokens):
+        if token.type != "heading_open" or token_index + 1 >= len(tokens):
+            continue
+        heading_text = tokens[token_index + 1].content
+        if token.tag == "h2":
+            current_section = heading_text
+            sections.setdefault(current_section, [])
+        elif token.tag == "h3" and current_section is not None:
+            sections[current_section].append(heading_text)
+    return sections
+
+
+def _section_token_span(tokens: list[Token], *, level: int, heading_text: str) -> list[Token]:
+    """Return the tokens that belong to one heading section, excluding its heading."""
+
+    for token_index, token in enumerate(tokens):
+        if (
+            token.type != "heading_open"
+            or token.tag != f"h{level}"
+            or token_index + 1 >= len(tokens)
+            or tokens[token_index + 1].content != heading_text
+        ):
+            continue
+        start_index = token_index + HEADING_TOKEN_SPAN
+        for end_index in range(start_index, len(tokens)):
+            candidate = tokens[end_index]
+            if candidate.type == "heading_open" and int(candidate.tag[1:]) <= level:
+                return tokens[start_index:end_index]
+        return tokens[start_index:]
+    return []
+
+
+def _validate_judgment_section(
+    tokens: list[Token],
+    *,
+    relative_path: str,
+) -> list[ValidationIssue]:
+    """Validate that the judgment section uses one 양호 item and one 취약 item."""
+
+    section_tokens = _section_token_span(tokens, level=3, heading_text="판단 기준")
+    if not section_tokens:
+        return []
+    issues: list[ValidationIssue] = []
+    if not any(token.type == "bullet_list_open" for token in section_tokens):
+        issues.append(
+            ValidationIssue(
+                "markdown-judgment-notation",
+                relative_path,
+                "판단 기준 requires an unordered list of judgment items",
+            )
+        )
+        return issues
+    if any(token.type == "ordered_list_open" for token in section_tokens):
+        issues.append(
+            ValidationIssue(
+                "markdown-judgment-notation",
+                relative_path,
+                "판단 기준 must not use an ordered list",
+            )
+        )
+    observed_labels: list[str] = []
+    for token_index, token in enumerate(section_tokens):
+        if token.type != "list_item_open":
+            continue
+        inline_token = next(
+            (candidate for candidate in section_tokens[token_index:] if candidate.type == "inline"),
+            None,
+        )
+        if inline_token is None:
+            continue
+        label_match = JUDGMENT_ITEM_PATTERN.match(inline_token.content)
+        if label_match is None:
+            issues.append(
+                ValidationIssue(
+                    "markdown-judgment-notation",
+                    relative_path,
+                    (
+                        "판단 기준 item must use '- **양호:** ' or '- **취약:** ' notation: "
+                        f"{inline_token.content[:40]!r}"
+                    ),
+                )
+            )
+            continue
+        observed_labels.append(label_match.group(1))
+    if tuple(observed_labels) != EXPECTED_JUDGMENT_LABELS:
+        issues.append(
+            ValidationIssue(
+                "markdown-judgment-notation",
+                relative_path,
+                (
+                    "판단 기준 requires exactly one 양호 item followed by one 취약 item: "
+                    f"{tuple(observed_labels)!r}"
+                ),
+            )
+        )
+    return issues
+
+
+def _validate_note_blockquotes(
+    tokens: list[Token],
+    *,
+    body_lines: list[str],
+    relative_path: str,
+) -> list[ValidationIssue]:
+    """Validate the label line, blank quote line, and allowed labels of note blockquotes."""
+
+    issues: list[ValidationIssue] = []
+    for token_index, token in enumerate(tokens):
+        if token.type != "blockquote_open":
+            continue
+        label_token = next(
+            (candidate for candidate in tokens[token_index:] if candidate.type == "inline"),
+            None,
+        )
+        if label_token is None:
+            continue
+        label_match = NOTE_LABEL_PATTERN.match(label_token.content)
+        if label_match is None:
+            issues.append(
+                ValidationIssue(
+                    "markdown-note-profile",
+                    relative_path,
+                    (
+                        "note blockquote must open with a strong label line: "
+                        f"{label_token.content[:40]!r}"
+                    ),
+                )
+            )
+            continue
+        label = label_match.group(1)
+        if label not in ALLOWED_NOTE_LABELS:
+            issues.append(
+                ValidationIssue(
+                    "markdown-note-profile",
+                    relative_path,
+                    f"unsupported note label: {label!r}",
+                )
+            )
+        # The contract requires a bare quote marker between the label and the note body so
+        # that the label renders as its own block rather than merging into the first sentence.
+        if label_token.map is None:
+            continue
+        separator_index = label_token.map[0] + 1
+        separator_line = body_lines[separator_index] if separator_index < len(body_lines) else ""
+        if separator_line != ">":
+            issues.append(
+                ValidationIssue(
+                    "markdown-note-profile",
+                    relative_path,
+                    (
+                        "note blockquote label must be followed by a bare '>' line: "
+                        f"{separator_line[:40]!r}"
+                    ),
+                )
+            )
+    return issues
+
+
+def _validate_canonical_format_headings(
+    tokens: list[Token],
+    *,
+    relative_path: str,
+) -> list[ValidationIssue]:
+    """Validate the fixed heading composition of the canonical format contract."""
+
+    issues: list[ValidationIssue] = []
+    sections = _level_three_headings_by_section(tokens)
+    expected_level_three_headings = {
+        "개요": REQUIRED_OVERVIEW_LEVEL_THREE_HEADINGS,
+        "점검 대상 및 판단 기준": REQUIRED_ASSESSMENT_LEVEL_THREE_HEADINGS,
+    }
+    for section_name, expected_headings in expected_level_three_headings.items():
+        observed_headings = tuple(sections.get(section_name, ()))
+        if observed_headings != expected_headings:
+            issues.append(
+                ValidationIssue(
+                    "markdown-section-headings",
+                    relative_path,
+                    (
+                        f"{section_name} requires H3 sequence {expected_headings!r} "
+                        f"but found {observed_headings!r}"
+                    ),
+                )
+            )
+    remediation_headings = tuple(sections.get("점검 및 조치 사례", ()))
+    if not remediation_headings:
+        issues.append(
+            ValidationIssue(
+                "markdown-section-headings",
+                relative_path,
+                "점검 및 조치 사례 requires at least one target H3",
+            )
+        )
+    elif (
+        SUPPLEMENTARY_GUIDANCE_HEADING in remediation_headings
+        and remediation_headings[-1] != SUPPLEMENTARY_GUIDANCE_HEADING
+    ):
+        issues.append(
+            ValidationIssue(
+                "markdown-section-headings",
+                relative_path,
+                (
+                    f"{SUPPLEMENTARY_GUIDANCE_HEADING} must be the last H3 under "
+                    f"점검 및 조치 사례: {remediation_headings!r}"
+                ),
+            )
+        )
+    return issues
+
+
 def _validate_markdown_structure(
     *,
     criterion_path: Path,
@@ -809,15 +1038,32 @@ def _validate_markdown_structure(
                     )
                 )
 
+    # extractedCriterion is an intermediate transcription state rather than a completed
+    # conversion, so it keeps its own reduced heading contract.
     expected_level_two_headings = (
-        ("원문 전사",) if content_model == "extractedCriterion" else REQUIRED_LEVEL_TWO_HEADINGS
+        EXTRACTED_LEVEL_TWO_HEADINGS
+        if content_model == "extractedCriterion"
+        else REQUIRED_LEVEL_TWO_HEADINGS
     )
-    if tuple(level_two_headings[: len(expected_level_two_headings)]) != expected_level_two_headings:
+    if tuple(level_two_headings) != expected_level_two_headings:
         issues.append(
             ValidationIssue(
                 "markdown-required-headings",
                 relative_path,
-                f"expected leading H2 sequence {expected_level_two_headings!r}",
+                (
+                    f"expected H2 sequence {expected_level_two_headings!r} "
+                    f"but found {tuple(level_two_headings)!r}"
+                ),
+            )
+        )
+    if content_model in CANONICAL_FORMAT_CONTENT_MODELS:
+        issues.extend(_validate_canonical_format_headings(tokens, relative_path=relative_path))
+        issues.extend(_validate_judgment_section(tokens, relative_path=relative_path))
+        issues.extend(
+            _validate_note_blockquotes(
+                tokens,
+                body_lines=body.splitlines(),
+                relative_path=relative_path,
             )
         )
     for previous_level, current_level in pairwise(heading_levels):
@@ -1120,14 +1366,17 @@ def _validate_criterion(
             release=release,
         )
     )
-    if criterion.metadata.get("contentModel") == "systemCriterion":
+    criterion_content_model = criterion.metadata.get("contentModel")
+    if criterion_content_model in CANONICAL_FORMAT_CONTENT_MODELS:
+        # Both canonical content models share the fixed overview, assessment, and remediation
+        # semantic roles of the canonical format contract, so they share one path validator.
         for block in leaf_blocks:
             if not _valid_system_semantic_path(block.semantic_path, taxonomy=taxonomy):
                 issues.append(
                     ValidationIssue(
                         "content-model-semantic-path",
                         relative_criterion_path,
-                        f"unsupported systemCriterion path {block.semantic_path!r}",
+                        (f"unsupported {criterion_content_model} path {block.semantic_path!r}"),
                     )
                 )
     if criterion.metadata.get("contentModel") == "extractedCriterion":

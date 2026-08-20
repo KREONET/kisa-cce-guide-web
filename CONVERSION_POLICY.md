@@ -402,6 +402,9 @@ sourceAnnotations:
 
 렌더러는 metadata를 이용해 H1을 생성한다. Markdown 본문은 H2부터 시작한다.
 
+`unix/u-01.md`는 이 정책의 정본 서식 exemplar다. 변환을 완료한 모든 점검항목은 이 문서와 동일한 heading 구성,
+서식, 표기 규약을 따라야 한다. 이 절과 `정본 서식 계약` 절이 상충하면 `정본 서식 계약`을 우선 적용한다.
+
 시스템 점검항목의 기본 구조는 다음과 같다.
 
 ```markdown
@@ -432,6 +435,108 @@ sourceAnnotations:
 #### 서비스, 프로토콜 또는 세부 환경
 ```
 
+## 정본 서식 계약
+
+변환을 완료한 모든 점검항목은 `unix/u-01.md`와 동일한 서식 계약을 따라야 한다. 이 계약은
+`systemCriterion`과 `webApplicationCriterion`에 공통 적용한다. `extractedCriterion`은 변환 완료 상태가 아닌
+중간 산출물이며 `원문 전사` 구조를 사용한다.
+
+### Heading 계약
+
+- H2는 `개요`, `점검 대상 및 판단 기준`, `점검 및 조치 사례` 세 개여야 하며 순서가 정확히 일치해야 한다.
+  접두 일치가 아니라 완전 일치를 요구한다. 그 밖의 H2를 추가해서는 안 된다.
+- `개요` 아래 H3는 `점검 내용`, `점검 목적`, `보안 위협`, `참고` 네 개여야 하며 순서가 정확히 일치해야 한다.
+- `점검 대상 및 판단 기준` 아래 H3는 `대상`, `판단 기준`, `조치 방법`, `조치 시 영향` 네 개여야 하며
+  순서가 정확히 일치해야 한다.
+- `점검 및 조치 사례` 아래에는 대상 플랫폼 또는 제품군 H3가 하나 이상 있어야 한다.
+- `추가 지침` H3를 사용하는 경우 `점검 및 조치 사례` 아래의 마지막 H3여야 한다.
+- 원문에 특정 고정 섹션의 내용이 없더라도 heading을 생략해서는 안 된다. 원문 부재는 heading 삭제가 아니라
+  `sourceAnnotations`와 검토 상태로 표현한다.
+
+### 고정 섹션 본문 서식
+
+| 섹션 | 본문 형식 |
+| --- | --- |
+| `점검 내용` | 단일 문단 |
+| `점검 목적` | 단일 문단 |
+| `보안 위협` | 단일 문단 |
+| `참고` | 참고 blockquote |
+| `대상` | 단일 문단. 원문 대상 문자열을 `sourceTargetText`와 동일하게 보존한다 |
+| `판단 기준` | 양호와 취약 두 항목의 unordered list |
+| `조치 방법` | 단일 문단 |
+| `조치 시 영향` | 단일 문단. 원문이 여러 항목을 나열하면 unordered list |
+
+- 고정 섹션 본문에 heading을 추가해서는 안 된다.
+- 원문 문말 표현을 보존한다. 임의로 문체를 통일해서는 안 된다.
+
+### 판단 기준 표기
+
+`판단 기준`은 다음 표기를 사용한다. 콜론은 strong 범위 안에 포함하고 콜론 뒤에 공백 한 칸을 둔다.
+
+```markdown
+- **양호:** 원격터미널 서비스를 사용하지 않거나, 사용 시 root 직접 접속을 차단한 경우
+- **취약:** 원격터미널 서비스 사용 시 root 직접 접속을 허용한 경우
+```
+
+- 양호 항목과 취약 항목은 각각 정확히 하나여야 한다.
+- 양호 항목이 취약 항목보다 먼저 와야 한다.
+- `양호`, `취약` 이외의 판정 label을 사용해서는 안 된다.
+
+### 조치 사례 heading 표기
+
+- 운영체제와 제품군 H3는 원문 표기를 보존한다. `SOLARIS`, `LINUX`, `AIX`, `HP-UX`처럼 원문이 대문자면
+  대문자를 유지한다.
+- 서비스, 프로토콜, 배포판 H4는 원문 표기를 보존한다. `Telnet`, `SSH`, `Redhat`, `Debian`처럼 원문이
+  대소문자를 혼용하면 그대로 유지한다.
+- 대상 플랫폼 아래에 서비스나 세부 환경 구분이 없으면 H4를 생략하고 H3 아래에 절차를 배치한다.
+- H3와 H4의 identifier는 taxonomy에 등록된 값이어야 한다.
+
+### 절차와 코드 블록 배치
+
+절차는 ordered list로 작성하고, 각 항목의 코드 블록은 해당 항목에 소속된 자식 블록으로 배치한다.
+
+````markdown
+1. `/etc/default/login` 파일 내에 `CONSOLE` 설정값 수정
+
+   ```text configuration
+   CONSOLE=/dev/console
+   ```
+````
+
+- 코드 블록은 공백 세 칸으로 들여써서 상위 list 항목에 소속시킨다. Tab을 사용해서는 안 된다.
+- list 항목 본문과 코드 블록 사이, 코드 블록과 다음 list 항목 사이에 빈 줄 한 줄을 둔다.
+- 파일 경로, 설정 키, 명령 이름, 설정값은 항목 본문에서 inline code로 표기한다.
+- 항목 본문은 수행할 작업을 서술한다. 명령과 설정값 자체를 본문에 나열해서는 안 된다.
+- 단일 절차도 ordered list로 작성한다. 문단만으로 절차를 표현해서는 안 된다.
+
+### 참고 blockquote 표기
+
+- 참고 blockquote는 label 줄, 빈 `>` 줄, 본문 줄 순서를 사용한다.
+- 용어 정의를 나열할 때는 `> - **용어:** 설명` 형식의 list 항목을 사용한다.
+- 본문 중 참고는 관련 절차 또는 섹션 바로 뒤에 배치한다.
+- 주제가 다른 참고는 하나의 blockquote에 합치지 않고 각각 분리한다.
+
+```markdown
+> **참고**
+>
+> - **root 계정:** 모든 기능을 관리할 수 있는 총괄 권한을 가진 특별 계정
+> - **tty(terminal-teletype):** 서버에 연결된 콘솔로 직접 로그인하는 터미널
+```
+
+### Front matter 표기
+
+- key 순서는 `schemaVersion`, `contentModel`, `contentModelVersion`, `criterion`, `classification`,
+  `targetScope`, `targetIdentifiers`, `sourceTargetText`, `provenance`, `sourceAnnotations`를 사용한다.
+- 최상위 블록 사이에 빈 줄 한 줄을 둔다.
+- 들여쓰기는 공백 두 칸을 사용한다.
+- 값이 없는 검토 field는 생략하지 않고 `null`로 표기한다.
+
+### 정본 서식 검증
+
+- Heading 계약, 판단 기준 표기, 참고 blockquote profile, fenced code info string은 repository validator가
+  강제한다. Codex 결과 importer와 repository validator는 동일한 heading 상수를 사용해야 한다.
+- 정본 서식 계약을 변경하려면 `unix/u-01.md`, 이 절, validator 규칙, reference fixture를 함께 변경해야 한다.
+
 ### 구조 규칙
 
 - 렌더링 결과에는 H1이 정확히 하나만 존재해야 한다.
@@ -440,13 +545,14 @@ sourceAnnotations:
 - 기본 heading의 이름과 순서는 content model schema로 검증한다.
 - `systemCriterion`은 Unix, Windows, 웹 서비스, 보안 장비, 네트워크 장비, 제어시스템, PC, DBMS, 이동통신, 가상화 장비, 클라우드에 사용한다.
 - `webApplicationCriterion`은 Web Application 21개 항목에 사용한다.
-- 두 model은 공통 H2 구조를 사용하되, `점검 및 조치 사례` 아래의 허용 역할과 heading 계층을 별도 schema로 검증한다.
+- 두 model은 `정본 서식 계약`의 공통 heading 구조를 사용하되, `점검 및 조치 사례` 아래의 허용 역할과 heading 계층을 별도 schema로 검증한다.
 - `systemCriterion`의 동적 heading은 taxonomy에 등록된 운영체제, 제품군, 서비스, 프로토콜이어야 한다.
 - `systemCriterion`은 플랫폼 공통 보충 내용을 위해 `추가 지침` H3 역할과 그 아래 `guidanceTopic` H4 역할을 허용한다.
 - `webApplicationCriterion`의 동적 heading은 공격 유형, 점검 방법, 조치 방법, 구현 언어, 제품 역할 중 하나여야 한다.
 - `extractedCriterion`은 전체 검색·열람을 위한 자동 전사 상태다. `원문 전사` H2와 `PDF 페이지 N` H3만 허용하며, 사람 검토 전에는 `structured` 또는 `approved`로 승격할 수 없다.
 - `extractedCriterion`의 `technicalLiteralInventoryMode`는 `sourceTranscriptSearchableText`를 사용한다. 기술 literal의 typed AST 추출이 완료된 것으로 표시해서는 안 된다.
-- 모든 분야를 U-01 구조에 강제로 맞춰서는 안 된다.
+- 변환을 완료한 문서는 분야와 무관하게 `정본 서식 계약`의 heading 구성과 서식을 동일하게 적용한다.
+- `점검 및 조치 사례` 아래의 대상 heading 구성은 원문에 따라 분야별로 달라진다. 원문에 없는 대상 heading을 생성해서는 안 된다.
 - Schema에 등록되지 않은 역할의 자유 형식 heading은 허용하지 않는다.
 - 새로운 content model을 추가하려면 metadata schema, AST schema, parser, renderer, validator, reference fixture를 함께 추가해야 한다.
 - 배포된 anchor를 삭제하거나 재사용해서는 안 된다.

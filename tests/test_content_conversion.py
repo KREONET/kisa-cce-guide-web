@@ -8,6 +8,9 @@ from tempfile import TemporaryDirectory
 
 from conversion.build_content import build
 from conversion.common import (
+    REQUIRED_ASSESSMENT_LEVEL_THREE_HEADINGS,
+    REQUIRED_LEVEL_TWO_HEADINGS,
+    REQUIRED_OVERVIEW_LEVEL_THREE_HEADINGS,
     extract_leaf_blocks,
     flatten_block_references,
     heading_identifiers,
@@ -15,11 +18,31 @@ from conversion.common import (
     load_yaml,
     repository_root,
 )
-from conversion.validate_content import validate_repository
+from conversion.validate_content import _validate_markdown_structure, validate_repository
 
 HEADING_LEVEL_TWO = 2
 SOLARIS_RECOMMENDATION_ROW_COUNT = 17
 EXPECTED_CRITERION_COUNT = 382
+CANONICAL_EXEMPLAR_PATH = Path("unix/u-01.md")
+
+
+def _canonical_exemplar_body() -> str:
+    """Load the canonical exemplar body that defines the repository format contract."""
+
+    return load_criterion(repository_root() / CANONICAL_EXEMPLAR_PATH).body
+
+
+def _structure_rules(body: str, *, content_model: str = "systemCriterion") -> list[str]:
+    """Return the rule identifiers reported for one Markdown body."""
+
+    return [
+        issue.rule_identifier
+        for issue in _validate_markdown_structure(
+            criterion_path=CANONICAL_EXEMPLAR_PATH,
+            body=body,
+            content_model=content_model,
+        )
+    ]
 
 
 def test_scoped_validation_passes() -> None:
@@ -46,7 +69,9 @@ def test_every_markdown_leaf_has_provenance() -> None:
 
     root = repository_root()
     heading_identifier_mapping = heading_identifiers(load_yaml(root / "data/taxonomy.yaml"))
-    expected_counts = {"u-01": 63, "u-02": 89}
+    # The u-02 reference section uses a note blockquote, which contributes one note label
+    # block in addition to its note items.
+    expected_counts = {"u-01": 63, "u-02": 90}
     for slug, expected_count in expected_counts.items():
         criterion = load_criterion(root / "unix" / f"{slug}.md")
         provenance = load_yaml(root / "unix" / f"{slug}.provenance.yaml")
@@ -149,3 +174,95 @@ def test_internal_source_links_exist() -> None:
         root / "CONVERSION_POLICY.md",
     ]
     assert all(path.is_file() for path in required_paths)
+
+
+def test_canonical_exemplar_satisfies_format_contract() -> None:
+    """The canonical exemplar must report no format issue under either canonical model."""
+
+    body = _canonical_exemplar_body()
+    assert _structure_rules(body) == []
+    assert _structure_rules(body, content_model="webApplicationCriterion") == []
+
+
+def test_shared_heading_constants_match_canonical_exemplar() -> None:
+    """The shared constants must describe the heading composition of the exemplar."""
+
+    body = _canonical_exemplar_body()
+    assert [f"## {heading}" in body for heading in REQUIRED_LEVEL_TWO_HEADINGS] == [True] * 3
+    assert all(f"### {heading}" in body for heading in REQUIRED_OVERVIEW_LEVEL_THREE_HEADINGS)
+    assert all(f"### {heading}" in body for heading in REQUIRED_ASSESSMENT_LEVEL_THREE_HEADINGS)
+
+
+def test_extra_level_two_heading_is_rejected() -> None:
+    """An appended H2 must fail because the contract requires an exact H2 sequence."""
+
+    body = _canonical_exemplar_body() + "\n## 부록\n\n추가 절입니다.\n"
+    assert "markdown-required-headings" in _structure_rules(body)
+
+
+def test_overview_level_three_order_violation_is_rejected() -> None:
+    """Reordering the overview H3 headings must fail the section contract."""
+
+    body = (
+        _canonical_exemplar_body()
+        .replace("### 점검 목적", "### 임시 제목")
+        .replace("### 보안 위협", "### 점검 목적")
+        .replace("### 임시 제목", "### 보안 위협")
+    )
+    assert "markdown-section-headings" in _structure_rules(body)
+
+
+def test_assessment_level_three_omission_is_rejected() -> None:
+    """Dropping one assessment H3 must fail even though the H2 sequence still matches."""
+
+    body = _canonical_exemplar_body().replace(
+        "### 조치 시 영향\n\n일반적인 경우 영향 없음\n",
+        "",
+    )
+    rules = _structure_rules(body)
+    assert "markdown-section-headings" in rules
+    assert "markdown-required-headings" not in rules
+
+
+def test_judgment_notation_violations_are_rejected() -> None:
+    """Judgment items must keep the colon inside the strong span and appear exactly once."""
+
+    body = _canonical_exemplar_body()
+    colon_outside_strong = body.replace("- **양호:** ", "- **양호**: ")
+    assert "markdown-judgment-notation" in _structure_rules(colon_outside_strong)
+    duplicated_label = body.replace(
+        "- **취약:** 원격터미널 서비스 사용 시 root 직접 접속을 허용한 경우",
+        "- **양호:** 중복된 판정 항목",
+    )
+    assert "markdown-judgment-notation" in _structure_rules(duplicated_label)
+
+
+def test_note_blockquote_profile_violations_are_rejected() -> None:
+    """Note blockquotes must use an allowed label and a bare quote separator line."""
+
+    body = _canonical_exemplar_body()
+    unsupported_label = body.replace("> **참고**\n>\n> CentOS", "> **비고**\n>\n> CentOS")
+    assert "markdown-note-profile" in _structure_rules(unsupported_label)
+    missing_separator = body.replace(
+        "> **참고**\n>\n> CentOS",
+        "> **참고**\n> CentOS",
+    )
+    assert "markdown-note-profile" in _structure_rules(missing_separator)
+
+
+def test_supplementary_guidance_must_be_the_last_remediation_heading() -> None:
+    """추가 지침 must trail the per-target remediation sections."""
+
+    body = _canonical_exemplar_body().replace(
+        "### LINUX",
+        "### 추가 지침\n\n플랫폼 공통 보충 내용입니다.\n\n### LINUX",
+    )
+    assert "markdown-section-headings" in _structure_rules(body)
+
+
+def test_extracted_criterion_keeps_its_transcription_contract() -> None:
+    """Intermediate transcription documents must stay on the 원문 전사 branch."""
+
+    body = load_criterion(repository_root() / "web-application/ae.md").body
+    assert _structure_rules(body, content_model="extractedCriterion") == []
+    assert "markdown-required-headings" in _structure_rules(body)

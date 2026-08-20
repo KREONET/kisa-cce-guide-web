@@ -37,7 +37,7 @@
     "analysisStatus": {"type": "string", "enum": ["complete", "needsSourceReview"]},
     "contentModelRecommendation": {
       "type": "string",
-      "enum": ["systemCriterion", "webApplicationCriterion", "mobileNetworkCriterion"]
+      "enum": ["systemCriterion", "webApplicationCriterion"]
     },
     "title": {"type": "string", "minLength": 1},
     "targetScope": {"type": "string", "enum": ["exhaustive", "nonExhaustive"]},

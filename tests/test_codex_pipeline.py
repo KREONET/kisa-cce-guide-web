@@ -19,6 +19,7 @@ from conversion.runtime_logging import REDACTED_VALUE, RuntimeLogger, configure_
 
 EXPECTED_U_03_PAGE_COUNT = 4
 EXPECTED_CODEX_SCHEMA_VERSION = 2
+EXPECTED_CODEX_PROMPT_VERSION = 3
 CODEX_PROCESS_FAILURE_EXIT_CODE = 17
 
 
@@ -591,8 +592,8 @@ def test_task_builder_exports_deterministic_u_03_evidence(tmp_path: Path) -> Non
     task = load_codex_task(second_path)
     assert second_path.read_bytes() == first_bytes
     assert task["schemaVersion"] == EXPECTED_CODEX_SCHEMA_VERSION
-    assert task["promptVersion"] == EXPECTED_CODEX_SCHEMA_VERSION
-    assert task["taskIdentifier"] == "u-03-codex-structure-v2"
+    assert task["promptVersion"] == EXPECTED_CODEX_PROMPT_VERSION
+    assert task["taskIdentifier"] == "u-03-codex-structure-v3"
     evidence_contract = as_mapping(task["evidenceContract"], location="task.evidenceContract")
     assert evidence_contract == {
         "provenanceMustBePreserved": True,
@@ -695,7 +696,7 @@ def test_runner_dry_run_logs_prepared_and_planned_without_starting_codex(
     assert prepared_context["model"] == "test-model"
     assert prepared_context["codex_version"] == "not-executed"
     assert prepared_context["image_count"] == EXPECTED_U_03_PAGE_COUNT
-    assert prepared_context["task_identifier"] == "u-03-codex-structure-v2"
+    assert prepared_context["task_identifier"] == "u-03-codex-structure-v3"
     assert "event_type_counts" not in prepared_context
 
 

@@ -28,9 +28,9 @@ from conversion.common import (
 )
 from conversion.runtime_logging import add_logging_arguments, configure_runtime_logging
 
-PROMPT_VERSION = 2
+PROMPT_VERSION = 3
 DEFAULT_WORK_DIRECTORY = Path("work/codex")
-PROMPT_TEMPLATE_PATH = Path("codex_prompts/criterion-structure-v2.md")
+PROMPT_TEMPLATE_PATH = Path("codex_prompts/criterion-structure-v3.md")
 RESULT_SCHEMA_PATH = Path("schemas/codex-criterion-result.schema.json")
 TASK_SCHEMA_PATH = Path("schemas/codex-criterion-task.schema.json")
 CONVERSION_POLICY_PATH = Path("CONVERSION_POLICY.md")

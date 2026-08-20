@@ -60,12 +60,17 @@
 
 ## 콘텐츠 성숙도
 
+`unix/u-01.md`가 이 저장소의 정본 서식 exemplar입니다. 변환을 완료한 모든 점검항목은 이 문서와 동일한
+heading 구성, 섹션 본문 형식, 표기 규약을 따릅니다. 상세 규칙은 [문서 변환 정책](CONVERSION_POLICY.md)의
+`정본 서식 계약` 절에 정의되어 있습니다.
+
 현재 두 가지 content model이 존재합니다.
 
 ### `systemCriterion`
 
 U-01과 U-02에 적용됩니다.
 
+- 정본 서식 계약의 고정 heading 11개를 순서까지 일치하게 사용
 - 개요, 판단 기준, 조치 사례를 의미 단위로 구조화
 - 명령어, 설정, 출력, 표를 typed block으로 표현
 - Leaf block 단위 provenance 제공
@@ -83,7 +88,11 @@ U-01과 U-02에 적용됩니다.
 - 대상 시스템은 `unspecified`로 등록
 - 표, 목록, 명령어, 이미지 설명은 아직 의미 구조로 분리되지 않음
 
-`extractedCriterion`은 원문 누락 방지와 후속 구조화 작업을 위한 초기 상태입니다. 접근성 검토와 내용 승인의 대상이 되는 최종 변환 상태가 아닙니다. 릴리스 검증은 `extractedCriterion`이 한 건이라도 존재하면 실패합니다.
+`extractedCriterion`은 원문 누락 방지와 후속 구조화 작업을 위한 초기 상태입니다. 정본 서식 계약을 적용하지 않으며, 접근성 검토와 내용 승인의 대상이 되는 최종 변환 상태가 아닙니다. 릴리스 검증은 `extractedCriterion`이 한 건이라도 존재하면 실패합니다.
+
+구조화 작업은 이 상태의 문서를 정본 서식 계약을 충족하는 `systemCriterion` 또는 `webApplicationCriterion`으로
+전환하는 과정입니다. Repository validator가 heading 구성, 판단 기준 표기, 참고 blockquote profile,
+fenced code info string을 강제합니다.
 
 ## 변환 구조
 
@@ -234,58 +243,14 @@ uv run python -m conversion.codex_bulk_runner \
 | `--retry-backoff-seconds <0-300>` | 재시도의 deterministic exponential backoff base. 각 대기 시간도 최대 300초이며, 기본값은 `0` |
 | `--work-directory <path>` | 기본 `work/codex/` 대신 사용할 격리된 artifact root 지정 |
 | `--summary-path <path>` | 기본 `<work-directory>/bulk-summary.json` 대신 summary 경로 지정 |
-| `--no-progress` | stderr의 실시간 진행률 표시 비활성화 |
-| `--log-level <level>` | `DEBUG`, `INFO`, `WARNING`, `ERROR`, `CRITICAL` 중 로그 수준 지정 |
-| `--log-directory <path>` | 기본 `work/logs/` 대신 JSONL 로그 경로 지정 |
 
 기본 worker 수는 최대 2인 보수적인 값이며, 설정 가능한 절대 상한은 16입니다. 전체 corpus의 첫 실행에는 작은 기본값을 권장합니다. 항목마다 여러 page image와 별도 Codex process를 사용하므로, 큰 병렬값은 API rate limit, 동시 요청 한도, input token 사용량, model context, 메모리 압박을 키울 수 있습니다. 제한에 도달하면 `--workers 1`로 낮추고 `--resume`으로 이어서 실행합니다.
 
 재개 실행도 현재 입력에서 task를 다시 생성합니다. Task identifier와 checksum, result와 candidate checksum, `validationStatus: passed`, `canonicalApplied: false`가 모두 일치하는 candidate는 `skipped`로 기록합니다. 현재 task에 유효한 result만 있으면 importer부터 재개하고 `resumedImport`로 기록합니다. 누락되거나 오래된 artifact는 vision 단계부터 다시 처리합니다.
 
-한 항목의 실패는 다른 항목의 artifact를 손상시키지 않습니다. 기본 실행은 나머지 항목을 계속 처리하고 `work/codex/bulk-summary.json`에 `taskBuild`, `visionRun`, `importer`의 상태, 오류, `completed`, `resumedImport`, `skipped`, `dryRun`, `failed`, `cancelled` outcome을 manifest 순서로 기록합니다. Schema version 1 summary는 로그 디렉터리, 로그 수준, 진행률 활성화 상태를 포함하고 `schemas/codex-bulk-summary.schema.json` 검증을 통과한 뒤 원자적으로 교체됩니다. 실패 또는 취소가 하나라도 있으면 command는 non-zero exit code를 반환합니다.
+한 항목의 실패는 다른 항목의 artifact를 손상시키지 않습니다. 기본 실행은 나머지 항목을 계속 처리하고 `work/codex/bulk-summary.json`에 `taskBuild`, `visionRun`, `importer`의 상태, 오류, `completed`, `resumedImport`, `skipped`, `dryRun`, `failed`, `cancelled` outcome을 manifest 순서로 기록합니다. Schema version 1 summary는 `schemas/codex-bulk-summary.schema.json` 검증을 통과한 뒤 원자적으로 교체됩니다. 실패 또는 취소가 하나라도 있으면 command는 non-zero exit code를 반환합니다.
 
 전체 실행도 canonical Markdown, provenance, review registry를 적용하거나 승인하지 않습니다. `work/codex/candidates/`의 결과는 별도 사람 검토와 명시적 적용 작업이 필요한 review-only artifact입니다.
-
-### 공통 실행 로그
-
-`conversion/` 아래의 모든 실행 도구는 공통 런타임 로그를 사용합니다. 기존 machine-readable 결과와 경로는 stdout에 유지하고, 사람이 읽는 로그와 진행률은 stderr로 분리합니다.
-
-- 기본 로그 경로는 `work/logs/`이며 Git에서 제외됩니다.
-- 각 process는 `<tool>-<runIdentifier>-p<processIdentifier>.jsonl` 파일을 별도로 사용합니다. Bulk worker가 같은 run identifier를 공유해도 파일 쓰기가 충돌하지 않습니다.
-- JSONL record는 UTC timestamp, level, tool, event, process와 thread identifier, context, 예외 정보를 포함합니다.
-- API key, authorization header, token, password, credential URL과 알려진 credential 형식은 콘솔과 JSONL에 기록하기 전에 제거합니다.
-- Bulk 진행률은 완료 항목 수, 전체 항목 수, 백분율, 경과 시간, 처리율, outcome 집계를 표시합니다. TTY에서는 한 줄을 갱신하고, CI와 non-TTY에서는 줄 단위 기록을 사용합니다.
-- 모든 도구에서 `--log-level`, `--log-directory`를 사용할 수 있습니다. `KISA_CCE_LOG_LEVEL`, `KISA_CCE_LOG_DIRECTORY` 환경변수도 같은 기본값을 제공합니다.
-
-#### Codex 통신 로그
-
-`codex exec --json`은 실행 중 발생한 이벤트를 stdout의 JSON Lines로 출력합니다. 공식 이벤트에는 `thread.started`, `turn.started`, `turn.completed`, `turn.failed`, `item.*`, `error`가 포함되며, `turn.completed.usage`는 token 사용량을 제공합니다. 자세한 upstream 계약은 [OpenAI Codex non-interactive mode 문서](https://developers.openai.com/codex/noninteractive)를 참조합니다.
-
-`work/codex/results/<criterionSlug>/events.jsonl`은 이 stdout을 그대로 저장하는 기존 raw artifact입니다. 이 파일에는 agent message, reasoning, command execution과 같은 content-bearing `item` body가 포함될 수 있습니다. 공통 runtime JSONL로 복사하거나 redaction된 운영 로그로 간주하지 않습니다.
-
-Runtime logger는 raw body를 복제하지 않고, 다음 Codex lifecycle event를 기록합니다.
-
-| Runtime event | 기록 시점 | Communication context |
-| --- | --- | --- |
-| `codex.request.prepared` | Task와 의존성을 검증하고 요청 metadata를 준비한 때 | 공통 request field |
-| `codex.request.planned` | Dry run에서 Codex를 실행하지 않고 `run.json`을 생성한 때 | 공통 request field |
-| `codex.request.started` | 실제 Codex process를 시작하기 직전 | 공통 request field |
-| `codex.response.completed` | Process가 성공하고 result schema validation이 통과한 때 | 공통 request field와 response aggregate |
-| `codex.response.failed` | Process 시작, exit status 또는 schema validation이 실패한 때 | 공통 request field와 response aggregate, 선택적인 `error_type` |
-
-공통 request field는 `slug`, `model`, `codex_version`, `image_count`, `schema_path`, `task_identifier`, `task_checksum`, `output_paths`입니다. `output_paths`는 `events`, `result`, `run`, `stderr` artifact의 경로만 포함합니다.
-
-Response aggregate는 `exit_code`, `duration_seconds`, `result_checksum`, `schema_validation`, `thread_id`, `total_event_count`, `invalid_json_line_count`, `event_type_counts`, `item_type_counts`, `usage`입니다. `thread_id`는 첫 `thread.started` event에서 가져옵니다. `item_type_counts`는 content body를 읽지 않고 `item.type`별 event 수만 셉니다. `usage`는 `turn.completed.usage`의 non-negative integer `*_tokens` field만 합산합니다. 공식 예시는 `input_tokens`, `cached_input_tokens`, `output_tokens`, `reasoning_output_tokens`를 사용합니다.
-
-Runtime JSONL의 `message`는 고정된 lifecycle 설명만 사용합니다. Prompt 또는 task 본문, upstream agent와 error message 본문, reasoning, command와 command output, file change, tool input·output, raw event 또는 item, credential은 기록하지 않습니다. 실패 로그도 generic failure status, `error_type`, exit code와 aggregate만 사용하며, 상세 내용은 Git에서 제외된 Codex artifact에서 확인합니다.
-
-```bash
-uv run python -m conversion.codex_bulk_runner \
-  --model <model-identifier> \
-  --log-level INFO \
-  --log-directory work/logs \
-  --resume
-```
 
 ## 검증 및 빌드
 

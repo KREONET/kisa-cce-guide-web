@@ -19,7 +19,7 @@ records:
     testProfileVersion:
   - subjectType: criterion
     subjectIdentifier: u-02
-    subjectSourceChecksum: 9e51cfd848f67b943614070ab5d73f0e4df76e9e0f3d0e698e4539baa39f1416
+    subjectSourceChecksum: fe0d7055fb7c1918c168e4ee42a773c61fff6a1b00f0801e3a3b64c8fa1b533f
     sourceDocumentIdentifier: kisa-cce-criteria-2026
     sourceDocumentChecksum: 44fe393981b244147be6af7423d99dc15633c089fad0bcb296cbe2371dde812d
     transcriptionStatus: verificationRequired
