@@ -19,18 +19,18 @@ records:
     testProfileVersion:
   - subjectType: criterion
     subjectIdentifier: u-02
-    subjectSourceChecksum: fe0d7055fb7c1918c168e4ee42a773c61fff6a1b00f0801e3a3b64c8fa1b533f
+    subjectSourceChecksum: a46292e668481dadbc60a61e2c8e4c801b5d318d2e497b311bc90b39692fee79
     sourceDocumentIdentifier: kisa-cce-criteria-2026
     sourceDocumentChecksum: 44fe393981b244147be6af7423d99dc15633c089fad0bcb296cbe2371dde812d
-    transcriptionStatus: verificationRequired
-    workflowStatus: structured
-    sourceAnomalyStatus: reviewRequired
+    transcriptionStatus: machineChecked
+    workflowStatus: automatedChecksPassed
+    sourceAnomalyStatus: resolved
     reviewers: []
     reviewedAt:
-    automatedValidationResult: notRun
+    automatedValidationResult: passed
     unresolvedConversionErrorCount: 0
-    unresolvedSourceAnomalyCount: 7
-    validationReportIdentifier:
+    unresolvedSourceAnomalyCount: 10
+    validationReportIdentifier: canonical-validation-u-02-20260820
     visualEvidenceIdentifiers: []
     testProfileVersion:
   - subjectType: criterion
@@ -6978,7 +6978,7 @@ records:
     testProfileVersion:
   - subjectType: pageRegion
     subjectIdentifier: p15-u-02
-    subjectSourceChecksum: 69c7804bbf6195502273ac4bacde13df6a6a8b2d7fc04a8c1c10dd3601eb5c8b
+    subjectSourceChecksum: 660050593207caca5fb029eb07ae5f914494464cfb4439a04c7264abde8a14df
     sourceDocumentIdentifier: kisa-cce-criteria-2026
     sourceDocumentChecksum: 44fe393981b244147be6af7423d99dc15633c089fad0bcb296cbe2371dde812d
     transcriptionStatus: verificationRequired
@@ -6994,7 +6994,7 @@ records:
     testProfileVersion:
   - subjectType: pageRegion
     subjectIdentifier: p16-u-02
-    subjectSourceChecksum: 7a13d2be957e3382a666e954a0dc8bd147a6545703e19bfa1254a0afd7136cd3
+    subjectSourceChecksum: d5e21bd47b1002b9da1b40331e70ffd2c8f5e2aeef69cd54e0aaa273fbf76f9a
     sourceDocumentIdentifier: kisa-cce-criteria-2026
     sourceDocumentChecksum: 44fe393981b244147be6af7423d99dc15633c089fad0bcb296cbe2371dde812d
     transcriptionStatus: verificationRequired
@@ -7010,7 +7010,7 @@ records:
     testProfileVersion:
   - subjectType: pageRegion
     subjectIdentifier: p17-u-02
-    subjectSourceChecksum: 541c4525efcd0dd1b6b5e02dfaa4392717e7539d87b6196b5180b0a4b1b63f3f
+    subjectSourceChecksum: 5b7fd2f860ebcbeade2a86e419be6c77e786c6e2c3bca44756c502e860da3f2d
     sourceDocumentIdentifier: kisa-cce-criteria-2026
     sourceDocumentChecksum: 44fe393981b244147be6af7423d99dc15633c089fad0bcb296cbe2371dde812d
     transcriptionStatus: verificationRequired
@@ -7026,7 +7026,7 @@ records:
     testProfileVersion:
   - subjectType: pageRegion
     subjectIdentifier: p18-u-02
-    subjectSourceChecksum: 470c8c9c249f974ede813171e0b87858078ff4644195d96341262ca9076e46f0
+    subjectSourceChecksum: a27bb2fdd52ac80f9eac91be7d14720b4344beb6619cf9aac1f89e01ee0a6e75
     sourceDocumentIdentifier: kisa-cce-criteria-2026
     sourceDocumentChecksum: 44fe393981b244147be6af7423d99dc15633c089fad0bcb296cbe2371dde812d
     transcriptionStatus: verificationRequired
@@ -7042,7 +7042,7 @@ records:
     testProfileVersion:
   - subjectType: pageRegion
     subjectIdentifier: p19-u-02
-    subjectSourceChecksum: 1e3b331e057809b26c7886ef4928cfc9e4aabed602e6ed0ddb7a6a4d5d04d0f0
+    subjectSourceChecksum: 62ff6456cf17f8696ecd686cc6df18e19899a4302d1af02527fca5c46c0da9b9
     sourceDocumentIdentifier: kisa-cce-criteria-2026
     sourceDocumentChecksum: 44fe393981b244147be6af7423d99dc15633c089fad0bcb296cbe2371dde812d
     transcriptionStatus: verificationRequired
@@ -7058,7 +7058,7 @@ records:
     testProfileVersion:
   - subjectType: pageRegion
     subjectIdentifier: p20-u-02
-    subjectSourceChecksum: 924c1b4a885bd38cc215afe1e5c642ee3231ee0b8bfbd5cdcd98c5abcc3571be
+    subjectSourceChecksum: c359834ddf8548a23d73e01b3c828148551c5b08612b7a2b73f2ce059a8369fa
     sourceDocumentIdentifier: kisa-cce-criteria-2026
     sourceDocumentChecksum: 44fe393981b244147be6af7423d99dc15633c089fad0bcb296cbe2371dde812d
     transcriptionStatus: verificationRequired
