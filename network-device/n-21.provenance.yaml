@@ -1,0 +1,135 @@
+schemaVersion: 1
+criterionSlug: n-21
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "n-21:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 440
+        printedPage: "440"
+        pageRegionIdentifier: p440-n-21
+  - blockReference: "n-21:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 440
+        printedPage: "440"
+        pageRegionIdentifier: p440-n-21
+  - blockReference: "n-21:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 440
+        printedPage: "440"
+        pageRegionIdentifier: p440-n-21
+  - blockReference: "n-21:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 440
+        printedPage: "440"
+        pageRegionIdentifier: p440-n-21
+  - blockReference: "n-21:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 440
+        printedPage: "440"
+        pageRegionIdentifier: p440-n-21
+  - blockReference: "n-21:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 440
+        printedPage: "440"
+        pageRegionIdentifier: p440-n-21
+  - blockReference: "n-21:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 440
+        printedPage: "440"
+        pageRegionIdentifier: p440-n-21
+  - blockReference: "n-21:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 440
+        printedPage: "440"
+        pageRegionIdentifier: p440-n-21
+  - blockReference: "n-21:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 440
+        printedPage: "440"
+        pageRegionIdentifier: p440-n-21
+  - blockReference: "n-21:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 440
+        printedPage: "440"
+        pageRegionIdentifier: p440-n-21
+  - blockReference: "n-21:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 440
+        printedPage: "440"
+        pageRegionIdentifier: p440-n-21
+  - blockReference: "n-21:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 440
+        printedPage: "440"
+        pageRegionIdentifier: p440-n-21
+  - blockReference: "n-21:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 440
+        printedPage: "440"
+        pageRegionIdentifier: p440-n-21
+  - blockReference: "n-21:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 440
+        printedPage: "440"
+        pageRegionIdentifier: p440-n-21
+  - blockReference: "n-21:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 440
+        printedPage: "440"
+        pageRegionIdentifier: p440-n-21
+  - blockReference: "n-21:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 440
+        printedPage: "440"
+        pageRegionIdentifier: p440-n-21
+  - blockReference: "n-21:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 440
+        printedPage: "440"
+        pageRegionIdentifier: p440-n-21
+  - blockReference: "n-21:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 440
+        printedPage: "440"
+        pageRegionIdentifier: p440-n-21
+  - blockReference: "n-21:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 440
+        printedPage: "440"
+        pageRegionIdentifier: p440-n-21
+  - blockReference: "n-21:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 440
+        printedPage: "440"
+        pageRegionIdentifier: p440-n-21
+  - blockReference: "n-21:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 440
+        printedPage: "440"
+        pageRegionIdentifier: p440-n-21
+  - blockReference: "n-21:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 440
+        printedPage: "440"
+        pageRegionIdentifier: p440-n-21
+  - blockReference: "n-21:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 440
+        printedPage: "440"
+        pageRegionIdentifier: p440-n-21
+  - blockReference: "n-21:remediation.linux.command:1"
+    sourceSpans:
+      - physicalPage: 440
+        printedPage: "440"
+        pageRegionIdentifier: p440-n-21
+  - blockReference: "n-21:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 440
+        printedPage: "440"
+        pageRegionIdentifier: p440-n-21
+  - blockReference: "n-21:remediation.linux.command:2"
+    sourceSpans:
+      - physicalPage: 440
+        printedPage: "440"
+        pageRegionIdentifier: p440-n-21
+assets: []

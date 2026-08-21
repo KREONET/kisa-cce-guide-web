@@ -1,0 +1,135 @@
+schemaVersion: 1
+criterionSlug: w-27
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "w-27:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 217
+        printedPage: "217"
+        pageRegionIdentifier: p217-w-27
+  - blockReference: "w-27:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 217
+        printedPage: "217"
+        pageRegionIdentifier: p217-w-27
+  - blockReference: "w-27:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 217
+        printedPage: "217"
+        pageRegionIdentifier: p217-w-27
+  - blockReference: "w-27:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 217
+        printedPage: "217"
+        pageRegionIdentifier: p217-w-27
+  - blockReference: "w-27:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 217
+        printedPage: "217"
+        pageRegionIdentifier: p217-w-27
+  - blockReference: "w-27:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 217
+        printedPage: "217"
+        pageRegionIdentifier: p217-w-27
+  - blockReference: "w-27:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 217
+        printedPage: "217"
+        pageRegionIdentifier: p217-w-27
+  - blockReference: "w-27:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 217
+        printedPage: "217"
+        pageRegionIdentifier: p217-w-27
+  - blockReference: "w-27:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 217
+        printedPage: "217"
+        pageRegionIdentifier: p217-w-27
+  - blockReference: "w-27:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 217
+        printedPage: "217"
+        pageRegionIdentifier: p217-w-27
+  - blockReference: "w-27:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 217
+        printedPage: "217"
+        pageRegionIdentifier: p217-w-27
+  - blockReference: "w-27:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 217
+        printedPage: "217"
+        pageRegionIdentifier: p217-w-27
+  - blockReference: "w-27:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 217
+        printedPage: "217"
+        pageRegionIdentifier: p217-w-27
+  - blockReference: "w-27:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 217
+        printedPage: "217"
+        pageRegionIdentifier: p217-w-27
+  - blockReference: "w-27:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 217
+        printedPage: "217"
+        pageRegionIdentifier: p217-w-27
+  - blockReference: "w-27:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 217
+        printedPage: "217"
+        pageRegionIdentifier: p217-w-27
+  - blockReference: "w-27:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 217
+        printedPage: "217"
+        pageRegionIdentifier: p217-w-27
+  - blockReference: "w-27:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 217
+        printedPage: "217"
+        pageRegionIdentifier: p217-w-27
+  - blockReference: "w-27:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 217
+        printedPage: "217"
+        pageRegionIdentifier: p217-w-27
+  - blockReference: "w-27:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 217
+        printedPage: "217"
+        pageRegionIdentifier: p217-w-27
+  - blockReference: "w-27:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 217
+        printedPage: "217"
+        pageRegionIdentifier: p217-w-27
+  - blockReference: "w-27:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - physicalPage: 217
+        printedPage: "217"
+        pageRegionIdentifier: p217-w-27
+  - blockReference: "w-27:remediation.supplementaryGuidance.step:1"
+    sourceSpans:
+      - physicalPage: 217
+        printedPage: "217"
+        pageRegionIdentifier: p217-w-27
+  - blockReference: "w-27:remediation.supplementaryGuidance.step:2"
+    sourceSpans:
+      - physicalPage: 217
+        printedPage: "217"
+        pageRegionIdentifier: p217-w-27
+  - blockReference: "w-27:remediation.supplementaryGuidance.note.label:1"
+    sourceSpans:
+      - physicalPage: 217
+        printedPage: "217"
+        pageRegionIdentifier: p217-w-27
+  - blockReference: "w-27:remediation.supplementaryGuidance.note.content:1"
+    sourceSpans:
+      - physicalPage: 217
+        printedPage: "217"
+        pageRegionIdentifier: p217-w-27
+assets: []

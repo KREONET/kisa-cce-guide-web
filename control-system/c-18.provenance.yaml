@@ -1,0 +1,135 @@
+schemaVersion: 1
+criterionSlug: c-18
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "c-18:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 502
+        printedPage: "502"
+        pageRegionIdentifier: p502-c-18
+  - blockReference: "c-18:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 502
+        printedPage: "502"
+        pageRegionIdentifier: p502-c-18
+  - blockReference: "c-18:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 502
+        printedPage: "502"
+        pageRegionIdentifier: p502-c-18
+  - blockReference: "c-18:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 502
+        printedPage: "502"
+        pageRegionIdentifier: p502-c-18
+  - blockReference: "c-18:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 502
+        printedPage: "502"
+        pageRegionIdentifier: p502-c-18
+  - blockReference: "c-18:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 502
+        printedPage: "502"
+        pageRegionIdentifier: p502-c-18
+  - blockReference: "c-18:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 502
+        printedPage: "502"
+        pageRegionIdentifier: p502-c-18
+  - blockReference: "c-18:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 502
+        printedPage: "502"
+        pageRegionIdentifier: p502-c-18
+  - blockReference: "c-18:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 502
+        printedPage: "502"
+        pageRegionIdentifier: p502-c-18
+  - blockReference: "c-18:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 502
+        printedPage: "502"
+        pageRegionIdentifier: p502-c-18
+  - blockReference: "c-18:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 502
+        printedPage: "502"
+        pageRegionIdentifier: p502-c-18
+  - blockReference: "c-18:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 502
+        printedPage: "502"
+        pageRegionIdentifier: p502-c-18
+  - blockReference: "c-18:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 503
+        printedPage: "503"
+        pageRegionIdentifier: p503-c-18
+  - blockReference: "c-18:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 503
+        printedPage: "503"
+        pageRegionIdentifier: p503-c-18
+  - blockReference: "c-18:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 503
+        printedPage: "503"
+        pageRegionIdentifier: p503-c-18
+  - blockReference: "c-18:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 503
+        printedPage: "503"
+        pageRegionIdentifier: p503-c-18
+  - blockReference: "c-18:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 503
+        printedPage: "503"
+        pageRegionIdentifier: p503-c-18
+  - blockReference: "c-18:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 503
+        printedPage: "503"
+        pageRegionIdentifier: p503-c-18
+  - blockReference: "c-18:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 504
+        printedPage: "504"
+        pageRegionIdentifier: p504-c-18
+  - blockReference: "c-18:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 504
+        printedPage: "504"
+        pageRegionIdentifier: p504-c-18
+  - blockReference: "c-18:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 504
+        printedPage: "504"
+        pageRegionIdentifier: p504-c-18
+  - blockReference: "c-18:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 504
+        printedPage: "504"
+        pageRegionIdentifier: p504-c-18
+  - blockReference: "c-18:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 504
+        printedPage: "504"
+        pageRegionIdentifier: p504-c-18
+  - blockReference: "c-18:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - physicalPage: 504
+        printedPage: "504"
+        pageRegionIdentifier: p504-c-18
+  - blockReference: "c-18:remediation.supplementaryGuidance.step:1"
+    sourceSpans:
+      - physicalPage: 504
+        printedPage: "504"
+        pageRegionIdentifier: p504-c-18
+  - blockReference: "c-18:remediation.supplementaryGuidance.step.explanation:1"
+    sourceSpans:
+      - physicalPage: 504
+        printedPage: "504"
+        pageRegionIdentifier: p504-c-18
+assets: []

@@ -1,0 +1,195 @@
+schemaVersion: 1
+criterionSlug: c-26
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "c-26:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 517
+        printedPage: "517"
+        pageRegionIdentifier: p517-c-26
+  - blockReference: "c-26:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 517
+        printedPage: "517"
+        pageRegionIdentifier: p517-c-26
+  - blockReference: "c-26:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 517
+        printedPage: "517"
+        pageRegionIdentifier: p517-c-26
+  - blockReference: "c-26:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 517
+        printedPage: "517"
+        pageRegionIdentifier: p517-c-26
+  - blockReference: "c-26:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 517
+        printedPage: "517"
+        pageRegionIdentifier: p517-c-26
+  - blockReference: "c-26:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 517
+        printedPage: "517"
+        pageRegionIdentifier: p517-c-26
+  - blockReference: "c-26:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 517
+        printedPage: "517"
+        pageRegionIdentifier: p517-c-26
+  - blockReference: "c-26:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 517
+        printedPage: "517"
+        pageRegionIdentifier: p517-c-26
+  - blockReference: "c-26:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 517
+        printedPage: "517"
+        pageRegionIdentifier: p517-c-26
+  - blockReference: "c-26:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 517
+        printedPage: "517"
+        pageRegionIdentifier: p517-c-26
+  - blockReference: "c-26:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 517
+        printedPage: "517"
+        pageRegionIdentifier: p517-c-26
+  - blockReference: "c-26:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 517
+        printedPage: "517"
+        pageRegionIdentifier: p517-c-26
+  - blockReference: "c-26:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 517
+        printedPage: "517"
+        pageRegionIdentifier: p517-c-26
+  - blockReference: "c-26:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 517
+        printedPage: "517"
+        pageRegionIdentifier: p517-c-26
+  - blockReference: "c-26:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 517
+        printedPage: "517"
+        pageRegionIdentifier: p517-c-26
+  - blockReference: "c-26:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 517
+        printedPage: "517"
+        pageRegionIdentifier: p517-c-26
+  - blockReference: "c-26:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 517
+        printedPage: "517"
+        pageRegionIdentifier: p517-c-26
+  - blockReference: "c-26:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 517
+        printedPage: "517"
+        pageRegionIdentifier: p517-c-26
+  - blockReference: "c-26:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 517
+        printedPage: "517"
+        pageRegionIdentifier: p517-c-26
+  - blockReference: "c-26:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 517
+        printedPage: "517"
+        pageRegionIdentifier: p517-c-26
+  - blockReference: "c-26:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 517
+        printedPage: "517"
+        pageRegionIdentifier: p517-c-26
+  - blockReference: "c-26:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 517
+        printedPage: "517"
+        pageRegionIdentifier: p517-c-26
+  - blockReference: "c-26:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 517
+        printedPage: "517"
+        pageRegionIdentifier: p517-c-26
+  - blockReference: "c-26:remediation.solaris.heading:1"
+    sourceSpans:
+      - physicalPage: 517
+        printedPage: "517"
+        pageRegionIdentifier: p517-c-26
+  - blockReference: "c-26:remediation.solaris.step:1"
+    sourceSpans:
+      - physicalPage: 517
+        printedPage: "517"
+        pageRegionIdentifier: p517-c-26
+  - blockReference: "c-26:remediation.solaris.item:1"
+    sourceSpans:
+      - physicalPage: 517
+        printedPage: "517"
+        pageRegionIdentifier: p517-c-26
+  - blockReference: "c-26:remediation.solaris.item:2"
+    sourceSpans:
+      - physicalPage: 517
+        printedPage: "517"
+        pageRegionIdentifier: p517-c-26
+  - blockReference: "c-26:remediation.solaris.step:2"
+    sourceSpans:
+      - physicalPage: 517
+        printedPage: "517"
+        pageRegionIdentifier: p517-c-26
+  - blockReference: "c-26:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - physicalPage: 518
+        printedPage: "518"
+        pageRegionIdentifier: p518-c-26
+  - blockReference: "c-26:remediation.supplementaryGuidance.note.label:1"
+    sourceSpans:
+      - physicalPage: 518
+        printedPage: "518"
+        pageRegionIdentifier: p518-c-26
+  - blockReference: "c-26:remediation.supplementaryGuidance.note.content:1"
+    sourceSpans:
+      - physicalPage: 518
+        printedPage: "518"
+        pageRegionIdentifier: p518-c-26
+  - blockReference: "c-26:remediation.supplementaryGuidance.note.label:2"
+    sourceSpans:
+      - physicalPage: 518
+        printedPage: "518"
+        pageRegionIdentifier: p518-c-26
+  - blockReference: "c-26:remediation.supplementaryGuidance.note.content:2"
+    sourceSpans:
+      - physicalPage: 518
+        printedPage: "518"
+        pageRegionIdentifier: p518-c-26
+  - blockReference: "c-26:remediation.supplementaryGuidance.table:1"
+    sourceSpans:
+      - physicalPage: 518
+        printedPage: "518"
+        pageRegionIdentifier: p518-c-26
+  - blockReference: "c-26:remediation.supplementaryGuidance.note.label:3"
+    sourceSpans:
+      - physicalPage: 518
+        printedPage: "518"
+        pageRegionIdentifier: p518-c-26
+  - blockReference: "c-26:remediation.supplementaryGuidance.note.content:3"
+    sourceSpans:
+      - physicalPage: 518
+        printedPage: "518"
+        pageRegionIdentifier: p518-c-26
+  - blockReference: "c-26:remediation.supplementaryGuidance.note.label:4"
+    sourceSpans:
+      - physicalPage: 518
+        printedPage: "518"
+        pageRegionIdentifier: p518-c-26
+  - blockReference: "c-26:remediation.supplementaryGuidance.note.content:4"
+    sourceSpans:
+      - physicalPage: 518
+        printedPage: "518"
+        pageRegionIdentifier: p518-c-26
+assets: []

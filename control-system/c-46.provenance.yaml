@@ -1,0 +1,145 @@
+schemaVersion: 1
+criterionSlug: c-46
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "c-46:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 544
+        printedPage: "544"
+        pageRegionIdentifier: p544-c-46
+  - blockReference: "c-46:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 544
+        printedPage: "544"
+        pageRegionIdentifier: p544-c-46
+  - blockReference: "c-46:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 544
+        printedPage: "544"
+        pageRegionIdentifier: p544-c-46
+  - blockReference: "c-46:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 544
+        printedPage: "544"
+        pageRegionIdentifier: p544-c-46
+  - blockReference: "c-46:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 544
+        printedPage: "544"
+        pageRegionIdentifier: p544-c-46
+  - blockReference: "c-46:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 544
+        printedPage: "544"
+        pageRegionIdentifier: p544-c-46
+  - blockReference: "c-46:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 544
+        printedPage: "544"
+        pageRegionIdentifier: p544-c-46
+  - blockReference: "c-46:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 544
+        printedPage: "544"
+        pageRegionIdentifier: p544-c-46
+  - blockReference: "c-46:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 544
+        printedPage: "544"
+        pageRegionIdentifier: p544-c-46
+  - blockReference: "c-46:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 544
+        printedPage: "544"
+        pageRegionIdentifier: p544-c-46
+  - blockReference: "c-46:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 544
+        printedPage: "544"
+        pageRegionIdentifier: p544-c-46
+  - blockReference: "c-46:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 544
+        printedPage: "544"
+        pageRegionIdentifier: p544-c-46
+  - blockReference: "c-46:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 544
+        printedPage: "544"
+        pageRegionIdentifier: p544-c-46
+  - blockReference: "c-46:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 544
+        printedPage: "544"
+        pageRegionIdentifier: p544-c-46
+  - blockReference: "c-46:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 544
+        printedPage: "544"
+        pageRegionIdentifier: p544-c-46
+  - blockReference: "c-46:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 544
+        printedPage: "544"
+        pageRegionIdentifier: p544-c-46
+  - blockReference: "c-46:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 544
+        printedPage: "544"
+        pageRegionIdentifier: p544-c-46
+  - blockReference: "c-46:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 544
+        printedPage: "544"
+        pageRegionIdentifier: p544-c-46
+  - blockReference: "c-46:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 544
+        printedPage: "544"
+        pageRegionIdentifier: p544-c-46
+  - blockReference: "c-46:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 544
+        printedPage: "544"
+        pageRegionIdentifier: p544-c-46
+  - blockReference: "c-46:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 544
+        printedPage: "544"
+        pageRegionIdentifier: p544-c-46
+  - blockReference: "c-46:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - physicalPage: 544
+        printedPage: "544"
+        pageRegionIdentifier: p544-c-46
+  - blockReference: "c-46:remediation.supplementaryGuidance.step:1"
+    sourceSpans:
+      - physicalPage: 544
+        printedPage: "544"
+        pageRegionIdentifier: p544-c-46
+  - blockReference: "c-46:remediation.supplementaryGuidance.item:1"
+    sourceSpans:
+      - physicalPage: 544
+        printedPage: "544"
+        pageRegionIdentifier: p544-c-46
+  - blockReference: "c-46:remediation.supplementaryGuidance.item:2"
+    sourceSpans:
+      - physicalPage: 544
+        printedPage: "544"
+        pageRegionIdentifier: p544-c-46
+  - blockReference: "c-46:remediation.supplementaryGuidance.item:3"
+    sourceSpans:
+      - physicalPage: 544
+        printedPage: "544"
+        pageRegionIdentifier: p544-c-46
+  - blockReference: "c-46:remediation.supplementaryGuidance.item:4"
+    sourceSpans:
+      - physicalPage: 544
+        printedPage: "544"
+        pageRegionIdentifier: p544-c-46
+  - blockReference: "c-46:remediation.supplementaryGuidance.item:5"
+    sourceSpans:
+      - physicalPage: 544
+        printedPage: "544"
+        pageRegionIdentifier: p544-c-46
+assets: []

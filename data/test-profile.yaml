@@ -1,0 +1,11 @@
+schemaVersion: 1
+profileIdentifier: initial-full-corpus
+profileVersion: 1
+completionStatus: partial
+browserEngine: null
+browserVersion: null
+viewportProfiles: []
+fontProfile: null
+accessibilityRuleSet: null
+screenshotDifferenceThreshold: null
+printProfile: null

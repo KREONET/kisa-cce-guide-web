@@ -1,0 +1,120 @@
+schemaVersion: 1
+criterionSlug: c-41
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "c-41:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 537
+        printedPage: "537"
+        pageRegionIdentifier: p537-c-41
+  - blockReference: "c-41:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 537
+        printedPage: "537"
+        pageRegionIdentifier: p537-c-41
+  - blockReference: "c-41:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 537
+        printedPage: "537"
+        pageRegionIdentifier: p537-c-41
+  - blockReference: "c-41:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 537
+        printedPage: "537"
+        pageRegionIdentifier: p537-c-41
+  - blockReference: "c-41:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 537
+        printedPage: "537"
+        pageRegionIdentifier: p537-c-41
+  - blockReference: "c-41:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 537
+        printedPage: "537"
+        pageRegionIdentifier: p537-c-41
+  - blockReference: "c-41:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 537
+        printedPage: "537"
+        pageRegionIdentifier: p537-c-41
+  - blockReference: "c-41:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 537
+        printedPage: "537"
+        pageRegionIdentifier: p537-c-41
+  - blockReference: "c-41:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 537
+        printedPage: "537"
+        pageRegionIdentifier: p537-c-41
+  - blockReference: "c-41:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 537
+        printedPage: "537"
+        pageRegionIdentifier: p537-c-41
+  - blockReference: "c-41:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 537
+        printedPage: "537"
+        pageRegionIdentifier: p537-c-41
+  - blockReference: "c-41:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 537
+        printedPage: "537"
+        pageRegionIdentifier: p537-c-41
+  - blockReference: "c-41:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 537
+        printedPage: "537"
+        pageRegionIdentifier: p537-c-41
+  - blockReference: "c-41:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 537
+        printedPage: "537"
+        pageRegionIdentifier: p537-c-41
+  - blockReference: "c-41:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 537
+        printedPage: "537"
+        pageRegionIdentifier: p537-c-41
+  - blockReference: "c-41:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 537
+        printedPage: "537"
+        pageRegionIdentifier: p537-c-41
+  - blockReference: "c-41:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 537
+        printedPage: "537"
+        pageRegionIdentifier: p537-c-41
+  - blockReference: "c-41:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 537
+        printedPage: "537"
+        pageRegionIdentifier: p537-c-41
+  - blockReference: "c-41:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 537
+        printedPage: "537"
+        pageRegionIdentifier: p537-c-41
+  - blockReference: "c-41:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 537
+        printedPage: "537"
+        pageRegionIdentifier: p537-c-41
+  - blockReference: "c-41:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - physicalPage: 537
+        printedPage: "537"
+        pageRegionIdentifier: p537-c-41
+  - blockReference: "c-41:remediation.supplementaryGuidance.step:1"
+    sourceSpans:
+      - physicalPage: 537
+        printedPage: "537"
+        pageRegionIdentifier: p537-c-41
+  - blockReference: "c-41:remediation.supplementaryGuidance.step:2"
+    sourceSpans:
+      - physicalPage: 537
+        printedPage: "537"
+        pageRegionIdentifier: p537-c-41
+assets: []

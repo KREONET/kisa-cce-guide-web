@@ -1,0 +1,680 @@
+schemaVersion: 1
+criterionSlug: u-64
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "u-64:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+  - blockReference: "u-64:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+  - blockReference: "u-64:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+  - blockReference: "u-64:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+  - blockReference: "u-64:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+  - blockReference: "u-64:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+  - blockReference: "u-64:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+  - blockReference: "u-64:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+  - blockReference: "u-64:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+  - blockReference: "u-64:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+  - blockReference: "u-64:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+  - blockReference: "u-64:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+  - blockReference: "u-64:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+  - blockReference: "u-64:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+  - blockReference: "u-64:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+  - blockReference: "u-64:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+  - blockReference: "u-64:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+  - blockReference: "u-64:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+  - blockReference: "u-64:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+  - blockReference: "u-64:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+  - blockReference: "u-64:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+  - blockReference: "u-64:remediation.solaris.heading:1"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+      - physicalPage: 161
+        printedPage: "161"
+        pageRegionIdentifier: p161-u-64
+  - blockReference: "u-64:remediation.solaris.paragraph:1"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+      - physicalPage: 161
+        printedPage: "161"
+        pageRegionIdentifier: p161-u-64
+  - blockReference: "u-64:remediation.solaris.step:1"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+      - physicalPage: 161
+        printedPage: "161"
+        pageRegionIdentifier: p161-u-64
+  - blockReference: "u-64:remediation.solaris.command:1"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+      - physicalPage: 161
+        printedPage: "161"
+        pageRegionIdentifier: p161-u-64
+  - blockReference: "u-64:remediation.solaris.output:1"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+      - physicalPage: 161
+        printedPage: "161"
+        pageRegionIdentifier: p161-u-64
+  - blockReference: "u-64:remediation.solaris.step:2"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+      - physicalPage: 161
+        printedPage: "161"
+        pageRegionIdentifier: p161-u-64
+  - blockReference: "u-64:remediation.solaris.command:2"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+      - physicalPage: 161
+        printedPage: "161"
+        pageRegionIdentifier: p161-u-64
+  - blockReference: "u-64:remediation.solaris.output:2"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+      - physicalPage: 161
+        printedPage: "161"
+        pageRegionIdentifier: p161-u-64
+  - blockReference: "u-64:remediation.solaris.step:3"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+      - physicalPage: 161
+        printedPage: "161"
+        pageRegionIdentifier: p161-u-64
+  - blockReference: "u-64:remediation.solaris.command:3"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+      - physicalPage: 161
+        printedPage: "161"
+        pageRegionIdentifier: p161-u-64
+  - blockReference: "u-64:remediation.solaris.paragraph:2"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+      - physicalPage: 161
+        printedPage: "161"
+        pageRegionIdentifier: p161-u-64
+  - blockReference: "u-64:remediation.solaris.step:4"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+      - physicalPage: 161
+        printedPage: "161"
+        pageRegionIdentifier: p161-u-64
+  - blockReference: "u-64:remediation.solaris.command:4"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+      - physicalPage: 161
+        printedPage: "161"
+        pageRegionIdentifier: p161-u-64
+  - blockReference: "u-64:remediation.solaris.output:3"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+      - physicalPage: 161
+        printedPage: "161"
+        pageRegionIdentifier: p161-u-64
+  - blockReference: "u-64:remediation.solaris.step:5"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+      - physicalPage: 161
+        printedPage: "161"
+        pageRegionIdentifier: p161-u-64
+  - blockReference: "u-64:remediation.solaris.command:5"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+      - physicalPage: 161
+        printedPage: "161"
+        pageRegionIdentifier: p161-u-64
+  - blockReference: "u-64:remediation.solaris.output:4"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+      - physicalPage: 161
+        printedPage: "161"
+        pageRegionIdentifier: p161-u-64
+  - blockReference: "u-64:remediation.solaris.step:6"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+      - physicalPage: 161
+        printedPage: "161"
+        pageRegionIdentifier: p161-u-64
+  - blockReference: "u-64:remediation.solaris.command:6"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+      - physicalPage: 161
+        printedPage: "161"
+        pageRegionIdentifier: p161-u-64
+  - blockReference: "u-64:remediation.solaris.step:7"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+      - physicalPage: 161
+        printedPage: "161"
+        pageRegionIdentifier: p161-u-64
+  - blockReference: "u-64:remediation.solaris.command:7"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+      - physicalPage: 161
+        printedPage: "161"
+        pageRegionIdentifier: p161-u-64
+  - blockReference: "u-64:remediation.solaris.note.label:1"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+      - physicalPage: 161
+        printedPage: "161"
+        pageRegionIdentifier: p161-u-64
+  - blockReference: "u-64:remediation.solaris.note.content:1"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+      - physicalPage: 161
+        printedPage: "161"
+        pageRegionIdentifier: p161-u-64
+  - blockReference: "u-64:remediation.solaris.literal:1"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+      - physicalPage: 161
+        printedPage: "161"
+        pageRegionIdentifier: p161-u-64
+  - blockReference: "u-64:remediation.solaris.note.label:2"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+      - physicalPage: 161
+        printedPage: "161"
+        pageRegionIdentifier: p161-u-64
+  - blockReference: "u-64:remediation.solaris.note.content:2"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+      - physicalPage: 161
+        printedPage: "161"
+        pageRegionIdentifier: p161-u-64
+  - blockReference: "u-64:remediation.solaris.note.label:3"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+      - physicalPage: 161
+        printedPage: "161"
+        pageRegionIdentifier: p161-u-64
+  - blockReference: "u-64:remediation.solaris.note.content:3"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+      - physicalPage: 161
+        printedPage: "161"
+        pageRegionIdentifier: p161-u-64
+  - blockReference: "u-64:remediation.solaris.note.label:4"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+      - physicalPage: 161
+        printedPage: "161"
+        pageRegionIdentifier: p161-u-64
+  - blockReference: "u-64:remediation.solaris.note.content:4"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+      - physicalPage: 161
+        printedPage: "161"
+        pageRegionIdentifier: p161-u-64
+  - blockReference: "u-64:remediation.solaris.literal:2"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+      - physicalPage: 161
+        printedPage: "161"
+        pageRegionIdentifier: p161-u-64
+  - blockReference: "u-64:remediation.solaris.note.label:5"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+      - physicalPage: 161
+        printedPage: "161"
+        pageRegionIdentifier: p161-u-64
+  - blockReference: "u-64:remediation.solaris.note.content:5"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+      - physicalPage: 161
+        printedPage: "161"
+        pageRegionIdentifier: p161-u-64
+  - blockReference: "u-64:remediation.solaris.literal:3"
+    sourceSpans:
+      - physicalPage: 160
+        printedPage: "160"
+        pageRegionIdentifier: p160-u-64
+      - physicalPage: 161
+        printedPage: "161"
+        pageRegionIdentifier: p161-u-64
+  - blockReference: "u-64:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 162
+        printedPage: "162"
+        pageRegionIdentifier: p162-u-64
+  - blockReference: "u-64:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 162
+        printedPage: "162"
+        pageRegionIdentifier: p162-u-64
+  - blockReference: "u-64:remediation.linux.command:1"
+    sourceSpans:
+      - physicalPage: 162
+        printedPage: "162"
+        pageRegionIdentifier: p162-u-64
+  - blockReference: "u-64:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 162
+        printedPage: "162"
+        pageRegionIdentifier: p162-u-64
+  - blockReference: "u-64:remediation.linux.step:3"
+    sourceSpans:
+      - physicalPage: 162
+        printedPage: "162"
+        pageRegionIdentifier: p162-u-64
+  - blockReference: "u-64:remediation.aix.heading:1"
+    sourceSpans:
+      - physicalPage: 162
+        printedPage: "162"
+        pageRegionIdentifier: p162-u-64
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.aix.paragraph:1"
+    sourceSpans:
+      - physicalPage: 162
+        printedPage: "162"
+        pageRegionIdentifier: p162-u-64
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.aix.step:1"
+    sourceSpans:
+      - physicalPage: 162
+        printedPage: "162"
+        pageRegionIdentifier: p162-u-64
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.aix.command:1"
+    sourceSpans:
+      - physicalPage: 162
+        printedPage: "162"
+        pageRegionIdentifier: p162-u-64
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.aix.step:2"
+    sourceSpans:
+      - physicalPage: 162
+        printedPage: "162"
+        pageRegionIdentifier: p162-u-64
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.aix.command:2"
+    sourceSpans:
+      - physicalPage: 162
+        printedPage: "162"
+        pageRegionIdentifier: p162-u-64
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.aix.step:3"
+    sourceSpans:
+      - physicalPage: 162
+        printedPage: "162"
+        pageRegionIdentifier: p162-u-64
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.aix.literal:1"
+    sourceSpans:
+      - physicalPage: 162
+        printedPage: "162"
+        pageRegionIdentifier: p162-u-64
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.aix.step:4"
+    sourceSpans:
+      - physicalPage: 162
+        printedPage: "162"
+        pageRegionIdentifier: p162-u-64
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.aix.command:3"
+    sourceSpans:
+      - physicalPage: 162
+        printedPage: "162"
+        pageRegionIdentifier: p162-u-64
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.aix.step:5"
+    sourceSpans:
+      - physicalPage: 162
+        printedPage: "162"
+        pageRegionIdentifier: p162-u-64
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.aix.step:6"
+    sourceSpans:
+      - physicalPage: 162
+        printedPage: "162"
+        pageRegionIdentifier: p162-u-64
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.aix.step:7"
+    sourceSpans:
+      - physicalPage: 162
+        printedPage: "162"
+        pageRegionIdentifier: p162-u-64
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.aix.note.label:1"
+    sourceSpans:
+      - physicalPage: 162
+        printedPage: "162"
+        pageRegionIdentifier: p162-u-64
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.aix.note.content:1"
+    sourceSpans:
+      - physicalPage: 162
+        printedPage: "162"
+        pageRegionIdentifier: p162-u-64
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.aix.note.label:2"
+    sourceSpans:
+      - physicalPage: 162
+        printedPage: "162"
+        pageRegionIdentifier: p162-u-64
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.aix.note.content:2"
+    sourceSpans:
+      - physicalPage: 162
+        printedPage: "162"
+        pageRegionIdentifier: p162-u-64
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.aix.paragraph:2"
+    sourceSpans:
+      - physicalPage: 162
+        printedPage: "162"
+        pageRegionIdentifier: p162-u-64
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.aix.step:8"
+    sourceSpans:
+      - physicalPage: 162
+        printedPage: "162"
+        pageRegionIdentifier: p162-u-64
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.aix.command:4"
+    sourceSpans:
+      - physicalPage: 162
+        printedPage: "162"
+        pageRegionIdentifier: p162-u-64
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.aix.step:9"
+    sourceSpans:
+      - physicalPage: 162
+        printedPage: "162"
+        pageRegionIdentifier: p162-u-64
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.aix.command:5"
+    sourceSpans:
+      - physicalPage: 162
+        printedPage: "162"
+        pageRegionIdentifier: p162-u-64
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.aix.step:10"
+    sourceSpans:
+      - physicalPage: 162
+        printedPage: "162"
+        pageRegionIdentifier: p162-u-64
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.aix.command:6"
+    sourceSpans:
+      - physicalPage: 162
+        printedPage: "162"
+        pageRegionIdentifier: p162-u-64
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.aix.step:11"
+    sourceSpans:
+      - physicalPage: 162
+        printedPage: "162"
+        pageRegionIdentifier: p162-u-64
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.aix.step:12"
+    sourceSpans:
+      - physicalPage: 162
+        printedPage: "162"
+        pageRegionIdentifier: p162-u-64
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.hp-ux.heading:1"
+    sourceSpans:
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.hp-ux.paragraph:1"
+    sourceSpans:
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.hp-ux.step:1"
+    sourceSpans:
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.hp-ux.command:1"
+    sourceSpans:
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.hp-ux.step:2"
+    sourceSpans:
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.hp-ux.literal:1"
+    sourceSpans:
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.hp-ux.step:3"
+    sourceSpans:
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.hp-ux.literal:2"
+    sourceSpans:
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.hp-ux.step:4"
+    sourceSpans:
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.hp-ux.command:2"
+    sourceSpans:
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.hp-ux.output:1"
+    sourceSpans:
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.hp-ux.step:5"
+    sourceSpans:
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+  - blockReference: "u-64:remediation.hp-ux.command:3"
+    sourceSpans:
+      - physicalPage: 163
+        printedPage: "163"
+        pageRegionIdentifier: p163-u-64
+assets: []

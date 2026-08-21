@@ -1,0 +1,79 @@
+schemaVersion: 1
+criterionSlug: u-59
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "u-59:overview.heading:1"
+    sourceSpans: [{physicalPage: 143, printedPage: "143", pageRegionIdentifier: p143-u-59}]
+  - blockReference: "u-59:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 143, printedPage: "143", pageRegionIdentifier: p143-u-59}]
+  - blockReference: "u-59:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 143, printedPage: "143", pageRegionIdentifier: p143-u-59}]
+  - blockReference: "u-59:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 143, printedPage: "143", pageRegionIdentifier: p143-u-59}]
+  - blockReference: "u-59:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 143, printedPage: "143", pageRegionIdentifier: p143-u-59}]
+  - blockReference: "u-59:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 143, printedPage: "143", pageRegionIdentifier: p143-u-59}]
+  - blockReference: "u-59:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 143, printedPage: "143", pageRegionIdentifier: p143-u-59}]
+  - blockReference: "u-59:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 143, printedPage: "143", pageRegionIdentifier: p143-u-59}]
+  - blockReference: "u-59:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 143, printedPage: "143", pageRegionIdentifier: p143-u-59}]
+  - blockReference: "u-59:overview.reference.note.content:1"
+    sourceSpans: [{physicalPage: 143, printedPage: "143", pageRegionIdentifier: p143-u-59}]
+  - blockReference: "u-59:assessment.heading:1"
+    sourceSpans: [{physicalPage: 143, printedPage: "143", pageRegionIdentifier: p143-u-59}]
+  - blockReference: "u-59:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 143, printedPage: "143", pageRegionIdentifier: p143-u-59}]
+  - blockReference: "u-59:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 143, printedPage: "143", pageRegionIdentifier: p143-u-59}]
+  - blockReference: "u-59:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 143, printedPage: "143", pageRegionIdentifier: p143-u-59}]
+  - blockReference: "u-59:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 143, printedPage: "143", pageRegionIdentifier: p143-u-59}]
+  - blockReference: "u-59:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 143, printedPage: "143", pageRegionIdentifier: p143-u-59}]
+  - blockReference: "u-59:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 143, printedPage: "143", pageRegionIdentifier: p143-u-59}]
+  - blockReference: "u-59:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 143, printedPage: "143", pageRegionIdentifier: p143-u-59}]
+  - blockReference: "u-59:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 143, printedPage: "143", pageRegionIdentifier: p143-u-59}]
+  - blockReference: "u-59:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 143, printedPage: "143", pageRegionIdentifier: p143-u-59}]
+  - blockReference: "u-59:remediation.heading:1"
+    sourceSpans: [{physicalPage: 143, printedPage: "143", pageRegionIdentifier: p143-u-59}]
+  - blockReference: "u-59:remediation.solaris.heading:1"
+    sourceSpans: [{physicalPage: 143, printedPage: "143", pageRegionIdentifier: p143-u-59}]
+  - blockReference: "u-59:remediation.solaris.step:1"
+    sourceSpans: [{physicalPage: 143, printedPage: "143", pageRegionIdentifier: p143-u-59}]
+  - blockReference: "u-59:remediation.solaris.command:1"
+    sourceSpans: [{physicalPage: 143, printedPage: "143", pageRegionIdentifier: p143-u-59}]
+  - blockReference: "u-59:remediation.solaris.step.explanation:1"
+    sourceSpans: [{physicalPage: 143, printedPage: "143", pageRegionIdentifier: p143-u-59}]
+  - blockReference: "u-59:remediation.solaris.command:2"
+    sourceSpans: [{physicalPage: 143, printedPage: "143", pageRegionIdentifier: p143-u-59}]
+  - blockReference: "u-59:remediation.solaris.step:2"
+    sourceSpans: [{physicalPage: 143, printedPage: "143", pageRegionIdentifier: p143-u-59}]
+  - blockReference: "u-59:remediation.solaris.command:3"
+    sourceSpans: [{physicalPage: 143, printedPage: "143", pageRegionIdentifier: p143-u-59}]
+  - blockReference: "u-59:remediation.solaris.step.explanation:2"
+    sourceSpans: [{physicalPage: 143, printedPage: "143", pageRegionIdentifier: p143-u-59}]
+  - blockReference: "u-59:remediation.solaris.command:4"
+    sourceSpans: [{physicalPage: 143, printedPage: "143", pageRegionIdentifier: p143-u-59}]
+  - blockReference: "u-59:remediation.solaris.step:3"
+    sourceSpans: [{physicalPage: 143, printedPage: "143", pageRegionIdentifier: p143-u-59}]
+  - blockReference: "u-59:remediation.solaris.configuration:1"
+    sourceSpans: [{physicalPage: 144, printedPage: "144", pageRegionIdentifier: p144-u-59}]
+  - blockReference: "u-59:remediation.solaris.step.explanation:3"
+    sourceSpans: [{physicalPage: 144, printedPage: "144", pageRegionIdentifier: p144-u-59}]
+  - blockReference: "u-59:remediation.solaris.configuration:2"
+    sourceSpans: [{physicalPage: 144, printedPage: "144", pageRegionIdentifier: p144-u-59}]
+  - blockReference: "u-59:remediation.solaris.step:4"
+    sourceSpans: [{physicalPage: 144, printedPage: "144", pageRegionIdentifier: p144-u-59}]
+  - blockReference: "u-59:remediation.solaris.configuration:3"
+    sourceSpans: [{physicalPage: 144, printedPage: "144", pageRegionIdentifier: p144-u-59}]
+  - blockReference: "u-59:remediation.solaris.step:5"
+    sourceSpans: [{physicalPage: 144, printedPage: "144", pageRegionIdentifier: p144-u-59}]
+assets: []

@@ -1,0 +1,79 @@
+schemaVersion: 1
+criterionSlug: c-09
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "c-09:overview.heading:1"
+    sourceSpans: [{physicalPage: 490, printedPage: "490", pageRegionIdentifier: p490-c-09}]
+  - blockReference: "c-09:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 490, printedPage: "490", pageRegionIdentifier: p490-c-09}]
+  - blockReference: "c-09:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 490, printedPage: "490", pageRegionIdentifier: p490-c-09}]
+  - blockReference: "c-09:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 490, printedPage: "490", pageRegionIdentifier: p490-c-09}]
+  - blockReference: "c-09:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 490, printedPage: "490", pageRegionIdentifier: p490-c-09}]
+  - blockReference: "c-09:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 490, printedPage: "490", pageRegionIdentifier: p490-c-09}]
+  - blockReference: "c-09:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 490, printedPage: "490", pageRegionIdentifier: p490-c-09}]
+  - blockReference: "c-09:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 490, printedPage: "490", pageRegionIdentifier: p490-c-09}]
+  - blockReference: "c-09:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 490, printedPage: "490", pageRegionIdentifier: p490-c-09}]
+  - blockReference: "c-09:overview.reference.note.content:1"
+    sourceSpans: [{physicalPage: 490, printedPage: "490", pageRegionIdentifier: p490-c-09}]
+  - blockReference: "c-09:overview.reference.note.label:2"
+    sourceSpans: [{physicalPage: 490, printedPage: "490", pageRegionIdentifier: p490-c-09}]
+  - blockReference: "c-09:overview.reference.note.content:2"
+    sourceSpans: [{physicalPage: 490, printedPage: "490", pageRegionIdentifier: p490-c-09}]
+  - blockReference: "c-09:assessment.heading:1"
+    sourceSpans: [{physicalPage: 490, printedPage: "490", pageRegionIdentifier: p490-c-09}]
+  - blockReference: "c-09:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 490, printedPage: "490", pageRegionIdentifier: p490-c-09}]
+  - blockReference: "c-09:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 490, printedPage: "490", pageRegionIdentifier: p490-c-09}]
+  - blockReference: "c-09:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 490, printedPage: "490", pageRegionIdentifier: p490-c-09}]
+  - blockReference: "c-09:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 490, printedPage: "490", pageRegionIdentifier: p490-c-09}]
+  - blockReference: "c-09:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 490, printedPage: "490", pageRegionIdentifier: p490-c-09}]
+  - blockReference: "c-09:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 490, printedPage: "490", pageRegionIdentifier: p490-c-09}]
+  - blockReference: "c-09:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 490, printedPage: "490", pageRegionIdentifier: p490-c-09}]
+  - blockReference: "c-09:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 490, printedPage: "490", pageRegionIdentifier: p490-c-09}]
+  - blockReference: "c-09:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 490, printedPage: "490", pageRegionIdentifier: p490-c-09}]
+  - blockReference: "c-09:remediation.heading:1"
+    sourceSpans: [{physicalPage: 491, printedPage: "491", pageRegionIdentifier: p491-c-09}]
+  - blockReference: "c-09:remediation.solaris.heading:1"
+    sourceSpans: [{physicalPage: 491, printedPage: "491", pageRegionIdentifier: p491-c-09}]
+  - blockReference: "c-09:remediation.solaris.step:1"
+    sourceSpans: [{physicalPage: 491, printedPage: "491", pageRegionIdentifier: p491-c-09}]
+  - blockReference: "c-09:remediation.solaris.step:2"
+    sourceSpans: [{physicalPage: 491, printedPage: "491", pageRegionIdentifier: p491-c-09}]
+  - blockReference: "c-09:remediation.linux.heading:1"
+    sourceSpans: [{physicalPage: 491, printedPage: "491", pageRegionIdentifier: p491-c-09}]
+  - blockReference: "c-09:remediation.linux.step:1"
+    sourceSpans: [{physicalPage: 491, printedPage: "491", pageRegionIdentifier: p491-c-09}]
+  - blockReference: "c-09:remediation.linux.step:2"
+    sourceSpans: [{physicalPage: 491, printedPage: "491", pageRegionIdentifier: p491-c-09}]
+  - blockReference: "c-09:remediation.aix.heading:1"
+    sourceSpans: [{physicalPage: 491, printedPage: "491", pageRegionIdentifier: p491-c-09}]
+  - blockReference: "c-09:remediation.aix.step:1"
+    sourceSpans: [{physicalPage: 491, printedPage: "491", pageRegionIdentifier: p491-c-09}]
+  - blockReference: "c-09:remediation.aix.step:2"
+    sourceSpans: [{physicalPage: 491, printedPage: "491", pageRegionIdentifier: p491-c-09}]
+  - blockReference: "c-09:remediation.hp-ux.heading:1"
+    sourceSpans: [{physicalPage: 491, printedPage: "491", pageRegionIdentifier: p491-c-09}]
+  - blockReference: "c-09:remediation.hp-ux.step:1"
+    sourceSpans: [{physicalPage: 491, printedPage: "491", pageRegionIdentifier: p491-c-09}]
+  - blockReference: "c-09:remediation.hp-ux.step:2"
+    sourceSpans: [{physicalPage: 491, printedPage: "491", pageRegionIdentifier: p491-c-09}]
+  - blockReference: "c-09:remediation.supplementaryGuidance.heading:1"
+    sourceSpans: [{physicalPage: 491, printedPage: "491", pageRegionIdentifier: p491-c-09}]
+  - blockReference: "c-09:remediation.supplementaryGuidance.paragraph:1"
+    sourceSpans: [{physicalPage: 491, printedPage: "491", pageRegionIdentifier: p491-c-09}]
+assets: []

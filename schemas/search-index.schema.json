@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zeroday0619.github.io/kisa-cce-guide/schemas/search-index.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "tokenizerVersion",
+    "caseFoldingVersion",
+    "canonicalCorpusChecksum",
+    "records"
+  ],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "tokenizerVersion": {"type": "string", "minLength": 1},
+    "caseFoldingVersion": {"type": "string", "minLength": 1},
+    "canonicalCorpusChecksum": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "recordIdentifier",
+          "order",
+          "code",
+          "slug",
+          "route",
+          "title",
+          "severityLevel",
+          "severitySourceLabel",
+          "domainIdentifier",
+          "domainLabel",
+          "categoryIdentifier",
+          "categoryLabel",
+          "targetIdentifiers",
+          "targetLabels",
+          "sourceTargetText",
+          "sourcePageRanges",
+          "headingAnchors",
+          "searchableText",
+          "exactTerms",
+          "criterionSourceChecksum",
+          "canonicalCorpusChecksum"
+        ],
+        "properties": {
+          "recordIdentifier": {"type": "string", "minLength": 1},
+          "order": {"type": "integer", "minimum": 1},
+          "code": {"type": "string", "minLength": 1},
+          "slug": {"type": "string", "minLength": 1},
+          "route": {"type": "string", "minLength": 1},
+          "title": {"type": "string", "minLength": 1},
+          "severityLevel": {"enum": ["high", "medium", "low"]},
+          "severitySourceLabel": {"enum": ["상", "중", "하"]},
+          "domainIdentifier": {"type": "string", "minLength": 1},
+          "domainLabel": {"type": "string", "minLength": 1},
+          "categoryIdentifier": {"type": "string", "minLength": 1},
+          "categoryLabel": {"type": "string", "minLength": 1},
+          "targetIdentifiers": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "minLength": 1}
+          },
+          "targetLabels": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "minLength": 1}
+          },
+          "sourceTargetText": {"type": "string", "minLength": 1},
+          "sourcePageRanges": {"type": "array", "minItems": 1, "items": {"type": "object"}},
+          "headingAnchors": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "minLength": 1},
+            "uniqueItems": true
+          },
+          "searchableText": {"type": "string", "minLength": 1},
+          "exactTerms": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "criterionSourceChecksum": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "canonicalCorpusChecksum": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    }
+  }
+}

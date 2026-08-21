@@ -1,0 +1,299 @@
+{
+  "schemaVersion": 1,
+  "anomalies": [
+    {
+      "anomalyType": "detailHeaderTitleMismatch",
+      "code": "U-11",
+      "physicalPage": 35,
+      "detailHeaderTitle": "사용자 shell 점검",
+      "summaryTitle": "사용자 Shell 점검",
+      "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation."
+    },
+    {
+      "anomalyType": "detailHeaderTitleMismatch",
+      "code": "U-55",
+      "physicalPage": 134,
+      "detailHeaderTitle": "FTP 계정 shell 제한",
+      "summaryTitle": "FTP 계정 Shell 제한",
+      "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation."
+    },
+    {
+      "anomalyType": "detailHeaderTitleMismatch",
+      "code": "W-07",
+      "physicalPage": 184,
+      "detailHeaderTitle": "Everyone 사용 권한을 익명 사용자에 적용",
+      "summaryTitle": "Everyone 사용 권한을 익명 사용자에게 적용",
+      "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation."
+    },
+    {
+      "anomalyType": "detailHeaderTitleMismatch",
+      "code": "W-31",
+      "physicalPage": 222,
+      "detailHeaderTitle": "SNMP Access Control 설정",
+      "summaryTitle": "SNMP Access control 설정",
+      "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation."
+    },
+    {
+      "anomalyType": "detailHeaderSeverityMismatch",
+      "code": "W-47",
+      "physicalPage": 244,
+      "detailHeaderSeveritySourceLabel": "하",
+      "summarySeveritySourceLabel": "상",
+      "resolution": "Use the valid severity from the chapter summary table and preserve the detail header value as an annotation."
+    },
+    {
+      "anomalyType": "detailHeaderTitleMismatch",
+      "code": "WEB-17",
+      "physicalPage": 320,
+      "detailHeaderTitle": "웹 서비스 가상 디렉로리 삭제",
+      "summaryTitle": "웹 서비스 가상 디렉토리 삭제",
+      "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation."
+    },
+    {
+      "anomalyType": "detailHeaderTitleMismatch",
+      "code": "N-03",
+      "physicalPage": 397,
+      "detailHeaderTitle": "암호화된 비밀번호 사용",
+      "summaryTitle": "암호화된 비밀번호 가용",
+      "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation."
+    },
+    {
+      "anomalyType": "detailHeaderTitleMismatch",
+      "code": "N-05",
+      "physicalPage": 401,
+      "detailHeaderTitle": "사용자·명령어별 권한 설정",
+      "summaryTitle": "사용자, 명령어별 권한 수준 설정",
+      "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation."
+    },
+    {
+      "anomalyType": "detailHeaderTitleMismatch",
+      "code": "N-07",
+      "physicalPage": 410,
+      "detailHeaderTitle": "Session Timeout 설정",
+      "summaryTitle": "세션 종료 시간 설정",
+      "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation."
+    },
+    {
+      "anomalyType": "detailHeaderTitleMismatch",
+      "code": "N-10",
+      "physicalPage": 417,
+      "detailHeaderTitle": "로그인 시 경고 메시지 설정",
+      "summaryTitle": "로그온 시 경고 메시지 설정",
+      "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation."
+    },
+    {
+      "anomalyType": "detailHeaderTitleMismatch",
+      "code": "N-32",
+      "physicalPage": 459,
+      "detailHeaderTitle": "Source Routing 차단",
+      "summaryTitle": "Source 라우팅 차단",
+      "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation."
+    },
+    {
+      "anomalyType": "detailHeaderTitleMismatch",
+      "code": "N-34",
+      "physicalPage": 461,
+      "detailHeaderTitle": "ICMP unreachable, redirect 차단",
+      "summaryTitle": "ICMP unreachable, Redirect 차단",
+      "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation."
+    },
+    {
+      "anomalyType": "detailHeaderTitleMismatch",
+      "code": "C-07",
+      "physicalPage": 484,
+      "detailHeaderTitle": "제어시스템 구성요소에 대한 시각 동기화 수행",
+      "summaryTitle": "제어시스템 구성요소에 대한 시간 동기화 수행",
+      "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation."
+    },
+    {
+      "anomalyType": "detailHeaderTitleMismatch",
+      "code": "C-15",
+      "physicalPage": 499,
+      "detailHeaderTitle": "GPS 스푸핑/재밍 공격 등 시간 동기화 서비스를 교란하기 위한 공격에 대비한 보안 조치 수행",
+      "summaryTitle": "GPS 스푸핑/재밍 공격 등 시각 동기화 서비스를 교란하기 위한 공격에 대비한 보안 조치 수행",
+      "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation."
+    },
+    {
+      "anomalyType": "detailHeaderSeverityMismatch",
+      "code": "C-39",
+      "physicalPage": 535,
+      "detailHeaderSeveritySourceLabel": "히",
+      "summarySeveritySourceLabel": "하",
+      "resolution": "Use the valid severity from the chapter summary table and preserve the detail header value as an annotation."
+    },
+    {
+      "anomalyType": "detailHeaderTitleMismatch",
+      "code": "C-43",
+      "physicalPage": 539,
+      "detailHeaderTitle": "제어시스템 구성요소에 대한 자산정보(담당자, 제조사, 모델명, 펌웨어 버전, 설치 SW 등)를 항상 최신으로 유지관리",
+      "summaryTitle": "제어시스템 구성요소에 대한 자산정보(담당자, 펌웨어 버전, 설치 SW 등)를 항상 최신으로 유지관리",
+      "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation."
+    },
+    {
+      "anomalyType": "detailHeaderTitleMismatch",
+      "code": "PC-18",
+      "physicalPage": 591,
+      "detailHeaderTitle": "원격 지원을 금지하도록 정책이 설정",
+      "summaryTitle": "원격 지원을 금지하도록 정책을 설정",
+      "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation."
+    },
+    {
+      "anomalyType": "detailHeaderTitleMismatch",
+      "code": "D-03",
+      "physicalPage": 603,
+      "detailHeaderTitle": "비밀번호 사용 기간 및 복잡도를 기관의 정책에 맞도록 설정",
+      "summaryTitle": "비밀번호의 사용기간 및 복잡도를 기관의 정책에 맞도록 설정",
+      "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation."
+    },
+    {
+      "anomalyType": "detailHeaderTitleMismatch",
+      "code": "D-17",
+      "physicalPage": 646,
+      "detailHeaderTitle": "Audit Table은 데이터베이스 관리자 계정으로 접근하도록 제한",
+      "summaryTitle": "Audit Table은 데이터베이스 관리자 계정에 접근하도록 제한",
+      "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation."
+    },
+    {
+      "anomalyType": "detailHeaderTitleMismatch",
+      "code": "D-20",
+      "physicalPage": 652,
+      "detailHeaderTitle": "인가되지 않은 Object Owner의 제한",
+      "summaryTitle": "인가되지 않은 Object owner의 제한",
+      "resolution": "Use the detailed criterion heading as the canonical title and preserve the chapter summary value as an annotation."
+    },
+    {
+      "anomalyType": "detailHeaderCodeMismatch",
+      "code": "AU",
+      "physicalPage": 777,
+      "detailHeaderCode": "CC",
+      "summaryCode": "AU",
+      "resolution": "Use the unique code from the chapter summary table and preserve the detail header value as an annotation."
+    },
+    {
+      "anomalyType": "detailHeaderSeverityMismatch",
+      "code": "HV-09",
+      "physicalPage": 816,
+      "detailHeaderSeveritySourceLabel": "증",
+      "summarySeveritySourceLabel": "중",
+      "resolution": "Use the valid severity from the chapter summary table and preserve the detail header value as an annotation."
+    },
+    {
+      "anomalyType": "detailHeaderCategoryMismatch",
+      "affectedCodes": [
+        "U-14",
+        "U-15",
+        "U-16",
+        "U-17",
+        "U-18",
+        "U-19",
+        "U-20",
+        "U-21",
+        "U-22",
+        "U-23",
+        "U-24",
+        "U-25",
+        "U-26",
+        "U-27",
+        "U-28",
+        "U-29",
+        "U-30",
+        "U-31",
+        "U-32",
+        "U-33"
+      ],
+      "detailHeaderCategoryOrdinal": 2,
+      "detailHeaderCategorySourceLabel": "파일 및 디렉토리 관리",
+      "summaryCategoryOrdinal": 2,
+      "summaryCategorySourceLabel": "파일 및 디렉터리 관리"
+    },
+    {
+      "anomalyType": "detailHeaderCategoryMismatch",
+      "affectedCodes": [
+        "C-16"
+      ],
+      "detailHeaderCategoryOrdinal": 2,
+      "detailHeaderCategorySourceLabel": "서비스 관리",
+      "summaryCategoryOrdinal": 3,
+      "summaryCategorySourceLabel": "패치 관리"
+    },
+    {
+      "anomalyType": "detailHeaderCategoryMismatch",
+      "affectedCodes": [
+        "C-27",
+        "C-28"
+      ],
+      "detailHeaderCategoryOrdinal": 5,
+      "detailHeaderCategorySourceLabel": "물리적 접근 통제",
+      "summaryCategoryOrdinal": 5,
+      "summaryCategorySourceLabel": "물리적 접근통제"
+    },
+    {
+      "anomalyType": "detailHeaderCategoryMismatch",
+      "affectedCodes": [
+        "C-44",
+        "C-46",
+        "C-47",
+        "C-48"
+      ],
+      "detailHeaderCategoryOrdinal": 8,
+      "detailHeaderCategorySourceLabel": "복구 대응",
+      "summaryCategoryOrdinal": 8,
+      "summaryCategorySourceLabel": "보안 관리"
+    },
+    {
+      "anomalyType": "detailHeaderCategoryMismatch",
+      "affectedCodes": [
+        "C-51"
+      ],
+      "detailHeaderCategoryOrdinal": 9,
+      "detailHeaderCategorySourceLabel": "교육훈련",
+      "summaryCategoryOrdinal": 9,
+      "summaryCategorySourceLabel": "교육 훈련"
+    },
+    {
+      "anomalyType": "detailHeaderCategoryMismatch",
+      "affectedCodes": [
+        "PC-03"
+      ],
+      "detailHeaderCategoryOrdinal": 1,
+      "detailHeaderCategorySourceLabel": "계정관리",
+      "summaryCategoryOrdinal": 1,
+      "summaryCategorySourceLabel": "계정 관리"
+    },
+    {
+      "anomalyType": "detailHeaderCategoryMismatch",
+      "affectedCodes": [
+        "AE"
+      ],
+      "detailHeaderCategoryOrdinal": 19,
+      "detailHeaderCategorySourceLabel": "관리자페이지 노출",
+      "summaryCategoryOrdinal": 19,
+      "summaryCategorySourceLabel": "관리자 페이지 노출"
+    },
+    {
+      "anomalyType": "detailHeaderCategoryMismatch",
+      "affectedCodes": [
+        "HV-17",
+        "HV-18",
+        "HV-19",
+        "HV-20"
+      ],
+      "detailHeaderCategoryOrdinal": 3,
+      "detailHeaderCategorySourceLabel": "가상머신 관리",
+      "summaryCategoryOrdinal": 3,
+      "summaryCategorySourceLabel": "가상 머신 관리"
+    },
+    {
+      "anomalyType": "chapterContentsPageNumberMismatch",
+      "physicalPage": 353,
+      "domainIdentifier": "security-device",
+      "detail": "The local chapter contents lists 472, 484, 501, 507, and 519; actual category starts are 356, 363, 367, 368, and 373."
+    },
+    {
+      "anomalyType": "globalContentsCategoryMismatch",
+      "physicalPage": 5,
+      "domainIdentifier": "pc",
+      "detail": "The global contents labels PC category 2 as 접근 관리; the chapter summary and all criterion headers use 서비스 관리."
+    }
+  ]
+}

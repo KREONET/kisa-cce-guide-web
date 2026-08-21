@@ -1,0 +1,203 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zeroday0619.github.io/kisa-cce-guide/schemas/codex-bulk-summary.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "status",
+    "durationSeconds",
+    "configuration",
+    "counts",
+    "items",
+    "summaryPath"
+  ],
+  "properties": {
+    "schemaVersion": {"type": "integer", "const": 1},
+    "status": {
+      "type": "string",
+      "enum": [
+        "completed",
+        "completedWithFailures",
+        "failedFast",
+        "dryRun",
+        "interrupted"
+      ]
+    },
+    "durationSeconds": {"type": "number", "minimum": 0},
+    "configuration": {"$ref": "#/$defs/configuration"},
+    "counts": {"$ref": "#/$defs/counts"},
+    "items": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/item"}
+    },
+    "summaryPath": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "configuration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "workers",
+        "model",
+        "dryRun",
+        "resume",
+        "failFast",
+        "retries",
+        "retryBackoffSeconds",
+        "workDirectory",
+        "logDirectory",
+        "logLevel",
+        "progressEnabled"
+      ],
+      "properties": {
+        "workers": {"type": "integer", "minimum": 1, "maximum": 16},
+        "model": {"type": "string", "minLength": 1},
+        "useUserConfig": {"type": "boolean"},
+        "dryRun": {"type": "boolean"},
+        "resume": {"type": "boolean"},
+        "failFast": {"type": "boolean"},
+        "retries": {"type": "integer", "minimum": 0, "maximum": 5},
+        "retryBackoffSeconds": {"type": "number", "minimum": 0, "maximum": 300},
+        "workDirectory": {"type": "string", "minLength": 1},
+        "logDirectory": {"type": "string", "minLength": 1},
+        "logLevel": {
+          "type": "string",
+          "enum": ["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"]
+        },
+        "progressEnabled": {"type": "boolean"}
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "total",
+        "successful",
+        "completed",
+        "resumedImport",
+        "skipped",
+        "dryRun",
+        "failed",
+        "cancelled"
+      ],
+      "properties": {
+        "total": {"type": "integer", "minimum": 0},
+        "successful": {"type": "integer", "minimum": 0},
+        "completed": {"type": "integer", "minimum": 0},
+        "resumedImport": {"type": "integer", "minimum": 0},
+        "skipped": {"type": "integer", "minimum": 0},
+        "dryRun": {"type": "integer", "minimum": 0},
+        "failed": {"type": "integer", "minimum": 0},
+        "cancelled": {"type": "integer", "minimum": 0}
+      }
+    },
+    "item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "slug",
+        "outcome",
+        "durationSeconds",
+        "resumeVerification",
+        "paths",
+        "stages",
+        "error"
+      ],
+      "properties": {
+        "slug": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$"
+        },
+        "outcome": {
+          "type": "string",
+          "enum": [
+            "completed",
+            "resumedImport",
+            "skipped",
+            "dryRun",
+            "failed",
+            "cancelled"
+          ]
+        },
+        "durationSeconds": {"type": "number", "minimum": 0},
+        "resumeVerification": {
+          "type": "string",
+          "enum": ["notRequested", "none", "verifiedResult", "verifiedCandidate"]
+        },
+        "paths": {"$ref": "#/$defs/paths"},
+        "stages": {"$ref": "#/$defs/stages"},
+        "error": {
+          "oneOf": [
+            {"type": "null"},
+            {"$ref": "#/$defs/error"}
+          ]
+        }
+      }
+    },
+    "paths": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "task",
+        "result",
+        "run",
+        "events",
+        "stderr",
+        "candidate",
+        "validation"
+      ],
+      "properties": {
+        "task": {"type": "string", "minLength": 1},
+        "result": {"type": "string", "minLength": 1},
+        "run": {"type": "string", "minLength": 1},
+        "events": {"type": "string", "minLength": 1},
+        "stderr": {"type": "string", "minLength": 1},
+        "candidate": {"type": "string", "minLength": 1},
+        "validation": {"type": "string", "minLength": 1}
+      }
+    },
+    "stages": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["taskBuild", "visionRun", "importer"],
+      "properties": {
+        "taskBuild": {"$ref": "#/$defs/stage"},
+        "visionRun": {"$ref": "#/$defs/stage"},
+        "importer": {"$ref": "#/$defs/stage"}
+      }
+    },
+    "stage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "durationSeconds", "path"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["notRun", "completed", "skipped", "dryRun", "failed", "cancelled"]
+        },
+        "durationSeconds": {"type": "number", "minimum": 0},
+        "path": {"type": "string", "minLength": 1},
+        "reason": {"type": "string", "minLength": 1},
+        "attempts": {"type": "integer", "minimum": 0},
+        "retryDelaysSeconds": {
+          "type": "array",
+          "items": {"type": "number", "minimum": 0, "maximum": 300}
+        }
+      }
+    },
+    "error": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stage", "type", "message"],
+      "properties": {
+        "stage": {
+          "type": "string",
+          "enum": ["taskBuild", "visionRun", "importer", "workerProcess", "scheduler"]
+        },
+        "type": {"type": "string", "minLength": 1},
+        "message": {"type": "string"}
+      }
+    }
+  }
+}

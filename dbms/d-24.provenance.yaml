@@ -1,0 +1,86 @@
+schemaVersion: 1
+criterionSlug: d-24
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "d-24:overview.heading:1"
+    sourceSpans:
+      - {physicalPage: 661, printedPage: "661", pageRegionIdentifier: p661-d-24}
+  - blockReference: "d-24:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - {physicalPage: 661, printedPage: "661", pageRegionIdentifier: p661-d-24}
+  - blockReference: "d-24:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - {physicalPage: 661, printedPage: "661", pageRegionIdentifier: p661-d-24}
+  - blockReference: "d-24:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - {physicalPage: 661, printedPage: "661", pageRegionIdentifier: p661-d-24}
+  - blockReference: "d-24:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - {physicalPage: 661, printedPage: "661", pageRegionIdentifier: p661-d-24}
+  - blockReference: "d-24:overview.securityThreat.heading:1"
+    sourceSpans:
+      - {physicalPage: 661, printedPage: "661", pageRegionIdentifier: p661-d-24}
+  - blockReference: "d-24:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - {physicalPage: 661, printedPage: "661", pageRegionIdentifier: p661-d-24}
+  - blockReference: "d-24:overview.reference.heading:1"
+    sourceSpans:
+      - {physicalPage: 661, printedPage: "661", pageRegionIdentifier: p661-d-24}
+  - blockReference: "d-24:overview.reference.note.label:1"
+    sourceSpans:
+      - {physicalPage: 661, printedPage: "661", pageRegionIdentifier: p661-d-24}
+  - blockReference: "d-24:assessment.heading:1"
+    sourceSpans:
+      - {physicalPage: 661, printedPage: "661", pageRegionIdentifier: p661-d-24}
+  - blockReference: "d-24:assessment.target.heading:1"
+    sourceSpans:
+      - {physicalPage: 661, printedPage: "661", pageRegionIdentifier: p661-d-24}
+  - blockReference: "d-24:assessment.target.paragraph:1"
+    sourceSpans:
+      - {physicalPage: 661, printedPage: "661", pageRegionIdentifier: p661-d-24}
+  - blockReference: "d-24:assessment.judgment.heading:1"
+    sourceSpans:
+      - {physicalPage: 661, printedPage: "661", pageRegionIdentifier: p661-d-24}
+  - blockReference: "d-24:assessment.judgment.good:1"
+    sourceSpans:
+      - {physicalPage: 661, printedPage: "661", pageRegionIdentifier: p661-d-24}
+  - blockReference: "d-24:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - {physicalPage: 661, printedPage: "661", pageRegionIdentifier: p661-d-24}
+  - blockReference: "d-24:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - {physicalPage: 661, printedPage: "661", pageRegionIdentifier: p661-d-24}
+  - blockReference: "d-24:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - {physicalPage: 661, printedPage: "661", pageRegionIdentifier: p661-d-24}
+  - blockReference: "d-24:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - {physicalPage: 661, printedPage: "661", pageRegionIdentifier: p661-d-24}
+  - blockReference: "d-24:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - {physicalPage: 661, printedPage: "661", pageRegionIdentifier: p661-d-24}
+  - blockReference: "d-24:remediation.heading:1"
+    sourceSpans:
+      - {physicalPage: 661, printedPage: "661", pageRegionIdentifier: p661-d-24}
+  - blockReference: "d-24:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - {physicalPage: 661, printedPage: "661", pageRegionIdentifier: p661-d-24}
+  - blockReference: "d-24:remediation.supplementaryGuidance.step:1"
+    sourceSpans:
+      - {physicalPage: 661, printedPage: "661", pageRegionIdentifier: p661-d-24}
+  - blockReference: "d-24:remediation.supplementaryGuidance.step:2"
+    sourceSpans:
+      - {physicalPage: 661, printedPage: "661", pageRegionIdentifier: p661-d-24}
+  - blockReference: "d-24:remediation.supplementaryGuidance.step:3"
+    sourceSpans:
+      - {physicalPage: 662, printedPage: "662", pageRegionIdentifier: p662-d-24}
+  - blockReference: "d-24:remediation.supplementaryGuidance.step:4"
+    sourceSpans:
+      - {physicalPage: 662, printedPage: "662", pageRegionIdentifier: p662-d-24}
+  - blockReference: "d-24:remediation.supplementaryGuidance.paragraph:1"
+    sourceSpans:
+      - {physicalPage: 662, printedPage: "662", pageRegionIdentifier: p662-d-24}
+  - blockReference: "d-24:remediation.supplementaryGuidance.table:1"
+    sourceSpans:
+      - {physicalPage: 662, printedPage: "662", pageRegionIdentifier: p662-d-24}
+assets: []

@@ -1,0 +1,140 @@
+schemaVersion: 1
+criterionSlug: w-45
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "w-45:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 242
+        printedPage: "242"
+        pageRegionIdentifier: p242-w-45
+  - blockReference: "w-45:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 242
+        printedPage: "242"
+        pageRegionIdentifier: p242-w-45
+  - blockReference: "w-45:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 242
+        printedPage: "242"
+        pageRegionIdentifier: p242-w-45
+  - blockReference: "w-45:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 242
+        printedPage: "242"
+        pageRegionIdentifier: p242-w-45
+  - blockReference: "w-45:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 242
+        printedPage: "242"
+        pageRegionIdentifier: p242-w-45
+  - blockReference: "w-45:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 242
+        printedPage: "242"
+        pageRegionIdentifier: p242-w-45
+  - blockReference: "w-45:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 242
+        printedPage: "242"
+        pageRegionIdentifier: p242-w-45
+  - blockReference: "w-45:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 242
+        printedPage: "242"
+        pageRegionIdentifier: p242-w-45
+  - blockReference: "w-45:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 242
+        printedPage: "242"
+        pageRegionIdentifier: p242-w-45
+  - blockReference: "w-45:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 242
+        printedPage: "242"
+        pageRegionIdentifier: p242-w-45
+  - blockReference: "w-45:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 242
+        printedPage: "242"
+        pageRegionIdentifier: p242-w-45
+  - blockReference: "w-45:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 242
+        printedPage: "242"
+        pageRegionIdentifier: p242-w-45
+  - blockReference: "w-45:overview.reference.note.label:3"
+    sourceSpans:
+      - physicalPage: 242
+        printedPage: "242"
+        pageRegionIdentifier: p242-w-45
+  - blockReference: "w-45:overview.reference.note.content:3"
+    sourceSpans:
+      - physicalPage: 242
+        printedPage: "242"
+        pageRegionIdentifier: p242-w-45
+  - blockReference: "w-45:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 242
+        printedPage: "242"
+        pageRegionIdentifier: p242-w-45
+  - blockReference: "w-45:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 242
+        printedPage: "242"
+        pageRegionIdentifier: p242-w-45
+  - blockReference: "w-45:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 242
+        printedPage: "242"
+        pageRegionIdentifier: p242-w-45
+  - blockReference: "w-45:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 242
+        printedPage: "242"
+        pageRegionIdentifier: p242-w-45
+  - blockReference: "w-45:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 242
+        printedPage: "242"
+        pageRegionIdentifier: p242-w-45
+  - blockReference: "w-45:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 242
+        printedPage: "242"
+        pageRegionIdentifier: p242-w-45
+  - blockReference: "w-45:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 242
+        printedPage: "242"
+        pageRegionIdentifier: p242-w-45
+  - blockReference: "w-45:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 242
+        printedPage: "242"
+        pageRegionIdentifier: p242-w-45
+  - blockReference: "w-45:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 242
+        printedPage: "242"
+        pageRegionIdentifier: p242-w-45
+  - blockReference: "w-45:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 242
+        printedPage: "242"
+        pageRegionIdentifier: p242-w-45
+  - blockReference: "w-45:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 242
+        printedPage: "242"
+        pageRegionIdentifier: p242-w-45
+  - blockReference: "w-45:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 242
+        printedPage: "242"
+        pageRegionIdentifier: p242-w-45
+  - blockReference: "w-45:remediation.linux.paragraph:1"
+    sourceSpans:
+      - physicalPage: 242
+        printedPage: "242"
+        pageRegionIdentifier: p242-w-45
+assets: []

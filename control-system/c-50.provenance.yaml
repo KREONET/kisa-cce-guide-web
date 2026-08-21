@@ -1,0 +1,55 @@
+schemaVersion: 1
+criterionSlug: c-50
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "c-50:overview.heading:1"
+    sourceSpans: [{physicalPage: 549, printedPage: "549", pageRegionIdentifier: p549-c-50}]
+  - blockReference: "c-50:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 549, printedPage: "549", pageRegionIdentifier: p549-c-50}]
+  - blockReference: "c-50:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 549, printedPage: "549", pageRegionIdentifier: p549-c-50}]
+  - blockReference: "c-50:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 549, printedPage: "549", pageRegionIdentifier: p549-c-50}]
+  - blockReference: "c-50:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 549, printedPage: "549", pageRegionIdentifier: p549-c-50}]
+  - blockReference: "c-50:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 549, printedPage: "549", pageRegionIdentifier: p549-c-50}]
+  - blockReference: "c-50:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 549, printedPage: "549", pageRegionIdentifier: p549-c-50}]
+  - blockReference: "c-50:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 549, printedPage: "549", pageRegionIdentifier: p549-c-50}]
+  - blockReference: "c-50:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 549, printedPage: "549", pageRegionIdentifier: p549-c-50}]
+  - blockReference: "c-50:overview.reference.note.content:1"
+    sourceSpans: [{physicalPage: 549, printedPage: "549", pageRegionIdentifier: p549-c-50}]
+  - blockReference: "c-50:assessment.heading:1"
+    sourceSpans: [{physicalPage: 549, printedPage: "549", pageRegionIdentifier: p549-c-50}]
+  - blockReference: "c-50:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 549, printedPage: "549", pageRegionIdentifier: p549-c-50}]
+  - blockReference: "c-50:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 549, printedPage: "549", pageRegionIdentifier: p549-c-50}]
+  - blockReference: "c-50:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 549, printedPage: "549", pageRegionIdentifier: p549-c-50}]
+  - blockReference: "c-50:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 549, printedPage: "549", pageRegionIdentifier: p549-c-50}]
+  - blockReference: "c-50:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 549, printedPage: "549", pageRegionIdentifier: p549-c-50}]
+  - blockReference: "c-50:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 549, printedPage: "549", pageRegionIdentifier: p549-c-50}]
+  - blockReference: "c-50:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 549, printedPage: "549", pageRegionIdentifier: p549-c-50}]
+  - blockReference: "c-50:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 549, printedPage: "549", pageRegionIdentifier: p549-c-50}]
+  - blockReference: "c-50:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 549, printedPage: "549", pageRegionIdentifier: p549-c-50}]
+  - blockReference: "c-50:remediation.heading:1"
+    sourceSpans: [{physicalPage: 550, printedPage: "550", pageRegionIdentifier: p550-c-50}]
+  - blockReference: "c-50:remediation.supplementaryGuidance.heading:1"
+    sourceSpans: [{physicalPage: 550, printedPage: "550", pageRegionIdentifier: p550-c-50}]
+  - blockReference: "c-50:remediation.supplementaryGuidance.step:1"
+    sourceSpans: [{physicalPage: 550, printedPage: "550", pageRegionIdentifier: p550-c-50}]
+  - blockReference: "c-50:remediation.supplementaryGuidance.step:2"
+    sourceSpans: [{physicalPage: 550, printedPage: "550", pageRegionIdentifier: p550-c-50}]
+  - blockReference: "c-50:remediation.supplementaryGuidance.step:3"
+    sourceSpans: [{physicalPage: 550, printedPage: "550", pageRegionIdentifier: p550-c-50}]
+assets: []

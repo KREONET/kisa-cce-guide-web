@@ -1,0 +1,135 @@
+schemaVersion: 1
+criterionSlug: pc-16
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "pc-16:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 587
+        printedPage: "587"
+        pageRegionIdentifier: p587-pc-16
+  - blockReference: "pc-16:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 587
+        printedPage: "587"
+        pageRegionIdentifier: p587-pc-16
+  - blockReference: "pc-16:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 587
+        printedPage: "587"
+        pageRegionIdentifier: p587-pc-16
+  - blockReference: "pc-16:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 587
+        printedPage: "587"
+        pageRegionIdentifier: p587-pc-16
+  - blockReference: "pc-16:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 587
+        printedPage: "587"
+        pageRegionIdentifier: p587-pc-16
+  - blockReference: "pc-16:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 587
+        printedPage: "587"
+        pageRegionIdentifier: p587-pc-16
+  - blockReference: "pc-16:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 587
+        printedPage: "587"
+        pageRegionIdentifier: p587-pc-16
+  - blockReference: "pc-16:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 587
+        printedPage: "587"
+        pageRegionIdentifier: p587-pc-16
+  - blockReference: "pc-16:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 587
+        printedPage: "587"
+        pageRegionIdentifier: p587-pc-16
+  - blockReference: "pc-16:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 587
+        printedPage: "587"
+        pageRegionIdentifier: p587-pc-16
+  - blockReference: "pc-16:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 587
+        printedPage: "587"
+        pageRegionIdentifier: p587-pc-16
+  - blockReference: "pc-16:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 587
+        printedPage: "587"
+        pageRegionIdentifier: p587-pc-16
+  - blockReference: "pc-16:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 587
+        printedPage: "587"
+        pageRegionIdentifier: p587-pc-16
+  - blockReference: "pc-16:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 587
+        printedPage: "587"
+        pageRegionIdentifier: p587-pc-16
+  - blockReference: "pc-16:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 587
+        printedPage: "587"
+        pageRegionIdentifier: p587-pc-16
+  - blockReference: "pc-16:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 587
+        printedPage: "587"
+        pageRegionIdentifier: p587-pc-16
+  - blockReference: "pc-16:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 587
+        printedPage: "587"
+        pageRegionIdentifier: p587-pc-16
+  - blockReference: "pc-16:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 587
+        printedPage: "587"
+        pageRegionIdentifier: p587-pc-16
+  - blockReference: "pc-16:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 587
+        printedPage: "587"
+        pageRegionIdentifier: p587-pc-16
+  - blockReference: "pc-16:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 587
+        printedPage: "587"
+        pageRegionIdentifier: p587-pc-16
+  - blockReference: "pc-16:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 587
+        printedPage: "587"
+        pageRegionIdentifier: p587-pc-16
+  - blockReference: "pc-16:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - physicalPage: 587
+        printedPage: "587"
+        pageRegionIdentifier: p587-pc-16
+  - blockReference: "pc-16:remediation.supplementaryGuidance.paragraph:1"
+    sourceSpans:
+      - physicalPage: 587
+        printedPage: "587"
+        pageRegionIdentifier: p587-pc-16
+  - blockReference: "pc-16:remediation.supplementaryGuidance.step:1"
+    sourceSpans:
+      - physicalPage: 587
+        printedPage: "587"
+        pageRegionIdentifier: p587-pc-16
+  - blockReference: "pc-16:remediation.supplementaryGuidance.step.explanation:1"
+    sourceSpans:
+      - physicalPage: 587
+        printedPage: "587"
+        pageRegionIdentifier: p587-pc-16
+  - blockReference: "pc-16:remediation.supplementaryGuidance.step:2"
+    sourceSpans:
+      - physicalPage: 588
+        printedPage: "588"
+        pageRegionIdentifier: p588-pc-16
+assets: []

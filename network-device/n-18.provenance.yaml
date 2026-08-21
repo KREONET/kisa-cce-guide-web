@@ -1,0 +1,220 @@
+schemaVersion: 1
+criterionSlug: n-18
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "n-18:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 433
+        printedPage: "433"
+        pageRegionIdentifier: p433-n-18
+  - blockReference: "n-18:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 433
+        printedPage: "433"
+        pageRegionIdentifier: p433-n-18
+  - blockReference: "n-18:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 433
+        printedPage: "433"
+        pageRegionIdentifier: p433-n-18
+  - blockReference: "n-18:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 433
+        printedPage: "433"
+        pageRegionIdentifier: p433-n-18
+  - blockReference: "n-18:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 433
+        printedPage: "433"
+        pageRegionIdentifier: p433-n-18
+  - blockReference: "n-18:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 433
+        printedPage: "433"
+        pageRegionIdentifier: p433-n-18
+  - blockReference: "n-18:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 433
+        printedPage: "433"
+        pageRegionIdentifier: p433-n-18
+  - blockReference: "n-18:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 433
+        printedPage: "433"
+        pageRegionIdentifier: p433-n-18
+  - blockReference: "n-18:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 433
+        printedPage: "433"
+        pageRegionIdentifier: p433-n-18
+  - blockReference: "n-18:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 433
+        printedPage: "433"
+        pageRegionIdentifier: p433-n-18
+  - blockReference: "n-18:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 433
+        printedPage: "433"
+        pageRegionIdentifier: p433-n-18
+  - blockReference: "n-18:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 433
+        printedPage: "433"
+        pageRegionIdentifier: p433-n-18
+  - blockReference: "n-18:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 433
+        printedPage: "433"
+        pageRegionIdentifier: p433-n-18
+  - blockReference: "n-18:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 433
+        printedPage: "433"
+        pageRegionIdentifier: p433-n-18
+  - blockReference: "n-18:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 433
+        printedPage: "433"
+        pageRegionIdentifier: p433-n-18
+  - blockReference: "n-18:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 433
+        printedPage: "433"
+        pageRegionIdentifier: p433-n-18
+  - blockReference: "n-18:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 433
+        printedPage: "433"
+        pageRegionIdentifier: p433-n-18
+  - blockReference: "n-18:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 433
+        printedPage: "433"
+        pageRegionIdentifier: p433-n-18
+  - blockReference: "n-18:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 433
+        printedPage: "433"
+        pageRegionIdentifier: p433-n-18
+  - blockReference: "n-18:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 433
+        printedPage: "433"
+        pageRegionIdentifier: p433-n-18
+  - blockReference: "n-18:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 433
+        printedPage: "433"
+        pageRegionIdentifier: p433-n-18
+  - blockReference: "n-18:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - physicalPage: 433
+        printedPage: "433"
+        pageRegionIdentifier: p433-n-18
+  - blockReference: "n-18:remediation.supplementaryGuidance.paragraph:1"
+    sourceSpans:
+      - physicalPage: 433
+        printedPage: "433"
+        pageRegionIdentifier: p433-n-18
+  - blockReference: "n-18:remediation.supplementaryGuidance.step:1"
+    sourceSpans:
+      - physicalPage: 433
+        printedPage: "433"
+        pageRegionIdentifier: p433-n-18
+  - blockReference: "n-18:remediation.supplementaryGuidance.command:1"
+    sourceSpans:
+      - physicalPage: 433
+        printedPage: "433"
+        pageRegionIdentifier: p433-n-18
+  - blockReference: "n-18:remediation.supplementaryGuidance.step:2"
+    sourceSpans:
+      - physicalPage: 433
+        printedPage: "433"
+        pageRegionIdentifier: p433-n-18
+  - blockReference: "n-18:remediation.supplementaryGuidance.command:2"
+    sourceSpans:
+      - physicalPage: 433
+        printedPage: "433"
+        pageRegionIdentifier: p433-n-18
+  - blockReference: "n-18:remediation.supplementaryGuidance.paragraph:2"
+    sourceSpans:
+      - physicalPage: 433
+        printedPage: "433"
+        pageRegionIdentifier: p433-n-18
+  - blockReference: "n-18:remediation.supplementaryGuidance.step:3"
+    sourceSpans:
+      - physicalPage: 433
+        printedPage: "433"
+        pageRegionIdentifier: p433-n-18
+  - blockReference: "n-18:remediation.supplementaryGuidance.step:4"
+    sourceSpans:
+      - physicalPage: 434
+        printedPage: "434"
+        pageRegionIdentifier: p434-n-18
+  - blockReference: "n-18:remediation.supplementaryGuidance.command:3"
+    sourceSpans:
+      - physicalPage: 434
+        printedPage: "434"
+        pageRegionIdentifier: p434-n-18
+  - blockReference: "n-18:remediation.supplementaryGuidance.step:5"
+    sourceSpans:
+      - physicalPage: 434
+        printedPage: "434"
+        pageRegionIdentifier: p434-n-18
+  - blockReference: "n-18:remediation.supplementaryGuidance.command:4"
+    sourceSpans:
+      - physicalPage: 434
+        printedPage: "434"
+        pageRegionIdentifier: p434-n-18
+  - blockReference: "n-18:remediation.supplementaryGuidance.paragraph:3"
+    sourceSpans:
+      - physicalPage: 434
+        printedPage: "434"
+        pageRegionIdentifier: p434-n-18
+  - blockReference: "n-18:remediation.supplementaryGuidance.step:6"
+    sourceSpans:
+      - physicalPage: 434
+        printedPage: "434"
+        pageRegionIdentifier: p434-n-18
+  - blockReference: "n-18:remediation.supplementaryGuidance.command:5"
+    sourceSpans:
+      - physicalPage: 434
+        printedPage: "434"
+        pageRegionIdentifier: p434-n-18
+  - blockReference: "n-18:remediation.supplementaryGuidance.step:7"
+    sourceSpans:
+      - physicalPage: 434
+        printedPage: "434"
+        pageRegionIdentifier: p434-n-18
+  - blockReference: "n-18:remediation.supplementaryGuidance.command:6"
+    sourceSpans:
+      - physicalPage: 434
+        printedPage: "434"
+        pageRegionIdentifier: p434-n-18
+  - blockReference: "n-18:remediation.supplementaryGuidance.paragraph:4"
+    sourceSpans:
+      - physicalPage: 434
+        printedPage: "434"
+        pageRegionIdentifier: p434-n-18
+  - blockReference: "n-18:remediation.supplementaryGuidance.step:8"
+    sourceSpans:
+      - physicalPage: 434
+        printedPage: "434"
+        pageRegionIdentifier: p434-n-18
+  - blockReference: "n-18:remediation.supplementaryGuidance.command:7"
+    sourceSpans:
+      - physicalPage: 434
+        printedPage: "434"
+        pageRegionIdentifier: p434-n-18
+  - blockReference: "n-18:remediation.supplementaryGuidance.step:9"
+    sourceSpans:
+      - physicalPage: 434
+        printedPage: "434"
+        pageRegionIdentifier: p434-n-18
+  - blockReference: "n-18:remediation.supplementaryGuidance.command:8"
+    sourceSpans:
+      - physicalPage: 434
+        printedPage: "434"
+        pageRegionIdentifier: p434-n-18
+assets: []

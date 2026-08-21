@@ -1,0 +1,126 @@
+schemaVersion: 1
+criterionSlug: s-09
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "s-09:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 367
+        printedPage: "367"
+        pageRegionIdentifier: p367-s-09
+  - blockReference: "s-09:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 367
+        printedPage: "367"
+        pageRegionIdentifier: p367-s-09
+  - blockReference: "s-09:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 367
+        printedPage: "367"
+        pageRegionIdentifier: p367-s-09
+  - blockReference: "s-09:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 367
+        printedPage: "367"
+        pageRegionIdentifier: p367-s-09
+  - blockReference: "s-09:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 367
+        printedPage: "367"
+        pageRegionIdentifier: p367-s-09
+  - blockReference: "s-09:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 367
+        printedPage: "367"
+        pageRegionIdentifier: p367-s-09
+  - blockReference: "s-09:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 367
+        printedPage: "367"
+        pageRegionIdentifier: p367-s-09
+  - blockReference: "s-09:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 367
+        printedPage: "367"
+        pageRegionIdentifier: p367-s-09
+  - blockReference: "s-09:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 367
+        printedPage: "367"
+        pageRegionIdentifier: p367-s-09
+  - blockReference: "s-09:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 367
+        printedPage: "367"
+        pageRegionIdentifier: p367-s-09
+  - blockReference: "s-09:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 367
+        printedPage: "367"
+        pageRegionIdentifier: p367-s-09
+  - blockReference: "s-09:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 367
+        printedPage: "367"
+        pageRegionIdentifier: p367-s-09
+  - blockReference: "s-09:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 367
+        printedPage: "367"
+        pageRegionIdentifier: p367-s-09
+  - blockReference: "s-09:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 367
+        printedPage: "367"
+        pageRegionIdentifier: p367-s-09
+  - blockReference: "s-09:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 367
+        printedPage: "367"
+        pageRegionIdentifier: p367-s-09
+  - blockReference: "s-09:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 367
+        printedPage: "367"
+        pageRegionIdentifier: p367-s-09
+  - blockReference: "s-09:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 367
+        printedPage: "367"
+        pageRegionIdentifier: p367-s-09
+  - blockReference: "s-09:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 367
+        printedPage: "367"
+        pageRegionIdentifier: p367-s-09
+  - blockReference: "s-09:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 367
+        printedPage: "367"
+        pageRegionIdentifier: p367-s-09
+  - blockReference: "s-09:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 367
+        printedPage: "367"
+        pageRegionIdentifier: p367-s-09
+  - blockReference: "s-09:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - physicalPage: 367
+        printedPage: "367"
+        pageRegionIdentifier: p367-s-09
+  - blockReference: "s-09:remediation.supplementaryGuidance.step:1"
+    sourceSpans:
+      - physicalPage: 367
+        printedPage: "367"
+        pageRegionIdentifier: p367-s-09
+  - blockReference: "s-09:remediation.supplementaryGuidance.step:2"
+    sourceSpans:
+      - physicalPage: 367
+        printedPage: "367"
+        pageRegionIdentifier: p367-s-09
+  - blockReference: "s-09:remediation.supplementaryGuidance.step:3"
+    sourceSpans:
+      - physicalPage: 367
+        printedPage: "367"
+        pageRegionIdentifier: p367-s-09
+assets: []
+

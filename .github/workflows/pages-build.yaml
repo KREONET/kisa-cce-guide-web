@@ -1,0 +1,49 @@
+name: Build GitHub Pages artifact
+
+on:
+  workflow_dispatch:
+    inputs:
+      base_path:
+        description: GitHub Pages base path, such as /kisa-cce-guide-web
+        required: true
+        type: string
+        default: /kisa-cce-guide-web
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Install uv and Python
+        uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
+        with:
+          enable-cache: true
+          cache-dependency-glob: uv.lock
+          python-version: "3.13"
+
+      - name: Install development dependencies
+        run: uv sync --dev --locked
+
+      - name: Validate canonical content
+        run: uv run --locked python -m conversion.validate_content
+
+      - name: Run regression tests
+        run: uv run --locked pytest -q
+
+      - name: Build GitHub Pages artifact
+        run: >-
+          uv run --locked python -m conversion.build_content
+          --base-path "${{ inputs.base_path }}"
+
+      - name: Upload generated site for review
+        uses: actions/upload-artifact@v5
+        with:
+          name: github-pages-preview
+          path: build/site
+          include-hidden-files: true
+          if-no-files-found: error

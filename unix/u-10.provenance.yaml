@@ -1,0 +1,141 @@
+schemaVersion: 1
+criterionSlug: u-10
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "u-10:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 34
+        printedPage: "34"
+        pageRegionIdentifier: p34-u-10
+  - blockReference: "u-10:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 34
+        printedPage: "34"
+        pageRegionIdentifier: p34-u-10
+  - blockReference: "u-10:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 34
+        printedPage: "34"
+        pageRegionIdentifier: p34-u-10
+  - blockReference: "u-10:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 34
+        printedPage: "34"
+        pageRegionIdentifier: p34-u-10
+  - blockReference: "u-10:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 34
+        printedPage: "34"
+        pageRegionIdentifier: p34-u-10
+  - blockReference: "u-10:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 34
+        printedPage: "34"
+        pageRegionIdentifier: p34-u-10
+  - blockReference: "u-10:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 34
+        printedPage: "34"
+        pageRegionIdentifier: p34-u-10
+  - blockReference: "u-10:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 34
+        printedPage: "34"
+        pageRegionIdentifier: p34-u-10
+  - blockReference: "u-10:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 34
+        printedPage: "34"
+        pageRegionIdentifier: p34-u-10
+  - blockReference: "u-10:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 34
+        printedPage: "34"
+        pageRegionIdentifier: p34-u-10
+  - blockReference: "u-10:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 34
+        printedPage: "34"
+        pageRegionIdentifier: p34-u-10
+  - blockReference: "u-10:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 34
+        printedPage: "34"
+        pageRegionIdentifier: p34-u-10
+  - blockReference: "u-10:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 34
+        printedPage: "34"
+        pageRegionIdentifier: p34-u-10
+  - blockReference: "u-10:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 34
+        printedPage: "34"
+        pageRegionIdentifier: p34-u-10
+  - blockReference: "u-10:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 34
+        printedPage: "34"
+        pageRegionIdentifier: p34-u-10
+  - blockReference: "u-10:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 34
+        printedPage: "34"
+        pageRegionIdentifier: p34-u-10
+  - blockReference: "u-10:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 34
+        printedPage: "34"
+        pageRegionIdentifier: p34-u-10
+  - blockReference: "u-10:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 34
+        printedPage: "34"
+        pageRegionIdentifier: p34-u-10
+  - blockReference: "u-10:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 34
+        printedPage: "34"
+        pageRegionIdentifier: p34-u-10
+  - blockReference: "u-10:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 34
+        printedPage: "34"
+        pageRegionIdentifier: p34-u-10
+  - blockReference: "u-10:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 34
+        printedPage: "34"
+        pageRegionIdentifier: p34-u-10
+  - blockReference: "u-10:remediation.solaris.heading:1"
+    sourceSpans:
+      - physicalPage: 34
+        printedPage: "34"
+        pageRegionIdentifier: p34-u-10
+  - blockReference: "u-10:remediation.solaris.step:1"
+    sourceSpans:
+      - physicalPage: 34
+        printedPage: "34"
+        pageRegionIdentifier: p34-u-10
+  - blockReference: "u-10:remediation.solaris.step:2"
+    sourceSpans:
+      - physicalPage: 34
+        printedPage: "34"
+        pageRegionIdentifier: p34-u-10
+  - blockReference: "u-10:remediation.solaris.command:1"
+    sourceSpans:
+      - physicalPage: 34
+        printedPage: "34"
+        pageRegionIdentifier: p34-u-10
+  - blockReference: "u-10:remediation.solaris.note.label:1"
+    sourceSpans:
+      - physicalPage: 34
+        printedPage: "34"
+        pageRegionIdentifier: p34-u-10
+  - blockReference: "u-10:remediation.solaris.note.content:1"
+    sourceSpans:
+      - physicalPage: 34
+        printedPage: "34"
+        pageRegionIdentifier: p34-u-10
+assets: []
+

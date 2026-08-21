@@ -1,0 +1,127 @@
+schemaVersion: 1
+criterionSlug: u-30
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "u-30:overview.heading:1"
+    sourceSpans: [{physicalPage: 62, printedPage: "62", pageRegionIdentifier: p62-u-30}]
+  - blockReference: "u-30:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 62, printedPage: "62", pageRegionIdentifier: p62-u-30}]
+  - blockReference: "u-30:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 62, printedPage: "62", pageRegionIdentifier: p62-u-30}]
+  - blockReference: "u-30:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 62, printedPage: "62", pageRegionIdentifier: p62-u-30}]
+  - blockReference: "u-30:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 62, printedPage: "62", pageRegionIdentifier: p62-u-30}]
+  - blockReference: "u-30:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 62, printedPage: "62", pageRegionIdentifier: p62-u-30}]
+  - blockReference: "u-30:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 62, printedPage: "62", pageRegionIdentifier: p62-u-30}]
+  - blockReference: "u-30:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 62, printedPage: "62", pageRegionIdentifier: p62-u-30}]
+  - blockReference: "u-30:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 62, printedPage: "62", pageRegionIdentifier: p62-u-30}]
+  - blockReference: "u-30:overview.reference.note.content:1"
+    sourceSpans: [{physicalPage: 62, printedPage: "62", pageRegionIdentifier: p62-u-30}]
+  - blockReference: "u-30:overview.reference.note.label:2"
+    sourceSpans: [{physicalPage: 62, printedPage: "62", pageRegionIdentifier: p62-u-30}]
+  - blockReference: "u-30:overview.reference.note.content:2"
+    sourceSpans: [{physicalPage: 62, printedPage: "62", pageRegionIdentifier: p62-u-30}]
+  - blockReference: "u-30:overview.reference.note.label:3"
+    sourceSpans: [{physicalPage: 62, printedPage: "62", pageRegionIdentifier: p62-u-30}]
+  - blockReference: "u-30:overview.reference.note.content:3"
+    sourceSpans: [{physicalPage: 62, printedPage: "62", pageRegionIdentifier: p62-u-30}]
+  - blockReference: "u-30:assessment.heading:1"
+    sourceSpans: [{physicalPage: 62, printedPage: "62", pageRegionIdentifier: p62-u-30}]
+  - blockReference: "u-30:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 62, printedPage: "62", pageRegionIdentifier: p62-u-30}]
+  - blockReference: "u-30:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 62, printedPage: "62", pageRegionIdentifier: p62-u-30}]
+  - blockReference: "u-30:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 62, printedPage: "62", pageRegionIdentifier: p62-u-30}]
+  - blockReference: "u-30:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 62, printedPage: "62", pageRegionIdentifier: p62-u-30}]
+  - blockReference: "u-30:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 62, printedPage: "62", pageRegionIdentifier: p62-u-30}]
+  - blockReference: "u-30:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 62, printedPage: "62", pageRegionIdentifier: p62-u-30}]
+  - blockReference: "u-30:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 62, printedPage: "62", pageRegionIdentifier: p62-u-30}]
+  - blockReference: "u-30:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 62, printedPage: "62", pageRegionIdentifier: p62-u-30}]
+  - blockReference: "u-30:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 62, printedPage: "62", pageRegionIdentifier: p62-u-30}]
+  - blockReference: "u-30:remediation.heading:1"
+    sourceSpans: [{physicalPage: 62, printedPage: "62", pageRegionIdentifier: p62-u-30}]
+  - blockReference: "u-30:remediation.solaris.heading:1"
+    sourceSpans: [{physicalPage: 62, printedPage: "62", pageRegionIdentifier: p62-u-30}]
+  - blockReference: "u-30:remediation.solaris.step:1"
+    sourceSpans: [{physicalPage: 62, printedPage: "62", pageRegionIdentifier: p62-u-30}]
+  - blockReference: "u-30:remediation.solaris.command:1"
+    sourceSpans: [{physicalPage: 62, printedPage: "62", pageRegionIdentifier: p62-u-30}]
+  - blockReference: "u-30:remediation.solaris.configuration:1"
+    sourceSpans: [{physicalPage: 62, printedPage: "62", pageRegionIdentifier: p62-u-30}]
+  - blockReference: "u-30:remediation.solaris.step:2"
+    sourceSpans: [{physicalPage: 62, printedPage: "62", pageRegionIdentifier: p62-u-30}]
+  - blockReference: "u-30:remediation.solaris.command:2"
+    sourceSpans: [{physicalPage: 62, printedPage: "62", pageRegionIdentifier: p62-u-30}]
+  - blockReference: "u-30:remediation.solaris.configuration:2"
+    sourceSpans: [{physicalPage: 62, printedPage: "62", pageRegionIdentifier: p62-u-30}]
+  - blockReference: "u-30:remediation.linux.heading:1"
+    sourceSpans: [{physicalPage: 63, printedPage: "63", pageRegionIdentifier: p63-u-30}]
+  - blockReference: "u-30:remediation.linux.step:1"
+    sourceSpans: [{physicalPage: 63, printedPage: "63", pageRegionIdentifier: p63-u-30}]
+  - blockReference: "u-30:remediation.linux.command:1"
+    sourceSpans: [{physicalPage: 63, printedPage: "63", pageRegionIdentifier: p63-u-30}]
+  - blockReference: "u-30:remediation.linux.configuration:1"
+    sourceSpans: [{physicalPage: 63, printedPage: "63", pageRegionIdentifier: p63-u-30}]
+  - blockReference: "u-30:remediation.linux.step:2"
+    sourceSpans: [{physicalPage: 63, printedPage: "63", pageRegionIdentifier: p63-u-30}]
+  - blockReference: "u-30:remediation.linux.command:2"
+    sourceSpans: [{physicalPage: 63, printedPage: "63", pageRegionIdentifier: p63-u-30}]
+  - blockReference: "u-30:remediation.linux.configuration:2"
+    sourceSpans: [{physicalPage: 63, printedPage: "63", pageRegionIdentifier: p63-u-30}]
+  - blockReference: "u-30:remediation.aix.heading:1"
+    sourceSpans: [{physicalPage: 63, printedPage: "63", pageRegionIdentifier: p63-u-30}]
+  - blockReference: "u-30:remediation.aix.step:1"
+    sourceSpans: [{physicalPage: 63, printedPage: "63", pageRegionIdentifier: p63-u-30}]
+  - blockReference: "u-30:remediation.aix.command:1"
+    sourceSpans: [{physicalPage: 63, printedPage: "63", pageRegionIdentifier: p63-u-30}]
+  - blockReference: "u-30:remediation.aix.configuration:1"
+    sourceSpans: [{physicalPage: 63, printedPage: "63", pageRegionIdentifier: p63-u-30}]
+  - blockReference: "u-30:remediation.aix.step:2"
+    sourceSpans: [{physicalPage: 63, printedPage: "63", pageRegionIdentifier: p63-u-30}]
+  - blockReference: "u-30:remediation.aix.command:2"
+    sourceSpans: [{physicalPage: 63, printedPage: "63", pageRegionIdentifier: p63-u-30}]
+  - blockReference: "u-30:remediation.aix.configuration:2"
+    sourceSpans: [{physicalPage: 63, printedPage: "63", pageRegionIdentifier: p63-u-30}]
+  - blockReference: "u-30:remediation.hp-ux.heading:1"
+    sourceSpans: [{physicalPage: 63, printedPage: "63", pageRegionIdentifier: p63-u-30}]
+  - blockReference: "u-30:remediation.hp-ux.step:1"
+    sourceSpans: [{physicalPage: 63, printedPage: "63", pageRegionIdentifier: p63-u-30}]
+  - blockReference: "u-30:remediation.hp-ux.command:1"
+    sourceSpans: [{physicalPage: 63, printedPage: "63", pageRegionIdentifier: p63-u-30}]
+  - blockReference: "u-30:remediation.hp-ux.configuration:1"
+    sourceSpans: [{physicalPage: 63, printedPage: "63", pageRegionIdentifier: p63-u-30}]
+  - blockReference: "u-30:remediation.hp-ux.step:2"
+    sourceSpans:
+      - {physicalPage: 63, printedPage: "63", pageRegionIdentifier: p63-u-30}
+      - {physicalPage: 64, printedPage: "64", pageRegionIdentifier: p64-u-30}
+  - blockReference: "u-30:remediation.hp-ux.configuration:2"
+    sourceSpans: [{physicalPage: 64, printedPage: "64", pageRegionIdentifier: p64-u-30}]
+  - blockReference: "u-30:remediation.supplementaryGuidance.heading:1"
+    sourceSpans: [{physicalPage: 64, printedPage: "64", pageRegionIdentifier: p64-u-30}]
+  - blockReference: "u-30:remediation.supplementaryGuidance.paragraph:1"
+    sourceSpans: [{physicalPage: 64, printedPage: "64", pageRegionIdentifier: p64-u-30}]
+  - blockReference: "u-30:remediation.supplementaryGuidance.step:1"
+    sourceSpans: [{physicalPage: 64, printedPage: "64", pageRegionIdentifier: p64-u-30}]
+  - blockReference: "u-30:remediation.supplementaryGuidance.command:1"
+    sourceSpans: [{physicalPage: 64, printedPage: "64", pageRegionIdentifier: p64-u-30}]
+  - blockReference: "u-30:remediation.supplementaryGuidance.configuration:1"
+    sourceSpans: [{physicalPage: 64, printedPage: "64", pageRegionIdentifier: p64-u-30}]
+  - blockReference: "u-30:remediation.supplementaryGuidance.step:2"
+    sourceSpans: [{physicalPage: 64, printedPage: "64", pageRegionIdentifier: p64-u-30}]
+  - blockReference: "u-30:remediation.supplementaryGuidance.command:2"
+    sourceSpans: [{physicalPage: 64, printedPage: "64", pageRegionIdentifier: p64-u-30}]
+  - blockReference: "u-30:remediation.supplementaryGuidance.configuration:2"
+    sourceSpans: [{physicalPage: 64, printedPage: "64", pageRegionIdentifier: p64-u-30}]
+assets: []

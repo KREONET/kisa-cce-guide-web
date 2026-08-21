@@ -1,0 +1,130 @@
+schemaVersion: 1
+criterionSlug: w-64
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "w-64:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 270
+        printedPage: "270"
+        pageRegionIdentifier: p270-w-64
+  - blockReference: "w-64:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 270
+        printedPage: "270"
+        pageRegionIdentifier: p270-w-64
+  - blockReference: "w-64:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 270
+        printedPage: "270"
+        pageRegionIdentifier: p270-w-64
+  - blockReference: "w-64:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 270
+        printedPage: "270"
+        pageRegionIdentifier: p270-w-64
+  - blockReference: "w-64:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 270
+        printedPage: "270"
+        pageRegionIdentifier: p270-w-64
+  - blockReference: "w-64:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 270
+        printedPage: "270"
+        pageRegionIdentifier: p270-w-64
+  - blockReference: "w-64:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 270
+        printedPage: "270"
+        pageRegionIdentifier: p270-w-64
+  - blockReference: "w-64:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 270
+        printedPage: "270"
+        pageRegionIdentifier: p270-w-64
+  - blockReference: "w-64:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 270
+        printedPage: "270"
+        pageRegionIdentifier: p270-w-64
+  - blockReference: "w-64:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 270
+        printedPage: "270"
+        pageRegionIdentifier: p270-w-64
+  - blockReference: "w-64:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 270
+        printedPage: "270"
+        pageRegionIdentifier: p270-w-64
+  - blockReference: "w-64:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 270
+        printedPage: "270"
+        pageRegionIdentifier: p270-w-64
+  - blockReference: "w-64:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 270
+        printedPage: "270"
+        pageRegionIdentifier: p270-w-64
+  - blockReference: "w-64:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 270
+        printedPage: "270"
+        pageRegionIdentifier: p270-w-64
+  - blockReference: "w-64:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 270
+        printedPage: "270"
+        pageRegionIdentifier: p270-w-64
+  - blockReference: "w-64:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 270
+        printedPage: "270"
+        pageRegionIdentifier: p270-w-64
+  - blockReference: "w-64:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 270
+        printedPage: "270"
+        pageRegionIdentifier: p270-w-64
+  - blockReference: "w-64:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 270
+        printedPage: "270"
+        pageRegionIdentifier: p270-w-64
+  - blockReference: "w-64:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 270
+        printedPage: "270"
+        pageRegionIdentifier: p270-w-64
+  - blockReference: "w-64:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 270
+        printedPage: "270"
+        pageRegionIdentifier: p270-w-64
+  - blockReference: "w-64:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 270
+        printedPage: "270"
+        pageRegionIdentifier: p270-w-64
+  - blockReference: "w-64:remediation.unspecified.heading:1"
+    sourceSpans:
+      - physicalPage: 270
+        printedPage: "270"
+        pageRegionIdentifier: p270-w-64
+  - blockReference: "w-64:remediation.unspecified.step:1"
+    sourceSpans:
+      - physicalPage: 270
+        printedPage: "270"
+        pageRegionIdentifier: p270-w-64
+  - blockReference: "w-64:remediation.unspecified.step.explanation:1"
+    sourceSpans:
+      - physicalPage: 270
+        printedPage: "270"
+        pageRegionIdentifier: p270-w-64
+  - blockReference: "w-64:remediation.unspecified.step:2"
+    sourceSpans:
+      - physicalPage: 270
+        printedPage: "270"
+        pageRegionIdentifier: p270-w-64
+assets: []

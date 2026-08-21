@@ -1,0 +1,65 @@
+schemaVersion: 1
+criterionSlug: w-22
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "w-22:overview.heading:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:overview.reference.note.content:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:overview.reference.note.label:2"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:overview.reference.note.content:2"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:assessment.heading:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:remediation.heading:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:remediation.solaris.heading:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:remediation.solaris.paragraph:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:remediation.solaris.step:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:remediation.solaris.step:2"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:remediation.solaris.paragraph:2"
+    sourceSpans: [{physicalPage: 209, printedPage: "209", pageRegionIdentifier: p209-w-22}]
+  - blockReference: "w-22:remediation.solaris.step:3"
+    sourceSpans: [{physicalPage: 209, printedPage: "209", pageRegionIdentifier: p209-w-22}]
+  - blockReference: "w-22:remediation.solaris.step:4"
+    sourceSpans: [{physicalPage: 209, printedPage: "209", pageRegionIdentifier: p209-w-22}]
+assets: []

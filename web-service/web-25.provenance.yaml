@@ -1,0 +1,265 @@
+schemaVersion: 1
+criterionSlug: web-25
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "web-25:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 347
+        printedPage: "347"
+        pageRegionIdentifier: p347-web-25
+  - blockReference: "web-25:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 347
+        printedPage: "347"
+        pageRegionIdentifier: p347-web-25
+  - blockReference: "web-25:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 347
+        printedPage: "347"
+        pageRegionIdentifier: p347-web-25
+  - blockReference: "web-25:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 347
+        printedPage: "347"
+        pageRegionIdentifier: p347-web-25
+  - blockReference: "web-25:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 347
+        printedPage: "347"
+        pageRegionIdentifier: p347-web-25
+  - blockReference: "web-25:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 347
+        printedPage: "347"
+        pageRegionIdentifier: p347-web-25
+  - blockReference: "web-25:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 347
+        printedPage: "347"
+        pageRegionIdentifier: p347-web-25
+  - blockReference: "web-25:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 347
+        printedPage: "347"
+        pageRegionIdentifier: p347-web-25
+  - blockReference: "web-25:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 347
+        printedPage: "347"
+        pageRegionIdentifier: p347-web-25
+  - blockReference: "web-25:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 347
+        printedPage: "347"
+        pageRegionIdentifier: p347-web-25
+  - blockReference: "web-25:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 347
+        printedPage: "347"
+        pageRegionIdentifier: p347-web-25
+  - blockReference: "web-25:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 347
+        printedPage: "347"
+        pageRegionIdentifier: p347-web-25
+  - blockReference: "web-25:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 347
+        printedPage: "347"
+        pageRegionIdentifier: p347-web-25
+  - blockReference: "web-25:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 347
+        printedPage: "347"
+        pageRegionIdentifier: p347-web-25
+  - blockReference: "web-25:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 347
+        printedPage: "347"
+        pageRegionIdentifier: p347-web-25
+  - blockReference: "web-25:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 347
+        printedPage: "347"
+        pageRegionIdentifier: p347-web-25
+  - blockReference: "web-25:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 347
+        printedPage: "347"
+        pageRegionIdentifier: p347-web-25
+  - blockReference: "web-25:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 347
+        printedPage: "347"
+        pageRegionIdentifier: p347-web-25
+  - blockReference: "web-25:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 347
+        printedPage: "347"
+        pageRegionIdentifier: p347-web-25
+  - blockReference: "web-25:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 347
+        printedPage: "347"
+        pageRegionIdentifier: p347-web-25
+  - blockReference: "web-25:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 347
+        printedPage: "347"
+        pageRegionIdentifier: p347-web-25
+  - blockReference: "web-25:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 347
+        printedPage: "347"
+        pageRegionIdentifier: p347-web-25
+  - blockReference: "web-25:remediation.linux.paragraph:1"
+    sourceSpans:
+      - physicalPage: 347
+        printedPage: "347"
+        pageRegionIdentifier: p347-web-25
+  - blockReference: "web-25:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 347
+        printedPage: "347"
+        pageRegionIdentifier: p347-web-25
+  - blockReference: "web-25:remediation.linux.command:1"
+    sourceSpans:
+      - physicalPage: 347
+        printedPage: "347"
+        pageRegionIdentifier: p347-web-25
+  - blockReference: "web-25:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 347
+        printedPage: "347"
+        pageRegionIdentifier: p347-web-25
+  - blockReference: "web-25:remediation.linux.literal:1"
+    sourceSpans:
+      - physicalPage: 347
+        printedPage: "347"
+        pageRegionIdentifier: p347-web-25
+  - blockReference: "web-25:remediation.linux.paragraph:2"
+    sourceSpans:
+      - physicalPage: 348
+        printedPage: "348"
+        pageRegionIdentifier: p348-web-25
+  - blockReference: "web-25:remediation.linux.step:3"
+    sourceSpans:
+      - physicalPage: 348
+        printedPage: "348"
+        pageRegionIdentifier: p348-web-25
+  - blockReference: "web-25:remediation.linux.command:2"
+    sourceSpans:
+      - physicalPage: 348
+        printedPage: "348"
+        pageRegionIdentifier: p348-web-25
+  - blockReference: "web-25:remediation.linux.step:4"
+    sourceSpans:
+      - physicalPage: 348
+        printedPage: "348"
+        pageRegionIdentifier: p348-web-25
+  - blockReference: "web-25:remediation.linux.literal:2"
+    sourceSpans:
+      - physicalPage: 348
+        printedPage: "348"
+        pageRegionIdentifier: p348-web-25
+  - blockReference: "web-25:remediation.linux.paragraph:3"
+    sourceSpans:
+      - physicalPage: 348
+        printedPage: "348"
+        pageRegionIdentifier: p348-web-25
+  - blockReference: "web-25:remediation.linux.step:5"
+    sourceSpans:
+      - physicalPage: 348
+        printedPage: "348"
+        pageRegionIdentifier: p348-web-25
+  - blockReference: "web-25:remediation.linux.command:3"
+    sourceSpans:
+      - physicalPage: 348
+        printedPage: "348"
+        pageRegionIdentifier: p348-web-25
+  - blockReference: "web-25:remediation.linux.step:6"
+    sourceSpans:
+      - physicalPage: 348
+        printedPage: "348"
+        pageRegionIdentifier: p348-web-25
+  - blockReference: "web-25:remediation.linux.literal:3"
+    sourceSpans:
+      - physicalPage: 348
+        printedPage: "348"
+        pageRegionIdentifier: p348-web-25
+  - blockReference: "web-25:remediation.linux.paragraph:4"
+    sourceSpans:
+      - physicalPage: 348
+        printedPage: "348"
+        pageRegionIdentifier: p348-web-25
+  - blockReference: "web-25:remediation.linux.step:7"
+    sourceSpans:
+      - physicalPage: 348
+        printedPage: "348"
+        pageRegionIdentifier: p348-web-25
+  - blockReference: "web-25:remediation.linux.command:4"
+    sourceSpans:
+      - physicalPage: 348
+        printedPage: "348"
+        pageRegionIdentifier: p348-web-25
+  - blockReference: "web-25:remediation.linux.step:8"
+    sourceSpans:
+      - physicalPage: 348
+        printedPage: "348"
+        pageRegionIdentifier: p348-web-25
+  - blockReference: "web-25:remediation.linux.literal:4"
+    sourceSpans:
+      - physicalPage: 349
+        printedPage: "349"
+        pageRegionIdentifier: p349-web-25
+  - blockReference: "web-25:remediation.linux.paragraph:5"
+    sourceSpans:
+      - physicalPage: 349
+        printedPage: "349"
+        pageRegionIdentifier: p349-web-25
+  - blockReference: "web-25:remediation.linux.step:9"
+    sourceSpans:
+      - physicalPage: 349
+        printedPage: "349"
+        pageRegionIdentifier: p349-web-25
+  - blockReference: "web-25:remediation.linux.command:5"
+    sourceSpans:
+      - physicalPage: 349
+        printedPage: "349"
+        pageRegionIdentifier: p349-web-25
+  - blockReference: "web-25:remediation.linux.step:10"
+    sourceSpans:
+      - physicalPage: 349
+        printedPage: "349"
+        pageRegionIdentifier: p349-web-25
+  - blockReference: "web-25:remediation.linux.literal:5"
+    sourceSpans:
+      - physicalPage: 349
+        printedPage: "349"
+        pageRegionIdentifier: p349-web-25
+  - blockReference: "web-25:remediation.linux.paragraph:6"
+    sourceSpans:
+      - physicalPage: 349
+        printedPage: "349"
+        pageRegionIdentifier: p349-web-25
+  - blockReference: "web-25:remediation.linux.step:11"
+    sourceSpans:
+      - physicalPage: 349
+        printedPage: "349"
+        pageRegionIdentifier: p349-web-25
+  - blockReference: "web-25:remediation.linux.command:6"
+    sourceSpans:
+      - physicalPage: 349
+        printedPage: "349"
+        pageRegionIdentifier: p349-web-25
+  - blockReference: "web-25:remediation.linux.step:12"
+    sourceSpans:
+      - physicalPage: 349
+        printedPage: "349"
+        pageRegionIdentifier: p349-web-25
+  - blockReference: "web-25:remediation.linux.literal:6"
+    sourceSpans:
+      - physicalPage: 349
+        printedPage: "349"
+        pageRegionIdentifier: p349-web-25
+assets: []

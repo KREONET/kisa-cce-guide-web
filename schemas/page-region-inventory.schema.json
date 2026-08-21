@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zeroday0619.github.io/kisa-cce-guide/schemas/page-region-inventory.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "completionStatus",
+    "sourceDocumentIdentifier",
+    "expectedPhysicalPageCount",
+    "registeredPhysicalPageCount",
+    "unclassifiedContentBlockCount",
+    "coordinateSystem",
+    "pageRegions"
+  ],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "completionStatus": {"enum": ["partial", "complete"]},
+    "sourceDocumentIdentifier": {"type": "string", "minLength": 1},
+    "expectedPhysicalPageCount": {"type": "integer", "minimum": 1},
+    "registeredPhysicalPageCount": {"type": "integer", "minimum": 0},
+    "unclassifiedContentBlockCount": {"type": "integer", "minimum": 0},
+    "coordinateSystem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["origin", "unit"],
+      "properties": {
+        "origin": {"const": "topLeft"},
+        "unit": {"const": "normalizedPage"}
+      }
+    },
+    "pageRegions": {"type": "array", "items": {"$ref": "#/$defs/pageRegion"}}
+  },
+  "$defs": {
+    "boundingBox": {
+      "type": "array",
+      "prefixItems": [
+        {"type": "number", "minimum": 0, "maximum": 1},
+        {"type": "number", "minimum": 0, "maximum": 1},
+        {"type": "number", "minimum": 0, "maximum": 1},
+        {"type": "number", "minimum": 0, "maximum": 1}
+      ],
+      "items": false,
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "pageRegion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pageRegionIdentifier",
+        "physicalPage",
+        "printedPage",
+        "boundingBox",
+        "role",
+        "ownerType",
+        "ownerIdentifier",
+        "publicationDisposition"
+      ],
+      "properties": {
+        "pageRegionIdentifier": {"type": "string", "pattern": "^p[0-9]+-[a-z0-9-]+$"},
+        "physicalPage": {"type": "integer", "minimum": 1},
+        "printedPage": {"type": "string", "minLength": 1},
+        "boundingBox": {"$ref": "#/$defs/boundingBox"},
+        "role": {"enum": ["frontMatter", "navigation", "criterion", "backMatter", "excludedDecoration"]},
+        "ownerType": {"enum": ["document", "navigation", "criterion"]},
+        "ownerIdentifier": {"type": "string", "minLength": 1},
+        "publicationDisposition": {"enum": ["published", "derived", "excluded"]},
+        "exclusionReason": {"type": "string", "minLength": 1}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"publicationDisposition": {"const": "excluded"}}},
+          "then": {"required": ["exclusionReason"]}
+        }
+      ]
+    }
+  }
+}

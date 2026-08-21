@@ -1,0 +1,89 @@
+schemaVersion: 1
+criterionSlug: bf
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "bf:overview.heading:1"
+    sourceSpans: [{physicalPage: 726, printedPage: "726", pageRegionIdentifier: p726-bf}]
+  - blockReference: "bf:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 726, printedPage: "726", pageRegionIdentifier: p726-bf}]
+  - blockReference: "bf:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 726, printedPage: "726", pageRegionIdentifier: p726-bf}]
+  - blockReference: "bf:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 726, printedPage: "726", pageRegionIdentifier: p726-bf}]
+  - blockReference: "bf:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 726, printedPage: "726", pageRegionIdentifier: p726-bf}]
+  - blockReference: "bf:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 726, printedPage: "726", pageRegionIdentifier: p726-bf}]
+  - blockReference: "bf:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 726, printedPage: "726", pageRegionIdentifier: p726-bf}]
+  - blockReference: "bf:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 726, printedPage: "726", pageRegionIdentifier: p726-bf}]
+  - blockReference: "bf:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 726, printedPage: "726", pageRegionIdentifier: p726-bf}]
+  - blockReference: "bf:overview.reference.note.content:1"
+    sourceSpans: [{physicalPage: 726, printedPage: "726", pageRegionIdentifier: p726-bf}]
+  - blockReference: "bf:overview.reference.note.label:2"
+    sourceSpans: [{physicalPage: 726, printedPage: "726", pageRegionIdentifier: p726-bf}]
+  - blockReference: "bf:overview.reference.note.content:2"
+    sourceSpans: [{physicalPage: 726, printedPage: "726", pageRegionIdentifier: p726-bf}]
+  - blockReference: "bf:assessment.heading:1"
+    sourceSpans: [{physicalPage: 726, printedPage: "726", pageRegionIdentifier: p726-bf}]
+  - blockReference: "bf:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 726, printedPage: "726", pageRegionIdentifier: p726-bf}]
+  - blockReference: "bf:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 726, printedPage: "726", pageRegionIdentifier: p726-bf}]
+  - blockReference: "bf:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 726, printedPage: "726", pageRegionIdentifier: p726-bf}]
+  - blockReference: "bf:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 726, printedPage: "726", pageRegionIdentifier: p726-bf}]
+  - blockReference: "bf:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 726, printedPage: "726", pageRegionIdentifier: p726-bf}]
+  - blockReference: "bf:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 726, printedPage: "726", pageRegionIdentifier: p726-bf}]
+  - blockReference: "bf:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 726, printedPage: "726", pageRegionIdentifier: p726-bf}]
+  - blockReference: "bf:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 726, printedPage: "726", pageRegionIdentifier: p726-bf}]
+  - blockReference: "bf:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 726, printedPage: "726", pageRegionIdentifier: p726-bf}]
+  - blockReference: "bf:remediation.heading:1"
+    sourceSpans: [{physicalPage: 726, printedPage: "726", pageRegionIdentifier: p726-bf}]
+  - blockReference: "bf:remediation.solaris.heading:1"
+    sourceSpans:
+      - {physicalPage: 726, printedPage: "726", pageRegionIdentifier: p726-bf}
+      - {physicalPage: 727, printedPage: "727", pageRegionIdentifier: p727-bf}
+  - blockReference: "bf:remediation.solaris.step:1"
+    sourceSpans: [{physicalPage: 726, printedPage: "726", pageRegionIdentifier: p726-bf}]
+  - blockReference: "bf:remediation.solaris.step:2"
+    sourceSpans: [{physicalPage: 727, printedPage: "727", pageRegionIdentifier: p727-bf}]
+  - blockReference: "bf:remediation.solaris.step:3"
+    sourceSpans: [{physicalPage: 727, printedPage: "727", pageRegionIdentifier: p727-bf}]
+  - blockReference: "bf:remediation.solaris.step:4"
+    sourceSpans: [{physicalPage: 727, printedPage: "727", pageRegionIdentifier: p727-bf}]
+  - blockReference: "bf:remediation.solaris.step:5"
+    sourceSpans: [{physicalPage: 727, printedPage: "727", pageRegionIdentifier: p727-bf}]
+  - blockReference: "bf:remediation.solaris.table:1"
+    sourceSpans: [{physicalPage: 727, printedPage: "727", pageRegionIdentifier: p727-bf}]
+  - blockReference: "bf:remediation.solaris.step:6"
+    sourceSpans: [{physicalPage: 727, printedPage: "727", pageRegionIdentifier: p727-bf}]
+  - blockReference: "bf:remediation.solaris.step:7"
+    sourceSpans: [{physicalPage: 727, printedPage: "727", pageRegionIdentifier: p727-bf}]
+  - blockReference: "bf:remediation.solaris.step:8"
+    sourceSpans: [{physicalPage: 727, printedPage: "727", pageRegionIdentifier: p727-bf}]
+  - blockReference: "bf:remediation.solaris.step:9"
+    sourceSpans: [{physicalPage: 727, printedPage: "727", pageRegionIdentifier: p727-bf}]
+  - blockReference: "bf:remediation.solaris.step:10"
+    sourceSpans: [{physicalPage: 727, printedPage: "727", pageRegionIdentifier: p727-bf}]
+  - blockReference: "bf:remediation.solaris.step:11"
+    sourceSpans: [{physicalPage: 727, printedPage: "727", pageRegionIdentifier: p727-bf}]
+  - blockReference: "bf:remediation.solaris.step:12"
+    sourceSpans: [{physicalPage: 727, printedPage: "727", pageRegionIdentifier: p727-bf}]
+  - blockReference: "bf:remediation.solaris.step:13"
+    sourceSpans: [{physicalPage: 727, printedPage: "727", pageRegionIdentifier: p727-bf}]
+  - blockReference: "bf:remediation.supplementaryGuidance.heading:1"
+    sourceSpans: [{physicalPage: 728, printedPage: "728", pageRegionIdentifier: p728-bf}]
+  - blockReference: "bf:remediation.supplementaryGuidance.literal:1"
+    sourceSpans: [{physicalPage: 728, printedPage: "728", pageRegionIdentifier: p728-bf}]
+  - blockReference: "bf:remediation.supplementaryGuidance.step:1"
+    sourceSpans: [{physicalPage: 728, printedPage: "728", pageRegionIdentifier: p728-bf}]
+assets: []

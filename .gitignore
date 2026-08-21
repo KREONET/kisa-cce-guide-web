@@ -1,0 +1,11 @@
+.venv/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.ty/
+__pycache__/
+*.py[cod]
+work/codex/
+work/codex-*/
+work/logs/

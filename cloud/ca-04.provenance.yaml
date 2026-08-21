@@ -1,0 +1,140 @@
+schemaVersion: 1
+criterionSlug: ca-04
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "ca-04:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 857
+        printedPage: "857"
+        pageRegionIdentifier: p857-ca-04
+  - blockReference: "ca-04:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 857
+        printedPage: "857"
+        pageRegionIdentifier: p857-ca-04
+  - blockReference: "ca-04:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 857
+        printedPage: "857"
+        pageRegionIdentifier: p857-ca-04
+  - blockReference: "ca-04:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 857
+        printedPage: "857"
+        pageRegionIdentifier: p857-ca-04
+  - blockReference: "ca-04:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 857
+        printedPage: "857"
+        pageRegionIdentifier: p857-ca-04
+  - blockReference: "ca-04:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 857
+        printedPage: "857"
+        pageRegionIdentifier: p857-ca-04
+  - blockReference: "ca-04:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 857
+        printedPage: "857"
+        pageRegionIdentifier: p857-ca-04
+  - blockReference: "ca-04:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 857
+        printedPage: "857"
+        pageRegionIdentifier: p857-ca-04
+  - blockReference: "ca-04:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 857
+        printedPage: "857"
+        pageRegionIdentifier: p857-ca-04
+  - blockReference: "ca-04:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 857
+        printedPage: "857"
+        pageRegionIdentifier: p857-ca-04
+  - blockReference: "ca-04:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 857
+        printedPage: "857"
+        pageRegionIdentifier: p857-ca-04
+  - blockReference: "ca-04:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 857
+        printedPage: "857"
+        pageRegionIdentifier: p857-ca-04
+  - blockReference: "ca-04:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 857
+        printedPage: "857"
+        pageRegionIdentifier: p857-ca-04
+  - blockReference: "ca-04:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 857
+        printedPage: "857"
+        pageRegionIdentifier: p857-ca-04
+  - blockReference: "ca-04:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 857
+        printedPage: "857"
+        pageRegionIdentifier: p857-ca-04
+  - blockReference: "ca-04:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 857
+        printedPage: "857"
+        pageRegionIdentifier: p857-ca-04
+  - blockReference: "ca-04:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 857
+        printedPage: "857"
+        pageRegionIdentifier: p857-ca-04
+  - blockReference: "ca-04:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 857
+        printedPage: "857"
+        pageRegionIdentifier: p857-ca-04
+  - blockReference: "ca-04:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 857
+        printedPage: "857"
+        pageRegionIdentifier: p857-ca-04
+  - blockReference: "ca-04:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 857
+        printedPage: "857"
+        pageRegionIdentifier: p857-ca-04
+  - blockReference: "ca-04:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 857
+        printedPage: "857"
+        pageRegionIdentifier: p857-ca-04
+  - blockReference: "ca-04:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 857
+        printedPage: "857"
+        pageRegionIdentifier: p857-ca-04
+  - blockReference: "ca-04:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 857
+        printedPage: "857"
+        pageRegionIdentifier: p857-ca-04
+  - blockReference: "ca-04:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - physicalPage: 857
+        printedPage: "857"
+        pageRegionIdentifier: p857-ca-04
+  - blockReference: "ca-04:remediation.supplementaryGuidance.step:1"
+    sourceSpans:
+      - physicalPage: 857
+        printedPage: "857"
+        pageRegionIdentifier: p857-ca-04
+  - blockReference: "ca-04:remediation.supplementaryGuidance.item:1"
+    sourceSpans:
+      - physicalPage: 857
+        printedPage: "857"
+        pageRegionIdentifier: p857-ca-04
+  - blockReference: "ca-04:remediation.supplementaryGuidance.item:2"
+    sourceSpans:
+      - physicalPage: 857
+        printedPage: "857"
+        pageRegionIdentifier: p857-ca-04
+assets: []

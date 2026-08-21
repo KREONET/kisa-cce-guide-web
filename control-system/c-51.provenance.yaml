@@ -1,0 +1,135 @@
+schemaVersion: 1
+criterionSlug: c-51
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "c-51:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 551
+        printedPage: "551"
+        pageRegionIdentifier: p551-c-51
+  - blockReference: "c-51:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 551
+        printedPage: "551"
+        pageRegionIdentifier: p551-c-51
+  - blockReference: "c-51:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 551
+        printedPage: "551"
+        pageRegionIdentifier: p551-c-51
+  - blockReference: "c-51:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 551
+        printedPage: "551"
+        pageRegionIdentifier: p551-c-51
+  - blockReference: "c-51:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 551
+        printedPage: "551"
+        pageRegionIdentifier: p551-c-51
+  - blockReference: "c-51:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 551
+        printedPage: "551"
+        pageRegionIdentifier: p551-c-51
+  - blockReference: "c-51:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 551
+        printedPage: "551"
+        pageRegionIdentifier: p551-c-51
+  - blockReference: "c-51:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 551
+        printedPage: "551"
+        pageRegionIdentifier: p551-c-51
+  - blockReference: "c-51:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 551
+        printedPage: "551"
+        pageRegionIdentifier: p551-c-51
+  - blockReference: "c-51:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 551
+        printedPage: "551"
+        pageRegionIdentifier: p551-c-51
+  - blockReference: "c-51:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 551
+        printedPage: "551"
+        pageRegionIdentifier: p551-c-51
+  - blockReference: "c-51:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 551
+        printedPage: "551"
+        pageRegionIdentifier: p551-c-51
+  - blockReference: "c-51:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 551
+        printedPage: "551"
+        pageRegionIdentifier: p551-c-51
+  - blockReference: "c-51:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 551
+        printedPage: "551"
+        pageRegionIdentifier: p551-c-51
+  - blockReference: "c-51:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 551
+        printedPage: "551"
+        pageRegionIdentifier: p551-c-51
+  - blockReference: "c-51:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 551
+        printedPage: "551"
+        pageRegionIdentifier: p551-c-51
+  - blockReference: "c-51:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 551
+        printedPage: "551"
+        pageRegionIdentifier: p551-c-51
+  - blockReference: "c-51:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 551
+        printedPage: "551"
+        pageRegionIdentifier: p551-c-51
+  - blockReference: "c-51:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 551
+        printedPage: "551"
+        pageRegionIdentifier: p551-c-51
+  - blockReference: "c-51:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 551
+        printedPage: "551"
+        pageRegionIdentifier: p551-c-51
+  - blockReference: "c-51:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 551
+        printedPage: "551"
+        pageRegionIdentifier: p551-c-51
+  - blockReference: "c-51:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 551
+        printedPage: "551"
+        pageRegionIdentifier: p551-c-51
+  - blockReference: "c-51:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 551
+        printedPage: "551"
+        pageRegionIdentifier: p551-c-51
+  - blockReference: "c-51:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - physicalPage: 551
+        printedPage: "551"
+        pageRegionIdentifier: p551-c-51
+  - blockReference: "c-51:remediation.supplementaryGuidance.step:1"
+    sourceSpans:
+      - physicalPage: 551
+        printedPage: "551"
+        pageRegionIdentifier: p551-c-51
+  - blockReference: "c-51:remediation.supplementaryGuidance.step:2"
+    sourceSpans:
+      - physicalPage: 551
+        printedPage: "551"
+        pageRegionIdentifier: p551-c-51
+assets: []

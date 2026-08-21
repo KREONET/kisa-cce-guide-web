@@ -1,0 +1,125 @@
+schemaVersion: 1
+criterionSlug: u-22
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "u-22:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:remediation.solaris.heading:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:remediation.solaris.step:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:remediation.solaris.command:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+assets: []

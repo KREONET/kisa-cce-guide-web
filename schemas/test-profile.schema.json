@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zeroday0619.github.io/kisa-cce-guide/schemas/test-profile.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "profileIdentifier",
+    "profileVersion",
+    "completionStatus",
+    "browserEngine",
+    "browserVersion",
+    "viewportProfiles",
+    "fontProfile",
+    "accessibilityRuleSet",
+    "screenshotDifferenceThreshold",
+    "printProfile"
+  ],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "profileIdentifier": {"type": "string", "minLength": 1},
+    "profileVersion": {"type": "integer", "minimum": 1},
+    "completionStatus": {"enum": ["partial", "complete"]},
+    "browserEngine": {"type": ["string", "null"]},
+    "browserVersion": {"type": ["string", "null"]},
+    "viewportProfiles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["identifier", "width", "height", "devicePixelRatio"],
+        "properties": {
+          "identifier": {"type": "string", "minLength": 1},
+          "width": {"type": "integer", "minimum": 1},
+          "height": {"type": "integer", "minimum": 1},
+          "devicePixelRatio": {"type": "number", "exclusiveMinimum": 0}
+        }
+      }
+    },
+    "fontProfile": {"type": ["string", "null"]},
+    "accessibilityRuleSet": {"type": ["string", "null"]},
+    "screenshotDifferenceThreshold": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+    "printProfile": {"type": ["string", "null"]}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"completionStatus": {"const": "complete"}}},
+      "then": {
+        "properties": {
+          "browserEngine": {"type": "string", "minLength": 1},
+          "browserVersion": {"type": "string", "minLength": 1},
+          "viewportProfiles": {"minItems": 1},
+          "fontProfile": {"type": "string", "minLength": 1},
+          "accessibilityRuleSet": {"type": "string", "minLength": 1},
+          "screenshotDifferenceThreshold": {"type": "number", "minimum": 0, "maximum": 1},
+          "printProfile": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  ]
+}

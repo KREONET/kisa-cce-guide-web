@@ -1,0 +1,84 @@
+schemaVersion: 1
+criterionSlug: web-12
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "web-12:overview.heading:1"
+    sourceSpans: [{physicalPage: 305, printedPage: "305", pageRegionIdentifier: p305-web-12}]
+  - blockReference: "web-12:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 305, printedPage: "305", pageRegionIdentifier: p305-web-12}]
+  - blockReference: "web-12:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 305, printedPage: "305", pageRegionIdentifier: p305-web-12}]
+  - blockReference: "web-12:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 305, printedPage: "305", pageRegionIdentifier: p305-web-12}]
+  - blockReference: "web-12:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 305, printedPage: "305", pageRegionIdentifier: p305-web-12}]
+  - blockReference: "web-12:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 305, printedPage: "305", pageRegionIdentifier: p305-web-12}]
+  - blockReference: "web-12:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 305, printedPage: "305", pageRegionIdentifier: p305-web-12}]
+  - blockReference: "web-12:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 305, printedPage: "305", pageRegionIdentifier: p305-web-12}]
+  - blockReference: "web-12:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 305, printedPage: "305", pageRegionIdentifier: p305-web-12}]
+  - blockReference: "web-12:overview.reference.note.content:1"
+    sourceSpans: [{physicalPage: 305, printedPage: "305", pageRegionIdentifier: p305-web-12}]
+  - blockReference: "web-12:assessment.heading:1"
+    sourceSpans: [{physicalPage: 305, printedPage: "305", pageRegionIdentifier: p305-web-12}]
+  - blockReference: "web-12:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 305, printedPage: "305", pageRegionIdentifier: p305-web-12}]
+  - blockReference: "web-12:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 305, printedPage: "305", pageRegionIdentifier: p305-web-12}]
+  - blockReference: "web-12:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 305, printedPage: "305", pageRegionIdentifier: p305-web-12}]
+  - blockReference: "web-12:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 305, printedPage: "305", pageRegionIdentifier: p305-web-12}]
+  - blockReference: "web-12:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 305, printedPage: "305", pageRegionIdentifier: p305-web-12}]
+  - blockReference: "web-12:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 305, printedPage: "305", pageRegionIdentifier: p305-web-12}]
+  - blockReference: "web-12:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 305, printedPage: "305", pageRegionIdentifier: p305-web-12}]
+  - blockReference: "web-12:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 305, printedPage: "305", pageRegionIdentifier: p305-web-12}]
+  - blockReference: "web-12:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 305, printedPage: "305", pageRegionIdentifier: p305-web-12}]
+  - blockReference: "web-12:remediation.heading:1"
+    sourceSpans: [{physicalPage: 305, printedPage: "305", pageRegionIdentifier: p305-web-12}]
+  - blockReference: "web-12:remediation.unspecified.heading:1"
+    sourceSpans:
+      - physicalPage: 305
+        printedPage: "305"
+        pageRegionIdentifier: p305-web-12
+      - physicalPage: 306
+        printedPage: "306"
+        pageRegionIdentifier: p306-web-12
+      - physicalPage: 307
+        printedPage: "307"
+        pageRegionIdentifier: p307-web-12
+  - blockReference: "web-12:remediation.unspecified.step:1"
+    sourceSpans: [{physicalPage: 305, printedPage: "305", pageRegionIdentifier: p305-web-12}]
+  - blockReference: "web-12:remediation.unspecified.configuration:1"
+    sourceSpans: [{physicalPage: 305, printedPage: "305", pageRegionIdentifier: p305-web-12}]
+  - blockReference: "web-12:remediation.unspecified.step:2"
+    sourceSpans: [{physicalPage: 306, printedPage: "306", pageRegionIdentifier: p306-web-12}]
+  - blockReference: "web-12:remediation.unspecified.configuration:2"
+    sourceSpans: [{physicalPage: 306, printedPage: "306", pageRegionIdentifier: p306-web-12}]
+  - blockReference: "web-12:remediation.unspecified.step:3"
+    sourceSpans: [{physicalPage: 306, printedPage: "306", pageRegionIdentifier: p306-web-12}]
+  - blockReference: "web-12:remediation.unspecified.configuration:3"
+    sourceSpans: [{physicalPage: 306, printedPage: "306", pageRegionIdentifier: p306-web-12}]
+  - blockReference: "web-12:remediation.unspecified.step:4"
+    sourceSpans: [{physicalPage: 306, printedPage: "306", pageRegionIdentifier: p306-web-12}]
+  - blockReference: "web-12:remediation.unspecified.literal:1"
+    sourceSpans: [{physicalPage: 306, printedPage: "306", pageRegionIdentifier: p306-web-12}]
+  - blockReference: "web-12:remediation.unspecified.step:5"
+    sourceSpans: [{physicalPage: 307, printedPage: "307", pageRegionIdentifier: p307-web-12}]
+  - blockReference: "web-12:remediation.unspecified.configuration:4"
+    sourceSpans: [{physicalPage: 307, printedPage: "307", pageRegionIdentifier: p307-web-12}]
+  - blockReference: "web-12:remediation.unspecified.step:6"
+    sourceSpans: [{physicalPage: 307, printedPage: "307", pageRegionIdentifier: p307-web-12}]
+  - blockReference: "web-12:remediation.unspecified.command:1"
+    sourceSpans: [{physicalPage: 307, printedPage: "307", pageRegionIdentifier: p307-web-12}]
+  - blockReference: "web-12:remediation.unspecified.configuration:5"
+    sourceSpans: [{physicalPage: 307, printedPage: "307", pageRegionIdentifier: p307-web-12}]
+assets: []

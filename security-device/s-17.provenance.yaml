@@ -1,0 +1,63 @@
+schemaVersion: 1
+criterionSlug: s-17
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "s-17:overview.heading:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:overview.reference.note.content:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:assessment.heading:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:remediation.heading:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:remediation.supplementaryGuidance.heading:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:remediation.supplementaryGuidance.step:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:remediation.supplementaryGuidance.step:2"
+    sourceSpans:
+      - physicalPage: 376
+        printedPage: "376"
+        pageRegionIdentifier: p376-s-17
+      - physicalPage: 377
+        printedPage: "377"
+        pageRegionIdentifier: p377-s-17
+  - blockReference: "s-17:remediation.supplementaryGuidance.configuration:1"
+    sourceSpans: [{physicalPage: 377, printedPage: "377", pageRegionIdentifier: p377-s-17}]
+  - blockReference: "s-17:remediation.supplementaryGuidance.step:3"
+    sourceSpans: [{physicalPage: 377, printedPage: "377", pageRegionIdentifier: p377-s-17}]
+assets: []

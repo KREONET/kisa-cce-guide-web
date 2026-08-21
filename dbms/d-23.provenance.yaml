@@ -1,0 +1,240 @@
+schemaVersion: 1
+criterionSlug: d-23
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "d-23:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:remediation.linux.step:3"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:remediation.linux.step:4"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:remediation.linux.step:5"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:remediation.linux.command:1"
+    sourceSpans:
+      - physicalPage: 658
+        printedPage: "658"
+        pageRegionIdentifier: p658-d-23
+  - blockReference: "d-23:remediation.linux.step.explanation:5"
+    sourceSpans:
+      - physicalPage: 658
+        printedPage: "658"
+        pageRegionIdentifier: p658-d-23
+  - blockReference: "d-23:remediation.linux.step:6"
+    sourceSpans:
+      - physicalPage: 658
+        printedPage: "658"
+        pageRegionIdentifier: p658-d-23
+  - blockReference: "d-23:remediation.linux.step:7"
+    sourceSpans:
+      - physicalPage: 658
+        printedPage: "658"
+        pageRegionIdentifier: p658-d-23
+  - blockReference: "d-23:remediation.linux.step.explanation:7"
+    sourceSpans:
+      - physicalPage: 658
+        printedPage: "658"
+        pageRegionIdentifier: p658-d-23
+  - blockReference: "d-23:remediation.linux.step:8"
+    sourceSpans:
+      - physicalPage: 658
+        printedPage: "658"
+        pageRegionIdentifier: p658-d-23
+  - blockReference: "d-23:remediation.linux.command:2"
+    sourceSpans:
+      - physicalPage: 658
+        printedPage: "658"
+        pageRegionIdentifier: p658-d-23
+  - blockReference: "d-23:remediation.linux.step:9"
+    sourceSpans:
+      - physicalPage: 658
+        printedPage: "658"
+        pageRegionIdentifier: p658-d-23
+  - blockReference: "d-23:remediation.linux.step:10"
+    sourceSpans:
+      - physicalPage: 658
+        printedPage: "658"
+        pageRegionIdentifier: p658-d-23
+  - blockReference: "d-23:remediation.linux.step:11"
+    sourceSpans:
+      - physicalPage: 658
+        printedPage: "658"
+        pageRegionIdentifier: p658-d-23
+  - blockReference: "d-23:remediation.linux.step.explanation:11"
+    sourceSpans:
+      - physicalPage: 658
+        printedPage: "658"
+        pageRegionIdentifier: p658-d-23
+  - blockReference: "d-23:remediation.linux.step:12"
+    sourceSpans:
+      - physicalPage: 659
+        printedPage: "659"
+        pageRegionIdentifier: p659-d-23
+  - blockReference: "d-23:remediation.linux.command:3"
+    sourceSpans:
+      - physicalPage: 659
+        printedPage: "659"
+        pageRegionIdentifier: p659-d-23
+  - blockReference: "d-23:remediation.linux.step:13"
+    sourceSpans:
+      - physicalPage: 659
+        printedPage: "659"
+        pageRegionIdentifier: p659-d-23
+  - blockReference: "d-23:remediation.linux.step:14"
+    sourceSpans:
+      - physicalPage: 659
+        printedPage: "659"
+        pageRegionIdentifier: p659-d-23
+  - blockReference: "d-23:remediation.linux.step.explanation:14"
+    sourceSpans:
+      - physicalPage: 659
+        printedPage: "659"
+        pageRegionIdentifier: p659-d-23
+  - blockReference: "d-23:remediation.linux.step:15"
+    sourceSpans:
+      - physicalPage: 660
+        printedPage: "660"
+        pageRegionIdentifier: p660-d-23
+  - blockReference: "d-23:remediation.linux.step:16"
+    sourceSpans:
+      - physicalPage: 660
+        printedPage: "660"
+        pageRegionIdentifier: p660-d-23
+  - blockReference: "d-23:remediation.linux.command:4"
+    sourceSpans:
+      - physicalPage: 660
+        printedPage: "660"
+        pageRegionIdentifier: p660-d-23
+  - blockReference: "d-23:remediation.linux.step:17"
+    sourceSpans:
+      - physicalPage: 660
+        printedPage: "660"
+        pageRegionIdentifier: p660-d-23
+  - blockReference: "d-23:remediation.linux.command:5"
+    sourceSpans:
+      - physicalPage: 660
+        printedPage: "660"
+        pageRegionIdentifier: p660-d-23
+assets: []

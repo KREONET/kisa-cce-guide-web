@@ -1,0 +1,135 @@
+schemaVersion: 1
+criterionSlug: w-54
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "w-54:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 255
+        printedPage: "255"
+        pageRegionIdentifier: p255-w-54
+  - blockReference: "w-54:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 255
+        printedPage: "255"
+        pageRegionIdentifier: p255-w-54
+  - blockReference: "w-54:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 255
+        printedPage: "255"
+        pageRegionIdentifier: p255-w-54
+  - blockReference: "w-54:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 255
+        printedPage: "255"
+        pageRegionIdentifier: p255-w-54
+  - blockReference: "w-54:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 255
+        printedPage: "255"
+        pageRegionIdentifier: p255-w-54
+  - blockReference: "w-54:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 255
+        printedPage: "255"
+        pageRegionIdentifier: p255-w-54
+  - blockReference: "w-54:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 255
+        printedPage: "255"
+        pageRegionIdentifier: p255-w-54
+  - blockReference: "w-54:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 255
+        printedPage: "255"
+        pageRegionIdentifier: p255-w-54
+  - blockReference: "w-54:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 255
+        printedPage: "255"
+        pageRegionIdentifier: p255-w-54
+  - blockReference: "w-54:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 255
+        printedPage: "255"
+        pageRegionIdentifier: p255-w-54
+  - blockReference: "w-54:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 255
+        printedPage: "255"
+        pageRegionIdentifier: p255-w-54
+  - blockReference: "w-54:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 255
+        printedPage: "255"
+        pageRegionIdentifier: p255-w-54
+  - blockReference: "w-54:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 255
+        printedPage: "255"
+        pageRegionIdentifier: p255-w-54
+  - blockReference: "w-54:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 255
+        printedPage: "255"
+        pageRegionIdentifier: p255-w-54
+  - blockReference: "w-54:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 255
+        printedPage: "255"
+        pageRegionIdentifier: p255-w-54
+  - blockReference: "w-54:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 255
+        printedPage: "255"
+        pageRegionIdentifier: p255-w-54
+  - blockReference: "w-54:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 255
+        printedPage: "255"
+        pageRegionIdentifier: p255-w-54
+  - blockReference: "w-54:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 255
+        printedPage: "255"
+        pageRegionIdentifier: p255-w-54
+  - blockReference: "w-54:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 255
+        printedPage: "255"
+        pageRegionIdentifier: p255-w-54
+  - blockReference: "w-54:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 255
+        printedPage: "255"
+        pageRegionIdentifier: p255-w-54
+  - blockReference: "w-54:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 255
+        printedPage: "255"
+        pageRegionIdentifier: p255-w-54
+  - blockReference: "w-54:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 255
+        printedPage: "255"
+        pageRegionIdentifier: p255-w-54
+  - blockReference: "w-54:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 255
+        printedPage: "255"
+        pageRegionIdentifier: p255-w-54
+  - blockReference: "w-54:remediation.linux.configuration:1"
+    sourceSpans:
+      - physicalPage: 255
+        printedPage: "255"
+        pageRegionIdentifier: p255-w-54
+  - blockReference: "w-54:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 255
+        printedPage: "255"
+        pageRegionIdentifier: p255-w-54
+  - blockReference: "w-54:remediation.linux.configuration:2"
+    sourceSpans:
+      - physicalPage: 255
+        printedPage: "255"
+        pageRegionIdentifier: p255-w-54
+assets: []

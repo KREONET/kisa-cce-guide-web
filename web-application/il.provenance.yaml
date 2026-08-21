@@ -1,0 +1,195 @@
+schemaVersion: 1
+criterionSlug: il
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "il:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 708
+        printedPage: "708"
+        pageRegionIdentifier: p708-il
+  - blockReference: "il:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 708
+        printedPage: "708"
+        pageRegionIdentifier: p708-il
+  - blockReference: "il:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 708
+        printedPage: "708"
+        pageRegionIdentifier: p708-il
+  - blockReference: "il:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 708
+        printedPage: "708"
+        pageRegionIdentifier: p708-il
+  - blockReference: "il:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 708
+        printedPage: "708"
+        pageRegionIdentifier: p708-il
+  - blockReference: "il:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 708
+        printedPage: "708"
+        pageRegionIdentifier: p708-il
+  - blockReference: "il:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 708
+        printedPage: "708"
+        pageRegionIdentifier: p708-il
+  - blockReference: "il:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 708
+        printedPage: "708"
+        pageRegionIdentifier: p708-il
+  - blockReference: "il:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 708
+        printedPage: "708"
+        pageRegionIdentifier: p708-il
+  - blockReference: "il:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 708
+        printedPage: "708"
+        pageRegionIdentifier: p708-il
+  - blockReference: "il:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 708
+        printedPage: "708"
+        pageRegionIdentifier: p708-il
+  - blockReference: "il:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 708
+        printedPage: "708"
+        pageRegionIdentifier: p708-il
+  - blockReference: "il:overview.reference.note.label:3"
+    sourceSpans:
+      - physicalPage: 708
+        printedPage: "708"
+        pageRegionIdentifier: p708-il
+  - blockReference: "il:overview.reference.note.content:3"
+    sourceSpans:
+      - physicalPage: 708
+        printedPage: "708"
+        pageRegionIdentifier: p708-il
+  - blockReference: "il:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 708
+        printedPage: "708"
+        pageRegionIdentifier: p708-il
+  - blockReference: "il:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 708
+        printedPage: "708"
+        pageRegionIdentifier: p708-il
+  - blockReference: "il:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 708
+        printedPage: "708"
+        pageRegionIdentifier: p708-il
+  - blockReference: "il:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 708
+        printedPage: "708"
+        pageRegionIdentifier: p708-il
+  - blockReference: "il:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 708
+        printedPage: "708"
+        pageRegionIdentifier: p708-il
+  - blockReference: "il:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 708
+        printedPage: "708"
+        pageRegionIdentifier: p708-il
+  - blockReference: "il:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 708
+        printedPage: "708"
+        pageRegionIdentifier: p708-il
+  - blockReference: "il:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 708
+        printedPage: "708"
+        pageRegionIdentifier: p708-il
+  - blockReference: "il:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 708
+        printedPage: "708"
+        pageRegionIdentifier: p708-il
+  - blockReference: "il:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 708
+        printedPage: "708"
+        pageRegionIdentifier: p708-il
+  - blockReference: "il:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 709
+        printedPage: "709"
+        pageRegionIdentifier: p709-il
+  - blockReference: "il:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 709
+        printedPage: "709"
+        pageRegionIdentifier: p709-il
+  - blockReference: "il:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 709
+        printedPage: "709"
+        pageRegionIdentifier: p709-il
+  - blockReference: "il:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 709
+        printedPage: "709"
+        pageRegionIdentifier: p709-il
+  - blockReference: "il:remediation.linux.step:3"
+    sourceSpans:
+      - physicalPage: 710
+        printedPage: "710"
+        pageRegionIdentifier: p710-il
+  - blockReference: "il:remediation.linux.step:4"
+    sourceSpans:
+      - physicalPage: 710
+        printedPage: "710"
+        pageRegionIdentifier: p710-il
+  - blockReference: "il:remediation.linux.step:5"
+    sourceSpans:
+      - physicalPage: 710
+        printedPage: "710"
+        pageRegionIdentifier: p710-il
+  - blockReference: "il:remediation.linux.step:6"
+    sourceSpans:
+      - physicalPage: 710
+        printedPage: "710"
+        pageRegionIdentifier: p710-il
+  - blockReference: "il:remediation.linux.step:7"
+    sourceSpans:
+      - physicalPage: 710
+        printedPage: "710"
+        pageRegionIdentifier: p710-il
+  - blockReference: "il:remediation.linux.step:8"
+    sourceSpans:
+      - physicalPage: 710
+        printedPage: "710"
+        pageRegionIdentifier: p710-il
+  - blockReference: "il:remediation.linux.table:1"
+    sourceSpans:
+      - physicalPage: 710
+        printedPage: "710"
+        pageRegionIdentifier: p710-il
+  - blockReference: "il:remediation.linux.table:2"
+    sourceSpans:
+      - physicalPage: 710
+        printedPage: "710"
+        pageRegionIdentifier: p710-il
+  - blockReference: "il:remediation.linux.note.label:1"
+    sourceSpans:
+      - physicalPage: 710
+        printedPage: "710"
+        pageRegionIdentifier: p710-il
+  - blockReference: "il:remediation.linux.note.content:1"
+    sourceSpans:
+      - physicalPage: 710
+        printedPage: "710"
+        pageRegionIdentifier: p710-il
+assets: []

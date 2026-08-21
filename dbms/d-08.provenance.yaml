@@ -1,0 +1,421 @@
+schemaVersion: 1
+criterionSlug: d-08
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "d-08:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 621
+        printedPage: "621"
+        pageRegionIdentifier: p621-d-08
+  - blockReference: "d-08:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 621
+        printedPage: "621"
+        pageRegionIdentifier: p621-d-08
+  - blockReference: "d-08:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 621
+        printedPage: "621"
+        pageRegionIdentifier: p621-d-08
+  - blockReference: "d-08:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 621
+        printedPage: "621"
+        pageRegionIdentifier: p621-d-08
+  - blockReference: "d-08:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 621
+        printedPage: "621"
+        pageRegionIdentifier: p621-d-08
+  - blockReference: "d-08:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 621
+        printedPage: "621"
+        pageRegionIdentifier: p621-d-08
+  - blockReference: "d-08:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 621
+        printedPage: "621"
+        pageRegionIdentifier: p621-d-08
+  - blockReference: "d-08:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 621
+        printedPage: "621"
+        pageRegionIdentifier: p621-d-08
+  - blockReference: "d-08:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 621
+        printedPage: "621"
+        pageRegionIdentifier: p621-d-08
+  - blockReference: "d-08:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 621
+        printedPage: "621"
+        pageRegionIdentifier: p621-d-08
+  - blockReference: "d-08:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 621
+        printedPage: "621"
+        pageRegionIdentifier: p621-d-08
+  - blockReference: "d-08:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 621
+        printedPage: "621"
+        pageRegionIdentifier: p621-d-08
+  - blockReference: "d-08:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 621
+        printedPage: "621"
+        pageRegionIdentifier: p621-d-08
+  - blockReference: "d-08:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 621
+        printedPage: "621"
+        pageRegionIdentifier: p621-d-08
+  - blockReference: "d-08:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 621
+        printedPage: "621"
+        pageRegionIdentifier: p621-d-08
+  - blockReference: "d-08:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 621
+        printedPage: "621"
+        pageRegionIdentifier: p621-d-08
+  - blockReference: "d-08:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 621
+        printedPage: "621"
+        pageRegionIdentifier: p621-d-08
+  - blockReference: "d-08:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 621
+        printedPage: "621"
+        pageRegionIdentifier: p621-d-08
+  - blockReference: "d-08:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 621
+        printedPage: "621"
+        pageRegionIdentifier: p621-d-08
+  - blockReference: "d-08:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 621
+        printedPage: "621"
+        pageRegionIdentifier: p621-d-08
+  - blockReference: "d-08:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 621
+        printedPage: "621"
+        pageRegionIdentifier: p621-d-08
+  - blockReference: "d-08:remediation.linux.paragraph:1"
+    sourceSpans:
+      - physicalPage: 621
+        printedPage: "621"
+        pageRegionIdentifier: p621-d-08
+  - blockReference: "d-08:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 621
+        printedPage: "621"
+        pageRegionIdentifier: p621-d-08
+  - blockReference: "d-08:remediation.linux.command:1"
+    sourceSpans:
+      - physicalPage: 621
+        printedPage: "621"
+        pageRegionIdentifier: p621-d-08
+  - blockReference: "d-08:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 621
+        printedPage: "621"
+        pageRegionIdentifier: p621-d-08
+  - blockReference: "d-08:remediation.linux.command:2"
+    sourceSpans:
+      - physicalPage: 621
+        printedPage: "621"
+        pageRegionIdentifier: p621-d-08
+  - blockReference: "d-08:remediation.linux.configuration:1"
+    sourceSpans:
+      - physicalPage: 621
+        printedPage: "621"
+        pageRegionIdentifier: p621-d-08
+  - blockReference: "d-08:remediation.linux.note.label:1"
+    sourceSpans:
+      - physicalPage: 621
+        printedPage: "621"
+        pageRegionIdentifier: p621-d-08
+  - blockReference: "d-08:remediation.linux.note.content:1"
+    sourceSpans:
+      - physicalPage: 621
+        printedPage: "621"
+        pageRegionIdentifier: p621-d-08
+  - blockReference: "d-08:remediation.linux.note.item:1"
+    sourceSpans:
+      - physicalPage: 621
+        printedPage: "621"
+        pageRegionIdentifier: p621-d-08
+  - blockReference: "d-08:remediation.linux.note.item:2"
+    sourceSpans:
+      - physicalPage: 621
+        printedPage: "621"
+        pageRegionIdentifier: p621-d-08
+  - blockReference: "d-08:remediation.linux.note.label:2"
+    sourceSpans:
+      - physicalPage: 621
+        printedPage: "621"
+        pageRegionIdentifier: p621-d-08
+  - blockReference: "d-08:remediation.linux.note.content:2"
+    sourceSpans:
+      - physicalPage: 621
+        printedPage: "621"
+        pageRegionIdentifier: p621-d-08
+  - blockReference: "d-08:remediation.linux.paragraph:2"
+    sourceSpans:
+      - physicalPage: 622
+        printedPage: "622"
+        pageRegionIdentifier: p622-d-08
+  - blockReference: "d-08:remediation.linux.step:3"
+    sourceSpans:
+      - physicalPage: 622
+        printedPage: "622"
+        pageRegionIdentifier: p622-d-08
+  - blockReference: "d-08:remediation.linux.command:3"
+    sourceSpans:
+      - physicalPage: 622
+        printedPage: "622"
+        pageRegionIdentifier: p622-d-08
+  - blockReference: "d-08:remediation.linux.note.label:3"
+    sourceSpans:
+      - physicalPage: 622
+        printedPage: "622"
+        pageRegionIdentifier: p622-d-08
+  - blockReference: "d-08:remediation.linux.note.content:3"
+    sourceSpans:
+      - physicalPage: 622
+        printedPage: "622"
+        pageRegionIdentifier: p622-d-08
+  - blockReference: "d-08:remediation.linux.paragraph:3"
+    sourceSpans:
+      - physicalPage: 622
+        printedPage: "622"
+        pageRegionIdentifier: p622-d-08
+  - blockReference: "d-08:remediation.linux.step:4"
+    sourceSpans:
+      - physicalPage: 622
+        printedPage: "622"
+        pageRegionIdentifier: p622-d-08
+  - blockReference: "d-08:remediation.linux.command:4"
+    sourceSpans:
+      - physicalPage: 622
+        printedPage: "622"
+        pageRegionIdentifier: p622-d-08
+  - blockReference: "d-08:remediation.linux.step:5"
+    sourceSpans:
+      - physicalPage: 622
+        printedPage: "622"
+        pageRegionIdentifier: p622-d-08
+  - blockReference: "d-08:remediation.linux.command:5"
+    sourceSpans:
+      - physicalPage: 622
+        printedPage: "622"
+        pageRegionIdentifier: p622-d-08
+  - blockReference: "d-08:remediation.linux.step:6"
+    sourceSpans:
+      - physicalPage: 622
+        printedPage: "622"
+        pageRegionIdentifier: p622-d-08
+  - blockReference: "d-08:remediation.linux.command:6"
+    sourceSpans:
+      - physicalPage: 622
+        printedPage: "622"
+        pageRegionIdentifier: p622-d-08
+  - blockReference: "d-08:remediation.linux.step:7"
+    sourceSpans:
+      - physicalPage: 622
+        printedPage: "622"
+        pageRegionIdentifier: p622-d-08
+  - blockReference: "d-08:remediation.linux.command:7"
+    sourceSpans:
+      - physicalPage: 622
+        printedPage: "622"
+        pageRegionIdentifier: p622-d-08
+  - blockReference: "d-08:remediation.linux.paragraph:4"
+    sourceSpans:
+      - physicalPage: 622
+        printedPage: "622"
+        pageRegionIdentifier: p622-d-08
+  - blockReference: "d-08:remediation.linux.step:8"
+    sourceSpans:
+      - physicalPage: 622
+        printedPage: "622"
+        pageRegionIdentifier: p622-d-08
+  - blockReference: "d-08:remediation.linux.command:8"
+    sourceSpans:
+      - physicalPage: 622
+        printedPage: "622"
+        pageRegionIdentifier: p622-d-08
+  - blockReference: "d-08:remediation.linux.step:9"
+    sourceSpans:
+      - physicalPage: 623
+        printedPage: "623"
+        pageRegionIdentifier: p623-d-08
+  - blockReference: "d-08:remediation.linux.command:9"
+    sourceSpans:
+      - physicalPage: 623
+        printedPage: "623"
+        pageRegionIdentifier: p623-d-08
+  - blockReference: "d-08:remediation.linux.step:10"
+    sourceSpans:
+      - physicalPage: 623
+        printedPage: "623"
+        pageRegionIdentifier: p623-d-08
+  - blockReference: "d-08:remediation.linux.command:10"
+    sourceSpans:
+      - physicalPage: 623
+        printedPage: "623"
+        pageRegionIdentifier: p623-d-08
+  - blockReference: "d-08:remediation.linux.step:11"
+    sourceSpans:
+      - physicalPage: 623
+        printedPage: "623"
+        pageRegionIdentifier: p623-d-08
+  - blockReference: "d-08:remediation.linux.command:11"
+    sourceSpans:
+      - physicalPage: 623
+        printedPage: "623"
+        pageRegionIdentifier: p623-d-08
+  - blockReference: "d-08:remediation.linux.note.label:4"
+    sourceSpans:
+      - physicalPage: 623
+        printedPage: "623"
+        pageRegionIdentifier: p623-d-08
+  - blockReference: "d-08:remediation.linux.note.content:4"
+    sourceSpans:
+      - physicalPage: 623
+        printedPage: "623"
+        pageRegionIdentifier: p623-d-08
+  - blockReference: "d-08:remediation.linux.step:12"
+    sourceSpans:
+      - physicalPage: 623
+        printedPage: "623"
+        pageRegionIdentifier: p623-d-08
+  - blockReference: "d-08:remediation.linux.command:12"
+    sourceSpans:
+      - physicalPage: 623
+        printedPage: "623"
+        pageRegionIdentifier: p623-d-08
+  - blockReference: "d-08:remediation.linux.step:13"
+    sourceSpans:
+      - physicalPage: 623
+        printedPage: "623"
+        pageRegionIdentifier: p623-d-08
+  - blockReference: "d-08:remediation.linux.command:13"
+    sourceSpans:
+      - physicalPage: 623
+        printedPage: "623"
+        pageRegionIdentifier: p623-d-08
+  - blockReference: "d-08:remediation.linux.note.label:5"
+    sourceSpans:
+      - physicalPage: 623
+        printedPage: "623"
+        pageRegionIdentifier: p623-d-08
+  - blockReference: "d-08:remediation.linux.note.content:5"
+    sourceSpans:
+      - physicalPage: 623
+        printedPage: "623"
+        pageRegionIdentifier: p623-d-08
+  - blockReference: "d-08:remediation.linux.note.label:6"
+    sourceSpans:
+      - physicalPage: 623
+        printedPage: "623"
+        pageRegionIdentifier: p623-d-08
+  - blockReference: "d-08:remediation.linux.note.content:6"
+    sourceSpans:
+      - physicalPage: 623
+        printedPage: "623"
+        pageRegionIdentifier: p623-d-08
+  - blockReference: "d-08:remediation.linux.paragraph:5"
+    sourceSpans:
+      - physicalPage: 623
+        printedPage: "623"
+        pageRegionIdentifier: p623-d-08
+  - blockReference: "d-08:remediation.linux.step:14"
+    sourceSpans:
+      - physicalPage: 623
+        printedPage: "623"
+        pageRegionIdentifier: p623-d-08
+  - blockReference: "d-08:remediation.linux.command:14"
+    sourceSpans:
+      - physicalPage: 623
+        printedPage: "623"
+        pageRegionIdentifier: p623-d-08
+  - blockReference: "d-08:remediation.linux.step:15"
+    sourceSpans:
+      - physicalPage: 623
+        printedPage: "623"
+        pageRegionIdentifier: p623-d-08
+  - blockReference: "d-08:remediation.linux.command:15"
+    sourceSpans:
+      - physicalPage: 623
+        printedPage: "623"
+        pageRegionIdentifier: p623-d-08
+  - blockReference: "d-08:remediation.linux.paragraph:6"
+    sourceSpans:
+      - physicalPage: 623
+        printedPage: "623"
+        pageRegionIdentifier: p623-d-08
+  - blockReference: "d-08:remediation.linux.step:16"
+    sourceSpans:
+      - physicalPage: 623
+        printedPage: "623"
+        pageRegionIdentifier: p623-d-08
+  - blockReference: "d-08:remediation.linux.command:16"
+    sourceSpans:
+      - physicalPage: 623
+        printedPage: "623"
+        pageRegionIdentifier: p623-d-08
+  - blockReference: "d-08:remediation.linux.step:17"
+    sourceSpans:
+      - physicalPage: 623
+        printedPage: "623"
+        pageRegionIdentifier: p623-d-08
+  - blockReference: "d-08:remediation.linux.item:1"
+    sourceSpans:
+      - physicalPage: 624
+        printedPage: "624"
+        pageRegionIdentifier: p624-d-08
+  - blockReference: "d-08:remediation.linux.command:17"
+    sourceSpans:
+      - physicalPage: 624
+        printedPage: "624"
+        pageRegionIdentifier: p624-d-08
+  - blockReference: "d-08:remediation.linux.item:2"
+    sourceSpans:
+      - physicalPage: 624
+        printedPage: "624"
+        pageRegionIdentifier: p624-d-08
+  - blockReference: "d-08:remediation.linux.command:18"
+    sourceSpans:
+      - physicalPage: 624
+        printedPage: "624"
+        pageRegionIdentifier: p624-d-08
+  - blockReference: "d-08:remediation.linux.note.label:7"
+    sourceSpans:
+      - physicalPage: 624
+        printedPage: "624"
+        pageRegionIdentifier: p624-d-08
+  - blockReference: "d-08:remediation.linux.note.content:7"
+    sourceSpans:
+      - physicalPage: 624
+        printedPage: "624"
+        pageRegionIdentifier: p624-d-08
+  - blockReference: "d-08:remediation.linux.note.label:8"
+    sourceSpans:
+      - physicalPage: 624
+        printedPage: "624"
+        pageRegionIdentifier: p624-d-08
+  - blockReference: "d-08:remediation.linux.note.content:8"
+    sourceSpans:
+      - physicalPage: 624
+        printedPage: "624"
+        pageRegionIdentifier: p624-d-08
+assets: []
+

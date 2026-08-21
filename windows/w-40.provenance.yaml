@@ -1,0 +1,148 @@
+schemaVersion: 1
+criterionSlug: w-40
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "w-40:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 235
+        printedPage: "235"
+        pageRegionIdentifier: p235-w-40
+  - blockReference: "w-40:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 235
+        printedPage: "235"
+        pageRegionIdentifier: p235-w-40
+  - blockReference: "w-40:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 235
+        printedPage: "235"
+        pageRegionIdentifier: p235-w-40
+  - blockReference: "w-40:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 235
+        printedPage: "235"
+        pageRegionIdentifier: p235-w-40
+  - blockReference: "w-40:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 235
+        printedPage: "235"
+        pageRegionIdentifier: p235-w-40
+  - blockReference: "w-40:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 235
+        printedPage: "235"
+        pageRegionIdentifier: p235-w-40
+  - blockReference: "w-40:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 235
+        printedPage: "235"
+        pageRegionIdentifier: p235-w-40
+  - blockReference: "w-40:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 235
+        printedPage: "235"
+        pageRegionIdentifier: p235-w-40
+  - blockReference: "w-40:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 235
+        printedPage: "235"
+        pageRegionIdentifier: p235-w-40
+  - blockReference: "w-40:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 235
+        printedPage: "235"
+        pageRegionIdentifier: p235-w-40
+  - blockReference: "w-40:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 235
+        printedPage: "235"
+        pageRegionIdentifier: p235-w-40
+  - blockReference: "w-40:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 235
+        printedPage: "235"
+        pageRegionIdentifier: p235-w-40
+  - blockReference: "w-40:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 235
+        printedPage: "235"
+        pageRegionIdentifier: p235-w-40
+  - blockReference: "w-40:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 235
+        printedPage: "235"
+        pageRegionIdentifier: p235-w-40
+  - blockReference: "w-40:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 235
+        printedPage: "235"
+        pageRegionIdentifier: p235-w-40
+  - blockReference: "w-40:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 235
+        printedPage: "235"
+        pageRegionIdentifier: p235-w-40
+  - blockReference: "w-40:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 235
+        printedPage: "235"
+        pageRegionIdentifier: p235-w-40
+  - blockReference: "w-40:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 235
+        printedPage: "235"
+        pageRegionIdentifier: p235-w-40
+  - blockReference: "w-40:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 235
+        printedPage: "235"
+        pageRegionIdentifier: p235-w-40
+  - blockReference: "w-40:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 235
+        printedPage: "235"
+        pageRegionIdentifier: p235-w-40
+  - blockReference: "w-40:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 235
+        printedPage: "235"
+        pageRegionIdentifier: p235-w-40
+  - blockReference: "w-40:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 235
+        printedPage: "235"
+        pageRegionIdentifier: p235-w-40
+  - blockReference: "w-40:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 235
+        printedPage: "235"
+        pageRegionIdentifier: p235-w-40
+  - blockReference: "w-40:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 235
+        printedPage: "235"
+        pageRegionIdentifier: p235-w-40
+      - physicalPage: 236
+        printedPage: "236"
+        pageRegionIdentifier: p236-w-40
+  - blockReference: "w-40:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 235
+        printedPage: "235"
+        pageRegionIdentifier: p235-w-40
+  - blockReference: "w-40:remediation.linux.configuration:1"
+    sourceSpans:
+      - physicalPage: 235
+        printedPage: "235"
+        pageRegionIdentifier: p235-w-40
+  - blockReference: "w-40:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 236
+        printedPage: "236"
+        pageRegionIdentifier: p236-w-40
+  - blockReference: "w-40:remediation.linux.configuration:2"
+    sourceSpans:
+      - physicalPage: 236
+        printedPage: "236"
+        pageRegionIdentifier: p236-w-40
+assets: []

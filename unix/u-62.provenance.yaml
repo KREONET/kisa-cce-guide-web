@@ -1,0 +1,1793 @@
+schemaVersion: 1
+criterionSlug: u-62
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "u-62:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+  - blockReference: "u-62:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+  - blockReference: "u-62:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+  - blockReference: "u-62:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+  - blockReference: "u-62:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+  - blockReference: "u-62:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+  - blockReference: "u-62:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+  - blockReference: "u-62:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+  - blockReference: "u-62:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+  - blockReference: "u-62:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+  - blockReference: "u-62:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+  - blockReference: "u-62:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+  - blockReference: "u-62:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+  - blockReference: "u-62:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+  - blockReference: "u-62:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+  - blockReference: "u-62:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+  - blockReference: "u-62:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+  - blockReference: "u-62:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+  - blockReference: "u-62:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+  - blockReference: "u-62:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+  - blockReference: "u-62:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+  - blockReference: "u-62:remediation.solaris.heading:1"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.solaris.step:1"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.solaris.telnet.heading:1"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.solaris.telnet.step:1"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.solaris.telnet.step:2"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.solaris.telnet.configuration:1"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.solaris.ssh.heading:1"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.solaris.ssh.step:1"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.solaris.ssh.step:2"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.solaris.ssh.configuration:1"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.solaris.ssh.step:3"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.solaris.ssh.literal:1"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.solaris.ssh.step:4"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.solaris.ssh.configuration:2"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.solaris.ssh.step:5"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.solaris.ssh.command:1"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.solaris.ssh.step:6"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.solaris.ssh.configuration:3"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.solaris.ssh.step:7"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.solaris.ssh.command:2"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.solaris.ssh.step:8"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.solaris.ssh.configuration:4"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.solaris.ssh.step:9"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.solaris.ssh.command:3"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.solaris.ssh.step:10"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.solaris.ssh.configuration:5"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.solaris.ssh.step:11"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.solaris.ssh.configuration:6"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.solaris.ssh.step:12"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.solaris.ssh.command:4"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.solaris.ssh.step:13"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.solaris.ssh.configuration:7"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.solaris.ssh.step:14"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.solaris.ssh.step:15"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.solaris.ssh.command:5"
+    sourceSpans:
+      - physicalPage: 150
+        printedPage: "150"
+        pageRegionIdentifier: p150-u-62
+      - physicalPage: 151
+        printedPage: "151"
+        pageRegionIdentifier: p151-u-62
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+  - blockReference: "u-62:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.telnet.heading:1"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.telnet.step:1"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.ssh.heading:1"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.ssh.step:1"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.ssh.configuration:1"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.ssh.step:2"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.ssh.literal:1"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.ssh.step:3"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.ssh.command:1"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.ssh.step:4"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.ssh.configuration:2"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.ssh.step:5"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.ssh.command:2"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.ssh.step:6"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.ssh.configuration:3"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.ssh.step:7"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.ssh.command:3"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.ssh.step:8"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.ssh.step:9"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.ssh.configuration:4"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.ssh.step:10"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.ssh.command:4"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.ssh.step:11"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.ssh.configuration:5"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.ssh.step:12"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.ssh.command:5"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.ssh.step:13"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.ssh.configuration:6"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.ssh.step:14"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.ssh.step:15"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.ssh.command:6"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.ssh.step:16"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.ssh.configuration:7"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.ssh.step:17"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.linux.ssh.command:7"
+    sourceSpans:
+      - physicalPage: 152
+        printedPage: "152"
+        pageRegionIdentifier: p152-u-62
+      - physicalPage: 153
+        printedPage: "153"
+        pageRegionIdentifier: p153-u-62
+  - blockReference: "u-62:remediation.aix.heading:1"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.step:1"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.telnet.heading:1"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.telnet.step:1"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.telnet.configuration:1"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.heading:1"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.step:1"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.configuration:1"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.step:2"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.literal:1"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.step:3"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.command:1"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.step:4"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.configuration:2"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.step:5"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.command:2"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.step:6"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.configuration:3"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.step:7"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.command:3"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.step:8"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.configuration:4"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.step:9"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.command:4"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.step:10"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.command:5"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.step:11"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.literal:2"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.step:12"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.command:6"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.step:13"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.configuration:5"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.step:14"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.command:7"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.step:15"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.configuration:6"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.step:16"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.step:17"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.command:8"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.step:18"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.configuration:7"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.step:19"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.aix.ssh.command:9"
+    sourceSpans:
+      - physicalPage: 154
+        printedPage: "154"
+        pageRegionIdentifier: p154-u-62
+      - physicalPage: 155
+        printedPage: "155"
+        pageRegionIdentifier: p155-u-62
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+  - blockReference: "u-62:remediation.hp-ux.heading:1"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.step:1"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.telnet.heading:1"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.telnet.step:1"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.telnet.configuration:1"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.telnet.step:2"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.telnet.literal:1"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.telnet.step:3"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.telnet.command:1"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.heading:1"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.step:1"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.configuration:1"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.step:2"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.literal:1"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.step:3"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.command:1"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.step:4"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.configuration:2"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.step:5"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.command:2"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.step:6"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.configuration:3"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.step:7"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.command:3"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.step:8"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.configuration:4"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.step:9"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.command:4"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.step:10"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.configuration:5"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.step:11"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.step:12"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.configuration:6"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.step:13"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.command:5"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.step:14"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.configuration:7"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.step:15"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.command:6"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.step:16"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.configuration:8"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.step:17"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.step:18"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.command:7"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.step:19"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.configuration:9"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.step:20"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+  - blockReference: "u-62:remediation.hp-ux.ssh.command:8"
+    sourceSpans:
+      - physicalPage: 156
+        printedPage: "156"
+        pageRegionIdentifier: p156-u-62
+      - physicalPage: 157
+        printedPage: "157"
+        pageRegionIdentifier: p157-u-62
+      - physicalPage: 158
+        printedPage: "158"
+        pageRegionIdentifier: p158-u-62
+assets: []
+

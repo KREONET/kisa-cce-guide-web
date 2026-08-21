@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zeroday0619.github.io/kisa-cce-guide/schemas/qa-report.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "reportType",
+    "canonicalCorpusChecksum",
+    "testProfileVersion",
+    "browserEngine",
+    "browserVersion",
+    "validationStatus",
+    "passed",
+    "evidencePaths"
+  ],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "reportType": {"enum": ["accessibility", "responsive", "print"]},
+    "canonicalCorpusChecksum": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "testProfileVersion": {"type": "integer", "minimum": 1},
+    "browserEngine": {"type": ["string", "null"]},
+    "browserVersion": {"type": ["string", "null"]},
+    "validationStatus": {"enum": ["pending", "passed", "failed"]},
+    "passed": {"type": "boolean"},
+    "evidencePaths": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"validationStatus": {"const": "pending"}}},
+      "then": {
+        "properties": {
+          "browserEngine": {"const": null},
+          "browserVersion": {"const": null},
+          "passed": {"const": false},
+          "evidencePaths": {"maxItems": 0}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"validationStatus": {"const": "passed"}}},
+      "then": {
+        "properties": {
+          "browserEngine": {"type": "string", "minLength": 1},
+          "browserVersion": {"type": "string", "minLength": 1},
+          "passed": {"const": true},
+          "evidencePaths": {"minItems": 1}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"validationStatus": {"const": "failed"}}},
+      "then": {
+        "properties": {
+          "browserEngine": {"type": "string", "minLength": 1},
+          "browserVersion": {"type": "string", "minLength": 1},
+          "passed": {"const": false},
+          "evidencePaths": {"minItems": 1}
+        }
+      }
+    }
+  ]
+}

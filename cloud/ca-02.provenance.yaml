@@ -1,0 +1,120 @@
+schemaVersion: 1
+criterionSlug: ca-02
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "ca-02:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 855
+        printedPage: "855"
+        pageRegionIdentifier: p855-ca-02
+  - blockReference: "ca-02:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 855
+        printedPage: "855"
+        pageRegionIdentifier: p855-ca-02
+  - blockReference: "ca-02:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 855
+        printedPage: "855"
+        pageRegionIdentifier: p855-ca-02
+  - blockReference: "ca-02:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 855
+        printedPage: "855"
+        pageRegionIdentifier: p855-ca-02
+  - blockReference: "ca-02:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 855
+        printedPage: "855"
+        pageRegionIdentifier: p855-ca-02
+  - blockReference: "ca-02:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 855
+        printedPage: "855"
+        pageRegionIdentifier: p855-ca-02
+  - blockReference: "ca-02:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 855
+        printedPage: "855"
+        pageRegionIdentifier: p855-ca-02
+  - blockReference: "ca-02:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 855
+        printedPage: "855"
+        pageRegionIdentifier: p855-ca-02
+  - blockReference: "ca-02:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 855
+        printedPage: "855"
+        pageRegionIdentifier: p855-ca-02
+  - blockReference: "ca-02:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 855
+        printedPage: "855"
+        pageRegionIdentifier: p855-ca-02
+  - blockReference: "ca-02:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 855
+        printedPage: "855"
+        pageRegionIdentifier: p855-ca-02
+  - blockReference: "ca-02:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 855
+        printedPage: "855"
+        pageRegionIdentifier: p855-ca-02
+  - blockReference: "ca-02:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 855
+        printedPage: "855"
+        pageRegionIdentifier: p855-ca-02
+  - blockReference: "ca-02:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 855
+        printedPage: "855"
+        pageRegionIdentifier: p855-ca-02
+  - blockReference: "ca-02:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 855
+        printedPage: "855"
+        pageRegionIdentifier: p855-ca-02
+  - blockReference: "ca-02:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 855
+        printedPage: "855"
+        pageRegionIdentifier: p855-ca-02
+  - blockReference: "ca-02:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 855
+        printedPage: "855"
+        pageRegionIdentifier: p855-ca-02
+  - blockReference: "ca-02:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 855
+        printedPage: "855"
+        pageRegionIdentifier: p855-ca-02
+  - blockReference: "ca-02:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 855
+        printedPage: "855"
+        pageRegionIdentifier: p855-ca-02
+  - blockReference: "ca-02:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 855
+        printedPage: "855"
+        pageRegionIdentifier: p855-ca-02
+  - blockReference: "ca-02:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - physicalPage: 855
+        printedPage: "855"
+        pageRegionIdentifier: p855-ca-02
+  - blockReference: "ca-02:remediation.supplementaryGuidance.step:1"
+    sourceSpans:
+      - physicalPage: 855
+        printedPage: "855"
+        pageRegionIdentifier: p855-ca-02
+  - blockReference: "ca-02:remediation.supplementaryGuidance.step:2"
+    sourceSpans:
+      - physicalPage: 855
+        printedPage: "855"
+        pageRegionIdentifier: p855-ca-02
+assets: []

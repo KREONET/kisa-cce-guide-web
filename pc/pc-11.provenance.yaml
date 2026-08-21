@@ -1,0 +1,160 @@
+schemaVersion: 1
+criterionSlug: pc-11
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "pc-11:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 579
+        printedPage: "579"
+        pageRegionIdentifier: p579-pc-11
+  - blockReference: "pc-11:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 579
+        printedPage: "579"
+        pageRegionIdentifier: p579-pc-11
+  - blockReference: "pc-11:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 579
+        printedPage: "579"
+        pageRegionIdentifier: p579-pc-11
+  - blockReference: "pc-11:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 579
+        printedPage: "579"
+        pageRegionIdentifier: p579-pc-11
+  - blockReference: "pc-11:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 579
+        printedPage: "579"
+        pageRegionIdentifier: p579-pc-11
+  - blockReference: "pc-11:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 579
+        printedPage: "579"
+        pageRegionIdentifier: p579-pc-11
+  - blockReference: "pc-11:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 579
+        printedPage: "579"
+        pageRegionIdentifier: p579-pc-11
+  - blockReference: "pc-11:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 579
+        printedPage: "579"
+        pageRegionIdentifier: p579-pc-11
+  - blockReference: "pc-11:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 579
+        printedPage: "579"
+        pageRegionIdentifier: p579-pc-11
+  - blockReference: "pc-11:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 579
+        printedPage: "579"
+        pageRegionIdentifier: p579-pc-11
+  - blockReference: "pc-11:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 579
+        printedPage: "579"
+        pageRegionIdentifier: p579-pc-11
+  - blockReference: "pc-11:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 579
+        printedPage: "579"
+        pageRegionIdentifier: p579-pc-11
+  - blockReference: "pc-11:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 579
+        printedPage: "579"
+        pageRegionIdentifier: p579-pc-11
+  - blockReference: "pc-11:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 579
+        printedPage: "579"
+        pageRegionIdentifier: p579-pc-11
+  - blockReference: "pc-11:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 579
+        printedPage: "579"
+        pageRegionIdentifier: p579-pc-11
+  - blockReference: "pc-11:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 579
+        printedPage: "579"
+        pageRegionIdentifier: p579-pc-11
+  - blockReference: "pc-11:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 579
+        printedPage: "579"
+        pageRegionIdentifier: p579-pc-11
+  - blockReference: "pc-11:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 579
+        printedPage: "579"
+        pageRegionIdentifier: p579-pc-11
+  - blockReference: "pc-11:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 579
+        printedPage: "579"
+        pageRegionIdentifier: p579-pc-11
+  - blockReference: "pc-11:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 579
+        printedPage: "579"
+        pageRegionIdentifier: p579-pc-11
+  - blockReference: "pc-11:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 579
+        printedPage: "579"
+        pageRegionIdentifier: p579-pc-11
+  - blockReference: "pc-11:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 579
+        printedPage: "579"
+        pageRegionIdentifier: p579-pc-11
+  - blockReference: "pc-11:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 579
+        printedPage: "579"
+        pageRegionIdentifier: p579-pc-11
+  - blockReference: "pc-11:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 579
+        printedPage: "579"
+        pageRegionIdentifier: p579-pc-11
+  - blockReference: "pc-11:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 579
+        printedPage: "579"
+        pageRegionIdentifier: p579-pc-11
+  - blockReference: "pc-11:remediation.linux.note.label:1"
+    sourceSpans:
+      - physicalPage: 579
+        printedPage: "579"
+        pageRegionIdentifier: p579-pc-11
+  - blockReference: "pc-11:remediation.linux.note.content:1"
+    sourceSpans:
+      - physicalPage: 579
+        printedPage: "579"
+        pageRegionIdentifier: p579-pc-11
+  - blockReference: "pc-11:remediation.linux.note.label:2"
+    sourceSpans:
+      - physicalPage: 579
+        printedPage: "579"
+        pageRegionIdentifier: p579-pc-11
+  - blockReference: "pc-11:remediation.linux.note.content:2"
+    sourceSpans:
+      - physicalPage: 579
+        printedPage: "579"
+        pageRegionIdentifier: p579-pc-11
+  - blockReference: "pc-11:remediation.linux.note.label:3"
+    sourceSpans:
+      - physicalPage: 579
+        printedPage: "579"
+        pageRegionIdentifier: p579-pc-11
+  - blockReference: "pc-11:remediation.linux.note.content:3"
+    sourceSpans:
+      - physicalPage: 579
+        printedPage: "579"
+        pageRegionIdentifier: p579-pc-11
+assets: []

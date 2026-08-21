@@ -1,0 +1,89 @@
+schemaVersion: 1
+criterionSlug: hv-15
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "hv-15:overview.heading:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:assessment.heading:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:remediation.heading:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:remediation.linux.heading:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:remediation.linux.paragraph:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:remediation.linux.step:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:remediation.linux.literal:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:remediation.linux.step:2"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:remediation.linux.step:3"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:remediation.linux.configuration:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:remediation.linux.step:4"
+    sourceSpans: [{physicalPage: 834, printedPage: "834", pageRegionIdentifier: p834-hv-15}]
+  - blockReference: "hv-15:remediation.linux.table:1"
+    sourceSpans: [{physicalPage: 834, printedPage: "834", pageRegionIdentifier: p834-hv-15}]
+  - blockReference: "hv-15:remediation.linux.paragraph:2"
+    sourceSpans: [{physicalPage: 834, printedPage: "834", pageRegionIdentifier: p834-hv-15}]
+  - blockReference: "hv-15:remediation.linux.step:5"
+    sourceSpans: [{physicalPage: 834, printedPage: "834", pageRegionIdentifier: p834-hv-15}]
+  - blockReference: "hv-15:remediation.linux.step:6"
+    sourceSpans: [{physicalPage: 834, printedPage: "834", pageRegionIdentifier: p834-hv-15}]
+  - blockReference: "hv-15:remediation.linux.literal:2"
+    sourceSpans: [{physicalPage: 834, printedPage: "834", pageRegionIdentifier: p834-hv-15}]
+  - blockReference: "hv-15:remediation.linux.paragraph:3"
+    sourceSpans: [{physicalPage: 835, printedPage: "835", pageRegionIdentifier: p835-hv-15}]
+  - blockReference: "hv-15:remediation.linux.step:7"
+    sourceSpans: [{physicalPage: 835, printedPage: "835", pageRegionIdentifier: p835-hv-15}]
+  - blockReference: "hv-15:remediation.linux.step:8"
+    sourceSpans: [{physicalPage: 835, printedPage: "835", pageRegionIdentifier: p835-hv-15}]
+  - blockReference: "hv-15:remediation.linux.command:1"
+    sourceSpans: [{physicalPage: 835, printedPage: "835", pageRegionIdentifier: p835-hv-15}]
+  - blockReference: "hv-15:remediation.linux.step:9"
+    sourceSpans: [{physicalPage: 835, printedPage: "835", pageRegionIdentifier: p835-hv-15}]
+  - blockReference: "hv-15:remediation.linux.configuration:2"
+    sourceSpans: [{physicalPage: 835, printedPage: "835", pageRegionIdentifier: p835-hv-15}]
+  - blockReference: "hv-15:remediation.linux.step:10"
+    sourceSpans: [{physicalPage: 835, printedPage: "835", pageRegionIdentifier: p835-hv-15}]
+  - blockReference: "hv-15:remediation.linux.command:2"
+    sourceSpans: [{physicalPage: 835, printedPage: "835", pageRegionIdentifier: p835-hv-15}]
+  - blockReference: "hv-15:remediation.linux.table:2"
+    sourceSpans: [{physicalPage: 835, printedPage: "835", pageRegionIdentifier: p835-hv-15}]
+assets: []

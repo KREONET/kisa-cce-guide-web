@@ -1,0 +1,210 @@
+schemaVersion: 1
+criterionSlug: c-33
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "c-33:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:remediation.solaris.heading:1"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:remediation.solaris.step:1"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:remediation.solaris.step:2"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:remediation.solaris.step:3"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:remediation.solaris.step:4"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:remediation.linux.step:3"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:remediation.linux.step:4"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:remediation.aix.heading:1"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:remediation.aix.step:1"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:remediation.aix.step:2"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:remediation.aix.step:3"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:remediation.aix.step:4"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:remediation.hp-ux.heading:1"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:remediation.hp-ux.step:1"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:remediation.hp-ux.step:2"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:remediation.hp-ux.step:3"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+  - blockReference: "c-33:remediation.hp-ux.step:4"
+    sourceSpans:
+      - physicalPage: 528
+        printedPage: "528"
+        pageRegionIdentifier: p528-c-33
+assets: []

@@ -1,0 +1,238 @@
+schemaVersion: 1
+criterionSlug: n-20
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "n-20:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 438
+        printedPage: "438"
+        pageRegionIdentifier: p438-n-20
+  - blockReference: "n-20:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 438
+        printedPage: "438"
+        pageRegionIdentifier: p438-n-20
+  - blockReference: "n-20:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 438
+        printedPage: "438"
+        pageRegionIdentifier: p438-n-20
+  - blockReference: "n-20:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 438
+        printedPage: "438"
+        pageRegionIdentifier: p438-n-20
+  - blockReference: "n-20:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 438
+        printedPage: "438"
+        pageRegionIdentifier: p438-n-20
+  - blockReference: "n-20:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 438
+        printedPage: "438"
+        pageRegionIdentifier: p438-n-20
+  - blockReference: "n-20:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 438
+        printedPage: "438"
+        pageRegionIdentifier: p438-n-20
+  - blockReference: "n-20:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 438
+        printedPage: "438"
+        pageRegionIdentifier: p438-n-20
+  - blockReference: "n-20:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 438
+        printedPage: "438"
+        pageRegionIdentifier: p438-n-20
+  - blockReference: "n-20:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 438
+        printedPage: "438"
+        pageRegionIdentifier: p438-n-20
+  - blockReference: "n-20:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 438
+        printedPage: "438"
+        pageRegionIdentifier: p438-n-20
+  - blockReference: "n-20:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 438
+        printedPage: "438"
+        pageRegionIdentifier: p438-n-20
+  - blockReference: "n-20:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 438
+        printedPage: "438"
+        pageRegionIdentifier: p438-n-20
+  - blockReference: "n-20:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 438
+        printedPage: "438"
+        pageRegionIdentifier: p438-n-20
+  - blockReference: "n-20:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 438
+        printedPage: "438"
+        pageRegionIdentifier: p438-n-20
+  - blockReference: "n-20:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 438
+        printedPage: "438"
+        pageRegionIdentifier: p438-n-20
+  - blockReference: "n-20:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 438
+        printedPage: "438"
+        pageRegionIdentifier: p438-n-20
+  - blockReference: "n-20:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 438
+        printedPage: "438"
+        pageRegionIdentifier: p438-n-20
+  - blockReference: "n-20:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 438
+        printedPage: "438"
+        pageRegionIdentifier: p438-n-20
+  - blockReference: "n-20:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 438
+        printedPage: "438"
+        pageRegionIdentifier: p438-n-20
+  - blockReference: "n-20:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 438
+        printedPage: "438"
+        pageRegionIdentifier: p438-n-20
+  - blockReference: "n-20:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 438
+        printedPage: "438"
+        pageRegionIdentifier: p438-n-20
+      - physicalPage: 439
+        printedPage: "439"
+        pageRegionIdentifier: p439-n-20
+  - blockReference: "n-20:remediation.linux.paragraph:1"
+    sourceSpans:
+      - physicalPage: 438
+        printedPage: "438"
+        pageRegionIdentifier: p438-n-20
+  - blockReference: "n-20:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 438
+        printedPage: "438"
+        pageRegionIdentifier: p438-n-20
+  - blockReference: "n-20:remediation.linux.command:1"
+    sourceSpans:
+      - physicalPage: 438
+        printedPage: "438"
+        pageRegionIdentifier: p438-n-20
+  - blockReference: "n-20:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 438
+        printedPage: "438"
+        pageRegionIdentifier: p438-n-20
+  - blockReference: "n-20:remediation.linux.command:2"
+    sourceSpans:
+      - physicalPage: 438
+        printedPage: "438"
+        pageRegionIdentifier: p438-n-20
+  - blockReference: "n-20:remediation.linux.paragraph:2"
+    sourceSpans:
+      - physicalPage: 438
+        printedPage: "438"
+        pageRegionIdentifier: p438-n-20
+  - blockReference: "n-20:remediation.linux.step:3"
+    sourceSpans:
+      - physicalPage: 438
+        printedPage: "438"
+        pageRegionIdentifier: p438-n-20
+  - blockReference: "n-20:remediation.linux.step:4"
+    sourceSpans:
+      - physicalPage: 438
+        printedPage: "438"
+        pageRegionIdentifier: p438-n-20
+  - blockReference: "n-20:remediation.linux.command:3"
+    sourceSpans:
+      - physicalPage: 439
+        printedPage: "439"
+        pageRegionIdentifier: p439-n-20
+  - blockReference: "n-20:remediation.linux.paragraph:3"
+    sourceSpans:
+      - physicalPage: 439
+        printedPage: "439"
+        pageRegionIdentifier: p439-n-20
+  - blockReference: "n-20:remediation.linux.step:5"
+    sourceSpans:
+      - physicalPage: 439
+        printedPage: "439"
+        pageRegionIdentifier: p439-n-20
+  - blockReference: "n-20:remediation.linux.command:4"
+    sourceSpans:
+      - physicalPage: 439
+        printedPage: "439"
+        pageRegionIdentifier: p439-n-20
+  - blockReference: "n-20:remediation.linux.paragraph:4"
+    sourceSpans:
+      - physicalPage: 439
+        printedPage: "439"
+        pageRegionIdentifier: p439-n-20
+  - blockReference: "n-20:remediation.linux.step:6"
+    sourceSpans:
+      - physicalPage: 439
+        printedPage: "439"
+        pageRegionIdentifier: p439-n-20
+  - blockReference: "n-20:remediation.linux.command:5"
+    sourceSpans:
+      - physicalPage: 439
+        printedPage: "439"
+        pageRegionIdentifier: p439-n-20
+  - blockReference: "n-20:remediation.linux.step:7"
+    sourceSpans:
+      - physicalPage: 439
+        printedPage: "439"
+        pageRegionIdentifier: p439-n-20
+  - blockReference: "n-20:remediation.linux.command:6"
+    sourceSpans:
+      - physicalPage: 439
+        printedPage: "439"
+        pageRegionIdentifier: p439-n-20
+  - blockReference: "n-20:remediation.linux.step:8"
+    sourceSpans:
+      - physicalPage: 439
+        printedPage: "439"
+        pageRegionIdentifier: p439-n-20
+  - blockReference: "n-20:remediation.linux.command:7"
+    sourceSpans:
+      - physicalPage: 439
+        printedPage: "439"
+        pageRegionIdentifier: p439-n-20
+  - blockReference: "n-20:remediation.linux.step:9"
+    sourceSpans:
+      - physicalPage: 439
+        printedPage: "439"
+        pageRegionIdentifier: p439-n-20
+  - blockReference: "n-20:remediation.linux.command:8"
+    sourceSpans:
+      - physicalPage: 439
+        printedPage: "439"
+        pageRegionIdentifier: p439-n-20
+  - blockReference: "n-20:remediation.linux.paragraph:5"
+    sourceSpans:
+      - physicalPage: 439
+        printedPage: "439"
+        pageRegionIdentifier: p439-n-20
+  - blockReference: "n-20:remediation.linux.step:10"
+    sourceSpans:
+      - physicalPage: 439
+        printedPage: "439"
+        pageRegionIdentifier: p439-n-20
+  - blockReference: "n-20:remediation.linux.command:9"
+    sourceSpans:
+      - physicalPage: 439
+        printedPage: "439"
+        pageRegionIdentifier: p439-n-20
+assets: []
