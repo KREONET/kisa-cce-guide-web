@@ -2,64 +2,52 @@ schemaVersion: 1
 criterionSlug: ca-19
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: ca-19:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
-    sourceSpans:
-      - physicalPage: 872
-        printedPage: '872'
-        pageRegionIdentifier: p872-ca-19
-  - blockReference: ca-19:sourceTranscription.sourcePage872.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 872
-        printedPage: '872'
-        pageRegionIdentifier: p872-ca-19
-  - blockReference: ca-19:sourceTranscription.sourcePage872.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 872
-        printedPage: '872'
-        pageRegionIdentifier: p872-ca-19
-  - blockReference: ca-19:sourceTranscription.sourcePage872.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 872
-        printedPage: '872'
-        pageRegionIdentifier: p872-ca-19
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/ca-19/ca-19-page-872-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 102e14d4d713e1a0d54e94a4cfc8419eaa78d76cadda7122c9ce9eb4eba75253
-    alternativeText: PDF 페이지 872의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 872 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 872
-        printedPage: '872'
-        pageRegionIdentifier: p872-ca-19
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
+  - blockReference: "ca-19:overview.heading:1"
+    sourceSpans: [{physicalPage: 872, printedPage: "872", pageRegionIdentifier: p872-ca-19}]
+  - blockReference: "ca-19:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 872, printedPage: "872", pageRegionIdentifier: p872-ca-19}]
+  - blockReference: "ca-19:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 872, printedPage: "872", pageRegionIdentifier: p872-ca-19}]
+  - blockReference: "ca-19:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 872, printedPage: "872", pageRegionIdentifier: p872-ca-19}]
+  - blockReference: "ca-19:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 872, printedPage: "872", pageRegionIdentifier: p872-ca-19}]
+  - blockReference: "ca-19:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 872, printedPage: "872", pageRegionIdentifier: p872-ca-19}]
+  - blockReference: "ca-19:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 872, printedPage: "872", pageRegionIdentifier: p872-ca-19}]
+  - blockReference: "ca-19:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 872, printedPage: "872", pageRegionIdentifier: p872-ca-19}]
+  - blockReference: "ca-19:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 872, printedPage: "872", pageRegionIdentifier: p872-ca-19}]
+  - blockReference: "ca-19:assessment.heading:1"
+    sourceSpans: [{physicalPage: 872, printedPage: "872", pageRegionIdentifier: p872-ca-19}]
+  - blockReference: "ca-19:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 872, printedPage: "872", pageRegionIdentifier: p872-ca-19}]
+  - blockReference: "ca-19:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 872, printedPage: "872", pageRegionIdentifier: p872-ca-19}]
+  - blockReference: "ca-19:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 872, printedPage: "872", pageRegionIdentifier: p872-ca-19}]
+  - blockReference: "ca-19:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 872, printedPage: "872", pageRegionIdentifier: p872-ca-19}]
+  - blockReference: "ca-19:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 872, printedPage: "872", pageRegionIdentifier: p872-ca-19}]
+  - blockReference: "ca-19:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 872, printedPage: "872", pageRegionIdentifier: p872-ca-19}]
+  - blockReference: "ca-19:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 872, printedPage: "872", pageRegionIdentifier: p872-ca-19}]
+  - blockReference: "ca-19:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 872, printedPage: "872", pageRegionIdentifier: p872-ca-19}]
+  - blockReference: "ca-19:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 872, printedPage: "872", pageRegionIdentifier: p872-ca-19}]
+  - blockReference: "ca-19:remediation.heading:1"
+    sourceSpans: [{physicalPage: 872, printedPage: "872", pageRegionIdentifier: p872-ca-19}]
+  - blockReference: "ca-19:remediation.supplementaryGuidance.heading:1"
+    sourceSpans: [{physicalPage: 872, printedPage: "872", pageRegionIdentifier: p872-ca-19}]
+  - blockReference: "ca-19:remediation.supplementaryGuidance.step:1"
+    sourceSpans: [{physicalPage: 872, printedPage: "872", pageRegionIdentifier: p872-ca-19}]
+  - blockReference: "ca-19:remediation.supplementaryGuidance.item:1"
+    sourceSpans: [{physicalPage: 872, printedPage: "872", pageRegionIdentifier: p872-ca-19}]
+  - blockReference: "ca-19:remediation.supplementaryGuidance.item:2"
+    sourceSpans: [{physicalPage: 872, printedPage: "872", pageRegionIdentifier: p872-ca-19}]
+assets: []

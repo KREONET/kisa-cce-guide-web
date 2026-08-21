@@ -9,7 +9,9 @@ format contract in the conversion policy is normative; this prompt restates the 
 
 ## Required procedure
 
-1. Read the task JSON, conversion policy, result schema, existing criterion Markdown, provenance sidecar, and structured exemplars listed in the task. Treat the structured exemplars as the required output shape, not as optional references.
+1. Read the task JSON, conversion policy, taxonomy, result schema, existing criterion Markdown,
+   provenance sidecar, and structured exemplars listed in the task. Treat the structured exemplars
+   as the required output shape, not as optional references.
 2. Inspect every attached source-page image with vision. Match each attachment to its task record by `imagePath` and `imageChecksum`, then emit exactly one `sourcePageInspections` record for every image. Listing a page without inspecting its image is invalid.
 3. Treat source-page images as the visual authority. Use each `transcript` only to navigate to likely regions. Do not copy, paraphrase, segment, or publish the transcript without independently reading the corresponding image.
 4. Perform OCR from the images and preserve every visible source section, table, step marker, command, configuration value, output line, path, option, number, and anomaly. Never silently correct source text.
@@ -22,22 +24,42 @@ format contract in the conversion policy is normative; this prompt restates the 
 11. Copy every required technical literal exactly into `quality.preservedTechnicalLiterals` and preserve it in the appropriate typed node fields.
 12. Do not edit repository files. Return only the JSON object required by the result schema.
 13. Every node and source span must include every schema field. Set fields that do not apply to that node type to `null`.
+14. Use `sourceContentType: pageText` and `publicationDisposition: published` for every heading or
+    other node whose text is visibly present in the source page image, including the eleven fixed
+    canonical headings. Reserve `derivedStructure` with `publicationDisposition: derived` only for
+    a structural heading that is absent from the source and added solely to satisfy the canonical
+    hierarchy, such as an `추가 지침` wrapper around visible platform-independent guidance.
 
 ## Semantic coverage contract
 
 - Every source page must have at least one node whose source span cites that page.
 - Set `transcriptAlignment` to `exact` only when the excerpt is a literal substring of the page transcript. Use `differs` for every non-literal match, including whitespace, punctuation, inserted heading, or reading-order differences. Use `notPresent` when the transcript contains no corresponding text, including text found only inside an embedded image.
-- `sourcePageInspections[].observedContentTypes` must identify every semantic content type seen in that page image.
+- `sourcePageInspections[].observedContentTypes` must equal the semantic content types represented
+  by nodes whose source spans cite that page. Do not include a visual layout container such as the
+  overview grid as `table` when its content is correctly decomposed into headings, prose, notes, and
+  lists instead of a semantic table node.
 - `sourcePageInspections[].observedNodeIdentifiers` must list exactly the nodes supported by that page image.
+- Compute each page's `observedNodeIdentifiers` as the exact set of node identifiers whose
+  `sourceSpans` contain that `physicalPage`. A node with spans on multiple pages must appear in
+  every corresponding page inspection, not only the page where the node begins or ends.
 - `quality.semanticCoverageStatus: complete` asserts that all visible criterion text has been represented as typed semantic nodes.
 - Use `completeWithUncertainty` only with `analysisStatus: needsSourceReview` and explicit uncertainty records.
 - Never use `semanticRole: sourceEvidence`, `transcription`, or an equivalent catch-all role to carry raw page text.
 - Put table text in `tableCaption`, `tableHeaders`, and `tableRows`; do not flatten it into `content`.
 - Put command, configuration, output, and literal text in `codeBlock.content` with the matching `codeContentType`; do not put it in a paragraph or list item.
+- Every value in the task's `requiredTechnicalLiterals` must occur verbatim in the searchable content
+  of at least one semantic node or in `sourceAnnotations[].sourceText`, as well as in
+  `quality.preservedTechnicalLiterals`. A declaration in the quality array alone is invalid. When a
+  literal is visible only in a screenshot caption or label, emit an appropriate paragraph or
+  `literal` code block node with embedded-image provenance instead of dropping it.
 
 ## Canonical format contract
 
 Apply this contract for both `systemCriterion` and `webApplicationCriterion` recommendations.
+
+- Use taxonomy `identifier` values in `targetIdentifiers`, never source labels or display labels.
+  Preserve the exact source labels only in `sourceTargetText` and heading content. For example,
+  `SOLARIS, LINUX, AIX, HP-UX 등` maps to `solaris`, `linux`, `aix`, and `hp-ux`.
 
 ### Heading composition
 
@@ -94,6 +116,9 @@ Emit exactly these headings, in this order, as heading nodes.
 
 - Preserve source capitalization for operating system and product headings, such as `SOLARIS`, `LINUX`, `AIX`, and `HP-UX`.
 - Preserve source capitalization for service, protocol, and distribution headings, such as `Telnet`, `SSH`, `Redhat`, and `Debian`.
+- Treat brackets used only as visual heading markers as `sourceMarker`, not heading content. For
+  example, source `[11.v2 이하 버전]` becomes heading content `11.v2 이하 버전` with the original
+  bracket marker preserved separately.
 - Omit the H4 level when a target platform has no service or environment subdivision, and attach the procedure directly under the H3.
 - Do not invent a target heading that the source page does not show.
 
@@ -101,6 +126,9 @@ Emit exactly these headings, in this order, as heading nodes.
 
 - Express every procedure as ordered list items, including a procedure with a single step.
 - Describe the action in the list item text and keep the command, configuration, or expected output in a separate code block node attached to that item.
+- A procedure list item must cite only the page image that visibly contains its Step text. When its
+  command, configuration, or output continues on another page, cite that page on the separate
+  code block node instead of adding the continuation span to the procedure item.
 - Mark file paths, configuration keys, command names, and configuration values as inline code in the list item text.
 - Preserve the source step numbering. Do not renumber, merge, or split source steps.
 

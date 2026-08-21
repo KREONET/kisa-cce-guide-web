@@ -2,64 +2,134 @@ schemaVersion: 1
 criterionSlug: ca-13
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: ca-13:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "ca-13:overview.heading:1"
     sourceSpans:
       - physicalPage: 866
-        printedPage: '866'
+        printedPage: "866"
         pageRegionIdentifier: p866-ca-13
-  - blockReference: ca-13:sourceTranscription.sourcePage866.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "ca-13:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 866
-        printedPage: '866'
+        printedPage: "866"
         pageRegionIdentifier: p866-ca-13
-  - blockReference: ca-13:sourceTranscription.sourcePage866.transcription:1
-    publicationDisposition: published
+  - blockReference: "ca-13:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 866
-        printedPage: '866'
+        printedPage: "866"
         pageRegionIdentifier: p866-ca-13
-  - blockReference: ca-13:sourceTranscription.sourcePage866.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "ca-13:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 866
-        printedPage: '866'
+        printedPage: "866"
         pageRegionIdentifier: p866-ca-13
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/ca-13/ca-13-page-866-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 9817e77850a788ce79c3018dab5430b636df5cad212ead416401ea1e42db6454
-    alternativeText: PDF 페이지 866의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 866 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
+  - blockReference: "ca-13:overview.inspectionPurpose.paragraph:1"
     sourceSpans:
       - physicalPage: 866
-        printedPage: '866'
+        printedPage: "866"
         pageRegionIdentifier: p866-ca-13
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
+  - blockReference: "ca-13:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 866
+        printedPage: "866"
+        pageRegionIdentifier: p866-ca-13
+  - blockReference: "ca-13:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 866
+        printedPage: "866"
+        pageRegionIdentifier: p866-ca-13
+  - blockReference: "ca-13:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 866
+        printedPage: "866"
+        pageRegionIdentifier: p866-ca-13
+  - blockReference: "ca-13:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 866
+        printedPage: "866"
+        pageRegionIdentifier: p866-ca-13
+  - blockReference: "ca-13:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 866
+        printedPage: "866"
+        pageRegionIdentifier: p866-ca-13
+  - blockReference: "ca-13:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 866
+        printedPage: "866"
+        pageRegionIdentifier: p866-ca-13
+  - blockReference: "ca-13:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 866
+        printedPage: "866"
+        pageRegionIdentifier: p866-ca-13
+  - blockReference: "ca-13:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 866
+        printedPage: "866"
+        pageRegionIdentifier: p866-ca-13
+  - blockReference: "ca-13:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 866
+        printedPage: "866"
+        pageRegionIdentifier: p866-ca-13
+  - blockReference: "ca-13:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 866
+        printedPage: "866"
+        pageRegionIdentifier: p866-ca-13
+  - blockReference: "ca-13:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 866
+        printedPage: "866"
+        pageRegionIdentifier: p866-ca-13
+  - blockReference: "ca-13:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 866
+        printedPage: "866"
+        pageRegionIdentifier: p866-ca-13
+  - blockReference: "ca-13:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 866
+        printedPage: "866"
+        pageRegionIdentifier: p866-ca-13
+  - blockReference: "ca-13:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 866
+        printedPage: "866"
+        pageRegionIdentifier: p866-ca-13
+  - blockReference: "ca-13:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 866
+        printedPage: "866"
+        pageRegionIdentifier: p866-ca-13
+  - blockReference: "ca-13:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 866
+        printedPage: "866"
+        pageRegionIdentifier: p866-ca-13
+  - blockReference: "ca-13:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - physicalPage: 866
+        printedPage: "866"
+        pageRegionIdentifier: p866-ca-13
+  - blockReference: "ca-13:remediation.supplementaryGuidance.step:1"
+    sourceSpans:
+      - physicalPage: 866
+        printedPage: "866"
+        pageRegionIdentifier: p866-ca-13
+  - blockReference: "ca-13:remediation.supplementaryGuidance.item:1"
+    sourceSpans:
+      - physicalPage: 866
+        printedPage: "866"
+        pageRegionIdentifier: p866-ca-13
+  - blockReference: "ca-13:remediation.supplementaryGuidance.item:2"
+    sourceSpans:
+      - physicalPage: 866
+        printedPage: "866"
+        pageRegionIdentifier: p866-ca-13
+  - blockReference: "ca-13:remediation.supplementaryGuidance.item:3"
+    sourceSpans:
+      - physicalPage: 866
+        printedPage: "866"
+        pageRegionIdentifier: p866-ca-13
+assets: []

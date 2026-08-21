@@ -2,382 +2,339 @@ schemaVersion: 1
 criterionSlug: si
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: si:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "si:overview.heading:1"
     sourceSpans:
       - physicalPage: 693
-        printedPage: '693'
+        printedPage: "693"
         pageRegionIdentifier: p693-si
-  - blockReference: si:sourceTranscription.sourcePage693.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "si:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 693
-        printedPage: '693'
+        printedPage: "693"
         pageRegionIdentifier: p693-si
-  - blockReference: si:sourceTranscription.sourcePage693.transcription:1
-    publicationDisposition: published
+  - blockReference: "si:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 693
-        printedPage: '693'
+        printedPage: "693"
         pageRegionIdentifier: p693-si
-  - blockReference: si:sourceTranscription.sourcePage693.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "si:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 693
-        printedPage: '693'
+        printedPage: "693"
         pageRegionIdentifier: p693-si
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - blockReference: si:sourceTranscription.sourcePage694.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "si:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:overview.reference.note.label:3"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:overview.reference.note.content:3"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:remediation.heading:1"
     sourceSpans:
       - physicalPage: 694
-        printedPage: '694'
+        printedPage: "694"
         pageRegionIdentifier: p694-si
-  - blockReference: si:sourceTranscription.sourcePage694.transcription:1
-    publicationDisposition: published
+  - blockReference: "si:remediation.unspecified.heading:1"
+    sourceSpans:
+      - physicalPage: 695
+        printedPage: "695"
+        pageRegionIdentifier: p695-si
+  - blockReference: "si:remediation.unspecified.paragraph:1"
+    sourceSpans:
+      - physicalPage: 695
+        printedPage: "695"
+        pageRegionIdentifier: p695-si
+  - blockReference: "si:remediation.unspecified.step:1"
+    sourceSpans:
+      - physicalPage: 695
+        printedPage: "695"
+        pageRegionIdentifier: p695-si
+  - blockReference: "si:remediation.unspecified.literal:1"
+    sourceSpans:
+      - physicalPage: 695
+        printedPage: "695"
+        pageRegionIdentifier: p695-si
+  - blockReference: "si:remediation.unspecified.step:2"
+    sourceSpans:
+      - physicalPage: 695
+        printedPage: "695"
+        pageRegionIdentifier: p695-si
+  - blockReference: "si:remediation.unspecified.configuration:1"
+    sourceSpans:
+      - physicalPage: 695
+        printedPage: "695"
+        pageRegionIdentifier: p695-si
+  - blockReference: "si:remediation.unspecified.step:3"
+    sourceSpans:
+      - physicalPage: 695
+        printedPage: "695"
+        pageRegionIdentifier: p695-si
+  - blockReference: "si:remediation.unspecified.configuration:2"
+    sourceSpans:
+      - physicalPage: 695
+        printedPage: "695"
+        pageRegionIdentifier: p695-si
+  - blockReference: "si:remediation.unspecified.step:4"
+    sourceSpans:
+      - physicalPage: 695
+        printedPage: "695"
+        pageRegionIdentifier: p695-si
+  - blockReference: "si:remediation.unspecified.step.explanation:4"
+    sourceSpans:
+      - physicalPage: 696
+        printedPage: "696"
+        pageRegionIdentifier: p696-si
+  - blockReference: "si:remediation.unspecified.step:5"
+    sourceSpans:
+      - physicalPage: 696
+        printedPage: "696"
+        pageRegionIdentifier: p696-si
+  - blockReference: "si:remediation.unspecified.configuration:3"
+    sourceSpans:
+      - physicalPage: 696
+        printedPage: "696"
+        pageRegionIdentifier: p696-si
+  - blockReference: "si:remediation.unspecified.step:6"
+    sourceSpans:
+      - physicalPage: 696
+        printedPage: "696"
+        pageRegionIdentifier: p696-si
+  - blockReference: "si:remediation.unspecified.configuration:4"
+    sourceSpans:
+      - physicalPage: 696
+        printedPage: "696"
+        pageRegionIdentifier: p696-si
+  - blockReference: "si:remediation.unspecified.paragraph:2"
+    sourceSpans:
+      - physicalPage: 697
+        printedPage: "697"
+        pageRegionIdentifier: p697-si
+  - blockReference: "si:remediation.unspecified.step:7"
+    sourceSpans:
+      - physicalPage: 697
+        printedPage: "697"
+        pageRegionIdentifier: p697-si
+  - blockReference: "si:remediation.unspecified.literal:2"
+    sourceSpans:
+      - physicalPage: 697
+        printedPage: "697"
+        pageRegionIdentifier: p697-si
+  - blockReference: "si:remediation.unspecified.step:8"
+    sourceSpans:
+      - physicalPage: 697
+        printedPage: "697"
+        pageRegionIdentifier: p697-si
+  - blockReference: "si:remediation.unspecified.configuration:5"
+    sourceSpans:
+      - physicalPage: 697
+        printedPage: "697"
+        pageRegionIdentifier: p697-si
+  - blockReference: "si:remediation.unspecified.step:9"
+    sourceSpans:
+      - physicalPage: 698
+        printedPage: "698"
+        pageRegionIdentifier: p698-si
+  - blockReference: "si:remediation.unspecified.configuration:6"
+    sourceSpans:
+      - physicalPage: 698
+        printedPage: "698"
+        pageRegionIdentifier: p698-si
+  - blockReference: "si:remediation.unspecified.paragraph:3"
+    sourceSpans:
+      - physicalPage: 698
+        printedPage: "698"
+        pageRegionIdentifier: p698-si
+  - blockReference: "si:remediation.unspecified.step:10"
+    sourceSpans:
+      - physicalPage: 698
+        printedPage: "698"
+        pageRegionIdentifier: p698-si
+  - blockReference: "si:remediation.unspecified.configuration:7"
+    sourceSpans:
+      - physicalPage: 698
+        printedPage: "698"
+        pageRegionIdentifier: p698-si
+  - blockReference: "si:remediation.unspecified.step:11"
+    sourceSpans:
+      - physicalPage: 698
+        printedPage: "698"
+        pageRegionIdentifier: p698-si
+  - blockReference: "si:remediation.unspecified.configuration:8"
+    sourceSpans:
+      - physicalPage: 698
+        printedPage: "698"
+        pageRegionIdentifier: p698-si
+  - blockReference: "si:remediation.unspecified.paragraph:4"
+    sourceSpans:
+      - physicalPage: 699
+        printedPage: "699"
+        pageRegionIdentifier: p699-si
+  - blockReference: "si:remediation.unspecified.step:12"
+    sourceSpans:
+      - physicalPage: 699
+        printedPage: "699"
+        pageRegionIdentifier: p699-si
+  - blockReference: "si:remediation.unspecified.literal:3"
+    sourceSpans:
+      - physicalPage: 699
+        printedPage: "699"
+        pageRegionIdentifier: p699-si
+  - blockReference: "si:remediation.unspecified.step:13"
+    sourceSpans:
+      - physicalPage: 699
+        printedPage: "699"
+        pageRegionIdentifier: p699-si
+  - blockReference: "si:remediation.unspecified.configuration:9"
+    sourceSpans:
+      - physicalPage: 699
+        printedPage: "699"
+        pageRegionIdentifier: p699-si
+  - blockReference: "si:remediation.unspecified.step:14"
+    sourceSpans:
+      - physicalPage: 699
+        printedPage: "699"
+        pageRegionIdentifier: p699-si
+  - blockReference: "si:remediation.unspecified.configuration:10"
+    sourceSpans:
+      - physicalPage: 699
+        printedPage: "699"
+        pageRegionIdentifier: p699-si
+  - blockReference: "si:remediation.supplementaryGuidance.heading:1"
     sourceSpans:
       - physicalPage: 694
-        printedPage: '694'
+        printedPage: "694"
         pageRegionIdentifier: p694-si
-  - blockReference: si:sourceTranscription.sourcePage694.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "si:remediation.supplementaryGuidance.step:1"
     sourceSpans:
       - physicalPage: 694
-        printedPage: '694'
+        printedPage: "694"
         pageRegionIdentifier: p694-si
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: si:sourceTranscription.sourcePage695.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 695
-        printedPage: '695'
-        pageRegionIdentifier: p695-si
-  - blockReference: si:sourceTranscription.sourcePage695.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 695
-        printedPage: '695'
-        pageRegionIdentifier: p695-si
-  - blockReference: si:sourceTranscription.sourcePage695.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 695
-        printedPage: '695'
-        pageRegionIdentifier: p695-si
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: si:sourceTranscription.sourcePage696.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 696
-        printedPage: '696'
-        pageRegionIdentifier: p696-si
-  - blockReference: si:sourceTranscription.sourcePage696.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 696
-        printedPage: '696'
-        pageRegionIdentifier: p696-si
-  - blockReference: si:sourceTranscription.sourcePage696.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 696
-        printedPage: '696'
-        pageRegionIdentifier: p696-si
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: si:sourceTranscription.sourcePage697.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 697
-        printedPage: '697'
-        pageRegionIdentifier: p697-si
-  - blockReference: si:sourceTranscription.sourcePage697.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 697
-        printedPage: '697'
-        pageRegionIdentifier: p697-si
-  - blockReference: si:sourceTranscription.sourcePage697.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 697
-        printedPage: '697'
-        pageRegionIdentifier: p697-si
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: si:sourceTranscription.sourcePage698.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 698
-        printedPage: '698'
-        pageRegionIdentifier: p698-si
-  - blockReference: si:sourceTranscription.sourcePage698.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 698
-        printedPage: '698'
-        pageRegionIdentifier: p698-si
-  - blockReference: si:sourceTranscription.sourcePage698.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 698
-        printedPage: '698'
-        pageRegionIdentifier: p698-si
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: si:sourceTranscription.sourcePage699.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 699
-        printedPage: '699'
-        pageRegionIdentifier: p699-si
-  - blockReference: si:sourceTranscription.sourcePage699.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 699
-        printedPage: '699'
-        pageRegionIdentifier: p699-si
-  - blockReference: si:sourceTranscription.sourcePage699.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 699
-        printedPage: '699'
-        pageRegionIdentifier: p699-si
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/si/si-page-693-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: f5a19bf0c4f3b653228a9a8dae3a03a741bcb66389097155a57ebbcacaa1befe
-    alternativeText: PDF 페이지 693의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 693 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 693
-        printedPage: '693'
-        pageRegionIdentifier: p693-si
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - path: ../assets/si/si-page-694-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: b768b7ab81ff0c6d105d0b23917fef08877a2f194203020935839de93bd475c5
-    alternativeText: PDF 페이지 694의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 694 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "si:remediation.supplementaryGuidance.step:2"
     sourceSpans:
       - physicalPage: 694
-        printedPage: '694'
+        printedPage: "694"
         pageRegionIdentifier: p694-si
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/si/si-page-695-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 5f91f52301540d9bb68dde2aceba1c39dede54c294467236c1155caec5ab0045
-    alternativeText: PDF 페이지 695의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 695 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "si:remediation.supplementaryGuidance.step:3"
     sourceSpans:
-      - physicalPage: 695
-        printedPage: '695'
-        pageRegionIdentifier: p695-si
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/si/si-page-696-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 3de5755d1c7c311c93335f74605dac003a8f3a0175a552a1a8b2ab97cfff311d
-    alternativeText: PDF 페이지 696의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 696 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+      - physicalPage: 694
+        printedPage: "694"
+        pageRegionIdentifier: p694-si
+  - blockReference: "si:remediation.supplementaryGuidance.step:4"
     sourceSpans:
-      - physicalPage: 696
-        printedPage: '696'
-        pageRegionIdentifier: p696-si
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/si/si-page-697-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 9f234e58a0cb711df6764ae510be0878a6ef67f0008e41935d40c93ac39ff423
-    alternativeText: PDF 페이지 697의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 697 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+      - physicalPage: 694
+        printedPage: "694"
+        pageRegionIdentifier: p694-si
+  - blockReference: "si:remediation.supplementaryGuidance.table:1"
     sourceSpans:
-      - physicalPage: 697
-        printedPage: '697'
-        pageRegionIdentifier: p697-si
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/si/si-page-698-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 3ccb72ffe2c43f092880962d5fef69ce0fa13c24ad7ddb5a103eeb462940a22f
-    alternativeText: PDF 페이지 698의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 698 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+      - physicalPage: 694
+        printedPage: "694"
+        pageRegionIdentifier: p694-si
+  - blockReference: "si:remediation.supplementaryGuidance.step:5"
     sourceSpans:
-      - physicalPage: 698
-        printedPage: '698'
-        pageRegionIdentifier: p698-si
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/si/si-page-699-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: d24b733f0f0f04f47745d3b34fe72f2d457c29e5af12d6735741febebeda7f09
-    alternativeText: PDF 페이지 699의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 699 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+      - physicalPage: 694
+        printedPage: "694"
+        pageRegionIdentifier: p694-si
+  - blockReference: "si:remediation.supplementaryGuidance.step:6"
     sourceSpans:
-      - physicalPage: 699
-        printedPage: '699'
-        pageRegionIdentifier: p699-si
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+      - physicalPage: 694
+        printedPage: "694"
+        pageRegionIdentifier: p694-si
+  - blockReference: "si:remediation.supplementaryGuidance.step:7"
+    sourceSpans:
+      - physicalPage: 694
+        printedPage: "694"
+        pageRegionIdentifier: p694-si
+assets: []

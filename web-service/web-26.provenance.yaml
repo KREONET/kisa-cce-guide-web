@@ -2,170 +2,309 @@ schemaVersion: 1
 criterionSlug: web-26
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: web-26:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "web-26:overview.heading:1"
     sourceSpans:
       - physicalPage: 350
-        printedPage: '350'
+        printedPage: "350"
         pageRegionIdentifier: p350-web-26
-  - blockReference: web-26:sourceTranscription.sourcePage350.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "web-26:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 350
-        printedPage: '350'
+        printedPage: "350"
         pageRegionIdentifier: p350-web-26
-  - blockReference: web-26:sourceTranscription.sourcePage350.transcription:1
-    publicationDisposition: published
+  - blockReference: "web-26:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 350
-        printedPage: '350'
+        printedPage: "350"
         pageRegionIdentifier: p350-web-26
-  - blockReference: web-26:sourceTranscription.sourcePage350.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "web-26:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 350
-        printedPage: '350'
+        printedPage: "350"
         pageRegionIdentifier: p350-web-26
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - blockReference: web-26:sourceTranscription.sourcePage351.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "web-26:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 350
+        printedPage: "350"
+        pageRegionIdentifier: p350-web-26
+  - blockReference: "web-26:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 350
+        printedPage: "350"
+        pageRegionIdentifier: p350-web-26
+  - blockReference: "web-26:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 350
+        printedPage: "350"
+        pageRegionIdentifier: p350-web-26
+  - blockReference: "web-26:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 350
+        printedPage: "350"
+        pageRegionIdentifier: p350-web-26
+  - blockReference: "web-26:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 350
+        printedPage: "350"
+        pageRegionIdentifier: p350-web-26
+  - blockReference: "web-26:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 350
+        printedPage: "350"
+        pageRegionIdentifier: p350-web-26
+  - blockReference: "web-26:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 350
+        printedPage: "350"
+        pageRegionIdentifier: p350-web-26
+  - blockReference: "web-26:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 350
+        printedPage: "350"
+        pageRegionIdentifier: p350-web-26
+  - blockReference: "web-26:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 350
+        printedPage: "350"
+        pageRegionIdentifier: p350-web-26
+  - blockReference: "web-26:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 350
+        printedPage: "350"
+        pageRegionIdentifier: p350-web-26
+  - blockReference: "web-26:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 350
+        printedPage: "350"
+        pageRegionIdentifier: p350-web-26
+  - blockReference: "web-26:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 350
+        printedPage: "350"
+        pageRegionIdentifier: p350-web-26
+  - blockReference: "web-26:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 350
+        printedPage: "350"
+        pageRegionIdentifier: p350-web-26
+  - blockReference: "web-26:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 350
+        printedPage: "350"
+        pageRegionIdentifier: p350-web-26
+  - blockReference: "web-26:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 350
+        printedPage: "350"
+        pageRegionIdentifier: p350-web-26
+  - blockReference: "web-26:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 350
+        printedPage: "350"
+        pageRegionIdentifier: p350-web-26
+  - blockReference: "web-26:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 350
+        printedPage: "350"
+        pageRegionIdentifier: p350-web-26
+  - blockReference: "web-26:remediation.linux.paragraph:1"
+    sourceSpans:
+      - physicalPage: 350
+        printedPage: "350"
+        pageRegionIdentifier: p350-web-26
+  - blockReference: "web-26:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 350
+        printedPage: "350"
+        pageRegionIdentifier: p350-web-26
+  - blockReference: "web-26:remediation.linux.command:1"
+    sourceSpans:
+      - physicalPage: 350
+        printedPage: "350"
+        pageRegionIdentifier: p350-web-26
+  - blockReference: "web-26:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 350
+        printedPage: "350"
+        pageRegionIdentifier: p350-web-26
+  - blockReference: "web-26:remediation.linux.command:2"
+    sourceSpans:
+      - physicalPage: 350
+        printedPage: "350"
+        pageRegionIdentifier: p350-web-26
+  - blockReference: "web-26:remediation.linux.paragraph:2"
+    sourceSpans:
+      - physicalPage: 350
+        printedPage: "350"
+        pageRegionIdentifier: p350-web-26
+  - blockReference: "web-26:remediation.linux.step:3"
+    sourceSpans:
+      - physicalPage: 350
+        printedPage: "350"
+        pageRegionIdentifier: p350-web-26
+  - blockReference: "web-26:remediation.linux.command:3"
+    sourceSpans:
+      - physicalPage: 350
+        printedPage: "350"
+        pageRegionIdentifier: p350-web-26
+  - blockReference: "web-26:remediation.linux.step:4"
+    sourceSpans:
+      - physicalPage: 350
+        printedPage: "350"
+        pageRegionIdentifier: p350-web-26
+  - blockReference: "web-26:remediation.linux.command:4"
+    sourceSpans:
+      - physicalPage: 350
+        printedPage: "350"
+        pageRegionIdentifier: p350-web-26
+  - blockReference: "web-26:remediation.linux.paragraph:3"
     sourceSpans:
       - physicalPage: 351
-        printedPage: '351'
+        printedPage: "351"
         pageRegionIdentifier: p351-web-26
-  - blockReference: web-26:sourceTranscription.sourcePage351.transcription:1
-    publicationDisposition: published
+  - blockReference: "web-26:remediation.linux.step:5"
     sourceSpans:
       - physicalPage: 351
-        printedPage: '351'
+        printedPage: "351"
         pageRegionIdentifier: p351-web-26
-  - blockReference: web-26:sourceTranscription.sourcePage351.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "web-26:remediation.linux.command:5"
     sourceSpans:
       - physicalPage: 351
-        printedPage: '351'
+        printedPage: "351"
         pageRegionIdentifier: p351-web-26
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: web-26:sourceTranscription.sourcePage352.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 352
-        printedPage: '352'
-        pageRegionIdentifier: p352-web-26
-  - blockReference: web-26:sourceTranscription.sourcePage352.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 352
-        printedPage: '352'
-        pageRegionIdentifier: p352-web-26
-  - blockReference: web-26:sourceTranscription.sourcePage352.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 352
-        printedPage: '352'
-        pageRegionIdentifier: p352-web-26
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/web-26/web-26-page-350-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 4d16766929ff22785bc57f0b5210b5d9579956dbcfb187642f7437695a408c82
-    alternativeText: PDF 페이지 350의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 350 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 350
-        printedPage: '350'
-        pageRegionIdentifier: p350-web-26
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - path: ../assets/web-26/web-26-page-351-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 7d0d85387f57033c0282a3b7067db321314e63131d527c9d62ad9940c058a20f
-    alternativeText: PDF 페이지 351의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 351 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "web-26:remediation.linux.step:6"
     sourceSpans:
       - physicalPage: 351
-        printedPage: '351'
+        printedPage: "351"
         pageRegionIdentifier: p351-web-26
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/web-26/web-26-page-352-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 8e442fb56efc6f47a44ae743e1acd117489efb44b90498dc7b477e6e62c22771
-    alternativeText: PDF 페이지 352의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 352 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "web-26:remediation.linux.command:6"
+    sourceSpans:
+      - physicalPage: 351
+        printedPage: "351"
+        pageRegionIdentifier: p351-web-26
+  - blockReference: "web-26:remediation.linux.paragraph:4"
+    sourceSpans:
+      - physicalPage: 351
+        printedPage: "351"
+        pageRegionIdentifier: p351-web-26
+  - blockReference: "web-26:remediation.linux.step:7"
+    sourceSpans:
+      - physicalPage: 351
+        printedPage: "351"
+        pageRegionIdentifier: p351-web-26
+  - blockReference: "web-26:remediation.linux.literal:1"
+    sourceSpans:
+      - physicalPage: 351
+        printedPage: "351"
+        pageRegionIdentifier: p351-web-26
+  - blockReference: "web-26:remediation.linux.step:8"
+    sourceSpans:
+      - physicalPage: 351
+        printedPage: "351"
+        pageRegionIdentifier: p351-web-26
+  - blockReference: "web-26:remediation.linux.note.label:1"
     sourceSpans:
       - physicalPage: 352
-        printedPage: '352'
+        printedPage: "352"
         pageRegionIdentifier: p352-web-26
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - blockReference: "web-26:remediation.linux.note.content:1"
+    sourceSpans:
+      - physicalPage: 352
+        printedPage: "352"
+        pageRegionIdentifier: p352-web-26
+  - blockReference: "web-26:remediation.linux.paragraph:5"
+    sourceSpans:
+      - physicalPage: 352
+        printedPage: "352"
+        pageRegionIdentifier: p352-web-26
+  - blockReference: "web-26:remediation.linux.step:9"
+    sourceSpans:
+      - physicalPage: 352
+        printedPage: "352"
+        pageRegionIdentifier: p352-web-26
+  - blockReference: "web-26:remediation.linux.command:7"
+    sourceSpans:
+      - physicalPage: 352
+        printedPage: "352"
+        pageRegionIdentifier: p352-web-26
+  - blockReference: "web-26:remediation.linux.step:10"
+    sourceSpans:
+      - physicalPage: 352
+        printedPage: "352"
+        pageRegionIdentifier: p352-web-26
+  - blockReference: "web-26:remediation.linux.command:8"
+    sourceSpans:
+      - physicalPage: 352
+        printedPage: "352"
+        pageRegionIdentifier: p352-web-26
+  - blockReference: "web-26:remediation.linux.step:11"
+    sourceSpans:
+      - physicalPage: 352
+        printedPage: "352"
+        pageRegionIdentifier: p352-web-26
+  - blockReference: "web-26:remediation.linux.command:9"
+    sourceSpans:
+      - physicalPage: 352
+        printedPage: "352"
+        pageRegionIdentifier: p352-web-26
+  - blockReference: "web-26:remediation.linux.note.label:2"
+    sourceSpans:
+      - physicalPage: 352
+        printedPage: "352"
+        pageRegionIdentifier: p352-web-26
+  - blockReference: "web-26:remediation.linux.note.content:2"
+    sourceSpans:
+      - physicalPage: 352
+        printedPage: "352"
+        pageRegionIdentifier: p352-web-26
+  - blockReference: "web-26:remediation.linux.paragraph:6"
+    sourceSpans:
+      - physicalPage: 352
+        printedPage: "352"
+        pageRegionIdentifier: p352-web-26
+  - blockReference: "web-26:remediation.linux.step:12"
+    sourceSpans:
+      - physicalPage: 352
+        printedPage: "352"
+        pageRegionIdentifier: p352-web-26
+  - blockReference: "web-26:remediation.linux.command:10"
+    sourceSpans:
+      - physicalPage: 352
+        printedPage: "352"
+        pageRegionIdentifier: p352-web-26
+  - blockReference: "web-26:remediation.linux.output:1"
+    sourceSpans:
+      - physicalPage: 352
+        printedPage: "352"
+        pageRegionIdentifier: p352-web-26
+  - blockReference: "web-26:remediation.linux.step:13"
+    sourceSpans:
+      - physicalPage: 352
+        printedPage: "352"
+        pageRegionIdentifier: p352-web-26
+  - blockReference: "web-26:remediation.linux.command:11"
+    sourceSpans:
+      - physicalPage: 352
+        printedPage: "352"
+        pageRegionIdentifier: p352-web-26
+  - blockReference: "web-26:remediation.linux.step:14"
+    sourceSpans:
+      - physicalPage: 352
+        printedPage: "352"
+        pageRegionIdentifier: p352-web-26
+  - blockReference: "web-26:remediation.linux.command:12"
+    sourceSpans:
+      - physicalPage: 352
+        printedPage: "352"
+        pageRegionIdentifier: p352-web-26
+  - blockReference: "web-26:remediation.linux.note.label:3"
+    sourceSpans:
+      - physicalPage: 352
+        printedPage: "352"
+        pageRegionIdentifier: p352-web-26
+  - blockReference: "web-26:remediation.linux.note.content:3"
+    sourceSpans:
+      - physicalPage: 352
+        printedPage: "352"
+        pageRegionIdentifier: p352-web-26
+assets: []

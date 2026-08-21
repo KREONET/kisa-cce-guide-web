@@ -2,64 +2,279 @@ schemaVersion: 1
 criterionSlug: u-32
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: u-32:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "u-32:overview.heading:1"
     sourceSpans:
       - physicalPage: 66
-        printedPage: '66'
+        printedPage: "66"
         pageRegionIdentifier: p66-u-32
-  - blockReference: u-32:sourceTranscription.sourcePage66.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "u-32:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 66
-        printedPage: '66'
+        printedPage: "66"
         pageRegionIdentifier: p66-u-32
-  - blockReference: u-32:sourceTranscription.sourcePage66.transcription:1
-    publicationDisposition: published
+  - blockReference: "u-32:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 66
-        printedPage: '66'
+        printedPage: "66"
         pageRegionIdentifier: p66-u-32
-  - blockReference: u-32:sourceTranscription.sourcePage66.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "u-32:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 66
-        printedPage: '66'
+        printedPage: "66"
         pageRegionIdentifier: p66-u-32
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/u-32/u-32-page-66-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: e8d930b9b3d7f7d3e87facbde112ab76acfefba92ad63064888de0bb55216130
-    alternativeText: PDF 페이지 66의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 66 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
+  - blockReference: "u-32:overview.inspectionPurpose.paragraph:1"
     sourceSpans:
       - physicalPage: 66
-        printedPage: '66'
+        printedPage: "66"
         pageRegionIdentifier: p66-u-32
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
+  - blockReference: "u-32:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:remediation.solaris.heading:1"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:remediation.solaris.step:1"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:remediation.solaris.command:1"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:remediation.solaris.step:2"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:remediation.solaris.command:2"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:remediation.solaris.step:3"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:remediation.solaris.command:3"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:remediation.solaris.configuration:1"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:remediation.linux.command:1"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:remediation.linux.command:2"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:remediation.linux.step:3"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:remediation.linux.command:3"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:remediation.linux.configuration:1"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:remediation.aix.heading:1"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:remediation.aix.step:1"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:remediation.aix.command:1"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:remediation.aix.step:2"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:remediation.aix.command:2"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:remediation.aix.step:3"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:remediation.aix.command:3"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:remediation.aix.configuration:1"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:remediation.hp-ux.heading:1"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:remediation.hp-ux.step:1"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:remediation.hp-ux.command:1"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:remediation.hp-ux.step:2"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:remediation.hp-ux.command:2"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:remediation.hp-ux.step:3"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:remediation.hp-ux.command:3"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+  - blockReference: "u-32:remediation.hp-ux.configuration:1"
+    sourceSpans:
+      - physicalPage: 66
+        printedPage: "66"
+        pageRegionIdentifier: p66-u-32
+assets: []

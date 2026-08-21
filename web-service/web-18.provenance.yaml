@@ -2,170 +2,250 @@ schemaVersion: 1
 criterionSlug: web-18
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: web-18:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "web-18:overview.heading:1"
     sourceSpans:
       - physicalPage: 322
-        printedPage: '322'
+        printedPage: "322"
         pageRegionIdentifier: p322-web-18
-  - blockReference: web-18:sourceTranscription.sourcePage322.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "web-18:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 322
-        printedPage: '322'
+        printedPage: "322"
         pageRegionIdentifier: p322-web-18
-  - blockReference: web-18:sourceTranscription.sourcePage322.transcription:1
-    publicationDisposition: published
+  - blockReference: "web-18:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 322
-        printedPage: '322'
+        printedPage: "322"
         pageRegionIdentifier: p322-web-18
-  - blockReference: web-18:sourceTranscription.sourcePage322.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "web-18:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 322
-        printedPage: '322'
+        printedPage: "322"
         pageRegionIdentifier: p322-web-18
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - blockReference: web-18:sourceTranscription.sourcePage323.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "web-18:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 322
+        printedPage: "322"
+        pageRegionIdentifier: p322-web-18
+  - blockReference: "web-18:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 322
+        printedPage: "322"
+        pageRegionIdentifier: p322-web-18
+  - blockReference: "web-18:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 322
+        printedPage: "322"
+        pageRegionIdentifier: p322-web-18
+  - blockReference: "web-18:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 322
+        printedPage: "322"
+        pageRegionIdentifier: p322-web-18
+  - blockReference: "web-18:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 322
+        printedPage: "322"
+        pageRegionIdentifier: p322-web-18
+  - blockReference: "web-18:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 322
+        printedPage: "322"
+        pageRegionIdentifier: p322-web-18
+  - blockReference: "web-18:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 322
+        printedPage: "322"
+        pageRegionIdentifier: p322-web-18
+  - blockReference: "web-18:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 322
+        printedPage: "322"
+        pageRegionIdentifier: p322-web-18
+  - blockReference: "web-18:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 322
+        printedPage: "322"
+        pageRegionIdentifier: p322-web-18
+  - blockReference: "web-18:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 322
+        printedPage: "322"
+        pageRegionIdentifier: p322-web-18
+  - blockReference: "web-18:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 322
+        printedPage: "322"
+        pageRegionIdentifier: p322-web-18
+  - blockReference: "web-18:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 322
+        printedPage: "322"
+        pageRegionIdentifier: p322-web-18
+  - blockReference: "web-18:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 322
+        printedPage: "322"
+        pageRegionIdentifier: p322-web-18
+  - blockReference: "web-18:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 322
+        printedPage: "322"
+        pageRegionIdentifier: p322-web-18
+  - blockReference: "web-18:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 322
+        printedPage: "322"
+        pageRegionIdentifier: p322-web-18
+  - blockReference: "web-18:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 322
+        printedPage: "322"
+        pageRegionIdentifier: p322-web-18
+  - blockReference: "web-18:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 322
+        printedPage: "322"
+        pageRegionIdentifier: p322-web-18
+  - blockReference: "web-18:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 322
+        printedPage: "322"
+        pageRegionIdentifier: p322-web-18
+      - physicalPage: 323
+        printedPage: "323"
+        pageRegionIdentifier: p323-web-18
+      - physicalPage: 324
+        printedPage: "324"
+        pageRegionIdentifier: p324-web-18
+  - blockReference: "web-18:remediation.linux.paragraph:1"
+    sourceSpans:
+      - physicalPage: 322
+        printedPage: "322"
+        pageRegionIdentifier: p322-web-18
+  - blockReference: "web-18:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 322
+        printedPage: "322"
+        pageRegionIdentifier: p322-web-18
+  - blockReference: "web-18:remediation.linux.command:1"
+    sourceSpans:
+      - physicalPage: 322
+        printedPage: "322"
+        pageRegionIdentifier: p322-web-18
+  - blockReference: "web-18:remediation.linux.configuration:1"
+    sourceSpans:
+      - physicalPage: 322
+        printedPage: "322"
+        pageRegionIdentifier: p322-web-18
+  - blockReference: "web-18:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 322
+        printedPage: "322"
+        pageRegionIdentifier: p322-web-18
+  - blockReference: "web-18:remediation.linux.command:2"
+    sourceSpans:
+      - physicalPage: 322
+        printedPage: "322"
+        pageRegionIdentifier: p322-web-18
+  - blockReference: "web-18:remediation.linux.configuration:2"
+    sourceSpans:
+      - physicalPage: 322
+        printedPage: "322"
+        pageRegionIdentifier: p322-web-18
+  - blockReference: "web-18:remediation.linux.step:3"
+    sourceSpans:
+      - physicalPage: 322
+        printedPage: "322"
+        pageRegionIdentifier: p322-web-18
+  - blockReference: "web-18:remediation.linux.command:3"
+    sourceSpans:
+      - physicalPage: 322
+        printedPage: "322"
+        pageRegionIdentifier: p322-web-18
+  - blockReference: "web-18:remediation.linux.paragraph:2"
     sourceSpans:
       - physicalPage: 323
-        printedPage: '323'
+        printedPage: "323"
         pageRegionIdentifier: p323-web-18
-  - blockReference: web-18:sourceTranscription.sourcePage323.transcription:1
-    publicationDisposition: published
+  - blockReference: "web-18:remediation.linux.step:4"
     sourceSpans:
       - physicalPage: 323
-        printedPage: '323'
+        printedPage: "323"
         pageRegionIdentifier: p323-web-18
-  - blockReference: web-18:sourceTranscription.sourcePage323.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "web-18:remediation.linux.command:4"
     sourceSpans:
       - physicalPage: 323
-        printedPage: '323'
+        printedPage: "323"
         pageRegionIdentifier: p323-web-18
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: web-18:sourceTranscription.sourcePage324.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 324
-        printedPage: '324'
-        pageRegionIdentifier: p324-web-18
-  - blockReference: web-18:sourceTranscription.sourcePage324.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 324
-        printedPage: '324'
-        pageRegionIdentifier: p324-web-18
-  - blockReference: web-18:sourceTranscription.sourcePage324.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 324
-        printedPage: '324'
-        pageRegionIdentifier: p324-web-18
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/web-18/web-18-page-322-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: a16ed41ea739139fcb57ead15f68a790e55930b91d0b3d9b630ddb183bc28968
-    alternativeText: PDF 페이지 322의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 322 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 322
-        printedPage: '322'
-        pageRegionIdentifier: p322-web-18
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - path: ../assets/web-18/web-18-page-323-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 258f082089a26431c1bee354b78a1618dfdfec6397387cde19aa1d51a37543c8
-    alternativeText: PDF 페이지 323의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 323 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "web-18:remediation.linux.configuration:3"
     sourceSpans:
       - physicalPage: 323
-        printedPage: '323'
+        printedPage: "323"
         pageRegionIdentifier: p323-web-18
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/web-18/web-18-page-324-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 96bbe89604ce838154bd3f4aa0cd18530b4ec2a0960e8ae28fbb4f84ec7bb3f6
-    alternativeText: PDF 페이지 324의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 324 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "web-18:remediation.linux.step:5"
+    sourceSpans:
+      - physicalPage: 323
+        printedPage: "323"
+        pageRegionIdentifier: p323-web-18
+  - blockReference: "web-18:remediation.linux.step:6"
+    sourceSpans:
+      - physicalPage: 323
+        printedPage: "323"
+        pageRegionIdentifier: p323-web-18
+  - blockReference: "web-18:remediation.linux.command:5"
+    sourceSpans:
+      - physicalPage: 323
+        printedPage: "323"
+        pageRegionIdentifier: p323-web-18
+  - blockReference: "web-18:remediation.linux.paragraph:3"
+    sourceSpans:
+      - physicalPage: 323
+        printedPage: "323"
+        pageRegionIdentifier: p323-web-18
+  - blockReference: "web-18:remediation.linux.step:7"
+    sourceSpans:
+      - physicalPage: 323
+        printedPage: "323"
+        pageRegionIdentifier: p323-web-18
+  - blockReference: "web-18:remediation.linux.literal:1"
+    sourceSpans:
+      - physicalPage: 323
+        printedPage: "323"
+        pageRegionIdentifier: p323-web-18
+  - blockReference: "web-18:remediation.linux.step:8"
     sourceSpans:
       - physicalPage: 324
-        printedPage: '324'
+        printedPage: "324"
         pageRegionIdentifier: p324-web-18
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - blockReference: "web-18:remediation.linux.literal:2"
+    sourceSpans:
+      - physicalPage: 324
+        printedPage: "324"
+        pageRegionIdentifier: p324-web-18
+  - blockReference: "web-18:remediation.linux.paragraph:4"
+    sourceSpans:
+      - physicalPage: 324
+        printedPage: "324"
+        pageRegionIdentifier: p324-web-18
+  - blockReference: "web-18:remediation.linux.step:9"
+    sourceSpans:
+      - physicalPage: 324
+        printedPage: "324"
+        pageRegionIdentifier: p324-web-18
+  - blockReference: "web-18:remediation.linux.command:6"
+    sourceSpans:
+      - physicalPage: 324
+        printedPage: "324"
+        pageRegionIdentifier: p324-web-18
+  - blockReference: "web-18:remediation.linux.configuration:4"
+    sourceSpans:
+      - physicalPage: 324
+        printedPage: "324"
+        pageRegionIdentifier: p324-web-18
+  - blockReference: "web-18:remediation.linux.step:10"
+    sourceSpans:
+      - physicalPage: 324
+        printedPage: "324"
+        pageRegionIdentifier: p324-web-18
+assets: []

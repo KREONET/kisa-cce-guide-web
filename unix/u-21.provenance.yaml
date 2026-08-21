@@ -2,64 +2,70 @@ schemaVersion: 1
 criterionSlug: u-21
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: u-21:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
-    sourceSpans:
-      - physicalPage: 48
-        printedPage: '48'
-        pageRegionIdentifier: p48-u-21
-  - blockReference: u-21:sourceTranscription.sourcePage48.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 48
-        printedPage: '48'
-        pageRegionIdentifier: p48-u-21
-  - blockReference: u-21:sourceTranscription.sourcePage48.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 48
-        printedPage: '48'
-        pageRegionIdentifier: p48-u-21
-  - blockReference: u-21:sourceTranscription.sourcePage48.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 48
-        printedPage: '48'
-        pageRegionIdentifier: p48-u-21
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/u-21/u-21-page-48-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: c54a73368f299208b635032e7f750a6c8193f259af34e78e47576f1e4fbe0dee
-    alternativeText: PDF 페이지 48의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 48 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 48
-        printedPage: '48'
-        pageRegionIdentifier: p48-u-21
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
+  - blockReference: "u-21:overview.heading:1"
+    sourceSpans: [{physicalPage: 48, printedPage: "48", pageRegionIdentifier: p48-u-21}]
+  - blockReference: "u-21:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 48, printedPage: "48", pageRegionIdentifier: p48-u-21}]
+  - blockReference: "u-21:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 48, printedPage: "48", pageRegionIdentifier: p48-u-21}]
+  - blockReference: "u-21:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 48, printedPage: "48", pageRegionIdentifier: p48-u-21}]
+  - blockReference: "u-21:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 48, printedPage: "48", pageRegionIdentifier: p48-u-21}]
+  - blockReference: "u-21:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 48, printedPage: "48", pageRegionIdentifier: p48-u-21}]
+  - blockReference: "u-21:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 48, printedPage: "48", pageRegionIdentifier: p48-u-21}]
+  - blockReference: "u-21:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 48, printedPage: "48", pageRegionIdentifier: p48-u-21}]
+  - blockReference: "u-21:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 48, printedPage: "48", pageRegionIdentifier: p48-u-21}]
+  - blockReference: "u-21:overview.reference.note.content:1"
+    sourceSpans: [{physicalPage: 48, printedPage: "48", pageRegionIdentifier: p48-u-21}]
+  - blockReference: "u-21:assessment.heading:1"
+    sourceSpans: [{physicalPage: 48, printedPage: "48", pageRegionIdentifier: p48-u-21}]
+  - blockReference: "u-21:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 48, printedPage: "48", pageRegionIdentifier: p48-u-21}]
+  - blockReference: "u-21:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 48, printedPage: "48", pageRegionIdentifier: p48-u-21}]
+  - blockReference: "u-21:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 48, printedPage: "48", pageRegionIdentifier: p48-u-21}]
+  - blockReference: "u-21:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 48, printedPage: "48", pageRegionIdentifier: p48-u-21}]
+  - blockReference: "u-21:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 48, printedPage: "48", pageRegionIdentifier: p48-u-21}]
+  - blockReference: "u-21:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 48, printedPage: "48", pageRegionIdentifier: p48-u-21}]
+  - blockReference: "u-21:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 48, printedPage: "48", pageRegionIdentifier: p48-u-21}]
+  - blockReference: "u-21:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 48, printedPage: "48", pageRegionIdentifier: p48-u-21}]
+  - blockReference: "u-21:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 48, printedPage: "48", pageRegionIdentifier: p48-u-21}]
+  - blockReference: "u-21:remediation.heading:1"
+    sourceSpans: [{physicalPage: 48, printedPage: "48", pageRegionIdentifier: p48-u-21}]
+  - blockReference: "u-21:remediation.solaris.heading:1"
+    sourceSpans: [{physicalPage: 48, printedPage: "48", pageRegionIdentifier: p48-u-21}]
+  - blockReference: "u-21:remediation.solaris.step:1"
+    sourceSpans: [{physicalPage: 48, printedPage: "48", pageRegionIdentifier: p48-u-21}]
+  - blockReference: "u-21:remediation.solaris.command:1"
+    sourceSpans: [{physicalPage: 48, printedPage: "48", pageRegionIdentifier: p48-u-21}]
+  - blockReference: "u-21:remediation.linux.heading:1"
+    sourceSpans: [{physicalPage: 48, printedPage: "48", pageRegionIdentifier: p48-u-21}]
+  - blockReference: "u-21:remediation.linux.step:1"
+    sourceSpans: [{physicalPage: 48, printedPage: "48", pageRegionIdentifier: p48-u-21}]
+  - blockReference: "u-21:remediation.linux.command:1"
+    sourceSpans: [{physicalPage: 48, printedPage: "48", pageRegionIdentifier: p48-u-21}]
+  - blockReference: "u-21:remediation.aix.heading:1"
+    sourceSpans: [{physicalPage: 48, printedPage: "48", pageRegionIdentifier: p48-u-21}]
+  - blockReference: "u-21:remediation.aix.step:1"
+    sourceSpans: [{physicalPage: 48, printedPage: "48", pageRegionIdentifier: p48-u-21}]
+  - blockReference: "u-21:remediation.aix.command:1"
+    sourceSpans: [{physicalPage: 48, printedPage: "48", pageRegionIdentifier: p48-u-21}]
+  - blockReference: "u-21:remediation.hp-ux.heading:1"
+    sourceSpans: [{physicalPage: 48, printedPage: "48", pageRegionIdentifier: p48-u-21}]
+  - blockReference: "u-21:remediation.hp-ux.step:1"
+    sourceSpans: [{physicalPage: 48, printedPage: "48", pageRegionIdentifier: p48-u-21}]
+  - blockReference: "u-21:remediation.hp-ux.command:1"
+    sourceSpans: [{physicalPage: 48, printedPage: "48", pageRegionIdentifier: p48-u-21}]
+assets: []

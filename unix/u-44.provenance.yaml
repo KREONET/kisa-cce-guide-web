@@ -2,170 +2,354 @@ schemaVersion: 1
 criterionSlug: u-44
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: u-44:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "u-44:overview.heading:1"
     sourceSpans:
       - physicalPage: 102
-        printedPage: '102'
+        printedPage: "102"
         pageRegionIdentifier: p102-u-44
-  - blockReference: u-44:sourceTranscription.sourcePage102.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "u-44:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 102
-        printedPage: '102'
+        printedPage: "102"
         pageRegionIdentifier: p102-u-44
-  - blockReference: u-44:sourceTranscription.sourcePage102.transcription:1
-    publicationDisposition: published
+  - blockReference: "u-44:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 102
-        printedPage: '102'
+        printedPage: "102"
         pageRegionIdentifier: p102-u-44
-  - blockReference: u-44:sourceTranscription.sourcePage102.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "u-44:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 102
-        printedPage: '102'
+        printedPage: "102"
         pageRegionIdentifier: p102-u-44
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - blockReference: u-44:sourceTranscription.sourcePage103.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "u-44:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 102
+        printedPage: "102"
+        pageRegionIdentifier: p102-u-44
+  - blockReference: "u-44:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 102
+        printedPage: "102"
+        pageRegionIdentifier: p102-u-44
+  - blockReference: "u-44:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 102
+        printedPage: "102"
+        pageRegionIdentifier: p102-u-44
+  - blockReference: "u-44:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 102
+        printedPage: "102"
+        pageRegionIdentifier: p102-u-44
+  - blockReference: "u-44:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 102
+        printedPage: "102"
+        pageRegionIdentifier: p102-u-44
+  - blockReference: "u-44:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 102
+        printedPage: "102"
+        pageRegionIdentifier: p102-u-44
+  - blockReference: "u-44:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 102
+        printedPage: "102"
+        pageRegionIdentifier: p102-u-44
+  - blockReference: "u-44:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 102
+        printedPage: "102"
+        pageRegionIdentifier: p102-u-44
+  - blockReference: "u-44:overview.reference.note.label:3"
+    sourceSpans:
+      - physicalPage: 102
+        printedPage: "102"
+        pageRegionIdentifier: p102-u-44
+  - blockReference: "u-44:overview.reference.note.content:3"
+    sourceSpans:
+      - physicalPage: 102
+        printedPage: "102"
+        pageRegionIdentifier: p102-u-44
+  - blockReference: "u-44:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 102
+        printedPage: "102"
+        pageRegionIdentifier: p102-u-44
+  - blockReference: "u-44:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 102
+        printedPage: "102"
+        pageRegionIdentifier: p102-u-44
+  - blockReference: "u-44:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 102
+        printedPage: "102"
+        pageRegionIdentifier: p102-u-44
+  - blockReference: "u-44:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 102
+        printedPage: "102"
+        pageRegionIdentifier: p102-u-44
+  - blockReference: "u-44:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 102
+        printedPage: "102"
+        pageRegionIdentifier: p102-u-44
+  - blockReference: "u-44:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 102
+        printedPage: "102"
+        pageRegionIdentifier: p102-u-44
+  - blockReference: "u-44:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 102
+        printedPage: "102"
+        pageRegionIdentifier: p102-u-44
+  - blockReference: "u-44:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 102
+        printedPage: "102"
+        pageRegionIdentifier: p102-u-44
+  - blockReference: "u-44:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 102
+        printedPage: "102"
+        pageRegionIdentifier: p102-u-44
+  - blockReference: "u-44:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 102
+        printedPage: "102"
+        pageRegionIdentifier: p102-u-44
+  - blockReference: "u-44:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 102
+        printedPage: "102"
+        pageRegionIdentifier: p102-u-44
+  - blockReference: "u-44:remediation.solaris.heading:1"
+    sourceSpans:
+      - physicalPage: 102
+        printedPage: "102"
+        pageRegionIdentifier: p102-u-44
+  - blockReference: "u-44:remediation.solaris.step:1"
+    sourceSpans:
+      - physicalPage: 102
+        printedPage: "102"
+        pageRegionIdentifier: p102-u-44
+  - blockReference: "u-44:remediation.solaris.command:1"
+    sourceSpans:
+      - physicalPage: 102
+        printedPage: "102"
+        pageRegionIdentifier: p102-u-44
+  - blockReference: "u-44:remediation.solaris.step:2"
+    sourceSpans:
+      - physicalPage: 102
+        printedPage: "102"
+        pageRegionIdentifier: p102-u-44
+  - blockReference: "u-44:remediation.solaris.command:2"
+    sourceSpans:
+      - physicalPage: 102
+        printedPage: "102"
+        pageRegionIdentifier: p102-u-44
+  - blockReference: "u-44:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 102
+        printedPage: "102"
+        pageRegionIdentifier: p102-u-44
+  - blockReference: "u-44:remediation.linux.paragraph:1"
+    sourceSpans:
+      - physicalPage: 102
+        printedPage: "102"
+        pageRegionIdentifier: p102-u-44
+  - blockReference: "u-44:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 102
+        printedPage: "102"
+        pageRegionIdentifier: p102-u-44
+  - blockReference: "u-44:remediation.linux.command:1"
+    sourceSpans:
+      - physicalPage: 102
+        printedPage: "102"
+        pageRegionIdentifier: p102-u-44
+  - blockReference: "u-44:remediation.linux.step:2"
     sourceSpans:
       - physicalPage: 103
-        printedPage: '103'
+        printedPage: "103"
         pageRegionIdentifier: p103-u-44
-  - blockReference: u-44:sourceTranscription.sourcePage103.transcription:1
-    publicationDisposition: published
+  - blockReference: "u-44:remediation.linux.configuration:1"
     sourceSpans:
       - physicalPage: 103
-        printedPage: '103'
+        printedPage: "103"
         pageRegionIdentifier: p103-u-44
-  - blockReference: u-44:sourceTranscription.sourcePage103.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "u-44:remediation.linux.step:3"
     sourceSpans:
       - physicalPage: 103
-        printedPage: '103'
+        printedPage: "103"
         pageRegionIdentifier: p103-u-44
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: u-44:sourceTranscription.sourcePage104.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 104
-        printedPage: '104'
-        pageRegionIdentifier: p104-u-44
-  - blockReference: u-44:sourceTranscription.sourcePage104.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 104
-        printedPage: '104'
-        pageRegionIdentifier: p104-u-44
-  - blockReference: u-44:sourceTranscription.sourcePage104.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 104
-        printedPage: '104'
-        pageRegionIdentifier: p104-u-44
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/u-44/u-44-page-102-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 7a1ca69a8ed5fb7251e627276fba188bc5429d128606bb01daa89457c839928c
-    alternativeText: PDF 페이지 102의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 102 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 102
-        printedPage: '102'
-        pageRegionIdentifier: p102-u-44
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - path: ../assets/u-44/u-44-page-103-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: b33a01d163a0c3746bcfe8e1bd86b8eef28f41b62f7d3af5c7abe72fdbe84e15
-    alternativeText: PDF 페이지 103의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 103 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "u-44:remediation.linux.command:2"
     sourceSpans:
       - physicalPage: 103
-        printedPage: '103'
+        printedPage: "103"
         pageRegionIdentifier: p103-u-44
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/u-44/u-44-page-104-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 2d5d49f4fffd9cb359466d0269d9a14cef38595fcf3306c3e04fc872a2804b6e
-    alternativeText: PDF 페이지 104의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 104 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "u-44:remediation.linux.paragraph:2"
+    sourceSpans:
+      - physicalPage: 103
+        printedPage: "103"
+        pageRegionIdentifier: p103-u-44
+  - blockReference: "u-44:remediation.linux.step:4"
+    sourceSpans:
+      - physicalPage: 103
+        printedPage: "103"
+        pageRegionIdentifier: p103-u-44
+  - blockReference: "u-44:remediation.linux.configuration:2"
+    sourceSpans:
+      - physicalPage: 103
+        printedPage: "103"
+        pageRegionIdentifier: p103-u-44
+  - blockReference: "u-44:remediation.linux.step:5"
+    sourceSpans:
+      - physicalPage: 103
+        printedPage: "103"
+        pageRegionIdentifier: p103-u-44
+  - blockReference: "u-44:remediation.linux.configuration:3"
+    sourceSpans:
+      - physicalPage: 103
+        printedPage: "103"
+        pageRegionIdentifier: p103-u-44
+  - blockReference: "u-44:remediation.linux.step:6"
+    sourceSpans:
+      - physicalPage: 103
+        printedPage: "103"
+        pageRegionIdentifier: p103-u-44
+  - blockReference: "u-44:remediation.linux.command:3"
+    sourceSpans:
+      - physicalPage: 103
+        printedPage: "103"
+        pageRegionIdentifier: p103-u-44
+  - blockReference: "u-44:remediation.linux.paragraph:3"
+    sourceSpans:
+      - physicalPage: 103
+        printedPage: "103"
+        pageRegionIdentifier: p103-u-44
+  - blockReference: "u-44:remediation.linux.step:7"
+    sourceSpans:
+      - physicalPage: 103
+        printedPage: "103"
+        pageRegionIdentifier: p103-u-44
+  - blockReference: "u-44:remediation.linux.command:4"
+    sourceSpans:
+      - physicalPage: 103
+        printedPage: "103"
+        pageRegionIdentifier: p103-u-44
+  - blockReference: "u-44:remediation.linux.step:8"
+    sourceSpans:
+      - physicalPage: 103
+        printedPage: "103"
+        pageRegionIdentifier: p103-u-44
+  - blockReference: "u-44:remediation.linux.command:5"
+    sourceSpans:
+      - physicalPage: 103
+        printedPage: "103"
+        pageRegionIdentifier: p103-u-44
+  - blockReference: "u-44:remediation.linux.step:9"
+    sourceSpans:
+      - physicalPage: 103
+        printedPage: "103"
+        pageRegionIdentifier: p103-u-44
+  - blockReference: "u-44:remediation.linux.command:6"
+    sourceSpans:
+      - physicalPage: 103
+        printedPage: "103"
+        pageRegionIdentifier: p103-u-44
+  - blockReference: "u-44:remediation.linux.note.label:1"
+    sourceSpans:
+      - physicalPage: 103
+        printedPage: "103"
+        pageRegionIdentifier: p103-u-44
+  - blockReference: "u-44:remediation.linux.note.content:1"
+    sourceSpans:
+      - physicalPage: 103
+        printedPage: "103"
+        pageRegionIdentifier: p103-u-44
+  - blockReference: "u-44:remediation.aix.heading:1"
+    sourceSpans:
+      - physicalPage: 103
+        printedPage: "103"
+        pageRegionIdentifier: p103-u-44
+  - blockReference: "u-44:remediation.aix.step:1"
+    sourceSpans:
+      - physicalPage: 103
+        printedPage: "103"
+        pageRegionIdentifier: p103-u-44
+  - blockReference: "u-44:remediation.aix.command:1"
+    sourceSpans:
+      - physicalPage: 103
+        printedPage: "103"
+        pageRegionIdentifier: p103-u-44
+  - blockReference: "u-44:remediation.aix.step:2"
     sourceSpans:
       - physicalPage: 104
-        printedPage: '104'
+        printedPage: "104"
         pageRegionIdentifier: p104-u-44
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - blockReference: "u-44:remediation.aix.configuration:1"
+    sourceSpans:
+      - physicalPage: 104
+        printedPage: "104"
+        pageRegionIdentifier: p104-u-44
+  - blockReference: "u-44:remediation.aix.step:3"
+    sourceSpans:
+      - physicalPage: 104
+        printedPage: "104"
+        pageRegionIdentifier: p104-u-44
+  - blockReference: "u-44:remediation.aix.command:2"
+    sourceSpans:
+      - physicalPage: 104
+        printedPage: "104"
+        pageRegionIdentifier: p104-u-44
+  - blockReference: "u-44:remediation.hp-ux.heading:1"
+    sourceSpans:
+      - physicalPage: 103
+        printedPage: "103"
+        pageRegionIdentifier: p103-u-44
+  - blockReference: "u-44:remediation.hp-ux.step:1"
+    sourceSpans:
+      - physicalPage: 103
+        printedPage: "103"
+        pageRegionIdentifier: p103-u-44
+  - blockReference: "u-44:remediation.hp-ux.command:1"
+    sourceSpans:
+      - physicalPage: 103
+        printedPage: "103"
+        pageRegionIdentifier: p103-u-44
+  - blockReference: "u-44:remediation.hp-ux.step:2"
+    sourceSpans:
+      - physicalPage: 104
+        printedPage: "104"
+        pageRegionIdentifier: p104-u-44
+  - blockReference: "u-44:remediation.hp-ux.configuration:1"
+    sourceSpans:
+      - physicalPage: 104
+        printedPage: "104"
+        pageRegionIdentifier: p104-u-44
+  - blockReference: "u-44:remediation.hp-ux.step:3"
+    sourceSpans:
+      - physicalPage: 104
+        printedPage: "104"
+        pageRegionIdentifier: p104-u-44
+  - blockReference: "u-44:remediation.hp-ux.command:2"
+    sourceSpans:
+      - physicalPage: 104
+        printedPage: "104"
+        pageRegionIdentifier: p104-u-44
+  - blockReference: "u-44:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - physicalPage: 104
+        printedPage: "104"
+        pageRegionIdentifier: p104-u-44
+  - blockReference: "u-44:remediation.supplementaryGuidance.table:1"
+    sourceSpans:
+      - physicalPage: 104
+        printedPage: "104"
+        pageRegionIdentifier: p104-u-44
+assets: []

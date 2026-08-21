@@ -2,170 +2,154 @@ schemaVersion: 1
 criterionSlug: u-52
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: u-52:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
-    sourceSpans:
-      - physicalPage: 124
-        printedPage: '124'
-        pageRegionIdentifier: p124-u-52
-  - blockReference: u-52:sourceTranscription.sourcePage124.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 124
-        printedPage: '124'
-        pageRegionIdentifier: p124-u-52
-  - blockReference: u-52:sourceTranscription.sourcePage124.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 124
-        printedPage: '124'
-        pageRegionIdentifier: p124-u-52
-  - blockReference: u-52:sourceTranscription.sourcePage124.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 124
-        printedPage: '124'
-        pageRegionIdentifier: p124-u-52
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - blockReference: u-52:sourceTranscription.sourcePage125.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 125
-        printedPage: '125'
-        pageRegionIdentifier: p125-u-52
-  - blockReference: u-52:sourceTranscription.sourcePage125.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 125
-        printedPage: '125'
-        pageRegionIdentifier: p125-u-52
-  - blockReference: u-52:sourceTranscription.sourcePage125.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 125
-        printedPage: '125'
-        pageRegionIdentifier: p125-u-52
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: u-52:sourceTranscription.sourcePage126.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 126
-        printedPage: '126'
-        pageRegionIdentifier: p126-u-52
-  - blockReference: u-52:sourceTranscription.sourcePage126.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 126
-        printedPage: '126'
-        pageRegionIdentifier: p126-u-52
-  - blockReference: u-52:sourceTranscription.sourcePage126.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 126
-        printedPage: '126'
-        pageRegionIdentifier: p126-u-52
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/u-52/u-52-page-124-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: cddca5ab71874486b3281be688c7fd4ce64d341b249ba7d918d8f9cc68f0144d
-    alternativeText: PDF 페이지 124의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 124 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 124
-        printedPage: '124'
-        pageRegionIdentifier: p124-u-52
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - path: ../assets/u-52/u-52-page-125-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 31d1fa7bc32f722b2439a784ab140d769e83ba9f8f5a45794731947c94827371
-    alternativeText: PDF 페이지 125의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 125 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 125
-        printedPage: '125'
-        pageRegionIdentifier: p125-u-52
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/u-52/u-52-page-126-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: a5e1e320ccbe2338980188460a3f32337580378aed98152fff251c1bd6e3b079
-    alternativeText: PDF 페이지 126의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 126 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 126
-        printedPage: '126'
-        pageRegionIdentifier: p126-u-52
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - blockReference: "u-52:overview.heading:1"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:overview.reference.note.content:1"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:assessment.heading:1"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:remediation.heading:1"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:remediation.solaris.heading:1"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:remediation.solaris.step:1"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:remediation.solaris.command:1"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:remediation.solaris.step:2"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:remediation.solaris.command:2"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:remediation.solaris.step:3"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:remediation.solaris.command:3"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:remediation.linux.heading:1"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:remediation.linux.paragraph:1"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:remediation.linux.step:1"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:remediation.linux.step:2"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:remediation.linux.configuration:1"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:remediation.linux.step.explanation:2"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:remediation.linux.step:3"
+    sourceSpans: [{physicalPage: 124, printedPage: "124", pageRegionIdentifier: p124-u-52}]
+  - blockReference: "u-52:remediation.linux.command:1"
+    sourceSpans: [{physicalPage: 125, printedPage: "125", pageRegionIdentifier: p125-u-52}]
+  - blockReference: "u-52:remediation.linux.step:4"
+    sourceSpans: [{physicalPage: 125, printedPage: "125", pageRegionIdentifier: p125-u-52}]
+  - blockReference: "u-52:remediation.linux.command:2"
+    sourceSpans: [{physicalPage: 125, printedPage: "125", pageRegionIdentifier: p125-u-52}]
+  - blockReference: "u-52:remediation.linux.paragraph:2"
+    sourceSpans: [{physicalPage: 125, printedPage: "125", pageRegionIdentifier: p125-u-52}]
+  - blockReference: "u-52:remediation.linux.step:5"
+    sourceSpans: [{physicalPage: 125, printedPage: "125", pageRegionIdentifier: p125-u-52}]
+  - blockReference: "u-52:remediation.linux.command:3"
+    sourceSpans: [{physicalPage: 125, printedPage: "125", pageRegionIdentifier: p125-u-52}]
+  - blockReference: "u-52:remediation.linux.step:6"
+    sourceSpans: [{physicalPage: 125, printedPage: "125", pageRegionIdentifier: p125-u-52}]
+  - blockReference: "u-52:remediation.linux.configuration:2"
+    sourceSpans: [{physicalPage: 125, printedPage: "125", pageRegionIdentifier: p125-u-52}]
+  - blockReference: "u-52:remediation.linux.step:7"
+    sourceSpans: [{physicalPage: 125, printedPage: "125", pageRegionIdentifier: p125-u-52}]
+  - blockReference: "u-52:remediation.linux.command:4"
+    sourceSpans: [{physicalPage: 125, printedPage: "125", pageRegionIdentifier: p125-u-52}]
+  - blockReference: "u-52:remediation.linux.step:8"
+    sourceSpans: [{physicalPage: 125, printedPage: "125", pageRegionIdentifier: p125-u-52}]
+  - blockReference: "u-52:remediation.linux.command:5"
+    sourceSpans: [{physicalPage: 125, printedPage: "125", pageRegionIdentifier: p125-u-52}]
+  - blockReference: "u-52:remediation.linux.paragraph:3"
+    sourceSpans: [{physicalPage: 125, printedPage: "125", pageRegionIdentifier: p125-u-52}]
+  - blockReference: "u-52:remediation.linux.step:9"
+    sourceSpans: [{physicalPage: 125, printedPage: "125", pageRegionIdentifier: p125-u-52}]
+  - blockReference: "u-52:remediation.linux.command:6"
+    sourceSpans: [{physicalPage: 125, printedPage: "125", pageRegionIdentifier: p125-u-52}]
+  - blockReference: "u-52:remediation.linux.step:10"
+    sourceSpans: [{physicalPage: 125, printedPage: "125", pageRegionIdentifier: p125-u-52}]
+  - blockReference: "u-52:remediation.linux.command:7"
+    sourceSpans: [{physicalPage: 125, printedPage: "125", pageRegionIdentifier: p125-u-52}]
+  - blockReference: "u-52:remediation.linux.step:11"
+    sourceSpans: [{physicalPage: 125, printedPage: "125", pageRegionIdentifier: p125-u-52}]
+  - blockReference: "u-52:remediation.linux.command:8"
+    sourceSpans: [{physicalPage: 125, printedPage: "125", pageRegionIdentifier: p125-u-52}]
+  - blockReference: "u-52:remediation.linux.step:12"
+    sourceSpans: [{physicalPage: 125, printedPage: "125", pageRegionIdentifier: p125-u-52}]
+  - blockReference: "u-52:remediation.linux.command:9"
+    sourceSpans: [{physicalPage: 125, printedPage: "125", pageRegionIdentifier: p125-u-52}]
+  - blockReference: "u-52:remediation.aix.heading:1"
+    sourceSpans: [{physicalPage: 125, printedPage: "125", pageRegionIdentifier: p125-u-52}]
+  - blockReference: "u-52:remediation.aix.step:1"
+    sourceSpans: [{physicalPage: 125, printedPage: "125", pageRegionIdentifier: p125-u-52}]
+  - blockReference: "u-52:remediation.aix.step:2"
+    sourceSpans: [{physicalPage: 125, printedPage: "125", pageRegionIdentifier: p125-u-52}]
+  - blockReference: "u-52:remediation.aix.configuration:1"
+    sourceSpans: [{physicalPage: 125, printedPage: "125", pageRegionIdentifier: p125-u-52}]
+  - blockReference: "u-52:remediation.aix.step.explanation:2"
+    sourceSpans: [{physicalPage: 125, printedPage: "125", pageRegionIdentifier: p125-u-52}]
+  - blockReference: "u-52:remediation.aix.step:3"
+    sourceSpans: [{physicalPage: 125, printedPage: "125", pageRegionIdentifier: p125-u-52}]
+  - blockReference: "u-52:remediation.aix.command:1"
+    sourceSpans: [{physicalPage: 125, printedPage: "125", pageRegionIdentifier: p125-u-52}]
+  - blockReference: "u-52:remediation.aix.step:4"
+    sourceSpans: [{physicalPage: 125, printedPage: "125", pageRegionIdentifier: p125-u-52}]
+  - blockReference: "u-52:remediation.aix.command:2"
+    sourceSpans: [{physicalPage: 126, printedPage: "126", pageRegionIdentifier: p126-u-52}]
+  - blockReference: "u-52:remediation.hp-ux.heading:1"
+    sourceSpans: [{physicalPage: 126, printedPage: "126", pageRegionIdentifier: p126-u-52}]
+  - blockReference: "u-52:remediation.hp-ux.step:1"
+    sourceSpans: [{physicalPage: 126, printedPage: "126", pageRegionIdentifier: p126-u-52}]
+  - blockReference: "u-52:remediation.hp-ux.command:1"
+    sourceSpans: [{physicalPage: 126, printedPage: "126", pageRegionIdentifier: p126-u-52}]
+  - blockReference: "u-52:remediation.hp-ux.step:2"
+    sourceSpans: [{physicalPage: 126, printedPage: "126", pageRegionIdentifier: p126-u-52}]
+  - blockReference: "u-52:remediation.hp-ux.configuration:1"
+    sourceSpans: [{physicalPage: 126, printedPage: "126", pageRegionIdentifier: p126-u-52}]
+  - blockReference: "u-52:remediation.hp-ux.step.explanation:2"
+    sourceSpans: [{physicalPage: 126, printedPage: "126", pageRegionIdentifier: p126-u-52}]
+  - blockReference: "u-52:remediation.hp-ux.step:3"
+    sourceSpans: [{physicalPage: 126, printedPage: "126", pageRegionIdentifier: p126-u-52}]
+  - blockReference: "u-52:remediation.hp-ux.command:2"
+    sourceSpans: [{physicalPage: 126, printedPage: "126", pageRegionIdentifier: p126-u-52}]
+  - blockReference: "u-52:remediation.hp-ux.step:4"
+    sourceSpans: [{physicalPage: 126, printedPage: "126", pageRegionIdentifier: p126-u-52}]
+  - blockReference: "u-52:remediation.hp-ux.command:3"
+    sourceSpans: [{physicalPage: 126, printedPage: "126", pageRegionIdentifier: p126-u-52}]
+assets: []

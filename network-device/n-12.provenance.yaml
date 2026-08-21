@@ -2,117 +2,94 @@ schemaVersion: 1
 criterionSlug: n-12
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: n-12:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "n-12:overview.heading:1"
+    sourceSpans: [{physicalPage: 422, printedPage: "422", pageRegionIdentifier: p422-n-12}]
+  - blockReference: "n-12:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 422, printedPage: "422", pageRegionIdentifier: p422-n-12}]
+  - blockReference: "n-12:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 422, printedPage: "422", pageRegionIdentifier: p422-n-12}]
+  - blockReference: "n-12:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 422, printedPage: "422", pageRegionIdentifier: p422-n-12}]
+  - blockReference: "n-12:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 422, printedPage: "422", pageRegionIdentifier: p422-n-12}]
+  - blockReference: "n-12:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 422, printedPage: "422", pageRegionIdentifier: p422-n-12}]
+  - blockReference: "n-12:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 422, printedPage: "422", pageRegionIdentifier: p422-n-12}]
+  - blockReference: "n-12:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 422, printedPage: "422", pageRegionIdentifier: p422-n-12}]
+  - blockReference: "n-12:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 422, printedPage: "422", pageRegionIdentifier: p422-n-12}]
+  - blockReference: "n-12:assessment.heading:1"
+    sourceSpans: [{physicalPage: 422, printedPage: "422", pageRegionIdentifier: p422-n-12}]
+  - blockReference: "n-12:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 422, printedPage: "422", pageRegionIdentifier: p422-n-12}]
+  - blockReference: "n-12:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 422, printedPage: "422", pageRegionIdentifier: p422-n-12}]
+  - blockReference: "n-12:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 422, printedPage: "422", pageRegionIdentifier: p422-n-12}]
+  - blockReference: "n-12:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 422, printedPage: "422", pageRegionIdentifier: p422-n-12}]
+  - blockReference: "n-12:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 422, printedPage: "422", pageRegionIdentifier: p422-n-12}]
+  - blockReference: "n-12:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 422, printedPage: "422", pageRegionIdentifier: p422-n-12}]
+  - blockReference: "n-12:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 422, printedPage: "422", pageRegionIdentifier: p422-n-12}]
+  - blockReference: "n-12:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 422, printedPage: "422", pageRegionIdentifier: p422-n-12}]
+  - blockReference: "n-12:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 422, printedPage: "422", pageRegionIdentifier: p422-n-12}]
+  - blockReference: "n-12:remediation.heading:1"
+    sourceSpans: [{physicalPage: 422, printedPage: "422", pageRegionIdentifier: p422-n-12}]
+  - blockReference: "n-12:remediation.solaris.heading:1"
+    sourceSpans: [{physicalPage: 422, printedPage: "422", pageRegionIdentifier: p422-n-12}]
+  - blockReference: "n-12:remediation.solaris.paragraph:1"
+    sourceSpans: [{physicalPage: 422, printedPage: "422", pageRegionIdentifier: p422-n-12}]
+  - blockReference: "n-12:remediation.solaris.step:1"
+    sourceSpans: [{physicalPage: 422, printedPage: "422", pageRegionIdentifier: p422-n-12}]
+  - blockReference: "n-12:remediation.solaris.command:1"
+    sourceSpans: [{physicalPage: 422, printedPage: "422", pageRegionIdentifier: p422-n-12}]
+  - blockReference: "n-12:remediation.solaris.paragraph:2"
+    sourceSpans: [{physicalPage: 422, printedPage: "422", pageRegionIdentifier: p422-n-12}]
+  - blockReference: "n-12:remediation.solaris.step:2"
+    sourceSpans: [{physicalPage: 422, printedPage: "422", pageRegionIdentifier: p422-n-12}]
+  - blockReference: "n-12:remediation.solaris.command:2"
+    sourceSpans: [{physicalPage: 422, printedPage: "422", pageRegionIdentifier: p422-n-12}]
+  - blockReference: "n-12:remediation.supplementaryGuidance.heading:1"
     sourceSpans:
-      - physicalPage: 422
-        printedPage: '422'
-        pageRegionIdentifier: p422-n-12
-  - blockReference: n-12:sourceTranscription.sourcePage422.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 422
-        printedPage: '422'
-        pageRegionIdentifier: p422-n-12
-  - blockReference: n-12:sourceTranscription.sourcePage422.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 422
-        printedPage: '422'
-        pageRegionIdentifier: p422-n-12
-  - blockReference: n-12:sourceTranscription.sourcePage422.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 422
-        printedPage: '422'
-        pageRegionIdentifier: p422-n-12
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - blockReference: n-12:sourceTranscription.sourcePage423.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 423
-        printedPage: '423'
-        pageRegionIdentifier: p423-n-12
-  - blockReference: n-12:sourceTranscription.sourcePage423.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 423
-        printedPage: '423'
-        pageRegionIdentifier: p423-n-12
-  - blockReference: n-12:sourceTranscription.sourcePage423.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 423
-        printedPage: '423'
-        pageRegionIdentifier: p423-n-12
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/n-12/n-12-page-422-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 5923b5a543635a4f55d1b76776a9591ee12d691f72c9eaf253b4117dc1ad7ddf
-    alternativeText: PDF 페이지 422의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 422 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 422
-        printedPage: '422'
-        pageRegionIdentifier: p422-n-12
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - path: ../assets/n-12/n-12-page-423-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: d5dc3b6fc39fdd76d1b01301713dfac8022df5bf9d8c12bcf34ae3f8b63a57ec
-    alternativeText: PDF 페이지 423의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 423 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 423
-        printedPage: '423'
-        pageRegionIdentifier: p423-n-12
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+      - {physicalPage: 422, printedPage: "422", pageRegionIdentifier: p422-n-12}
+      - {physicalPage: 423, printedPage: "423", pageRegionIdentifier: p423-n-12}
+  - blockReference: "n-12:remediation.supplementaryGuidance.step:1"
+    sourceSpans: [{physicalPage: 422, printedPage: "422", pageRegionIdentifier: p422-n-12}]
+  - blockReference: "n-12:remediation.supplementaryGuidance.step:2"
+    sourceSpans: [{physicalPage: 422, printedPage: "422", pageRegionIdentifier: p422-n-12}]
+  - blockReference: "n-12:remediation.supplementaryGuidance.step:3"
+    sourceSpans: [{physicalPage: 422, printedPage: "422", pageRegionIdentifier: p422-n-12}]
+  - blockReference: "n-12:remediation.supplementaryGuidance.step:4"
+    sourceSpans: [{physicalPage: 422, printedPage: "422", pageRegionIdentifier: p422-n-12}]
+  - blockReference: "n-12:remediation.supplementaryGuidance.step:5"
+    sourceSpans: [{physicalPage: 423, printedPage: "423", pageRegionIdentifier: p423-n-12}]
+  - blockReference: "n-12:remediation.supplementaryGuidance.step:6"
+    sourceSpans: [{physicalPage: 423, printedPage: "423", pageRegionIdentifier: p423-n-12}]
+  - blockReference: "n-12:remediation.supplementaryGuidance.step:7"
+    sourceSpans: [{physicalPage: 423, printedPage: "423", pageRegionIdentifier: p423-n-12}]
+  - blockReference: "n-12:remediation.supplementaryGuidance.step:8"
+    sourceSpans: [{physicalPage: 423, printedPage: "423", pageRegionIdentifier: p423-n-12}]
+  - blockReference: "n-12:remediation.supplementaryGuidance.step:9"
+    sourceSpans: [{physicalPage: 423, printedPage: "423", pageRegionIdentifier: p423-n-12}]
+  - blockReference: "n-12:remediation.supplementaryGuidance.step.explanation:9"
+    sourceSpans: [{physicalPage: 423, printedPage: "423", pageRegionIdentifier: p423-n-12}]
+  - blockReference: "n-12:remediation.supplementaryGuidance.step:10"
+    sourceSpans: [{physicalPage: 423, printedPage: "423", pageRegionIdentifier: p423-n-12}]
+  - blockReference: "n-12:remediation.supplementaryGuidance.step:11"
+    sourceSpans: [{physicalPage: 423, printedPage: "423", pageRegionIdentifier: p423-n-12}]
+  - blockReference: "n-12:remediation.supplementaryGuidance.step:12"
+    sourceSpans: [{physicalPage: 423, printedPage: "423", pageRegionIdentifier: p423-n-12}]
+  - blockReference: "n-12:remediation.supplementaryGuidance.step:13"
+    sourceSpans: [{physicalPage: 423, printedPage: "423", pageRegionIdentifier: p423-n-12}]
+  - blockReference: "n-12:remediation.supplementaryGuidance.step:14"
+    sourceSpans: [{physicalPage: 423, printedPage: "423", pageRegionIdentifier: p423-n-12}]
+  - blockReference: "n-12:remediation.supplementaryGuidance.table:1"
+    sourceSpans: [{physicalPage: 423, printedPage: "423", pageRegionIdentifier: p423-n-12}]
+assets: []

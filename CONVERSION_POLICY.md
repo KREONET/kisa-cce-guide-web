@@ -88,11 +88,11 @@ SHOULD 예외는 `data/policy-exceptions.yaml`에 기록한다. 예외 record는
 원본 PDF
   -> 원본 텍스트 추출물과 페이지 렌더링(QA evidence)
 
-Codex semantic candidate
-  -> read-only evidence inspection
-  -> schema-constrained structured result
-  -> deterministic candidate rendering
-  -> automated fidelity checks
+Codex-native semantic candidate
+  -> content-addressed isolated workspace
+  -> Codex-owned Markdown and provenance conversion
+  -> schema-constrained status
+  -> deterministic boundary and fidelity checks
 
 Canonical criterion package
   -> Markdown parse
@@ -114,8 +114,31 @@ Canonical criterion package
 
 ### Codex semantic candidate 계층
 
+권장 변환 경로에는 다음 규칙을 적용한다.
+
+- 권장 변환 경로는 `conversion.codex_agent_pipeline`의 Codex-native pipeline이다. Structured node JSON과 deterministic candidate renderer를 사용하는 기존 pipeline은 legacy migration 경로로만 유지한다.
+- Controller는 항목별 현재 Markdown과 provenance에서 source page, transcript, 관련된 모든 PDF page image, checksum, target taxonomy slice를 결합한 task를 만들고, compact canonical references, prompt contract, status schema와 함께 immutable workspace로 생성한다. 원본 Markdown과 provenance를 workspace에 중복 복사해서는 안 된다.
+- Workspace는 `work/codex-agent/jobs/<criterionSlug>/<taskChecksum>/workspace/`에 생성한다. Task checksum은 workspace 입력과 conversion contract를 결합한 content address여야 한다.
+- Codex는 repository가 아닌 항목별 workspace를 writable root로 사용해야 한다. `workspace-write` sandbox와 ephemeral session을 유지하고, 관련된 모든 PDF page image를 vision으로 직접 검사해야 한다. Transcript만 검사하거나 page image를 표본 추출해서는 안 된다.
+- Codex CLI는 사용자 설정을 기본적으로 무시해야 한다. OpenCodeX를 통해 Claude 같은 사용자 정의 provider를 사용하는 경우에만 명시적 옵션으로 사용자 설정을 로드하고 provider-qualified model identifier를 지정해야 한다.
+- 사용자 설정을 로드해도 항목별 workspace sandbox, ephemeral session, JSONL event 저장, status output schema 검증을 유지해야 한다. 사용자 설정은 provider 외 MCP server와 기타 실행 설정도 포함할 수 있으므로 신뢰할 수 있는 설정만 사용해야 한다.
+- Codex는 `codex_prompts/criterion-agent-v1.md` 계약에 따라 `output/criterion.md`, `output/provenance.yaml`, `output/status.json`을 직접 작성하고 종료 전에 격리 workspace의 production validator를 실행해야 한다. Controller는 Codex가 작성한 내용, 구조, taxonomy 선택, source annotation 또는 provenance를 다시 쓰거나 추론해서는 안 된다.
+- `output/criterion.md`는 YAML front matter와 semantic body를 포함하는 complete canonical-format candidate여야 한다. `output/provenance.yaml`은 parsed Markdown leaf 전체를 문서 순서대로 연결하는 complete provenance sidecar여야 한다.
+- Agent contract version 1은 source-page crop을 candidate asset으로 게시해서는 안 되며 provenance의 `assets`는 빈 배열이어야 한다.
+- Codex의 마지막 응답은 `schemas/codex-agent-status.schema.json` version 1을 만족하는 bounded status JSON이어야 한다. Status는 task identifier와 checksum, `candidateWritten`, `complete` 또는 `needsSourceReview`, 검토한 모든 physical page, unresolved question만 선언할 수 있다.
+- 판독이나 구조가 불확실하면 내용을 추정하지 않고 candidate front matter의 `sourceAnnotations`, status의 `analysisStatus`와 `unresolvedQuestions`에 불확실성을 보존해야 한다.
+- Deterministic controller는 workspace file allowlist, symlink 부재, immutable input checksum, status identity, metadata와 provenance schema, canonical Markdown structure, technical literal, taxonomy identifier, Markdown-provenance block reference 일치, source page-region 범위와 page coverage를 검증해야 한다.
+- Schema, boundary, semantic structure 또는 provenance validation에 실패한 결과는 통과 candidate로 취급하거나 canonical 콘텐츠에 반영해서는 안 된다.
+- 검증 결과는 candidate, provenance, status checksum, `validationStatus: passed`, `canonicalApplied: false`를 run manifest에 기록해야 한다.
+- Codex 결과는 `structured`, `visuallyReviewed`, `approved` 상태를 자동으로 부여해서는 안 된다.
+- Candidate를 canonical criterion package로 반영하는 단계는 별도 사람 검토와 명시적 적용 작업을 요구한다.
+
+#### Legacy structured-JSON migration 경계
+
 - 변환 코드는 항목별 source page, transcript, 관련된 모든 PDF page image, checksum, policy version, schema version을 immutable task로 생성한다.
 - Codex는 read-only sandbox에서 관련된 모든 PDF page image를 vision으로 직접 검사하고 schema-constrained JSON만 생성한다. Transcript만 검사하거나 page image를 표본 추출해서는 안 된다.
+- Codex CLI는 사용자 설정을 기본적으로 무시해야 한다. OpenCodeX를 통해 Claude 같은 사용자 정의 provider를 사용하는 경우에만 명시적 옵션으로 사용자 설정을 로드하고 provider-qualified model identifier를 지정해야 한다.
+- 사용자 설정을 로드해도 read-only sandbox, ephemeral session, JSONL event 저장, output schema 검증을 유지해야 한다. 사용자 설정은 provider 외 MCP server와 기타 실행 설정도 포함할 수 있으므로 신뢰할 수 있는 설정만 사용해야 한다.
 - Codex 결과는 가독성과 머신 리더블 요구사항을 함께 충족하도록 heading, paragraph, list, note, typed code block, semantic table, image를 명시적인 semantic node로 표현해야 한다. Typed code block과 semantic table에는 이 정책의 `절차와 명령어` 및 `표` 규칙을 적용한다.
 - 모든 node에 provenance인 source span을 기록한다. 판독이나 구조가 불확실하면 내용을 추정하지 않고 `analysisStatus`, `sourceAnnotations`, `quality.unresolvedQuestions`에 불확실성을 보존한다.
 - Codex는 canonical Markdown, provenance, registry, review status를 직접 수정해서는 안 된다.
@@ -125,48 +148,59 @@ Canonical criterion package
 - Codex 결과는 `structured`, `visuallyReviewed`, `approved` 상태를 자동으로 부여해서는 안 된다.
 - Candidate를 canonical criterion package로 반영하는 단계는 별도 사람 검토와 명시적 적용 작업을 요구한다.
 
-### 전체 corpus 병렬 변환
+### Codex-native 전체 corpus 병렬 변환
+
+- 전체 변환 대상은 `data/criteria-manifest.yaml`의 record 순서대로 선택한 모든 `extractedCriterion` 항목이다. 일부 slug allowlist를 지정해도 대상과 summary item은 manifest 순서를 유지해야 하며 worker 완료 순서에 의존해서는 안 된다.
+- 각 항목은 content-addressed workspace를 독립적으로 생성하고 실행해야 한다. 병렬 worker 수는 1부터 16까지 설정 가능해야 하며 기본값은 4이다.
+- 병렬 실행은 항목별 Codex workspace만 변경할 수 있고 canonical Markdown, registry 또는 review status에 변경을 적용해서는 안 된다.
+- `--dry-run`은 workspace와 summary를 생성하되 Codex를 실행해서는 안 된다.
+- 재개 실행은 현재 입력에서 같은 content address를 다시 계산해야 한다. 기존 run의 성공 상태, task checksum, model identifier, 사용자 설정 로드 여부가 현재 요청과 일치하고, candidate package 전체를 현재 validator로 재검증한 결과가 run manifest의 validation record와 정확히 일치하는 경우에만 `skipped`로 기록해야 한다.
+- Candidate, provenance 또는 status가 누락·변경됐거나 재검증에 실패하면 완료 artifact를 재사용해서는 안 된다. 이전 model 실행이 candidate를 작성했지만 validation만 실패한 경우에는 현재 validator로 먼저 재검증해야 하며, 재검증이 통과하면 Codex를 다시 실행해서는 안 된다.
+- 한 항목의 실패는 다른 항목의 workspace와 상태를 변경해서는 안 된다. 기본 실행은 독립 항목을 계속 처리하고 `work/codex-agent/summary.json`에 `completed`, `skipped`, `dryRun`, `validationFailed`, `failed` count와 manifest 순서의 item을 기록해야 한다. 실패가 하나라도 있으면 summary status는 `completedWithFailures`이고 command는 non-zero exit code를 반환해야 한다.
+- Worker 수를 늘리기 전에 Codex 서비스의 rate limit, 동시 요청 한도, 항목별 PDF page image 수, model context와 input token 사용량, 프로세스별 메모리 사용량을 확인해야 한다. Rate limit 또는 자원 압박이 발생하면 worker 수를 줄이고 checksum 기반 재개를 사용해야 한다.
+
+### Legacy structured-JSON 전체 corpus 병렬 변환
 
 - 전체 변환 대상은 `data/criteria-manifest.yaml`의 record 순서대로 선택한 모든 `extractedCriterion` 항목이다. 일부 slug allowlist를 지정해도 대상은 manifest 순서로 filtering해야 한다. 실행 순서와 summary item 순서는 이 순서를 유지해야 하며, worker 완료 순서에 의존해서는 안 된다.
 - 각 항목은 `taskBuild`, `visionRun`, `importer`의 세 단계를 순서대로 실행한다. 한 항목의 단계별 artifact는 `work/codex/tasks/<criterionSlug>/`, `work/codex/results/<criterionSlug>/`, `work/codex/candidates/<criterionSlug>/`에 격리해야 한다.
 - 병렬 worker 수는 1부터 16까지 설정 가능해야 한다. 기본값은 `min(2, max(1, logicalCpuCount))`로 계산하고, 전체 corpus 실행에는 이 작은 기본값을 사용해야 한다.
 - 병렬 실행은 항목별 read-only Codex 분석만 동시 수행해야 한다. Candidate를 canonical Markdown, provenance, registry에 적용하거나 review status를 변경하는 작업을 포함해서는 안 된다.
-- 재개 실행도 각 task를 현재 입력에서 다시 생성해야 한다. `schemaVersion`, task identifier와 checksum, result와 candidate checksum, `validationStatus: passed`, `canonicalApplied: false`를 모두 검증한 candidate만 건너뛸 수 있다. Result만 현재 task에 유효하면 importer부터 재개하고, 검증이 누락되거나 불일치하면 Codex vision 분석부터 다시 처리해야 한다.
+- 재개 실행도 각 task를 현재 입력에서 다시 생성해야 한다. Run manifest의 `schemaVersion`, task identifier와 checksum, result checksum, model, 사용자 설정 로드 여부, 성공 상태를 현재 요청과 대조해야 한다. Candidate의 result와 candidate checksum, `validationStatus: passed`, `canonicalApplied: false`도 모두 검증한 경우에만 건너뛸 수 있다. Result만 현재 task와 실행 설정에 유효하면 importer부터 재개하고, 검증이 누락되거나 불일치하면 Codex vision 분석부터 다시 처리해야 한다.
 - 한 항목의 실패는 다른 항목의 artifact와 상태를 변경해서는 안 된다. 기본 실행은 독립 항목을 계속 처리하고, 최종 summary에 `taskBuild`, `visionRun`, `importer` 상태, 항목 outcome, 오류를 manifest 순서로 기록해야 한다. Summary는 `schemas/codex-bulk-summary.schema.json`으로 검증한 뒤 원자적으로 교체해야 한다. Fail-fast 실행도 이미 실행 중인 worker를 정리하고 아직 시작하지 않은 항목을 `cancelled`로 기록해야 한다.
 - Codex 재시도 기본값은 0이어야 하며 명시적인 재시도만 허용한다. 재시도 횟수는 최대 5, deterministic exponential backoff base와 각 대기 시간은 0초부터 300초까지로 제한해야 한다.
 - Worker 수를 늘리기 전에 Codex 서비스의 rate limit, 동시 요청 한도, 항목별 PDF page image 수, model context와 input token 사용량, 프로세스별 메모리 사용량을 확인해야 한다. Rate limit 또는 자원 압박이 발생하면 worker 수를 줄이고 checksum 기반 재개를 사용해야 한다.
 
 ### 실행 로그와 진행률
 
-- `conversion/` 아래의 모든 실행 도구는 시작, 완료, 실패와 주요 단계 상태를 공통 runtime logger로 기록해야 한다.
+- 공통 runtime logger를 사용하는 `conversion/` 실행 도구는 시작, 완료, 실패와 주요 단계 상태를 기록해야 한다. Codex-native pipeline은 항목별 `run.json`, raw `events.jsonl`, `stderr.log`와 corpus `summary.json`을 실행 기록으로 사용한다.
 - 기존 command 결과와 artifact path의 stdout 계약을 변경해서는 안 된다. 사람이 읽는 console log와 진행률은 stderr로 출력해야 한다.
 - File log는 UTF-8 JSON Lines를 사용하고, UTC timestamp, level, tool, event, process identifier, thread identifier, context를 포함해야 한다.
 - 병렬 worker는 process별 log file을 사용해야 한다. 여러 process가 같은 file에 직접 기록해서는 안 된다.
 - API key, authorization 값, token, password, credential URL과 알려진 credential 형식은 console과 file log 양쪽에서 제거해야 한다.
 - Bulk 진행률은 부모 process만 갱신하고, 완료 수, 전체 수, 백분율, 경과 시간, 처리율, outcome별 건수를 제공해야 한다.
 - TTY에서는 한 줄을 갱신하고 종료 시 newline을 기록해야 한다. CI와 non-TTY에서는 carriage return 없이 완전한 line을 기록해야 한다.
-- 모든 실행 도구는 `--log-level`, `--log-directory`를 지원해야 한다. Bulk runner는 진행률을 비활성화하는 `--no-progress`를 추가로 지원해야 한다.
-- 기본 file log 경로인 `work/logs/`와 변환 작업 경로인 `work/codex/`는 생성 산출물이며 Git에 포함해서는 안 된다.
+- 공통 runtime logger 기반 실행 도구는 `--log-level`, `--log-directory`를 지원해야 한다. Legacy bulk runner는 진행률을 비활성화하는 `--no-progress`를 추가로 지원해야 한다.
+- 기본 file log 경로인 `work/logs/`와 변환 작업 경로인 `work/codex-agent/`, `work/codex/`는 생성 산출물이며 Git에 포함해서는 안 된다.
 
 #### Codex 통신 로그
 
-- `codex exec --json`의 stdout은 `work/codex/results/<criterionSlug>/events.jsonl`에 변형 없이 저장해야 한다. 이 raw artifact는 runtime JSONL이 아니며 redaction 또는 content filtering을 적용한 운영 로그로 취급해서는 안 된다.
+- `codex exec --json`의 stdout은 Codex-native pipeline에서 `work/codex-agent/jobs/<criterionSlug>/<taskChecksum>/events.jsonl`, legacy pipeline에서 `work/codex/results/<criterionSlug>/events.jsonl`에 변형 없이 저장해야 한다. 이 raw artifact는 runtime JSONL이 아니며 redaction 또는 content filtering을 적용한 운영 로그로 취급해서는 안 된다.
 - Upstream Codex event의 `type`은 `thread.started`, `turn.started`, `turn.completed`, `turn.failed`, `item.*`, `error`를 포함한다. Event type이 추가되더라도 content body를 runtime JSONL로 전달해서는 안 된다.
 - `thread.started.thread_id`, event와 `item.type`별 count, JSON object와 invalid JSON line count, `turn.completed.usage`의 non-negative integer `*_tokens` field만 raw event stream에서 runtime aggregate로 추출해야 한다.
 - `item_type_counts`는 `item.type`이 있는 event 수를 세어야 한다. Agent message, reasoning, command execution 등 item의 content body를 읽거나 저장해서는 안 된다.
 - `events.jsonl`은 agent message, reasoning, command, file change, tool call 등 content-bearing item을 포함할 수 있으므로 생성 작업 artifact와 같은 접근·보존 정책을 적용해야 한다.
 
-Runtime logger가 기록하는 Codex communication event와 communication-specific context field는 다음 allowlist로 제한한다. Bulk worker의 공통 context인 `process_role`은 추가로 포함할 수 있다.
+Legacy runtime logger가 기록하는 Codex communication event와 communication-specific context field는 다음 allowlist로 제한한다. Bulk worker의 공통 context인 `process_role`은 추가로 포함할 수 있다.
 
 | Runtime event | 필수 context field | 추가 context field |
 | --- | --- | --- |
-| `codex.request.prepared` | `slug`, `model`, `codex_version`, `image_count`, `schema_path`, `task_identifier`, `task_checksum`, `output_paths` | 없음 |
-| `codex.request.planned` | `slug`, `model`, `codex_version`, `image_count`, `schema_path`, `task_identifier`, `task_checksum`, `output_paths` | 없음 |
-| `codex.request.started` | `slug`, `model`, `codex_version`, `image_count`, `schema_path`, `task_identifier`, `task_checksum`, `output_paths` | 없음 |
+| `codex.request.prepared` | `slug`, `model`, `user_config_loaded`, `codex_version`, `image_count`, `schema_path`, `task_identifier`, `task_checksum`, `output_paths` | 없음 |
+| `codex.request.planned` | `slug`, `model`, `user_config_loaded`, `codex_version`, `image_count`, `schema_path`, `task_identifier`, `task_checksum`, `output_paths` | 없음 |
+| `codex.request.started` | `slug`, `model`, `user_config_loaded`, `codex_version`, `image_count`, `schema_path`, `task_identifier`, `task_checksum`, `output_paths` | 없음 |
 | `codex.response.completed` | 공통 request field, `exit_code`, `duration_seconds`, `result_checksum`, `schema_validation`, `thread_id`, `total_event_count`, `invalid_json_line_count`, `event_type_counts`, `item_type_counts`, `usage` | 없음 |
 | `codex.response.failed` | 공통 request field, `exit_code`, `duration_seconds`, `result_checksum`, `schema_validation`, `thread_id`, `total_event_count`, `invalid_json_line_count`, `event_type_counts`, `item_type_counts`, `usage` | `error_type` |
 
-`output_paths`는 `events`, `result`, `run`, `stderr` 경로만 포함해야 한다. `schema_validation`은 `passed`, `failed`, `not_run` 중 하나여야 한다. `usage`는 모든 `turn.completed` event에서 검증한 `*_tokens` 값을 합산해야 한다. Runtime record의 공통 envelope는 기존 `schema_version`, `timestamp`, `level`, `tool`, `event`, `message`, `process_id`, `run_id`, `thread`, `context` 계약을 유지해야 한다. `message`는 고정된 lifecycle 설명만 포함해야 하며 upstream content를 포함해서는 안 된다.
+Legacy runtime logger의 `output_paths`는 `events`, `result`, `run`, `stderr` 경로만 포함해야 한다. `schema_validation`은 `passed`, `failed`, `not_run` 중 하나여야 한다. `usage`는 모든 `turn.completed` event에서 검증한 `*_tokens` 값을 합산해야 한다. Runtime record의 공통 envelope는 기존 `schema_version`, `timestamp`, `level`, `tool`, `event`, `message`, `process_id`, `run_id`, `thread`, `context` 계약을 유지해야 한다. `message`는 고정된 lifecycle 설명만 포함해야 하며 upstream content를 포함해서는 안 된다.
 
 - Runtime JSONL은 prompt, task 또는 source content, upstream agent나 error message body, reasoning 또는 reasoning summary, command·argument·stdout·stderr body, file change나 patch body, tool input·output, raw event나 item을 포함해서는 안 된다.
 - Runtime JSONL은 API key, authorization value, token, password, credential URL 또는 알려진 credential 형식을 포함해서는 안 된다. Redaction은 allowlist 밖의 Codex content field를 기록할 수 있는 근거가 아니다.
@@ -1123,6 +1157,7 @@ RFC 8785로 직렬화한 뒤, 이 문서의 aggregate checksum record 방식으�
 - [KISA CCE 가이드 2026 원본 PDF](kisa-cce-criteria-2026.pdf)
 - [저장소 README](README.md)
 - [OpenAI Codex non-interactive mode](https://developers.openai.com/codex/noninteractive)
+- [OpenCodeX Codex integration](https://github.com/lidge-jun/opencodex/blob/main/docs-site/src/content/docs/guides/codex-integration.md)
 - [CommonMark Specification](https://spec.commonmark.org/spec)
 - [JSON Schema Draft 2020-12](https://json-schema.org/draft/2020-12)
 - [RFC 8785 JSON Canonicalization Scheme](https://www.rfc-editor.org/rfc/rfc8785.html)

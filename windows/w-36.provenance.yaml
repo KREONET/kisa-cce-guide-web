@@ -2,117 +2,66 @@ schemaVersion: 1
 criterionSlug: w-36
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: w-36:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "w-36:overview.heading:1"
+    sourceSpans: [{physicalPage: 230, printedPage: "230", pageRegionIdentifier: p230-w-36}]
+  - blockReference: "w-36:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 230, printedPage: "230", pageRegionIdentifier: p230-w-36}]
+  - blockReference: "w-36:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 230, printedPage: "230", pageRegionIdentifier: p230-w-36}]
+  - blockReference: "w-36:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 230, printedPage: "230", pageRegionIdentifier: p230-w-36}]
+  - blockReference: "w-36:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 230, printedPage: "230", pageRegionIdentifier: p230-w-36}]
+  - blockReference: "w-36:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 230, printedPage: "230", pageRegionIdentifier: p230-w-36}]
+  - blockReference: "w-36:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 230, printedPage: "230", pageRegionIdentifier: p230-w-36}]
+  - blockReference: "w-36:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 230, printedPage: "230", pageRegionIdentifier: p230-w-36}]
+  - blockReference: "w-36:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 230, printedPage: "230", pageRegionIdentifier: p230-w-36}]
+  - blockReference: "w-36:overview.reference.note.content:1"
+    sourceSpans: [{physicalPage: 230, printedPage: "230", pageRegionIdentifier: p230-w-36}]
+  - blockReference: "w-36:assessment.heading:1"
+    sourceSpans: [{physicalPage: 230, printedPage: "230", pageRegionIdentifier: p230-w-36}]
+  - blockReference: "w-36:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 230, printedPage: "230", pageRegionIdentifier: p230-w-36}]
+  - blockReference: "w-36:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 230, printedPage: "230", pageRegionIdentifier: p230-w-36}]
+  - blockReference: "w-36:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 230, printedPage: "230", pageRegionIdentifier: p230-w-36}]
+  - blockReference: "w-36:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 230, printedPage: "230", pageRegionIdentifier: p230-w-36}]
+  - blockReference: "w-36:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 230, printedPage: "230", pageRegionIdentifier: p230-w-36}]
+  - blockReference: "w-36:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 230, printedPage: "230", pageRegionIdentifier: p230-w-36}]
+  - blockReference: "w-36:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 230, printedPage: "230", pageRegionIdentifier: p230-w-36}]
+  - blockReference: "w-36:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 230, printedPage: "230", pageRegionIdentifier: p230-w-36}]
+  - blockReference: "w-36:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 230, printedPage: "230", pageRegionIdentifier: p230-w-36}]
+  - blockReference: "w-36:remediation.heading:1"
+    sourceSpans: [{physicalPage: 230, printedPage: "230", pageRegionIdentifier: p230-w-36}]
+  - blockReference: "w-36:remediation.unspecified.heading:1"
     sourceSpans:
-      - physicalPage: 230
-        printedPage: '230'
-        pageRegionIdentifier: p230-w-36
-  - blockReference: w-36:sourceTranscription.sourcePage230.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 230
-        printedPage: '230'
-        pageRegionIdentifier: p230-w-36
-  - blockReference: w-36:sourceTranscription.sourcePage230.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 230
-        printedPage: '230'
-        pageRegionIdentifier: p230-w-36
-  - blockReference: w-36:sourceTranscription.sourcePage230.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 230
-        printedPage: '230'
-        pageRegionIdentifier: p230-w-36
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - blockReference: w-36:sourceTranscription.sourcePage231.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 231
-        printedPage: '231'
-        pageRegionIdentifier: p231-w-36
-  - blockReference: w-36:sourceTranscription.sourcePage231.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 231
-        printedPage: '231'
-        pageRegionIdentifier: p231-w-36
-  - blockReference: w-36:sourceTranscription.sourcePage231.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 231
-        printedPage: '231'
-        pageRegionIdentifier: p231-w-36
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/w-36/w-36-page-230-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 639ba24957688297afa21d5c1ad72901d3668e209663990358139bf704b8bdf8
-    alternativeText: PDF 페이지 230의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 230 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 230
-        printedPage: '230'
-        pageRegionIdentifier: p230-w-36
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - path: ../assets/w-36/w-36-page-231-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 3f9008e6d0ceb9c27cf2c07fe18845a898f0198a19edcb24229db4d3a156c490
-    alternativeText: PDF 페이지 231의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 231 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 231
-        printedPage: '231'
-        pageRegionIdentifier: p231-w-36
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+      - {physicalPage: 230, printedPage: "230", pageRegionIdentifier: p230-w-36}
+      - {physicalPage: 231, printedPage: "231", pageRegionIdentifier: p231-w-36}
+  - blockReference: "w-36:remediation.unspecified.paragraph:1"
+    sourceSpans: [{physicalPage: 230, printedPage: "230", pageRegionIdentifier: p230-w-36}]
+  - blockReference: "w-36:remediation.unspecified.step:1"
+    sourceSpans: [{physicalPage: 230, printedPage: "230", pageRegionIdentifier: p230-w-36}]
+  - blockReference: "w-36:remediation.unspecified.step:2"
+    sourceSpans: [{physicalPage: 230, printedPage: "230", pageRegionIdentifier: p230-w-36}]
+  - blockReference: "w-36:remediation.unspecified.step:3"
+    sourceSpans: [{physicalPage: 230, printedPage: "230", pageRegionIdentifier: p230-w-36}]
+  - blockReference: "w-36:remediation.unspecified.paragraph:2"
+    sourceSpans: [{physicalPage: 231, printedPage: "231", pageRegionIdentifier: p231-w-36}]
+  - blockReference: "w-36:remediation.unspecified.step:4"
+    sourceSpans: [{physicalPage: 231, printedPage: "231", pageRegionIdentifier: p231-w-36}]
+  - blockReference: "w-36:remediation.unspecified.step:5"
+    sourceSpans: [{physicalPage: 231, printedPage: "231", pageRegionIdentifier: p231-w-36}]
+  - blockReference: "w-36:remediation.unspecified.step:6"
+    sourceSpans: [{physicalPage: 231, printedPage: "231", pageRegionIdentifier: p231-w-36}]
+assets: []

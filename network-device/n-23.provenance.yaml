@@ -2,117 +2,49 @@ schemaVersion: 1
 criterionSlug: n-23
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: n-23:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - {blockReference: "n-23:overview.heading:1", sourceSpans: [{physicalPage: 444, printedPage: "444", pageRegionIdentifier: p444-n-23}]}
+  - {blockReference: "n-23:overview.inspectionContent.heading:1", sourceSpans: [{physicalPage: 444, printedPage: "444", pageRegionIdentifier: p444-n-23}]}
+  - {blockReference: "n-23:overview.inspectionContent.paragraph:1", sourceSpans: [{physicalPage: 444, printedPage: "444", pageRegionIdentifier: p444-n-23}]}
+  - {blockReference: "n-23:overview.inspectionPurpose.heading:1", sourceSpans: [{physicalPage: 444, printedPage: "444", pageRegionIdentifier: p444-n-23}]}
+  - {blockReference: "n-23:overview.inspectionPurpose.paragraph:1", sourceSpans: [{physicalPage: 444, printedPage: "444", pageRegionIdentifier: p444-n-23}]}
+  - {blockReference: "n-23:overview.securityThreat.heading:1", sourceSpans: [{physicalPage: 444, printedPage: "444", pageRegionIdentifier: p444-n-23}]}
+  - {blockReference: "n-23:overview.securityThreat.paragraph:1", sourceSpans: [{physicalPage: 444, printedPage: "444", pageRegionIdentifier: p444-n-23}]}
+  - {blockReference: "n-23:overview.reference.heading:1", sourceSpans: [{physicalPage: 444, printedPage: "444", pageRegionIdentifier: p444-n-23}]}
+  - {blockReference: "n-23:overview.reference.note.label:1", sourceSpans: [{physicalPage: 444, printedPage: "444", pageRegionIdentifier: p444-n-23}]}
+  - {blockReference: "n-23:overview.reference.note.content:1", sourceSpans: [{physicalPage: 444, printedPage: "444", pageRegionIdentifier: p444-n-23}]}
+  - {blockReference: "n-23:assessment.heading:1", sourceSpans: [{physicalPage: 444, printedPage: "444", pageRegionIdentifier: p444-n-23}]}
+  - {blockReference: "n-23:assessment.target.heading:1", sourceSpans: [{physicalPage: 444, printedPage: "444", pageRegionIdentifier: p444-n-23}]}
+  - {blockReference: "n-23:assessment.target.paragraph:1", sourceSpans: [{physicalPage: 444, printedPage: "444", pageRegionIdentifier: p444-n-23}]}
+  - {blockReference: "n-23:assessment.judgment.heading:1", sourceSpans: [{physicalPage: 444, printedPage: "444", pageRegionIdentifier: p444-n-23}]}
+  - {blockReference: "n-23:assessment.judgment.good:1", sourceSpans: [{physicalPage: 444, printedPage: "444", pageRegionIdentifier: p444-n-23}]}
+  - {blockReference: "n-23:assessment.judgment.vulnerable:1", sourceSpans: [{physicalPage: 444, printedPage: "444", pageRegionIdentifier: p444-n-23}]}
+  - {blockReference: "n-23:assessment.remediationMethod.heading:1", sourceSpans: [{physicalPage: 444, printedPage: "444", pageRegionIdentifier: p444-n-23}]}
+  - {blockReference: "n-23:assessment.remediationMethod.paragraph:1", sourceSpans: [{physicalPage: 444, printedPage: "444", pageRegionIdentifier: p444-n-23}]}
+  - {blockReference: "n-23:assessment.remediationImpact.heading:1", sourceSpans: [{physicalPage: 444, printedPage: "444", pageRegionIdentifier: p444-n-23}]}
+  - {blockReference: "n-23:assessment.remediationImpact.paragraph:1", sourceSpans: [{physicalPage: 444, printedPage: "444", pageRegionIdentifier: p444-n-23}]}
+  - {blockReference: "n-23:remediation.heading:1", sourceSpans: [{physicalPage: 444, printedPage: "444", pageRegionIdentifier: p444-n-23}]}
+  - {blockReference: "n-23:remediation.linux.heading:1", sourceSpans: [{physicalPage: 444, printedPage: "444", pageRegionIdentifier: p444-n-23}]}
+  - {blockReference: "n-23:remediation.linux.step:1", sourceSpans: [{physicalPage: 444, printedPage: "444", pageRegionIdentifier: p444-n-23}]}
+  - {blockReference: "n-23:remediation.linux.step.explanation:1", sourceSpans: [{physicalPage: 444, printedPage: "444", pageRegionIdentifier: p444-n-23}]}
+  - {blockReference: "n-23:remediation.linux.command:1", sourceSpans: [{physicalPage: 444, printedPage: "444", pageRegionIdentifier: p444-n-23}]}
+  - {blockReference: "n-23:remediation.linux.step:2", sourceSpans: [{physicalPage: 444, printedPage: "444", pageRegionIdentifier: p444-n-23}]}
+  - {blockReference: "n-23:remediation.linux.step.explanation:2", sourceSpans: [{physicalPage: 444, printedPage: "444", pageRegionIdentifier: p444-n-23}]}
+  - {blockReference: "n-23:remediation.linux.command:2", sourceSpans: [{physicalPage: 444, printedPage: "444", pageRegionIdentifier: p444-n-23}]}
+  - {blockReference: "n-23:remediation.supplementaryGuidance.heading:1", sourceSpans: [{physicalPage: 444, printedPage: "444", pageRegionIdentifier: p444-n-23}]}
+  - blockReference: "n-23:remediation.supplementaryGuidance.step:1"
     sourceSpans:
-      - physicalPage: 444
-        printedPage: '444'
-        pageRegionIdentifier: p444-n-23
-  - blockReference: n-23:sourceTranscription.sourcePage444.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 444
-        printedPage: '444'
-        pageRegionIdentifier: p444-n-23
-  - blockReference: n-23:sourceTranscription.sourcePage444.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 444
-        printedPage: '444'
-        pageRegionIdentifier: p444-n-23
-  - blockReference: n-23:sourceTranscription.sourcePage444.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 444
-        printedPage: '444'
-        pageRegionIdentifier: p444-n-23
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - blockReference: n-23:sourceTranscription.sourcePage445.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 445
-        printedPage: '445'
-        pageRegionIdentifier: p445-n-23
-  - blockReference: n-23:sourceTranscription.sourcePage445.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 445
-        printedPage: '445'
-        pageRegionIdentifier: p445-n-23
-  - blockReference: n-23:sourceTranscription.sourcePage445.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 445
-        printedPage: '445'
-        pageRegionIdentifier: p445-n-23
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/n-23/n-23-page-444-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 5cff7e270d02f38afc3860765767ee8243e5be6c06c5178d2c677ebd57a7f40b
-    alternativeText: PDF 페이지 444의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 444 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 444
-        printedPage: '444'
-        pageRegionIdentifier: p444-n-23
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - path: ../assets/n-23/n-23-page-445-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: e6d78fdcb2ae9afe817580c49b7397123343df44d623e57ec01f549646a4fb55
-    alternativeText: PDF 페이지 445의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 445 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 445
-        printedPage: '445'
-        pageRegionIdentifier: p445-n-23
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+      - {physicalPage: 444, printedPage: "444", pageRegionIdentifier: p444-n-23}
+      - {physicalPage: 445, printedPage: "445", pageRegionIdentifier: p445-n-23}
+  - {blockReference: "n-23:remediation.supplementaryGuidance.item:1", sourceSpans: [{physicalPage: 445, printedPage: "445", pageRegionIdentifier: p445-n-23}]}
+  - {blockReference: "n-23:remediation.supplementaryGuidance.item:2", sourceSpans: [{physicalPage: 445, printedPage: "445", pageRegionIdentifier: p445-n-23}]}
+  - {blockReference: "n-23:remediation.supplementaryGuidance.item:3", sourceSpans: [{physicalPage: 445, printedPage: "445", pageRegionIdentifier: p445-n-23}]}
+  - {blockReference: "n-23:remediation.supplementaryGuidance.item:4", sourceSpans: [{physicalPage: 445, printedPage: "445", pageRegionIdentifier: p445-n-23}]}
+  - {blockReference: "n-23:remediation.supplementaryGuidance.item:5", sourceSpans: [{physicalPage: 445, printedPage: "445", pageRegionIdentifier: p445-n-23}]}
+  - {blockReference: "n-23:remediation.supplementaryGuidance.item:6", sourceSpans: [{physicalPage: 445, printedPage: "445", pageRegionIdentifier: p445-n-23}]}
+  - {blockReference: "n-23:remediation.supplementaryGuidance.item:7", sourceSpans: [{physicalPage: 445, printedPage: "445", pageRegionIdentifier: p445-n-23}]}
+  - {blockReference: "n-23:remediation.supplementaryGuidance.item:8", sourceSpans: [{physicalPage: 445, printedPage: "445", pageRegionIdentifier: p445-n-23}]}
+  - {blockReference: "n-23:remediation.supplementaryGuidance.item:9", sourceSpans: [{physicalPage: 445, printedPage: "445", pageRegionIdentifier: p445-n-23}]}
+  - {blockReference: "n-23:remediation.supplementaryGuidance.item:10", sourceSpans: [{physicalPage: 445, printedPage: "445", pageRegionIdentifier: p445-n-23}]}
+  - {blockReference: "n-23:remediation.supplementaryGuidance.item:11", sourceSpans: [{physicalPage: 445, printedPage: "445", pageRegionIdentifier: p445-n-23}]}
+  - {blockReference: "n-23:remediation.supplementaryGuidance.item:12", sourceSpans: [{physicalPage: 445, printedPage: "445", pageRegionIdentifier: p445-n-23}]}
+assets: []

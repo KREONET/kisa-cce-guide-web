@@ -2,64 +2,134 @@ schemaVersion: 1
 criterionSlug: hv-22
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: hv-22:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "hv-22:overview.heading:1"
     sourceSpans:
       - physicalPage: 845
-        printedPage: '845'
+        printedPage: "845"
         pageRegionIdentifier: p845-hv-22
-  - blockReference: hv-22:sourceTranscription.sourcePage845.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "hv-22:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 845
-        printedPage: '845'
+        printedPage: "845"
         pageRegionIdentifier: p845-hv-22
-  - blockReference: hv-22:sourceTranscription.sourcePage845.transcription:1
-    publicationDisposition: published
+  - blockReference: "hv-22:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 845
-        printedPage: '845'
+        printedPage: "845"
         pageRegionIdentifier: p845-hv-22
-  - blockReference: hv-22:sourceTranscription.sourcePage845.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "hv-22:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 845
-        printedPage: '845'
+        printedPage: "845"
         pageRegionIdentifier: p845-hv-22
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/hv-22/hv-22-page-845-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 248d3d5214b7ccbd06f7f5415e7cef4301fbc8b6da26227eb05d69542da9bb71
-    alternativeText: PDF 페이지 845의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 845 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
+  - blockReference: "hv-22:overview.inspectionPurpose.paragraph:1"
     sourceSpans:
       - physicalPage: 845
-        printedPage: '845'
+        printedPage: "845"
         pageRegionIdentifier: p845-hv-22
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
+  - blockReference: "hv-22:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 845
+        printedPage: "845"
+        pageRegionIdentifier: p845-hv-22
+  - blockReference: "hv-22:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 845
+        printedPage: "845"
+        pageRegionIdentifier: p845-hv-22
+  - blockReference: "hv-22:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 845
+        printedPage: "845"
+        pageRegionIdentifier: p845-hv-22
+  - blockReference: "hv-22:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 845
+        printedPage: "845"
+        pageRegionIdentifier: p845-hv-22
+  - blockReference: "hv-22:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 845
+        printedPage: "845"
+        pageRegionIdentifier: p845-hv-22
+  - blockReference: "hv-22:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 845
+        printedPage: "845"
+        pageRegionIdentifier: p845-hv-22
+  - blockReference: "hv-22:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 845
+        printedPage: "845"
+        pageRegionIdentifier: p845-hv-22
+  - blockReference: "hv-22:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 845
+        printedPage: "845"
+        pageRegionIdentifier: p845-hv-22
+  - blockReference: "hv-22:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 845
+        printedPage: "845"
+        pageRegionIdentifier: p845-hv-22
+  - blockReference: "hv-22:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 845
+        printedPage: "845"
+        pageRegionIdentifier: p845-hv-22
+  - blockReference: "hv-22:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 845
+        printedPage: "845"
+        pageRegionIdentifier: p845-hv-22
+  - blockReference: "hv-22:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 845
+        printedPage: "845"
+        pageRegionIdentifier: p845-hv-22
+  - blockReference: "hv-22:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 845
+        printedPage: "845"
+        pageRegionIdentifier: p845-hv-22
+  - blockReference: "hv-22:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 845
+        printedPage: "845"
+        pageRegionIdentifier: p845-hv-22
+  - blockReference: "hv-22:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 845
+        printedPage: "845"
+        pageRegionIdentifier: p845-hv-22
+  - blockReference: "hv-22:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 845
+        printedPage: "845"
+        pageRegionIdentifier: p845-hv-22
+  - blockReference: "hv-22:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 845
+        printedPage: "845"
+        pageRegionIdentifier: p845-hv-22
+  - blockReference: "hv-22:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 845
+        printedPage: "845"
+        pageRegionIdentifier: p845-hv-22
+  - blockReference: "hv-22:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 845
+        printedPage: "845"
+        pageRegionIdentifier: p845-hv-22
+  - blockReference: "hv-22:remediation.linux.step:3"
+    sourceSpans:
+      - physicalPage: 845
+        printedPage: "845"
+        pageRegionIdentifier: p845-hv-22
+  - blockReference: "hv-22:remediation.linux.step:4"
+    sourceSpans:
+      - physicalPage: 845
+        printedPage: "845"
+        pageRegionIdentifier: p845-hv-22
+assets: []

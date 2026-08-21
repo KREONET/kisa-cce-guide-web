@@ -1,7 +1,8 @@
 ---
 schemaVersion: 1
-contentModel: extractedCriterion
+contentModel: systemCriterion
 contentModelVersion: 1
+
 criterion:
   code: WEB-04
   slug: web-04
@@ -9,104 +10,167 @@ criterion:
   severity:
     level: high
     sourceLabel: 상
+
 classification:
   domainIdentifier: web-service
   categoryIdentifier: web-service-service-management
+
 targetScope: nonExhaustive
 targetIdentifiers:
-  - unspecified
-sourceTargetText: 자동 전사본에서 확인 필요
+  - linux
+sourceTargetText: "Apache, Tomcat, Nginx, IIS, JEUS, WebtoB"
+
 provenance:
   sourceDocumentIdentifier: kisa-cce-criteria-2026
   sourcePageRanges:
     - physicalPageStart: 280
       physicalPageEnd: 282
-      printedPageStart: '280'
-      printedPageEnd: '282'
+      printedPageStart: "280"
+      printedPageEnd: "282"
+
 sourceAnnotations: []
 ---
 
-## 원문 전사
+## 개요
 
-### PDF 페이지 280
+### 점검 내용
 
-~~~text transcription
-개요
-점검 내용 디렉터리 리스팅 기능 차단 여부 점검
-웹 서버에 대한 디렉터리 리스팅 기능을 차단하여 디렉터리 내의 모든 파일에 대한 접근 및 정보 노출을
-점검 목적
-차단하기 위함
-디렉터리 리스팅 기능이 차단되지 않은 경우, 비인가자가 해당 디렉터리 내의 모든 파일의 리스트 확인
-보안 위협 및 접근이 가능하고, 웹 서버의 구조 및 백업 파일이나 소스 파일 등 공개되면 안 되는 중요 파일들이
-노출될 위험이 존재함
-※ 디렉터리 리스팅(Directory Listing): 웹 서버의 취약한 설정으로 인해 웹 서버의 파일 시스템
-참고
-목록을 보여주는 것
-점검 대상 및 판단 기준
-대상 Apache, Tomcat, Nginx, IIS, JEUS, WebtoB
-양호 : 디렉터리 리스팅이 설정되지 않은 경우
-판단 기준
-취약 : 디렉터리 리스팅이 설정된 경우
-조치 방법 디렉터리 리스팅 기능 차단 설정
-조치 시 영향 일반적인 경우 영향 없음
-점검 및 조치 사례
-l Apache
-Step 1) httpd.conf 파일 내 모든 디렉터리의 Options 지시자에서 Indexes 옵션 제거
-# vi /<Apache 설치 디렉터리>/httpd.conf(또는 apache.conf)
-<Directory />
-Options Indexes 삭제 (또는 –Indexes 설정)
-</Directory>
-Step 2) Apache 재시작
-# systemctl restart apache2
-※ httpd.conf 뿐 아니라 sites-available 디렉터리 내 모든 사이트에 적용
-※ 파일 위치 및 서비스명은 사용하는 운영체제에 따라 달라질 수 있음
-~~~
+디렉터리 리스팅 기능 차단 여부 점검
 
-![PDF 페이지 280의 원문 점검항목 영역](../assets/web-04/web-04-page-280-source-region.png)
+### 점검 목적
 
-### PDF 페이지 281
+웹 서버에 대한 디렉터리 리스팅 기능을 차단하여 디렉터리 내의 모든 파일에 대한 접근 및 정보 노출을 차단하기 위함
 
-~~~text transcription
-l Tomcat
-Step 1) web.xml 파일 내 listings 옵션 비활성화
-# vi /<Tomcat 설치 디렉터리>/web.xml
-<init-param>
-<param-name>listings</param-name>
-<param-value>false</param-value>
-</init-param>
-l Nginx
-Step 1) nginx.conf 파일 내 autoindex 지시자 off 설정
-# vi /<Nginx 설치 디렉터리>/conf/nginx.conf
-server {
-autoindex off;
-}
-Step 2) Nginx 재시작
-# systemctl restart nginx
-l IIS
-Step 1) 시작 > Windows 관리 도구 > 인터넷 정보 서비스(IIS) 관리자 > 해당 웹 사이트 > IIS > 디렉터리 검색
-선택, 사용”을 “사용 안 함”으로 설정
-[ 디렉터리 검색 기능 비활성화 ]
-~~~
+### 보안 위협
 
-![PDF 페이지 281의 원문 점검항목 영역](../assets/web-04/web-04-page-281-source-region.png)
+디렉터리 리스팅 기능이 차단되지 않은 경우, 비인가자가 해당 디렉터리 내의 모든 파일의 리스트 확인 및 접근이 가능하고, 웹 서버의 구조 및 백업 파일이나 소스 파일 등 공개되면 안 되는 중요 파일들이 노출될 위험이 존재함
 
-### PDF 페이지 282
+### 참고
 
-~~~text transcription
-l JEUS
-Step 1) jeus-web-dd.xml 파일 내 디렉터리 리스팅 설정 변경
-# vi /<JEUS 설치 디렉터리>/WEB-INF/jeus-web-dd.xml
-<allow-indexing>false</allow-indexing>
-l WebtoB
-Step 1) *Node, *URL 절에 Options 지시자 설정 삭제 또는 “-Indexes”로 설정
-# nano /<WebtoB 설치 디렉터리>/config/http.m
-*NODE
-imuser WEBTOBDIR="/root/webtob",
-Options = "-Indexes",
-Step 2) 설정 파일 컴파일 및 재시작
-# wscfl -I http.m
-# wsdown
-# wsboot
-~~~
+> **참고**
+>
+> **디렉터리 리스팅(Directory Listing):** 웹 서버의 취약한 설정으로 인해 웹 서버의 파일 시스템 목록을 보여주는 것
 
-![PDF 페이지 282의 원문 점검항목 영역](../assets/web-04/web-04-page-282-source-region.png)
+## 점검 대상 및 판단 기준
+
+### 대상
+
+Apache, Tomcat, Nginx, IIS, JEUS, WebtoB
+
+### 판단 기준
+
+- **양호:** 디렉터리 리스팅이 설정되지 않은 경우
+- **취약:** 디렉터리 리스팅이 설정된 경우
+
+### 조치 방법
+
+디렉터리 리스팅 기능 차단 설정
+
+### 조치 시 영향
+
+일반적인 경우 영향 없음
+
+## 점검 및 조치 사례
+
+### LINUX
+
+**Apache**
+
+1. `httpd.conf` 파일 내 모든 디렉터리의 `Options` 지시자에서 `Indexes` 옵션 제거
+
+   ```sh command
+   # vi /<Apache 설치 디렉터리>/httpd.conf(또는 apache.conf)
+   ```
+
+   ```apache configuration
+   <Directory />
+       Options Indexes 삭제 (또는 –Indexes 설정)
+   </Directory>
+   ```
+
+2. Apache 재시작
+
+   ```sh command
+   # systemctl restart apache2
+   ```
+
+> **참고**
+>
+> `httpd.conf` 뿐 아니라 `sites-available` 디렉터리 내 모든 사이트에 적용
+
+> **참고**
+>
+> 파일 위치 및 서비스명은 사용하는 운영체제에 따라 달라질 수 있음
+
+**Tomcat**
+
+1. `web.xml` 파일 내 `listings` 옵션 비활성화
+
+   ```sh command
+   # vi /<Tomcat 설치 디렉터리>/web.xml
+   ```
+
+   ```xml configuration
+   <init-param>
+       <param-name>listings</param-name>
+       <param-value>false</param-value>
+   </init-param>
+   ```
+
+**Nginx**
+
+1. `nginx.conf` 파일 내 `autoindex` 지시자 `off` 설정
+
+   ```sh command
+   # vi /<Nginx 설치 디렉터리>/conf/nginx.conf
+   ```
+
+   ```nginx configuration
+   server {
+       autoindex off;
+   }
+   ```
+
+2. Nginx 재시작
+
+   ```sh command
+   # systemctl restart nginx
+   ```
+
+**IIS**
+
+1. 시작 > Windows 관리 도구 > 인터넷 정보 서비스(IIS) 관리자 > 해당 웹 사이트 > IIS > 디렉터리 검색 선택, ‘사용’을 “사용 안 함”으로 설정
+
+**JEUS**
+
+1. `jeus-web-dd.xml` 파일 내 디렉터리 리스팅 설정 변경
+
+   ```sh command
+   # vi /<JEUS 설치 디렉터리>/WEB-INF/jeus-web-dd.xml
+   ```
+
+   ```xml configuration
+   <allow-indexing>false</allow-indexing>
+   ```
+
+**WebtoB**
+
+1. `*NODE`, `*URL` 절에 `Options` 지시자 설정 삭제 또는 `“-Indexes”`로 설정
+
+   ```sh command
+   # nano /<WebtoB 설치 디렉터리>/config/http.m
+   ```
+
+   ```text configuration
+   *NODE
+   imuser  WEBTOBDIR="/root/webtob",
+           Options = "-Indexes",
+   ```
+
+2. 설정 파일 컴파일 및 재시작
+
+   ```sh command
+   # wscfl -I http.m
+   # wsdown
+   # wsboot
+   ```

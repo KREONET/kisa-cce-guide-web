@@ -2,117 +2,197 @@ schemaVersion: 1
 criterionSlug: d-18
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: d-18:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "d-18:overview.heading:1"
     sourceSpans:
       - physicalPage: 648
-        printedPage: '648'
+        printedPage: "648"
         pageRegionIdentifier: p648-d-18
-  - blockReference: d-18:sourceTranscription.sourcePage648.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "d-18:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 648
-        printedPage: '648'
+        printedPage: "648"
         pageRegionIdentifier: p648-d-18
-  - blockReference: d-18:sourceTranscription.sourcePage648.transcription:1
-    publicationDisposition: published
+  - blockReference: "d-18:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 648
-        printedPage: '648'
+        printedPage: "648"
         pageRegionIdentifier: p648-d-18
-  - blockReference: d-18:sourceTranscription.sourcePage648.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "d-18:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 648
-        printedPage: '648'
+        printedPage: "648"
         pageRegionIdentifier: p648-d-18
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - blockReference: d-18:sourceTranscription.sourcePage649.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "d-18:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 648
+        printedPage: "648"
+        pageRegionIdentifier: p648-d-18
+  - blockReference: "d-18:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 648
+        printedPage: "648"
+        pageRegionIdentifier: p648-d-18
+  - blockReference: "d-18:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 648
+        printedPage: "648"
+        pageRegionIdentifier: p648-d-18
+  - blockReference: "d-18:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 648
+        printedPage: "648"
+        pageRegionIdentifier: p648-d-18
+  - blockReference: "d-18:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 648
+        printedPage: "648"
+        pageRegionIdentifier: p648-d-18
+  - blockReference: "d-18:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 648
+        printedPage: "648"
+        pageRegionIdentifier: p648-d-18
+  - blockReference: "d-18:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 648
+        printedPage: "648"
+        pageRegionIdentifier: p648-d-18
+  - blockReference: "d-18:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 648
+        printedPage: "648"
+        pageRegionIdentifier: p648-d-18
+  - blockReference: "d-18:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 648
+        printedPage: "648"
+        pageRegionIdentifier: p648-d-18
+  - blockReference: "d-18:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 648
+        printedPage: "648"
+        pageRegionIdentifier: p648-d-18
+  - blockReference: "d-18:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 648
+        printedPage: "648"
+        pageRegionIdentifier: p648-d-18
+  - blockReference: "d-18:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 648
+        printedPage: "648"
+        pageRegionIdentifier: p648-d-18
+  - blockReference: "d-18:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 648
+        printedPage: "648"
+        pageRegionIdentifier: p648-d-18
+  - blockReference: "d-18:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 648
+        printedPage: "648"
+        pageRegionIdentifier: p648-d-18
+  - blockReference: "d-18:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 648
+        printedPage: "648"
+        pageRegionIdentifier: p648-d-18
+  - blockReference: "d-18:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 648
+        printedPage: "648"
+        pageRegionIdentifier: p648-d-18
+  - blockReference: "d-18:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 648
+        printedPage: "648"
+        pageRegionIdentifier: p648-d-18
+  - blockReference: "d-18:remediation.unspecified.heading:1"
+    sourceSpans:
+      - physicalPage: 648
+        printedPage: "648"
+        pageRegionIdentifier: p648-d-18
+  - blockReference: "d-18:remediation.unspecified.paragraph:1"
+    sourceSpans:
+      - physicalPage: 648
+        printedPage: "648"
+        pageRegionIdentifier: p648-d-18
+  - blockReference: "d-18:remediation.unspecified.step:1"
+    sourceSpans:
+      - physicalPage: 648
+        printedPage: "648"
+        pageRegionIdentifier: p648-d-18
+  - blockReference: "d-18:remediation.unspecified.command:1"
+    sourceSpans:
+      - physicalPage: 648
+        printedPage: "648"
+        pageRegionIdentifier: p648-d-18
+  - blockReference: "d-18:remediation.unspecified.step:2"
+    sourceSpans:
+      - physicalPage: 648
+        printedPage: "648"
+        pageRegionIdentifier: p648-d-18
+  - blockReference: "d-18:remediation.unspecified.command:2"
+    sourceSpans:
+      - physicalPage: 648
+        printedPage: "648"
+        pageRegionIdentifier: p648-d-18
+  - blockReference: "d-18:remediation.unspecified.paragraph:2"
+    sourceSpans:
+      - physicalPage: 648
+        printedPage: "648"
+        pageRegionIdentifier: p648-d-18
+  - blockReference: "d-18:remediation.unspecified.step:3"
+    sourceSpans:
+      - physicalPage: 648
+        printedPage: "648"
+        pageRegionIdentifier: p648-d-18
+  - blockReference: "d-18:remediation.unspecified.command:3"
+    sourceSpans:
+      - physicalPage: 648
+        printedPage: "648"
+        pageRegionIdentifier: p648-d-18
+  - blockReference: "d-18:remediation.unspecified.step.explanation:3"
+    sourceSpans:
+      - physicalPage: 648
+        printedPage: "648"
+        pageRegionIdentifier: p648-d-18
+      - physicalPage: 649
+        printedPage: "649"
+        pageRegionIdentifier: p649-d-18
+  - blockReference: "d-18:remediation.unspecified.step:4"
     sourceSpans:
       - physicalPage: 649
-        printedPage: '649'
+        printedPage: "649"
         pageRegionIdentifier: p649-d-18
-  - blockReference: d-18:sourceTranscription.sourcePage649.transcription:1
-    publicationDisposition: published
+  - blockReference: "d-18:remediation.unspecified.command:4"
     sourceSpans:
       - physicalPage: 649
-        printedPage: '649'
+        printedPage: "649"
         pageRegionIdentifier: p649-d-18
-  - blockReference: d-18:sourceTranscription.sourcePage649.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "d-18:remediation.unspecified.paragraph:3"
     sourceSpans:
       - physicalPage: 649
-        printedPage: '649'
+        printedPage: "649"
         pageRegionIdentifier: p649-d-18
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/d-18/d-18-page-648-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 33abece67bad538892e83c95549823c1c46a22c65bf18d1ce4cd4ad3a93d8e67
-    alternativeText: PDF 페이지 648의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 648 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 648
-        printedPage: '648'
-        pageRegionIdentifier: p648-d-18
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - path: ../assets/d-18/d-18-page-649-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: ce5457316ec8573878b2fdfb77506d1e74cd41f4d6bc216fddafc6442b1ef54a
-    alternativeText: PDF 페이지 649의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 649 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "d-18:remediation.unspecified.step:5"
     sourceSpans:
       - physicalPage: 649
-        printedPage: '649'
+        printedPage: "649"
         pageRegionIdentifier: p649-d-18
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - blockReference: "d-18:remediation.unspecified.command:5"
+    sourceSpans:
+      - physicalPage: 649
+        printedPage: "649"
+        pageRegionIdentifier: p649-d-18
+  - blockReference: "d-18:remediation.unspecified.step:6"
+    sourceSpans:
+      - physicalPage: 649
+        printedPage: "649"
+        pageRegionIdentifier: p649-d-18
+  - blockReference: "d-18:remediation.unspecified.command:6"
+    sourceSpans:
+      - physicalPage: 649
+        printedPage: "649"
+        pageRegionIdentifier: p649-d-18
+assets: []

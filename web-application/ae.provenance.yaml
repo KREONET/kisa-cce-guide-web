@@ -2,117 +2,157 @@ schemaVersion: 1
 criterionSlug: ae
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: ae:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "ae:overview.heading:1"
     sourceSpans:
       - physicalPage: 775
-        printedPage: '775'
+        printedPage: "775"
         pageRegionIdentifier: p775-ae
-  - blockReference: ae:sourceTranscription.sourcePage775.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "ae:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 775
-        printedPage: '775'
+        printedPage: "775"
         pageRegionIdentifier: p775-ae
-  - blockReference: ae:sourceTranscription.sourcePage775.transcription:1
-    publicationDisposition: published
+  - blockReference: "ae:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 775
-        printedPage: '775'
+        printedPage: "775"
         pageRegionIdentifier: p775-ae
-  - blockReference: ae:sourceTranscription.sourcePage775.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "ae:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 775
-        printedPage: '775'
+        printedPage: "775"
         pageRegionIdentifier: p775-ae
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - blockReference: ae:sourceTranscription.sourcePage776.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "ae:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 775
+        printedPage: "775"
+        pageRegionIdentifier: p775-ae
+  - blockReference: "ae:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 775
+        printedPage: "775"
+        pageRegionIdentifier: p775-ae
+  - blockReference: "ae:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 775
+        printedPage: "775"
+        pageRegionIdentifier: p775-ae
+  - blockReference: "ae:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 775
+        printedPage: "775"
+        pageRegionIdentifier: p775-ae
+  - blockReference: "ae:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 775
+        printedPage: "775"
+        pageRegionIdentifier: p775-ae
+  - blockReference: "ae:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 775
+        printedPage: "775"
+        pageRegionIdentifier: p775-ae
+  - blockReference: "ae:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 775
+        printedPage: "775"
+        pageRegionIdentifier: p775-ae
+  - blockReference: "ae:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 775
+        printedPage: "775"
+        pageRegionIdentifier: p775-ae
+  - blockReference: "ae:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 775
+        printedPage: "775"
+        pageRegionIdentifier: p775-ae
+  - blockReference: "ae:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 775
+        printedPage: "775"
+        pageRegionIdentifier: p775-ae
+  - blockReference: "ae:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 775
+        printedPage: "775"
+        pageRegionIdentifier: p775-ae
+  - blockReference: "ae:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 775
+        printedPage: "775"
+        pageRegionIdentifier: p775-ae
+  - blockReference: "ae:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 775
+        printedPage: "775"
+        pageRegionIdentifier: p775-ae
+  - blockReference: "ae:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 775
+        printedPage: "775"
+        pageRegionIdentifier: p775-ae
+  - blockReference: "ae:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 775
+        printedPage: "775"
+        pageRegionIdentifier: p775-ae
+  - blockReference: "ae:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 775
+        printedPage: "775"
+        pageRegionIdentifier: p775-ae
+  - blockReference: "ae:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 775
+        printedPage: "775"
+        pageRegionIdentifier: p775-ae
+  - blockReference: "ae:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - physicalPage: 775
+        printedPage: "775"
+        pageRegionIdentifier: p775-ae
+      - physicalPage: 776
+        printedPage: "776"
+        pageRegionIdentifier: p776-ae
+  - blockReference: "ae:remediation.supplementaryGuidance.paragraph:1"
+    sourceSpans:
+      - physicalPage: 775
+        printedPage: "775"
+        pageRegionIdentifier: p775-ae
+  - blockReference: "ae:remediation.supplementaryGuidance.step:1"
+    sourceSpans:
+      - physicalPage: 775
+        printedPage: "775"
+        pageRegionIdentifier: p775-ae
+  - blockReference: "ae:remediation.supplementaryGuidance.step:2"
     sourceSpans:
       - physicalPage: 776
-        printedPage: '776'
+        printedPage: "776"
         pageRegionIdentifier: p776-ae
-  - blockReference: ae:sourceTranscription.sourcePage776.transcription:1
-    publicationDisposition: published
+  - blockReference: "ae:remediation.supplementaryGuidance.paragraph:2"
     sourceSpans:
       - physicalPage: 776
-        printedPage: '776'
+        printedPage: "776"
         pageRegionIdentifier: p776-ae
-  - blockReference: ae:sourceTranscription.sourcePage776.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "ae:remediation.supplementaryGuidance.step:3"
     sourceSpans:
       - physicalPage: 776
-        printedPage: '776'
+        printedPage: "776"
         pageRegionIdentifier: p776-ae
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/ae/ae-page-775-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: d1e0e323066a685a11a00c36fb771e069ddc346899bcd5485de7ec3cd01c9aec
-    alternativeText: PDF 페이지 775의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 775 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 775
-        printedPage: '775'
-        pageRegionIdentifier: p775-ae
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - path: ../assets/ae/ae-page-776-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: b6296e131fde64da35fd8ddda5bc2cfe147d527159b065b714b4dbf9ae7916df
-    alternativeText: PDF 페이지 776의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 776 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "ae:remediation.supplementaryGuidance.step:4"
     sourceSpans:
       - physicalPage: 776
-        printedPage: '776'
+        printedPage: "776"
         pageRegionIdentifier: p776-ae
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - blockReference: "ae:remediation.supplementaryGuidance.step:5"
+    sourceSpans:
+      - physicalPage: 776
+        printedPage: "776"
+        pageRegionIdentifier: p776-ae
+  - blockReference: "ae:remediation.supplementaryGuidance.step:6"
+    sourceSpans:
+      - physicalPage: 776
+        printedPage: "776"
+        pageRegionIdentifier: p776-ae
+assets: []

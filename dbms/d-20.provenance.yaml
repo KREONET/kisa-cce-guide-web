@@ -2,117 +2,222 @@ schemaVersion: 1
 criterionSlug: d-20
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: d-20:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "d-20:overview.heading:1"
     sourceSpans:
       - physicalPage: 652
-        printedPage: '652'
+        printedPage: "652"
         pageRegionIdentifier: p652-d-20
-  - blockReference: d-20:sourceTranscription.sourcePage652.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "d-20:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 652
-        printedPage: '652'
+        printedPage: "652"
         pageRegionIdentifier: p652-d-20
-  - blockReference: d-20:sourceTranscription.sourcePage652.transcription:1
-    publicationDisposition: published
+  - blockReference: "d-20:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 652
-        printedPage: '652'
+        printedPage: "652"
         pageRegionIdentifier: p652-d-20
-  - blockReference: d-20:sourceTranscription.sourcePage652.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "d-20:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 652
-        printedPage: '652'
+        printedPage: "652"
         pageRegionIdentifier: p652-d-20
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - blockReference: d-20:sourceTranscription.sourcePage653.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "d-20:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 652
+        printedPage: "652"
+        pageRegionIdentifier: p652-d-20
+  - blockReference: "d-20:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 652
+        printedPage: "652"
+        pageRegionIdentifier: p652-d-20
+  - blockReference: "d-20:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 652
+        printedPage: "652"
+        pageRegionIdentifier: p652-d-20
+  - blockReference: "d-20:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 652
+        printedPage: "652"
+        pageRegionIdentifier: p652-d-20
+  - blockReference: "d-20:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 652
+        printedPage: "652"
+        pageRegionIdentifier: p652-d-20
+  - blockReference: "d-20:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 652
+        printedPage: "652"
+        pageRegionIdentifier: p652-d-20
+  - blockReference: "d-20:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 652
+        printedPage: "652"
+        pageRegionIdentifier: p652-d-20
+  - blockReference: "d-20:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 652
+        printedPage: "652"
+        pageRegionIdentifier: p652-d-20
+  - blockReference: "d-20:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 652
+        printedPage: "652"
+        pageRegionIdentifier: p652-d-20
+  - blockReference: "d-20:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 652
+        printedPage: "652"
+        pageRegionIdentifier: p652-d-20
+  - blockReference: "d-20:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 652
+        printedPage: "652"
+        pageRegionIdentifier: p652-d-20
+  - blockReference: "d-20:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 652
+        printedPage: "652"
+        pageRegionIdentifier: p652-d-20
+  - blockReference: "d-20:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 652
+        printedPage: "652"
+        pageRegionIdentifier: p652-d-20
+  - blockReference: "d-20:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 652
+        printedPage: "652"
+        pageRegionIdentifier: p652-d-20
+  - blockReference: "d-20:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 652
+        printedPage: "652"
+        pageRegionIdentifier: p652-d-20
+  - blockReference: "d-20:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 652
+        printedPage: "652"
+        pageRegionIdentifier: p652-d-20
+  - blockReference: "d-20:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 652
+        printedPage: "652"
+        pageRegionIdentifier: p652-d-20
+  - blockReference: "d-20:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 652
+        printedPage: "652"
+        pageRegionIdentifier: p652-d-20
+      - physicalPage: 653
+        printedPage: "653"
+        pageRegionIdentifier: p653-d-20
+  - blockReference: "d-20:remediation.linux.paragraph:1"
+    sourceSpans:
+      - physicalPage: 652
+        printedPage: "652"
+        pageRegionIdentifier: p652-d-20
+  - blockReference: "d-20:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 652
+        printedPage: "652"
+        pageRegionIdentifier: p652-d-20
+  - blockReference: "d-20:remediation.linux.command:1"
+    sourceSpans:
+      - physicalPage: 652
+        printedPage: "652"
+        pageRegionIdentifier: p652-d-20
+  - blockReference: "d-20:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 652
+        printedPage: "652"
+        pageRegionIdentifier: p652-d-20
+  - blockReference: "d-20:remediation.linux.command:2"
+    sourceSpans:
+      - physicalPage: 652
+        printedPage: "652"
+        pageRegionIdentifier: p652-d-20
+  - blockReference: "d-20:remediation.linux.paragraph:2"
     sourceSpans:
       - physicalPage: 653
-        printedPage: '653'
+        printedPage: "653"
         pageRegionIdentifier: p653-d-20
-  - blockReference: d-20:sourceTranscription.sourcePage653.transcription:1
-    publicationDisposition: published
+  - blockReference: "d-20:remediation.linux.step:3"
     sourceSpans:
       - physicalPage: 653
-        printedPage: '653'
+        printedPage: "653"
         pageRegionIdentifier: p653-d-20
-  - blockReference: d-20:sourceTranscription.sourcePage653.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "d-20:remediation.linux.command:3"
     sourceSpans:
       - physicalPage: 653
-        printedPage: '653'
+        printedPage: "653"
         pageRegionIdentifier: p653-d-20
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/d-20/d-20-page-652-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 5538b1a40f4acd3fe5a38f5dccac14b47442efbc5d7e5ce9e17cc75d9c09ec72
-    alternativeText: PDF 페이지 652의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 652 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 652
-        printedPage: '652'
-        pageRegionIdentifier: p652-d-20
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - path: ../assets/d-20/d-20-page-653-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 55e8e9dc99003d649171071d4a8cbdc6b1929793e084a9c50843041b5a60c70e
-    alternativeText: PDF 페이지 653의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 653 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "d-20:remediation.linux.step:4"
     sourceSpans:
       - physicalPage: 653
-        printedPage: '653'
+        printedPage: "653"
         pageRegionIdentifier: p653-d-20
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - blockReference: "d-20:remediation.linux.command:4"
+    sourceSpans:
+      - physicalPage: 653
+        printedPage: "653"
+        pageRegionIdentifier: p653-d-20
+  - blockReference: "d-20:remediation.linux.paragraph:3"
+    sourceSpans:
+      - physicalPage: 653
+        printedPage: "653"
+        pageRegionIdentifier: p653-d-20
+  - blockReference: "d-20:remediation.linux.table:1"
+    sourceSpans:
+      - physicalPage: 653
+        printedPage: "653"
+        pageRegionIdentifier: p653-d-20
+  - blockReference: "d-20:remediation.linux.paragraph:4"
+    sourceSpans:
+      - physicalPage: 653
+        printedPage: "653"
+        pageRegionIdentifier: p653-d-20
+  - blockReference: "d-20:remediation.linux.paragraph:5"
+    sourceSpans:
+      - physicalPage: 653
+        printedPage: "653"
+        pageRegionIdentifier: p653-d-20
+  - blockReference: "d-20:remediation.linux.step:5"
+    sourceSpans:
+      - physicalPage: 653
+        printedPage: "653"
+        pageRegionIdentifier: p653-d-20
+  - blockReference: "d-20:remediation.linux.command:5"
+    sourceSpans:
+      - physicalPage: 653
+        printedPage: "653"
+        pageRegionIdentifier: p653-d-20
+  - blockReference: "d-20:remediation.linux.step:6"
+    sourceSpans:
+      - physicalPage: 653
+        printedPage: "653"
+        pageRegionIdentifier: p653-d-20
+  - blockReference: "d-20:remediation.linux.paragraph:6"
+    sourceSpans:
+      - physicalPage: 653
+        printedPage: "653"
+        pageRegionIdentifier: p653-d-20
+  - blockReference: "d-20:remediation.linux.step:7"
+    sourceSpans:
+      - physicalPage: 653
+        printedPage: "653"
+        pageRegionIdentifier: p653-d-20
+  - blockReference: "d-20:remediation.linux.command:6"
+    sourceSpans:
+      - physicalPage: 653
+        printedPage: "653"
+        pageRegionIdentifier: p653-d-20
+  - blockReference: "d-20:remediation.linux.step:8"
+    sourceSpans:
+      - physicalPage: 653
+        printedPage: "653"
+        pageRegionIdentifier: p653-d-20
+assets: []

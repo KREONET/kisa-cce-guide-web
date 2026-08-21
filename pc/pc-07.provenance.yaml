@@ -2,117 +2,76 @@ schemaVersion: 1
 criterionSlug: pc-07
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: pc-07:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
-    sourceSpans:
-      - physicalPage: 571
-        printedPage: '571'
-        pageRegionIdentifier: p571-pc-07
-  - blockReference: pc-07:sourceTranscription.sourcePage571.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 571
-        printedPage: '571'
-        pageRegionIdentifier: p571-pc-07
-  - blockReference: pc-07:sourceTranscription.sourcePage571.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 571
-        printedPage: '571'
-        pageRegionIdentifier: p571-pc-07
-  - blockReference: pc-07:sourceTranscription.sourcePage571.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 571
-        printedPage: '571'
-        pageRegionIdentifier: p571-pc-07
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - blockReference: pc-07:sourceTranscription.sourcePage572.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 572
-        printedPage: '572'
-        pageRegionIdentifier: p572-pc-07
-  - blockReference: pc-07:sourceTranscription.sourcePage572.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 572
-        printedPage: '572'
-        pageRegionIdentifier: p572-pc-07
-  - blockReference: pc-07:sourceTranscription.sourcePage572.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 572
-        printedPage: '572'
-        pageRegionIdentifier: p572-pc-07
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/pc-07/pc-07-page-571-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 7187f3e38d326791c484d879d675b2aec24a7812b853673882ca1f485d026afb
-    alternativeText: PDF 페이지 571의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 571 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 571
-        printedPage: '571'
-        pageRegionIdentifier: p571-pc-07
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - path: ../assets/pc-07/pc-07-page-572-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 2111b90f440d2fee0069952652cd2983634bc3a6671020e23117951ff83fcf98
-    alternativeText: PDF 페이지 572의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 572 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 572
-        printedPage: '572'
-        pageRegionIdentifier: p572-pc-07
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - blockReference: "pc-07:overview.heading:1"
+    sourceSpans: [{ physicalPage: 571, printedPage: "571", pageRegionIdentifier: p571-pc-07 }]
+  - blockReference: "pc-07:overview.inspectionContent.heading:1"
+    sourceSpans: [{ physicalPage: 571, printedPage: "571", pageRegionIdentifier: p571-pc-07 }]
+  - blockReference: "pc-07:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{ physicalPage: 571, printedPage: "571", pageRegionIdentifier: p571-pc-07 }]
+  - blockReference: "pc-07:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{ physicalPage: 571, printedPage: "571", pageRegionIdentifier: p571-pc-07 }]
+  - blockReference: "pc-07:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{ physicalPage: 571, printedPage: "571", pageRegionIdentifier: p571-pc-07 }]
+  - blockReference: "pc-07:overview.securityThreat.heading:1"
+    sourceSpans: [{ physicalPage: 571, printedPage: "571", pageRegionIdentifier: p571-pc-07 }]
+  - blockReference: "pc-07:overview.securityThreat.paragraph:1"
+    sourceSpans: [{ physicalPage: 571, printedPage: "571", pageRegionIdentifier: p571-pc-07 }]
+  - blockReference: "pc-07:overview.reference.heading:1"
+    sourceSpans: [{ physicalPage: 571, printedPage: "571", pageRegionIdentifier: p571-pc-07 }]
+  - blockReference: "pc-07:overview.reference.note.label:1"
+    sourceSpans: [{ physicalPage: 571, printedPage: "571", pageRegionIdentifier: p571-pc-07 }]
+  - blockReference: "pc-07:overview.reference.note.content:1"
+    sourceSpans: [{ physicalPage: 571, printedPage: "571", pageRegionIdentifier: p571-pc-07 }]
+  - blockReference: "pc-07:overview.reference.note.label:2"
+    sourceSpans: [{ physicalPage: 571, printedPage: "571", pageRegionIdentifier: p571-pc-07 }]
+  - blockReference: "pc-07:overview.reference.note.content:2"
+    sourceSpans: [{ physicalPage: 571, printedPage: "571", pageRegionIdentifier: p571-pc-07 }]
+  - blockReference: "pc-07:overview.reference.note.label:3"
+    sourceSpans: [{ physicalPage: 571, printedPage: "571", pageRegionIdentifier: p571-pc-07 }]
+  - blockReference: "pc-07:overview.reference.note.content:3"
+    sourceSpans: [{ physicalPage: 571, printedPage: "571", pageRegionIdentifier: p571-pc-07 }]
+  - blockReference: "pc-07:assessment.heading:1"
+    sourceSpans: [{ physicalPage: 571, printedPage: "571", pageRegionIdentifier: p571-pc-07 }]
+  - blockReference: "pc-07:assessment.target.heading:1"
+    sourceSpans: [{ physicalPage: 571, printedPage: "571", pageRegionIdentifier: p571-pc-07 }]
+  - blockReference: "pc-07:assessment.target.paragraph:1"
+    sourceSpans: [{ physicalPage: 571, printedPage: "571", pageRegionIdentifier: p571-pc-07 }]
+  - blockReference: "pc-07:assessment.judgment.heading:1"
+    sourceSpans: [{ physicalPage: 571, printedPage: "571", pageRegionIdentifier: p571-pc-07 }]
+  - blockReference: "pc-07:assessment.judgment.good:1"
+    sourceSpans: [{ physicalPage: 571, printedPage: "571", pageRegionIdentifier: p571-pc-07 }]
+  - blockReference: "pc-07:assessment.judgment.vulnerable:1"
+    sourceSpans: [{ physicalPage: 571, printedPage: "571", pageRegionIdentifier: p571-pc-07 }]
+  - blockReference: "pc-07:assessment.remediationMethod.heading:1"
+    sourceSpans: [{ physicalPage: 571, printedPage: "571", pageRegionIdentifier: p571-pc-07 }]
+  - blockReference: "pc-07:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{ physicalPage: 571, printedPage: "571", pageRegionIdentifier: p571-pc-07 }]
+  - blockReference: "pc-07:assessment.remediationImpact.heading:1"
+    sourceSpans: [{ physicalPage: 571, printedPage: "571", pageRegionIdentifier: p571-pc-07 }]
+  - blockReference: "pc-07:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{ physicalPage: 571, printedPage: "571", pageRegionIdentifier: p571-pc-07 }]
+  - blockReference: "pc-07:remediation.heading:1"
+    sourceSpans: [{ physicalPage: 571, printedPage: "571", pageRegionIdentifier: p571-pc-07 }]
+  - blockReference: "pc-07:remediation.linux.heading:1"
+    sourceSpans: [{ physicalPage: 571, printedPage: "571", pageRegionIdentifier: p571-pc-07 }]
+  - blockReference: "pc-07:remediation.linux.step:1"
+    sourceSpans: [{ physicalPage: 571, printedPage: "571", pageRegionIdentifier: p571-pc-07 }]
+  - blockReference: "pc-07:remediation.linux.item:1"
+    sourceSpans: [{ physicalPage: 571, printedPage: "571", pageRegionIdentifier: p571-pc-07 }]
+  - blockReference: "pc-07:remediation.linux.item:2"
+    sourceSpans: [{ physicalPage: 571, printedPage: "571", pageRegionIdentifier: p571-pc-07 }]
+  - blockReference: "pc-07:remediation.linux.step:2"
+    sourceSpans: [{ physicalPage: 571, printedPage: "571", pageRegionIdentifier: p571-pc-07 }]
+  - blockReference: "pc-07:remediation.linux.step:3"
+    sourceSpans: [{ physicalPage: 572, printedPage: "572", pageRegionIdentifier: p572-pc-07 }]
+  - blockReference: "pc-07:remediation.linux.step:4"
+    sourceSpans: [{ physicalPage: 572, printedPage: "572", pageRegionIdentifier: p572-pc-07 }]
+  - blockReference: "pc-07:remediation.linux.step:5"
+    sourceSpans: [{ physicalPage: 572, printedPage: "572", pageRegionIdentifier: p572-pc-07 }]
+  - blockReference: "pc-07:remediation.linux.step:6"
+    sourceSpans: [{ physicalPage: 572, printedPage: "572", pageRegionIdentifier: p572-pc-07 }]
+  - blockReference: "pc-07:remediation.linux.note.label:1"
+    sourceSpans: [{ physicalPage: 572, printedPage: "572", pageRegionIdentifier: p572-pc-07 }]
+  - blockReference: "pc-07:remediation.linux.note.content:1"
+    sourceSpans: [{ physicalPage: 572, printedPage: "572", pageRegionIdentifier: p572-pc-07 }]
+assets: []

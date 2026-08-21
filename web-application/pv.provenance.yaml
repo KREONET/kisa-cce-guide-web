@@ -2,276 +2,134 @@ schemaVersion: 1
 criterionSlug: pv
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: pv:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "pv:overview.heading:1"
     sourceSpans:
-      - physicalPage: 739
-        printedPage: '739'
-        pageRegionIdentifier: p739-pv
-  - blockReference: pv:sourceTranscription.sourcePage739.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+      - {physicalPage: 739, printedPage: "739", pageRegionIdentifier: p739-pv}
+  - blockReference: "pv:overview.inspectionContent.heading:1"
     sourceSpans:
-      - physicalPage: 739
-        printedPage: '739'
-        pageRegionIdentifier: p739-pv
-  - blockReference: pv:sourceTranscription.sourcePage739.transcription:1
-    publicationDisposition: published
+      - {physicalPage: 739, printedPage: "739", pageRegionIdentifier: p739-pv}
+  - blockReference: "pv:overview.inspectionContent.paragraph:1"
     sourceSpans:
-      - physicalPage: 739
-        printedPage: '739'
-        pageRegionIdentifier: p739-pv
-  - blockReference: pv:sourceTranscription.sourcePage739.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+      - {physicalPage: 739, printedPage: "739", pageRegionIdentifier: p739-pv}
+  - blockReference: "pv:overview.inspectionPurpose.heading:1"
     sourceSpans:
-      - physicalPage: 739
-        printedPage: '739'
-        pageRegionIdentifier: p739-pv
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - blockReference: pv:sourceTranscription.sourcePage740.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+      - {physicalPage: 739, printedPage: "739", pageRegionIdentifier: p739-pv}
+  - blockReference: "pv:overview.inspectionPurpose.paragraph:1"
     sourceSpans:
-      - physicalPage: 740
-        printedPage: '740'
-        pageRegionIdentifier: p740-pv
-  - blockReference: pv:sourceTranscription.sourcePage740.transcription:1
-    publicationDisposition: published
+      - {physicalPage: 739, printedPage: "739", pageRegionIdentifier: p739-pv}
+  - blockReference: "pv:overview.securityThreat.heading:1"
     sourceSpans:
-      - physicalPage: 740
-        printedPage: '740'
-        pageRegionIdentifier: p740-pv
-  - blockReference: pv:sourceTranscription.sourcePage740.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+      - {physicalPage: 739, printedPage: "739", pageRegionIdentifier: p739-pv}
+  - blockReference: "pv:overview.securityThreat.paragraph:1"
     sourceSpans:
-      - physicalPage: 740
-        printedPage: '740'
-        pageRegionIdentifier: p740-pv
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: pv:sourceTranscription.sourcePage741.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+      - {physicalPage: 739, printedPage: "739", pageRegionIdentifier: p739-pv}
+  - blockReference: "pv:overview.reference.heading:1"
     sourceSpans:
-      - physicalPage: 741
-        printedPage: '741'
-        pageRegionIdentifier: p741-pv
-  - blockReference: pv:sourceTranscription.sourcePage741.transcription:1
-    publicationDisposition: published
+      - {physicalPage: 739, printedPage: "739", pageRegionIdentifier: p739-pv}
+  - blockReference: "pv:overview.reference.note.label:1"
     sourceSpans:
-      - physicalPage: 741
-        printedPage: '741'
-        pageRegionIdentifier: p741-pv
-  - blockReference: pv:sourceTranscription.sourcePage741.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+      - {physicalPage: 739, printedPage: "739", pageRegionIdentifier: p739-pv}
+  - blockReference: "pv:overview.reference.note.content:1"
     sourceSpans:
-      - physicalPage: 741
-        printedPage: '741'
-        pageRegionIdentifier: p741-pv
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: pv:sourceTranscription.sourcePage742.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+      - {physicalPage: 739, printedPage: "739", pageRegionIdentifier: p739-pv}
+  - blockReference: "pv:assessment.heading:1"
     sourceSpans:
-      - physicalPage: 742
-        printedPage: '742'
-        pageRegionIdentifier: p742-pv
-  - blockReference: pv:sourceTranscription.sourcePage742.transcription:1
-    publicationDisposition: published
+      - {physicalPage: 739, printedPage: "739", pageRegionIdentifier: p739-pv}
+  - blockReference: "pv:assessment.target.heading:1"
     sourceSpans:
-      - physicalPage: 742
-        printedPage: '742'
-        pageRegionIdentifier: p742-pv
-  - blockReference: pv:sourceTranscription.sourcePage742.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+      - {physicalPage: 739, printedPage: "739", pageRegionIdentifier: p739-pv}
+  - blockReference: "pv:assessment.target.paragraph:1"
     sourceSpans:
-      - physicalPage: 742
-        printedPage: '742'
-        pageRegionIdentifier: p742-pv
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: pv:sourceTranscription.sourcePage743.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+      - {physicalPage: 739, printedPage: "739", pageRegionIdentifier: p739-pv}
+  - blockReference: "pv:assessment.judgment.heading:1"
     sourceSpans:
-      - physicalPage: 743
-        printedPage: '743'
-        pageRegionIdentifier: p743-pv
-  - blockReference: pv:sourceTranscription.sourcePage743.transcription:1
-    publicationDisposition: published
+      - {physicalPage: 739, printedPage: "739", pageRegionIdentifier: p739-pv}
+  - blockReference: "pv:assessment.judgment.good:1"
     sourceSpans:
-      - physicalPage: 743
-        printedPage: '743'
-        pageRegionIdentifier: p743-pv
-  - blockReference: pv:sourceTranscription.sourcePage743.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+      - {physicalPage: 739, printedPage: "739", pageRegionIdentifier: p739-pv}
+  - blockReference: "pv:assessment.judgment.vulnerable:1"
     sourceSpans:
-      - physicalPage: 743
-        printedPage: '743'
-        pageRegionIdentifier: p743-pv
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/pv/pv-page-739-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: e563e81a5b113f450986c4b16f59065ec8ac6ef5da894d55bf3c72462f90144c
-    alternativeText: PDF 페이지 739의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 739 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
+      - {physicalPage: 739, printedPage: "739", pageRegionIdentifier: p739-pv}
+  - blockReference: "pv:assessment.remediationMethod.heading:1"
     sourceSpans:
-      - physicalPage: 739
-        printedPage: '739'
-        pageRegionIdentifier: p739-pv
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - path: ../assets/pv/pv-page-740-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: b1cb3809d73cec567f83e13278f4902941789a4701cfbbf8cd02ee2b73729708
-    alternativeText: PDF 페이지 740의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 740 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+      - {physicalPage: 739, printedPage: "739", pageRegionIdentifier: p739-pv}
+  - blockReference: "pv:assessment.remediationMethod.paragraph:1"
     sourceSpans:
-      - physicalPage: 740
-        printedPage: '740'
-        pageRegionIdentifier: p740-pv
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/pv/pv-page-741-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: fb04a44676d3ac4e301259c9a09f84756573bba772c4c871745cb731b98ccb34
-    alternativeText: PDF 페이지 741의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 741 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+      - {physicalPage: 739, printedPage: "739", pageRegionIdentifier: p739-pv}
+  - blockReference: "pv:assessment.remediationImpact.heading:1"
     sourceSpans:
-      - physicalPage: 741
-        printedPage: '741'
-        pageRegionIdentifier: p741-pv
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/pv/pv-page-742-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: dce3e0d0ea81aa45312d280f24803c9a63d32c2bd3335528d49c08f8300253f0
-    alternativeText: PDF 페이지 742의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 742 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+      - {physicalPage: 739, printedPage: "739", pageRegionIdentifier: p739-pv}
+  - blockReference: "pv:assessment.remediationImpact.paragraph:1"
     sourceSpans:
-      - physicalPage: 742
-        printedPage: '742'
-        pageRegionIdentifier: p742-pv
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/pv/pv-page-743-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 8d693570e2cb10a2a1198225001fbdb951a5a333d87b8fd914bc89bbf03e13ef
-    alternativeText: PDF 페이지 743의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 743 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+      - {physicalPage: 739, printedPage: "739", pageRegionIdentifier: p739-pv}
+  - blockReference: "pv:remediation.heading:1"
     sourceSpans:
-      - physicalPage: 743
-        printedPage: '743'
-        pageRegionIdentifier: p743-pv
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+      - {physicalPage: 739, printedPage: "739", pageRegionIdentifier: p739-pv}
+  - blockReference: "pv:remediation.linux.heading:1"
+    sourceSpans:
+      - {physicalPage: 740, printedPage: "740", pageRegionIdentifier: p740-pv}
+      - {physicalPage: 741, printedPage: "741", pageRegionIdentifier: p741-pv}
+      - {physicalPage: 742, printedPage: "742", pageRegionIdentifier: p742-pv}
+      - {physicalPage: 743, printedPage: "743", pageRegionIdentifier: p743-pv}
+  - blockReference: "pv:remediation.linux.paragraph:1"
+    sourceSpans:
+      - {physicalPage: 740, printedPage: "740", pageRegionIdentifier: p740-pv}
+  - blockReference: "pv:remediation.linux.paragraph:2"
+    sourceSpans:
+      - {physicalPage: 740, printedPage: "740", pageRegionIdentifier: p740-pv}
+  - blockReference: "pv:remediation.linux.configuration:1"
+    sourceSpans:
+      - {physicalPage: 740, printedPage: "740", pageRegionIdentifier: p740-pv}
+      - {physicalPage: 741, printedPage: "741", pageRegionIdentifier: p741-pv}
+  - blockReference: "pv:remediation.linux.paragraph:3"
+    sourceSpans:
+      - {physicalPage: 741, printedPage: "741", pageRegionIdentifier: p741-pv}
+  - blockReference: "pv:remediation.linux.paragraph:4"
+    sourceSpans:
+      - {physicalPage: 741, printedPage: "741", pageRegionIdentifier: p741-pv}
+  - blockReference: "pv:remediation.linux.paragraph:5"
+    sourceSpans:
+      - {physicalPage: 741, printedPage: "741", pageRegionIdentifier: p741-pv}
+  - blockReference: "pv:remediation.linux.configuration:2"
+    sourceSpans:
+      - {physicalPage: 741, printedPage: "741", pageRegionIdentifier: p741-pv}
+  - blockReference: "pv:remediation.linux.paragraph:6"
+    sourceSpans:
+      - {physicalPage: 741, printedPage: "741", pageRegionIdentifier: p741-pv}
+  - blockReference: "pv:remediation.linux.paragraph:7"
+    sourceSpans:
+      - {physicalPage: 741, printedPage: "741", pageRegionIdentifier: p741-pv}
+  - blockReference: "pv:remediation.linux.configuration:3"
+    sourceSpans:
+      - {physicalPage: 741, printedPage: "741", pageRegionIdentifier: p741-pv}
+      - {physicalPage: 742, printedPage: "742", pageRegionIdentifier: p742-pv}
+  - blockReference: "pv:remediation.linux.paragraph:8"
+    sourceSpans:
+      - {physicalPage: 742, printedPage: "742", pageRegionIdentifier: p742-pv}
+  - blockReference: "pv:remediation.linux.paragraph:9"
+    sourceSpans:
+      - {physicalPage: 742, printedPage: "742", pageRegionIdentifier: p742-pv}
+  - blockReference: "pv:remediation.linux.configuration:4"
+    sourceSpans:
+      - {physicalPage: 742, printedPage: "742", pageRegionIdentifier: p742-pv}
+      - {physicalPage: 743, printedPage: "743", pageRegionIdentifier: p743-pv}
+  - blockReference: "pv:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - {physicalPage: 739, printedPage: "739", pageRegionIdentifier: p739-pv}
+      - {physicalPage: 740, printedPage: "740", pageRegionIdentifier: p740-pv}
+  - blockReference: "pv:remediation.supplementaryGuidance.step:1"
+    sourceSpans:
+      - {physicalPage: 739, printedPage: "739", pageRegionIdentifier: p739-pv}
+  - blockReference: "pv:remediation.supplementaryGuidance.item:1"
+    sourceSpans:
+      - {physicalPage: 739, printedPage: "739", pageRegionIdentifier: p739-pv}
+  - blockReference: "pv:remediation.supplementaryGuidance.item:2"
+    sourceSpans:
+      - {physicalPage: 740, printedPage: "740", pageRegionIdentifier: p740-pv}
+  - blockReference: "pv:remediation.supplementaryGuidance.step:2"
+    sourceSpans:
+      - {physicalPage: 740, printedPage: "740", pageRegionIdentifier: p740-pv}
+  - blockReference: "pv:remediation.supplementaryGuidance.step:3"
+    sourceSpans:
+      - {physicalPage: 740, printedPage: "740", pageRegionIdentifier: p740-pv}
+assets: []

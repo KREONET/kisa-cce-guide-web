@@ -2,223 +2,239 @@ schemaVersion: 1
 criterionSlug: d-23
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: d-23:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "d-23:overview.heading:1"
     sourceSpans:
       - physicalPage: 657
-        printedPage: '657'
+        printedPage: "657"
         pageRegionIdentifier: p657-d-23
-  - blockReference: d-23:sourceTranscription.sourcePage657.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "d-23:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 657
-        printedPage: '657'
+        printedPage: "657"
         pageRegionIdentifier: p657-d-23
-  - blockReference: d-23:sourceTranscription.sourcePage657.transcription:1
-    publicationDisposition: published
+  - blockReference: "d-23:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 657
-        printedPage: '657'
+        printedPage: "657"
         pageRegionIdentifier: p657-d-23
-  - blockReference: d-23:sourceTranscription.sourcePage657.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "d-23:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 657
-        printedPage: '657'
+        printedPage: "657"
         pageRegionIdentifier: p657-d-23
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - blockReference: d-23:sourceTranscription.sourcePage658.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "d-23:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:remediation.linux.step:3"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:remediation.linux.step:4"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:remediation.linux.step:5"
+    sourceSpans:
+      - physicalPage: 657
+        printedPage: "657"
+        pageRegionIdentifier: p657-d-23
+  - blockReference: "d-23:remediation.linux.command:1"
     sourceSpans:
       - physicalPage: 658
-        printedPage: '658'
+        printedPage: "658"
         pageRegionIdentifier: p658-d-23
-  - blockReference: d-23:sourceTranscription.sourcePage658.transcription:1
-    publicationDisposition: published
+  - blockReference: "d-23:remediation.linux.step.explanation:5"
     sourceSpans:
       - physicalPage: 658
-        printedPage: '658'
+        printedPage: "658"
         pageRegionIdentifier: p658-d-23
-  - blockReference: d-23:sourceTranscription.sourcePage658.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "d-23:remediation.linux.step:6"
     sourceSpans:
       - physicalPage: 658
-        printedPage: '658'
+        printedPage: "658"
         pageRegionIdentifier: p658-d-23
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: d-23:sourceTranscription.sourcePage659.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 659
-        printedPage: '659'
-        pageRegionIdentifier: p659-d-23
-  - blockReference: d-23:sourceTranscription.sourcePage659.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 659
-        printedPage: '659'
-        pageRegionIdentifier: p659-d-23
-  - blockReference: d-23:sourceTranscription.sourcePage659.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 659
-        printedPage: '659'
-        pageRegionIdentifier: p659-d-23
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: d-23:sourceTranscription.sourcePage660.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 660
-        printedPage: '660'
-        pageRegionIdentifier: p660-d-23
-  - blockReference: d-23:sourceTranscription.sourcePage660.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 660
-        printedPage: '660'
-        pageRegionIdentifier: p660-d-23
-  - blockReference: d-23:sourceTranscription.sourcePage660.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 660
-        printedPage: '660'
-        pageRegionIdentifier: p660-d-23
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/d-23/d-23-page-657-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 3cc01c38ae8eed6f65f74d98900c425536c6b46c3f1353195faf1157c58427c7
-    alternativeText: PDF 페이지 657의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 657 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 657
-        printedPage: '657'
-        pageRegionIdentifier: p657-d-23
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - path: ../assets/d-23/d-23-page-658-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 82b3c5a5501fcea6130c541cbbebab416fb5bc273642c2a1ff1a411e48d11210
-    alternativeText: PDF 페이지 658의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 658 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "d-23:remediation.linux.step:7"
     sourceSpans:
       - physicalPage: 658
-        printedPage: '658'
+        printedPage: "658"
         pageRegionIdentifier: p658-d-23
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/d-23/d-23-page-659-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: e8fc4652a6570a8c515405dc24086140d0ae6b5d3c7bc4d10900789664942d37
-    alternativeText: PDF 페이지 659의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 659 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "d-23:remediation.linux.step.explanation:7"
+    sourceSpans:
+      - physicalPage: 658
+        printedPage: "658"
+        pageRegionIdentifier: p658-d-23
+  - blockReference: "d-23:remediation.linux.step:8"
+    sourceSpans:
+      - physicalPage: 658
+        printedPage: "658"
+        pageRegionIdentifier: p658-d-23
+  - blockReference: "d-23:remediation.linux.command:2"
+    sourceSpans:
+      - physicalPage: 658
+        printedPage: "658"
+        pageRegionIdentifier: p658-d-23
+  - blockReference: "d-23:remediation.linux.step:9"
+    sourceSpans:
+      - physicalPage: 658
+        printedPage: "658"
+        pageRegionIdentifier: p658-d-23
+  - blockReference: "d-23:remediation.linux.step:10"
+    sourceSpans:
+      - physicalPage: 658
+        printedPage: "658"
+        pageRegionIdentifier: p658-d-23
+  - blockReference: "d-23:remediation.linux.step:11"
+    sourceSpans:
+      - physicalPage: 658
+        printedPage: "658"
+        pageRegionIdentifier: p658-d-23
+  - blockReference: "d-23:remediation.linux.step.explanation:11"
+    sourceSpans:
+      - physicalPage: 658
+        printedPage: "658"
+        pageRegionIdentifier: p658-d-23
+  - blockReference: "d-23:remediation.linux.step:12"
     sourceSpans:
       - physicalPage: 659
-        printedPage: '659'
+        printedPage: "659"
         pageRegionIdentifier: p659-d-23
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/d-23/d-23-page-660-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: a36ec9e4693299567d8d0c32773ecc1e7769b4d7b64b87d00af8caf99aa74857
-    alternativeText: PDF 페이지 660의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 660 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "d-23:remediation.linux.command:3"
+    sourceSpans:
+      - physicalPage: 659
+        printedPage: "659"
+        pageRegionIdentifier: p659-d-23
+  - blockReference: "d-23:remediation.linux.step:13"
+    sourceSpans:
+      - physicalPage: 659
+        printedPage: "659"
+        pageRegionIdentifier: p659-d-23
+  - blockReference: "d-23:remediation.linux.step:14"
+    sourceSpans:
+      - physicalPage: 659
+        printedPage: "659"
+        pageRegionIdentifier: p659-d-23
+  - blockReference: "d-23:remediation.linux.step.explanation:14"
+    sourceSpans:
+      - physicalPage: 659
+        printedPage: "659"
+        pageRegionIdentifier: p659-d-23
+  - blockReference: "d-23:remediation.linux.step:15"
     sourceSpans:
       - physicalPage: 660
-        printedPage: '660'
+        printedPage: "660"
         pageRegionIdentifier: p660-d-23
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - blockReference: "d-23:remediation.linux.step:16"
+    sourceSpans:
+      - physicalPage: 660
+        printedPage: "660"
+        pageRegionIdentifier: p660-d-23
+  - blockReference: "d-23:remediation.linux.command:4"
+    sourceSpans:
+      - physicalPage: 660
+        printedPage: "660"
+        pageRegionIdentifier: p660-d-23
+  - blockReference: "d-23:remediation.linux.step:17"
+    sourceSpans:
+      - physicalPage: 660
+        printedPage: "660"
+        pageRegionIdentifier: p660-d-23
+  - blockReference: "d-23:remediation.linux.command:5"
+    sourceSpans:
+      - physicalPage: 660
+        printedPage: "660"
+        pageRegionIdentifier: p660-d-23
+assets: []

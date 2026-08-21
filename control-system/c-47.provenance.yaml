@@ -2,117 +2,70 @@ schemaVersion: 1
 criterionSlug: c-47
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: c-47:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "c-47:overview.heading:1"
     sourceSpans:
       - physicalPage: 545
-        printedPage: '545'
+        printedPage: "545"
         pageRegionIdentifier: p545-c-47
-  - blockReference: c-47:sourceTranscription.sourcePage545.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 545
-        printedPage: '545'
-        pageRegionIdentifier: p545-c-47
-  - blockReference: c-47:sourceTranscription.sourcePage545.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 545
-        printedPage: '545'
-        pageRegionIdentifier: p545-c-47
-  - blockReference: c-47:sourceTranscription.sourcePage545.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 545
-        printedPage: '545'
-        pageRegionIdentifier: p545-c-47
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - blockReference: c-47:sourceTranscription.sourcePage546.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "c-47:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 545, printedPage: "545", pageRegionIdentifier: p545-c-47}]
+  - blockReference: "c-47:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 545, printedPage: "545", pageRegionIdentifier: p545-c-47}]
+  - blockReference: "c-47:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 545, printedPage: "545", pageRegionIdentifier: p545-c-47}]
+  - blockReference: "c-47:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 545, printedPage: "545", pageRegionIdentifier: p545-c-47}]
+  - blockReference: "c-47:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 545, printedPage: "545", pageRegionIdentifier: p545-c-47}]
+  - blockReference: "c-47:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 545, printedPage: "545", pageRegionIdentifier: p545-c-47}]
+  - blockReference: "c-47:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 545, printedPage: "545", pageRegionIdentifier: p545-c-47}]
+  - blockReference: "c-47:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 545, printedPage: "545", pageRegionIdentifier: p545-c-47}]
+  - blockReference: "c-47:overview.reference.note.content:1"
+    sourceSpans: [{physicalPage: 545, printedPage: "545", pageRegionIdentifier: p545-c-47}]
+  - blockReference: "c-47:overview.reference.note.item:1"
+    sourceSpans: [{physicalPage: 545, printedPage: "545", pageRegionIdentifier: p545-c-47}]
+  - blockReference: "c-47:overview.reference.note.item:2"
+    sourceSpans: [{physicalPage: 545, printedPage: "545", pageRegionIdentifier: p545-c-47}]
+  - blockReference: "c-47:overview.reference.note.item:3"
+    sourceSpans: [{physicalPage: 545, printedPage: "545", pageRegionIdentifier: p545-c-47}]
+  - blockReference: "c-47:assessment.heading:1"
+    sourceSpans: [{physicalPage: 545, printedPage: "545", pageRegionIdentifier: p545-c-47}]
+  - blockReference: "c-47:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 545, printedPage: "545", pageRegionIdentifier: p545-c-47}]
+  - blockReference: "c-47:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 545, printedPage: "545", pageRegionIdentifier: p545-c-47}]
+  - blockReference: "c-47:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 545, printedPage: "545", pageRegionIdentifier: p545-c-47}]
+  - blockReference: "c-47:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 545, printedPage: "545", pageRegionIdentifier: p545-c-47}]
+  - blockReference: "c-47:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 545, printedPage: "545", pageRegionIdentifier: p545-c-47}]
+  - blockReference: "c-47:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 545, printedPage: "545", pageRegionIdentifier: p545-c-47}]
+  - blockReference: "c-47:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 545, printedPage: "545", pageRegionIdentifier: p545-c-47}]
+  - blockReference: "c-47:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 545, printedPage: "545", pageRegionIdentifier: p545-c-47}]
+  - blockReference: "c-47:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 545, printedPage: "545", pageRegionIdentifier: p545-c-47}]
+  - blockReference: "c-47:remediation.heading:1"
     sourceSpans:
       - physicalPage: 546
-        printedPage: '546'
+        printedPage: "546"
         pageRegionIdentifier: p546-c-47
-  - blockReference: c-47:sourceTranscription.sourcePage546.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 546
-        printedPage: '546'
-        pageRegionIdentifier: p546-c-47
-  - blockReference: c-47:sourceTranscription.sourcePage546.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 546
-        printedPage: '546'
-        pageRegionIdentifier: p546-c-47
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/c-47/c-47-page-545-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 05664573fda474c8c3c9805219002679359842769bf309b9394d8463a76e3f4a
-    alternativeText: PDF 페이지 545의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 545 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 545
-        printedPage: '545'
-        pageRegionIdentifier: p545-c-47
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - path: ../assets/c-47/c-47-page-546-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 2b0db08bc97fea475e56f458816c2fcbbbbb8ce45fd82d50c88ca9b1ed89c02b
-    alternativeText: PDF 페이지 546의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 546 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 546
-        printedPage: '546'
-        pageRegionIdentifier: p546-c-47
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - blockReference: "c-47:remediation.supplementaryGuidance.heading:1"
+    sourceSpans: [{physicalPage: 546, printedPage: "546", pageRegionIdentifier: p546-c-47}]
+  - blockReference: "c-47:remediation.supplementaryGuidance.step:1"
+    sourceSpans: [{physicalPage: 546, printedPage: "546", pageRegionIdentifier: p546-c-47}]
+  - blockReference: "c-47:remediation.supplementaryGuidance.step.explanation:1"
+    sourceSpans: [{physicalPage: 546, printedPage: "546", pageRegionIdentifier: p546-c-47}]
+  - blockReference: "c-47:remediation.supplementaryGuidance.literal:1"
+    sourceSpans: [{physicalPage: 546, printedPage: "546", pageRegionIdentifier: p546-c-47}]
+  - blockReference: "c-47:remediation.supplementaryGuidance.note.label:1"
+    sourceSpans: [{physicalPage: 546, printedPage: "546", pageRegionIdentifier: p546-c-47}]
+  - blockReference: "c-47:remediation.supplementaryGuidance.note.content:1"
+    sourceSpans: [{physicalPage: 546, printedPage: "546", pageRegionIdentifier: p546-c-47}]
+assets: []

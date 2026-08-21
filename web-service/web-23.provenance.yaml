@@ -2,64 +2,174 @@ schemaVersion: 1
 criterionSlug: web-23
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: web-23:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "web-23:overview.heading:1"
     sourceSpans:
       - physicalPage: 342
-        printedPage: '342'
+        printedPage: "342"
         pageRegionIdentifier: p342-web-23
-  - blockReference: web-23:sourceTranscription.sourcePage342.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "web-23:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 342
-        printedPage: '342'
+        printedPage: "342"
         pageRegionIdentifier: p342-web-23
-  - blockReference: web-23:sourceTranscription.sourcePage342.transcription:1
-    publicationDisposition: published
+  - blockReference: "web-23:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 342
-        printedPage: '342'
+        printedPage: "342"
         pageRegionIdentifier: p342-web-23
-  - blockReference: web-23:sourceTranscription.sourcePage342.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "web-23:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 342
-        printedPage: '342'
+        printedPage: "342"
         pageRegionIdentifier: p342-web-23
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/web-23/web-23-page-342-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: b3f281576e5accbada2b76855b20587eece2ac1428a76d77e5fd87307fc139d6
-    alternativeText: PDF 페이지 342의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 342 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
+  - blockReference: "web-23:overview.inspectionPurpose.paragraph:1"
     sourceSpans:
       - physicalPage: 342
-        printedPage: '342'
+        printedPage: "342"
         pageRegionIdentifier: p342-web-23
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
+  - blockReference: "web-23:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 342
+        printedPage: "342"
+        pageRegionIdentifier: p342-web-23
+  - blockReference: "web-23:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 342
+        printedPage: "342"
+        pageRegionIdentifier: p342-web-23
+  - blockReference: "web-23:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 342
+        printedPage: "342"
+        pageRegionIdentifier: p342-web-23
+  - blockReference: "web-23:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 342
+        printedPage: "342"
+        pageRegionIdentifier: p342-web-23
+  - blockReference: "web-23:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 342
+        printedPage: "342"
+        pageRegionIdentifier: p342-web-23
+  - blockReference: "web-23:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 342
+        printedPage: "342"
+        pageRegionIdentifier: p342-web-23
+  - blockReference: "web-23:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 342
+        printedPage: "342"
+        pageRegionIdentifier: p342-web-23
+  - blockReference: "web-23:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 342
+        printedPage: "342"
+        pageRegionIdentifier: p342-web-23
+  - blockReference: "web-23:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 342
+        printedPage: "342"
+        pageRegionIdentifier: p342-web-23
+  - blockReference: "web-23:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 342
+        printedPage: "342"
+        pageRegionIdentifier: p342-web-23
+  - blockReference: "web-23:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 342
+        printedPage: "342"
+        pageRegionIdentifier: p342-web-23
+  - blockReference: "web-23:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 342
+        printedPage: "342"
+        pageRegionIdentifier: p342-web-23
+  - blockReference: "web-23:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 342
+        printedPage: "342"
+        pageRegionIdentifier: p342-web-23
+  - blockReference: "web-23:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 342
+        printedPage: "342"
+        pageRegionIdentifier: p342-web-23
+  - blockReference: "web-23:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 342
+        printedPage: "342"
+        pageRegionIdentifier: p342-web-23
+  - blockReference: "web-23:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 342
+        printedPage: "342"
+        pageRegionIdentifier: p342-web-23
+  - blockReference: "web-23:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 342
+        printedPage: "342"
+        pageRegionIdentifier: p342-web-23
+  - blockReference: "web-23:remediation.linux.paragraph:1"
+    sourceSpans:
+      - physicalPage: 342
+        printedPage: "342"
+        pageRegionIdentifier: p342-web-23
+  - blockReference: "web-23:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 342
+        printedPage: "342"
+        pageRegionIdentifier: p342-web-23
+  - blockReference: "web-23:remediation.linux.command:1"
+    sourceSpans:
+      - physicalPage: 342
+        printedPage: "342"
+        pageRegionIdentifier: p342-web-23
+  - blockReference: "web-23:remediation.linux.output:1"
+    sourceSpans:
+      - physicalPage: 342
+        printedPage: "342"
+        pageRegionIdentifier: p342-web-23
+  - blockReference: "web-23:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 342
+        printedPage: "342"
+        pageRegionIdentifier: p342-web-23
+  - blockReference: "web-23:remediation.linux.command:2"
+    sourceSpans:
+      - physicalPage: 342
+        printedPage: "342"
+        pageRegionIdentifier: p342-web-23
+  - blockReference: "web-23:remediation.linux.configuration:1"
+    sourceSpans:
+      - physicalPage: 342
+        printedPage: "342"
+        pageRegionIdentifier: p342-web-23
+  - blockReference: "web-23:remediation.linux.step:3"
+    sourceSpans:
+      - physicalPage: 342
+        printedPage: "342"
+        pageRegionIdentifier: p342-web-23
+  - blockReference: "web-23:remediation.linux.command:3"
+    sourceSpans:
+      - physicalPage: 342
+        printedPage: "342"
+        pageRegionIdentifier: p342-web-23
+  - blockReference: "web-23:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - physicalPage: 342
+        printedPage: "342"
+        pageRegionIdentifier: p342-web-23
+  - blockReference: "web-23:remediation.supplementaryGuidance.note.label:1"
+    sourceSpans:
+      - physicalPage: 342
+        printedPage: "342"
+        pageRegionIdentifier: p342-web-23
+  - blockReference: "web-23:remediation.supplementaryGuidance.note.content:1"
+    sourceSpans:
+      - physicalPage: 342
+        printedPage: "342"
+        pageRegionIdentifier: p342-web-23
+assets: []

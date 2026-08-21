@@ -2,170 +2,88 @@ schemaVersion: 1
 criterionSlug: hv-15
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: hv-15:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
-    sourceSpans:
-      - physicalPage: 833
-        printedPage: '833'
-        pageRegionIdentifier: p833-hv-15
-  - blockReference: hv-15:sourceTranscription.sourcePage833.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 833
-        printedPage: '833'
-        pageRegionIdentifier: p833-hv-15
-  - blockReference: hv-15:sourceTranscription.sourcePage833.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 833
-        printedPage: '833'
-        pageRegionIdentifier: p833-hv-15
-  - blockReference: hv-15:sourceTranscription.sourcePage833.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 833
-        printedPage: '833'
-        pageRegionIdentifier: p833-hv-15
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - blockReference: hv-15:sourceTranscription.sourcePage834.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 834
-        printedPage: '834'
-        pageRegionIdentifier: p834-hv-15
-  - blockReference: hv-15:sourceTranscription.sourcePage834.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 834
-        printedPage: '834'
-        pageRegionIdentifier: p834-hv-15
-  - blockReference: hv-15:sourceTranscription.sourcePage834.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 834
-        printedPage: '834'
-        pageRegionIdentifier: p834-hv-15
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: hv-15:sourceTranscription.sourcePage835.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 835
-        printedPage: '835'
-        pageRegionIdentifier: p835-hv-15
-  - blockReference: hv-15:sourceTranscription.sourcePage835.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 835
-        printedPage: '835'
-        pageRegionIdentifier: p835-hv-15
-  - blockReference: hv-15:sourceTranscription.sourcePage835.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 835
-        printedPage: '835'
-        pageRegionIdentifier: p835-hv-15
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/hv-15/hv-15-page-833-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: e60e1e593e10264b60c1bb2fbbb3b11d14efe6e16ed16a78842ad4e2ccbb2e7b
-    alternativeText: PDF 페이지 833의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 833 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 833
-        printedPage: '833'
-        pageRegionIdentifier: p833-hv-15
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - path: ../assets/hv-15/hv-15-page-834-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 93a4f5ced926bd0419951ba414a262bf1cfebeb2858948ad1de772a46e412ad0
-    alternativeText: PDF 페이지 834의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 834 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 834
-        printedPage: '834'
-        pageRegionIdentifier: p834-hv-15
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/hv-15/hv-15-page-835-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 29c132df5d3c9230a6d5bbc9fdc79c5a7e603b1413988596da61ce89aeddebdf
-    alternativeText: PDF 페이지 835의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 835 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 835
-        printedPage: '835'
-        pageRegionIdentifier: p835-hv-15
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - blockReference: "hv-15:overview.heading:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:assessment.heading:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:remediation.heading:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:remediation.linux.heading:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:remediation.linux.paragraph:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:remediation.linux.step:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:remediation.linux.literal:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:remediation.linux.step:2"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:remediation.linux.step:3"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:remediation.linux.configuration:1"
+    sourceSpans: [{physicalPage: 833, printedPage: "833", pageRegionIdentifier: p833-hv-15}]
+  - blockReference: "hv-15:remediation.linux.step:4"
+    sourceSpans: [{physicalPage: 834, printedPage: "834", pageRegionIdentifier: p834-hv-15}]
+  - blockReference: "hv-15:remediation.linux.table:1"
+    sourceSpans: [{physicalPage: 834, printedPage: "834", pageRegionIdentifier: p834-hv-15}]
+  - blockReference: "hv-15:remediation.linux.paragraph:2"
+    sourceSpans: [{physicalPage: 834, printedPage: "834", pageRegionIdentifier: p834-hv-15}]
+  - blockReference: "hv-15:remediation.linux.step:5"
+    sourceSpans: [{physicalPage: 834, printedPage: "834", pageRegionIdentifier: p834-hv-15}]
+  - blockReference: "hv-15:remediation.linux.step:6"
+    sourceSpans: [{physicalPage: 834, printedPage: "834", pageRegionIdentifier: p834-hv-15}]
+  - blockReference: "hv-15:remediation.linux.literal:2"
+    sourceSpans: [{physicalPage: 834, printedPage: "834", pageRegionIdentifier: p834-hv-15}]
+  - blockReference: "hv-15:remediation.linux.paragraph:3"
+    sourceSpans: [{physicalPage: 835, printedPage: "835", pageRegionIdentifier: p835-hv-15}]
+  - blockReference: "hv-15:remediation.linux.step:7"
+    sourceSpans: [{physicalPage: 835, printedPage: "835", pageRegionIdentifier: p835-hv-15}]
+  - blockReference: "hv-15:remediation.linux.step:8"
+    sourceSpans: [{physicalPage: 835, printedPage: "835", pageRegionIdentifier: p835-hv-15}]
+  - blockReference: "hv-15:remediation.linux.command:1"
+    sourceSpans: [{physicalPage: 835, printedPage: "835", pageRegionIdentifier: p835-hv-15}]
+  - blockReference: "hv-15:remediation.linux.step:9"
+    sourceSpans: [{physicalPage: 835, printedPage: "835", pageRegionIdentifier: p835-hv-15}]
+  - blockReference: "hv-15:remediation.linux.configuration:2"
+    sourceSpans: [{physicalPage: 835, printedPage: "835", pageRegionIdentifier: p835-hv-15}]
+  - blockReference: "hv-15:remediation.linux.step:10"
+    sourceSpans: [{physicalPage: 835, printedPage: "835", pageRegionIdentifier: p835-hv-15}]
+  - blockReference: "hv-15:remediation.linux.command:2"
+    sourceSpans: [{physicalPage: 835, printedPage: "835", pageRegionIdentifier: p835-hv-15}]
+  - blockReference: "hv-15:remediation.linux.table:2"
+    sourceSpans: [{physicalPage: 835, printedPage: "835", pageRegionIdentifier: p835-hv-15}]
+assets: []

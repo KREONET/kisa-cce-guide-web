@@ -2,64 +2,159 @@ schemaVersion: 1
 criterionSlug: u-15
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: u-15:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "u-15:overview.heading:1"
     sourceSpans:
       - physicalPage: 40
-        printedPage: '40'
+        printedPage: "40"
         pageRegionIdentifier: p40-u-15
-  - blockReference: u-15:sourceTranscription.sourcePage40.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "u-15:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 40
-        printedPage: '40'
+        printedPage: "40"
         pageRegionIdentifier: p40-u-15
-  - blockReference: u-15:sourceTranscription.sourcePage40.transcription:1
-    publicationDisposition: published
+  - blockReference: "u-15:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 40
-        printedPage: '40'
+        printedPage: "40"
         pageRegionIdentifier: p40-u-15
-  - blockReference: u-15:sourceTranscription.sourcePage40.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "u-15:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 40
-        printedPage: '40'
+        printedPage: "40"
         pageRegionIdentifier: p40-u-15
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/u-15/u-15-page-40-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 49b49bb932d48ab890e64a1efb6aabce48107d3eafb0a76d038d7180aef2695e
-    alternativeText: PDF 페이지 40의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 40 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
+  - blockReference: "u-15:overview.inspectionPurpose.paragraph:1"
     sourceSpans:
       - physicalPage: 40
-        printedPage: '40'
+        printedPage: "40"
         pageRegionIdentifier: p40-u-15
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
+  - blockReference: "u-15:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 40
+        printedPage: "40"
+        pageRegionIdentifier: p40-u-15
+  - blockReference: "u-15:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 40
+        printedPage: "40"
+        pageRegionIdentifier: p40-u-15
+  - blockReference: "u-15:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 40
+        printedPage: "40"
+        pageRegionIdentifier: p40-u-15
+  - blockReference: "u-15:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 40
+        printedPage: "40"
+        pageRegionIdentifier: p40-u-15
+  - blockReference: "u-15:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 40
+        printedPage: "40"
+        pageRegionIdentifier: p40-u-15
+  - blockReference: "u-15:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 40
+        printedPage: "40"
+        pageRegionIdentifier: p40-u-15
+  - blockReference: "u-15:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 40
+        printedPage: "40"
+        pageRegionIdentifier: p40-u-15
+  - blockReference: "u-15:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 40
+        printedPage: "40"
+        pageRegionIdentifier: p40-u-15
+  - blockReference: "u-15:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 40
+        printedPage: "40"
+        pageRegionIdentifier: p40-u-15
+  - blockReference: "u-15:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 40
+        printedPage: "40"
+        pageRegionIdentifier: p40-u-15
+  - blockReference: "u-15:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 40
+        printedPage: "40"
+        pageRegionIdentifier: p40-u-15
+  - blockReference: "u-15:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 40
+        printedPage: "40"
+        pageRegionIdentifier: p40-u-15
+  - blockReference: "u-15:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 40
+        printedPage: "40"
+        pageRegionIdentifier: p40-u-15
+  - blockReference: "u-15:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 40
+        printedPage: "40"
+        pageRegionIdentifier: p40-u-15
+  - blockReference: "u-15:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 40
+        printedPage: "40"
+        pageRegionIdentifier: p40-u-15
+  - blockReference: "u-15:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 40
+        printedPage: "40"
+        pageRegionIdentifier: p40-u-15
+  - blockReference: "u-15:remediation.solaris.heading:1"
+    sourceSpans:
+      - physicalPage: 40
+        printedPage: "40"
+        pageRegionIdentifier: p40-u-15
+  - blockReference: "u-15:remediation.solaris.step:1"
+    sourceSpans:
+      - physicalPage: 40
+        printedPage: "40"
+        pageRegionIdentifier: p40-u-15
+  - blockReference: "u-15:remediation.solaris.command:1"
+    sourceSpans:
+      - physicalPage: 40
+        printedPage: "40"
+        pageRegionIdentifier: p40-u-15
+  - blockReference: "u-15:remediation.solaris.step:2"
+    sourceSpans:
+      - physicalPage: 40
+        printedPage: "40"
+        pageRegionIdentifier: p40-u-15
+  - blockReference: "u-15:remediation.solaris.command:2"
+    sourceSpans:
+      - physicalPage: 40
+        printedPage: "40"
+        pageRegionIdentifier: p40-u-15
+  - blockReference: "u-15:remediation.solaris.step:3"
+    sourceSpans:
+      - physicalPage: 40
+        printedPage: "40"
+        pageRegionIdentifier: p40-u-15
+  - blockReference: "u-15:remediation.solaris.command:3"
+    sourceSpans:
+      - physicalPage: 40
+        printedPage: "40"
+        pageRegionIdentifier: p40-u-15
+  - blockReference: "u-15:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - physicalPage: 40
+        printedPage: "40"
+        pageRegionIdentifier: p40-u-15
+  - blockReference: "u-15:remediation.supplementaryGuidance.note.label:1"
+    sourceSpans:
+      - physicalPage: 40
+        printedPage: "40"
+        pageRegionIdentifier: p40-u-15
+  - blockReference: "u-15:remediation.supplementaryGuidance.note.content:1"
+    sourceSpans:
+      - physicalPage: 40
+        printedPage: "40"
+        pageRegionIdentifier: p40-u-15
+assets: []

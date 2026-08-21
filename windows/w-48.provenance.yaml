@@ -2,117 +2,162 @@ schemaVersion: 1
 criterionSlug: w-48
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: w-48:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "w-48:overview.heading:1"
     sourceSpans:
       - physicalPage: 246
-        printedPage: '246'
+        printedPage: "246"
         pageRegionIdentifier: p246-w-48
-  - blockReference: w-48:sourceTranscription.sourcePage246.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "w-48:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 246
-        printedPage: '246'
+        printedPage: "246"
         pageRegionIdentifier: p246-w-48
-  - blockReference: w-48:sourceTranscription.sourcePage246.transcription:1
-    publicationDisposition: published
+  - blockReference: "w-48:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 246
-        printedPage: '246'
+        printedPage: "246"
         pageRegionIdentifier: p246-w-48
-  - blockReference: w-48:sourceTranscription.sourcePage246.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "w-48:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 246
-        printedPage: '246'
+        printedPage: "246"
         pageRegionIdentifier: p246-w-48
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - blockReference: w-48:sourceTranscription.sourcePage247.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "w-48:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:remediation.unspecified.heading:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+      - physicalPage: 247
+        printedPage: "247"
+        pageRegionIdentifier: p247-w-48
+  - blockReference: "w-48:remediation.unspecified.paragraph:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:remediation.unspecified.step:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:remediation.unspecified.step:2"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:remediation.unspecified.configuration:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:remediation.unspecified.paragraph:2"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:remediation.unspecified.step:3"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:remediation.unspecified.step:4"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:remediation.unspecified.paragraph:3"
     sourceSpans:
       - physicalPage: 247
-        printedPage: '247'
+        printedPage: "247"
         pageRegionIdentifier: p247-w-48
-  - blockReference: w-48:sourceTranscription.sourcePage247.transcription:1
-    publicationDisposition: published
+  - blockReference: "w-48:remediation.unspecified.step:5"
     sourceSpans:
       - physicalPage: 247
-        printedPage: '247'
+        printedPage: "247"
         pageRegionIdentifier: p247-w-48
-  - blockReference: w-48:sourceTranscription.sourcePage247.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "w-48:remediation.unspecified.step:6"
     sourceSpans:
       - physicalPage: 247
-        printedPage: '247'
+        printedPage: "247"
         pageRegionIdentifier: p247-w-48
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/w-48/w-48-page-246-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: f2e3e83ea7008ed22b245ed9a84beeb3567cf809549b31c0d33c37d5d517307b
-    alternativeText: PDF 페이지 246의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 246 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 246
-        printedPage: '246'
-        pageRegionIdentifier: p246-w-48
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - path: ../assets/w-48/w-48-page-247-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 675a2fd5a7ee0c025d466b5661ecec5994304f06ce063b9a4e719614e5246be2
-    alternativeText: PDF 페이지 247의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 247 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 247
-        printedPage: '247'
-        pageRegionIdentifier: p247-w-48
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+assets: []

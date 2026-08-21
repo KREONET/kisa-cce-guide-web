@@ -2,64 +2,169 @@ schemaVersion: 1
 criterionSlug: c-20
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: c-20:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "c-20:overview.heading:1"
     sourceSpans:
       - physicalPage: 506
-        printedPage: '506'
+        printedPage: "506"
         pageRegionIdentifier: p506-c-20
-  - blockReference: c-20:sourceTranscription.sourcePage506.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "c-20:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 506
-        printedPage: '506'
+        printedPage: "506"
         pageRegionIdentifier: p506-c-20
-  - blockReference: c-20:sourceTranscription.sourcePage506.transcription:1
-    publicationDisposition: published
+  - blockReference: "c-20:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 506
-        printedPage: '506'
+        printedPage: "506"
         pageRegionIdentifier: p506-c-20
-  - blockReference: c-20:sourceTranscription.sourcePage506.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "c-20:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 506
-        printedPage: '506'
+        printedPage: "506"
         pageRegionIdentifier: p506-c-20
-        sourceBoundingBox:
-          - 0.05
-          - 0.1941
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/c-20/c-20-page-506-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: c943ee73bb5940e124fa5b63ffe8d54cfc0f5503cbf3e3529aeb82d6a51632b7
-    alternativeText: PDF 페이지 506의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 506 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 848
-    outputPixelDimensions:
-      - 714
-      - 848
-    sourceCrop:
-      - 0.05
-      - 0.1941
-      - 0.95
-      - 0.95
+  - blockReference: "c-20:overview.inspectionPurpose.paragraph:1"
     sourceSpans:
       - physicalPage: 506
-        printedPage: '506'
+        printedPage: "506"
         pageRegionIdentifier: p506-c-20
-        sourceBoundingBox:
-          - 0.05
-          - 0.1941
-          - 0.95
-          - 0.95
+  - blockReference: "c-20:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 506
+        printedPage: "506"
+        pageRegionIdentifier: p506-c-20
+  - blockReference: "c-20:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 506
+        printedPage: "506"
+        pageRegionIdentifier: p506-c-20
+  - blockReference: "c-20:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 506
+        printedPage: "506"
+        pageRegionIdentifier: p506-c-20
+  - blockReference: "c-20:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 506
+        printedPage: "506"
+        pageRegionIdentifier: p506-c-20
+  - blockReference: "c-20:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 506
+        printedPage: "506"
+        pageRegionIdentifier: p506-c-20
+  - blockReference: "c-20:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 506
+        printedPage: "506"
+        pageRegionIdentifier: p506-c-20
+  - blockReference: "c-20:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 506
+        printedPage: "506"
+        pageRegionIdentifier: p506-c-20
+  - blockReference: "c-20:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 506
+        printedPage: "506"
+        pageRegionIdentifier: p506-c-20
+  - blockReference: "c-20:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 506
+        printedPage: "506"
+        pageRegionIdentifier: p506-c-20
+  - blockReference: "c-20:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 506
+        printedPage: "506"
+        pageRegionIdentifier: p506-c-20
+  - blockReference: "c-20:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 506
+        printedPage: "506"
+        pageRegionIdentifier: p506-c-20
+  - blockReference: "c-20:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 506
+        printedPage: "506"
+        pageRegionIdentifier: p506-c-20
+  - blockReference: "c-20:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 506
+        printedPage: "506"
+        pageRegionIdentifier: p506-c-20
+  - blockReference: "c-20:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 506
+        printedPage: "506"
+        pageRegionIdentifier: p506-c-20
+  - blockReference: "c-20:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 506
+        printedPage: "506"
+        pageRegionIdentifier: p506-c-20
+  - blockReference: "c-20:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 506
+        printedPage: "506"
+        pageRegionIdentifier: p506-c-20
+  - blockReference: "c-20:remediation.solaris.heading:1"
+    sourceSpans:
+      - physicalPage: 506
+        printedPage: "506"
+        pageRegionIdentifier: p506-c-20
+  - blockReference: "c-20:remediation.solaris.step:1"
+    sourceSpans:
+      - physicalPage: 506
+        printedPage: "506"
+        pageRegionIdentifier: p506-c-20
+  - blockReference: "c-20:remediation.solaris.item:1"
+    sourceSpans:
+      - physicalPage: 506
+        printedPage: "506"
+        pageRegionIdentifier: p506-c-20
+  - blockReference: "c-20:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 506
+        printedPage: "506"
+        pageRegionIdentifier: p506-c-20
+  - blockReference: "c-20:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 506
+        printedPage: "506"
+        pageRegionIdentifier: p506-c-20
+  - blockReference: "c-20:remediation.linux.item:1"
+    sourceSpans:
+      - physicalPage: 506
+        printedPage: "506"
+        pageRegionIdentifier: p506-c-20
+  - blockReference: "c-20:remediation.aix.heading:1"
+    sourceSpans:
+      - physicalPage: 506
+        printedPage: "506"
+        pageRegionIdentifier: p506-c-20
+  - blockReference: "c-20:remediation.aix.step:1"
+    sourceSpans:
+      - physicalPage: 506
+        printedPage: "506"
+        pageRegionIdentifier: p506-c-20
+  - blockReference: "c-20:remediation.aix.item:1"
+    sourceSpans:
+      - physicalPage: 506
+        printedPage: "506"
+        pageRegionIdentifier: p506-c-20
+  - blockReference: "c-20:remediation.hp-ux.heading:1"
+    sourceSpans:
+      - physicalPage: 506
+        printedPage: "506"
+        pageRegionIdentifier: p506-c-20
+  - blockReference: "c-20:remediation.hp-ux.step:1"
+    sourceSpans:
+      - physicalPage: 506
+        printedPage: "506"
+        pageRegionIdentifier: p506-c-20
+  - blockReference: "c-20:remediation.hp-ux.item:1"
+    sourceSpans:
+      - physicalPage: 506
+        printedPage: "506"
+        pageRegionIdentifier: p506-c-20
+assets: []

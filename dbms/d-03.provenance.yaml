@@ -2,276 +2,353 @@ schemaVersion: 1
 criterionSlug: d-03
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: d-03:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "d-03:overview.heading:1"
     sourceSpans:
       - physicalPage: 603
-        printedPage: '603'
+        printedPage: "603"
         pageRegionIdentifier: p603-d-03
-  - blockReference: d-03:sourceTranscription.sourcePage603.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "d-03:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 603
-        printedPage: '603'
+        printedPage: "603"
         pageRegionIdentifier: p603-d-03
-  - blockReference: d-03:sourceTranscription.sourcePage603.transcription:1
-    publicationDisposition: published
+  - blockReference: "d-03:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 603
-        printedPage: '603'
+        printedPage: "603"
         pageRegionIdentifier: p603-d-03
-  - blockReference: d-03:sourceTranscription.sourcePage603.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "d-03:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 603
-        printedPage: '603'
+        printedPage: "603"
         pageRegionIdentifier: p603-d-03
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - blockReference: d-03:sourceTranscription.sourcePage604.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "d-03:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 603
+        printedPage: "603"
+        pageRegionIdentifier: p603-d-03
+  - blockReference: "d-03:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 603
+        printedPage: "603"
+        pageRegionIdentifier: p603-d-03
+  - blockReference: "d-03:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 603
+        printedPage: "603"
+        pageRegionIdentifier: p603-d-03
+  - blockReference: "d-03:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 603
+        printedPage: "603"
+        pageRegionIdentifier: p603-d-03
+  - blockReference: "d-03:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 603
+        printedPage: "603"
+        pageRegionIdentifier: p603-d-03
+  - blockReference: "d-03:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 603
+        printedPage: "603"
+        pageRegionIdentifier: p603-d-03
+  - blockReference: "d-03:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 603
+        printedPage: "603"
+        pageRegionIdentifier: p603-d-03
+  - blockReference: "d-03:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 603
+        printedPage: "603"
+        pageRegionIdentifier: p603-d-03
+  - blockReference: "d-03:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 603
+        printedPage: "603"
+        pageRegionIdentifier: p603-d-03
+  - blockReference: "d-03:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 603
+        printedPage: "603"
+        pageRegionIdentifier: p603-d-03
+  - blockReference: "d-03:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 603
+        printedPage: "603"
+        pageRegionIdentifier: p603-d-03
+  - blockReference: "d-03:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 603
+        printedPage: "603"
+        pageRegionIdentifier: p603-d-03
+  - blockReference: "d-03:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 603
+        printedPage: "603"
+        pageRegionIdentifier: p603-d-03
+  - blockReference: "d-03:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 603
+        printedPage: "603"
+        pageRegionIdentifier: p603-d-03
+  - blockReference: "d-03:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 603
+        printedPage: "603"
+        pageRegionIdentifier: p603-d-03
+  - blockReference: "d-03:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 603
+        printedPage: "603"
+        pageRegionIdentifier: p603-d-03
+  - blockReference: "d-03:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 603
+        printedPage: "603"
+        pageRegionIdentifier: p603-d-03
+  - blockReference: "d-03:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 603
+        printedPage: "603"
+        pageRegionIdentifier: p603-d-03
+  - blockReference: "d-03:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 603
+        printedPage: "603"
+        pageRegionIdentifier: p603-d-03
+  - blockReference: "d-03:remediation.unspecified.heading:1"
+    sourceSpans:
+      - physicalPage: 603
+        printedPage: "603"
+        pageRegionIdentifier: p603-d-03
+  - blockReference: "d-03:remediation.unspecified.step:1"
+    sourceSpans:
+      - physicalPage: 603
+        printedPage: "603"
+        pageRegionIdentifier: p603-d-03
+  - blockReference: "d-03:remediation.unspecified.command:1"
+    sourceSpans:
+      - physicalPage: 603
+        printedPage: "603"
+        pageRegionIdentifier: p603-d-03
+  - blockReference: "d-03:remediation.unspecified.step:2"
+    sourceSpans:
+      - physicalPage: 603
+        printedPage: "603"
+        pageRegionIdentifier: p603-d-03
+  - blockReference: "d-03:remediation.unspecified.command:2"
+    sourceSpans:
+      - physicalPage: 603
+        printedPage: "603"
+        pageRegionIdentifier: p603-d-03
+  - blockReference: "d-03:remediation.unspecified.step:3"
+    sourceSpans:
+      - physicalPage: 603
+        printedPage: "603"
+        pageRegionIdentifier: p603-d-03
+  - blockReference: "d-03:remediation.unspecified.configuration:1"
+    sourceSpans:
+      - physicalPage: 603
+        printedPage: "603"
+        pageRegionIdentifier: p603-d-03
+      - physicalPage: 604
+        printedPage: "604"
+        pageRegionIdentifier: p604-d-03
+  - blockReference: "d-03:remediation.unspecified.step:4"
     sourceSpans:
       - physicalPage: 604
-        printedPage: '604'
+        printedPage: "604"
         pageRegionIdentifier: p604-d-03
-  - blockReference: d-03:sourceTranscription.sourcePage604.transcription:1
-    publicationDisposition: published
+  - blockReference: "d-03:remediation.unspecified.step:5"
     sourceSpans:
       - physicalPage: 604
-        printedPage: '604'
+        printedPage: "604"
         pageRegionIdentifier: p604-d-03
-  - blockReference: d-03:sourceTranscription.sourcePage604.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "d-03:remediation.unspecified.configuration:2"
     sourceSpans:
       - physicalPage: 604
-        printedPage: '604'
+        printedPage: "604"
         pageRegionIdentifier: p604-d-03
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: d-03:sourceTranscription.sourcePage605.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 605
-        printedPage: '605'
-        pageRegionIdentifier: p605-d-03
-  - blockReference: d-03:sourceTranscription.sourcePage605.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 605
-        printedPage: '605'
-        pageRegionIdentifier: p605-d-03
-  - blockReference: d-03:sourceTranscription.sourcePage605.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 605
-        printedPage: '605'
-        pageRegionIdentifier: p605-d-03
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: d-03:sourceTranscription.sourcePage606.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 606
-        printedPage: '606'
-        pageRegionIdentifier: p606-d-03
-  - blockReference: d-03:sourceTranscription.sourcePage606.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 606
-        printedPage: '606'
-        pageRegionIdentifier: p606-d-03
-  - blockReference: d-03:sourceTranscription.sourcePage606.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 606
-        printedPage: '606'
-        pageRegionIdentifier: p606-d-03
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: d-03:sourceTranscription.sourcePage607.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 607
-        printedPage: '607'
-        pageRegionIdentifier: p607-d-03
-  - blockReference: d-03:sourceTranscription.sourcePage607.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 607
-        printedPage: '607'
-        pageRegionIdentifier: p607-d-03
-  - blockReference: d-03:sourceTranscription.sourcePage607.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 607
-        printedPage: '607'
-        pageRegionIdentifier: p607-d-03
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/d-03/d-03-page-603-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: ac1a356bb06592cdaf94a9528aabe89fa4a3f2a273d30abb878d68b22ba368bf
-    alternativeText: PDF 페이지 603의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 603 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 603
-        printedPage: '603'
-        pageRegionIdentifier: p603-d-03
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - path: ../assets/d-03/d-03-page-604-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: f4f3411b7eb577b28fbe67336ee8313dee255cfb498dd92d972da8879cd17956
-    alternativeText: PDF 페이지 604의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 604 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "d-03:remediation.unspecified.step:6"
     sourceSpans:
       - physicalPage: 604
-        printedPage: '604'
+        printedPage: "604"
         pageRegionIdentifier: p604-d-03
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/d-03/d-03-page-605-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 4fe8fc48feba588b661f550765a4a9dd3148dc5bd295c07539e3f72cd155f34a
-    alternativeText: PDF 페이지 605의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 605 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "d-03:remediation.unspecified.configuration:3"
+    sourceSpans:
+      - physicalPage: 604
+        printedPage: "604"
+        pageRegionIdentifier: p604-d-03
+  - blockReference: "d-03:remediation.unspecified.step:7"
+    sourceSpans:
+      - physicalPage: 604
+        printedPage: "604"
+        pageRegionIdentifier: p604-d-03
+  - blockReference: "d-03:remediation.unspecified.command:3"
     sourceSpans:
       - physicalPage: 605
-        printedPage: '605'
+        printedPage: "605"
         pageRegionIdentifier: p605-d-03
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/d-03/d-03-page-606-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: e34b01be068dd15d384e62abd11a346f801825c27938845517dbe3025926ea38
-    alternativeText: PDF 페이지 606의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 606 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "d-03:remediation.unspecified.step.explanation:7"
+    sourceSpans:
+      - physicalPage: 605
+        printedPage: "605"
+        pageRegionIdentifier: p605-d-03
+  - blockReference: "d-03:remediation.unspecified.command:4"
+    sourceSpans:
+      - physicalPage: 605
+        printedPage: "605"
+        pageRegionIdentifier: p605-d-03
+  - blockReference: "d-03:remediation.unspecified.step:8"
+    sourceSpans:
+      - physicalPage: 605
+        printedPage: "605"
+        pageRegionIdentifier: p605-d-03
+  - blockReference: "d-03:remediation.unspecified.configuration:4"
+    sourceSpans:
+      - physicalPage: 605
+        printedPage: "605"
+        pageRegionIdentifier: p605-d-03
+  - blockReference: "d-03:remediation.unspecified.note.label:1"
+    sourceSpans:
+      - physicalPage: 605
+        printedPage: "605"
+        pageRegionIdentifier: p605-d-03
+  - blockReference: "d-03:remediation.unspecified.note.content:1"
+    sourceSpans:
+      - physicalPage: 605
+        printedPage: "605"
+        pageRegionIdentifier: p605-d-03
+  - blockReference: "d-03:remediation.unspecified.note.label:2"
+    sourceSpans:
+      - physicalPage: 605
+        printedPage: "605"
+        pageRegionIdentifier: p605-d-03
+  - blockReference: "d-03:remediation.unspecified.note.content:2"
+    sourceSpans:
+      - physicalPage: 605
+        printedPage: "605"
+        pageRegionIdentifier: p605-d-03
+  - blockReference: "d-03:remediation.unspecified.step:9"
+    sourceSpans:
+      - physicalPage: 605
+        printedPage: "605"
+        pageRegionIdentifier: p605-d-03
+  - blockReference: "d-03:remediation.unspecified.command:5"
+    sourceSpans:
+      - physicalPage: 605
+        printedPage: "605"
+        pageRegionIdentifier: p605-d-03
+  - blockReference: "d-03:remediation.unspecified.step:10"
+    sourceSpans:
+      - physicalPage: 605
+        printedPage: "605"
+        pageRegionIdentifier: p605-d-03
+  - blockReference: "d-03:remediation.unspecified.command:6"
+    sourceSpans:
+      - physicalPage: 605
+        printedPage: "605"
+        pageRegionIdentifier: p605-d-03
+  - blockReference: "d-03:remediation.unspecified.paragraph:1"
+    sourceSpans:
+      - physicalPage: 605
+        printedPage: "605"
+        pageRegionIdentifier: p605-d-03
+  - blockReference: "d-03:remediation.unspecified.literal:1"
+    sourceSpans:
+      - physicalPage: 605
+        printedPage: "605"
+        pageRegionIdentifier: p605-d-03
+  - blockReference: "d-03:remediation.unspecified.step:11"
+    sourceSpans:
+      - physicalPage: 605
+        printedPage: "605"
+        pageRegionIdentifier: p605-d-03
+  - blockReference: "d-03:remediation.unspecified.command:7"
+    sourceSpans:
+      - physicalPage: 605
+        printedPage: "605"
+        pageRegionIdentifier: p605-d-03
+  - blockReference: "d-03:remediation.unspecified.step:12"
+    sourceSpans:
+      - physicalPage: 605
+        printedPage: "605"
+        pageRegionIdentifier: p605-d-03
+  - blockReference: "d-03:remediation.unspecified.command:8"
+    sourceSpans:
+      - physicalPage: 605
+        printedPage: "605"
+        pageRegionIdentifier: p605-d-03
+  - blockReference: "d-03:remediation.unspecified.step:13"
     sourceSpans:
       - physicalPage: 606
-        printedPage: '606'
+        printedPage: "606"
         pageRegionIdentifier: p606-d-03
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/d-03/d-03-page-607-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 099a59de02b774bed032411a14c3c5e5876a4cca1fdc6da385a54e85020e48c4
-    alternativeText: PDF 페이지 607의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 607 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "d-03:remediation.unspecified.configuration:5"
+    sourceSpans:
+      - physicalPage: 606
+        printedPage: "606"
+        pageRegionIdentifier: p606-d-03
+  - blockReference: "d-03:remediation.unspecified.paragraph:2"
+    sourceSpans:
+      - physicalPage: 606
+        printedPage: "606"
+        pageRegionIdentifier: p606-d-03
+  - blockReference: "d-03:remediation.unspecified.command:9"
+    sourceSpans:
+      - physicalPage: 606
+        printedPage: "606"
+        pageRegionIdentifier: p606-d-03
+  - blockReference: "d-03:remediation.unspecified.paragraph:3"
+    sourceSpans:
+      - physicalPage: 606
+        printedPage: "606"
+        pageRegionIdentifier: p606-d-03
+  - blockReference: "d-03:remediation.unspecified.command:10"
+    sourceSpans:
+      - physicalPage: 606
+        printedPage: "606"
+        pageRegionIdentifier: p606-d-03
+  - blockReference: "d-03:remediation.unspecified.step:14"
+    sourceSpans:
+      - physicalPage: 606
+        printedPage: "606"
+        pageRegionIdentifier: p606-d-03
+  - blockReference: "d-03:remediation.unspecified.command:11"
+    sourceSpans:
+      - physicalPage: 606
+        printedPage: "606"
+        pageRegionIdentifier: p606-d-03
+  - blockReference: "d-03:remediation.unspecified.step:15"
+    sourceSpans:
+      - physicalPage: 606
+        printedPage: "606"
+        pageRegionIdentifier: p606-d-03
+  - blockReference: "d-03:remediation.unspecified.command:12"
+    sourceSpans:
+      - physicalPage: 606
+        printedPage: "606"
+        pageRegionIdentifier: p606-d-03
+  - blockReference: "d-03:remediation.unspecified.step:16"
     sourceSpans:
       - physicalPage: 607
-        printedPage: '607'
+        printedPage: "607"
         pageRegionIdentifier: p607-d-03
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - blockReference: "d-03:remediation.unspecified.command:13"
+    sourceSpans:
+      - physicalPage: 607
+        printedPage: "607"
+        pageRegionIdentifier: p607-d-03
+  - blockReference: "d-03:remediation.unspecified.paragraph:4"
+    sourceSpans:
+      - physicalPage: 607
+        printedPage: "607"
+        pageRegionIdentifier: p607-d-03
+  - blockReference: "d-03:remediation.unspecified.command:14"
+    sourceSpans:
+      - physicalPage: 607
+        printedPage: "607"
+        pageRegionIdentifier: p607-d-03
+assets: []
+

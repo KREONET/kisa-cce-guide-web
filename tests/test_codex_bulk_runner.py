@@ -332,13 +332,31 @@ def test_resume_reuses_only_current_validated_artifacts(  # noqa: PLR0915
     expected_work_directory = tmp_path / "work"
     task_path = expected_work_directory / "tasks" / slug / "task.json"
     result_path = expected_work_directory / "results" / slug / "result.json"
+    run_path = expected_work_directory / "results" / slug / "run.json"
     candidate_path = expected_work_directory / "candidates" / slug / "candidate.md"
     validation_path = expected_work_directory / "candidates" / slug / "validation.json"
-    for path in (task_path, result_path, candidate_path, validation_path):
+    for path in (task_path, result_path, run_path, candidate_path, validation_path):
         path.parent.mkdir(parents=True, exist_ok=True)
     task_document = {"taskIdentifier": "u-03-task", "taskChecksum": "current-task"}
     task_path.write_text(json.dumps(task_document) + "\n", encoding="utf-8")
     result_path.write_text('{"result": "current"}\n', encoding="utf-8")
+    run_path.write_text(
+        json.dumps(
+            {
+                "schemaVersion": 1,
+                "taskIdentifier": task_document["taskIdentifier"],
+                "taskChecksum": task_document["taskChecksum"],
+                "status": "completed",
+                "model": "configured-default",
+                "userConfigLoaded": False,
+                "exitCode": 0,
+                "resultChecksum": sha256_file(result_path),
+            },
+            sort_keys=True,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
     candidate_path.write_text("# Candidate\n", encoding="utf-8")
     validation_document = {
         "schemaVersion": 2,
@@ -379,12 +397,13 @@ def test_resume_reuses_only_current_validated_artifacts(  # noqa: PLR0915
         assert root == tmp_path
         return {}
 
-    def fake_run_task(
+    def fake_run_task(  # noqa: PLR0913
         _slug: str,
         *,
         root: Path,
         work_directory: Path,
         model: str | None,
+        use_user_config: bool,
         dry_run: bool,
         runtime_logger: RuntimeLogger | None,
     ) -> Path:
@@ -393,6 +412,7 @@ def test_resume_reuses_only_current_validated_artifacts(  # noqa: PLR0915
         assert root == tmp_path
         assert work_directory == expected_work_directory.resolve()
         assert model is None
+        assert not use_user_config
         assert not dry_run
         assert runtime_logger is not None
         assert runtime_logger.tool_name == "codex_bulk_worker"
@@ -465,6 +485,65 @@ def test_resume_reuses_only_current_validated_artifacts(  # noqa: PLR0915
     assert stale_item["outcome"] == "completed"
     assert stale_item["resumeVerification"] == "none"
     assert calls == {"vision": 1, "importer": 2}
+
+
+def test_resume_rejects_a_different_model_or_user_config(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """Resume must not reuse a result created with different model routing."""
+
+    slug = "u-03"
+    paths = codex_bulk_runner._artifact_paths(tmp_path / "work", slug)  # noqa: SLF001
+    for path in paths.values():
+        path.parent.mkdir(parents=True, exist_ok=True)
+    task_document = {"taskIdentifier": "u-03-task", "taskChecksum": "current-task"}
+    paths["task"].write_text(json.dumps(task_document) + "\n", encoding="utf-8")
+    paths["result"].write_text('{"result": "current"}\n', encoding="utf-8")
+    paths["run"].write_text(
+        json.dumps(
+            {
+                "schemaVersion": 1,
+                **task_document,
+                "status": "completed",
+                "model": "native-model",
+                "userConfigLoaded": False,
+                "exitCode": 0,
+                "resultChecksum": sha256_file(paths["result"]),
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(codex_bulk_runner, "validate_codex_result", lambda *_args, **_kwargs: {})
+
+    assert (
+        codex_bulk_runner._resume_state(  # noqa: SLF001
+            paths=paths,
+            root=tmp_path,
+            model="native-model",
+            use_user_config=False,
+        )
+        == "verifiedResult"
+    )
+    assert (
+        codex_bulk_runner._resume_state(  # noqa: SLF001
+            paths=paths,
+            root=tmp_path,
+            model="anthropic/claude-opus-5",
+            use_user_config=True,
+        )
+        == "none"
+    )
+    assert (
+        codex_bulk_runner._resume_state(  # noqa: SLF001
+            paths=paths,
+            root=tmp_path,
+            model="native-model",
+            use_user_config=True,
+        )
+        == "none"
+    )
 
 
 def test_summary_manifest_is_deterministic_and_status_is_derived(
@@ -584,6 +663,29 @@ def test_workers_outside_the_hard_bound_are_rejected(
         )
 
 
+def test_provider_qualified_model_without_user_config_is_rejected_before_executor(
+    tmp_path: Path,
+) -> None:
+    """Invalid custom-provider routing must fail before any item is scheduled."""
+
+    def unexpected_executor_factory(*, max_workers: int) -> Executor:
+        """Fail if invalid model routing reaches executor construction."""
+
+        pytest.fail(f"executor unexpectedly created with {max_workers} workers")
+
+    with pytest.raises(
+        ValueError,
+        match=r"anthropic/claude-opus-5.*requires --use-user-config",
+    ):
+        codex_bulk_runner.run_bulk_conversion(
+            root=tmp_path,
+            workers=1,
+            model="anthropic/claude-opus-5",
+            executor_factory=unexpected_executor_factory,
+            worker_callable=_completed_worker,
+        )
+
+
 def test_parent_progress_reports_every_terminal_outcome_without_stdout(
     tmp_path: Path,
     capsys: pytest.CaptureFixture[str],
@@ -625,6 +727,7 @@ def test_parent_progress_reports_every_terminal_outcome_without_stdout(
     assert "skipped:1" in progress_lines[2]
     configuration = as_mapping(summary["configuration"], location="summary.configuration")
     assert configuration["progressEnabled"] is True
+    assert configuration["useUserConfig"] is False
 
 
 def test_progress_can_be_disabled_and_runtime_configuration_remains_valid(
@@ -728,12 +831,13 @@ def test_worker_log_is_isolated_and_records_pipeline_stages(
         assert work_directory == tmp_path / "work"
         return task_path
 
-    def fake_run_task(
+    def fake_run_task(  # noqa: PLR0913
         _slug: str,
         *,
         root: Path,
         work_directory: Path,
         model: str | None,
+        use_user_config: bool,
         dry_run: bool,
         runtime_logger: RuntimeLogger | None,
     ) -> Path:
@@ -742,6 +846,7 @@ def test_worker_log_is_isolated_and_records_pipeline_stages(
         assert root == tmp_path
         assert work_directory == tmp_path / "work"
         assert model is None
+        assert not use_user_config
         assert not dry_run
         assert runtime_logger is not None
         assert runtime_logger.tool_name == "codex_bulk_worker"
@@ -816,6 +921,9 @@ def test_main_forwards_progress_and_logging_options_without_changing_stdout(
         [
             "codex_bulk_runner.py",
             "--no-progress",
+            "--use-user-config",
+            "--model",
+            "anthropic/claude-opus-5",
             "--log-directory",
             str(log_directory),
             "--log-level",
@@ -830,5 +938,7 @@ def test_main_forwards_progress_and_logging_options_without_changing_stdout(
     assert captured.out == "work/codex/bulk-summary.json\n"
     assert captured.err == ""
     assert observed_arguments["progress_enabled"] is False
+    assert observed_arguments["model"] == "anthropic/claude-opus-5"
+    assert observed_arguments["use_user_config"] is True
     assert observed_arguments["log_directory"] == log_directory
     assert observed_arguments["log_level"] == "DEBUG"

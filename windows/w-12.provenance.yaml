@@ -2,64 +2,144 @@ schemaVersion: 1
 criterionSlug: w-12
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: w-12:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "w-12:overview.heading:1"
     sourceSpans:
       - physicalPage: 192
-        printedPage: '192'
+        printedPage: "192"
         pageRegionIdentifier: p192-w-12
-  - blockReference: w-12:sourceTranscription.sourcePage192.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "w-12:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 192
-        printedPage: '192'
+        printedPage: "192"
         pageRegionIdentifier: p192-w-12
-  - blockReference: w-12:sourceTranscription.sourcePage192.transcription:1
-    publicationDisposition: published
+  - blockReference: "w-12:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 192
-        printedPage: '192'
+        printedPage: "192"
         pageRegionIdentifier: p192-w-12
-  - blockReference: w-12:sourceTranscription.sourcePage192.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "w-12:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 192
-        printedPage: '192'
+        printedPage: "192"
         pageRegionIdentifier: p192-w-12
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/w-12/w-12-page-192-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: f0b6aa0b92cd070d60540fe9c7bc609e363aff72c6bb8c4a41da30d0e1e68451
-    alternativeText: PDF 페이지 192의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 192 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
+  - blockReference: "w-12:overview.inspectionPurpose.paragraph:1"
     sourceSpans:
       - physicalPage: 192
-        printedPage: '192'
+        printedPage: "192"
         pageRegionIdentifier: p192-w-12
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
+  - blockReference: "w-12:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 192
+        printedPage: "192"
+        pageRegionIdentifier: p192-w-12
+  - blockReference: "w-12:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 192
+        printedPage: "192"
+        pageRegionIdentifier: p192-w-12
+  - blockReference: "w-12:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 192
+        printedPage: "192"
+        pageRegionIdentifier: p192-w-12
+  - blockReference: "w-12:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 192
+        printedPage: "192"
+        pageRegionIdentifier: p192-w-12
+  - blockReference: "w-12:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 192
+        printedPage: "192"
+        pageRegionIdentifier: p192-w-12
+  - blockReference: "w-12:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 192
+        printedPage: "192"
+        pageRegionIdentifier: p192-w-12
+  - blockReference: "w-12:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 192
+        printedPage: "192"
+        pageRegionIdentifier: p192-w-12
+  - blockReference: "w-12:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 192
+        printedPage: "192"
+        pageRegionIdentifier: p192-w-12
+  - blockReference: "w-12:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 192
+        printedPage: "192"
+        pageRegionIdentifier: p192-w-12
+  - blockReference: "w-12:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 192
+        printedPage: "192"
+        pageRegionIdentifier: p192-w-12
+  - blockReference: "w-12:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 192
+        printedPage: "192"
+        pageRegionIdentifier: p192-w-12
+  - blockReference: "w-12:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 192
+        printedPage: "192"
+        pageRegionIdentifier: p192-w-12
+  - blockReference: "w-12:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 192
+        printedPage: "192"
+        pageRegionIdentifier: p192-w-12
+  - blockReference: "w-12:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 192
+        printedPage: "192"
+        pageRegionIdentifier: p192-w-12
+  - blockReference: "w-12:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 192
+        printedPage: "192"
+        pageRegionIdentifier: p192-w-12
+  - blockReference: "w-12:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 192
+        printedPage: "192"
+        pageRegionIdentifier: p192-w-12
+  - blockReference: "w-12:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 192
+        printedPage: "192"
+        pageRegionIdentifier: p192-w-12
+  - blockReference: "w-12:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 192
+        printedPage: "192"
+        pageRegionIdentifier: p192-w-12
+  - blockReference: "w-12:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - physicalPage: 192
+        printedPage: "192"
+        pageRegionIdentifier: p192-w-12
+  - blockReference: "w-12:remediation.supplementaryGuidance.step:1"
+    sourceSpans:
+      - physicalPage: 192
+        printedPage: "192"
+        pageRegionIdentifier: p192-w-12
+  - blockReference: "w-12:remediation.supplementaryGuidance.step:2"
+    sourceSpans:
+      - physicalPage: 192
+        printedPage: "192"
+        pageRegionIdentifier: p192-w-12
+  - blockReference: "w-12:remediation.supplementaryGuidance.note.label:1"
+    sourceSpans:
+      - physicalPage: 192
+        printedPage: "192"
+        pageRegionIdentifier: p192-w-12
+  - blockReference: "w-12:remediation.supplementaryGuidance.note.content:1"
+    sourceSpans:
+      - physicalPage: 192
+        printedPage: "192"
+        pageRegionIdentifier: p192-w-12
+assets: []

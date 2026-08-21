@@ -2,64 +2,134 @@ schemaVersion: 1
 criterionSlug: w-44
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: w-44:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "w-44:overview.heading:1"
     sourceSpans:
       - physicalPage: 241
-        printedPage: '241'
+        printedPage: "241"
         pageRegionIdentifier: p241-w-44
-  - blockReference: w-44:sourceTranscription.sourcePage241.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "w-44:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 241
-        printedPage: '241'
+        printedPage: "241"
         pageRegionIdentifier: p241-w-44
-  - blockReference: w-44:sourceTranscription.sourcePage241.transcription:1
-    publicationDisposition: published
+  - blockReference: "w-44:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 241
-        printedPage: '241'
+        printedPage: "241"
         pageRegionIdentifier: p241-w-44
-  - blockReference: w-44:sourceTranscription.sourcePage241.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "w-44:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 241
-        printedPage: '241'
+        printedPage: "241"
         pageRegionIdentifier: p241-w-44
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/w-44/w-44-page-241-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 493a49067b27ce5e61658194307b48988b5b946a2af2412f048ac1ba4af377d8
-    alternativeText: PDF 페이지 241의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 241 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
+  - blockReference: "w-44:overview.inspectionPurpose.paragraph:1"
     sourceSpans:
       - physicalPage: 241
-        printedPage: '241'
+        printedPage: "241"
         pageRegionIdentifier: p241-w-44
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
+  - blockReference: "w-44:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 241
+        printedPage: "241"
+        pageRegionIdentifier: p241-w-44
+  - blockReference: "w-44:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 241
+        printedPage: "241"
+        pageRegionIdentifier: p241-w-44
+  - blockReference: "w-44:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 241
+        printedPage: "241"
+        pageRegionIdentifier: p241-w-44
+  - blockReference: "w-44:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 241
+        printedPage: "241"
+        pageRegionIdentifier: p241-w-44
+  - blockReference: "w-44:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 241
+        printedPage: "241"
+        pageRegionIdentifier: p241-w-44
+  - blockReference: "w-44:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 241
+        printedPage: "241"
+        pageRegionIdentifier: p241-w-44
+  - blockReference: "w-44:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 241
+        printedPage: "241"
+        pageRegionIdentifier: p241-w-44
+  - blockReference: "w-44:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 241
+        printedPage: "241"
+        pageRegionIdentifier: p241-w-44
+  - blockReference: "w-44:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 241
+        printedPage: "241"
+        pageRegionIdentifier: p241-w-44
+  - blockReference: "w-44:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 241
+        printedPage: "241"
+        pageRegionIdentifier: p241-w-44
+  - blockReference: "w-44:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 241
+        printedPage: "241"
+        pageRegionIdentifier: p241-w-44
+  - blockReference: "w-44:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 241
+        printedPage: "241"
+        pageRegionIdentifier: p241-w-44
+  - blockReference: "w-44:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 241
+        printedPage: "241"
+        pageRegionIdentifier: p241-w-44
+  - blockReference: "w-44:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 241
+        printedPage: "241"
+        pageRegionIdentifier: p241-w-44
+  - blockReference: "w-44:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 241
+        printedPage: "241"
+        pageRegionIdentifier: p241-w-44
+  - blockReference: "w-44:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 241
+        printedPage: "241"
+        pageRegionIdentifier: p241-w-44
+  - blockReference: "w-44:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 241
+        printedPage: "241"
+        pageRegionIdentifier: p241-w-44
+  - blockReference: "w-44:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 241
+        printedPage: "241"
+        pageRegionIdentifier: p241-w-44
+  - blockReference: "w-44:remediation.unspecified.heading:1"
+    sourceSpans:
+      - physicalPage: 241
+        printedPage: "241"
+        pageRegionIdentifier: p241-w-44
+  - blockReference: "w-44:remediation.unspecified.step:1"
+    sourceSpans:
+      - physicalPage: 241
+        printedPage: "241"
+        pageRegionIdentifier: p241-w-44
+  - blockReference: "w-44:remediation.unspecified.step:2"
+    sourceSpans:
+      - physicalPage: 241
+        printedPage: "241"
+        pageRegionIdentifier: p241-w-44
+assets: []

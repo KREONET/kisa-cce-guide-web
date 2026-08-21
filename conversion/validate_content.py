@@ -554,15 +554,13 @@ def _valid_system_semantic_path(
             len(semantic_path) == 3
             and semantic_path[2] in {"inappropriatePasswordTypes", "passwordManagementMethods"}
         )
-    target_identifiers = _taxonomy_identifiers(taxonomy, "targets")
+    product_family_identifiers = _taxonomy_identifiers(taxonomy, "productFamilies")
+    target_identifiers = _taxonomy_identifiers(taxonomy, "targets") | product_family_identifiers
     if semantic_path[1] not in target_identifiers:
         return False
     if len(semantic_path) == 2:
         return True
-    detail_identifiers = _taxonomy_identifiers(taxonomy, "protocols") | _taxonomy_identifiers(
-        taxonomy,
-        "productFamilies",
-    )
+    detail_identifiers = _taxonomy_identifiers(taxonomy, "protocols") | product_family_identifiers
     return len(semantic_path) == 3 and semantic_path[2] in detail_identifiers
 
 

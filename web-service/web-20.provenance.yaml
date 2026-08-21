@@ -2,276 +2,71 @@ schemaVersion: 1
 criterionSlug: web-20
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: web-20:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - {blockReference: "web-20:overview.heading:1", sourceSpans: [{physicalPage: 329, printedPage: "329", pageRegionIdentifier: p329-web-20}]}
+  - {blockReference: "web-20:overview.inspectionContent.heading:1", sourceSpans: [{physicalPage: 329, printedPage: "329", pageRegionIdentifier: p329-web-20}]}
+  - {blockReference: "web-20:overview.inspectionContent.paragraph:1", sourceSpans: [{physicalPage: 329, printedPage: "329", pageRegionIdentifier: p329-web-20}]}
+  - {blockReference: "web-20:overview.inspectionPurpose.heading:1", sourceSpans: [{physicalPage: 329, printedPage: "329", pageRegionIdentifier: p329-web-20}]}
+  - {blockReference: "web-20:overview.inspectionPurpose.paragraph:1", sourceSpans: [{physicalPage: 329, printedPage: "329", pageRegionIdentifier: p329-web-20}]}
+  - {blockReference: "web-20:overview.securityThreat.heading:1", sourceSpans: [{physicalPage: 329, printedPage: "329", pageRegionIdentifier: p329-web-20}]}
+  - {blockReference: "web-20:overview.securityThreat.paragraph:1", sourceSpans: [{physicalPage: 329, printedPage: "329", pageRegionIdentifier: p329-web-20}]}
+  - {blockReference: "web-20:overview.reference.heading:1", sourceSpans: [{physicalPage: 329, printedPage: "329", pageRegionIdentifier: p329-web-20}]}
+  - {blockReference: "web-20:overview.reference.note.label:1", sourceSpans: [{physicalPage: 329, printedPage: "329", pageRegionIdentifier: p329-web-20}]}
+  - {blockReference: "web-20:overview.reference.note.content:1", sourceSpans: [{physicalPage: 329, printedPage: "329", pageRegionIdentifier: p329-web-20}]}
+  - {blockReference: "web-20:overview.reference.note.label:2", sourceSpans: [{physicalPage: 329, printedPage: "329", pageRegionIdentifier: p329-web-20}]}
+  - {blockReference: "web-20:overview.reference.note.content:2", sourceSpans: [{physicalPage: 329, printedPage: "329", pageRegionIdentifier: p329-web-20}]}
+  - {blockReference: "web-20:assessment.heading:1", sourceSpans: [{physicalPage: 329, printedPage: "329", pageRegionIdentifier: p329-web-20}]}
+  - {blockReference: "web-20:assessment.target.heading:1", sourceSpans: [{physicalPage: 329, printedPage: "329", pageRegionIdentifier: p329-web-20}]}
+  - {blockReference: "web-20:assessment.target.paragraph:1", sourceSpans: [{physicalPage: 329, printedPage: "329", pageRegionIdentifier: p329-web-20}]}
+  - {blockReference: "web-20:assessment.judgment.heading:1", sourceSpans: [{physicalPage: 329, printedPage: "329", pageRegionIdentifier: p329-web-20}]}
+  - {blockReference: "web-20:assessment.judgment.good:1", sourceSpans: [{physicalPage: 329, printedPage: "329", pageRegionIdentifier: p329-web-20}]}
+  - {blockReference: "web-20:assessment.judgment.vulnerable:1", sourceSpans: [{physicalPage: 329, printedPage: "329", pageRegionIdentifier: p329-web-20}]}
+  - {blockReference: "web-20:assessment.remediationMethod.heading:1", sourceSpans: [{physicalPage: 329, printedPage: "329", pageRegionIdentifier: p329-web-20}]}
+  - {blockReference: "web-20:assessment.remediationMethod.paragraph:1", sourceSpans: [{physicalPage: 329, printedPage: "329", pageRegionIdentifier: p329-web-20}]}
+  - {blockReference: "web-20:assessment.remediationImpact.heading:1", sourceSpans: [{physicalPage: 329, printedPage: "329", pageRegionIdentifier: p329-web-20}]}
+  - {blockReference: "web-20:assessment.remediationImpact.paragraph:1", sourceSpans: [{physicalPage: 329, printedPage: "329", pageRegionIdentifier: p329-web-20}]}
+  - {blockReference: "web-20:remediation.heading:1", sourceSpans: [{physicalPage: 329, printedPage: "329", pageRegionIdentifier: p329-web-20}]}
+  - {blockReference: "web-20:remediation.linux.heading:1", sourceSpans: [{physicalPage: 329, printedPage: "329", pageRegionIdentifier: p329-web-20}]}
+  - {blockReference: "web-20:remediation.linux.paragraph:1", sourceSpans: [{physicalPage: 329, printedPage: "329", pageRegionIdentifier: p329-web-20}]}
+  - {blockReference: "web-20:remediation.linux.step:1", sourceSpans: [{physicalPage: 329, printedPage: "329", pageRegionIdentifier: p329-web-20}]}
+  - {blockReference: "web-20:remediation.linux.command:1", sourceSpans: [{physicalPage: 329, printedPage: "329", pageRegionIdentifier: p329-web-20}]}
+  - {blockReference: "web-20:remediation.linux.output:1", sourceSpans: [{physicalPage: 329, printedPage: "329", pageRegionIdentifier: p329-web-20}]}
+  - {blockReference: "web-20:remediation.linux.step:2", sourceSpans: [{physicalPage: 329, printedPage: "329", pageRegionIdentifier: p329-web-20}]}
+  - {blockReference: "web-20:remediation.linux.command:2", sourceSpans: [{physicalPage: 329, printedPage: "329", pageRegionIdentifier: p329-web-20}]}
+  - blockReference: "web-20:remediation.linux.configuration:1"
     sourceSpans:
-      - physicalPage: 329
-        printedPage: '329'
-        pageRegionIdentifier: p329-web-20
-  - blockReference: web-20:sourceTranscription.sourcePage329.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+      - {physicalPage: 329, printedPage: "329", pageRegionIdentifier: p329-web-20}
+      - {physicalPage: 330, printedPage: "330", pageRegionIdentifier: p330-web-20}
+  - {blockReference: "web-20:remediation.linux.step:3", sourceSpans: [{physicalPage: 330, printedPage: "330", pageRegionIdentifier: p330-web-20}]}
+  - {blockReference: "web-20:remediation.linux.command:3", sourceSpans: [{physicalPage: 330, printedPage: "330", pageRegionIdentifier: p330-web-20}]}
+  - {blockReference: "web-20:remediation.linux.step:4", sourceSpans: [{physicalPage: 330, printedPage: "330", pageRegionIdentifier: p330-web-20}]}
+  - {blockReference: "web-20:remediation.linux.command:4", sourceSpans: [{physicalPage: 330, printedPage: "330", pageRegionIdentifier: p330-web-20}]}
+  - {blockReference: "web-20:remediation.linux.paragraph:2", sourceSpans: [{physicalPage: 330, printedPage: "330", pageRegionIdentifier: p330-web-20}]}
+  - {blockReference: "web-20:remediation.linux.step:5", sourceSpans: [{physicalPage: 330, printedPage: "330", pageRegionIdentifier: p330-web-20}]}
+  - {blockReference: "web-20:remediation.linux.step:6", sourceSpans: [{physicalPage: 330, printedPage: "330", pageRegionIdentifier: p330-web-20}]}
+  - {blockReference: "web-20:remediation.linux.command:5", sourceSpans: [{physicalPage: 330, printedPage: "330", pageRegionIdentifier: p330-web-20}]}
+  - blockReference: "web-20:remediation.linux.configuration:2"
     sourceSpans:
-      - physicalPage: 329
-        printedPage: '329'
-        pageRegionIdentifier: p329-web-20
-  - blockReference: web-20:sourceTranscription.sourcePage329.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 329
-        printedPage: '329'
-        pageRegionIdentifier: p329-web-20
-  - blockReference: web-20:sourceTranscription.sourcePage329.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 329
-        printedPage: '329'
-        pageRegionIdentifier: p329-web-20
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - blockReference: web-20:sourceTranscription.sourcePage330.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 330
-        printedPage: '330'
-        pageRegionIdentifier: p330-web-20
-  - blockReference: web-20:sourceTranscription.sourcePage330.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 330
-        printedPage: '330'
-        pageRegionIdentifier: p330-web-20
-  - blockReference: web-20:sourceTranscription.sourcePage330.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 330
-        printedPage: '330'
-        pageRegionIdentifier: p330-web-20
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: web-20:sourceTranscription.sourcePage331.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 331
-        printedPage: '331'
-        pageRegionIdentifier: p331-web-20
-  - blockReference: web-20:sourceTranscription.sourcePage331.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 331
-        printedPage: '331'
-        pageRegionIdentifier: p331-web-20
-  - blockReference: web-20:sourceTranscription.sourcePage331.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 331
-        printedPage: '331'
-        pageRegionIdentifier: p331-web-20
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: web-20:sourceTranscription.sourcePage332.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 332
-        printedPage: '332'
-        pageRegionIdentifier: p332-web-20
-  - blockReference: web-20:sourceTranscription.sourcePage332.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 332
-        printedPage: '332'
-        pageRegionIdentifier: p332-web-20
-  - blockReference: web-20:sourceTranscription.sourcePage332.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 332
-        printedPage: '332'
-        pageRegionIdentifier: p332-web-20
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: web-20:sourceTranscription.sourcePage333.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 333
-        printedPage: '333'
-        pageRegionIdentifier: p333-web-20
-  - blockReference: web-20:sourceTranscription.sourcePage333.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 333
-        printedPage: '333'
-        pageRegionIdentifier: p333-web-20
-  - blockReference: web-20:sourceTranscription.sourcePage333.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 333
-        printedPage: '333'
-        pageRegionIdentifier: p333-web-20
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/web-20/web-20-page-329-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 20566be4557856caf3a72baf06bf80e18078573b3b78ff768bb7c10143cdefe4
-    alternativeText: PDF 페이지 329의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 329 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 329
-        printedPage: '329'
-        pageRegionIdentifier: p329-web-20
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - path: ../assets/web-20/web-20-page-330-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: fd09e8b34d56388d529f75bdb751babd6ad6a5ffe234637f71babd0106044436
-    alternativeText: PDF 페이지 330의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 330 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 330
-        printedPage: '330'
-        pageRegionIdentifier: p330-web-20
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/web-20/web-20-page-331-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 45375522e748050ef25d7a5de076a65cf586edbf913e2b977d8806c3058b6086
-    alternativeText: PDF 페이지 331의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 331 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 331
-        printedPage: '331'
-        pageRegionIdentifier: p331-web-20
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/web-20/web-20-page-332-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: f99062324f61a0539b7b40d00a01301db9799a1cb42fc6cd3dc3be8763e27f83
-    alternativeText: PDF 페이지 332의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 332 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 332
-        printedPage: '332'
-        pageRegionIdentifier: p332-web-20
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/web-20/web-20-page-333-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: e2d5ac3b1c27540c9c426d94707fba90faecc77fcd25cc6efe8b3d22ed77ab40
-    alternativeText: PDF 페이지 333의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 333 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 333
-        printedPage: '333'
-        pageRegionIdentifier: p333-web-20
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+      - {physicalPage: 330, printedPage: "330", pageRegionIdentifier: p330-web-20}
+      - {physicalPage: 331, printedPage: "331", pageRegionIdentifier: p331-web-20}
+  - {blockReference: "web-20:remediation.linux.step:7", sourceSpans: [{physicalPage: 331, printedPage: "331", pageRegionIdentifier: p331-web-20}]}
+  - {blockReference: "web-20:remediation.linux.command:6", sourceSpans: [{physicalPage: 331, printedPage: "331", pageRegionIdentifier: p331-web-20}]}
+  - {blockReference: "web-20:remediation.linux.paragraph:3", sourceSpans: [{physicalPage: 331, printedPage: "331", pageRegionIdentifier: p331-web-20}]}
+  - {blockReference: "web-20:remediation.linux.step:8", sourceSpans: [{physicalPage: 331, printedPage: "331", pageRegionIdentifier: p331-web-20}]}
+  - {blockReference: "web-20:remediation.linux.step.explanation:8", sourceSpans: [{physicalPage: 331, printedPage: "331", pageRegionIdentifier: p331-web-20}]}
+  - {blockReference: "web-20:remediation.linux.step:9", sourceSpans: [{physicalPage: 331, printedPage: "331", pageRegionIdentifier: p331-web-20}]}
+  - {blockReference: "web-20:remediation.linux.step.explanation:9", sourceSpans: [{physicalPage: 331, printedPage: "331", pageRegionIdentifier: p331-web-20}]}
+  - {blockReference: "web-20:remediation.linux.step:10", sourceSpans: [{physicalPage: 331, printedPage: "331", pageRegionIdentifier: p331-web-20}]}
+  - {blockReference: "web-20:remediation.linux.step.explanation:10", sourceSpans: [{physicalPage: 331, printedPage: "331", pageRegionIdentifier: p331-web-20}]}
+  - {blockReference: "web-20:remediation.linux.step:11", sourceSpans: [{physicalPage: 332, printedPage: "332", pageRegionIdentifier: p332-web-20}]}
+  - {blockReference: "web-20:remediation.linux.step.explanation:11", sourceSpans: [{physicalPage: 332, printedPage: "332", pageRegionIdentifier: p332-web-20}]}
+  - {blockReference: "web-20:remediation.linux.step:12", sourceSpans: [{physicalPage: 332, printedPage: "332", pageRegionIdentifier: p332-web-20}]}
+  - {blockReference: "web-20:remediation.linux.step.explanation:12", sourceSpans: [{physicalPage: 332, printedPage: "332", pageRegionIdentifier: p332-web-20}]}
+  - {blockReference: "web-20:remediation.linux.step:13", sourceSpans: [{physicalPage: 333, printedPage: "333", pageRegionIdentifier: p333-web-20}]}
+  - {blockReference: "web-20:remediation.linux.paragraph:4", sourceSpans: [{physicalPage: 333, printedPage: "333", pageRegionIdentifier: p333-web-20}]}
+  - {blockReference: "web-20:remediation.linux.step:14", sourceSpans: [{physicalPage: 333, printedPage: "333", pageRegionIdentifier: p333-web-20}]}
+  - {blockReference: "web-20:remediation.linux.command:7", sourceSpans: [{physicalPage: 333, printedPage: "333", pageRegionIdentifier: p333-web-20}]}
+  - {blockReference: "web-20:remediation.linux.configuration:3", sourceSpans: [{physicalPage: 333, printedPage: "333", pageRegionIdentifier: p333-web-20}]}
+  - {blockReference: "web-20:remediation.linux.step:15", sourceSpans: [{physicalPage: 333, printedPage: "333", pageRegionIdentifier: p333-web-20}]}
+  - {blockReference: "web-20:remediation.linux.configuration:4", sourceSpans: [{physicalPage: 333, printedPage: "333", pageRegionIdentifier: p333-web-20}]}
+  - {blockReference: "web-20:remediation.linux.step:16", sourceSpans: [{physicalPage: 333, printedPage: "333", pageRegionIdentifier: p333-web-20}]}
+assets: []

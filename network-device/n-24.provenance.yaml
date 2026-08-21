@@ -2,117 +2,205 @@ schemaVersion: 1
 criterionSlug: n-24
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: n-24:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "n-24:overview.heading:1"
     sourceSpans:
       - physicalPage: 446
-        printedPage: '446'
+        printedPage: "446"
         pageRegionIdentifier: p446-n-24
-  - blockReference: n-24:sourceTranscription.sourcePage446.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "n-24:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 446
-        printedPage: '446'
+        printedPage: "446"
         pageRegionIdentifier: p446-n-24
-  - blockReference: n-24:sourceTranscription.sourcePage446.transcription:1
-    publicationDisposition: published
+  - blockReference: "n-24:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 446
-        printedPage: '446'
+        printedPage: "446"
         pageRegionIdentifier: p446-n-24
-  - blockReference: n-24:sourceTranscription.sourcePage446.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "n-24:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 446
-        printedPage: '446'
+        printedPage: "446"
         pageRegionIdentifier: p446-n-24
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - blockReference: n-24:sourceTranscription.sourcePage447.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "n-24:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 446
+        printedPage: "446"
+        pageRegionIdentifier: p446-n-24
+  - blockReference: "n-24:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 446
+        printedPage: "446"
+        pageRegionIdentifier: p446-n-24
+  - blockReference: "n-24:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 446
+        printedPage: "446"
+        pageRegionIdentifier: p446-n-24
+  - blockReference: "n-24:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 446
+        printedPage: "446"
+        pageRegionIdentifier: p446-n-24
+  - blockReference: "n-24:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 446
+        printedPage: "446"
+        pageRegionIdentifier: p446-n-24
+  - blockReference: "n-24:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 446
+        printedPage: "446"
+        pageRegionIdentifier: p446-n-24
+  - blockReference: "n-24:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 446
+        printedPage: "446"
+        pageRegionIdentifier: p446-n-24
+  - blockReference: "n-24:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 446
+        printedPage: "446"
+        pageRegionIdentifier: p446-n-24
+  - blockReference: "n-24:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 446
+        printedPage: "446"
+        pageRegionIdentifier: p446-n-24
+  - blockReference: "n-24:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 446
+        printedPage: "446"
+        pageRegionIdentifier: p446-n-24
+  - blockReference: "n-24:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 446
+        printedPage: "446"
+        pageRegionIdentifier: p446-n-24
+  - blockReference: "n-24:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 446
+        printedPage: "446"
+        pageRegionIdentifier: p446-n-24
+  - blockReference: "n-24:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 446
+        printedPage: "446"
+        pageRegionIdentifier: p446-n-24
+  - blockReference: "n-24:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 446
+        printedPage: "446"
+        pageRegionIdentifier: p446-n-24
+  - blockReference: "n-24:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 446
+        printedPage: "446"
+        pageRegionIdentifier: p446-n-24
+  - blockReference: "n-24:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 446
+        printedPage: "446"
+        pageRegionIdentifier: p446-n-24
+  - blockReference: "n-24:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 446
+        printedPage: "446"
+        pageRegionIdentifier: p446-n-24
+      - physicalPage: 447
+        printedPage: "447"
+        pageRegionIdentifier: p447-n-24
+  - blockReference: "n-24:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 446
+        printedPage: "446"
+        pageRegionIdentifier: p446-n-24
+  - blockReference: "n-24:remediation.linux.command:1"
+    sourceSpans:
+      - physicalPage: 446
+        printedPage: "446"
+        pageRegionIdentifier: p446-n-24
+  - blockReference: "n-24:remediation.linux.step.explanation:1"
+    sourceSpans:
+      - physicalPage: 446
+        printedPage: "446"
+        pageRegionIdentifier: p446-n-24
+  - blockReference: "n-24:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 446
+        printedPage: "446"
+        pageRegionIdentifier: p446-n-24
+  - blockReference: "n-24:remediation.linux.command:2"
+    sourceSpans:
+      - physicalPage: 446
+        printedPage: "446"
+        pageRegionIdentifier: p446-n-24
+  - blockReference: "n-24:remediation.linux.step:3"
+    sourceSpans:
+      - physicalPage: 446
+        printedPage: "446"
+        pageRegionIdentifier: p446-n-24
+  - blockReference: "n-24:remediation.linux.command:3"
+    sourceSpans:
+      - physicalPage: 446
+        printedPage: "446"
+        pageRegionIdentifier: p446-n-24
+      - physicalPage: 447
+        printedPage: "447"
+        pageRegionIdentifier: p447-n-24
+  - blockReference: "n-24:remediation.linux.step:4"
     sourceSpans:
       - physicalPage: 447
-        printedPage: '447'
+        printedPage: "447"
         pageRegionIdentifier: p447-n-24
-  - blockReference: n-24:sourceTranscription.sourcePage447.transcription:1
-    publicationDisposition: published
+  - blockReference: "n-24:remediation.linux.command:4"
     sourceSpans:
       - physicalPage: 447
-        printedPage: '447'
+        printedPage: "447"
         pageRegionIdentifier: p447-n-24
-  - blockReference: n-24:sourceTranscription.sourcePage447.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "n-24:remediation.linux.step:5"
     sourceSpans:
       - physicalPage: 447
-        printedPage: '447'
+        printedPage: "447"
         pageRegionIdentifier: p447-n-24
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/n-24/n-24-page-446-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: f5783bb3bffa91fc7e4b77b2a618f10cff38b7f046080273a8ee51c8743bcb27
-    alternativeText: PDF 페이지 446의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 446 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 446
-        printedPage: '446'
-        pageRegionIdentifier: p446-n-24
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - path: ../assets/n-24/n-24-page-447-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 1096ebd86878cf55eccb03dd162d8a99470038b19d6f1c5affdcc1d0dbe563df
-    alternativeText: PDF 페이지 447의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 447 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "n-24:remediation.linux.command:5"
     sourceSpans:
       - physicalPage: 447
-        printedPage: '447'
+        printedPage: "447"
         pageRegionIdentifier: p447-n-24
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - blockReference: "n-24:remediation.linux.step.explanation:5"
+    sourceSpans:
+      - physicalPage: 447
+        printedPage: "447"
+        pageRegionIdentifier: p447-n-24
+  - blockReference: "n-24:remediation.linux.step:6"
+    sourceSpans:
+      - physicalPage: 447
+        printedPage: "447"
+        pageRegionIdentifier: p447-n-24
+  - blockReference: "n-24:remediation.linux.command:6"
+    sourceSpans:
+      - physicalPage: 447
+        printedPage: "447"
+        pageRegionIdentifier: p447-n-24
+  - blockReference: "n-24:remediation.linux.step:7"
+    sourceSpans:
+      - physicalPage: 447
+        printedPage: "447"
+        pageRegionIdentifier: p447-n-24
+  - blockReference: "n-24:remediation.linux.command:7"
+    sourceSpans:
+      - physicalPage: 447
+        printedPage: "447"
+        pageRegionIdentifier: p447-n-24
+  - blockReference: "n-24:remediation.linux.step:8"
+    sourceSpans:
+      - physicalPage: 447
+        printedPage: "447"
+        pageRegionIdentifier: p447-n-24
+  - blockReference: "n-24:remediation.linux.command:8"
+    sourceSpans:
+      - physicalPage: 447
+        printedPage: "447"
+        pageRegionIdentifier: p447-n-24
+assets: []

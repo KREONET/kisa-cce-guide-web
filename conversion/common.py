@@ -98,6 +98,7 @@ class _ListItemState:
     list_type: str
     item_number: int
     inline_count: int = 0
+    canonical_item_number: int | None = None
     block_reference: str | None = None
 
 
@@ -385,6 +386,7 @@ def extract_leaf_blocks(
     ordinal_counts: dict[tuple[str, str], int] = {}
     note_counts: dict[str, int] = {}
     note_item_counts: dict[str, int] = {}
+    ordered_step_counts: dict[str, int] = {}
     list_stack: list[_ListState] = []
     list_item_stack: list[_ListItemState] = []
     note_stack: list[_NoteState] = []
@@ -430,7 +432,7 @@ def extract_leaf_blocks(
                 list_depth=list_depth,
                 code_language=code_language,
                 code_content_type=code_content_type,
-                technical_literals=technical_literals,
+                technical_literals=tuple(dict.fromkeys(technical_literals)),
                 table_headers=table_headers,
                 table_rows=table_rows,
                 asset_path=asset_path,
@@ -564,7 +566,7 @@ def extract_leaf_blocks(
             continue
         if note_stack:
             note_state = note_stack[-1]
-            if not note_state.label_seen and plain_content == "참고":
+            if not note_state.label_seen and plain_content in ALLOWED_NOTE_LABELS:
                 note_state.label_seen = True
                 append_leaf(
                     semantic_role="note.label",
@@ -589,7 +591,6 @@ def extract_leaf_blocks(
                     semantic_role="note.content",
                     content=token.content,
                     block_type="noteContent",
-                    forced_ordinal=note_state.note_number,
                     technical_literals=_inline_technical_literals(token),
                 )
             token_index += 1
@@ -600,7 +601,13 @@ def extract_leaf_blocks(
             item_state.inline_count += 1
             if item_state.list_type == "ordered":
                 semantic_role = "step" if item_state.inline_count == 1 else "step.explanation"
-                forced_ordinal = item_state.item_number
+                # Ordered procedures can restart after a table or note in the same semantic
+                # section. The canonical reference ordinal follows document order so those
+                # separate Markdown lists cannot generate duplicate block references.
+                if item_state.canonical_item_number is None:
+                    ordered_step_counts[path] = ordered_step_counts.get(path, 0) + 1
+                    item_state.canonical_item_number = ordered_step_counts[path]
+                forced_ordinal = item_state.canonical_item_number
             elif path.endswith("judgment") and plain_content.startswith("양호"):
                 semantic_role = "good"
                 forced_ordinal = 1

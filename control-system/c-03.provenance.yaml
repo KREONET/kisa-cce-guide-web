@@ -2,117 +2,144 @@ schemaVersion: 1
 criterionSlug: c-03
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: c-03:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "c-03:overview.heading:1"
     sourceSpans:
       - physicalPage: 477
-        printedPage: '477'
+        printedPage: "477"
         pageRegionIdentifier: p477-c-03
-  - blockReference: c-03:sourceTranscription.sourcePage477.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "c-03:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 477
-        printedPage: '477'
+        printedPage: "477"
         pageRegionIdentifier: p477-c-03
-  - blockReference: c-03:sourceTranscription.sourcePage477.transcription:1
-    publicationDisposition: published
+  - blockReference: "c-03:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 477
-        printedPage: '477'
+        printedPage: "477"
         pageRegionIdentifier: p477-c-03
-  - blockReference: c-03:sourceTranscription.sourcePage477.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "c-03:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 477
-        printedPage: '477'
+        printedPage: "477"
         pageRegionIdentifier: p477-c-03
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - blockReference: c-03:sourceTranscription.sourcePage478.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "c-03:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 477
+        printedPage: "477"
+        pageRegionIdentifier: p477-c-03
+  - blockReference: "c-03:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 477
+        printedPage: "477"
+        pageRegionIdentifier: p477-c-03
+  - blockReference: "c-03:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 477
+        printedPage: "477"
+        pageRegionIdentifier: p477-c-03
+  - blockReference: "c-03:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 477
+        printedPage: "477"
+        pageRegionIdentifier: p477-c-03
+  - blockReference: "c-03:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 477
+        printedPage: "477"
+        pageRegionIdentifier: p477-c-03
+  - blockReference: "c-03:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 477
+        printedPage: "477"
+        pageRegionIdentifier: p477-c-03
+  - blockReference: "c-03:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 477
+        printedPage: "477"
+        pageRegionIdentifier: p477-c-03
+  - blockReference: "c-03:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 477
+        printedPage: "477"
+        pageRegionIdentifier: p477-c-03
+  - blockReference: "c-03:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 477
+        printedPage: "477"
+        pageRegionIdentifier: p477-c-03
+  - blockReference: "c-03:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 477
+        printedPage: "477"
+        pageRegionIdentifier: p477-c-03
+  - blockReference: "c-03:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 477
+        printedPage: "477"
+        pageRegionIdentifier: p477-c-03
+  - blockReference: "c-03:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 477
+        printedPage: "477"
+        pageRegionIdentifier: p477-c-03
+  - blockReference: "c-03:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 477
+        printedPage: "477"
+        pageRegionIdentifier: p477-c-03
+  - blockReference: "c-03:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 477
+        printedPage: "477"
+        pageRegionIdentifier: p477-c-03
+  - blockReference: "c-03:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 477
+        printedPage: "477"
+        pageRegionIdentifier: p477-c-03
+  - blockReference: "c-03:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 477
+        printedPage: "477"
+        pageRegionIdentifier: p477-c-03
+  - blockReference: "c-03:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 477
+        printedPage: "477"
+        pageRegionIdentifier: p477-c-03
+  - blockReference: "c-03:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - physicalPage: 477
+        printedPage: "477"
+        pageRegionIdentifier: p477-c-03
+  - blockReference: "c-03:remediation.supplementaryGuidance.step:1"
+    sourceSpans:
+      - physicalPage: 477
+        printedPage: "477"
+        pageRegionIdentifier: p477-c-03
+  - blockReference: "c-03:remediation.supplementaryGuidance.step:2"
     sourceSpans:
       - physicalPage: 478
-        printedPage: '478'
+        printedPage: "478"
         pageRegionIdentifier: p478-c-03
-  - blockReference: c-03:sourceTranscription.sourcePage478.transcription:1
-    publicationDisposition: published
+  - blockReference: "c-03:remediation.supplementaryGuidance.item:1"
     sourceSpans:
       - physicalPage: 478
-        printedPage: '478'
+        printedPage: "478"
         pageRegionIdentifier: p478-c-03
-  - blockReference: c-03:sourceTranscription.sourcePage478.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "c-03:remediation.supplementaryGuidance.item:2"
     sourceSpans:
       - physicalPage: 478
-        printedPage: '478'
+        printedPage: "478"
         pageRegionIdentifier: p478-c-03
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/c-03/c-03-page-477-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: de1704ff0d9bf2f8e6a5592bc1ec8db4be3442ed3ed14010135eb7bc867e8758
-    alternativeText: PDF 페이지 477의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 477 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 477
-        printedPage: '477'
-        pageRegionIdentifier: p477-c-03
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - path: ../assets/c-03/c-03-page-478-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 542712e4bd67c6de9e769abb944fc1f1f4147e990abf5e9aec758df6b9dc9f31
-    alternativeText: PDF 페이지 478의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 478 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "c-03:remediation.supplementaryGuidance.item:3"
     sourceSpans:
       - physicalPage: 478
-        printedPage: '478'
+        printedPage: "478"
         pageRegionIdentifier: p478-c-03
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - blockReference: "c-03:remediation.supplementaryGuidance.step:3"
+    sourceSpans:
+      - physicalPage: 478
+        printedPage: "478"
+        pageRegionIdentifier: p478-c-03
+assets: []

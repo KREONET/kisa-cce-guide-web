@@ -2,64 +2,169 @@ schemaVersion: 1
 criterionSlug: u-18
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: u-18:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "u-18:overview.heading:1"
     sourceSpans:
       - physicalPage: 44
-        printedPage: '44'
+        printedPage: "44"
         pageRegionIdentifier: p44-u-18
-  - blockReference: u-18:sourceTranscription.sourcePage44.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "u-18:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 44
-        printedPage: '44'
+        printedPage: "44"
         pageRegionIdentifier: p44-u-18
-  - blockReference: u-18:sourceTranscription.sourcePage44.transcription:1
-    publicationDisposition: published
+  - blockReference: "u-18:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 44
-        printedPage: '44'
+        printedPage: "44"
         pageRegionIdentifier: p44-u-18
-  - blockReference: u-18:sourceTranscription.sourcePage44.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "u-18:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 44
-        printedPage: '44'
+        printedPage: "44"
         pageRegionIdentifier: p44-u-18
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/u-18/u-18-page-44-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: bb835e893a6d823fa34619adb359773d2481973738eaed6cd0dc1aab7d67bbfc
-    alternativeText: PDF 페이지 44의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 44 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
+  - blockReference: "u-18:overview.inspectionPurpose.paragraph:1"
     sourceSpans:
       - physicalPage: 44
-        printedPage: '44'
+        printedPage: "44"
         pageRegionIdentifier: p44-u-18
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
+  - blockReference: "u-18:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 44
+        printedPage: "44"
+        pageRegionIdentifier: p44-u-18
+  - blockReference: "u-18:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 44
+        printedPage: "44"
+        pageRegionIdentifier: p44-u-18
+  - blockReference: "u-18:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 44
+        printedPage: "44"
+        pageRegionIdentifier: p44-u-18
+  - blockReference: "u-18:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 44
+        printedPage: "44"
+        pageRegionIdentifier: p44-u-18
+  - blockReference: "u-18:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 44
+        printedPage: "44"
+        pageRegionIdentifier: p44-u-18
+  - blockReference: "u-18:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 44
+        printedPage: "44"
+        pageRegionIdentifier: p44-u-18
+  - blockReference: "u-18:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 44
+        printedPage: "44"
+        pageRegionIdentifier: p44-u-18
+  - blockReference: "u-18:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 44
+        printedPage: "44"
+        pageRegionIdentifier: p44-u-18
+  - blockReference: "u-18:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 44
+        printedPage: "44"
+        pageRegionIdentifier: p44-u-18
+  - blockReference: "u-18:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 44
+        printedPage: "44"
+        pageRegionIdentifier: p44-u-18
+  - blockReference: "u-18:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 44
+        printedPage: "44"
+        pageRegionIdentifier: p44-u-18
+  - blockReference: "u-18:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 44
+        printedPage: "44"
+        pageRegionIdentifier: p44-u-18
+  - blockReference: "u-18:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 44
+        printedPage: "44"
+        pageRegionIdentifier: p44-u-18
+  - blockReference: "u-18:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 44
+        printedPage: "44"
+        pageRegionIdentifier: p44-u-18
+  - blockReference: "u-18:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 44
+        printedPage: "44"
+        pageRegionIdentifier: p44-u-18
+  - blockReference: "u-18:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 44
+        printedPage: "44"
+        pageRegionIdentifier: p44-u-18
+  - blockReference: "u-18:remediation.solaris.heading:1"
+    sourceSpans:
+      - physicalPage: 44
+        printedPage: "44"
+        pageRegionIdentifier: p44-u-18
+  - blockReference: "u-18:remediation.solaris.step:1"
+    sourceSpans:
+      - physicalPage: 44
+        printedPage: "44"
+        pageRegionIdentifier: p44-u-18
+  - blockReference: "u-18:remediation.solaris.command:1"
+    sourceSpans:
+      - physicalPage: 44
+        printedPage: "44"
+        pageRegionIdentifier: p44-u-18
+  - blockReference: "u-18:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 44
+        printedPage: "44"
+        pageRegionIdentifier: p44-u-18
+  - blockReference: "u-18:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 44
+        printedPage: "44"
+        pageRegionIdentifier: p44-u-18
+  - blockReference: "u-18:remediation.linux.command:1"
+    sourceSpans:
+      - physicalPage: 44
+        printedPage: "44"
+        pageRegionIdentifier: p44-u-18
+  - blockReference: "u-18:remediation.aix.heading:1"
+    sourceSpans:
+      - physicalPage: 44
+        printedPage: "44"
+        pageRegionIdentifier: p44-u-18
+  - blockReference: "u-18:remediation.aix.step:1"
+    sourceSpans:
+      - physicalPage: 44
+        printedPage: "44"
+        pageRegionIdentifier: p44-u-18
+  - blockReference: "u-18:remediation.aix.command:1"
+    sourceSpans:
+      - physicalPage: 44
+        printedPage: "44"
+        pageRegionIdentifier: p44-u-18
+  - blockReference: "u-18:remediation.hp-ux.heading:1"
+    sourceSpans:
+      - physicalPage: 44
+        printedPage: "44"
+        pageRegionIdentifier: p44-u-18
+  - blockReference: "u-18:remediation.hp-ux.step:1"
+    sourceSpans:
+      - physicalPage: 44
+        printedPage: "44"
+        pageRegionIdentifier: p44-u-18
+  - blockReference: "u-18:remediation.hp-ux.command:1"
+    sourceSpans:
+      - physicalPage: 44
+        printedPage: "44"
+        pageRegionIdentifier: p44-u-18
+assets: []

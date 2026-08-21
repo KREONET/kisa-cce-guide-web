@@ -2,64 +2,164 @@ schemaVersion: 1
 criterionSlug: n-32
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: n-32:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "n-32:overview.heading:1"
     sourceSpans:
       - physicalPage: 459
-        printedPage: '459'
+        printedPage: "459"
         pageRegionIdentifier: p459-n-32
-  - blockReference: n-32:sourceTranscription.sourcePage459.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "n-32:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 459
-        printedPage: '459'
+        printedPage: "459"
         pageRegionIdentifier: p459-n-32
-  - blockReference: n-32:sourceTranscription.sourcePage459.transcription:1
-    publicationDisposition: published
+  - blockReference: "n-32:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 459
-        printedPage: '459'
+        printedPage: "459"
         pageRegionIdentifier: p459-n-32
-  - blockReference: n-32:sourceTranscription.sourcePage459.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "n-32:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 459
-        printedPage: '459'
+        printedPage: "459"
         pageRegionIdentifier: p459-n-32
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/n-32/n-32-page-459-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: b5f049f8a864e0f92faaa16f6edd6a3bd3344c12155a25b5d30160014ae7987c
-    alternativeText: PDF 페이지 459의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 459 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
+  - blockReference: "n-32:overview.inspectionPurpose.paragraph:1"
     sourceSpans:
       - physicalPage: 459
-        printedPage: '459'
+        printedPage: "459"
         pageRegionIdentifier: p459-n-32
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
+  - blockReference: "n-32:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 459
+        printedPage: "459"
+        pageRegionIdentifier: p459-n-32
+  - blockReference: "n-32:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 459
+        printedPage: "459"
+        pageRegionIdentifier: p459-n-32
+  - blockReference: "n-32:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 459
+        printedPage: "459"
+        pageRegionIdentifier: p459-n-32
+  - blockReference: "n-32:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 459
+        printedPage: "459"
+        pageRegionIdentifier: p459-n-32
+  - blockReference: "n-32:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 459
+        printedPage: "459"
+        pageRegionIdentifier: p459-n-32
+  - blockReference: "n-32:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 459
+        printedPage: "459"
+        pageRegionIdentifier: p459-n-32
+  - blockReference: "n-32:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 459
+        printedPage: "459"
+        pageRegionIdentifier: p459-n-32
+  - blockReference: "n-32:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 459
+        printedPage: "459"
+        pageRegionIdentifier: p459-n-32
+  - blockReference: "n-32:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 459
+        printedPage: "459"
+        pageRegionIdentifier: p459-n-32
+  - blockReference: "n-32:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 459
+        printedPage: "459"
+        pageRegionIdentifier: p459-n-32
+  - blockReference: "n-32:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 459
+        printedPage: "459"
+        pageRegionIdentifier: p459-n-32
+  - blockReference: "n-32:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 459
+        printedPage: "459"
+        pageRegionIdentifier: p459-n-32
+  - blockReference: "n-32:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 459
+        printedPage: "459"
+        pageRegionIdentifier: p459-n-32
+  - blockReference: "n-32:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 459
+        printedPage: "459"
+        pageRegionIdentifier: p459-n-32
+  - blockReference: "n-32:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 459
+        printedPage: "459"
+        pageRegionIdentifier: p459-n-32
+  - blockReference: "n-32:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 459
+        printedPage: "459"
+        pageRegionIdentifier: p459-n-32
+  - blockReference: "n-32:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 459
+        printedPage: "459"
+        pageRegionIdentifier: p459-n-32
+  - blockReference: "n-32:remediation.linux.paragraph:1"
+    sourceSpans:
+      - physicalPage: 459
+        printedPage: "459"
+        pageRegionIdentifier: p459-n-32
+  - blockReference: "n-32:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 459
+        printedPage: "459"
+        pageRegionIdentifier: p459-n-32
+  - blockReference: "n-32:remediation.linux.command:1"
+    sourceSpans:
+      - physicalPage: 459
+        printedPage: "459"
+        pageRegionIdentifier: p459-n-32
+  - blockReference: "n-32:remediation.linux.paragraph:2"
+    sourceSpans:
+      - physicalPage: 459
+        printedPage: "459"
+        pageRegionIdentifier: p459-n-32
+  - blockReference: "n-32:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 459
+        printedPage: "459"
+        pageRegionIdentifier: p459-n-32
+  - blockReference: "n-32:remediation.linux.command:2"
+    sourceSpans:
+      - physicalPage: 459
+        printedPage: "459"
+        pageRegionIdentifier: p459-n-32
+  - blockReference: "n-32:remediation.linux.step:3"
+    sourceSpans:
+      - physicalPage: 459
+        printedPage: "459"
+        pageRegionIdentifier: p459-n-32
+  - blockReference: "n-32:remediation.linux.command:3"
+    sourceSpans:
+      - physicalPage: 459
+        printedPage: "459"
+        pageRegionIdentifier: p459-n-32
+  - blockReference: "n-32:remediation.linux.note.label:1"
+    sourceSpans:
+      - physicalPage: 459
+        printedPage: "459"
+        pageRegionIdentifier: p459-n-32
+  - blockReference: "n-32:remediation.linux.note.content:1"
+    sourceSpans:
+      - physicalPage: 459
+        printedPage: "459"
+        pageRegionIdentifier: p459-n-32
+assets: []

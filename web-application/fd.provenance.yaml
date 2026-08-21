@@ -2,329 +2,116 @@ schemaVersion: 1
 criterionSlug: fd
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: fd:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
-    sourceSpans:
-      - physicalPage: 753
-        printedPage: '753'
-        pageRegionIdentifier: p753-fd
-  - blockReference: fd:sourceTranscription.sourcePage753.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 753
-        printedPage: '753'
-        pageRegionIdentifier: p753-fd
-  - blockReference: fd:sourceTranscription.sourcePage753.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 753
-        printedPage: '753'
-        pageRegionIdentifier: p753-fd
-  - blockReference: fd:sourceTranscription.sourcePage753.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 753
-        printedPage: '753'
-        pageRegionIdentifier: p753-fd
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - blockReference: fd:sourceTranscription.sourcePage754.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 754
-        printedPage: '754'
-        pageRegionIdentifier: p754-fd
-  - blockReference: fd:sourceTranscription.sourcePage754.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 754
-        printedPage: '754'
-        pageRegionIdentifier: p754-fd
-  - blockReference: fd:sourceTranscription.sourcePage754.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 754
-        printedPage: '754'
-        pageRegionIdentifier: p754-fd
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: fd:sourceTranscription.sourcePage755.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 755
-        printedPage: '755'
-        pageRegionIdentifier: p755-fd
-  - blockReference: fd:sourceTranscription.sourcePage755.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 755
-        printedPage: '755'
-        pageRegionIdentifier: p755-fd
-  - blockReference: fd:sourceTranscription.sourcePage755.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 755
-        printedPage: '755'
-        pageRegionIdentifier: p755-fd
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: fd:sourceTranscription.sourcePage756.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 756
-        printedPage: '756'
-        pageRegionIdentifier: p756-fd
-  - blockReference: fd:sourceTranscription.sourcePage756.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 756
-        printedPage: '756'
-        pageRegionIdentifier: p756-fd
-  - blockReference: fd:sourceTranscription.sourcePage756.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 756
-        printedPage: '756'
-        pageRegionIdentifier: p756-fd
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: fd:sourceTranscription.sourcePage757.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 757
-        printedPage: '757'
-        pageRegionIdentifier: p757-fd
-  - blockReference: fd:sourceTranscription.sourcePage757.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 757
-        printedPage: '757'
-        pageRegionIdentifier: p757-fd
-  - blockReference: fd:sourceTranscription.sourcePage757.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 757
-        printedPage: '757'
-        pageRegionIdentifier: p757-fd
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: fd:sourceTranscription.sourcePage758.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 758
-        printedPage: '758'
-        pageRegionIdentifier: p758-fd
-  - blockReference: fd:sourceTranscription.sourcePage758.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 758
-        printedPage: '758'
-        pageRegionIdentifier: p758-fd
-  - blockReference: fd:sourceTranscription.sourcePage758.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 758
-        printedPage: '758'
-        pageRegionIdentifier: p758-fd
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/fd/fd-page-753-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: d6873403d079f006e0e77584b4c39cba54e579e2d76426c2df7d2f7b9d5e61d9
-    alternativeText: PDF 페이지 753의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 753 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 753
-        printedPage: '753'
-        pageRegionIdentifier: p753-fd
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - path: ../assets/fd/fd-page-754-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 017f83ca74594350f9ae08f36eef88f45dcd7c2ef099fd50c1d1cd4e1da0f41c
-    alternativeText: PDF 페이지 754의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 754 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 754
-        printedPage: '754'
-        pageRegionIdentifier: p754-fd
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/fd/fd-page-755-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: dff9b1dad13e5b68b0b5a2568c1d87ad3b11b17ef1ef67ea212aa430982cb889
-    alternativeText: PDF 페이지 755의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 755 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 755
-        printedPage: '755'
-        pageRegionIdentifier: p755-fd
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/fd/fd-page-756-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: e3cf11190c13513f59fd3bfce3f0ca2869da61f6ea7506ca4e678958ffad963d
-    alternativeText: PDF 페이지 756의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 756 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 756
-        printedPage: '756'
-        pageRegionIdentifier: p756-fd
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/fd/fd-page-757-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 0d92ea9e5d366d18f557c99353068a6210e20a0f35d8169b17f328bf81fa7f7a
-    alternativeText: PDF 페이지 757의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 757 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 757
-        printedPage: '757'
-        pageRegionIdentifier: p757-fd
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/fd/fd-page-758-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: eec211d4ed38a2516dbeb0c2a422dafb332e2baf1b9d1f54fc5c2f1678dec339
-    alternativeText: PDF 페이지 758의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 758 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 758
-        printedPage: '758'
-        pageRegionIdentifier: p758-fd
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - blockReference: "fd:overview.heading:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:overview.reference.note.content:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:overview.reference.note.label:2"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:overview.reference.note.content:2"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:assessment.heading:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:remediation.heading:1"
+    sourceSpans: [{physicalPage: 754, printedPage: "754", pageRegionIdentifier: p754-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.heading:1"
+    sourceSpans: [{physicalPage: 754, printedPage: "754", pageRegionIdentifier: p754-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.paragraph:1"
+    sourceSpans: [{physicalPage: 754, printedPage: "754", pageRegionIdentifier: p754-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.step:1"
+    sourceSpans: [{physicalPage: 754, printedPage: "754", pageRegionIdentifier: p754-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.literal:1"
+    sourceSpans: [{physicalPage: 754, printedPage: "754", pageRegionIdentifier: p754-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.step:2"
+    sourceSpans: [{physicalPage: 754, printedPage: "754", pageRegionIdentifier: p754-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.literal:2"
+    sourceSpans: [{physicalPage: 754, printedPage: "754", pageRegionIdentifier: p754-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.step:3"
+    sourceSpans: [{physicalPage: 755, printedPage: "755", pageRegionIdentifier: p755-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.literal:3"
+    sourceSpans: [{physicalPage: 755, printedPage: "755", pageRegionIdentifier: p755-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.note.label:1"
+    sourceSpans: [{physicalPage: 755, printedPage: "755", pageRegionIdentifier: p755-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.note.content:1"
+    sourceSpans: [{physicalPage: 755, printedPage: "755", pageRegionIdentifier: p755-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.table:1"
+    sourceSpans: [{physicalPage: 755, printedPage: "755", pageRegionIdentifier: p755-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.note.label:2"
+    sourceSpans: [{physicalPage: 756, printedPage: "756", pageRegionIdentifier: p756-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.note.content:2"
+    sourceSpans: [{physicalPage: 756, printedPage: "756", pageRegionIdentifier: p756-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.table:2"
+    sourceSpans: [{physicalPage: 756, printedPage: "756", pageRegionIdentifier: p756-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.step:4"
+    sourceSpans: [{physicalPage: 756, printedPage: "756", pageRegionIdentifier: p756-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.step:5"
+    sourceSpans: [{physicalPage: 756, printedPage: "756", pageRegionIdentifier: p756-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.step:6"
+    sourceSpans: [{physicalPage: 756, printedPage: "756", pageRegionIdentifier: p756-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.step:7"
+    sourceSpans: [{physicalPage: 756, printedPage: "756", pageRegionIdentifier: p756-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.paragraph:2"
+    sourceSpans: [{physicalPage: 756, printedPage: "756", pageRegionIdentifier: p756-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.step:8"
+    sourceSpans: [{physicalPage: 756, printedPage: "756", pageRegionIdentifier: p756-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.step:9"
+    sourceSpans: [{physicalPage: 756, printedPage: "756", pageRegionIdentifier: p756-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.step:10"
+    sourceSpans: [{physicalPage: 756, printedPage: "756", pageRegionIdentifier: p756-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.step:11"
+    sourceSpans: [{physicalPage: 756, printedPage: "756", pageRegionIdentifier: p756-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.paragraph:3"
+    sourceSpans: [{physicalPage: 757, printedPage: "757", pageRegionIdentifier: p757-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.step:12"
+    sourceSpans: [{physicalPage: 757, printedPage: "757", pageRegionIdentifier: p757-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.configuration:1"
+    sourceSpans: [{physicalPage: 757, printedPage: "757", pageRegionIdentifier: p757-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.paragraph:4"
+    sourceSpans: [{physicalPage: 758, printedPage: "758", pageRegionIdentifier: p758-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.step:13"
+    sourceSpans: [{physicalPage: 758, printedPage: "758", pageRegionIdentifier: p758-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.configuration:2"
+    sourceSpans: [{physicalPage: 758, printedPage: "758", pageRegionIdentifier: p758-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.paragraph:5"
+    sourceSpans: [{physicalPage: 758, printedPage: "758", pageRegionIdentifier: p758-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.step:14"
+    sourceSpans: [{physicalPage: 758, printedPage: "758", pageRegionIdentifier: p758-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.step:15"
+    sourceSpans: [{physicalPage: 758, printedPage: "758", pageRegionIdentifier: p758-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.configuration:3"
+    sourceSpans: [{physicalPage: 758, printedPage: "758", pageRegionIdentifier: p758-fd}]
+assets: []

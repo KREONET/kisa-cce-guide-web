@@ -19,15 +19,49 @@
     "reportType": {"enum": ["accessibility", "responsive", "print"]},
     "canonicalCorpusChecksum": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
     "testProfileVersion": {"type": "integer", "minimum": 1},
-    "browserEngine": {"type": "string", "minLength": 1},
-    "browserVersion": {"type": "string", "minLength": 1},
-    "validationStatus": {"enum": ["passed", "failed"]},
+    "browserEngine": {"type": ["string", "null"]},
+    "browserVersion": {"type": ["string", "null"]},
+    "validationStatus": {"enum": ["pending", "passed", "failed"]},
     "passed": {"type": "boolean"},
     "evidencePaths": {
       "type": "array",
-      "minItems": 1,
       "items": {"type": "string", "minLength": 1},
       "uniqueItems": true
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"validationStatus": {"const": "pending"}}},
+      "then": {
+        "properties": {
+          "browserEngine": {"const": null},
+          "browserVersion": {"const": null},
+          "passed": {"const": false},
+          "evidencePaths": {"maxItems": 0}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"validationStatus": {"const": "passed"}}},
+      "then": {
+        "properties": {
+          "browserEngine": {"type": "string", "minLength": 1},
+          "browserVersion": {"type": "string", "minLength": 1},
+          "passed": {"const": true},
+          "evidencePaths": {"minItems": 1}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"validationStatus": {"const": "failed"}}},
+      "then": {
+        "properties": {
+          "browserEngine": {"type": "string", "minLength": 1},
+          "browserVersion": {"type": "string", "minLength": 1},
+          "passed": {"const": false},
+          "evidencePaths": {"minItems": 1}
+        }
+      }
+    }
+  ]
 }

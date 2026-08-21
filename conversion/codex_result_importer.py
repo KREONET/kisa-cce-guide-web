@@ -19,13 +19,16 @@ from conversion.codex_task_builder import (
     verify_codex_task_dependencies,
 )
 from conversion.common import (
+    CANONICAL_FORMAT_CONTENT_MODELS,
     REQUIRED_ASSESSMENT_LEVEL_THREE_HEADINGS,
     REQUIRED_LEVEL_TWO_HEADINGS,
     REQUIRED_OVERVIEW_LEVEL_THREE_HEADINGS,
+    SUPPLEMENTARY_GUIDANCE_HEADING,
     JsonValue,
     as_mapping,
     as_sequence,
     load_json,
+    load_yaml,
     repository_root,
     sha256_file,
 )
@@ -79,6 +82,9 @@ CODE_LINE_PATTERN = re.compile(
     r"[A-Za-z_][A-Za-z0-9_]*[ \t]*(?:=|#)[ \t]*\S.*"
     r")$"
 )
+JUDGMENT_ITEM_PATTERN = re.compile(r"\*\*(양호|취약):\*\* [^\n]+")
+EXPECTED_JUDGMENT_LABELS = ("양호", "취약")
+FIXED_PARAGRAPH_SECTIONS = frozenset({"점검 내용", "점검 목적", "보안 위협", "대상", "조치 방법"})
 
 
 def _require_unique(values: list[JsonValue], *, location: str) -> None:
@@ -195,7 +201,7 @@ def _validate_node_profile(
         allowed_non_null_fields = {"codeLanguage", "codeContentType"}
     elif node_type == "table":
         required_types = {
-            "tableCaption": (str,),
+            "tableCaption": (str, type(None)),
             "tableHeaders": (list,),
             "tableRows": (list,),
         }
@@ -351,6 +357,238 @@ def _validate_no_transcript_dump(
             raise ValueError(msg)
 
 
+def _taxonomy_identifiers(
+    taxonomy: dict[str, JsonValue],
+    collection_name: str,
+) -> set[str]:
+    """Return registered identifiers from one taxonomy collection."""
+
+    return {
+        cast("str", item["identifier"])
+        for item in (
+            as_mapping(value, location=f"taxonomy.{collection_name}[]")
+            for value in as_sequence(
+                taxonomy[collection_name],
+                location=f"taxonomy.{collection_name}",
+            )
+        )
+        if isinstance(item.get("identifier"), str)
+    }
+
+
+def _expected_content_model(
+    task: dict[str, JsonValue],
+    *,
+    taxonomy: dict[str, JsonValue],
+) -> str:
+    """Return the completed content model required by the task domain."""
+
+    domain_identifier = task.get("domainIdentifier")
+    if not isinstance(domain_identifier, str):
+        msg = "task domainIdentifier must be a string"
+        raise TypeError(msg)
+    if domain_identifier not in _taxonomy_identifiers(taxonomy, "domains"):
+        msg = f"task uses an unknown taxonomy domain: {domain_identifier}"
+        raise ValueError(msg)
+    return (
+        "webApplicationCriterion" if domain_identifier == "web-application" else "systemCriterion"
+    )
+
+
+def _fixed_section_body(
+    nodes: list[dict[str, JsonValue]],
+    *,
+    heading_content: str,
+) -> tuple[dict[str, JsonValue], list[dict[str, JsonValue]]]:
+    """Return one fixed H3 heading and the nodes in its section body."""
+
+    heading_indexes = [
+        node_index
+        for node_index, node in enumerate(nodes)
+        if node.get("nodeType") == "heading"
+        and node.get("headingLevel") == LEVEL_THREE
+        and node.get("content") == heading_content
+    ]
+    if len(heading_indexes) != 1:
+        msg = f"canonical section {heading_content!r} requires exactly one H3"
+        raise ValueError(msg)
+    heading_index = heading_indexes[0]
+    end_index = next(
+        (
+            node_index
+            for node_index in range(heading_index + 1, len(nodes))
+            if nodes[node_index].get("nodeType") == "heading"
+            and isinstance(nodes[node_index].get("headingLevel"), int)
+            and cast("int", nodes[node_index]["headingLevel"]) <= LEVEL_THREE
+        ),
+        len(nodes),
+    )
+    return nodes[heading_index], nodes[heading_index + 1 : end_index]
+
+
+def _section_gap_is_declared(
+    result: dict[str, JsonValue],
+    *,
+    heading_node: dict[str, JsonValue],
+) -> bool:
+    """Return whether an empty source section has the required review declaration."""
+
+    if result.get("analysisStatus") != "needsSourceReview":
+        return False
+    quality = as_mapping(result["quality"], location="result.quality")
+    if as_sequence(
+        quality["unresolvedQuestions"],
+        location="result.quality.unresolvedQuestions",
+    ):
+        return True
+    heading_identifier = heading_node.get("nodeIdentifier")
+    return any(
+        as_mapping(value, location="result.sourceAnnotations[]").get("targetReference")
+        == heading_identifier
+        for value in as_sequence(
+            result["sourceAnnotations"],
+            location="result.sourceAnnotations",
+        )
+    )
+
+
+def _validate_fixed_section_bodies(
+    result: dict[str, JsonValue],
+    nodes: list[dict[str, JsonValue]],
+) -> None:
+    """Enforce canonical node profiles for every fixed H3 section."""
+
+    section_names = (
+        *SYSTEM_OVERVIEW_LEVEL_THREE_HEADINGS,
+        *SYSTEM_ASSESSMENT_LEVEL_THREE_HEADINGS,
+    )
+    bodies: dict[str, list[dict[str, JsonValue]]] = {}
+    for section_name in section_names:
+        heading_node, body = _fixed_section_body(nodes, heading_content=section_name)
+        bodies[section_name] = body
+        if not body:
+            if _section_gap_is_declared(result, heading_node=heading_node):
+                continue
+            msg = f"canonical section {section_name!r} has no body or review declaration"
+            raise ValueError(msg)
+
+        if section_name in FIXED_PARAGRAPH_SECTIONS:
+            if len(body) != 1 or body[0].get("nodeType") != "paragraph":
+                msg = f"canonical section {section_name!r} requires exactly one paragraph node"
+                raise ValueError(msg)
+        elif section_name == "참고":
+            if any(
+                node.get("nodeType") != "note" or node.get("noteType") != "참고" for node in body
+            ):
+                msg = "canonical section '참고' requires only note nodes using the 참고 label"
+                raise ValueError(msg)
+        elif section_name == "조치 시 영향":
+            has_one_paragraph = len(body) == 1 and body[0].get("nodeType") == "paragraph"
+            has_unordered_items = all(
+                node.get("nodeType") == "listItem"
+                and node.get("listType") == "unordered"
+                and node.get("listDepth") == 1
+                for node in body
+            )
+            if not has_one_paragraph and not has_unordered_items:
+                msg = (
+                    "canonical section '조치 시 영향' requires one paragraph or "
+                    "unordered list items"
+                )
+                raise ValueError(msg)
+
+    judgment_body = bodies["판단 기준"]
+    if judgment_body:
+        if len(judgment_body) != len(EXPECTED_JUDGMENT_LABELS):
+            msg = "canonical section '판단 기준' requires exactly two unordered list items"
+            raise ValueError(msg)
+        labels: list[str] = []
+        for node in judgment_body:
+            content = node.get("content")
+            label_match = (
+                JUDGMENT_ITEM_PATTERN.fullmatch(content) if isinstance(content, str) else None
+            )
+            if (
+                node.get("nodeType") != "listItem"
+                or node.get("listType") != "unordered"
+                or node.get("listDepth") != 1
+                or label_match is None
+            ):
+                msg = (
+                    "canonical judgment items must use unordered '- **양호:** ' and "
+                    "'- **취약:** ' notation"
+                )
+                raise ValueError(msg)
+            labels.append(label_match.group(1))
+        if tuple(labels) != EXPECTED_JUDGMENT_LABELS:
+            msg = "canonical judgment requires one 양호 item followed by one 취약 item"
+            raise ValueError(msg)
+
+    target_body = bodies["대상"]
+    if target_body and target_body[0].get("content") != result.get("sourceTargetText"):
+        msg = "Codex result sourceTargetText differs from the canonical 대상 paragraph"
+        raise ValueError(msg)
+
+
+def _validate_canonical_headings(
+    nodes: list[dict[str, JsonValue]],
+    *,
+    content_model: str,
+) -> None:
+    """Enforce the shared heading contract for one completed content model."""
+
+    heading_nodes = [node for node in nodes if node.get("nodeType") == "heading"]
+    level_two_headings = tuple(
+        cast("str", node["content"])
+        for node in heading_nodes
+        if node.get("headingLevel") == LEVEL_TWO
+    )
+    if level_two_headings != SYSTEM_LEVEL_TWO_HEADINGS:
+        msg = f"{content_model} H2 sequence differs: {level_two_headings!r}"
+        raise ValueError(msg)
+    current_level_two_heading: str | None = None
+    level_three_headings_by_section: dict[str, list[str]] = {
+        heading: [] for heading in SYSTEM_LEVEL_TWO_HEADINGS
+    }
+    for heading_node in heading_nodes:
+        heading_level = heading_node.get("headingLevel")
+        heading_content = cast("str", heading_node["content"])
+        if heading_level == LEVEL_TWO:
+            current_level_two_heading = heading_content
+        elif (
+            heading_level == LEVEL_THREE
+            and current_level_two_heading in level_three_headings_by_section
+        ):
+            level_three_headings_by_section[current_level_two_heading].append(heading_content)
+    overview_headings = tuple(level_three_headings_by_section["개요"])
+    assessment_headings = tuple(level_three_headings_by_section["점검 대상 및 판단 기준"])
+    remediation_headings = tuple(level_three_headings_by_section["점검 및 조치 사례"])
+    if overview_headings != SYSTEM_OVERVIEW_LEVEL_THREE_HEADINGS:
+        msg = f"{content_model} overview H3 sequence differs: {overview_headings!r}"
+        raise ValueError(msg)
+    if assessment_headings != SYSTEM_ASSESSMENT_LEVEL_THREE_HEADINGS:
+        msg = f"{content_model} assessment H3 sequence differs: {assessment_headings!r}"
+        raise ValueError(msg)
+    target_remediation_headings = tuple(
+        heading for heading in remediation_headings if heading != SUPPLEMENTARY_GUIDANCE_HEADING
+    )
+    if not target_remediation_headings:
+        msg = f"{content_model} remediation requires at least one target H3"
+        raise ValueError(msg)
+    if remediation_headings.count(SUPPLEMENTARY_GUIDANCE_HEADING) > 1:
+        msg = f"{content_model} remediation allows at most one supplementary guidance H3"
+        raise ValueError(msg)
+    if (
+        SUPPLEMENTARY_GUIDANCE_HEADING in remediation_headings
+        and remediation_headings[-1] != SUPPLEMENTARY_GUIDANCE_HEADING
+    ):
+        msg = (
+            f"{content_model} {SUPPLEMENTARY_GUIDANCE_HEADING} must be the last remediation H3: "
+            f"{remediation_headings!r}"
+        )
+        raise ValueError(msg)
+
+
 def _validate_source_page_inspections(
     result: dict[str, JsonValue],
     page_evidence: dict[int, dict[str, JsonValue]],
@@ -480,11 +718,33 @@ def validate_codex_result(
     if mismatched_fields:
         msg = f"Codex result identity differs from task: {', '.join(mismatched_fields)}"
         raise ValueError(msg)
+    if result.get("title") != task.get("criterionTitle"):
+        msg = "Codex result identity differs from task: title"
+        raise ValueError(msg)
 
-    _require_unique(
-        as_sequence(result["targetIdentifiers"], location="result.targetIdentifiers"),
+    taxonomy = load_yaml(repository / "data/taxonomy.yaml")
+    expected_content_model = _expected_content_model(task, taxonomy=taxonomy)
+    if result.get("contentModelRecommendation") != expected_content_model:
+        msg = (
+            "Codex result content model recommendation differs from task domain: "
+            f"expected {expected_content_model}"
+        )
+        raise ValueError(msg)
+
+    target_identifier_values = as_sequence(
+        result["targetIdentifiers"],
         location="result.targetIdentifiers",
     )
+    _require_unique(target_identifier_values, location="result.targetIdentifiers")
+    registered_target_identifiers = _taxonomy_identifiers(taxonomy, "targets")
+    unknown_target_identifiers = sorted(
+        value
+        for value in cast("list[str]", target_identifier_values)
+        if value not in registered_target_identifiers
+    )
+    if unknown_target_identifiers:
+        msg = f"Codex result uses unknown taxonomy targets: {unknown_target_identifiers!r}"
+        raise ValueError(msg)
 
     page_evidence = _page_evidence(task)
     expected_pages = set(page_evidence)
@@ -640,7 +900,7 @@ def validate_codex_result(
             review_annotation_pages.update(annotation_pages)
             if isinstance(target_reference, str):
                 uncertain_annotation_targets.add(target_reference)
-        elif annotation.get("disposition") in {"unresolved", "reviewRequired"}:
+        elif annotation.get("disposition") == "reviewRequired":
             review_annotation_pages.update(annotation_pages)
             if isinstance(target_reference, str):
                 uncertain_annotation_targets.add(target_reference)
@@ -730,41 +990,10 @@ def validate_codex_result(
     ):
         msg = "Codex result heading hierarchy skips a level"
         raise ValueError(msg)
-    if result.get("contentModelRecommendation") == "systemCriterion":
-        level_two_headings = tuple(
-            cast("str", node["content"])
-            for node in heading_nodes
-            if node.get("headingLevel") == LEVEL_TWO
-        )
-        if level_two_headings != SYSTEM_LEVEL_TWO_HEADINGS:
-            msg = f"systemCriterion H2 sequence differs: {level_two_headings!r}"
-            raise ValueError(msg)
-        current_level_two_heading: str | None = None
-        level_three_headings_by_section: dict[str, list[str]] = {
-            heading: [] for heading in SYSTEM_LEVEL_TWO_HEADINGS
-        }
-        for heading_node in heading_nodes:
-            heading_level = heading_node.get("headingLevel")
-            heading_content = cast("str", heading_node["content"])
-            if heading_level == LEVEL_TWO:
-                current_level_two_heading = heading_content
-            elif (
-                heading_level == LEVEL_THREE
-                and current_level_two_heading in level_three_headings_by_section
-            ):
-                level_three_headings_by_section[current_level_two_heading].append(heading_content)
-        overview_headings = tuple(level_three_headings_by_section["개요"])
-        assessment_headings = tuple(level_three_headings_by_section["점검 대상 및 판단 기준"])
-        remediation_headings = tuple(level_three_headings_by_section["점검 및 조치 사례"])
-        if overview_headings != SYSTEM_OVERVIEW_LEVEL_THREE_HEADINGS:
-            msg = f"systemCriterion overview H3 sequence differs: {overview_headings!r}"
-            raise ValueError(msg)
-        if assessment_headings != SYSTEM_ASSESSMENT_LEVEL_THREE_HEADINGS:
-            msg = f"systemCriterion assessment H3 sequence differs: {assessment_headings!r}"
-            raise ValueError(msg)
-        if not remediation_headings:
-            msg = "systemCriterion remediation requires at least one target H3"
-            raise ValueError(msg)
+    content_model = result.get("contentModelRecommendation")
+    if isinstance(content_model, str) and content_model in CANONICAL_FORMAT_CONTENT_MODELS:
+        _validate_canonical_headings(nodes, content_model=content_model)
+        _validate_fixed_section_bodies(result, nodes)
     return result
 
 
@@ -781,7 +1010,11 @@ def _table_cell(value: str) -> str:
     return value.replace("|", "\\|").replace("\n", "<br>")
 
 
-def _render_node(node: dict[str, JsonValue]) -> list[str]:
+def _render_node(
+    node: dict[str, JsonValue],
+    *,
+    code_indentation: str = "",
+) -> list[str]:
     """Render one validated Codex node into review Markdown."""
 
     node_type = cast("str", node["nodeType"])
@@ -791,18 +1024,19 @@ def _render_node(node: dict[str, JsonValue]) -> list[str]:
     if node_type == "paragraph":
         return [content, ""]
     if node_type == "listItem":
-        indentation = "  " * (cast("int", node["listDepth"]) - 1)
+        indentation = "   " * (cast("int", node["listDepth"]) - 1)
         marker = "1." if node["listType"] == "ordered" else "-"
         return [f"{indentation}{marker} {content}", ""]
     if node_type == "codeBlock":
         fence = _fence(content)
         return [
-            f"{fence}{node['codeLanguage']} {node['codeContentType']}",
-            content,
-            fence,
+            f"{code_indentation}{fence}{node['codeLanguage']} {node['codeContentType']}",
+            *(f"{code_indentation}{line}" for line in content.split("\n")),
+            f"{code_indentation}{fence}",
             "",
         ]
     if node_type == "table":
+        caption = node.get("tableCaption")
         headers = [
             _table_cell(cast("str", value))
             for value in as_sequence(node["tableHeaders"], location="node.tableHeaders")
@@ -814,9 +1048,9 @@ def _render_node(node: dict[str, JsonValue]) -> list[str]:
             ]
             for row_value in as_sequence(node["tableRows"], location="node.tableRows")
         ]
+        caption_lines = [f"**{caption}**", ""] if isinstance(caption, str) else []
         return [
-            f"**{node['tableCaption']}**",
-            "",
+            *caption_lines,
             "| " + " | ".join(headers) + " |",
             "| " + " | ".join("---" for _ in headers) + " |",
             *("| " + " | ".join(row) + " |" for row in rows),
@@ -860,8 +1094,18 @@ def render_codex_candidate(
         "> Codex가 생성한 검토용 후보입니다. Canonical 콘텐츠나 사람 승인 상태가 아닙니다.",
         "",
     ]
+    active_ordered_list_depth: int | None = None
     for node_value in as_sequence(result["nodes"], location="result.nodes"):
-        lines.extend(_render_node(as_mapping(node_value, location="result.nodes[]")))
+        node = as_mapping(node_value, location="result.nodes[]")
+        if node.get("nodeType") == "codeBlock" and active_ordered_list_depth is not None:
+            code_indentation = "   " * active_ordered_list_depth
+        else:
+            code_indentation = ""
+        lines.extend(_render_node(node, code_indentation=code_indentation))
+        if node.get("nodeType") == "listItem" and node.get("listType") == "ordered":
+            active_ordered_list_depth = cast("int", node["listDepth"])
+        elif node.get("nodeType") != "codeBlock":
+            active_ordered_list_depth = None
     annotation_values = as_sequence(
         result["sourceAnnotations"],
         location="result.sourceAnnotations",

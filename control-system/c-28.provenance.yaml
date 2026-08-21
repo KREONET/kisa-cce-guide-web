@@ -2,64 +2,129 @@ schemaVersion: 1
 criterionSlug: c-28
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: c-28:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "c-28:overview.heading:1"
     sourceSpans:
       - physicalPage: 521
-        printedPage: '521'
+        printedPage: "521"
         pageRegionIdentifier: p521-c-28
-  - blockReference: c-28:sourceTranscription.sourcePage521.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "c-28:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 521
-        printedPage: '521'
+        printedPage: "521"
         pageRegionIdentifier: p521-c-28
-  - blockReference: c-28:sourceTranscription.sourcePage521.transcription:1
-    publicationDisposition: published
+  - blockReference: "c-28:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 521
-        printedPage: '521'
+        printedPage: "521"
         pageRegionIdentifier: p521-c-28
-  - blockReference: c-28:sourceTranscription.sourcePage521.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "c-28:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 521
-        printedPage: '521'
+        printedPage: "521"
         pageRegionIdentifier: p521-c-28
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/c-28/c-28-page-521-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 12220ade884523ddd3f3eb2a6adc39fa52c4ec04c4c6581d51588a8073869c0a
-    alternativeText: PDF 페이지 521의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 521 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
+  - blockReference: "c-28:overview.inspectionPurpose.paragraph:1"
     sourceSpans:
       - physicalPage: 521
-        printedPage: '521'
+        printedPage: "521"
         pageRegionIdentifier: p521-c-28
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
+  - blockReference: "c-28:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 521
+        printedPage: "521"
+        pageRegionIdentifier: p521-c-28
+  - blockReference: "c-28:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 521
+        printedPage: "521"
+        pageRegionIdentifier: p521-c-28
+  - blockReference: "c-28:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 521
+        printedPage: "521"
+        pageRegionIdentifier: p521-c-28
+  - blockReference: "c-28:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 521
+        printedPage: "521"
+        pageRegionIdentifier: p521-c-28
+  - blockReference: "c-28:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 521
+        printedPage: "521"
+        pageRegionIdentifier: p521-c-28
+  - blockReference: "c-28:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 521
+        printedPage: "521"
+        pageRegionIdentifier: p521-c-28
+  - blockReference: "c-28:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 521
+        printedPage: "521"
+        pageRegionIdentifier: p521-c-28
+  - blockReference: "c-28:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 521
+        printedPage: "521"
+        pageRegionIdentifier: p521-c-28
+  - blockReference: "c-28:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 521
+        printedPage: "521"
+        pageRegionIdentifier: p521-c-28
+  - blockReference: "c-28:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 521
+        printedPage: "521"
+        pageRegionIdentifier: p521-c-28
+  - blockReference: "c-28:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 521
+        printedPage: "521"
+        pageRegionIdentifier: p521-c-28
+  - blockReference: "c-28:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 521
+        printedPage: "521"
+        pageRegionIdentifier: p521-c-28
+  - blockReference: "c-28:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 521
+        printedPage: "521"
+        pageRegionIdentifier: p521-c-28
+  - blockReference: "c-28:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 521
+        printedPage: "521"
+        pageRegionIdentifier: p521-c-28
+  - blockReference: "c-28:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 521
+        printedPage: "521"
+        pageRegionIdentifier: p521-c-28
+  - blockReference: "c-28:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 521
+        printedPage: "521"
+        pageRegionIdentifier: p521-c-28
+  - blockReference: "c-28:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - physicalPage: 521
+        printedPage: "521"
+        pageRegionIdentifier: p521-c-28
+  - blockReference: "c-28:remediation.supplementaryGuidance.step:1"
+    sourceSpans:
+      - physicalPage: 521
+        printedPage: "521"
+        pageRegionIdentifier: p521-c-28
+  - blockReference: "c-28:remediation.supplementaryGuidance.item:1"
+    sourceSpans:
+      - physicalPage: 521
+        printedPage: "521"
+        pageRegionIdentifier: p521-c-28
+  - blockReference: "c-28:remediation.supplementaryGuidance.item:2"
+    sourceSpans:
+      - physicalPage: 521
+        printedPage: "521"
+        pageRegionIdentifier: p521-c-28
+assets: []

@@ -2,64 +2,149 @@ schemaVersion: 1
 criterionSlug: c-11
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: c-11:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "c-11:overview.heading:1"
     sourceSpans:
       - physicalPage: 494
-        printedPage: '494'
+        printedPage: "494"
         pageRegionIdentifier: p494-c-11
-  - blockReference: c-11:sourceTranscription.sourcePage494.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "c-11:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 494
-        printedPage: '494'
+        printedPage: "494"
         pageRegionIdentifier: p494-c-11
-  - blockReference: c-11:sourceTranscription.sourcePage494.transcription:1
-    publicationDisposition: published
+  - blockReference: "c-11:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 494
-        printedPage: '494'
+        printedPage: "494"
         pageRegionIdentifier: p494-c-11
-  - blockReference: c-11:sourceTranscription.sourcePage494.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "c-11:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 494
-        printedPage: '494'
+        printedPage: "494"
         pageRegionIdentifier: p494-c-11
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/c-11/c-11-page-494-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 39ed27438584e8ebc5e74a09d7fc5e86b0e30a6029010e2929926cd6d32f6c78
-    alternativeText: PDF 페이지 494의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 494 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
+  - blockReference: "c-11:overview.inspectionPurpose.paragraph:1"
     sourceSpans:
       - physicalPage: 494
-        printedPage: '494'
+        printedPage: "494"
         pageRegionIdentifier: p494-c-11
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
+  - blockReference: "c-11:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 494
+        printedPage: "494"
+        pageRegionIdentifier: p494-c-11
+  - blockReference: "c-11:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 494
+        printedPage: "494"
+        pageRegionIdentifier: p494-c-11
+  - blockReference: "c-11:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 494
+        printedPage: "494"
+        pageRegionIdentifier: p494-c-11
+  - blockReference: "c-11:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 494
+        printedPage: "494"
+        pageRegionIdentifier: p494-c-11
+  - blockReference: "c-11:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 494
+        printedPage: "494"
+        pageRegionIdentifier: p494-c-11
+  - blockReference: "c-11:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 494
+        printedPage: "494"
+        pageRegionIdentifier: p494-c-11
+  - blockReference: "c-11:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 494
+        printedPage: "494"
+        pageRegionIdentifier: p494-c-11
+  - blockReference: "c-11:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 494
+        printedPage: "494"
+        pageRegionIdentifier: p494-c-11
+  - blockReference: "c-11:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 494
+        printedPage: "494"
+        pageRegionIdentifier: p494-c-11
+  - blockReference: "c-11:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 494
+        printedPage: "494"
+        pageRegionIdentifier: p494-c-11
+  - blockReference: "c-11:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 494
+        printedPage: "494"
+        pageRegionIdentifier: p494-c-11
+  - blockReference: "c-11:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 494
+        printedPage: "494"
+        pageRegionIdentifier: p494-c-11
+  - blockReference: "c-11:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 494
+        printedPage: "494"
+        pageRegionIdentifier: p494-c-11
+  - blockReference: "c-11:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 494
+        printedPage: "494"
+        pageRegionIdentifier: p494-c-11
+  - blockReference: "c-11:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 494
+        printedPage: "494"
+        pageRegionIdentifier: p494-c-11
+  - blockReference: "c-11:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 494
+        printedPage: "494"
+        pageRegionIdentifier: p494-c-11
+  - blockReference: "c-11:remediation.solaris.heading:1"
+    sourceSpans:
+      - physicalPage: 494
+        printedPage: "494"
+        pageRegionIdentifier: p494-c-11
+  - blockReference: "c-11:remediation.solaris.step:1"
+    sourceSpans:
+      - physicalPage: 494
+        printedPage: "494"
+        pageRegionIdentifier: p494-c-11
+  - blockReference: "c-11:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 494
+        printedPage: "494"
+        pageRegionIdentifier: p494-c-11
+  - blockReference: "c-11:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 494
+        printedPage: "494"
+        pageRegionIdentifier: p494-c-11
+  - blockReference: "c-11:remediation.aix.heading:1"
+    sourceSpans:
+      - physicalPage: 494
+        printedPage: "494"
+        pageRegionIdentifier: p494-c-11
+  - blockReference: "c-11:remediation.aix.step:1"
+    sourceSpans:
+      - physicalPage: 494
+        printedPage: "494"
+        pageRegionIdentifier: p494-c-11
+  - blockReference: "c-11:remediation.hp-ux.heading:1"
+    sourceSpans:
+      - physicalPage: 494
+        printedPage: "494"
+        pageRegionIdentifier: p494-c-11
+  - blockReference: "c-11:remediation.hp-ux.step:1"
+    sourceSpans:
+      - physicalPage: 494
+        printedPage: "494"
+        pageRegionIdentifier: p494-c-11
+assets: []

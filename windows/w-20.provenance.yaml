@@ -2,117 +2,134 @@ schemaVersion: 1
 criterionSlug: w-20
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: w-20:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "w-20:overview.heading:1"
     sourceSpans:
       - physicalPage: 205
-        printedPage: '205'
+        printedPage: "205"
         pageRegionIdentifier: p205-w-20
-  - blockReference: w-20:sourceTranscription.sourcePage205.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "w-20:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 205
-        printedPage: '205'
+        printedPage: "205"
         pageRegionIdentifier: p205-w-20
-  - blockReference: w-20:sourceTranscription.sourcePage205.transcription:1
-    publicationDisposition: published
+  - blockReference: "w-20:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 205
-        printedPage: '205'
+        printedPage: "205"
         pageRegionIdentifier: p205-w-20
-  - blockReference: w-20:sourceTranscription.sourcePage205.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "w-20:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 205
-        printedPage: '205'
+        printedPage: "205"
         pageRegionIdentifier: p205-w-20
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - blockReference: w-20:sourceTranscription.sourcePage206.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "w-20:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 205
+        printedPage: "205"
+        pageRegionIdentifier: p205-w-20
+  - blockReference: "w-20:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 205
+        printedPage: "205"
+        pageRegionIdentifier: p205-w-20
+  - blockReference: "w-20:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 205
+        printedPage: "205"
+        pageRegionIdentifier: p205-w-20
+  - blockReference: "w-20:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 205
+        printedPage: "205"
+        pageRegionIdentifier: p205-w-20
+  - blockReference: "w-20:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 205
+        printedPage: "205"
+        pageRegionIdentifier: p205-w-20
+  - blockReference: "w-20:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 205
+        printedPage: "205"
+        pageRegionIdentifier: p205-w-20
+  - blockReference: "w-20:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 205
+        printedPage: "205"
+        pageRegionIdentifier: p205-w-20
+  - blockReference: "w-20:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 205
+        printedPage: "205"
+        pageRegionIdentifier: p205-w-20
+  - blockReference: "w-20:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 205
+        printedPage: "205"
+        pageRegionIdentifier: p205-w-20
+  - blockReference: "w-20:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 205
+        printedPage: "205"
+        pageRegionIdentifier: p205-w-20
+  - blockReference: "w-20:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 205
+        printedPage: "205"
+        pageRegionIdentifier: p205-w-20
+  - blockReference: "w-20:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 205
+        printedPage: "205"
+        pageRegionIdentifier: p205-w-20
+  - blockReference: "w-20:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 205
+        printedPage: "205"
+        pageRegionIdentifier: p205-w-20
+  - blockReference: "w-20:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 205
+        printedPage: "205"
+        pageRegionIdentifier: p205-w-20
+  - blockReference: "w-20:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 205
+        printedPage: "205"
+        pageRegionIdentifier: p205-w-20
+  - blockReference: "w-20:assessment.remediationImpact.item:1"
+    sourceSpans:
+      - physicalPage: 205
+        printedPage: "205"
+        pageRegionIdentifier: p205-w-20
+  - blockReference: "w-20:assessment.remediationImpact.item:2"
+    sourceSpans:
+      - physicalPage: 205
+        printedPage: "205"
+        pageRegionIdentifier: p205-w-20
+  - blockReference: "w-20:assessment.remediationImpact.item:3"
+    sourceSpans:
+      - physicalPage: 205
+        printedPage: "205"
+        pageRegionIdentifier: p205-w-20
+  - blockReference: "w-20:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 205
+        printedPage: "205"
+        pageRegionIdentifier: p205-w-20
+  - blockReference: "w-20:remediation.solaris.heading:1"
+    sourceSpans:
+      - physicalPage: 205
+        printedPage: "205"
+        pageRegionIdentifier: p205-w-20
+  - blockReference: "w-20:remediation.solaris.step:1"
+    sourceSpans:
+      - physicalPage: 205
+        printedPage: "205"
+        pageRegionIdentifier: p205-w-20
+  - blockReference: "w-20:remediation.solaris.step:2"
     sourceSpans:
       - physicalPage: 206
-        printedPage: '206'
+        printedPage: "206"
         pageRegionIdentifier: p206-w-20
-  - blockReference: w-20:sourceTranscription.sourcePage206.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 206
-        printedPage: '206'
-        pageRegionIdentifier: p206-w-20
-  - blockReference: w-20:sourceTranscription.sourcePage206.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 206
-        printedPage: '206'
-        pageRegionIdentifier: p206-w-20
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/w-20/w-20-page-205-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: f2bfe616dbc55a28b4417c38f8fa597184ab7cd5206dd9c47e882171c87c1a02
-    alternativeText: PDF 페이지 205의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 205 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 205
-        printedPage: '205'
-        pageRegionIdentifier: p205-w-20
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - path: ../assets/w-20/w-20-page-206-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 94b9a3778bde741137fdef38e5f5514920b0d2ea04573ebbb4f56b2920c5c857
-    alternativeText: PDF 페이지 206의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 206 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 206
-        printedPage: '206'
-        pageRegionIdentifier: p206-w-20
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+assets: []

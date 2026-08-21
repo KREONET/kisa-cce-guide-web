@@ -2,276 +2,102 @@ schemaVersion: 1
 criterionSlug: ep
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: ep:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "ep:overview.heading:1"
+    sourceSpans: [{physicalPage: 703, printedPage: "703", pageRegionIdentifier: p703-ep}]
+  - blockReference: "ep:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 703, printedPage: "703", pageRegionIdentifier: p703-ep}]
+  - blockReference: "ep:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 703, printedPage: "703", pageRegionIdentifier: p703-ep}]
+  - blockReference: "ep:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 703, printedPage: "703", pageRegionIdentifier: p703-ep}]
+  - blockReference: "ep:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 703, printedPage: "703", pageRegionIdentifier: p703-ep}]
+  - blockReference: "ep:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 703, printedPage: "703", pageRegionIdentifier: p703-ep}]
+  - blockReference: "ep:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 703, printedPage: "703", pageRegionIdentifier: p703-ep}]
+  - blockReference: "ep:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 703, printedPage: "703", pageRegionIdentifier: p703-ep}]
+  - blockReference: "ep:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 703, printedPage: "703", pageRegionIdentifier: p703-ep}]
+  - blockReference: "ep:overview.reference.note.content:1"
+    sourceSpans: [{physicalPage: 703, printedPage: "703", pageRegionIdentifier: p703-ep}]
+  - blockReference: "ep:assessment.heading:1"
+    sourceSpans: [{physicalPage: 703, printedPage: "703", pageRegionIdentifier: p703-ep}]
+  - blockReference: "ep:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 703, printedPage: "703", pageRegionIdentifier: p703-ep}]
+  - blockReference: "ep:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 703, printedPage: "703", pageRegionIdentifier: p703-ep}]
+  - blockReference: "ep:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 703, printedPage: "703", pageRegionIdentifier: p703-ep}]
+  - blockReference: "ep:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 703, printedPage: "703", pageRegionIdentifier: p703-ep}]
+  - blockReference: "ep:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 703, printedPage: "703", pageRegionIdentifier: p703-ep}]
+  - blockReference: "ep:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 703, printedPage: "703", pageRegionIdentifier: p703-ep}]
+  - blockReference: "ep:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 703, printedPage: "703", pageRegionIdentifier: p703-ep}]
+  - blockReference: "ep:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 703, printedPage: "703", pageRegionIdentifier: p703-ep}]
+  - blockReference: "ep:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 703, printedPage: "703", pageRegionIdentifier: p703-ep}]
+  - blockReference: "ep:remediation.heading:1"
     sourceSpans:
-      - physicalPage: 703
-        printedPage: '703'
-        pageRegionIdentifier: p703-ep
-  - blockReference: ep:sourceTranscription.sourcePage703.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+      - {physicalPage: 703, printedPage: "703", pageRegionIdentifier: p703-ep}
+      - {physicalPage: 704, printedPage: "704", pageRegionIdentifier: p704-ep}
+  - blockReference: "ep:remediation.linux.heading:1"
     sourceSpans:
-      - physicalPage: 703
-        printedPage: '703'
-        pageRegionIdentifier: p703-ep
-  - blockReference: ep:sourceTranscription.sourcePage703.transcription:1
-    publicationDisposition: published
+      - {physicalPage: 704, printedPage: "704", pageRegionIdentifier: p704-ep}
+      - {physicalPage: 705, printedPage: "705", pageRegionIdentifier: p705-ep}
+      - {physicalPage: 706, printedPage: "706", pageRegionIdentifier: p706-ep}
+      - {physicalPage: 707, printedPage: "707", pageRegionIdentifier: p707-ep}
+  - blockReference: "ep:remediation.linux.step:1"
+    sourceSpans: [{physicalPage: 704, printedPage: "704", pageRegionIdentifier: p704-ep}]
+  - blockReference: "ep:remediation.linux.configuration:1"
+    sourceSpans: [{physicalPage: 704, printedPage: "704", pageRegionIdentifier: p704-ep}]
+  - blockReference: "ep:remediation.linux.step:2"
+    sourceSpans: [{physicalPage: 704, printedPage: "704", pageRegionIdentifier: p704-ep}]
+  - blockReference: "ep:remediation.linux.configuration:2"
+    sourceSpans: [{physicalPage: 704, printedPage: "704", pageRegionIdentifier: p704-ep}]
+  - blockReference: "ep:remediation.linux.step:3"
+    sourceSpans: [{physicalPage: 704, printedPage: "704", pageRegionIdentifier: p704-ep}]
+  - blockReference: "ep:remediation.linux.configuration:3"
+    sourceSpans: [{physicalPage: 704, printedPage: "704", pageRegionIdentifier: p704-ep}]
+  - blockReference: "ep:remediation.linux.step:4"
+    sourceSpans: [{physicalPage: 704, printedPage: "704", pageRegionIdentifier: p704-ep}]
+  - blockReference: "ep:remediation.linux.configuration:4"
+    sourceSpans: [{physicalPage: 704, printedPage: "704", pageRegionIdentifier: p704-ep}]
+  - blockReference: "ep:remediation.linux.step:5"
+    sourceSpans: [{physicalPage: 705, printedPage: "705", pageRegionIdentifier: p705-ep}]
+  - blockReference: "ep:remediation.linux.configuration:5"
+    sourceSpans: [{physicalPage: 705, printedPage: "705", pageRegionIdentifier: p705-ep}]
+  - blockReference: "ep:remediation.linux.step:6"
+    sourceSpans: [{physicalPage: 705, printedPage: "705", pageRegionIdentifier: p705-ep}]
+  - blockReference: "ep:remediation.linux.configuration:6"
+    sourceSpans: [{physicalPage: 705, printedPage: "705", pageRegionIdentifier: p705-ep}]
+  - blockReference: "ep:remediation.linux.step:7"
     sourceSpans:
-      - physicalPage: 703
-        printedPage: '703'
-        pageRegionIdentifier: p703-ep
-  - blockReference: ep:sourceTranscription.sourcePage703.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+      - {physicalPage: 705, printedPage: "705", pageRegionIdentifier: p705-ep}
+      - {physicalPage: 706, printedPage: "706", pageRegionIdentifier: p706-ep}
+  - blockReference: "ep:remediation.linux.configuration:7"
     sourceSpans:
-      - physicalPage: 703
-        printedPage: '703'
-        pageRegionIdentifier: p703-ep
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - blockReference: ep:sourceTranscription.sourcePage704.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 704
-        printedPage: '704'
-        pageRegionIdentifier: p704-ep
-  - blockReference: ep:sourceTranscription.sourcePage704.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 704
-        printedPage: '704'
-        pageRegionIdentifier: p704-ep
-  - blockReference: ep:sourceTranscription.sourcePage704.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 704
-        printedPage: '704'
-        pageRegionIdentifier: p704-ep
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: ep:sourceTranscription.sourcePage705.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 705
-        printedPage: '705'
-        pageRegionIdentifier: p705-ep
-  - blockReference: ep:sourceTranscription.sourcePage705.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 705
-        printedPage: '705'
-        pageRegionIdentifier: p705-ep
-  - blockReference: ep:sourceTranscription.sourcePage705.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 705
-        printedPage: '705'
-        pageRegionIdentifier: p705-ep
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: ep:sourceTranscription.sourcePage706.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 706
-        printedPage: '706'
-        pageRegionIdentifier: p706-ep
-  - blockReference: ep:sourceTranscription.sourcePage706.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 706
-        printedPage: '706'
-        pageRegionIdentifier: p706-ep
-  - blockReference: ep:sourceTranscription.sourcePage706.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 706
-        printedPage: '706'
-        pageRegionIdentifier: p706-ep
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: ep:sourceTranscription.sourcePage707.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 707
-        printedPage: '707'
-        pageRegionIdentifier: p707-ep
-  - blockReference: ep:sourceTranscription.sourcePage707.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 707
-        printedPage: '707'
-        pageRegionIdentifier: p707-ep
-  - blockReference: ep:sourceTranscription.sourcePage707.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 707
-        printedPage: '707'
-        pageRegionIdentifier: p707-ep
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/ep/ep-page-703-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 38dfa7bca9087c862b6849afba5d64559eebdb9ac594e1fb770c62627165e7be
-    alternativeText: PDF 페이지 703의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 703 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 703
-        printedPage: '703'
-        pageRegionIdentifier: p703-ep
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - path: ../assets/ep/ep-page-704-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: c18699918dac88703021b789d200e5fec1c48b718c8ebedfcc495f533fed18d7
-    alternativeText: PDF 페이지 704의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 704 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 704
-        printedPage: '704'
-        pageRegionIdentifier: p704-ep
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/ep/ep-page-705-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 1f28041cef39b2d67e76dd40842184630d87295fac8bf079b6c1a5bf618cdc97
-    alternativeText: PDF 페이지 705의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 705 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 705
-        printedPage: '705'
-        pageRegionIdentifier: p705-ep
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/ep/ep-page-706-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 18c0e128ba9ed5f8c660698dd702fbabc9b936b29cceb87b0ebc8a3517fa1c29
-    alternativeText: PDF 페이지 706의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 706 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 706
-        printedPage: '706'
-        pageRegionIdentifier: p706-ep
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/ep/ep-page-707-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 6f16088db96092c5fb25664f7fa3e57f6f36050f9e2a8899c60eef458f025887
-    alternativeText: PDF 페이지 707의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 707 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 707
-        printedPage: '707'
-        pageRegionIdentifier: p707-ep
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+      - {physicalPage: 705, printedPage: "705", pageRegionIdentifier: p705-ep}
+      - {physicalPage: 706, printedPage: "706", pageRegionIdentifier: p706-ep}
+  - blockReference: "ep:remediation.linux.step:8"
+    sourceSpans: [{physicalPage: 706, printedPage: "706", pageRegionIdentifier: p706-ep}]
+  - blockReference: "ep:remediation.linux.literal:1"
+    sourceSpans: [{physicalPage: 706, printedPage: "706", pageRegionIdentifier: p706-ep}]
+  - blockReference: "ep:remediation.linux.step:9"
+    sourceSpans: [{physicalPage: 706, printedPage: "706", pageRegionIdentifier: p706-ep}]
+  - blockReference: "ep:remediation.linux.step:10"
+    sourceSpans: [{physicalPage: 707, printedPage: "707", pageRegionIdentifier: p707-ep}]
+  - blockReference: "ep:remediation.linux.step:11"
+    sourceSpans: [{physicalPage: 707, printedPage: "707", pageRegionIdentifier: p707-ep}]
+  - blockReference: "ep:remediation.linux.step:12"
+    sourceSpans: [{physicalPage: 707, printedPage: "707", pageRegionIdentifier: p707-ep}]
+  - blockReference: "ep:remediation.supplementaryGuidance.heading:1"
+    sourceSpans: [{physicalPage: 703, printedPage: "703", pageRegionIdentifier: p703-ep}]
+  - blockReference: "ep:remediation.supplementaryGuidance.step:1"
+    sourceSpans: [{physicalPage: 703, printedPage: "703", pageRegionIdentifier: p703-ep}]
+assets: []

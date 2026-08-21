@@ -2,64 +2,249 @@ schemaVersion: 1
 criterionSlug: u-11
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: u-11:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "u-11:overview.heading:1"
     sourceSpans:
       - physicalPage: 35
-        printedPage: '35'
+        printedPage: "35"
         pageRegionIdentifier: p35-u-11
-  - blockReference: u-11:sourceTranscription.sourcePage35.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "u-11:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 35
-        printedPage: '35'
+        printedPage: "35"
         pageRegionIdentifier: p35-u-11
-  - blockReference: u-11:sourceTranscription.sourcePage35.transcription:1
-    publicationDisposition: published
+  - blockReference: "u-11:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 35
-        printedPage: '35'
+        printedPage: "35"
         pageRegionIdentifier: p35-u-11
-  - blockReference: u-11:sourceTranscription.sourcePage35.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "u-11:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 35
-        printedPage: '35'
+        printedPage: "35"
         pageRegionIdentifier: p35-u-11
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/u-11/u-11-page-35-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 840737173423339245f423c6ff298aa0146c2df7e87c876eb3c200d370792888
-    alternativeText: PDF 페이지 35의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 35 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
+  - blockReference: "u-11:overview.inspectionPurpose.paragraph:1"
     sourceSpans:
       - physicalPage: 35
-        printedPage: '35'
+        printedPage: "35"
         pageRegionIdentifier: p35-u-11
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
+  - blockReference: "u-11:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:overview.reference.note.label:3"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:overview.reference.note.content:3"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:remediation.solaris.heading:1"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:remediation.solaris.step:1"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:remediation.solaris.command:1"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:remediation.solaris.step:2"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:remediation.solaris.command:2"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:remediation.solaris.table:1"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:remediation.linux.command:1"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:remediation.linux.command:2"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:remediation.linux.table:1"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:remediation.aix.heading:1"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:remediation.aix.step:1"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:remediation.aix.command:1"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:remediation.aix.step:2"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:remediation.aix.command:2"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:remediation.aix.table:1"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:remediation.hp-ux.heading:1"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:remediation.hp-ux.step:1"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:remediation.hp-ux.command:1"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:remediation.hp-ux.step:2"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:remediation.hp-ux.command:2"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+  - blockReference: "u-11:remediation.hp-ux.table:1"
+    sourceSpans:
+      - physicalPage: 35
+        printedPage: "35"
+        pageRegionIdentifier: p35-u-11
+assets: []

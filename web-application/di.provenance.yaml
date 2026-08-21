@@ -2,170 +2,72 @@ schemaVersion: 1
 criterionSlug: di
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: di:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "di:overview.heading:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:overview.reference.note.content:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:assessment.heading:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:remediation.heading:1"
     sourceSpans:
-      - physicalPage: 700
-        printedPage: '700'
-        pageRegionIdentifier: p700-di
-  - blockReference: di:sourceTranscription.sourcePage700.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+      - {physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}
+      - {physicalPage: 701, printedPage: "701", pageRegionIdentifier: p701-di}
+      - {physicalPage: 702, printedPage: "702", pageRegionIdentifier: p702-di}
+  - blockReference: "di:remediation.linux.heading:1"
     sourceSpans:
-      - physicalPage: 700
-        printedPage: '700'
-        pageRegionIdentifier: p700-di
-  - blockReference: di:sourceTranscription.sourcePage700.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 700
-        printedPage: '700'
-        pageRegionIdentifier: p700-di
-  - blockReference: di:sourceTranscription.sourcePage700.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 700
-        printedPage: '700'
-        pageRegionIdentifier: p700-di
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - blockReference: di:sourceTranscription.sourcePage701.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 701
-        printedPage: '701'
-        pageRegionIdentifier: p701-di
-  - blockReference: di:sourceTranscription.sourcePage701.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 701
-        printedPage: '701'
-        pageRegionIdentifier: p701-di
-  - blockReference: di:sourceTranscription.sourcePage701.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 701
-        printedPage: '701'
-        pageRegionIdentifier: p701-di
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: di:sourceTranscription.sourcePage702.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 702
-        printedPage: '702'
-        pageRegionIdentifier: p702-di
-  - blockReference: di:sourceTranscription.sourcePage702.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 702
-        printedPage: '702'
-        pageRegionIdentifier: p702-di
-  - blockReference: di:sourceTranscription.sourcePage702.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 702
-        printedPage: '702'
-        pageRegionIdentifier: p702-di
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/di/di-page-700-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 970db1a6398854d04dd6225d7a35c4927591e2961718c0b12d5da34753afde58
-    alternativeText: PDF 페이지 700의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 700 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 700
-        printedPage: '700'
-        pageRegionIdentifier: p700-di
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - path: ../assets/di/di-page-701-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 4009936b5ee4c403cb585adefefa9d9f37ff23b0c7cdf4770c1ea33da3be5933
-    alternativeText: PDF 페이지 701의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 701 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 701
-        printedPage: '701'
-        pageRegionIdentifier: p701-di
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/di/di-page-702-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: d64442b26f2f7e671bac8e78d91eee627980f2aa6dba1015dc474cbf6ce9df4e
-    alternativeText: PDF 페이지 702의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 702 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 702
-        printedPage: '702'
-        pageRegionIdentifier: p702-di
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+      - {physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}
+      - {physicalPage: 701, printedPage: "701", pageRegionIdentifier: p701-di}
+      - {physicalPage: 702, printedPage: "702", pageRegionIdentifier: p702-di}
+  - blockReference: "di:remediation.linux.step:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:remediation.linux.step:2"
+    sourceSpans: [{physicalPage: 701, printedPage: "701", pageRegionIdentifier: p701-di}]
+  - blockReference: "di:remediation.linux.configuration:1"
+    sourceSpans: [{physicalPage: 701, printedPage: "701", pageRegionIdentifier: p701-di}]
+  - blockReference: "di:remediation.linux.step:3"
+    sourceSpans: [{physicalPage: 701, printedPage: "701", pageRegionIdentifier: p701-di}]
+  - blockReference: "di:remediation.linux.configuration:2"
+    sourceSpans: [{physicalPage: 701, printedPage: "701", pageRegionIdentifier: p701-di}]
+  - blockReference: "di:remediation.linux.step:4"
+    sourceSpans: [{physicalPage: 701, printedPage: "701", pageRegionIdentifier: p701-di}]
+  - blockReference: "di:remediation.linux.step:5"
+    sourceSpans: [{physicalPage: 702, printedPage: "702", pageRegionIdentifier: p702-di}]
+  - blockReference: "di:remediation.linux.step:6"
+    sourceSpans: [{physicalPage: 702, printedPage: "702", pageRegionIdentifier: p702-di}]
+  - blockReference: "di:remediation.linux.configuration:3"
+    sourceSpans: [{physicalPage: 702, printedPage: "702", pageRegionIdentifier: p702-di}]
+assets: []

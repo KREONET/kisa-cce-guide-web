@@ -2,117 +2,128 @@ schemaVersion: 1
 criterionSlug: u-65
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: u-65:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
-    sourceSpans:
-      - physicalPage: 164
-        printedPage: '164'
-        pageRegionIdentifier: p164-u-65
-  - blockReference: u-65:sourceTranscription.sourcePage164.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 164
-        printedPage: '164'
-        pageRegionIdentifier: p164-u-65
-  - blockReference: u-65:sourceTranscription.sourcePage164.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 164
-        printedPage: '164'
-        pageRegionIdentifier: p164-u-65
-  - blockReference: u-65:sourceTranscription.sourcePage164.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 164
-        printedPage: '164'
-        pageRegionIdentifier: p164-u-65
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - blockReference: u-65:sourceTranscription.sourcePage165.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 165
-        printedPage: '165'
-        pageRegionIdentifier: p165-u-65
-  - blockReference: u-65:sourceTranscription.sourcePage165.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 165
-        printedPage: '165'
-        pageRegionIdentifier: p165-u-65
-  - blockReference: u-65:sourceTranscription.sourcePage165.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 165
-        printedPage: '165'
-        pageRegionIdentifier: p165-u-65
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/u-65/u-65-page-164-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 330ccf6d5d0b8114da96839c4858209bbc0f735d87e543233e4e85475a9db516
-    alternativeText: PDF 페이지 164의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 164 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 164
-        printedPage: '164'
-        pageRegionIdentifier: p164-u-65
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - path: ../assets/u-65/u-65-page-165-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 2771c7f9a9ad8c5183b9cc994a852d322870544beee59a6f636bf08a3600381b
-    alternativeText: PDF 페이지 165의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 165 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 165
-        printedPage: '165'
-        pageRegionIdentifier: p165-u-65
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - blockReference: "u-65:overview.heading:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:assessment.heading:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:remediation.heading:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:remediation.solaris.heading:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:remediation.solaris.step:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:remediation.solaris.command:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:remediation.solaris.output:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:remediation.solaris.step:2"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:remediation.solaris.configuration:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:remediation.solaris.step:3"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:remediation.aix.heading:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:remediation.aix.step:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:remediation.aix.command:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:remediation.aix.output:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:remediation.aix.step:2"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:remediation.aix.configuration:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:remediation.aix.step:3"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:remediation.hp-ux.heading:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:remediation.hp-ux.step:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:remediation.hp-ux.command:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:remediation.hp-ux.output:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:remediation.hp-ux.step:2"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:remediation.hp-ux.configuration:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:remediation.hp-ux.step:3"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:remediation.linux.heading:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:remediation.linux.step:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:remediation.linux.command:1"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:remediation.linux.step:2"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:remediation.linux.command:2"
+    sourceSpans: [{physicalPage: 164, printedPage: "164", pageRegionIdentifier: p164-u-65}]
+  - blockReference: "u-65:remediation.linux.output:1"
+    sourceSpans: [{physicalPage: 165, printedPage: "165", pageRegionIdentifier: p165-u-65}]
+  - blockReference: "u-65:remediation.linux.step:3"
+    sourceSpans: [{physicalPage: 165, printedPage: "165", pageRegionIdentifier: p165-u-65}]
+  - blockReference: "u-65:remediation.linux.configuration:1"
+    sourceSpans: [{physicalPage: 165, printedPage: "165", pageRegionIdentifier: p165-u-65}]
+  - blockReference: "u-65:remediation.linux.step:4"
+    sourceSpans: [{physicalPage: 165, printedPage: "165", pageRegionIdentifier: p165-u-65}]
+  - blockReference: "u-65:remediation.linux.command:3"
+    sourceSpans: [{physicalPage: 165, printedPage: "165", pageRegionIdentifier: p165-u-65}]
+  - blockReference: "u-65:remediation.linux.note.label:1"
+    sourceSpans: [{physicalPage: 165, printedPage: "165", pageRegionIdentifier: p165-u-65}]
+  - blockReference: "u-65:remediation.linux.note.content:1"
+    sourceSpans: [{physicalPage: 165, printedPage: "165", pageRegionIdentifier: p165-u-65}]
+  - blockReference: "u-65:remediation.linux.step:5"
+    sourceSpans: [{physicalPage: 165, printedPage: "165", pageRegionIdentifier: p165-u-65}]
+  - blockReference: "u-65:remediation.linux.command:4"
+    sourceSpans: [{physicalPage: 165, printedPage: "165", pageRegionIdentifier: p165-u-65}]
+  - blockReference: "u-65:remediation.linux.step:6"
+    sourceSpans: [{physicalPage: 165, printedPage: "165", pageRegionIdentifier: p165-u-65}]
+  - blockReference: "u-65:remediation.linux.command:5"
+    sourceSpans: [{physicalPage: 165, printedPage: "165", pageRegionIdentifier: p165-u-65}]
+  - blockReference: "u-65:remediation.linux.output:2"
+    sourceSpans: [{physicalPage: 165, printedPage: "165", pageRegionIdentifier: p165-u-65}]
+  - blockReference: "u-65:remediation.linux.step:7"
+    sourceSpans: [{physicalPage: 165, printedPage: "165", pageRegionIdentifier: p165-u-65}]
+  - blockReference: "u-65:remediation.linux.configuration:2"
+    sourceSpans: [{physicalPage: 165, printedPage: "165", pageRegionIdentifier: p165-u-65}]
+  - blockReference: "u-65:remediation.linux.step:8"
+    sourceSpans: [{physicalPage: 165, printedPage: "165", pageRegionIdentifier: p165-u-65}]
+  - blockReference: "u-65:remediation.linux.command:6"
+    sourceSpans: [{physicalPage: 165, printedPage: "165", pageRegionIdentifier: p165-u-65}]
+assets: []

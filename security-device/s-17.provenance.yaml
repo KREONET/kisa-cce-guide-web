@@ -2,117 +2,62 @@ schemaVersion: 1
 criterionSlug: s-17
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: s-17:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "s-17:overview.heading:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:overview.reference.note.content:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:assessment.heading:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:remediation.heading:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:remediation.supplementaryGuidance.heading:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:remediation.supplementaryGuidance.step:1"
+    sourceSpans: [{physicalPage: 376, printedPage: "376", pageRegionIdentifier: p376-s-17}]
+  - blockReference: "s-17:remediation.supplementaryGuidance.step:2"
     sourceSpans:
       - physicalPage: 376
-        printedPage: '376'
+        printedPage: "376"
         pageRegionIdentifier: p376-s-17
-  - blockReference: s-17:sourceTranscription.sourcePage376.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 376
-        printedPage: '376'
-        pageRegionIdentifier: p376-s-17
-  - blockReference: s-17:sourceTranscription.sourcePage376.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 376
-        printedPage: '376'
-        pageRegionIdentifier: p376-s-17
-  - blockReference: s-17:sourceTranscription.sourcePage376.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 376
-        printedPage: '376'
-        pageRegionIdentifier: p376-s-17
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - blockReference: s-17:sourceTranscription.sourcePage377.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
       - physicalPage: 377
-        printedPage: '377'
+        printedPage: "377"
         pageRegionIdentifier: p377-s-17
-  - blockReference: s-17:sourceTranscription.sourcePage377.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 377
-        printedPage: '377'
-        pageRegionIdentifier: p377-s-17
-  - blockReference: s-17:sourceTranscription.sourcePage377.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 377
-        printedPage: '377'
-        pageRegionIdentifier: p377-s-17
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/s-17/s-17-page-376-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 0a61e5287d3adefabc75e40c7445797fa199592ae168580051b198ea4b70b03c
-    alternativeText: PDF 페이지 376의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 376 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 376
-        printedPage: '376'
-        pageRegionIdentifier: p376-s-17
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - path: ../assets/s-17/s-17-page-377-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: d5112d0ee30b241d8b8eb2fe44be2fff5769bbd3d22cc2028e3662c1f945853e
-    alternativeText: PDF 페이지 377의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 377 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 377
-        printedPage: '377'
-        pageRegionIdentifier: p377-s-17
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - blockReference: "s-17:remediation.supplementaryGuidance.configuration:1"
+    sourceSpans: [{physicalPage: 377, printedPage: "377", pageRegionIdentifier: p377-s-17}]
+  - blockReference: "s-17:remediation.supplementaryGuidance.step:3"
+    sourceSpans: [{physicalPage: 377, printedPage: "377", pageRegionIdentifier: p377-s-17}]
+assets: []

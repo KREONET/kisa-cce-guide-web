@@ -11,6 +11,7 @@
     "promptTemplateChecksum",
     "resultSchemaChecksum",
     "conversionPolicyChecksum",
+    "taxonomyChecksum",
     "criterionCode",
     "criterionSlug",
     "criterionTitle",
@@ -35,6 +36,7 @@
     "promptTemplateChecksum": {"$ref": "#/$defs/checksum"},
     "resultSchemaChecksum": {"$ref": "#/$defs/checksum"},
     "conversionPolicyChecksum": {"$ref": "#/$defs/checksum"},
+    "taxonomyChecksum": {"$ref": "#/$defs/checksum"},
     "criterionCode": {"type": "string", "minLength": 1},
     "criterionSlug": {"type": "string", "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$"},
     "criterionTitle": {"type": "string", "minLength": 1},
@@ -85,6 +87,7 @@
         "criterionMarkdown",
         "criterionProvenance",
         "conversionPolicy",
+        "taxonomy",
         "promptTemplate",
         "resultSchema",
         "structuredExemplars"
@@ -93,6 +96,7 @@
         "criterionMarkdown": {"type": "string", "minLength": 1},
         "criterionProvenance": {"type": "string", "minLength": 1},
         "conversionPolicy": {"type": "string", "minLength": 1},
+        "taxonomy": {"type": "string", "minLength": 1},
         "promptTemplate": {"type": "string", "minLength": 1},
         "resultSchema": {"type": "string", "minLength": 1},
         "structuredExemplars": {

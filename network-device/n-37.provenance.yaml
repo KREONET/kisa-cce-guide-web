@@ -2,64 +2,144 @@ schemaVersion: 1
 criterionSlug: n-37
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: n-37:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "n-37:overview.heading:1"
     sourceSpans:
       - physicalPage: 465
-        printedPage: '465'
+        printedPage: "465"
         pageRegionIdentifier: p465-n-37
-  - blockReference: n-37:sourceTranscription.sourcePage465.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "n-37:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 465
-        printedPage: '465'
+        printedPage: "465"
         pageRegionIdentifier: p465-n-37
-  - blockReference: n-37:sourceTranscription.sourcePage465.transcription:1
-    publicationDisposition: published
+  - blockReference: "n-37:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 465
-        printedPage: '465'
+        printedPage: "465"
         pageRegionIdentifier: p465-n-37
-  - blockReference: n-37:sourceTranscription.sourcePage465.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "n-37:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 465
-        printedPage: '465'
+        printedPage: "465"
         pageRegionIdentifier: p465-n-37
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/n-37/n-37-page-465-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 9ece70eff228522b97467717699e50cd2b9f7f317baca32c905637e7e6a1d247
-    alternativeText: PDF 페이지 465의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 465 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
+  - blockReference: "n-37:overview.inspectionPurpose.paragraph:1"
     sourceSpans:
       - physicalPage: 465
-        printedPage: '465'
+        printedPage: "465"
         pageRegionIdentifier: p465-n-37
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
+  - blockReference: "n-37:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 465
+        printedPage: "465"
+        pageRegionIdentifier: p465-n-37
+  - blockReference: "n-37:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 465
+        printedPage: "465"
+        pageRegionIdentifier: p465-n-37
+  - blockReference: "n-37:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 465
+        printedPage: "465"
+        pageRegionIdentifier: p465-n-37
+  - blockReference: "n-37:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 465
+        printedPage: "465"
+        pageRegionIdentifier: p465-n-37
+  - blockReference: "n-37:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 465
+        printedPage: "465"
+        pageRegionIdentifier: p465-n-37
+  - blockReference: "n-37:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 465
+        printedPage: "465"
+        pageRegionIdentifier: p465-n-37
+  - blockReference: "n-37:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 465
+        printedPage: "465"
+        pageRegionIdentifier: p465-n-37
+  - blockReference: "n-37:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 465
+        printedPage: "465"
+        pageRegionIdentifier: p465-n-37
+  - blockReference: "n-37:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 465
+        printedPage: "465"
+        pageRegionIdentifier: p465-n-37
+  - blockReference: "n-37:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 465
+        printedPage: "465"
+        pageRegionIdentifier: p465-n-37
+  - blockReference: "n-37:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 465
+        printedPage: "465"
+        pageRegionIdentifier: p465-n-37
+  - blockReference: "n-37:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 465
+        printedPage: "465"
+        pageRegionIdentifier: p465-n-37
+  - blockReference: "n-37:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 465
+        printedPage: "465"
+        pageRegionIdentifier: p465-n-37
+  - blockReference: "n-37:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 465
+        printedPage: "465"
+        pageRegionIdentifier: p465-n-37
+  - blockReference: "n-37:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 465
+        printedPage: "465"
+        pageRegionIdentifier: p465-n-37
+  - blockReference: "n-37:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 465
+        printedPage: "465"
+        pageRegionIdentifier: p465-n-37
+  - blockReference: "n-37:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 465
+        printedPage: "465"
+        pageRegionIdentifier: p465-n-37
+  - blockReference: "n-37:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 465
+        printedPage: "465"
+        pageRegionIdentifier: p465-n-37
+  - blockReference: "n-37:remediation.unspecified.heading:1"
+    sourceSpans:
+      - physicalPage: 465
+        printedPage: "465"
+        pageRegionIdentifier: p465-n-37
+  - blockReference: "n-37:remediation.unspecified.step:1"
+    sourceSpans:
+      - physicalPage: 465
+        printedPage: "465"
+        pageRegionIdentifier: p465-n-37
+  - blockReference: "n-37:remediation.unspecified.command:1"
+    sourceSpans:
+      - physicalPage: 465
+        printedPage: "465"
+        pageRegionIdentifier: p465-n-37
+  - blockReference: "n-37:remediation.unspecified.step:2"
+    sourceSpans:
+      - physicalPage: 465
+        printedPage: "465"
+        pageRegionIdentifier: p465-n-37
+  - blockReference: "n-37:remediation.unspecified.command:2"
+    sourceSpans:
+      - physicalPage: 465
+        printedPage: "465"
+        pageRegionIdentifier: p465-n-37
+assets: []

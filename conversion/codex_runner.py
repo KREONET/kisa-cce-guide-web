@@ -66,6 +66,17 @@ def _codex_version(executable: Path) -> str:
     return completed_process.stdout.strip()
 
 
+def validate_model_routing(*, model: str | None, use_user_config: bool) -> None:
+    """Require explicit user configuration for provider-qualified models."""
+
+    if model is not None and "/" in model and not use_user_config:
+        message = (
+            f"provider-qualified model {model!r} requires --use-user-config; "
+            "start the custom provider proxy before running Codex"
+        )
+        raise ValueError(message)
+
+
 def _safe_codex_type_name(value: object) -> str | None:
     """Return one bounded event or item type without reading adjacent body fields."""
 
@@ -157,6 +168,7 @@ def _request_log_fields(  # noqa: PLR0913
     *,
     slug: str,
     model: str | None,
+    use_user_config: bool,
     codex_version: str,
     image_count: int,
     schema_path: Path,
@@ -172,6 +184,7 @@ def _request_log_fields(  # noqa: PLR0913
     return {
         "slug": slug,
         "model": model or "configured-default",
+        "user_config_loaded": use_user_config,
         "codex_version": codex_version,
         "image_count": image_count,
         "schema_path": schema_path.resolve().as_posix(),
@@ -257,26 +270,33 @@ def build_codex_command(
     result_path: Path,
     root: Path,
     model: str | None,
+    use_user_config: bool = False,
 ) -> list[str]:
     """Build the exact non-interactive Codex command for one task."""
 
+    validate_model_routing(model=model, use_user_config=use_user_config)
     command = [
         str(_codex_binary()),
         "exec",
         "--ephemeral",
-        "--ignore-user-config",
-        "--sandbox",
-        "read-only",
-        "--color",
-        "never",
-        "--json",
-        "--output-schema",
-        str((root / RESULT_SCHEMA_PATH).resolve()),
-        "--output-last-message",
-        str(result_path.resolve()),
-        "--cd",
-        str(root.resolve()),
     ]
+    if not use_user_config:
+        command.append("--ignore-user-config")
+    command.extend(
+        [
+            "--sandbox",
+            "read-only",
+            "--color",
+            "never",
+            "--json",
+            "--output-schema",
+            str((root / RESULT_SCHEMA_PATH).resolve()),
+            "--output-last-message",
+            str(result_path.resolve()),
+            "--cd",
+            str(root.resolve()),
+        ]
+    )
     if model is not None:
         command.extend(["--model", model])
     for image_path in _task_image_paths(task, root=root):
@@ -323,6 +343,7 @@ def run_codex_task(  # noqa: PLR0913, PLR0915
     root: Path | None = None,
     work_directory: Path | None = None,
     model: str | None = None,
+    use_user_config: bool = False,
     dry_run: bool = False,
     runtime_logger: RuntimeLogger | None = None,
 ) -> Path:
@@ -346,11 +367,13 @@ def run_codex_task(  # noqa: PLR0913, PLR0915
         result_path=result_path,
         root=repository,
         model=model,
+        use_user_config=use_user_config,
     )
     codex_version = "not-executed" if dry_run else _codex_version(Path(command[0]))
     request_fields = _request_log_fields(
         slug=slug,
         model=model,
+        use_user_config=use_user_config,
         codex_version=codex_version,
         image_count=len(
             as_sequence(task["sourcePageEvidence"], location="task.sourcePageEvidence")
@@ -377,6 +400,7 @@ def run_codex_task(  # noqa: PLR0913, PLR0915
             "taskChecksum": task["taskChecksum"],
             "status": "dryRun",
             "model": model or "configured-default",
+            "userConfigLoaded": use_user_config,
             "codexVersion": codex_version,
             "command": cast("JsonValue", command),
             "startedAt": started_at.isoformat(),
@@ -445,6 +469,7 @@ def run_codex_task(  # noqa: PLR0913, PLR0915
         "taskChecksum": task["taskChecksum"],
         "status": "completed" if completed_process.returncode == 0 else "failed",
         "model": model or "configured-default",
+        "userConfigLoaded": use_user_config,
         "codexVersion": codex_version,
         "command": cast("JsonValue", command),
         "startedAt": started_at.isoformat(),
@@ -509,6 +534,11 @@ def _argument_parser() -> argparse.ArgumentParser:
     parser.add_argument("slug", help="criterion slug such as u-03")
     parser.add_argument("--work-directory", type=Path, help="generated Codex work directory")
     parser.add_argument("--model", help="optional Codex model override")
+    parser.add_argument(
+        "--use-user-config",
+        action="store_true",
+        help="load Codex user configuration for custom providers such as OpenCodeX",
+    )
     parser.add_argument("--dry-run", action="store_true", help="write the run plan only")
     add_logging_arguments(parser)
     return parser
@@ -529,6 +559,7 @@ def main() -> int:
             event="command.started",
             dry_run=arguments.dry_run,
             model=arguments.model or "configured-default",
+            user_config_loaded=arguments.use_user_config,
             work_directory=(
                 str(arguments.work_directory) if arguments.work_directory is not None else None
             ),
@@ -538,6 +569,7 @@ def main() -> int:
                 arguments.slug,
                 work_directory=arguments.work_directory,
                 model=arguments.model,
+                use_user_config=arguments.use_user_config,
                 dry_run=arguments.dry_run,
                 runtime_logger=logger,
             )

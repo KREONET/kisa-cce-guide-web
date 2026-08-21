@@ -2,223 +2,188 @@ schemaVersion: 1
 criterionSlug: u-40
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: u-40:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
-    sourceSpans:
-      - physicalPage: 89
-        printedPage: '89'
-        pageRegionIdentifier: p89-u-40
-  - blockReference: u-40:sourceTranscription.sourcePage89.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 89
-        printedPage: '89'
-        pageRegionIdentifier: p89-u-40
-  - blockReference: u-40:sourceTranscription.sourcePage89.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 89
-        printedPage: '89'
-        pageRegionIdentifier: p89-u-40
-  - blockReference: u-40:sourceTranscription.sourcePage89.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 89
-        printedPage: '89'
-        pageRegionIdentifier: p89-u-40
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - blockReference: u-40:sourceTranscription.sourcePage90.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 90
-        printedPage: '90'
-        pageRegionIdentifier: p90-u-40
-  - blockReference: u-40:sourceTranscription.sourcePage90.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 90
-        printedPage: '90'
-        pageRegionIdentifier: p90-u-40
-  - blockReference: u-40:sourceTranscription.sourcePage90.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 90
-        printedPage: '90'
-        pageRegionIdentifier: p90-u-40
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: u-40:sourceTranscription.sourcePage91.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 91
-        printedPage: '91'
-        pageRegionIdentifier: p91-u-40
-  - blockReference: u-40:sourceTranscription.sourcePage91.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 91
-        printedPage: '91'
-        pageRegionIdentifier: p91-u-40
-  - blockReference: u-40:sourceTranscription.sourcePage91.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 91
-        printedPage: '91'
-        pageRegionIdentifier: p91-u-40
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: u-40:sourceTranscription.sourcePage92.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 92
-        printedPage: '92'
-        pageRegionIdentifier: p92-u-40
-  - blockReference: u-40:sourceTranscription.sourcePage92.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 92
-        printedPage: '92'
-        pageRegionIdentifier: p92-u-40
-  - blockReference: u-40:sourceTranscription.sourcePage92.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 92
-        printedPage: '92'
-        pageRegionIdentifier: p92-u-40
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/u-40/u-40-page-89-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: c30dc44753bada47fb61a0351d2e0d89ce2e1627b3cfa6af2d870cf77b52fd57
-    alternativeText: PDF 페이지 89의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 89 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 89
-        printedPage: '89'
-        pageRegionIdentifier: p89-u-40
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - path: ../assets/u-40/u-40-page-90-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 4ca58683a822c39d93a64f8ae2b95c61bd81f034b85b9364f246f608bc05492e
-    alternativeText: PDF 페이지 90의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 90 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 90
-        printedPage: '90'
-        pageRegionIdentifier: p90-u-40
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/u-40/u-40-page-91-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: e6f6fcc7decbb20cb252d0c1ff7d72bb4772cb4591cd1d4d92352973f8f8656c
-    alternativeText: PDF 페이지 91의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 91 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 91
-        printedPage: '91'
-        pageRegionIdentifier: p91-u-40
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/u-40/u-40-page-92-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: dd6d58c2efe6b407bdd0a27a482dc60c228f1a3c7dae65c2b8fa181e8eb4c7bb
-    alternativeText: PDF 페이지 92의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 92 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 92
-        printedPage: '92'
-        pageRegionIdentifier: p92-u-40
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - blockReference: "u-40:overview.heading:1"
+    sourceSpans: [{physicalPage: 89, printedPage: "89", pageRegionIdentifier: p89-u-40}]
+  - blockReference: "u-40:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 89, printedPage: "89", pageRegionIdentifier: p89-u-40}]
+  - blockReference: "u-40:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 89, printedPage: "89", pageRegionIdentifier: p89-u-40}]
+  - blockReference: "u-40:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 89, printedPage: "89", pageRegionIdentifier: p89-u-40}]
+  - blockReference: "u-40:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 89, printedPage: "89", pageRegionIdentifier: p89-u-40}]
+  - blockReference: "u-40:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 89, printedPage: "89", pageRegionIdentifier: p89-u-40}]
+  - blockReference: "u-40:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 89, printedPage: "89", pageRegionIdentifier: p89-u-40}]
+  - blockReference: "u-40:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 89, printedPage: "89", pageRegionIdentifier: p89-u-40}]
+  - blockReference: "u-40:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 89, printedPage: "89", pageRegionIdentifier: p89-u-40}]
+  - blockReference: "u-40:overview.reference.note.content:1"
+    sourceSpans: [{physicalPage: 89, printedPage: "89", pageRegionIdentifier: p89-u-40}]
+  - blockReference: "u-40:overview.reference.note.label:2"
+    sourceSpans: [{physicalPage: 89, printedPage: "89", pageRegionIdentifier: p89-u-40}]
+  - blockReference: "u-40:overview.reference.note.content:2"
+    sourceSpans: [{physicalPage: 89, printedPage: "89", pageRegionIdentifier: p89-u-40}]
+  - blockReference: "u-40:assessment.heading:1"
+    sourceSpans: [{physicalPage: 89, printedPage: "89", pageRegionIdentifier: p89-u-40}]
+  - blockReference: "u-40:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 89, printedPage: "89", pageRegionIdentifier: p89-u-40}]
+  - blockReference: "u-40:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 89, printedPage: "89", pageRegionIdentifier: p89-u-40}]
+  - blockReference: "u-40:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 89, printedPage: "89", pageRegionIdentifier: p89-u-40}]
+  - blockReference: "u-40:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 89, printedPage: "89", pageRegionIdentifier: p89-u-40}]
+  - blockReference: "u-40:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 89, printedPage: "89", pageRegionIdentifier: p89-u-40}]
+  - blockReference: "u-40:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 89, printedPage: "89", pageRegionIdentifier: p89-u-40}]
+  - blockReference: "u-40:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 89, printedPage: "89", pageRegionIdentifier: p89-u-40}]
+  - blockReference: "u-40:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 89, printedPage: "89", pageRegionIdentifier: p89-u-40}]
+  - blockReference: "u-40:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 89, printedPage: "89", pageRegionIdentifier: p89-u-40}]
+  - blockReference: "u-40:remediation.heading:1"
+    sourceSpans: [{physicalPage: 89, printedPage: "89", pageRegionIdentifier: p89-u-40}]
+  - blockReference: "u-40:remediation.solaris.heading:1"
+    sourceSpans: [{physicalPage: 89, printedPage: "89", pageRegionIdentifier: p89-u-40}]
+  - blockReference: "u-40:remediation.solaris.step:1"
+    sourceSpans: [{physicalPage: 89, printedPage: "89", pageRegionIdentifier: p89-u-40}]
+  - blockReference: "u-40:remediation.solaris.command:1"
+    sourceSpans: [{physicalPage: 89, printedPage: "89", pageRegionIdentifier: p89-u-40}]
+  - blockReference: "u-40:remediation.solaris.step:2"
+    sourceSpans: [{physicalPage: 89, printedPage: "89", pageRegionIdentifier: p89-u-40}]
+  - blockReference: "u-40:remediation.solaris.step:3"
+    sourceSpans: [{physicalPage: 89, printedPage: "89", pageRegionIdentifier: p89-u-40}]
+  - blockReference: "u-40:remediation.solaris.command:2"
+    sourceSpans: [{physicalPage: 89, printedPage: "89", pageRegionIdentifier: p89-u-40}]
+  - blockReference: "u-40:remediation.solaris.step:4"
+    sourceSpans: [{physicalPage: 89, printedPage: "89", pageRegionIdentifier: p89-u-40}]
+  - blockReference: "u-40:remediation.solaris.command:3"
+    sourceSpans: [{physicalPage: 89, printedPage: "89", pageRegionIdentifier: p89-u-40}]
+  - blockReference: "u-40:remediation.solaris.step:5"
+    sourceSpans: [{physicalPage: 90, printedPage: "90", pageRegionIdentifier: p90-u-40}]
+  - blockReference: "u-40:remediation.solaris.configuration:1"
+    sourceSpans: [{physicalPage: 90, printedPage: "90", pageRegionIdentifier: p90-u-40}]
+  - blockReference: "u-40:remediation.solaris.step:6"
+    sourceSpans: [{physicalPage: 90, printedPage: "90", pageRegionIdentifier: p90-u-40}]
+  - blockReference: "u-40:remediation.solaris.command:4"
+    sourceSpans: [{physicalPage: 90, printedPage: "90", pageRegionIdentifier: p90-u-40}]
+  - blockReference: "u-40:remediation.solaris.note.label:1"
+    sourceSpans: [{physicalPage: 90, printedPage: "90", pageRegionIdentifier: p90-u-40}]
+  - blockReference: "u-40:remediation.solaris.note.content:1"
+    sourceSpans: [{physicalPage: 90, printedPage: "90", pageRegionIdentifier: p90-u-40}]
+  - blockReference: "u-40:remediation.linux.heading:1"
+    sourceSpans: [{physicalPage: 90, printedPage: "90", pageRegionIdentifier: p90-u-40}]
+  - blockReference: "u-40:remediation.linux.step:1"
+    sourceSpans: [{physicalPage: 90, printedPage: "90", pageRegionIdentifier: p90-u-40}]
+  - blockReference: "u-40:remediation.linux.command:1"
+    sourceSpans: [{physicalPage: 90, printedPage: "90", pageRegionIdentifier: p90-u-40}]
+  - blockReference: "u-40:remediation.linux.step:2"
+    sourceSpans: [{physicalPage: 90, printedPage: "90", pageRegionIdentifier: p90-u-40}]
+  - blockReference: "u-40:remediation.linux.command:2"
+    sourceSpans: [{physicalPage: 90, printedPage: "90", pageRegionIdentifier: p90-u-40}]
+  - blockReference: "u-40:remediation.linux.step:3"
+    sourceSpans: [{physicalPage: 90, printedPage: "90", pageRegionIdentifier: p90-u-40}]
+  - blockReference: "u-40:remediation.linux.command:3"
+    sourceSpans: [{physicalPage: 90, printedPage: "90", pageRegionIdentifier: p90-u-40}]
+  - blockReference: "u-40:remediation.linux.step:4"
+    sourceSpans: [{physicalPage: 90, printedPage: "90", pageRegionIdentifier: p90-u-40}]
+  - blockReference: "u-40:remediation.linux.command:4"
+    sourceSpans: [{physicalPage: 90, printedPage: "90", pageRegionIdentifier: p90-u-40}]
+  - blockReference: "u-40:remediation.linux.step:5"
+    sourceSpans: [{physicalPage: 90, printedPage: "90", pageRegionIdentifier: p90-u-40}]
+  - blockReference: "u-40:remediation.linux.configuration:1"
+    sourceSpans: [{physicalPage: 90, printedPage: "90", pageRegionIdentifier: p90-u-40}]
+  - blockReference: "u-40:remediation.linux.step:6"
+    sourceSpans: [{physicalPage: 90, printedPage: "90", pageRegionIdentifier: p90-u-40}]
+  - blockReference: "u-40:remediation.linux.command:5"
+    sourceSpans: [{physicalPage: 90, printedPage: "90", pageRegionIdentifier: p90-u-40}]
+  - blockReference: "u-40:remediation.aix.heading:1"
+    sourceSpans: [{physicalPage: 90, printedPage: "90", pageRegionIdentifier: p90-u-40}]
+  - blockReference: "u-40:remediation.aix.step:1"
+    sourceSpans: [{physicalPage: 90, printedPage: "90", pageRegionIdentifier: p90-u-40}]
+  - blockReference: "u-40:remediation.aix.command:1"
+    sourceSpans: [{physicalPage: 90, printedPage: "90", pageRegionIdentifier: p90-u-40}]
+  - blockReference: "u-40:remediation.aix.step:2"
+    sourceSpans: [{physicalPage: 90, printedPage: "90", pageRegionIdentifier: p90-u-40}]
+  - blockReference: "u-40:remediation.aix.command:2"
+    sourceSpans: [{physicalPage: 90, printedPage: "90", pageRegionIdentifier: p90-u-40}]
+  - blockReference: "u-40:remediation.aix.step:3"
+    sourceSpans: [{physicalPage: 90, printedPage: "90", pageRegionIdentifier: p90-u-40}]
+  - blockReference: "u-40:remediation.aix.command:3"
+    sourceSpans: [{physicalPage: 90, printedPage: "90", pageRegionIdentifier: p90-u-40}]
+  - blockReference: "u-40:remediation.aix.step:4"
+    sourceSpans: [{physicalPage: 90, printedPage: "90", pageRegionIdentifier: p90-u-40}]
+  - blockReference: "u-40:remediation.aix.command:4"
+    sourceSpans: [{physicalPage: 90, printedPage: "90", pageRegionIdentifier: p90-u-40}]
+  - blockReference: "u-40:remediation.aix.step:5"
+    sourceSpans: [{physicalPage: 91, printedPage: "91", pageRegionIdentifier: p91-u-40}]
+  - blockReference: "u-40:remediation.aix.configuration:1"
+    sourceSpans: [{physicalPage: 91, printedPage: "91", pageRegionIdentifier: p91-u-40}]
+  - blockReference: "u-40:remediation.aix.step:6"
+    sourceSpans: [{physicalPage: 91, printedPage: "91", pageRegionIdentifier: p91-u-40}]
+  - blockReference: "u-40:remediation.aix.command:5"
+    sourceSpans: [{physicalPage: 91, printedPage: "91", pageRegionIdentifier: p91-u-40}]
+  - blockReference: "u-40:remediation.hp-ux.heading:1"
+    sourceSpans: [{physicalPage: 91, printedPage: "91", pageRegionIdentifier: p91-u-40}]
+  - blockReference: "u-40:remediation.hp-ux.paragraph:1"
+    sourceSpans: [{physicalPage: 91, printedPage: "91", pageRegionIdentifier: p91-u-40}]
+  - blockReference: "u-40:remediation.hp-ux.step:1"
+    sourceSpans: [{physicalPage: 91, printedPage: "91", pageRegionIdentifier: p91-u-40}]
+  - blockReference: "u-40:remediation.hp-ux.command:1"
+    sourceSpans: [{physicalPage: 91, printedPage: "91", pageRegionIdentifier: p91-u-40}]
+  - blockReference: "u-40:remediation.hp-ux.step:2"
+    sourceSpans: [{physicalPage: 91, printedPage: "91", pageRegionIdentifier: p91-u-40}]
+  - blockReference: "u-40:remediation.hp-ux.command:2"
+    sourceSpans: [{physicalPage: 91, printedPage: "91", pageRegionIdentifier: p91-u-40}]
+  - blockReference: "u-40:remediation.hp-ux.step:3"
+    sourceSpans: [{physicalPage: 91, printedPage: "91", pageRegionIdentifier: p91-u-40}]
+  - blockReference: "u-40:remediation.hp-ux.command:3"
+    sourceSpans: [{physicalPage: 91, printedPage: "91", pageRegionIdentifier: p91-u-40}]
+  - blockReference: "u-40:remediation.hp-ux.step:4"
+    sourceSpans: [{physicalPage: 91, printedPage: "91", pageRegionIdentifier: p91-u-40}]
+  - blockReference: "u-40:remediation.hp-ux.command:4"
+    sourceSpans: [{physicalPage: 91, printedPage: "91", pageRegionIdentifier: p91-u-40}]
+  - blockReference: "u-40:remediation.hp-ux.step:5"
+    sourceSpans: [{physicalPage: 91, printedPage: "91", pageRegionIdentifier: p91-u-40}]
+  - blockReference: "u-40:remediation.hp-ux.configuration:1"
+    sourceSpans: [{physicalPage: 91, printedPage: "91", pageRegionIdentifier: p91-u-40}]
+  - blockReference: "u-40:remediation.hp-ux.step:6"
+    sourceSpans: [{physicalPage: 91, printedPage: "91", pageRegionIdentifier: p91-u-40}]
+  - blockReference: "u-40:remediation.hp-ux.command:5"
+    sourceSpans: [{physicalPage: 91, printedPage: "91", pageRegionIdentifier: p91-u-40}]
+  - blockReference: "u-40:remediation.hp-ux.note.label:1"
+    sourceSpans: [{physicalPage: 91, printedPage: "91", pageRegionIdentifier: p91-u-40}]
+  - blockReference: "u-40:remediation.hp-ux.note.content:1"
+    sourceSpans: [{physicalPage: 91, printedPage: "91", pageRegionIdentifier: p91-u-40}]
+  - blockReference: "u-40:remediation.hp-ux.paragraph:2"
+    sourceSpans: [{physicalPage: 91, printedPage: "91", pageRegionIdentifier: p91-u-40}]
+  - blockReference: "u-40:remediation.hp-ux.step:7"
+    sourceSpans: [{physicalPage: 91, printedPage: "91", pageRegionIdentifier: p91-u-40}]
+  - blockReference: "u-40:remediation.hp-ux.command:6"
+    sourceSpans: [{physicalPage: 91, printedPage: "91", pageRegionIdentifier: p91-u-40}]
+  - blockReference: "u-40:remediation.hp-ux.step:8"
+    sourceSpans: [{physicalPage: 91, printedPage: "91", pageRegionIdentifier: p91-u-40}]
+  - blockReference: "u-40:remediation.hp-ux.command:7"
+    sourceSpans: [{physicalPage: 91, printedPage: "91", pageRegionIdentifier: p91-u-40}]
+  - blockReference: "u-40:remediation.hp-ux.step:9"
+    sourceSpans: [{physicalPage: 91, printedPage: "91", pageRegionIdentifier: p91-u-40}]
+  - blockReference: "u-40:remediation.hp-ux.command:8"
+    sourceSpans: [{physicalPage: 91, printedPage: "91", pageRegionIdentifier: p91-u-40}]
+  - blockReference: "u-40:remediation.hp-ux.step:10"
+    sourceSpans: [{physicalPage: 92, printedPage: "92", pageRegionIdentifier: p92-u-40}]
+  - blockReference: "u-40:remediation.hp-ux.command:9"
+    sourceSpans: [{physicalPage: 92, printedPage: "92", pageRegionIdentifier: p92-u-40}]
+  - blockReference: "u-40:remediation.hp-ux.step:11"
+    sourceSpans: [{physicalPage: 92, printedPage: "92", pageRegionIdentifier: p92-u-40}]
+  - blockReference: "u-40:remediation.hp-ux.configuration:2"
+    sourceSpans: [{physicalPage: 92, printedPage: "92", pageRegionIdentifier: p92-u-40}]
+  - blockReference: "u-40:remediation.hp-ux.step:12"
+    sourceSpans: [{physicalPage: 92, printedPage: "92", pageRegionIdentifier: p92-u-40}]
+  - blockReference: "u-40:remediation.hp-ux.command:10"
+    sourceSpans: [{physicalPage: 92, printedPage: "92", pageRegionIdentifier: p92-u-40}]
+assets: []

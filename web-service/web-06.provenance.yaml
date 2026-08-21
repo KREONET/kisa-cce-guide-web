@@ -2,223 +2,134 @@ schemaVersion: 1
 criterionSlug: web-06
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: web-06:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "web-06:overview.heading:1"
+    sourceSpans: [{physicalPage: 286, printedPage: "286", pageRegionIdentifier: p286-web-06}]
+  - blockReference: "web-06:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 286, printedPage: "286", pageRegionIdentifier: p286-web-06}]
+  - blockReference: "web-06:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 286, printedPage: "286", pageRegionIdentifier: p286-web-06}]
+  - blockReference: "web-06:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 286, printedPage: "286", pageRegionIdentifier: p286-web-06}]
+  - blockReference: "web-06:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 286, printedPage: "286", pageRegionIdentifier: p286-web-06}]
+  - blockReference: "web-06:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 286, printedPage: "286", pageRegionIdentifier: p286-web-06}]
+  - blockReference: "web-06:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 286, printedPage: "286", pageRegionIdentifier: p286-web-06}]
+  - blockReference: "web-06:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 286, printedPage: "286", pageRegionIdentifier: p286-web-06}]
+  - blockReference: "web-06:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 286, printedPage: "286", pageRegionIdentifier: p286-web-06}]
+  - blockReference: "web-06:overview.reference.note.content:1"
+    sourceSpans: [{physicalPage: 286, printedPage: "286", pageRegionIdentifier: p286-web-06}]
+  - blockReference: "web-06:assessment.heading:1"
+    sourceSpans: [{physicalPage: 286, printedPage: "286", pageRegionIdentifier: p286-web-06}]
+  - blockReference: "web-06:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 286, printedPage: "286", pageRegionIdentifier: p286-web-06}]
+  - blockReference: "web-06:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 286, printedPage: "286", pageRegionIdentifier: p286-web-06}]
+  - blockReference: "web-06:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 286, printedPage: "286", pageRegionIdentifier: p286-web-06}]
+  - blockReference: "web-06:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 286, printedPage: "286", pageRegionIdentifier: p286-web-06}]
+  - blockReference: "web-06:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 286, printedPage: "286", pageRegionIdentifier: p286-web-06}]
+  - blockReference: "web-06:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 286, printedPage: "286", pageRegionIdentifier: p286-web-06}]
+  - blockReference: "web-06:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 286, printedPage: "286", pageRegionIdentifier: p286-web-06}]
+  - blockReference: "web-06:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 286, printedPage: "286", pageRegionIdentifier: p286-web-06}]
+  - blockReference: "web-06:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 286, printedPage: "286", pageRegionIdentifier: p286-web-06}]
+  - blockReference: "web-06:remediation.heading:1"
+    sourceSpans: [{physicalPage: 286, printedPage: "286", pageRegionIdentifier: p286-web-06}]
+  - blockReference: "web-06:remediation.unspecified.heading:1"
+    sourceSpans: [{physicalPage: 286, printedPage: "286", pageRegionIdentifier: p286-web-06}]
+  - blockReference: "web-06:remediation.unspecified.paragraph:1"
+    sourceSpans: [{physicalPage: 286, printedPage: "286", pageRegionIdentifier: p286-web-06}]
+  - blockReference: "web-06:remediation.unspecified.step:1"
+    sourceSpans: [{physicalPage: 286, printedPage: "286", pageRegionIdentifier: p286-web-06}]
+  - blockReference: "web-06:remediation.unspecified.command:1"
+    sourceSpans: [{physicalPage: 286, printedPage: "286", pageRegionIdentifier: p286-web-06}]
+  - blockReference: "web-06:remediation.unspecified.configuration:1"
+    sourceSpans: [{physicalPage: 286, printedPage: "286", pageRegionIdentifier: p286-web-06}]
+  - blockReference: "web-06:remediation.unspecified.step:2"
+    sourceSpans: [{physicalPage: 286, printedPage: "286", pageRegionIdentifier: p286-web-06}]
+  - blockReference: "web-06:remediation.unspecified.command:2"
+    sourceSpans: [{physicalPage: 286, printedPage: "286", pageRegionIdentifier: p286-web-06}]
+  - blockReference: "web-06:remediation.unspecified.configuration:2"
+    sourceSpans: [{physicalPage: 286, printedPage: "286", pageRegionIdentifier: p286-web-06}]
+  - blockReference: "web-06:remediation.unspecified.step:3"
+    sourceSpans: [{physicalPage: 287, printedPage: "287", pageRegionIdentifier: p287-web-06}]
+  - blockReference: "web-06:remediation.unspecified.configuration:3"
+    sourceSpans: [{physicalPage: 287, printedPage: "287", pageRegionIdentifier: p287-web-06}]
+  - blockReference: "web-06:remediation.unspecified.table:1"
+    sourceSpans: [{physicalPage: 287, printedPage: "287", pageRegionIdentifier: p287-web-06}]
+  - blockReference: "web-06:remediation.unspecified.step:4"
+    sourceSpans: [{physicalPage: 287, printedPage: "287", pageRegionIdentifier: p287-web-06}]
+  - blockReference: "web-06:remediation.unspecified.command:3"
+    sourceSpans: [{physicalPage: 287, printedPage: "287", pageRegionIdentifier: p287-web-06}]
+  - blockReference: "web-06:remediation.unspecified.output:1"
+    sourceSpans: [{physicalPage: 287, printedPage: "287", pageRegionIdentifier: p287-web-06}]
+  - blockReference: "web-06:remediation.unspecified.step:5"
+    sourceSpans: [{physicalPage: 287, printedPage: "287", pageRegionIdentifier: p287-web-06}]
+  - blockReference: "web-06:remediation.unspecified.command:4"
+    sourceSpans: [{physicalPage: 287, printedPage: "287", pageRegionIdentifier: p287-web-06}]
+  - blockReference: "web-06:remediation.unspecified.paragraph:2"
+    sourceSpans: [{physicalPage: 287, printedPage: "287", pageRegionIdentifier: p287-web-06}]
+  - blockReference: "web-06:remediation.unspecified.step:6"
+    sourceSpans: [{physicalPage: 287, printedPage: "287", pageRegionIdentifier: p287-web-06}]
+  - blockReference: "web-06:remediation.unspecified.command:5"
+    sourceSpans: [{physicalPage: 287, printedPage: "287", pageRegionIdentifier: p287-web-06}]
+  - blockReference: "web-06:remediation.unspecified.configuration:4"
+    sourceSpans: [{physicalPage: 287, printedPage: "287", pageRegionIdentifier: p287-web-06}]
+  - blockReference: "web-06:remediation.unspecified.step:7"
+    sourceSpans: [{physicalPage: 287, printedPage: "287", pageRegionIdentifier: p287-web-06}]
+  - blockReference: "web-06:remediation.unspecified.command:6"
+    sourceSpans: [{physicalPage: 287, printedPage: "287", pageRegionIdentifier: p287-web-06}]
+  - blockReference: "web-06:remediation.unspecified.configuration:5"
     sourceSpans:
-      - physicalPage: 286
-        printedPage: '286'
-        pageRegionIdentifier: p286-web-06
-  - blockReference: web-06:sourceTranscription.sourcePage286.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+      - {physicalPage: 287, printedPage: "287", pageRegionIdentifier: p287-web-06}
+      - {physicalPage: 288, printedPage: "288", pageRegionIdentifier: p288-web-06}
+  - blockReference: "web-06:remediation.unspecified.paragraph:3"
+    sourceSpans: [{physicalPage: 288, printedPage: "288", pageRegionIdentifier: p288-web-06}]
+  - blockReference: "web-06:remediation.unspecified.step:8"
+    sourceSpans: [{physicalPage: 288, printedPage: "288", pageRegionIdentifier: p288-web-06}]
+  - blockReference: "web-06:remediation.unspecified.command:7"
+    sourceSpans: [{physicalPage: 288, printedPage: "288", pageRegionIdentifier: p288-web-06}]
+  - blockReference: "web-06:remediation.unspecified.configuration:6"
+    sourceSpans: [{physicalPage: 288, printedPage: "288", pageRegionIdentifier: p288-web-06}]
+  - blockReference: "web-06:remediation.unspecified.paragraph:4"
+    sourceSpans: [{physicalPage: 288, printedPage: "288", pageRegionIdentifier: p288-web-06}]
+  - blockReference: "web-06:remediation.unspecified.step:9"
+    sourceSpans: [{physicalPage: 288, printedPage: "288", pageRegionIdentifier: p288-web-06}]
+  - blockReference: "web-06:remediation.unspecified.literal:1"
+    sourceSpans: [{physicalPage: 288, printedPage: "288", pageRegionIdentifier: p288-web-06}]
+  - blockReference: "web-06:remediation.unspecified.paragraph:5"
+    sourceSpans: [{physicalPage: 288, printedPage: "288", pageRegionIdentifier: p288-web-06}]
+  - blockReference: "web-06:remediation.unspecified.step:10"
+    sourceSpans: [{physicalPage: 288, printedPage: "288", pageRegionIdentifier: p288-web-06}]
+  - blockReference: "web-06:remediation.unspecified.literal:2"
+    sourceSpans: [{physicalPage: 288, printedPage: "288", pageRegionIdentifier: p288-web-06}]
+  - blockReference: "web-06:remediation.unspecified.configuration:7"
     sourceSpans:
-      - physicalPage: 286
-        printedPage: '286'
-        pageRegionIdentifier: p286-web-06
-  - blockReference: web-06:sourceTranscription.sourcePage286.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 286
-        printedPage: '286'
-        pageRegionIdentifier: p286-web-06
-  - blockReference: web-06:sourceTranscription.sourcePage286.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 286
-        printedPage: '286'
-        pageRegionIdentifier: p286-web-06
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - blockReference: web-06:sourceTranscription.sourcePage287.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 287
-        printedPage: '287'
-        pageRegionIdentifier: p287-web-06
-  - blockReference: web-06:sourceTranscription.sourcePage287.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 287
-        printedPage: '287'
-        pageRegionIdentifier: p287-web-06
-  - blockReference: web-06:sourceTranscription.sourcePage287.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 287
-        printedPage: '287'
-        pageRegionIdentifier: p287-web-06
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: web-06:sourceTranscription.sourcePage288.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 288
-        printedPage: '288'
-        pageRegionIdentifier: p288-web-06
-  - blockReference: web-06:sourceTranscription.sourcePage288.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 288
-        printedPage: '288'
-        pageRegionIdentifier: p288-web-06
-  - blockReference: web-06:sourceTranscription.sourcePage288.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 288
-        printedPage: '288'
-        pageRegionIdentifier: p288-web-06
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: web-06:sourceTranscription.sourcePage289.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 289
-        printedPage: '289'
-        pageRegionIdentifier: p289-web-06
-  - blockReference: web-06:sourceTranscription.sourcePage289.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 289
-        printedPage: '289'
-        pageRegionIdentifier: p289-web-06
-  - blockReference: web-06:sourceTranscription.sourcePage289.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 289
-        printedPage: '289'
-        pageRegionIdentifier: p289-web-06
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/web-06/web-06-page-286-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 096c37312c2c552198a084025b5ed19d3d0283f7639ff1c041a02af7e481a3a9
-    alternativeText: PDF 페이지 286의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 286 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 286
-        printedPage: '286'
-        pageRegionIdentifier: p286-web-06
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - path: ../assets/web-06/web-06-page-287-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: d2acd993036b2b6bd945ab50300e3dd8a21e5623fd37a07fda90b692fb1548be
-    alternativeText: PDF 페이지 287의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 287 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 287
-        printedPage: '287'
-        pageRegionIdentifier: p287-web-06
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/web-06/web-06-page-288-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 09a96ae1067d25c7fbbb31dee83089f05bc9beb0d474d37a268ccd0b2004c5e3
-    alternativeText: PDF 페이지 288의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 288 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 288
-        printedPage: '288'
-        pageRegionIdentifier: p288-web-06
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/web-06/web-06-page-289-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: a34a5ed245f152505a5f0820a546a48ce705962df676c13b9ade30b545b48794
-    alternativeText: PDF 페이지 289의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 289 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 289
-        printedPage: '289'
-        pageRegionIdentifier: p289-web-06
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+      - {physicalPage: 288, printedPage: "288", pageRegionIdentifier: p288-web-06}
+      - {physicalPage: 289, printedPage: "289", pageRegionIdentifier: p289-web-06}
+  - blockReference: "web-06:remediation.unspecified.note.label:1"
+    sourceSpans: [{physicalPage: 289, printedPage: "289", pageRegionIdentifier: p289-web-06}]
+  - blockReference: "web-06:remediation.unspecified.note.content:1"
+    sourceSpans: [{physicalPage: 289, printedPage: "289", pageRegionIdentifier: p289-web-06}]
+  - blockReference: "web-06:remediation.unspecified.paragraph:6"
+    sourceSpans: [{physicalPage: 289, printedPage: "289", pageRegionIdentifier: p289-web-06}]
+  - blockReference: "web-06:remediation.unspecified.step:11"
+    sourceSpans: [{physicalPage: 289, printedPage: "289", pageRegionIdentifier: p289-web-06}]
+  - blockReference: "web-06:remediation.unspecified.command:8"
+    sourceSpans: [{physicalPage: 289, printedPage: "289", pageRegionIdentifier: p289-web-06}]
+  - blockReference: "web-06:remediation.unspecified.configuration:8"
+    sourceSpans: [{physicalPage: 289, printedPage: "289", pageRegionIdentifier: p289-web-06}]
+  - blockReference: "web-06:remediation.unspecified.step:12"
+    sourceSpans: [{physicalPage: 289, printedPage: "289", pageRegionIdentifier: p289-web-06}]
+  - blockReference: "web-06:remediation.unspecified.command:9"
+    sourceSpans: [{physicalPage: 289, printedPage: "289", pageRegionIdentifier: p289-web-06}]
+assets: []

@@ -2,117 +2,147 @@ schemaVersion: 1
 criterionSlug: au
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: au:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "au:overview.heading:1"
     sourceSpans:
       - physicalPage: 777
-        printedPage: '777'
+        printedPage: "777"
         pageRegionIdentifier: p777-au
-  - blockReference: au:sourceTranscription.sourcePage777.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "au:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 777
-        printedPage: '777'
+        printedPage: "777"
         pageRegionIdentifier: p777-au
-  - blockReference: au:sourceTranscription.sourcePage777.transcription:1
-    publicationDisposition: published
+  - blockReference: "au:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 777
-        printedPage: '777'
+        printedPage: "777"
         pageRegionIdentifier: p777-au
-  - blockReference: au:sourceTranscription.sourcePage777.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "au:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 777
-        printedPage: '777'
+        printedPage: "777"
         pageRegionIdentifier: p777-au
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - blockReference: au:sourceTranscription.sourcePage778.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "au:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+      - physicalPage: 778
+        printedPage: "778"
+        pageRegionIdentifier: p778-au
+  - blockReference: "au:remediation.supplementaryGuidance.step:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:remediation.supplementaryGuidance.step:2"
     sourceSpans:
       - physicalPage: 778
-        printedPage: '778'
+        printedPage: "778"
         pageRegionIdentifier: p778-au
-  - blockReference: au:sourceTranscription.sourcePage778.transcription:1
-    publicationDisposition: published
+  - blockReference: "au:remediation.supplementaryGuidance.step:3"
     sourceSpans:
       - physicalPage: 778
-        printedPage: '778'
+        printedPage: "778"
         pageRegionIdentifier: p778-au
-  - blockReference: au:sourceTranscription.sourcePage778.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "au:remediation.supplementaryGuidance.step:4"
     sourceSpans:
       - physicalPage: 778
-        printedPage: '778'
+        printedPage: "778"
         pageRegionIdentifier: p778-au
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/au/au-page-777-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 48f6801f3375489c26ec1e6924328febbc95fbf0291b066d615c0ba5fd7beb15
-    alternativeText: PDF 페이지 777의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 777 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 777
-        printedPage: '777'
-        pageRegionIdentifier: p777-au
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - path: ../assets/au/au-page-778-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 52a6f349dab55b87c630eb3df5a35a7d96cf80d424a09781e811ad6e1a814432
-    alternativeText: PDF 페이지 778의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 778 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "au:remediation.supplementaryGuidance.note.label:1"
     sourceSpans:
       - physicalPage: 778
-        printedPage: '778'
+        printedPage: "778"
         pageRegionIdentifier: p778-au
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - blockReference: "au:remediation.supplementaryGuidance.note.content:1"
+    sourceSpans:
+      - physicalPage: 778
+        printedPage: "778"
+        pageRegionIdentifier: p778-au
+assets: []

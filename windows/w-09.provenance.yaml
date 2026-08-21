@@ -2,117 +2,209 @@ schemaVersion: 1
 criterionSlug: w-09
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: w-09:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "w-09:overview.heading:1"
     sourceSpans:
       - physicalPage: 187
-        printedPage: '187'
+        printedPage: "187"
         pageRegionIdentifier: p187-w-09
-  - blockReference: w-09:sourceTranscription.sourcePage187.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "w-09:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 187
-        printedPage: '187'
+        printedPage: "187"
         pageRegionIdentifier: p187-w-09
-  - blockReference: w-09:sourceTranscription.sourcePage187.transcription:1
-    publicationDisposition: published
+  - blockReference: "w-09:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 187
-        printedPage: '187'
+        printedPage: "187"
         pageRegionIdentifier: p187-w-09
-  - blockReference: w-09:sourceTranscription.sourcePage187.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "w-09:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 187
-        printedPage: '187'
+        printedPage: "187"
         pageRegionIdentifier: p187-w-09
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - blockReference: w-09:sourceTranscription.sourcePage188.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "w-09:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 187
+        printedPage: "187"
+        pageRegionIdentifier: p187-w-09
+  - blockReference: "w-09:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 187
+        printedPage: "187"
+        pageRegionIdentifier: p187-w-09
+  - blockReference: "w-09:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 187
+        printedPage: "187"
+        pageRegionIdentifier: p187-w-09
+  - blockReference: "w-09:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 187
+        printedPage: "187"
+        pageRegionIdentifier: p187-w-09
+  - blockReference: "w-09:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 187
+        printedPage: "187"
+        pageRegionIdentifier: p187-w-09
+  - blockReference: "w-09:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 187
+        printedPage: "187"
+        pageRegionIdentifier: p187-w-09
+  - blockReference: "w-09:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 187
+        printedPage: "187"
+        pageRegionIdentifier: p187-w-09
+  - blockReference: "w-09:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 187
+        printedPage: "187"
+        pageRegionIdentifier: p187-w-09
+  - blockReference: "w-09:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 187
+        printedPage: "187"
+        pageRegionIdentifier: p187-w-09
+  - blockReference: "w-09:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 187
+        printedPage: "187"
+        pageRegionIdentifier: p187-w-09
+  - blockReference: "w-09:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 187
+        printedPage: "187"
+        pageRegionIdentifier: p187-w-09
+  - blockReference: "w-09:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 187
+        printedPage: "187"
+        pageRegionIdentifier: p187-w-09
+  - blockReference: "w-09:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 187
+        printedPage: "187"
+        pageRegionIdentifier: p187-w-09
+  - blockReference: "w-09:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 187
+        printedPage: "187"
+        pageRegionIdentifier: p187-w-09
+  - blockReference: "w-09:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 187
+        printedPage: "187"
+        pageRegionIdentifier: p187-w-09
+  - blockReference: "w-09:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 187
+        printedPage: "187"
+        pageRegionIdentifier: p187-w-09
+  - blockReference: "w-09:remediation.unspecified.heading:1"
+    sourceSpans:
+      - physicalPage: 187
+        printedPage: "187"
+        pageRegionIdentifier: p187-w-09
+  - blockReference: "w-09:remediation.unspecified.paragraph:1"
+    sourceSpans:
+      - physicalPage: 187
+        printedPage: "187"
+        pageRegionIdentifier: p187-w-09
+  - blockReference: "w-09:remediation.unspecified.step:1"
+    sourceSpans:
+      - physicalPage: 187
+        printedPage: "187"
+        pageRegionIdentifier: p187-w-09
+  - blockReference: "w-09:remediation.unspecified.step:2"
+    sourceSpans:
+      - physicalPage: 187
+        printedPage: "187"
+        pageRegionIdentifier: p187-w-09
+  - blockReference: "w-09:remediation.unspecified.step:3"
+    sourceSpans:
+      - physicalPage: 187
+        printedPage: "187"
+        pageRegionIdentifier: p187-w-09
+  - blockReference: "w-09:remediation.unspecified.step:4"
+    sourceSpans:
+      - physicalPage: 187
+        printedPage: "187"
+        pageRegionIdentifier: p187-w-09
+  - blockReference: "w-09:remediation.unspecified.step:5"
+    sourceSpans:
+      - physicalPage: 187
+        printedPage: "187"
+        pageRegionIdentifier: p187-w-09
+  - blockReference: "w-09:remediation.unspecified.paragraph:2"
+    sourceSpans:
+      - physicalPage: 187
+        printedPage: "187"
+        pageRegionIdentifier: p187-w-09
+  - blockReference: "w-09:remediation.unspecified.step:6"
+    sourceSpans:
+      - physicalPage: 187
+        printedPage: "187"
+        pageRegionIdentifier: p187-w-09
+  - blockReference: "w-09:remediation.unspecified.step:7"
+    sourceSpans:
+      - physicalPage: 187
+        printedPage: "187"
+        pageRegionIdentifier: p187-w-09
+  - blockReference: "w-09:remediation.unspecified.step:8"
+    sourceSpans:
+      - physicalPage: 187
+        printedPage: "187"
+        pageRegionIdentifier: p187-w-09
+  - blockReference: "w-09:remediation.unspecified.step:9"
+    sourceSpans:
+      - physicalPage: 187
+        printedPage: "187"
+        pageRegionIdentifier: p187-w-09
+  - blockReference: "w-09:remediation.unspecified.step:10"
+    sourceSpans:
+      - physicalPage: 187
+        printedPage: "187"
+        pageRegionIdentifier: p187-w-09
+  - blockReference: "w-09:remediation.unspecified.step:11"
+    sourceSpans:
+      - physicalPage: 187
+        printedPage: "187"
+        pageRegionIdentifier: p187-w-09
+  - blockReference: "w-09:remediation.supplementaryGuidance.heading:1"
     sourceSpans:
       - physicalPage: 188
-        printedPage: '188'
+        printedPage: "188"
         pageRegionIdentifier: p188-w-09
-  - blockReference: w-09:sourceTranscription.sourcePage188.transcription:1
-    publicationDisposition: published
+  - blockReference: "w-09:remediation.supplementaryGuidance.note.label:1"
     sourceSpans:
       - physicalPage: 188
-        printedPage: '188'
+        printedPage: "188"
         pageRegionIdentifier: p188-w-09
-  - blockReference: w-09:sourceTranscription.sourcePage188.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "w-09:remediation.supplementaryGuidance.note.content:1"
     sourceSpans:
       - physicalPage: 188
-        printedPage: '188'
+        printedPage: "188"
         pageRegionIdentifier: p188-w-09
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/w-09/w-09-page-187-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 0d087bcbe3cf90a76cdf38180967e054f4f123b4a776b6a5a9ca93eaeb83191a
-    alternativeText: PDF 페이지 187의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 187 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 187
-        printedPage: '187'
-        pageRegionIdentifier: p187-w-09
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - path: ../assets/w-09/w-09-page-188-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: b4f07d8c3dd0f3fcde8052eebdec98d5c6f7e52157030cb1272f9b83256c95ca
-    alternativeText: PDF 페이지 188의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 188 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "w-09:remediation.supplementaryGuidance.step:1"
     sourceSpans:
       - physicalPage: 188
-        printedPage: '188'
+        printedPage: "188"
         pageRegionIdentifier: p188-w-09
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - blockReference: "w-09:remediation.supplementaryGuidance.step:2"
+    sourceSpans:
+      - physicalPage: 188
+        printedPage: "188"
+        pageRegionIdentifier: p188-w-09
+  - blockReference: "w-09:remediation.supplementaryGuidance.step:3"
+    sourceSpans:
+      - physicalPage: 188
+        printedPage: "188"
+        pageRegionIdentifier: p188-w-09
+  - blockReference: "w-09:remediation.supplementaryGuidance.step:4"
+    sourceSpans:
+      - physicalPage: 188
+        printedPage: "188"
+        pageRegionIdentifier: p188-w-09
+assets: []

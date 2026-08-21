@@ -2,64 +2,159 @@ schemaVersion: 1
 criterionSlug: hv-17
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: hv-17:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "hv-17:overview.heading:1"
     sourceSpans:
       - physicalPage: 837
-        printedPage: '837'
+        printedPage: "837"
         pageRegionIdentifier: p837-hv-17
-  - blockReference: hv-17:sourceTranscription.sourcePage837.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "hv-17:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 837
-        printedPage: '837'
+        printedPage: "837"
         pageRegionIdentifier: p837-hv-17
-  - blockReference: hv-17:sourceTranscription.sourcePage837.transcription:1
-    publicationDisposition: published
+  - blockReference: "hv-17:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 837
-        printedPage: '837'
+        printedPage: "837"
         pageRegionIdentifier: p837-hv-17
-  - blockReference: hv-17:sourceTranscription.sourcePage837.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "hv-17:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 837
-        printedPage: '837'
+        printedPage: "837"
         pageRegionIdentifier: p837-hv-17
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/hv-17/hv-17-page-837-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: a65e47889742cd079436c6e31d395bcf10c769ef392f42ed2322472bf6c6d1fa
-    alternativeText: PDF 페이지 837의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 837 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
+  - blockReference: "hv-17:overview.inspectionPurpose.paragraph:1"
     sourceSpans:
       - physicalPage: 837
-        printedPage: '837'
+        printedPage: "837"
         pageRegionIdentifier: p837-hv-17
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
+  - blockReference: "hv-17:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 837
+        printedPage: "837"
+        pageRegionIdentifier: p837-hv-17
+  - blockReference: "hv-17:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 837
+        printedPage: "837"
+        pageRegionIdentifier: p837-hv-17
+  - blockReference: "hv-17:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 837
+        printedPage: "837"
+        pageRegionIdentifier: p837-hv-17
+  - blockReference: "hv-17:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 837
+        printedPage: "837"
+        pageRegionIdentifier: p837-hv-17
+  - blockReference: "hv-17:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 837
+        printedPage: "837"
+        pageRegionIdentifier: p837-hv-17
+  - blockReference: "hv-17:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 837
+        printedPage: "837"
+        pageRegionIdentifier: p837-hv-17
+  - blockReference: "hv-17:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 837
+        printedPage: "837"
+        pageRegionIdentifier: p837-hv-17
+  - blockReference: "hv-17:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 837
+        printedPage: "837"
+        pageRegionIdentifier: p837-hv-17
+  - blockReference: "hv-17:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 837
+        printedPage: "837"
+        pageRegionIdentifier: p837-hv-17
+  - blockReference: "hv-17:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 837
+        printedPage: "837"
+        pageRegionIdentifier: p837-hv-17
+  - blockReference: "hv-17:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 837
+        printedPage: "837"
+        pageRegionIdentifier: p837-hv-17
+  - blockReference: "hv-17:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 837
+        printedPage: "837"
+        pageRegionIdentifier: p837-hv-17
+  - blockReference: "hv-17:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 837
+        printedPage: "837"
+        pageRegionIdentifier: p837-hv-17
+  - blockReference: "hv-17:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 837
+        printedPage: "837"
+        pageRegionIdentifier: p837-hv-17
+  - blockReference: "hv-17:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 837
+        printedPage: "837"
+        pageRegionIdentifier: p837-hv-17
+  - blockReference: "hv-17:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 837
+        printedPage: "837"
+        pageRegionIdentifier: p837-hv-17
+  - blockReference: "hv-17:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 837
+        printedPage: "837"
+        pageRegionIdentifier: p837-hv-17
+  - blockReference: "hv-17:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 837
+        printedPage: "837"
+        pageRegionIdentifier: p837-hv-17
+  - blockReference: "hv-17:remediation.linux.command:1"
+    sourceSpans:
+      - physicalPage: 837
+        printedPage: "837"
+        pageRegionIdentifier: p837-hv-17
+  - blockReference: "hv-17:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 837
+        printedPage: "837"
+        pageRegionIdentifier: p837-hv-17
+  - blockReference: "hv-17:remediation.linux.command:2"
+    sourceSpans:
+      - physicalPage: 837
+        printedPage: "837"
+        pageRegionIdentifier: p837-hv-17
+  - blockReference: "hv-17:remediation.linux.command:3"
+    sourceSpans:
+      - physicalPage: 837
+        printedPage: "837"
+        pageRegionIdentifier: p837-hv-17
+  - blockReference: "hv-17:remediation.linux.step:3"
+    sourceSpans:
+      - physicalPage: 837
+        printedPage: "837"
+        pageRegionIdentifier: p837-hv-17
+  - blockReference: "hv-17:remediation.linux.command:4"
+    sourceSpans:
+      - physicalPage: 837
+        printedPage: "837"
+        pageRegionIdentifier: p837-hv-17
+  - blockReference: "hv-17:remediation.linux.step:4"
+    sourceSpans:
+      - physicalPage: 837
+        printedPage: "837"
+        pageRegionIdentifier: p837-hv-17
+  - blockReference: "hv-17:remediation.linux.command:5"
+    sourceSpans:
+      - physicalPage: 837
+        printedPage: "837"
+        pageRegionIdentifier: p837-hv-17
+assets: []

@@ -2,64 +2,134 @@ schemaVersion: 1
 criterionSlug: c-36
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: c-36:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "c-36:overview.heading:1"
     sourceSpans:
       - physicalPage: 531
-        printedPage: '531'
+        printedPage: "531"
         pageRegionIdentifier: p531-c-36
-  - blockReference: c-36:sourceTranscription.sourcePage531.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "c-36:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 531
-        printedPage: '531'
+        printedPage: "531"
         pageRegionIdentifier: p531-c-36
-  - blockReference: c-36:sourceTranscription.sourcePage531.transcription:1
-    publicationDisposition: published
+  - blockReference: "c-36:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 531
-        printedPage: '531'
+        printedPage: "531"
         pageRegionIdentifier: p531-c-36
-  - blockReference: c-36:sourceTranscription.sourcePage531.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "c-36:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 531
-        printedPage: '531'
+        printedPage: "531"
         pageRegionIdentifier: p531-c-36
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/c-36/c-36-page-531-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: aee5f3c1f55447267671940da4ddd5e70347fde8eaa307927d4c3cab77cda23c
-    alternativeText: PDF 페이지 531의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 531 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
+  - blockReference: "c-36:overview.inspectionPurpose.paragraph:1"
     sourceSpans:
       - physicalPage: 531
-        printedPage: '531'
+        printedPage: "531"
         pageRegionIdentifier: p531-c-36
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
+  - blockReference: "c-36:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 531
+        printedPage: "531"
+        pageRegionIdentifier: p531-c-36
+  - blockReference: "c-36:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 531
+        printedPage: "531"
+        pageRegionIdentifier: p531-c-36
+  - blockReference: "c-36:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 531
+        printedPage: "531"
+        pageRegionIdentifier: p531-c-36
+  - blockReference: "c-36:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 531
+        printedPage: "531"
+        pageRegionIdentifier: p531-c-36
+  - blockReference: "c-36:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 531
+        printedPage: "531"
+        pageRegionIdentifier: p531-c-36
+  - blockReference: "c-36:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 531
+        printedPage: "531"
+        pageRegionIdentifier: p531-c-36
+  - blockReference: "c-36:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 531
+        printedPage: "531"
+        pageRegionIdentifier: p531-c-36
+  - blockReference: "c-36:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 531
+        printedPage: "531"
+        pageRegionIdentifier: p531-c-36
+  - blockReference: "c-36:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 531
+        printedPage: "531"
+        pageRegionIdentifier: p531-c-36
+  - blockReference: "c-36:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 531
+        printedPage: "531"
+        pageRegionIdentifier: p531-c-36
+  - blockReference: "c-36:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 531
+        printedPage: "531"
+        pageRegionIdentifier: p531-c-36
+  - blockReference: "c-36:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 531
+        printedPage: "531"
+        pageRegionIdentifier: p531-c-36
+  - blockReference: "c-36:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 531
+        printedPage: "531"
+        pageRegionIdentifier: p531-c-36
+  - blockReference: "c-36:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 531
+        printedPage: "531"
+        pageRegionIdentifier: p531-c-36
+  - blockReference: "c-36:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 531
+        printedPage: "531"
+        pageRegionIdentifier: p531-c-36
+  - blockReference: "c-36:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 531
+        printedPage: "531"
+        pageRegionIdentifier: p531-c-36
+  - blockReference: "c-36:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 531
+        printedPage: "531"
+        pageRegionIdentifier: p531-c-36
+  - blockReference: "c-36:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 531
+        printedPage: "531"
+        pageRegionIdentifier: p531-c-36
+  - blockReference: "c-36:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - physicalPage: 531
+        printedPage: "531"
+        pageRegionIdentifier: p531-c-36
+  - blockReference: "c-36:remediation.supplementaryGuidance.step:1"
+    sourceSpans:
+      - physicalPage: 531
+        printedPage: "531"
+        pageRegionIdentifier: p531-c-36
+  - blockReference: "c-36:remediation.supplementaryGuidance.step:2"
+    sourceSpans:
+      - physicalPage: 531
+        printedPage: "531"
+        pageRegionIdentifier: p531-c-36
+assets: []

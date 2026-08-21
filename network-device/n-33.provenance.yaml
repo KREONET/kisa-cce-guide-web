@@ -2,64 +2,154 @@ schemaVersion: 1
 criterionSlug: n-33
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: n-33:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "n-33:overview.heading:1"
     sourceSpans:
       - physicalPage: 460
-        printedPage: '460'
+        printedPage: "460"
         pageRegionIdentifier: p460-n-33
-  - blockReference: n-33:sourceTranscription.sourcePage460.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "n-33:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 460
-        printedPage: '460'
+        printedPage: "460"
         pageRegionIdentifier: p460-n-33
-  - blockReference: n-33:sourceTranscription.sourcePage460.transcription:1
-    publicationDisposition: published
+  - blockReference: "n-33:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 460
-        printedPage: '460'
+        printedPage: "460"
         pageRegionIdentifier: p460-n-33
-  - blockReference: n-33:sourceTranscription.sourcePage460.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "n-33:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 460
-        printedPage: '460'
+        printedPage: "460"
         pageRegionIdentifier: p460-n-33
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/n-33/n-33-page-460-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: f86dc61461c3460891373eae3c04ca5ed5f874598be5352e38df2ba88bf97b1b
-    alternativeText: PDF 페이지 460의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 460 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
+  - blockReference: "n-33:overview.inspectionPurpose.paragraph:1"
     sourceSpans:
       - physicalPage: 460
-        printedPage: '460'
+        printedPage: "460"
         pageRegionIdentifier: p460-n-33
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
+  - blockReference: "n-33:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 460
+        printedPage: "460"
+        pageRegionIdentifier: p460-n-33
+  - blockReference: "n-33:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 460
+        printedPage: "460"
+        pageRegionIdentifier: p460-n-33
+  - blockReference: "n-33:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 460
+        printedPage: "460"
+        pageRegionIdentifier: p460-n-33
+  - blockReference: "n-33:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 460
+        printedPage: "460"
+        pageRegionIdentifier: p460-n-33
+  - blockReference: "n-33:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 460
+        printedPage: "460"
+        pageRegionIdentifier: p460-n-33
+  - blockReference: "n-33:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 460
+        printedPage: "460"
+        pageRegionIdentifier: p460-n-33
+  - blockReference: "n-33:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 460
+        printedPage: "460"
+        pageRegionIdentifier: p460-n-33
+  - blockReference: "n-33:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 460
+        printedPage: "460"
+        pageRegionIdentifier: p460-n-33
+  - blockReference: "n-33:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 460
+        printedPage: "460"
+        pageRegionIdentifier: p460-n-33
+  - blockReference: "n-33:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 460
+        printedPage: "460"
+        pageRegionIdentifier: p460-n-33
+  - blockReference: "n-33:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 460
+        printedPage: "460"
+        pageRegionIdentifier: p460-n-33
+  - blockReference: "n-33:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 460
+        printedPage: "460"
+        pageRegionIdentifier: p460-n-33
+  - blockReference: "n-33:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 460
+        printedPage: "460"
+        pageRegionIdentifier: p460-n-33
+  - blockReference: "n-33:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 460
+        printedPage: "460"
+        pageRegionIdentifier: p460-n-33
+  - blockReference: "n-33:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 460
+        printedPage: "460"
+        pageRegionIdentifier: p460-n-33
+  - blockReference: "n-33:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 460
+        printedPage: "460"
+        pageRegionIdentifier: p460-n-33
+  - blockReference: "n-33:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 460
+        printedPage: "460"
+        pageRegionIdentifier: p460-n-33
+  - blockReference: "n-33:remediation.linux.paragraph:1"
+    sourceSpans:
+      - physicalPage: 460
+        printedPage: "460"
+        pageRegionIdentifier: p460-n-33
+  - blockReference: "n-33:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 460
+        printedPage: "460"
+        pageRegionIdentifier: p460-n-33
+  - blockReference: "n-33:remediation.linux.command:1"
+    sourceSpans:
+      - physicalPage: 460
+        printedPage: "460"
+        pageRegionIdentifier: p460-n-33
+  - blockReference: "n-33:remediation.linux.paragraph:2"
+    sourceSpans:
+      - physicalPage: 460
+        printedPage: "460"
+        pageRegionIdentifier: p460-n-33
+  - blockReference: "n-33:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 460
+        printedPage: "460"
+        pageRegionIdentifier: p460-n-33
+  - blockReference: "n-33:remediation.linux.command:2"
+    sourceSpans:
+      - physicalPage: 460
+        printedPage: "460"
+        pageRegionIdentifier: p460-n-33
+  - blockReference: "n-33:remediation.linux.step:3"
+    sourceSpans:
+      - physicalPage: 460
+        printedPage: "460"
+        pageRegionIdentifier: p460-n-33
+  - blockReference: "n-33:remediation.linux.command:3"
+    sourceSpans:
+      - physicalPage: 460
+        printedPage: "460"
+        pageRegionIdentifier: p460-n-33
+assets: []

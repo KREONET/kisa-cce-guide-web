@@ -2,223 +2,364 @@ schemaVersion: 1
 criterionSlug: hv-08
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: hv-08:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "hv-08:overview.heading:1"
     sourceSpans:
       - physicalPage: 812
-        printedPage: '812'
+        printedPage: "812"
         pageRegionIdentifier: p812-hv-08
-  - blockReference: hv-08:sourceTranscription.sourcePage812.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "hv-08:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 812
-        printedPage: '812'
+        printedPage: "812"
         pageRegionIdentifier: p812-hv-08
-  - blockReference: hv-08:sourceTranscription.sourcePage812.transcription:1
-    publicationDisposition: published
+  - blockReference: "hv-08:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 812
-        printedPage: '812'
+        printedPage: "812"
         pageRegionIdentifier: p812-hv-08
-  - blockReference: hv-08:sourceTranscription.sourcePage812.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "hv-08:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 812
-        printedPage: '812'
+        printedPage: "812"
         pageRegionIdentifier: p812-hv-08
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - blockReference: hv-08:sourceTranscription.sourcePage813.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "hv-08:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 812
+        printedPage: "812"
+        pageRegionIdentifier: p812-hv-08
+  - blockReference: "hv-08:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 812
+        printedPage: "812"
+        pageRegionIdentifier: p812-hv-08
+  - blockReference: "hv-08:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 812
+        printedPage: "812"
+        pageRegionIdentifier: p812-hv-08
+  - blockReference: "hv-08:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 812
+        printedPage: "812"
+        pageRegionIdentifier: p812-hv-08
+  - blockReference: "hv-08:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 812
+        printedPage: "812"
+        pageRegionIdentifier: p812-hv-08
+  - blockReference: "hv-08:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 812
+        printedPage: "812"
+        pageRegionIdentifier: p812-hv-08
+  - blockReference: "hv-08:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 812
+        printedPage: "812"
+        pageRegionIdentifier: p812-hv-08
+  - blockReference: "hv-08:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 812
+        printedPage: "812"
+        pageRegionIdentifier: p812-hv-08
+  - blockReference: "hv-08:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 812
+        printedPage: "812"
+        pageRegionIdentifier: p812-hv-08
+  - blockReference: "hv-08:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 812
+        printedPage: "812"
+        pageRegionIdentifier: p812-hv-08
+  - blockReference: "hv-08:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 812
+        printedPage: "812"
+        pageRegionIdentifier: p812-hv-08
+  - blockReference: "hv-08:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 812
+        printedPage: "812"
+        pageRegionIdentifier: p812-hv-08
+  - blockReference: "hv-08:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 812
+        printedPage: "812"
+        pageRegionIdentifier: p812-hv-08
+  - blockReference: "hv-08:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 812
+        printedPage: "812"
+        pageRegionIdentifier: p812-hv-08
+  - blockReference: "hv-08:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 812
+        printedPage: "812"
+        pageRegionIdentifier: p812-hv-08
+  - blockReference: "hv-08:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 812
+        printedPage: "812"
+        pageRegionIdentifier: p812-hv-08
+  - blockReference: "hv-08:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 812
+        printedPage: "812"
+        pageRegionIdentifier: p812-hv-08
+  - blockReference: "hv-08:remediation.linux.paragraph:1"
+    sourceSpans:
+      - physicalPage: 812
+        printedPage: "812"
+        pageRegionIdentifier: p812-hv-08
+  - blockReference: "hv-08:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 812
+        printedPage: "812"
+        pageRegionIdentifier: p812-hv-08
+  - blockReference: "hv-08:remediation.linux.literal:1"
+    sourceSpans:
+      - physicalPage: 812
+        printedPage: "812"
+        pageRegionIdentifier: p812-hv-08
+  - blockReference: "hv-08:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 812
+        printedPage: "812"
+        pageRegionIdentifier: p812-hv-08
+  - blockReference: "hv-08:remediation.linux.step:3"
+    sourceSpans:
+      - physicalPage: 812
+        printedPage: "812"
+        pageRegionIdentifier: p812-hv-08
+  - blockReference: "hv-08:remediation.linux.step:4"
+    sourceSpans:
+      - physicalPage: 812
+        printedPage: "812"
+        pageRegionIdentifier: p812-hv-08
+  - blockReference: "hv-08:remediation.linux.step:5"
     sourceSpans:
       - physicalPage: 813
-        printedPage: '813'
+        printedPage: "813"
         pageRegionIdentifier: p813-hv-08
-  - blockReference: hv-08:sourceTranscription.sourcePage813.transcription:1
-    publicationDisposition: published
+  - blockReference: "hv-08:remediation.linux.configuration:1"
     sourceSpans:
       - physicalPage: 813
-        printedPage: '813'
+        printedPage: "813"
         pageRegionIdentifier: p813-hv-08
-  - blockReference: hv-08:sourceTranscription.sourcePage813.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "hv-08:remediation.linux.paragraph:2"
     sourceSpans:
       - physicalPage: 813
-        printedPage: '813'
+        printedPage: "813"
         pageRegionIdentifier: p813-hv-08
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: hv-08:sourceTranscription.sourcePage814.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 814
-        printedPage: '814'
-        pageRegionIdentifier: p814-hv-08
-  - blockReference: hv-08:sourceTranscription.sourcePage814.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 814
-        printedPage: '814'
-        pageRegionIdentifier: p814-hv-08
-  - blockReference: hv-08:sourceTranscription.sourcePage814.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 814
-        printedPage: '814'
-        pageRegionIdentifier: p814-hv-08
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: hv-08:sourceTranscription.sourcePage815.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 815
-        printedPage: '815'
-        pageRegionIdentifier: p815-hv-08
-  - blockReference: hv-08:sourceTranscription.sourcePage815.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 815
-        printedPage: '815'
-        pageRegionIdentifier: p815-hv-08
-  - blockReference: hv-08:sourceTranscription.sourcePage815.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 815
-        printedPage: '815'
-        pageRegionIdentifier: p815-hv-08
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/hv-08/hv-08-page-812-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 0b05203319ad6f05aedfb036f86f739a0989d689c40f41b44117b34912dd60ea
-    alternativeText: PDF 페이지 812의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 812 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 812
-        printedPage: '812'
-        pageRegionIdentifier: p812-hv-08
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - path: ../assets/hv-08/hv-08-page-813-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: d055fac77c63032fe0ccf4acafafcce94a7949b505b9da5929f8af74b9293f20
-    alternativeText: PDF 페이지 813의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 813 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "hv-08:remediation.linux.step:6"
     sourceSpans:
       - physicalPage: 813
-        printedPage: '813'
+        printedPage: "813"
         pageRegionIdentifier: p813-hv-08
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/hv-08/hv-08-page-814-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 82459f67e30592eeea41ff26319c49688932638c0db6ce785fbbff7afe65dca2
-    alternativeText: PDF 페이지 814의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 814 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "hv-08:remediation.linux.literal:2"
+    sourceSpans:
+      - physicalPage: 813
+        printedPage: "813"
+        pageRegionIdentifier: p813-hv-08
+  - blockReference: "hv-08:remediation.linux.paragraph:3"
+    sourceSpans:
+      - physicalPage: 813
+        printedPage: "813"
+        pageRegionIdentifier: p813-hv-08
+  - blockReference: "hv-08:remediation.linux.step:7"
+    sourceSpans:
+      - physicalPage: 813
+        printedPage: "813"
+        pageRegionIdentifier: p813-hv-08
+  - blockReference: "hv-08:remediation.linux.command:1"
+    sourceSpans:
+      - physicalPage: 813
+        printedPage: "813"
+        pageRegionIdentifier: p813-hv-08
+  - blockReference: "hv-08:remediation.linux.step:8"
+    sourceSpans:
+      - physicalPage: 813
+        printedPage: "813"
+        pageRegionIdentifier: p813-hv-08
+  - blockReference: "hv-08:remediation.linux.command:2"
+    sourceSpans:
+      - physicalPage: 813
+        printedPage: "813"
+        pageRegionIdentifier: p813-hv-08
+  - blockReference: "hv-08:remediation.linux.configuration:2"
+    sourceSpans:
+      - physicalPage: 813
+        printedPage: "813"
+        pageRegionIdentifier: p813-hv-08
+  - blockReference: "hv-08:remediation.linux.literal:3"
+    sourceSpans:
+      - physicalPage: 813
+        printedPage: "813"
+        pageRegionIdentifier: p813-hv-08
+  - blockReference: "hv-08:remediation.linux.paragraph:4"
+    sourceSpans:
+      - physicalPage: 813
+        printedPage: "813"
+        pageRegionIdentifier: p813-hv-08
+  - blockReference: "hv-08:remediation.linux.step:9"
+    sourceSpans:
+      - physicalPage: 813
+        printedPage: "813"
+        pageRegionIdentifier: p813-hv-08
+  - blockReference: "hv-08:remediation.linux.command:3"
+    sourceSpans:
+      - physicalPage: 813
+        printedPage: "813"
+        pageRegionIdentifier: p813-hv-08
+  - blockReference: "hv-08:remediation.linux.step:10"
+    sourceSpans:
+      - physicalPage: 813
+        printedPage: "813"
+        pageRegionIdentifier: p813-hv-08
+  - blockReference: "hv-08:remediation.linux.command:4"
+    sourceSpans:
+      - physicalPage: 813
+        printedPage: "813"
+        pageRegionIdentifier: p813-hv-08
+  - blockReference: "hv-08:remediation.linux.configuration:3"
+    sourceSpans:
+      - physicalPage: 813
+        printedPage: "813"
+        pageRegionIdentifier: p813-hv-08
+  - blockReference: "hv-08:remediation.linux.literal:4"
+    sourceSpans:
+      - physicalPage: 813
+        printedPage: "813"
+        pageRegionIdentifier: p813-hv-08
+  - blockReference: "hv-08:remediation.linux.paragraph:5"
+    sourceSpans:
+      - physicalPage: 813
+        printedPage: "813"
+        pageRegionIdentifier: p813-hv-08
+  - blockReference: "hv-08:remediation.linux.step:11"
+    sourceSpans:
+      - physicalPage: 813
+        printedPage: "813"
+        pageRegionIdentifier: p813-hv-08
+  - blockReference: "hv-08:remediation.linux.literal:5"
+    sourceSpans:
+      - physicalPage: 813
+        printedPage: "813"
+        pageRegionIdentifier: p813-hv-08
+  - blockReference: "hv-08:remediation.linux.step:12"
     sourceSpans:
       - physicalPage: 814
-        printedPage: '814'
+        printedPage: "814"
         pageRegionIdentifier: p814-hv-08
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/hv-08/hv-08-page-815-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 566c4aa46b3d79179a7e5c252f4fc84a5e6eb0132bfb0c578d74b4300932d385
-    alternativeText: PDF 페이지 815의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 815 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "hv-08:remediation.linux.paragraph:6"
+    sourceSpans:
+      - physicalPage: 814
+        printedPage: "814"
+        pageRegionIdentifier: p814-hv-08
+  - blockReference: "hv-08:remediation.linux.step:13"
+    sourceSpans:
+      - physicalPage: 814
+        printedPage: "814"
+        pageRegionIdentifier: p814-hv-08
+  - blockReference: "hv-08:remediation.linux.step:14"
+    sourceSpans:
+      - physicalPage: 814
+        printedPage: "814"
+        pageRegionIdentifier: p814-hv-08
+  - blockReference: "hv-08:remediation.linux.command:5"
+    sourceSpans:
+      - physicalPage: 814
+        printedPage: "814"
+        pageRegionIdentifier: p814-hv-08
+  - blockReference: "hv-08:remediation.linux.step:15"
+    sourceSpans:
+      - physicalPage: 814
+        printedPage: "814"
+        pageRegionIdentifier: p814-hv-08
+  - blockReference: "hv-08:remediation.linux.command:6"
+    sourceSpans:
+      - physicalPage: 814
+        printedPage: "814"
+        pageRegionIdentifier: p814-hv-08
+  - blockReference: "hv-08:remediation.linux.configuration:4"
+    sourceSpans:
+      - physicalPage: 814
+        printedPage: "814"
+        pageRegionIdentifier: p814-hv-08
+  - blockReference: "hv-08:remediation.linux.step:16"
+    sourceSpans:
+      - physicalPage: 814
+        printedPage: "814"
+        pageRegionIdentifier: p814-hv-08
+  - blockReference: "hv-08:remediation.linux.command:7"
+    sourceSpans:
+      - physicalPage: 814
+        printedPage: "814"
+        pageRegionIdentifier: p814-hv-08
+  - blockReference: "hv-08:remediation.linux.paragraph:7"
+    sourceSpans:
+      - physicalPage: 814
+        printedPage: "814"
+        pageRegionIdentifier: p814-hv-08
+  - blockReference: "hv-08:remediation.linux.step:17"
+    sourceSpans:
+      - physicalPage: 814
+        printedPage: "814"
+        pageRegionIdentifier: p814-hv-08
+  - blockReference: "hv-08:remediation.linux.command:8"
+    sourceSpans:
+      - physicalPage: 814
+        printedPage: "814"
+        pageRegionIdentifier: p814-hv-08
+  - blockReference: "hv-08:remediation.linux.step:18"
+    sourceSpans:
+      - physicalPage: 814
+        printedPage: "814"
+        pageRegionIdentifier: p814-hv-08
+  - blockReference: "hv-08:remediation.linux.command:9"
+    sourceSpans:
+      - physicalPage: 814
+        printedPage: "814"
+        pageRegionIdentifier: p814-hv-08
+  - blockReference: "hv-08:remediation.linux.step:19"
     sourceSpans:
       - physicalPage: 815
-        printedPage: '815'
+        printedPage: "815"
         pageRegionIdentifier: p815-hv-08
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - blockReference: "hv-08:remediation.linux.command:10"
+    sourceSpans:
+      - physicalPage: 815
+        printedPage: "815"
+        pageRegionIdentifier: p815-hv-08
+  - blockReference: "hv-08:remediation.linux.step:20"
+    sourceSpans:
+      - physicalPage: 815
+        printedPage: "815"
+        pageRegionIdentifier: p815-hv-08
+  - blockReference: "hv-08:remediation.linux.command:11"
+    sourceSpans:
+      - physicalPage: 815
+        printedPage: "815"
+        pageRegionIdentifier: p815-hv-08
+  - blockReference: "hv-08:remediation.linux.step:21"
+    sourceSpans:
+      - physicalPage: 815
+        printedPage: "815"
+        pageRegionIdentifier: p815-hv-08
+  - blockReference: "hv-08:remediation.linux.command:12"
+    sourceSpans:
+      - physicalPage: 815
+        printedPage: "815"
+        pageRegionIdentifier: p815-hv-08
+  - blockReference: "hv-08:remediation.linux.step:22"
+    sourceSpans:
+      - physicalPage: 815
+        printedPage: "815"
+        pageRegionIdentifier: p815-hv-08
+  - blockReference: "hv-08:remediation.linux.command:13"
+    sourceSpans:
+      - physicalPage: 815
+        printedPage: "815"
+        pageRegionIdentifier: p815-hv-08
+assets: []

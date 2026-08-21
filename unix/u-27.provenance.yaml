@@ -2,117 +2,177 @@ schemaVersion: 1
 criterionSlug: u-27
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: u-27:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "u-27:overview.heading:1"
     sourceSpans:
       - physicalPage: 54
-        printedPage: '54'
+        printedPage: "54"
         pageRegionIdentifier: p54-u-27
-  - blockReference: u-27:sourceTranscription.sourcePage54.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "u-27:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 54
-        printedPage: '54'
+        printedPage: "54"
         pageRegionIdentifier: p54-u-27
-  - blockReference: u-27:sourceTranscription.sourcePage54.transcription:1
-    publicationDisposition: published
+  - blockReference: "u-27:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 54
-        printedPage: '54'
+        printedPage: "54"
         pageRegionIdentifier: p54-u-27
-  - blockReference: u-27:sourceTranscription.sourcePage54.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "u-27:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 54
-        printedPage: '54'
+        printedPage: "54"
         pageRegionIdentifier: p54-u-27
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - blockReference: u-27:sourceTranscription.sourcePage55.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "u-27:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 54
+        printedPage: "54"
+        pageRegionIdentifier: p54-u-27
+  - blockReference: "u-27:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 54
+        printedPage: "54"
+        pageRegionIdentifier: p54-u-27
+  - blockReference: "u-27:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 54
+        printedPage: "54"
+        pageRegionIdentifier: p54-u-27
+  - blockReference: "u-27:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 54
+        printedPage: "54"
+        pageRegionIdentifier: p54-u-27
+  - blockReference: "u-27:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 54
+        printedPage: "54"
+        pageRegionIdentifier: p54-u-27
+  - blockReference: "u-27:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 54
+        printedPage: "54"
+        pageRegionIdentifier: p54-u-27
+  - blockReference: "u-27:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 54
+        printedPage: "54"
+        pageRegionIdentifier: p54-u-27
+  - blockReference: "u-27:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 54
+        printedPage: "54"
+        pageRegionIdentifier: p54-u-27
+  - blockReference: "u-27:overview.reference.note.label:3"
+    sourceSpans:
+      - physicalPage: 54
+        printedPage: "54"
+        pageRegionIdentifier: p54-u-27
+  - blockReference: "u-27:overview.reference.note.content:3"
+    sourceSpans:
+      - physicalPage: 54
+        printedPage: "54"
+        pageRegionIdentifier: p54-u-27
+  - blockReference: "u-27:overview.reference.note.label:4"
+    sourceSpans:
+      - physicalPage: 54
+        printedPage: "54"
+        pageRegionIdentifier: p54-u-27
+  - blockReference: "u-27:overview.reference.note.content:4"
+    sourceSpans:
+      - physicalPage: 54
+        printedPage: "54"
+        pageRegionIdentifier: p54-u-27
+  - blockReference: "u-27:overview.reference.note.label:5"
+    sourceSpans:
+      - physicalPage: 54
+        printedPage: "54"
+        pageRegionIdentifier: p54-u-27
+  - blockReference: "u-27:overview.reference.note.content:5"
+    sourceSpans:
+      - physicalPage: 54
+        printedPage: "54"
+        pageRegionIdentifier: p54-u-27
+  - blockReference: "u-27:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 54
+        printedPage: "54"
+        pageRegionIdentifier: p54-u-27
+  - blockReference: "u-27:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 54
+        printedPage: "54"
+        pageRegionIdentifier: p54-u-27
+  - blockReference: "u-27:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 54
+        printedPage: "54"
+        pageRegionIdentifier: p54-u-27
+  - blockReference: "u-27:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 54
+        printedPage: "54"
+        pageRegionIdentifier: p54-u-27
+  - blockReference: "u-27:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 54
+        printedPage: "54"
+        pageRegionIdentifier: p54-u-27
+  - blockReference: "u-27:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 54
+        printedPage: "54"
+        pageRegionIdentifier: p54-u-27
+  - blockReference: "u-27:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 54
+        printedPage: "54"
+        pageRegionIdentifier: p54-u-27
+  - blockReference: "u-27:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 54
+        printedPage: "54"
+        pageRegionIdentifier: p54-u-27
+  - blockReference: "u-27:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 54
+        printedPage: "54"
+        pageRegionIdentifier: p54-u-27
+  - blockReference: "u-27:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 54
+        printedPage: "54"
+        pageRegionIdentifier: p54-u-27
+  - blockReference: "u-27:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 54
+        printedPage: "54"
+        pageRegionIdentifier: p54-u-27
+  - blockReference: "u-27:remediation.solaris.heading:1"
+    sourceSpans:
+      - physicalPage: 54
+        printedPage: "54"
+        pageRegionIdentifier: p54-u-27
+  - blockReference: "u-27:remediation.solaris.step:1"
+    sourceSpans:
+      - physicalPage: 54
+        printedPage: "54"
+        pageRegionIdentifier: p54-u-27
+  - blockReference: "u-27:remediation.solaris.command:1"
+    sourceSpans:
+      - physicalPage: 54
+        printedPage: "54"
+        pageRegionIdentifier: p54-u-27
+      - physicalPage: 55
+        printedPage: "55"
+        pageRegionIdentifier: p55-u-27
+  - blockReference: "u-27:remediation.solaris.step:2"
     sourceSpans:
       - physicalPage: 55
-        printedPage: '55'
+        printedPage: "55"
         pageRegionIdentifier: p55-u-27
-  - blockReference: u-27:sourceTranscription.sourcePage55.transcription:1
-    publicationDisposition: published
+  - blockReference: "u-27:remediation.solaris.step:3"
     sourceSpans:
       - physicalPage: 55
-        printedPage: '55'
+        printedPage: "55"
         pageRegionIdentifier: p55-u-27
-  - blockReference: u-27:sourceTranscription.sourcePage55.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 55
-        printedPage: '55'
-        pageRegionIdentifier: p55-u-27
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/u-27/u-27-page-54-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: e235db0926e1f53e10c8834b7958834d7d74745ffb3a91021aaa9dc1a681fa38
-    alternativeText: PDF 페이지 54의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 54 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 54
-        printedPage: '54'
-        pageRegionIdentifier: p54-u-27
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - path: ../assets/u-27/u-27-page-55-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: d0122e28293a9de73ebedbd2913b4a5d9114f269def596725193c47a9a49c268
-    alternativeText: PDF 페이지 55의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 55 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 55
-        printedPage: '55'
-        pageRegionIdentifier: p55-u-27
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+assets: []

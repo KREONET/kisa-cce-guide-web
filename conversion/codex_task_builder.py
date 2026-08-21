@@ -34,6 +34,7 @@ PROMPT_TEMPLATE_PATH = Path("codex_prompts/criterion-structure-v3.md")
 RESULT_SCHEMA_PATH = Path("schemas/codex-criterion-result.schema.json")
 TASK_SCHEMA_PATH = Path("schemas/codex-criterion-task.schema.json")
 CONVERSION_POLICY_PATH = Path("CONVERSION_POLICY.md")
+TAXONOMY_PATH = Path("data/taxonomy.yaml")
 EVIDENCE_CONTRACT: dict[str, JsonValue] = {
     "visualAuthority": "sourcePageImages",
     "transcriptRole": "navigationAid",
@@ -103,6 +104,7 @@ def verify_codex_task_dependencies(
         (PROMPT_TEMPLATE_PATH, "promptTemplateChecksum"),
         (RESULT_SCHEMA_PATH, "resultSchemaChecksum"),
         (CONVERSION_POLICY_PATH, "conversionPolicyChecksum"),
+        (TAXONOMY_PATH, "taxonomyChecksum"),
     )
     for relative_path, checksum_field in expected_files:
         expected_checksum = task.get(checksum_field)
@@ -278,6 +280,7 @@ def build_codex_task(
         "criterionMarkdown": criterion_path.relative_to(repository).as_posix(),
         "criterionProvenance": provenance_path.relative_to(repository).as_posix(),
         "conversionPolicy": CONVERSION_POLICY_PATH.as_posix(),
+        "taxonomy": TAXONOMY_PATH.as_posix(),
         "promptTemplate": PROMPT_TEMPLATE_PATH.as_posix(),
         "resultSchema": RESULT_SCHEMA_PATH.as_posix(),
         "structuredExemplars": ["unix/u-01.md", "unix/u-02.md"],
@@ -290,6 +293,7 @@ def build_codex_task(
         "promptTemplateChecksum": sha256_file(repository / PROMPT_TEMPLATE_PATH),
         "resultSchemaChecksum": sha256_file(repository / RESULT_SCHEMA_PATH),
         "conversionPolicyChecksum": sha256_file(repository / CONVERSION_POLICY_PATH),
+        "taxonomyChecksum": sha256_file(repository / TAXONOMY_PATH),
         "criterionCode": criterion_metadata["code"],
         "criterionSlug": slug,
         "criterionTitle": criterion_metadata["title"],

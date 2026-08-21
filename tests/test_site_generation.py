@@ -16,7 +16,6 @@ from conversion.site_validation import validate_site
 
 EXPECTED_CRITERION_COUNT = 382
 EXPECTED_HTML_PAGE_COUNT = 469
-EXPECTED_SOURCE_IMAGE_COUNT = 815
 
 
 class PageInspector(HTMLParser):
@@ -252,10 +251,14 @@ def test_detail_pages_expose_machine_attributes_and_block_ids(
     ):
         inspector = _inspect(generated_site / relative_path)
         assert all(inspector.article_attributes.values())
+        assert inspector.article_attributes["data-content-model"] in {
+            "systemCriterion",
+            "webApplicationCriterion",
+        }
         assert any(identifier.endswith(".heading:1") for identifier in inspector.identifiers)
-        assert any(
+        assert not any(
             identifier.endswith(".transcription:1") for identifier in inspector.identifiers
-        ) or (relative_path == "unix/u-01/index.html")
+        )
 
 
 def test_internal_links_resolve(generated_site: Path) -> None:
@@ -313,7 +316,7 @@ def test_typed_blocks_expose_semantic_elements_and_machine_attributes(
     domain_identifier: str,
     slug: str,
 ) -> None:
-    """Structured and extracted blocks must retain semantic and provenance contracts."""
+    """Structured blocks must retain semantic and provenance contracts."""
 
     inspector = _inspect(generated_site / domain_identifier / slug / "index.html")
     normalized = json.loads(
@@ -338,18 +341,18 @@ def test_typed_blocks_expose_semantic_elements_and_machine_attributes(
         assert inspector.table_header_scopes
         assert set(inspector.table_header_scopes) == {"col"}
     else:
-        assert {"pre", "code", "figure", "img", "figcaption"} <= set(inspector.tags)
+        assert {"ol", "li", "aside"} <= set(inspector.tags)
+        assert inspector.note_attributes
 
 
-def test_extracted_source_images_are_published_without_source_pdf(
+def test_legacy_source_images_and_source_pdf_are_not_published(
     generated_site: Path,
 ) -> None:
-    """Source crops must resolve while the unapproved PDF remains excluded."""
+    """A structured corpus must not publish obsolete source crops or the source PDF."""
 
     source_images = sorted((generated_site / "assets").rglob("*-source-region.png"))
-    assert len(source_images) == EXPECTED_SOURCE_IMAGE_COUNT
-    assert (generated_site / "assets" / "w-01" / "w-01-page-177-source-region.png").is_file()
+    assert source_images == []
     assert not (generated_site / "source" / "kisa-cce-criteria-2026.pdf").exists()
     inspector = _inspect(generated_site / "windows" / "w-01" / "index.html")
-    assert "figure" in inspector.tags
-    assert "img" in inspector.tags
+    assert "figure" not in inspector.tags
+    assert "img" not in inspector.tags

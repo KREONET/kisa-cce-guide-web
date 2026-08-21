@@ -2,223 +2,404 @@ schemaVersion: 1
 criterionSlug: web-24
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: web-24:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "web-24:overview.heading:1"
     sourceSpans:
       - physicalPage: 343
-        printedPage: '343'
+        printedPage: "343"
         pageRegionIdentifier: p343-web-24
-  - blockReference: web-24:sourceTranscription.sourcePage343.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "web-24:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 343
-        printedPage: '343'
+        printedPage: "343"
         pageRegionIdentifier: p343-web-24
-  - blockReference: web-24:sourceTranscription.sourcePage343.transcription:1
-    publicationDisposition: published
+  - blockReference: "web-24:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 343
-        printedPage: '343'
+        printedPage: "343"
         pageRegionIdentifier: p343-web-24
-  - blockReference: web-24:sourceTranscription.sourcePage343.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "web-24:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 343
-        printedPage: '343'
+        printedPage: "343"
         pageRegionIdentifier: p343-web-24
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - blockReference: web-24:sourceTranscription.sourcePage344.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "web-24:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 343
+        printedPage: "343"
+        pageRegionIdentifier: p343-web-24
+  - blockReference: "web-24:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 343
+        printedPage: "343"
+        pageRegionIdentifier: p343-web-24
+  - blockReference: "web-24:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 343
+        printedPage: "343"
+        pageRegionIdentifier: p343-web-24
+  - blockReference: "web-24:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 343
+        printedPage: "343"
+        pageRegionIdentifier: p343-web-24
+  - blockReference: "web-24:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 343
+        printedPage: "343"
+        pageRegionIdentifier: p343-web-24
+  - blockReference: "web-24:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 343
+        printedPage: "343"
+        pageRegionIdentifier: p343-web-24
+  - blockReference: "web-24:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 343
+        printedPage: "343"
+        pageRegionIdentifier: p343-web-24
+  - blockReference: "web-24:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 343
+        printedPage: "343"
+        pageRegionIdentifier: p343-web-24
+  - blockReference: "web-24:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 343
+        printedPage: "343"
+        pageRegionIdentifier: p343-web-24
+  - blockReference: "web-24:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 343
+        printedPage: "343"
+        pageRegionIdentifier: p343-web-24
+  - blockReference: "web-24:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 343
+        printedPage: "343"
+        pageRegionIdentifier: p343-web-24
+  - blockReference: "web-24:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 343
+        printedPage: "343"
+        pageRegionIdentifier: p343-web-24
+  - blockReference: "web-24:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 343
+        printedPage: "343"
+        pageRegionIdentifier: p343-web-24
+  - blockReference: "web-24:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 343
+        printedPage: "343"
+        pageRegionIdentifier: p343-web-24
+  - blockReference: "web-24:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 343
+        printedPage: "343"
+        pageRegionIdentifier: p343-web-24
+  - blockReference: "web-24:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 343
+        printedPage: "343"
+        pageRegionIdentifier: p343-web-24
+  - blockReference: "web-24:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 343
+        printedPage: "343"
+        pageRegionIdentifier: p343-web-24
+  - blockReference: "web-24:remediation.linux.paragraph:1"
+    sourceSpans:
+      - physicalPage: 343
+        printedPage: "343"
+        pageRegionIdentifier: p343-web-24
+  - blockReference: "web-24:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 343
+        printedPage: "343"
+        pageRegionIdentifier: p343-web-24
+  - blockReference: "web-24:remediation.linux.command:1"
+    sourceSpans:
+      - physicalPage: 343
+        printedPage: "343"
+        pageRegionIdentifier: p343-web-24
+  - blockReference: "web-24:remediation.linux.configuration:1"
+    sourceSpans:
+      - physicalPage: 343
+        printedPage: "343"
+        pageRegionIdentifier: p343-web-24
+  - blockReference: "web-24:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 343
+        printedPage: "343"
+        pageRegionIdentifier: p343-web-24
+  - blockReference: "web-24:remediation.linux.command:2"
+    sourceSpans:
+      - physicalPage: 343
+        printedPage: "343"
+        pageRegionIdentifier: p343-web-24
+  - blockReference: "web-24:remediation.linux.step:3"
+    sourceSpans:
+      - physicalPage: 343
+        printedPage: "343"
+        pageRegionIdentifier: p343-web-24
+  - blockReference: "web-24:remediation.linux.command:3"
+    sourceSpans:
+      - physicalPage: 343
+        printedPage: "343"
+        pageRegionIdentifier: p343-web-24
+  - blockReference: "web-24:remediation.linux.step:4"
+    sourceSpans:
+      - physicalPage: 343
+        printedPage: "343"
+        pageRegionIdentifier: p343-web-24
+  - blockReference: "web-24:remediation.linux.command:4"
     sourceSpans:
       - physicalPage: 344
-        printedPage: '344'
+        printedPage: "344"
         pageRegionIdentifier: p344-web-24
-  - blockReference: web-24:sourceTranscription.sourcePage344.transcription:1
-    publicationDisposition: published
+  - blockReference: "web-24:remediation.linux.step:5"
     sourceSpans:
       - physicalPage: 344
-        printedPage: '344'
+        printedPage: "344"
         pageRegionIdentifier: p344-web-24
-  - blockReference: web-24:sourceTranscription.sourcePage344.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "web-24:remediation.linux.command:5"
     sourceSpans:
       - physicalPage: 344
-        printedPage: '344'
+        printedPage: "344"
         pageRegionIdentifier: p344-web-24
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: web-24:sourceTranscription.sourcePage345.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 345
-        printedPage: '345'
-        pageRegionIdentifier: p345-web-24
-  - blockReference: web-24:sourceTranscription.sourcePage345.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 345
-        printedPage: '345'
-        pageRegionIdentifier: p345-web-24
-  - blockReference: web-24:sourceTranscription.sourcePage345.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 345
-        printedPage: '345'
-        pageRegionIdentifier: p345-web-24
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: web-24:sourceTranscription.sourcePage346.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 346
-        printedPage: '346'
-        pageRegionIdentifier: p346-web-24
-  - blockReference: web-24:sourceTranscription.sourcePage346.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 346
-        printedPage: '346'
-        pageRegionIdentifier: p346-web-24
-  - blockReference: web-24:sourceTranscription.sourcePage346.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 346
-        printedPage: '346'
-        pageRegionIdentifier: p346-web-24
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/web-24/web-24-page-343-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 53f81a753df8552bcc4bd314939e6702e25f6b546995c07dd4f0ddd25da82f1a
-    alternativeText: PDF 페이지 343의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 343 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 343
-        printedPage: '343'
-        pageRegionIdentifier: p343-web-24
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - path: ../assets/web-24/web-24-page-344-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 46cd782a6cd8e93f9e682fc5641c83e345e9523e8ffa22e21e88a848a7ad8dda
-    alternativeText: PDF 페이지 344의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 344 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "web-24:remediation.linux.configuration:2"
     sourceSpans:
       - physicalPage: 344
-        printedPage: '344'
+        printedPage: "344"
         pageRegionIdentifier: p344-web-24
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/web-24/web-24-page-345-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 8ce2f82317f80177117984e78f8d21edc2a17ea75325fd991b59d893b84de76a
-    alternativeText: PDF 페이지 345의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 345 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "web-24:remediation.linux.paragraph:2"
+    sourceSpans:
+      - physicalPage: 344
+        printedPage: "344"
+        pageRegionIdentifier: p344-web-24
+  - blockReference: "web-24:remediation.linux.step:6"
+    sourceSpans:
+      - physicalPage: 344
+        printedPage: "344"
+        pageRegionIdentifier: p344-web-24
+  - blockReference: "web-24:remediation.linux.command:6"
+    sourceSpans:
+      - physicalPage: 344
+        printedPage: "344"
+        pageRegionIdentifier: p344-web-24
+  - blockReference: "web-24:remediation.linux.configuration:3"
+    sourceSpans:
+      - physicalPage: 344
+        printedPage: "344"
+        pageRegionIdentifier: p344-web-24
+  - blockReference: "web-24:remediation.linux.step:7"
+    sourceSpans:
+      - physicalPage: 344
+        printedPage: "344"
+        pageRegionIdentifier: p344-web-24
+  - blockReference: "web-24:remediation.linux.command:7"
+    sourceSpans:
+      - physicalPage: 344
+        printedPage: "344"
+        pageRegionIdentifier: p344-web-24
+  - blockReference: "web-24:remediation.linux.step:8"
+    sourceSpans:
+      - physicalPage: 344
+        printedPage: "344"
+        pageRegionIdentifier: p344-web-24
+  - blockReference: "web-24:remediation.linux.command:8"
+    sourceSpans:
+      - physicalPage: 344
+        printedPage: "344"
+        pageRegionIdentifier: p344-web-24
+  - blockReference: "web-24:remediation.linux.step:9"
+    sourceSpans:
+      - physicalPage: 344
+        printedPage: "344"
+        pageRegionIdentifier: p344-web-24
+  - blockReference: "web-24:remediation.linux.paragraph:3"
+    sourceSpans:
+      - physicalPage: 344
+        printedPage: "344"
+        pageRegionIdentifier: p344-web-24
+  - blockReference: "web-24:remediation.linux.step:10"
+    sourceSpans:
+      - physicalPage: 344
+        printedPage: "344"
+        pageRegionIdentifier: p344-web-24
+  - blockReference: "web-24:remediation.linux.command:9"
+    sourceSpans:
+      - physicalPage: 344
+        printedPage: "344"
+        pageRegionIdentifier: p344-web-24
+  - blockReference: "web-24:remediation.linux.step:11"
+    sourceSpans:
+      - physicalPage: 344
+        printedPage: "344"
+        pageRegionIdentifier: p344-web-24
+  - blockReference: "web-24:remediation.linux.command:10"
+    sourceSpans:
+      - physicalPage: 344
+        printedPage: "344"
+        pageRegionIdentifier: p344-web-24
+  - blockReference: "web-24:remediation.linux.step:12"
+    sourceSpans:
+      - physicalPage: 344
+        printedPage: "344"
+        pageRegionIdentifier: p344-web-24
+  - blockReference: "web-24:remediation.linux.command:11"
+    sourceSpans:
+      - physicalPage: 344
+        printedPage: "344"
+        pageRegionIdentifier: p344-web-24
+  - blockReference: "web-24:remediation.linux.step:13"
     sourceSpans:
       - physicalPage: 345
-        printedPage: '345'
+        printedPage: "345"
         pageRegionIdentifier: p345-web-24
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/web-24/web-24-page-346-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 221e8976336fc5873c71d401dded569614190b13a8974b6f0923ac694824372f
-    alternativeText: PDF 페이지 346의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 346 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "web-24:remediation.linux.command:12"
+    sourceSpans:
+      - physicalPage: 345
+        printedPage: "345"
+        pageRegionIdentifier: p345-web-24
+  - blockReference: "web-24:remediation.linux.configuration:4"
+    sourceSpans:
+      - physicalPage: 345
+        printedPage: "345"
+        pageRegionIdentifier: p345-web-24
+  - blockReference: "web-24:remediation.linux.step:14"
+    sourceSpans:
+      - physicalPage: 345
+        printedPage: "345"
+        pageRegionIdentifier: p345-web-24
+  - blockReference: "web-24:remediation.linux.command:13"
+    sourceSpans:
+      - physicalPage: 345
+        printedPage: "345"
+        pageRegionIdentifier: p345-web-24
+  - blockReference: "web-24:remediation.linux.paragraph:4"
+    sourceSpans:
+      - physicalPage: 345
+        printedPage: "345"
+        pageRegionIdentifier: p345-web-24
+  - blockReference: "web-24:remediation.linux.step:15"
+    sourceSpans:
+      - physicalPage: 345
+        printedPage: "345"
+        pageRegionIdentifier: p345-web-24
+  - blockReference: "web-24:remediation.linux.literal:1"
+    sourceSpans:
+      - physicalPage: 345
+        printedPage: "345"
+        pageRegionIdentifier: p345-web-24
+  - blockReference: "web-24:remediation.linux.step:16"
+    sourceSpans:
+      - physicalPage: 345
+        printedPage: "345"
+        pageRegionIdentifier: p345-web-24
+  - blockReference: "web-24:remediation.linux.literal:2"
+    sourceSpans:
+      - physicalPage: 345
+        printedPage: "345"
+        pageRegionIdentifier: p345-web-24
+  - blockReference: "web-24:remediation.linux.step:17"
+    sourceSpans:
+      - physicalPage: 345
+        printedPage: "345"
+        pageRegionIdentifier: p345-web-24
+  - blockReference: "web-24:remediation.linux.literal:3"
+    sourceSpans:
+      - physicalPage: 345
+        printedPage: "345"
+        pageRegionIdentifier: p345-web-24
+  - blockReference: "web-24:remediation.linux.step:18"
+    sourceSpans:
+      - physicalPage: 345
+        printedPage: "345"
+        pageRegionIdentifier: p345-web-24
+  - blockReference: "web-24:remediation.linux.literal:4"
+    sourceSpans:
+      - physicalPage: 345
+        printedPage: "345"
+        pageRegionIdentifier: p345-web-24
+  - blockReference: "web-24:remediation.linux.paragraph:5"
+    sourceSpans:
+      - physicalPage: 345
+        printedPage: "345"
+        pageRegionIdentifier: p345-web-24
+  - blockReference: "web-24:remediation.linux.step:19"
+    sourceSpans:
+      - physicalPage: 345
+        printedPage: "345"
+        pageRegionIdentifier: p345-web-24
+  - blockReference: "web-24:remediation.linux.command:14"
+    sourceSpans:
+      - physicalPage: 345
+        printedPage: "345"
+        pageRegionIdentifier: p345-web-24
+  - blockReference: "web-24:remediation.linux.configuration:5"
     sourceSpans:
       - physicalPage: 346
-        printedPage: '346'
+        printedPage: "346"
         pageRegionIdentifier: p346-web-24
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - blockReference: "web-24:remediation.linux.step:20"
+    sourceSpans:
+      - physicalPage: 346
+        printedPage: "346"
+        pageRegionIdentifier: p346-web-24
+  - blockReference: "web-24:remediation.linux.command:15"
+    sourceSpans:
+      - physicalPage: 346
+        printedPage: "346"
+        pageRegionIdentifier: p346-web-24
+  - blockReference: "web-24:remediation.linux.step:21"
+    sourceSpans:
+      - physicalPage: 346
+        printedPage: "346"
+        pageRegionIdentifier: p346-web-24
+  - blockReference: "web-24:remediation.linux.command:16"
+    sourceSpans:
+      - physicalPage: 346
+        printedPage: "346"
+        pageRegionIdentifier: p346-web-24
+  - blockReference: "web-24:remediation.linux.paragraph:6"
+    sourceSpans:
+      - physicalPage: 346
+        printedPage: "346"
+        pageRegionIdentifier: p346-web-24
+  - blockReference: "web-24:remediation.linux.step:22"
+    sourceSpans:
+      - physicalPage: 346
+        printedPage: "346"
+        pageRegionIdentifier: p346-web-24
+  - blockReference: "web-24:remediation.linux.command:17"
+    sourceSpans:
+      - physicalPage: 346
+        printedPage: "346"
+        pageRegionIdentifier: p346-web-24
+  - blockReference: "web-24:remediation.linux.configuration:6"
+    sourceSpans:
+      - physicalPage: 346
+        printedPage: "346"
+        pageRegionIdentifier: p346-web-24
+  - blockReference: "web-24:remediation.linux.step:23"
+    sourceSpans:
+      - physicalPage: 346
+        printedPage: "346"
+        pageRegionIdentifier: p346-web-24
+  - blockReference: "web-24:remediation.linux.command:18"
+    sourceSpans:
+      - physicalPage: 346
+        printedPage: "346"
+        pageRegionIdentifier: p346-web-24
+  - blockReference: "web-24:remediation.linux.step:24"
+    sourceSpans:
+      - physicalPage: 346
+        printedPage: "346"
+        pageRegionIdentifier: p346-web-24
+  - blockReference: "web-24:remediation.linux.command:19"
+    sourceSpans:
+      - physicalPage: 346
+        printedPage: "346"
+        pageRegionIdentifier: p346-web-24
+assets: []

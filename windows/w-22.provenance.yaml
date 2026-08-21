@@ -2,117 +2,64 @@ schemaVersion: 1
 criterionSlug: w-22
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: w-22:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
-    sourceSpans:
-      - physicalPage: 208
-        printedPage: '208'
-        pageRegionIdentifier: p208-w-22
-  - blockReference: w-22:sourceTranscription.sourcePage208.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 208
-        printedPage: '208'
-        pageRegionIdentifier: p208-w-22
-  - blockReference: w-22:sourceTranscription.sourcePage208.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 208
-        printedPage: '208'
-        pageRegionIdentifier: p208-w-22
-  - blockReference: w-22:sourceTranscription.sourcePage208.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 208
-        printedPage: '208'
-        pageRegionIdentifier: p208-w-22
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - blockReference: w-22:sourceTranscription.sourcePage209.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 209
-        printedPage: '209'
-        pageRegionIdentifier: p209-w-22
-  - blockReference: w-22:sourceTranscription.sourcePage209.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 209
-        printedPage: '209'
-        pageRegionIdentifier: p209-w-22
-  - blockReference: w-22:sourceTranscription.sourcePage209.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 209
-        printedPage: '209'
-        pageRegionIdentifier: p209-w-22
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/w-22/w-22-page-208-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 288dd567f94dfc5bae630bf1d8f2d670d7e25b757d66524f792e869e9f0afdb3
-    alternativeText: PDF 페이지 208의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 208 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 208
-        printedPage: '208'
-        pageRegionIdentifier: p208-w-22
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - path: ../assets/w-22/w-22-page-209-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: c7952ae4e25c6572b1f27c82975ff5a468e7195e6fb432d3f281c16eb20ad70c
-    alternativeText: PDF 페이지 209의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 209 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 209
-        printedPage: '209'
-        pageRegionIdentifier: p209-w-22
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - blockReference: "w-22:overview.heading:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:overview.reference.note.content:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:overview.reference.note.label:2"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:overview.reference.note.content:2"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:assessment.heading:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:remediation.heading:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:remediation.solaris.heading:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:remediation.solaris.paragraph:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:remediation.solaris.step:1"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:remediation.solaris.step:2"
+    sourceSpans: [{physicalPage: 208, printedPage: "208", pageRegionIdentifier: p208-w-22}]
+  - blockReference: "w-22:remediation.solaris.paragraph:2"
+    sourceSpans: [{physicalPage: 209, printedPage: "209", pageRegionIdentifier: p209-w-22}]
+  - blockReference: "w-22:remediation.solaris.step:3"
+    sourceSpans: [{physicalPage: 209, printedPage: "209", pageRegionIdentifier: p209-w-22}]
+  - blockReference: "w-22:remediation.solaris.step:4"
+    sourceSpans: [{physicalPage: 209, printedPage: "209", pageRegionIdentifier: p209-w-22}]
+assets: []

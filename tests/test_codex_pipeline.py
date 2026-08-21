@@ -6,21 +6,48 @@ import io
 import json
 import subprocess
 import sys
+from collections.abc import Iterator
 from pathlib import Path
 from typing import TextIO, cast
 
 import pytest
 
-from conversion import codex_runner
+from conversion import codex_result_importer, codex_runner, codex_task_builder
 from conversion.codex_result_importer import render_codex_candidate, validate_codex_result
-from conversion.codex_task_builder import build_codex_task, load_codex_task
+from conversion.codex_task_builder import (
+    build_codex_task,
+    calculate_codex_task_checksum,
+    load_codex_task,
+)
 from conversion.common import JsonValue, as_mapping, as_sequence, repository_root, sha256_file
 from conversion.runtime_logging import REDACTED_VALUE, RuntimeLogger, configure_runtime_logging
+from tests.codex_transition_fixtures import create_codex_transition_repository
 
 EXPECTED_U_03_PAGE_COUNT = 4
 EXPECTED_CODEX_SCHEMA_VERSION = 2
 EXPECTED_CODEX_PROMPT_VERSION = 3
 CODEX_PROCESS_FAILURE_EXIT_CODE = 17
+
+
+@pytest.fixture(scope="module", autouse=True)
+def _codex_transition_repository(
+    tmp_path_factory: pytest.TempPathFactory,
+) -> Iterator[None]:
+    """Route legacy pipeline tests through an isolated extracted U-03 snapshot."""
+
+    source = repository_root()
+    repository = create_codex_transition_repository(
+        source,
+        tmp_path_factory.mktemp("codex-transition") / "repository",
+        slugs=("u-03",),
+    )
+    monkeypatch = pytest.MonkeyPatch()
+    monkeypatch.setattr(codex_task_builder, "repository_root", lambda: repository)
+    monkeypatch.setattr(codex_result_importer, "repository_root", lambda: repository)
+    monkeypatch.setattr(codex_runner, "repository_root", lambda: repository)
+    monkeypatch.setitem(globals(), "repository_root", lambda: repository)
+    yield
+    monkeypatch.undo()
 
 
 def _read_runner_log(logger: RuntimeLogger) -> list[dict[str, JsonValue]]:
@@ -33,7 +60,7 @@ def _read_runner_log(logger: RuntimeLogger) -> list[dict[str, JsonValue]]:
     ]
 
 
-def _fake_result(task: dict[str, JsonValue]) -> dict[str, JsonValue]:  # noqa: C901
+def _fake_result(task: dict[str, JsonValue]) -> dict[str, JsonValue]:  # noqa: C901, PLR0915
     """Build a schema-valid result that preserves all exported source evidence."""
 
     evidence_values = as_sequence(task["sourcePageEvidence"], location="task.sourcePageEvidence")
@@ -475,6 +502,195 @@ def _fake_result(task: dict[str, JsonValue]) -> dict[str, JsonValue]:  # noqa: C
             },
         ]
     )
+    node_by_identifier = {
+        cast("str", as_mapping(value, location="nodes[]")["nodeIdentifier"]): as_mapping(
+            value,
+            location="nodes[]",
+        )
+        for value in nodes
+    }
+
+    def content_node(
+        node_identifier: str,
+        node_type: str,
+        semantic_role: str,
+        content: str,
+        source_excerpt: str,
+        **fields: JsonValue,
+    ) -> dict[str, JsonValue]:
+        """Build one source-backed canonical fixture body node."""
+
+        return {
+            "nodeIdentifier": node_identifier,
+            "nodeType": node_type,
+            "sourceContentType": "pageText",
+            "semanticRole": semantic_role,
+            "content": content,
+            "sourceSpans": [source_span(21, source_excerpt)],
+            "publicationDisposition": "published",
+            **fields,
+        }
+
+    linux_heading = content_node(
+        "remediation.linux.heading",
+        "heading",
+        "targetPlatform",
+        "LINUX",
+        "l LINUX",
+        headingLevel=3,
+    )
+    aix_heading = content_node(
+        "remediation.aix.heading",
+        "heading",
+        "targetPlatform",
+        "AIX",
+        "l AIX",
+        headingLevel=3,
+    )
+    hp_ux_heading = content_node(
+        "remediation.hp-ux.heading",
+        "heading",
+        "targetPlatform",
+        "HP-UX",
+        "l HP-UX",
+        headingLevel=3,
+    )
+    for heading in (linux_heading, aix_heading, hp_ux_heading):
+        span = as_mapping(
+            as_sequence(heading["sourceSpans"], location="heading.sourceSpans")[0],
+            location="heading.sourceSpans[0]",
+        )
+        span["physicalPage"] = 22 if heading["content"] == "LINUX" else 24
+        span["pageRegionIdentifier"] = evidence_by_page[cast("int", span["physicalPage"])][
+            "pageRegionIdentifier"
+        ]
+
+    nodes = [
+        node_by_identifier["overview.heading"],
+        node_by_identifier["overview.inspection-content.heading"],
+        content_node(
+            "overview.inspection-content.body",
+            "paragraph",
+            "inspectionContent",
+            "사용자 계정 로그인 실패 시 계정 잠금 임계값이 설정 여부 점검",
+            "사용자 계정 로그인 실패 시 계정 잠금 임계값이 설정 여부 점검",
+        ),
+        node_by_identifier["overview.inspection-purpose.heading"],
+        content_node(
+            "overview.inspection-purpose.body",
+            "paragraph",
+            "inspectionPurpose",
+            (
+                "계정 탈취 목적의 무차별 대입 공격 시 해당 계정을 잠금으로써 인증 요청에 "
+                "응답하는 리소스 낭비를 차단하고 대입 공격으로 인한 비밀번호 노출 공격을 "
+                "무력화하기 위함"
+            ),
+            "계정 탈취 목적의 무차별 대입 공격 시 해당 계정을 잠금으로써",
+        ),
+        node_by_identifier["overview.security-threat.heading"],
+        content_node(
+            "overview.security-threat.body",
+            "paragraph",
+            "securityThreat",
+            (
+                "계정 잠금 임계값이 설정되어 있지 않을 경우, 비밀번호 탈취 공격의 인증 요청에 "
+                "지속적으로 응답하여 해당 계정의 비밀번호가 유출될 위험이 존재함"
+            ),
+            "계정 잠금 임계값이 설정되어 있지 않을 경우",
+        ),
+        node_by_identifier["overview.reference.heading"],
+        content_node(
+            "overview.reference.body",
+            "note",
+            "reference",
+            "사용자 로그인 실패 임계값은 로그인 실패에 로그인을 차단할 것인지 결정하는 값",
+            "※ 사용자 로그인 실패 임계값",
+            noteType="참고",
+        ),
+        node_by_identifier["assessment.heading"],
+        node_by_identifier["assessment.target.heading"],
+        content_node(
+            "assessment.target.body",
+            "paragraph",
+            "target",
+            "SOLARIS, LINUX, AIX, HP-UX 등",
+            "SOLARIS, LINUX, AIX, HP-UX 등",
+        ),
+        node_by_identifier["assessment.judgment.heading"],
+        content_node(
+            "assessment.judgment.good",
+            "listItem",
+            "judgment",
+            "**양호:** 계정 잠금 임계값이 10회 이하의 값으로 설정된 경우",
+            "양호 : 계정 잠금 임계값이 10회 이하의 값으로 설정된 경우",
+            listType="unordered",
+            listDepth=1,
+        ),
+        content_node(
+            "assessment.judgment.vulnerable",
+            "listItem",
+            "judgment",
+            "**취약:** 계정 잠금 임계값이 설정되어 있지 않거나, 10회 이하로 설정되지 않은 경우",
+            "취약 : 계정 잠금 임계값이 설정되어 있지 않거나",
+            listType="unordered",
+            listDepth=1,
+        ),
+        node_by_identifier["assessment.remediation-method.heading"],
+        content_node(
+            "assessment.remediation-method.body",
+            "paragraph",
+            "remediationMethod",
+            "계정 잠금 임계값을 10회 이하로 설정",
+            "계정 잠금 임계값을 10회 이하로 설정",
+        ),
+        node_by_identifier["assessment.remediation-impact.heading"],
+        content_node(
+            "assessment.remediation-impact.hp-ux",
+            "listItem",
+            "remediationImpact",
+            "HP-UX는 충분한 테스트를 거친 후 Trusted Mode로 전환해야 함",
+            "HP-UX: Trusted Mode로 전환 시",
+            listType="unordered",
+            listDepth=1,
+        ),
+        content_node(
+            "assessment.remediation-impact.linux",
+            "listItem",
+            "remediationImpact",
+            "LINUX는 PAM 라이브러리 경로의 존재 여부를 확인해야 함",
+            "LINUX: /etc/pam.d/system-auth 파일 설정 시",
+            listType="unordered",
+            listDepth=1,
+        ),
+        content_node(
+            "assessment.remediation-impact.pam",
+            "listItem",
+            "remediationImpact",
+            "PAM 모듈은 반드시 순서에 맞게 설정해야 함",
+            "PAM 모듈을 이용하여 설정할 때",
+            listType="unordered",
+            listDepth=1,
+        ),
+        node_by_identifier["remediation.heading"],
+        node_by_identifier["remediation.solaris.heading"],
+        node_by_identifier["remediation.solaris.step-1"],
+        node_by_identifier["remediation.solaris.configuration"],
+        linux_heading,
+        node_by_identifier["remediation.linux.step-1"],
+        node_by_identifier["remediation.linux.command"],
+        node_by_identifier["remediation.linux.output"],
+        node_by_identifier["remediation.linux.configuration"],
+        node_by_identifier["remediation.linux.options"],
+        node_by_identifier["remediation.debian.step-1"],
+        node_by_identifier["remediation.debian.configuration"],
+        node_by_identifier["remediation.debian.reference"],
+        aix_heading,
+        node_by_identifier["remediation.aix-hpux.step-1"],
+        node_by_identifier["remediation.aix-hpux.configuration"],
+        hp_ux_heading,
+        node_by_identifier["remediation.aix-hpux.options"],
+        node_by_identifier["remediation.pam.warning"],
+    ]
     optional_node_fields = (
         "headingLevel",
         "listType",
@@ -566,7 +782,7 @@ def _fake_result(task: dict[str, JsonValue]) -> dict[str, JsonValue]:  # noqa: C
         "contentModelRecommendation": "systemCriterion",
         "title": task["criterionTitle"],
         "targetScope": "nonExhaustive",
-        "targetIdentifiers": ["unspecified"],
+        "targetIdentifiers": ["solaris", "linux", "aix", "hp-ux"],
         "sourceTargetText": "SOLARIS, LINUX, AIX, HP-UX 등",
         "sourcePageInspections": source_page_inspections,
         "nodes": nodes,
@@ -593,6 +809,9 @@ def test_task_builder_exports_deterministic_u_03_evidence(tmp_path: Path) -> Non
     assert second_path.read_bytes() == first_bytes
     assert task["schemaVersion"] == EXPECTED_CODEX_SCHEMA_VERSION
     assert task["promptVersion"] == EXPECTED_CODEX_PROMPT_VERSION
+    task_paths = as_mapping(task["paths"], location="task.paths")
+    assert task_paths["taxonomy"] == "data/taxonomy.yaml"
+    assert isinstance(task["taxonomyChecksum"], str)
     assert task["taskIdentifier"] == "u-03-codex-structure-v3"
     evidence_contract = as_mapping(task["evidenceContract"], location="task.evidenceContract")
     assert evidence_contract == {
@@ -648,6 +867,51 @@ def test_runner_dry_run_uses_read_only_schema_and_images(
     model_option_index = command.index("--model")
     assert command[model_option_index : model_option_index + 2] == ["--model", "test-model"]
     assert command[-1] == "-"
+
+
+def test_runner_can_load_user_config_for_opencodex_models(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """OpenCodeX routing must retain user provider configuration when requested."""
+
+    monkeypatch.setattr(codex_runner.shutil, "which", lambda _name: "/usr/bin/codex")
+    run_path = codex_runner.run_codex_task(
+        "u-03",
+        work_directory=tmp_path,
+        model="anthropic/claude-opus-5",
+        use_user_config=True,
+        dry_run=True,
+    )
+
+    run_document = json.loads(run_path.read_text(encoding="utf-8"))
+    command = run_document["command"]
+    assert "--ignore-user-config" not in command
+    model_option_index = command.index("--model")
+    assert command[model_option_index : model_option_index + 2] == [
+        "--model",
+        "anthropic/claude-opus-5",
+    ]
+    assert run_document["userConfigLoaded"] is True
+
+
+def test_runner_rejects_provider_qualified_model_without_user_config(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """Custom provider models must not be sent to the native ChatGPT route."""
+
+    monkeypatch.setattr(codex_runner.shutil, "which", lambda _name: "/usr/bin/codex")
+    with pytest.raises(
+        ValueError,
+        match=r"anthropic/claude-opus-5.*requires --use-user-config",
+    ):
+        codex_runner.run_codex_task(
+            "u-03",
+            work_directory=tmp_path,
+            model="anthropic/claude-opus-5",
+            dry_run=True,
+        )
 
 
 def test_runner_dry_run_logs_prepared_and_planned_without_starting_codex(
@@ -1068,11 +1332,12 @@ def test_runner_main_forwards_logger_and_preserves_stdout_contract(
     result_path = tmp_path / "work" / "results" / "u-03" / "result.json"
     observed_loggers: list[RuntimeLogger] = []
 
-    def fake_run_codex_task(
+    def fake_run_codex_task(  # noqa: PLR0913
         slug: str,
         *,
         work_directory: Path | None,
         model: str | None,
+        use_user_config: bool,
         dry_run: bool,
         runtime_logger: RuntimeLogger | None,
     ) -> Path:
@@ -1081,6 +1346,7 @@ def test_runner_main_forwards_logger_and_preserves_stdout_contract(
         assert slug == "u-03"
         assert work_directory == tmp_path / "work"
         assert model is None
+        assert not use_user_config
         assert not dry_run
         assert runtime_logger is not None
         observed_loggers.append(runtime_logger)
@@ -1130,9 +1396,197 @@ def test_importer_validates_and_renders_review_candidate(tmp_path: Path) -> None
     candidate = candidate_path.read_text(encoding="utf-8")
     assert "# U-03 계정 잠금 임계값 설정" in candidate
     assert "Canonical 콘텐츠나 사람 승인 상태가 아닙니다" in candidate
+    assert (
+        "1. `/etc/default/login` 파일의 `RETRIES` 값과 "
+        "`/etc/security/policy.conf` 파일의 `LOCK_AFTER_RETRIES` 값을 수정\n\n"
+        "   ~~~ini configuration\n"
+        "   RETRIES=10\n"
+        "   ~~~"
+    ) in candidate
     assert (candidate_path.parent / "validation.json").is_file()
     canonical_path = repository_root() / "unix" / "u-03.md"
     assert canonical_path.read_text(encoding="utf-8").startswith("---\nschemaVersion: 1")
+
+
+def test_importer_accepts_table_without_source_caption(tmp_path: Path) -> None:
+    """A semantic table may rely on its adjacent heading for an accessible name."""
+
+    task_path = build_codex_task("u-03", work_directory=tmp_path)
+    task = load_codex_task(task_path)
+    result = _fake_result(task)
+    nodes = as_sequence(result["nodes"], location="result.nodes")
+    table_node = next(
+        as_mapping(node, location="result.nodes[]")
+        for node in nodes
+        if isinstance(node, dict) and node.get("nodeType") == "table"
+    )
+    table_node["tableCaption"] = None
+    result_path = tmp_path / "results" / "u-03" / "result.json"
+    result_path.parent.mkdir(parents=True)
+    result_path.write_text(
+        json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+
+    validate_codex_result(result_path, task_path)
+    candidate_path = render_codex_candidate(result_path, task_path, work_directory=tmp_path)
+    candidate = candidate_path.read_text(encoding="utf-8")
+    assert "**None**" not in candidate
+    assert "| 옵션 | 설명 |" in candidate
+
+
+def test_importer_applies_heading_contract_to_web_application_result(tmp_path: Path) -> None:
+    """The web application recommendation must use the shared canonical headings."""
+
+    task_path = build_codex_task("u-03", work_directory=tmp_path)
+    task = load_codex_task(task_path)
+    task["domainIdentifier"] = "web-application"
+    task["taskChecksum"] = "0" * 64
+    task["taskChecksum"] = calculate_codex_task_checksum(task)
+    task_path.write_text(
+        json.dumps(task, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+    result = _fake_result(task)
+    result["contentModelRecommendation"] = "webApplicationCriterion"
+    result_path = tmp_path / "web-application-result.json"
+    result_path.write_text(
+        json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+
+    assert validate_codex_result(result_path, task_path)["contentModelRecommendation"] == (
+        "webApplicationCriterion"
+    )
+
+    nodes = [
+        as_mapping(value, location="result.nodes[]")
+        for value in as_sequence(result["nodes"], location="result.nodes")
+    ]
+    overview_heading = next(
+        value for value in nodes if value["nodeIdentifier"] == "overview.heading"
+    )
+    overview_heading["content"] = "임의 개요"
+    result_path.write_text(
+        json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+    with pytest.raises(ValueError, match="webApplicationCriterion H2 sequence differs"):
+        validate_codex_result(result_path, task_path)
+
+
+def test_importer_rejects_noncanonical_fixed_section_body(tmp_path: Path) -> None:
+    """A fixed paragraph section cannot be represented as another node form."""
+
+    task_path = build_codex_task("u-03", work_directory=tmp_path)
+    task = load_codex_task(task_path)
+    result = _fake_result(task)
+    node = next(
+        as_mapping(value, location="result.nodes[]")
+        for value in as_sequence(result["nodes"], location="result.nodes")
+        if isinstance(value, dict)
+        and value.get("nodeIdentifier") == "overview.inspection-content.body"
+    )
+    node["nodeType"] = "note"
+    node["noteType"] = "참고"
+    result_path = tmp_path / "invalid-fixed-section-result.json"
+    result_path.write_text(
+        json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+
+    with pytest.raises(ValueError, match=r"점검 내용.*exactly one paragraph"):
+        validate_codex_result(result_path, task_path)
+
+
+@pytest.mark.parametrize(
+    ("replacement", "message"),
+    [
+        ("**양호**: 계정 잠금 임계값이 10회 이하인 경우", "judgment items must use"),
+        ("**취약:** 계정 잠금 임계값이 10회 이하인 경우", "one 양호 item followed"),
+    ],
+)
+def test_importer_rejects_noncanonical_judgment_item(
+    tmp_path: Path,
+    replacement: str,
+    message: str,
+) -> None:
+    """Judgment items must keep the exact unordered label shape and order."""
+
+    task_path = build_codex_task("u-03", work_directory=tmp_path)
+    task = load_codex_task(task_path)
+    result = _fake_result(task)
+    node = next(
+        as_mapping(value, location="result.nodes[]")
+        for value in as_sequence(result["nodes"], location="result.nodes")
+        if isinstance(value, dict) and value.get("nodeIdentifier") == "assessment.judgment.good"
+    )
+    node["content"] = replacement
+    result_path = tmp_path / "invalid-judgment-result.json"
+    result_path.write_text(
+        json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+
+    with pytest.raises(ValueError, match=message):
+        validate_codex_result(result_path, task_path)
+
+
+def test_importer_requires_supplementary_guidance_to_be_last(tmp_path: Path) -> None:
+    """Supplementary guidance cannot interrupt target remediation headings."""
+
+    task_path = build_codex_task("u-03", work_directory=tmp_path)
+    task = load_codex_task(task_path)
+    result = _fake_result(task)
+    node = next(
+        as_mapping(value, location="result.nodes[]")
+        for value in as_sequence(result["nodes"], location="result.nodes")
+        if isinstance(value, dict) and value.get("nodeIdentifier") == "remediation.linux.heading"
+    )
+    node["content"] = "추가 지침"
+    result_path = tmp_path / "misplaced-supplementary-guidance-result.json"
+    result_path.write_text(
+        json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+
+    with pytest.raises(ValueError, match="추가 지침 must be the last remediation H3"):
+        validate_codex_result(result_path, task_path)
+
+
+@pytest.mark.parametrize(
+    ("field_name", "replacement", "message"),
+    [
+        ("title", "다른 제목", "identity differs from task: title"),
+        (
+            "contentModelRecommendation",
+            "webApplicationCriterion",
+            "content model recommendation differs from task domain",
+        ),
+        ("targetIdentifiers", ["unregistered-target"], "unknown taxonomy targets"),
+        ("sourceTargetText", "LINUX", "sourceTargetText differs"),
+    ],
+)
+def test_importer_rejects_invalid_result_identity_and_classification(
+    tmp_path: Path,
+    field_name: str,
+    replacement: JsonValue,
+    message: str,
+) -> None:
+    """Task identity, domain model, taxonomy targets, and target text are authoritative."""
+
+    task_path = build_codex_task("u-03", work_directory=tmp_path)
+    task = load_codex_task(task_path)
+    result = _fake_result(task)
+    result[field_name] = replacement
+    result_path = tmp_path / f"invalid-{field_name}-result.json"
+    result_path.write_text(
+        json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+
+    with pytest.raises(ValueError, match=message):
+        validate_codex_result(result_path, task_path)
 
 
 def test_importer_rejects_missing_technical_literal(tmp_path: Path) -> None:
@@ -1391,3 +1845,32 @@ def test_importer_keeps_clear_source_anomaly_separate_from_vision_uncertainty(
         isinstance(inspection, dict) and inspection["inspectionStatus"] == "visionInspected"
         for inspection in inspections
     )
+
+
+def test_importer_accepts_clear_unresolved_source_inconsistency(tmp_path: Path) -> None:
+    """A clear source inconsistency may remain open without implying OCR uncertainty."""
+
+    task_path = build_codex_task("u-03", work_directory=tmp_path)
+    task = load_codex_task(task_path)
+    result = _fake_result(task)
+    result["sourceAnnotations"] = [
+        {
+            "annotationIdentifier": "u-03-source-001",
+            "annotationType": "sourceInconsistency",
+            "targetReference": "remediation.linux.step-1",
+            "physicalPages": [22],
+            "sourceText": "etc/securiy/faillock.conf",
+            "explanation": "The clearly visible source values conflict.",
+            "disposition": "unresolved",
+        }
+    ]
+    result_path = tmp_path / "clear-source-inconsistency-result.json"
+    result_path.write_text(
+        json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+
+    validated = validate_codex_result(result_path, task_path)
+    assert validated["analysisStatus"] == "complete"
+    quality = as_mapping(validated["quality"], location="validated.quality")
+    assert quality["semanticCoverageStatus"] == "complete"

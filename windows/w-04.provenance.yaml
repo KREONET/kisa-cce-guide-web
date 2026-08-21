@@ -2,64 +2,100 @@ schemaVersion: 1
 criterionSlug: w-04
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: w-04:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "w-04:overview.heading:1"
     sourceSpans:
-      - physicalPage: 180
-        printedPage: '180'
-        pageRegionIdentifier: p180-w-04
-  - blockReference: w-04:sourceTranscription.sourcePage180.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+      - {physicalPage: 180, printedPage: "180", pageRegionIdentifier: p180-w-04}
+  - blockReference: "w-04:overview.inspectionContent.heading:1"
     sourceSpans:
-      - physicalPage: 180
-        printedPage: '180'
-        pageRegionIdentifier: p180-w-04
-  - blockReference: w-04:sourceTranscription.sourcePage180.transcription:1
-    publicationDisposition: published
+      - {physicalPage: 180, printedPage: "180", pageRegionIdentifier: p180-w-04}
+  - blockReference: "w-04:overview.inspectionContent.paragraph:1"
     sourceSpans:
-      - physicalPage: 180
-        printedPage: '180'
-        pageRegionIdentifier: p180-w-04
-  - blockReference: w-04:sourceTranscription.sourcePage180.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+      - {physicalPage: 180, printedPage: "180", pageRegionIdentifier: p180-w-04}
+  - blockReference: "w-04:overview.inspectionPurpose.heading:1"
     sourceSpans:
-      - physicalPage: 180
-        printedPage: '180'
-        pageRegionIdentifier: p180-w-04
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/w-04/w-04-page-180-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 1b0448a666625cfed3176dbfe958f176ec45187c1d3d3042a537c4cdb683a60b
-    alternativeText: PDF 페이지 180의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 180 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
+      - {physicalPage: 180, printedPage: "180", pageRegionIdentifier: p180-w-04}
+  - blockReference: "w-04:overview.inspectionPurpose.paragraph:1"
     sourceSpans:
-      - physicalPage: 180
-        printedPage: '180'
-        pageRegionIdentifier: p180-w-04
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
+      - {physicalPage: 180, printedPage: "180", pageRegionIdentifier: p180-w-04}
+  - blockReference: "w-04:overview.securityThreat.heading:1"
+    sourceSpans:
+      - {physicalPage: 180, printedPage: "180", pageRegionIdentifier: p180-w-04}
+  - blockReference: "w-04:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - {physicalPage: 180, printedPage: "180", pageRegionIdentifier: p180-w-04}
+  - blockReference: "w-04:overview.reference.heading:1"
+    sourceSpans:
+      - {physicalPage: 180, printedPage: "180", pageRegionIdentifier: p180-w-04}
+  - blockReference: "w-04:overview.reference.note.label:1"
+    sourceSpans:
+      - {physicalPage: 180, printedPage: "180", pageRegionIdentifier: p180-w-04}
+  - blockReference: "w-04:overview.reference.note.content:1"
+    sourceSpans:
+      - {physicalPage: 180, printedPage: "180", pageRegionIdentifier: p180-w-04}
+  - blockReference: "w-04:overview.reference.note.label:2"
+    sourceSpans:
+      - {physicalPage: 180, printedPage: "180", pageRegionIdentifier: p180-w-04}
+  - blockReference: "w-04:overview.reference.note.content:2"
+    sourceSpans:
+      - {physicalPage: 180, printedPage: "180", pageRegionIdentifier: p180-w-04}
+  - blockReference: "w-04:overview.reference.note.label:3"
+    sourceSpans:
+      - {physicalPage: 180, printedPage: "180", pageRegionIdentifier: p180-w-04}
+  - blockReference: "w-04:overview.reference.note.content:3"
+    sourceSpans:
+      - {physicalPage: 180, printedPage: "180", pageRegionIdentifier: p180-w-04}
+  - blockReference: "w-04:assessment.heading:1"
+    sourceSpans:
+      - {physicalPage: 180, printedPage: "180", pageRegionIdentifier: p180-w-04}
+  - blockReference: "w-04:assessment.target.heading:1"
+    sourceSpans:
+      - {physicalPage: 180, printedPage: "180", pageRegionIdentifier: p180-w-04}
+  - blockReference: "w-04:assessment.target.paragraph:1"
+    sourceSpans:
+      - {physicalPage: 180, printedPage: "180", pageRegionIdentifier: p180-w-04}
+  - blockReference: "w-04:assessment.judgment.heading:1"
+    sourceSpans:
+      - {physicalPage: 180, printedPage: "180", pageRegionIdentifier: p180-w-04}
+  - blockReference: "w-04:assessment.judgment.good:1"
+    sourceSpans:
+      - {physicalPage: 180, printedPage: "180", pageRegionIdentifier: p180-w-04}
+  - blockReference: "w-04:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - {physicalPage: 180, printedPage: "180", pageRegionIdentifier: p180-w-04}
+  - blockReference: "w-04:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - {physicalPage: 180, printedPage: "180", pageRegionIdentifier: p180-w-04}
+  - blockReference: "w-04:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - {physicalPage: 180, printedPage: "180", pageRegionIdentifier: p180-w-04}
+  - blockReference: "w-04:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - {physicalPage: 180, printedPage: "180", pageRegionIdentifier: p180-w-04}
+  - blockReference: "w-04:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - {physicalPage: 180, printedPage: "180", pageRegionIdentifier: p180-w-04}
+  - blockReference: "w-04:remediation.heading:1"
+    sourceSpans:
+      - {physicalPage: 180, printedPage: "180", pageRegionIdentifier: p180-w-04}
+  - blockReference: "w-04:remediation.linux.heading:1"
+    sourceSpans:
+      - {physicalPage: 180, printedPage: "180", pageRegionIdentifier: p180-w-04}
+  - blockReference: "w-04:remediation.linux.paragraph:1"
+    sourceSpans:
+      - {physicalPage: 180, printedPage: "180", pageRegionIdentifier: p180-w-04}
+  - blockReference: "w-04:remediation.linux.step:1"
+    sourceSpans:
+      - {physicalPage: 180, printedPage: "180", pageRegionIdentifier: p180-w-04}
+  - blockReference: "w-04:remediation.linux.step:2"
+    sourceSpans:
+      - {physicalPage: 180, printedPage: "180", pageRegionIdentifier: p180-w-04}
+  - blockReference: "w-04:remediation.linux.paragraph:2"
+    sourceSpans:
+      - {physicalPage: 180, printedPage: "180", pageRegionIdentifier: p180-w-04}
+  - blockReference: "w-04:remediation.linux.step:3"
+    sourceSpans:
+      - {physicalPage: 180, printedPage: "180", pageRegionIdentifier: p180-w-04}
+  - blockReference: "w-04:remediation.linux.step:4"
+    sourceSpans:
+      - {physicalPage: 180, printedPage: "180", pageRegionIdentifier: p180-w-04}
+assets: []

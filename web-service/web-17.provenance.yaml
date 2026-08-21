@@ -2,117 +2,224 @@ schemaVersion: 1
 criterionSlug: web-17
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: web-17:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "web-17:overview.heading:1"
     sourceSpans:
       - physicalPage: 320
-        printedPage: '320'
+        printedPage: "320"
         pageRegionIdentifier: p320-web-17
-  - blockReference: web-17:sourceTranscription.sourcePage320.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "web-17:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 320
-        printedPage: '320'
+        printedPage: "320"
         pageRegionIdentifier: p320-web-17
-  - blockReference: web-17:sourceTranscription.sourcePage320.transcription:1
-    publicationDisposition: published
+  - blockReference: "web-17:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 320
-        printedPage: '320'
+        printedPage: "320"
         pageRegionIdentifier: p320-web-17
-  - blockReference: web-17:sourceTranscription.sourcePage320.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "web-17:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 320
-        printedPage: '320'
+        printedPage: "320"
         pageRegionIdentifier: p320-web-17
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - blockReference: web-17:sourceTranscription.sourcePage321.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "web-17:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 320
+        printedPage: "320"
+        pageRegionIdentifier: p320-web-17
+  - blockReference: "web-17:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 320
+        printedPage: "320"
+        pageRegionIdentifier: p320-web-17
+  - blockReference: "web-17:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 320
+        printedPage: "320"
+        pageRegionIdentifier: p320-web-17
+  - blockReference: "web-17:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 320
+        printedPage: "320"
+        pageRegionIdentifier: p320-web-17
+  - blockReference: "web-17:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 320
+        printedPage: "320"
+        pageRegionIdentifier: p320-web-17
+  - blockReference: "web-17:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 320
+        printedPage: "320"
+        pageRegionIdentifier: p320-web-17
+  - blockReference: "web-17:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 320
+        printedPage: "320"
+        pageRegionIdentifier: p320-web-17
+  - blockReference: "web-17:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 320
+        printedPage: "320"
+        pageRegionIdentifier: p320-web-17
+  - blockReference: "web-17:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 320
+        printedPage: "320"
+        pageRegionIdentifier: p320-web-17
+  - blockReference: "web-17:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 320
+        printedPage: "320"
+        pageRegionIdentifier: p320-web-17
+  - blockReference: "web-17:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 320
+        printedPage: "320"
+        pageRegionIdentifier: p320-web-17
+  - blockReference: "web-17:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 320
+        printedPage: "320"
+        pageRegionIdentifier: p320-web-17
+  - blockReference: "web-17:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 320
+        printedPage: "320"
+        pageRegionIdentifier: p320-web-17
+  - blockReference: "web-17:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 320
+        printedPage: "320"
+        pageRegionIdentifier: p320-web-17
+  - blockReference: "web-17:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 320
+        printedPage: "320"
+        pageRegionIdentifier: p320-web-17
+  - blockReference: "web-17:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 320
+        printedPage: "320"
+        pageRegionIdentifier: p320-web-17
+  - blockReference: "web-17:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 320
+        printedPage: "320"
+        pageRegionIdentifier: p320-web-17
+  - blockReference: "web-17:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 320
+        printedPage: "320"
+        pageRegionIdentifier: p320-web-17
+  - blockReference: "web-17:remediation.linux.paragraph:1"
+    sourceSpans:
+      - physicalPage: 320
+        printedPage: "320"
+        pageRegionIdentifier: p320-web-17
+  - blockReference: "web-17:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 320
+        printedPage: "320"
+        pageRegionIdentifier: p320-web-17
+  - blockReference: "web-17:remediation.linux.command:1"
+    sourceSpans:
+      - physicalPage: 320
+        printedPage: "320"
+        pageRegionIdentifier: p320-web-17
+  - blockReference: "web-17:remediation.linux.configuration:1"
+    sourceSpans:
+      - physicalPage: 320
+        printedPage: "320"
+        pageRegionIdentifier: p320-web-17
+  - blockReference: "web-17:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 320
+        printedPage: "320"
+        pageRegionIdentifier: p320-web-17
+  - blockReference: "web-17:remediation.linux.paragraph:2"
     sourceSpans:
       - physicalPage: 321
-        printedPage: '321'
+        printedPage: "321"
         pageRegionIdentifier: p321-web-17
-  - blockReference: web-17:sourceTranscription.sourcePage321.transcription:1
-    publicationDisposition: published
+  - blockReference: "web-17:remediation.linux.step:3"
     sourceSpans:
       - physicalPage: 321
-        printedPage: '321'
+        printedPage: "321"
         pageRegionIdentifier: p321-web-17
-  - blockReference: web-17:sourceTranscription.sourcePage321.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "web-17:remediation.linux.command:2"
     sourceSpans:
       - physicalPage: 321
-        printedPage: '321'
+        printedPage: "321"
         pageRegionIdentifier: p321-web-17
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/web-17/web-17-page-320-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: e64c98c3733f5d6121b3f7ee1c9839d441e43ec888ca1e61e22a14423d5d61a1
-    alternativeText: PDF 페이지 320의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 320 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 320
-        printedPage: '320'
-        pageRegionIdentifier: p320-web-17
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - path: ../assets/web-17/web-17-page-321-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: c29ce37c3c6c75be22b7d58cb74933c19defc0d67ea9c80e9d5dff2e529c6ca3
-    alternativeText: PDF 페이지 321의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 321 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "web-17:remediation.linux.configuration:2"
     sourceSpans:
       - physicalPage: 321
-        printedPage: '321'
+        printedPage: "321"
         pageRegionIdentifier: p321-web-17
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - blockReference: "web-17:remediation.linux.step:4"
+    sourceSpans:
+      - physicalPage: 321
+        printedPage: "321"
+        pageRegionIdentifier: p321-web-17
+  - blockReference: "web-17:remediation.linux.paragraph:3"
+    sourceSpans:
+      - physicalPage: 321
+        printedPage: "321"
+        pageRegionIdentifier: p321-web-17
+  - blockReference: "web-17:remediation.linux.step:5"
+    sourceSpans:
+      - physicalPage: 321
+        printedPage: "321"
+        pageRegionIdentifier: p321-web-17
+  - blockReference: "web-17:remediation.linux.command:3"
+    sourceSpans:
+      - physicalPage: 321
+        printedPage: "321"
+        pageRegionIdentifier: p321-web-17
+  - blockReference: "web-17:remediation.linux.configuration:3"
+    sourceSpans:
+      - physicalPage: 321
+        printedPage: "321"
+        pageRegionIdentifier: p321-web-17
+  - blockReference: "web-17:remediation.linux.step:6"
+    sourceSpans:
+      - physicalPage: 321
+        printedPage: "321"
+        pageRegionIdentifier: p321-web-17
+  - blockReference: "web-17:remediation.linux.step:7"
+    sourceSpans:
+      - physicalPage: 321
+        printedPage: "321"
+        pageRegionIdentifier: p321-web-17
+  - blockReference: "web-17:remediation.linux.command:4"
+    sourceSpans:
+      - physicalPage: 321
+        printedPage: "321"
+        pageRegionIdentifier: p321-web-17
+  - blockReference: "web-17:remediation.linux.paragraph:4"
+    sourceSpans:
+      - physicalPage: 321
+        printedPage: "321"
+        pageRegionIdentifier: p321-web-17
+  - blockReference: "web-17:remediation.linux.step:8"
+    sourceSpans:
+      - physicalPage: 321
+        printedPage: "321"
+        pageRegionIdentifier: p321-web-17
+  - blockReference: "web-17:remediation.linux.command:5"
+    sourceSpans:
+      - physicalPage: 321
+        printedPage: "321"
+        pageRegionIdentifier: p321-web-17
+  - blockReference: "web-17:remediation.linux.configuration:4"
+    sourceSpans:
+      - physicalPage: 321
+        printedPage: "321"
+        pageRegionIdentifier: p321-web-17
+  - blockReference: "web-17:remediation.linux.step:9"
+    sourceSpans:
+      - physicalPage: 321
+        printedPage: "321"
+        pageRegionIdentifier: p321-web-17
+assets: []

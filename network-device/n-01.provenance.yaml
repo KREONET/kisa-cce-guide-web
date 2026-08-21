@@ -2,223 +2,126 @@ schemaVersion: 1
 criterionSlug: n-01
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: n-01:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "n-01:overview.heading:1"
+    sourceSpans: [{physicalPage: 391, printedPage: "391", pageRegionIdentifier: p391-n-01}]
+  - blockReference: "n-01:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 391, printedPage: "391", pageRegionIdentifier: p391-n-01}]
+  - blockReference: "n-01:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 391, printedPage: "391", pageRegionIdentifier: p391-n-01}]
+  - blockReference: "n-01:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 391, printedPage: "391", pageRegionIdentifier: p391-n-01}]
+  - blockReference: "n-01:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 391, printedPage: "391", pageRegionIdentifier: p391-n-01}]
+  - blockReference: "n-01:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 391, printedPage: "391", pageRegionIdentifier: p391-n-01}]
+  - blockReference: "n-01:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 391, printedPage: "391", pageRegionIdentifier: p391-n-01}]
+  - blockReference: "n-01:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 391, printedPage: "391", pageRegionIdentifier: p391-n-01}]
+  - blockReference: "n-01:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 391, printedPage: "391", pageRegionIdentifier: p391-n-01}]
+  - blockReference: "n-01:overview.reference.note.content:1"
+    sourceSpans: [{physicalPage: 391, printedPage: "391", pageRegionIdentifier: p391-n-01}]
+  - blockReference: "n-01:overview.reference.note.label:2"
+    sourceSpans: [{physicalPage: 391, printedPage: "391", pageRegionIdentifier: p391-n-01}]
+  - blockReference: "n-01:overview.reference.note.content:2"
+    sourceSpans: [{physicalPage: 391, printedPage: "391", pageRegionIdentifier: p391-n-01}]
+  - blockReference: "n-01:assessment.heading:1"
+    sourceSpans: [{physicalPage: 391, printedPage: "391", pageRegionIdentifier: p391-n-01}]
+  - blockReference: "n-01:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 391, printedPage: "391", pageRegionIdentifier: p391-n-01}]
+  - blockReference: "n-01:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 391, printedPage: "391", pageRegionIdentifier: p391-n-01}]
+  - blockReference: "n-01:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 391, printedPage: "391", pageRegionIdentifier: p391-n-01}]
+  - blockReference: "n-01:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 391, printedPage: "391", pageRegionIdentifier: p391-n-01}]
+  - blockReference: "n-01:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 391, printedPage: "391", pageRegionIdentifier: p391-n-01}]
+  - blockReference: "n-01:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 391, printedPage: "391", pageRegionIdentifier: p391-n-01}]
+  - blockReference: "n-01:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 391, printedPage: "391", pageRegionIdentifier: p391-n-01}]
+  - blockReference: "n-01:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 391, printedPage: "391", pageRegionIdentifier: p391-n-01}]
+  - blockReference: "n-01:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 391, printedPage: "391", pageRegionIdentifier: p391-n-01}]
+  - blockReference: "n-01:remediation.heading:1"
+    sourceSpans: [{physicalPage: 391, printedPage: "391", pageRegionIdentifier: p391-n-01}]
+  - blockReference: "n-01:remediation.linux.heading:1"
+    sourceSpans: [{physicalPage: 391, printedPage: "391", pageRegionIdentifier: p391-n-01}]
+  - blockReference: "n-01:remediation.linux.paragraph:1"
+    sourceSpans: [{physicalPage: 391, printedPage: "391", pageRegionIdentifier: p391-n-01}]
+  - blockReference: "n-01:remediation.linux.step:1"
+    sourceSpans: [{physicalPage: 391, printedPage: "391", pageRegionIdentifier: p391-n-01}]
+  - blockReference: "n-01:remediation.linux.command:1"
+    sourceSpans: [{physicalPage: 391, printedPage: "391", pageRegionIdentifier: p391-n-01}]
+  - blockReference: "n-01:remediation.linux.step:2"
+    sourceSpans: [{physicalPage: 391, printedPage: "391", pageRegionIdentifier: p391-n-01}]
+  - blockReference: "n-01:remediation.linux.configuration:1"
     sourceSpans:
-      - physicalPage: 391
-        printedPage: '391'
-        pageRegionIdentifier: p391-n-01
-  - blockReference: n-01:sourceTranscription.sourcePage391.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 391
-        printedPage: '391'
-        pageRegionIdentifier: p391-n-01
-  - blockReference: n-01:sourceTranscription.sourcePage391.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 391
-        printedPage: '391'
-        pageRegionIdentifier: p391-n-01
-  - blockReference: n-01:sourceTranscription.sourcePage391.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 391
-        printedPage: '391'
-        pageRegionIdentifier: p391-n-01
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - blockReference: n-01:sourceTranscription.sourcePage392.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 392
-        printedPage: '392'
-        pageRegionIdentifier: p392-n-01
-  - blockReference: n-01:sourceTranscription.sourcePage392.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 392
-        printedPage: '392'
-        pageRegionIdentifier: p392-n-01
-  - blockReference: n-01:sourceTranscription.sourcePage392.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 392
-        printedPage: '392'
-        pageRegionIdentifier: p392-n-01
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: n-01:sourceTranscription.sourcePage393.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 393
-        printedPage: '393'
-        pageRegionIdentifier: p393-n-01
-  - blockReference: n-01:sourceTranscription.sourcePage393.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 393
-        printedPage: '393'
-        pageRegionIdentifier: p393-n-01
-  - blockReference: n-01:sourceTranscription.sourcePage393.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 393
-        printedPage: '393'
-        pageRegionIdentifier: p393-n-01
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: n-01:sourceTranscription.sourcePage394.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 394
-        printedPage: '394'
-        pageRegionIdentifier: p394-n-01
-  - blockReference: n-01:sourceTranscription.sourcePage394.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 394
-        printedPage: '394'
-        pageRegionIdentifier: p394-n-01
-  - blockReference: n-01:sourceTranscription.sourcePage394.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 394
-        printedPage: '394'
-        pageRegionIdentifier: p394-n-01
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/n-01/n-01-page-391-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: bbf46cbede950812b4daffd98b528130c44a07e0daa199def0d8a4249fe0ec96
-    alternativeText: PDF 페이지 391의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 391 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 391
-        printedPage: '391'
-        pageRegionIdentifier: p391-n-01
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - path: ../assets/n-01/n-01-page-392-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 600040c60b3ef40de6d0b83ed17273ab10de20b278b4c3cf23de0aa892cce585
-    alternativeText: PDF 페이지 392의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 392 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 392
-        printedPage: '392'
-        pageRegionIdentifier: p392-n-01
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/n-01/n-01-page-393-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: cb15a906fb005d11a302c3e87d4b341d13b404771af7840fbf8ecb513aa5c4ba
-    alternativeText: PDF 페이지 393의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 393 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 393
-        printedPage: '393'
-        pageRegionIdentifier: p393-n-01
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/n-01/n-01-page-394-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 82d31ae8b8e97e75d0a24bd65b66b0f56287848067a2951cd7fa612209265838
-    alternativeText: PDF 페이지 394의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 394 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 394
-        printedPage: '394'
-        pageRegionIdentifier: p394-n-01
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+      - {physicalPage: 391, printedPage: "391", pageRegionIdentifier: p391-n-01}
+      - {physicalPage: 392, printedPage: "392", pageRegionIdentifier: p392-n-01}
+  - blockReference: "n-01:remediation.linux.step:3"
+    sourceSpans: [{physicalPage: 392, printedPage: "392", pageRegionIdentifier: p392-n-01}]
+  - blockReference: "n-01:remediation.linux.command:2"
+    sourceSpans: [{physicalPage: 392, printedPage: "392", pageRegionIdentifier: p392-n-01}]
+  - blockReference: "n-01:remediation.linux.step:4"
+    sourceSpans: [{physicalPage: 392, printedPage: "392", pageRegionIdentifier: p392-n-01}]
+  - blockReference: "n-01:remediation.linux.command:3"
+    sourceSpans: [{physicalPage: 392, printedPage: "392", pageRegionIdentifier: p392-n-01}]
+  - blockReference: "n-01:remediation.linux.step:5"
+    sourceSpans: [{physicalPage: 392, printedPage: "392", pageRegionIdentifier: p392-n-01}]
+  - blockReference: "n-01:remediation.linux.command:4"
+    sourceSpans: [{physicalPage: 392, printedPage: "392", pageRegionIdentifier: p392-n-01}]
+  - blockReference: "n-01:remediation.linux.step:6"
+    sourceSpans: [{physicalPage: 392, printedPage: "392", pageRegionIdentifier: p392-n-01}]
+  - blockReference: "n-01:remediation.linux.command:5"
+    sourceSpans: [{physicalPage: 392, printedPage: "392", pageRegionIdentifier: p392-n-01}]
+  - blockReference: "n-01:remediation.linux.note.label:1"
+    sourceSpans: [{physicalPage: 392, printedPage: "392", pageRegionIdentifier: p392-n-01}]
+  - blockReference: "n-01:remediation.linux.note.content:1"
+    sourceSpans: [{physicalPage: 392, printedPage: "392", pageRegionIdentifier: p392-n-01}]
+  - blockReference: "n-01:remediation.linux.paragraph:2"
+    sourceSpans: [{physicalPage: 393, printedPage: "393", pageRegionIdentifier: p393-n-01}]
+  - blockReference: "n-01:remediation.linux.step:7"
+    sourceSpans: [{physicalPage: 393, printedPage: "393", pageRegionIdentifier: p393-n-01}]
+  - blockReference: "n-01:remediation.linux.command:6"
+    sourceSpans: [{physicalPage: 393, printedPage: "393", pageRegionIdentifier: p393-n-01}]
+  - blockReference: "n-01:remediation.linux.step:8"
+    sourceSpans: [{physicalPage: 393, printedPage: "393", pageRegionIdentifier: p393-n-01}]
+  - blockReference: "n-01:remediation.linux.command:7"
+    sourceSpans: [{physicalPage: 393, printedPage: "393", pageRegionIdentifier: p393-n-01}]
+  - blockReference: "n-01:remediation.linux.paragraph:3"
+    sourceSpans: [{physicalPage: 393, printedPage: "393", pageRegionIdentifier: p393-n-01}]
+  - blockReference: "n-01:remediation.linux.step:9"
+    sourceSpans: [{physicalPage: 393, printedPage: "393", pageRegionIdentifier: p393-n-01}]
+  - blockReference: "n-01:remediation.linux.command:8"
+    sourceSpans: [{physicalPage: 393, printedPage: "393", pageRegionIdentifier: p393-n-01}]
+  - blockReference: "n-01:remediation.linux.step:10"
+    sourceSpans: [{physicalPage: 393, printedPage: "393", pageRegionIdentifier: p393-n-01}]
+  - blockReference: "n-01:remediation.linux.step:11"
+    sourceSpans: [{physicalPage: 393, printedPage: "393", pageRegionIdentifier: p393-n-01}]
+  - blockReference: "n-01:remediation.linux.command:9"
+    sourceSpans: [{physicalPage: 393, printedPage: "393", pageRegionIdentifier: p393-n-01}]
+  - blockReference: "n-01:remediation.linux.paragraph:4"
+    sourceSpans: [{physicalPage: 393, printedPage: "393", pageRegionIdentifier: p393-n-01}]
+  - blockReference: "n-01:remediation.linux.step:12"
+    sourceSpans: [{physicalPage: 393, printedPage: "393", pageRegionIdentifier: p393-n-01}]
+  - blockReference: "n-01:remediation.linux.command:10"
+    sourceSpans: [{physicalPage: 393, printedPage: "393", pageRegionIdentifier: p393-n-01}]
+  - blockReference: "n-01:remediation.linux.step:13"
+    sourceSpans: [{physicalPage: 394, printedPage: "394", pageRegionIdentifier: p394-n-01}]
+  - blockReference: "n-01:remediation.linux.command:11"
+    sourceSpans: [{physicalPage: 394, printedPage: "394", pageRegionIdentifier: p394-n-01}]
+  - blockReference: "n-01:remediation.linux.paragraph:5"
+    sourceSpans: [{physicalPage: 394, printedPage: "394", pageRegionIdentifier: p394-n-01}]
+  - blockReference: "n-01:remediation.linux.step:14"
+    sourceSpans: [{physicalPage: 394, printedPage: "394", pageRegionIdentifier: p394-n-01}]
+  - blockReference: "n-01:remediation.linux.command:12"
+    sourceSpans: [{physicalPage: 394, printedPage: "394", pageRegionIdentifier: p394-n-01}]
+  - blockReference: "n-01:remediation.linux.step:15"
+    sourceSpans: [{physicalPage: 394, printedPage: "394", pageRegionIdentifier: p394-n-01}]
+  - blockReference: "n-01:remediation.linux.command:13"
+    sourceSpans: [{physicalPage: 394, printedPage: "394", pageRegionIdentifier: p394-n-01}]
+assets: []

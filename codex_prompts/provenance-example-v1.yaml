@@ -1,0 +1,15 @@
+schemaVersion: 1
+criterionSlug: example-01
+sourceDocumentIdentifier: source-document
+blockProvenance:
+  - blockReference: "example-01:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 1
+        printedPage: "1"
+        pageRegionIdentifier: p1-example-01
+  - blockReference: "example-01:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 1
+        printedPage: "1"
+        pageRegionIdentifier: p1-example-01
+assets: []

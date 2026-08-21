@@ -2,64 +2,139 @@ schemaVersion: 1
 criterionSlug: c-37
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: c-37:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "c-37:overview.heading:1"
     sourceSpans:
       - physicalPage: 532
-        printedPage: '532'
+        printedPage: "532"
         pageRegionIdentifier: p532-c-37
-  - blockReference: c-37:sourceTranscription.sourcePage532.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "c-37:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 532
-        printedPage: '532'
+        printedPage: "532"
         pageRegionIdentifier: p532-c-37
-  - blockReference: c-37:sourceTranscription.sourcePage532.transcription:1
-    publicationDisposition: published
+  - blockReference: "c-37:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 532
-        printedPage: '532'
+        printedPage: "532"
         pageRegionIdentifier: p532-c-37
-  - blockReference: c-37:sourceTranscription.sourcePage532.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "c-37:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 532
-        printedPage: '532'
+        printedPage: "532"
         pageRegionIdentifier: p532-c-37
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/c-37/c-37-page-532-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 05557f11f41b4dbcf03cca285bc661a52948e6d101f6ab1cc892505029c29182
-    alternativeText: PDF 페이지 532의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 532 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
+  - blockReference: "c-37:overview.inspectionPurpose.paragraph:1"
     sourceSpans:
       - physicalPage: 532
-        printedPage: '532'
+        printedPage: "532"
         pageRegionIdentifier: p532-c-37
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
+  - blockReference: "c-37:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 532
+        printedPage: "532"
+        pageRegionIdentifier: p532-c-37
+  - blockReference: "c-37:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 532
+        printedPage: "532"
+        pageRegionIdentifier: p532-c-37
+  - blockReference: "c-37:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 532
+        printedPage: "532"
+        pageRegionIdentifier: p532-c-37
+  - blockReference: "c-37:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 532
+        printedPage: "532"
+        pageRegionIdentifier: p532-c-37
+  - blockReference: "c-37:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 532
+        printedPage: "532"
+        pageRegionIdentifier: p532-c-37
+  - blockReference: "c-37:overview.reference.note.item:1"
+    sourceSpans:
+      - physicalPage: 532
+        printedPage: "532"
+        pageRegionIdentifier: p532-c-37
+  - blockReference: "c-37:overview.reference.note.item:2"
+    sourceSpans:
+      - physicalPage: 532
+        printedPage: "532"
+        pageRegionIdentifier: p532-c-37
+  - blockReference: "c-37:overview.reference.note.item:3"
+    sourceSpans:
+      - physicalPage: 532
+        printedPage: "532"
+        pageRegionIdentifier: p532-c-37
+  - blockReference: "c-37:overview.reference.note.item:4"
+    sourceSpans:
+      - physicalPage: 532
+        printedPage: "532"
+        pageRegionIdentifier: p532-c-37
+  - blockReference: "c-37:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 532
+        printedPage: "532"
+        pageRegionIdentifier: p532-c-37
+  - blockReference: "c-37:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 532
+        printedPage: "532"
+        pageRegionIdentifier: p532-c-37
+  - blockReference: "c-37:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 532
+        printedPage: "532"
+        pageRegionIdentifier: p532-c-37
+  - blockReference: "c-37:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 532
+        printedPage: "532"
+        pageRegionIdentifier: p532-c-37
+  - blockReference: "c-37:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 532
+        printedPage: "532"
+        pageRegionIdentifier: p532-c-37
+  - blockReference: "c-37:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 532
+        printedPage: "532"
+        pageRegionIdentifier: p532-c-37
+  - blockReference: "c-37:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 532
+        printedPage: "532"
+        pageRegionIdentifier: p532-c-37
+  - blockReference: "c-37:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 532
+        printedPage: "532"
+        pageRegionIdentifier: p532-c-37
+  - blockReference: "c-37:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 532
+        printedPage: "532"
+        pageRegionIdentifier: p532-c-37
+  - blockReference: "c-37:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 532
+        printedPage: "532"
+        pageRegionIdentifier: p532-c-37
+  - blockReference: "c-37:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 532
+        printedPage: "532"
+        pageRegionIdentifier: p532-c-37
+  - blockReference: "c-37:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - physicalPage: 532
+        printedPage: "532"
+        pageRegionIdentifier: p532-c-37
+  - blockReference: "c-37:remediation.supplementaryGuidance.step:1"
+    sourceSpans:
+      - physicalPage: 532
+        printedPage: "532"
+        pageRegionIdentifier: p532-c-37
+assets: []

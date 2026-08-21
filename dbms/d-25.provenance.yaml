@@ -2,170 +2,67 @@ schemaVersion: 1
 criterionSlug: d-25
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: d-25:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
-    sourceSpans:
-      - physicalPage: 663
-        printedPage: '663'
-        pageRegionIdentifier: p663-d-25
-  - blockReference: d-25:sourceTranscription.sourcePage663.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 663
-        printedPage: '663'
-        pageRegionIdentifier: p663-d-25
-  - blockReference: d-25:sourceTranscription.sourcePage663.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 663
-        printedPage: '663'
-        pageRegionIdentifier: p663-d-25
-  - blockReference: d-25:sourceTranscription.sourcePage663.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 663
-        printedPage: '663'
-        pageRegionIdentifier: p663-d-25
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - blockReference: d-25:sourceTranscription.sourcePage664.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 664
-        printedPage: '664'
-        pageRegionIdentifier: p664-d-25
-  - blockReference: d-25:sourceTranscription.sourcePage664.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 664
-        printedPage: '664'
-        pageRegionIdentifier: p664-d-25
-  - blockReference: d-25:sourceTranscription.sourcePage664.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 664
-        printedPage: '664'
-        pageRegionIdentifier: p664-d-25
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: d-25:sourceTranscription.sourcePage665.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 665
-        printedPage: '665'
-        pageRegionIdentifier: p665-d-25
-  - blockReference: d-25:sourceTranscription.sourcePage665.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 665
-        printedPage: '665'
-        pageRegionIdentifier: p665-d-25
-  - blockReference: d-25:sourceTranscription.sourcePage665.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 665
-        printedPage: '665'
-        pageRegionIdentifier: p665-d-25
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/d-25/d-25-page-663-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 975341626c61861378a2d1be193e24ca858cebd250ba4d0574999963409077eb
-    alternativeText: PDF 페이지 663의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 663 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 663
-        printedPage: '663'
-        pageRegionIdentifier: p663-d-25
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - path: ../assets/d-25/d-25-page-664-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: fbb8ca5603aaa1f4c1aa904222443bf92874e4abe80021aff46e453361f3a953
-    alternativeText: PDF 페이지 664의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 664 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 664
-        printedPage: '664'
-        pageRegionIdentifier: p664-d-25
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/d-25/d-25-page-665-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 8cfcddb992b4b8ec90169aba032052d158609865094fd718dc96da342ace7715
-    alternativeText: PDF 페이지 665의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 665 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 665
-        printedPage: '665'
-        pageRegionIdentifier: p665-d-25
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - {blockReference: "d-25:overview.heading:1", sourceSpans: [{physicalPage: 663, printedPage: "663", pageRegionIdentifier: p663-d-25}]}
+  - {blockReference: "d-25:overview.inspectionContent.heading:1", sourceSpans: [{physicalPage: 663, printedPage: "663", pageRegionIdentifier: p663-d-25}]}
+  - {blockReference: "d-25:overview.inspectionContent.paragraph:1", sourceSpans: [{physicalPage: 663, printedPage: "663", pageRegionIdentifier: p663-d-25}]}
+  - {blockReference: "d-25:overview.inspectionPurpose.heading:1", sourceSpans: [{physicalPage: 663, printedPage: "663", pageRegionIdentifier: p663-d-25}]}
+  - {blockReference: "d-25:overview.inspectionPurpose.paragraph:1", sourceSpans: [{physicalPage: 663, printedPage: "663", pageRegionIdentifier: p663-d-25}]}
+  - {blockReference: "d-25:overview.securityThreat.heading:1", sourceSpans: [{physicalPage: 663, printedPage: "663", pageRegionIdentifier: p663-d-25}]}
+  - {blockReference: "d-25:overview.securityThreat.paragraph:1", sourceSpans: [{physicalPage: 663, printedPage: "663", pageRegionIdentifier: p663-d-25}]}
+  - {blockReference: "d-25:overview.reference.heading:1", sourceSpans: [{physicalPage: 663, printedPage: "663", pageRegionIdentifier: p663-d-25}]}
+  - {blockReference: "d-25:overview.reference.note.label:1", sourceSpans: [{physicalPage: 663, printedPage: "663", pageRegionIdentifier: p663-d-25}]}
+  - {blockReference: "d-25:assessment.heading:1", sourceSpans: [{physicalPage: 663, printedPage: "663", pageRegionIdentifier: p663-d-25}]}
+  - {blockReference: "d-25:assessment.target.heading:1", sourceSpans: [{physicalPage: 663, printedPage: "663", pageRegionIdentifier: p663-d-25}]}
+  - {blockReference: "d-25:assessment.target.paragraph:1", sourceSpans: [{physicalPage: 663, printedPage: "663", pageRegionIdentifier: p663-d-25}]}
+  - {blockReference: "d-25:assessment.judgment.heading:1", sourceSpans: [{physicalPage: 663, printedPage: "663", pageRegionIdentifier: p663-d-25}]}
+  - {blockReference: "d-25:assessment.judgment.good:1", sourceSpans: [{physicalPage: 663, printedPage: "663", pageRegionIdentifier: p663-d-25}]}
+  - {blockReference: "d-25:assessment.judgment.vulnerable:1", sourceSpans: [{physicalPage: 663, printedPage: "663", pageRegionIdentifier: p663-d-25}]}
+  - {blockReference: "d-25:assessment.remediationMethod.heading:1", sourceSpans: [{physicalPage: 663, printedPage: "663", pageRegionIdentifier: p663-d-25}]}
+  - {blockReference: "d-25:assessment.remediationMethod.paragraph:1", sourceSpans: [{physicalPage: 663, printedPage: "663", pageRegionIdentifier: p663-d-25}]}
+  - {blockReference: "d-25:assessment.remediationImpact.heading:1", sourceSpans: [{physicalPage: 663, printedPage: "663", pageRegionIdentifier: p663-d-25}]}
+  - {blockReference: "d-25:assessment.remediationImpact.paragraph:1", sourceSpans: [{physicalPage: 663, printedPage: "663", pageRegionIdentifier: p663-d-25}]}
+  - {blockReference: "d-25:remediation.heading:1", sourceSpans: [{physicalPage: 663, printedPage: "663", pageRegionIdentifier: p663-d-25}, {physicalPage: 664, printedPage: "664", pageRegionIdentifier: p664-d-25}, {physicalPage: 665, printedPage: "665", pageRegionIdentifier: p665-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.heading:1", sourceSpans: [{physicalPage: 663, printedPage: "663", pageRegionIdentifier: p663-d-25}, {physicalPage: 664, printedPage: "664", pageRegionIdentifier: p664-d-25}, {physicalPage: 665, printedPage: "665", pageRegionIdentifier: p665-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.paragraph:1", sourceSpans: [{physicalPage: 663, printedPage: "663", pageRegionIdentifier: p663-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.step:1", sourceSpans: [{physicalPage: 663, printedPage: "663", pageRegionIdentifier: p663-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.command:1", sourceSpans: [{physicalPage: 663, printedPage: "663", pageRegionIdentifier: p663-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.step:2", sourceSpans: [{physicalPage: 663, printedPage: "663", pageRegionIdentifier: p663-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.literal:1", sourceSpans: [{physicalPage: 663, printedPage: "663", pageRegionIdentifier: p663-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.paragraph:2", sourceSpans: [{physicalPage: 663, printedPage: "663", pageRegionIdentifier: p663-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.step:3", sourceSpans: [{physicalPage: 663, printedPage: "663", pageRegionIdentifier: p663-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.command:2", sourceSpans: [{physicalPage: 663, printedPage: "663", pageRegionIdentifier: p663-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.step.explanation:3", sourceSpans: [{physicalPage: 663, printedPage: "663", pageRegionIdentifier: p663-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.command:3", sourceSpans: [{physicalPage: 663, printedPage: "663", pageRegionIdentifier: p663-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.step:4", sourceSpans: [{physicalPage: 663, printedPage: "663", pageRegionIdentifier: p663-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.literal:2", sourceSpans: [{physicalPage: 663, printedPage: "663", pageRegionIdentifier: p663-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.paragraph:3", sourceSpans: [{physicalPage: 664, printedPage: "664", pageRegionIdentifier: p664-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.step:5", sourceSpans: [{physicalPage: 664, printedPage: "664", pageRegionIdentifier: p664-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.command:4", sourceSpans: [{physicalPage: 664, printedPage: "664", pageRegionIdentifier: p664-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.step:6", sourceSpans: [{physicalPage: 664, printedPage: "664", pageRegionIdentifier: p664-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.step.explanation:6", sourceSpans: [{physicalPage: 664, printedPage: "664", pageRegionIdentifier: p664-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.paragraph:4", sourceSpans: [{physicalPage: 664, printedPage: "664", pageRegionIdentifier: p664-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.step:7", sourceSpans: [{physicalPage: 664, printedPage: "664", pageRegionIdentifier: p664-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.command:5", sourceSpans: [{physicalPage: 664, printedPage: "664", pageRegionIdentifier: p664-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.step:8", sourceSpans: [{physicalPage: 664, printedPage: "664", pageRegionIdentifier: p664-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.literal:3", sourceSpans: [{physicalPage: 664, printedPage: "664", pageRegionIdentifier: p664-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.step:9", sourceSpans: [{physicalPage: 664, printedPage: "664", pageRegionIdentifier: p664-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.item:1", sourceSpans: [{physicalPage: 664, printedPage: "664", pageRegionIdentifier: p664-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.item:2", sourceSpans: [{physicalPage: 664, printedPage: "664", pageRegionIdentifier: p664-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.paragraph:5", sourceSpans: [{physicalPage: 664, printedPage: "664", pageRegionIdentifier: p664-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.step:10", sourceSpans: [{physicalPage: 664, printedPage: "664", pageRegionIdentifier: p664-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.command:6", sourceSpans: [{physicalPage: 664, printedPage: "664", pageRegionIdentifier: p664-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.step:11", sourceSpans: [{physicalPage: 664, printedPage: "664", pageRegionIdentifier: p664-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.literal:4", sourceSpans: [{physicalPage: 664, printedPage: "664", pageRegionIdentifier: p664-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.note.label:1", sourceSpans: [{physicalPage: 664, printedPage: "664", pageRegionIdentifier: p664-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.note.content:1", sourceSpans: [{physicalPage: 664, printedPage: "664", pageRegionIdentifier: p664-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.paragraph:6", sourceSpans: [{physicalPage: 664, printedPage: "664", pageRegionIdentifier: p664-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.step:12", sourceSpans: [{physicalPage: 664, printedPage: "664", pageRegionIdentifier: p664-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.command:7", sourceSpans: [{physicalPage: 664, printedPage: "664", pageRegionIdentifier: p664-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.step:13", sourceSpans: [{physicalPage: 664, printedPage: "664", pageRegionIdentifier: p664-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.literal:5", sourceSpans: [{physicalPage: 665, printedPage: "665", pageRegionIdentifier: p665-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.paragraph:7", sourceSpans: [{physicalPage: 665, printedPage: "665", pageRegionIdentifier: p665-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.step:14", sourceSpans: [{physicalPage: 665, printedPage: "665", pageRegionIdentifier: p665-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.command:8", sourceSpans: [{physicalPage: 665, printedPage: "665", pageRegionIdentifier: p665-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.step:15", sourceSpans: [{physicalPage: 665, printedPage: "665", pageRegionIdentifier: p665-d-25}]}
+  - {blockReference: "d-25:remediation.supplementaryGuidance.step.explanation:15", sourceSpans: [{physicalPage: 665, printedPage: "665", pageRegionIdentifier: p665-d-25}]}
+assets: []

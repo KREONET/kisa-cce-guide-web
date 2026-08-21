@@ -2,117 +2,134 @@ schemaVersion: 1
 criterionSlug: hv-18
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: hv-18:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "hv-18:overview.heading:1"
     sourceSpans:
       - physicalPage: 838
-        printedPage: '838'
+        printedPage: "838"
         pageRegionIdentifier: p838-hv-18
-  - blockReference: hv-18:sourceTranscription.sourcePage838.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "hv-18:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 838
-        printedPage: '838'
+        printedPage: "838"
         pageRegionIdentifier: p838-hv-18
-  - blockReference: hv-18:sourceTranscription.sourcePage838.transcription:1
-    publicationDisposition: published
+  - blockReference: "hv-18:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 838
-        printedPage: '838'
+        printedPage: "838"
         pageRegionIdentifier: p838-hv-18
-  - blockReference: hv-18:sourceTranscription.sourcePage838.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "hv-18:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 838
-        printedPage: '838'
+        printedPage: "838"
         pageRegionIdentifier: p838-hv-18
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - blockReference: hv-18:sourceTranscription.sourcePage839.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "hv-18:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 838
+        printedPage: "838"
+        pageRegionIdentifier: p838-hv-18
+  - blockReference: "hv-18:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 838
+        printedPage: "838"
+        pageRegionIdentifier: p838-hv-18
+  - blockReference: "hv-18:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 838
+        printedPage: "838"
+        pageRegionIdentifier: p838-hv-18
+  - blockReference: "hv-18:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 838
+        printedPage: "838"
+        pageRegionIdentifier: p838-hv-18
+  - blockReference: "hv-18:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 838
+        printedPage: "838"
+        pageRegionIdentifier: p838-hv-18
+  - blockReference: "hv-18:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 838
+        printedPage: "838"
+        pageRegionIdentifier: p838-hv-18
+  - blockReference: "hv-18:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 838
+        printedPage: "838"
+        pageRegionIdentifier: p838-hv-18
+  - blockReference: "hv-18:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 838
+        printedPage: "838"
+        pageRegionIdentifier: p838-hv-18
+  - blockReference: "hv-18:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 838
+        printedPage: "838"
+        pageRegionIdentifier: p838-hv-18
+  - blockReference: "hv-18:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 838
+        printedPage: "838"
+        pageRegionIdentifier: p838-hv-18
+  - blockReference: "hv-18:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 838
+        printedPage: "838"
+        pageRegionIdentifier: p838-hv-18
+  - blockReference: "hv-18:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 838
+        printedPage: "838"
+        pageRegionIdentifier: p838-hv-18
+  - blockReference: "hv-18:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 838
+        printedPage: "838"
+        pageRegionIdentifier: p838-hv-18
+  - blockReference: "hv-18:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 838
+        printedPage: "838"
+        pageRegionIdentifier: p838-hv-18
+  - blockReference: "hv-18:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 838
+        printedPage: "838"
+        pageRegionIdentifier: p838-hv-18
+  - blockReference: "hv-18:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 838
+        printedPage: "838"
+        pageRegionIdentifier: p838-hv-18
+  - blockReference: "hv-18:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 838
+        printedPage: "838"
+        pageRegionIdentifier: p838-hv-18
+  - blockReference: "hv-18:remediation.unspecified.heading:1"
+    sourceSpans:
+      - physicalPage: 838
+        printedPage: "838"
+        pageRegionIdentifier: p838-hv-18
+  - blockReference: "hv-18:remediation.unspecified.step:1"
+    sourceSpans:
+      - physicalPage: 838
+        printedPage: "838"
+        pageRegionIdentifier: p838-hv-18
+  - blockReference: "hv-18:remediation.unspecified.step:2"
+    sourceSpans:
+      - physicalPage: 838
+        printedPage: "838"
+        pageRegionIdentifier: p838-hv-18
+  - blockReference: "hv-18:remediation.unspecified.step:3"
+    sourceSpans:
+      - physicalPage: 838
+        printedPage: "838"
+        pageRegionIdentifier: p838-hv-18
+  - blockReference: "hv-18:remediation.unspecified.step:4"
     sourceSpans:
       - physicalPage: 839
-        printedPage: '839'
+        printedPage: "839"
         pageRegionIdentifier: p839-hv-18
-  - blockReference: hv-18:sourceTranscription.sourcePage839.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 839
-        printedPage: '839'
-        pageRegionIdentifier: p839-hv-18
-  - blockReference: hv-18:sourceTranscription.sourcePage839.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 839
-        printedPage: '839'
-        pageRegionIdentifier: p839-hv-18
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/hv-18/hv-18-page-838-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 6c734575ba5e035371e8fc8622f37f2f984a658272d1b41d0501cc6f4a705725
-    alternativeText: PDF 페이지 838의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 838 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 838
-        printedPage: '838'
-        pageRegionIdentifier: p838-hv-18
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - path: ../assets/hv-18/hv-18-page-839-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: eb015466d69788585908326f8333705ad6c1229a36ca905f4dd7b046bfcd69e1
-    alternativeText: PDF 페이지 839의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 839 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 839
-        printedPage: '839'
-        pageRegionIdentifier: p839-hv-18
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+assets: []

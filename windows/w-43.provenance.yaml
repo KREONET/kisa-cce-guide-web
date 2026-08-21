@@ -2,64 +2,154 @@ schemaVersion: 1
 criterionSlug: w-43
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: w-43:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "w-43:overview.heading:1"
     sourceSpans:
       - physicalPage: 240
-        printedPage: '240'
+        printedPage: "240"
         pageRegionIdentifier: p240-w-43
-  - blockReference: w-43:sourceTranscription.sourcePage240.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "w-43:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 240
-        printedPage: '240'
+        printedPage: "240"
         pageRegionIdentifier: p240-w-43
-  - blockReference: w-43:sourceTranscription.sourcePage240.transcription:1
-    publicationDisposition: published
+  - blockReference: "w-43:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 240
-        printedPage: '240'
+        printedPage: "240"
         pageRegionIdentifier: p240-w-43
-  - blockReference: w-43:sourceTranscription.sourcePage240.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "w-43:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 240
-        printedPage: '240'
+        printedPage: "240"
         pageRegionIdentifier: p240-w-43
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/w-43/w-43-page-240-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 18a10f44ac8213f4de01c3e5383ddf979b5a4f56e4c400706a3b498255c7031a
-    alternativeText: PDF 페이지 240의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 240 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
+  - blockReference: "w-43:overview.inspectionPurpose.paragraph:1"
     sourceSpans:
       - physicalPage: 240
-        printedPage: '240'
+        printedPage: "240"
         pageRegionIdentifier: p240-w-43
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
+  - blockReference: "w-43:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 240
+        printedPage: "240"
+        pageRegionIdentifier: p240-w-43
+  - blockReference: "w-43:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 240
+        printedPage: "240"
+        pageRegionIdentifier: p240-w-43
+  - blockReference: "w-43:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 240
+        printedPage: "240"
+        pageRegionIdentifier: p240-w-43
+  - blockReference: "w-43:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 240
+        printedPage: "240"
+        pageRegionIdentifier: p240-w-43
+  - blockReference: "w-43:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 240
+        printedPage: "240"
+        pageRegionIdentifier: p240-w-43
+  - blockReference: "w-43:overview.reference.note.item:1"
+    sourceSpans:
+      - physicalPage: 240
+        printedPage: "240"
+        pageRegionIdentifier: p240-w-43
+  - blockReference: "w-43:overview.reference.note.item:2"
+    sourceSpans:
+      - physicalPage: 240
+        printedPage: "240"
+        pageRegionIdentifier: p240-w-43
+  - blockReference: "w-43:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 240
+        printedPage: "240"
+        pageRegionIdentifier: p240-w-43
+  - blockReference: "w-43:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 240
+        printedPage: "240"
+        pageRegionIdentifier: p240-w-43
+  - blockReference: "w-43:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 240
+        printedPage: "240"
+        pageRegionIdentifier: p240-w-43
+  - blockReference: "w-43:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 240
+        printedPage: "240"
+        pageRegionIdentifier: p240-w-43
+  - blockReference: "w-43:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 240
+        printedPage: "240"
+        pageRegionIdentifier: p240-w-43
+  - blockReference: "w-43:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 240
+        printedPage: "240"
+        pageRegionIdentifier: p240-w-43
+  - blockReference: "w-43:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 240
+        printedPage: "240"
+        pageRegionIdentifier: p240-w-43
+  - blockReference: "w-43:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 240
+        printedPage: "240"
+        pageRegionIdentifier: p240-w-43
+  - blockReference: "w-43:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 240
+        printedPage: "240"
+        pageRegionIdentifier: p240-w-43
+  - blockReference: "w-43:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 240
+        printedPage: "240"
+        pageRegionIdentifier: p240-w-43
+  - blockReference: "w-43:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 240
+        printedPage: "240"
+        pageRegionIdentifier: p240-w-43
+  - blockReference: "w-43:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 240
+        printedPage: "240"
+        pageRegionIdentifier: p240-w-43
+  - blockReference: "w-43:remediation.linux.paragraph:1"
+    sourceSpans:
+      - physicalPage: 240
+        printedPage: "240"
+        pageRegionIdentifier: p240-w-43
+  - blockReference: "w-43:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 240
+        printedPage: "240"
+        pageRegionIdentifier: p240-w-43
+  - blockReference: "w-43:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 240
+        printedPage: "240"
+        pageRegionIdentifier: p240-w-43
+  - blockReference: "w-43:remediation.linux.paragraph:2"
+    sourceSpans:
+      - physicalPage: 240
+        printedPage: "240"
+        pageRegionIdentifier: p240-w-43
+  - blockReference: "w-43:remediation.linux.step:3"
+    sourceSpans:
+      - physicalPage: 240
+        printedPage: "240"
+        pageRegionIdentifier: p240-w-43
+  - blockReference: "w-43:remediation.linux.step:4"
+    sourceSpans:
+      - physicalPage: 240
+        printedPage: "240"
+        pageRegionIdentifier: p240-w-43
+assets: []

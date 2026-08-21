@@ -2,64 +2,124 @@ schemaVersion: 1
 criterionSlug: w-01
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: w-01:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "w-01:overview.heading:1"
     sourceSpans:
       - physicalPage: 177
-        printedPage: '177'
+        printedPage: "177"
         pageRegionIdentifier: p177-w-01
-  - blockReference: w-01:sourceTranscription.sourcePage177.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "w-01:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 177
-        printedPage: '177'
+        printedPage: "177"
         pageRegionIdentifier: p177-w-01
-  - blockReference: w-01:sourceTranscription.sourcePage177.transcription:1
-    publicationDisposition: published
+  - blockReference: "w-01:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 177
-        printedPage: '177'
+        printedPage: "177"
         pageRegionIdentifier: p177-w-01
-  - blockReference: w-01:sourceTranscription.sourcePage177.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "w-01:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 177
-        printedPage: '177'
+        printedPage: "177"
         pageRegionIdentifier: p177-w-01
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/w-01/w-01-page-177-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 4c14eb9c41d427ae5753eac14324095e395274902c8bb6da4d08098e3b3d8d19
-    alternativeText: PDF 페이지 177의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 177 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
+  - blockReference: "w-01:overview.inspectionPurpose.paragraph:1"
     sourceSpans:
       - physicalPage: 177
-        printedPage: '177'
+        printedPage: "177"
         pageRegionIdentifier: p177-w-01
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
+  - blockReference: "w-01:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 177
+        printedPage: "177"
+        pageRegionIdentifier: p177-w-01
+  - blockReference: "w-01:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 177
+        printedPage: "177"
+        pageRegionIdentifier: p177-w-01
+  - blockReference: "w-01:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 177
+        printedPage: "177"
+        pageRegionIdentifier: p177-w-01
+  - blockReference: "w-01:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 177
+        printedPage: "177"
+        pageRegionIdentifier: p177-w-01
+  - blockReference: "w-01:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 177
+        printedPage: "177"
+        pageRegionIdentifier: p177-w-01
+  - blockReference: "w-01:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 177
+        printedPage: "177"
+        pageRegionIdentifier: p177-w-01
+  - blockReference: "w-01:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 177
+        printedPage: "177"
+        pageRegionIdentifier: p177-w-01
+  - blockReference: "w-01:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 177
+        printedPage: "177"
+        pageRegionIdentifier: p177-w-01
+  - blockReference: "w-01:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 177
+        printedPage: "177"
+        pageRegionIdentifier: p177-w-01
+  - blockReference: "w-01:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 177
+        printedPage: "177"
+        pageRegionIdentifier: p177-w-01
+  - blockReference: "w-01:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 177
+        printedPage: "177"
+        pageRegionIdentifier: p177-w-01
+  - blockReference: "w-01:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 177
+        printedPage: "177"
+        pageRegionIdentifier: p177-w-01
+  - blockReference: "w-01:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 177
+        printedPage: "177"
+        pageRegionIdentifier: p177-w-01
+  - blockReference: "w-01:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 177
+        printedPage: "177"
+        pageRegionIdentifier: p177-w-01
+  - blockReference: "w-01:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 177
+        printedPage: "177"
+        pageRegionIdentifier: p177-w-01
+  - blockReference: "w-01:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 177
+        printedPage: "177"
+        pageRegionIdentifier: p177-w-01
+  - blockReference: "w-01:remediation.solaris.heading:1"
+    sourceSpans:
+      - physicalPage: 177
+        printedPage: "177"
+        pageRegionIdentifier: p177-w-01
+  - blockReference: "w-01:remediation.solaris.step:1"
+    sourceSpans:
+      - physicalPage: 177
+        printedPage: "177"
+        pageRegionIdentifier: p177-w-01
+  - blockReference: "w-01:remediation.solaris.step:2"
+    sourceSpans:
+      - physicalPage: 177
+        printedPage: "177"
+        pageRegionIdentifier: p177-w-01
+assets: []

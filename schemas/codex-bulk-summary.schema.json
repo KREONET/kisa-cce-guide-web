@@ -53,6 +53,7 @@
       "properties": {
         "workers": {"type": "integer", "minimum": 1, "maximum": 16},
         "model": {"type": "string", "minLength": 1},
+        "useUserConfig": {"type": "boolean"},
         "dryRun": {"type": "boolean"},
         "resume": {"type": "boolean"},
         "failFast": {"type": "boolean"},

@@ -1,7 +1,8 @@
 ---
 schemaVersion: 1
-contentModel: extractedCriterion
+contentModel: webApplicationCriterion
 contentModelVersion: 1
+
 criterion:
   code: SN
   slug: sn
@@ -9,88 +10,146 @@ criterion:
   severity:
     level: high
     sourceLabel: 상
+
 classification:
   domainIdentifier: web-application
   categoryIdentifier: web-application-plaintext-transmission
+
 targetScope: nonExhaustive
 targetIdentifiers:
-  - unspecified
-sourceTargetText: 자동 전사본에서 확인 필요
+  - linux
+sourceTargetText: "웹 애플리케이션 소스코드, 웹 애플리케이션 서버"
+
 provenance:
   sourceDocumentIdentifier: kisa-cce-criteria-2026
   sourcePageRanges:
     - physicalPageStart: 766
       physicalPageEnd: 768
-      printedPageStart: '766'
-      printedPageEnd: '768'
-sourceAnnotations: []
+      printedPageStart: "766"
+      printedPageEnd: "768"
+
+sourceAnnotations:
+  - annotationIdentifier: sn-source-001
+    annotationType: sourceTypographicalError
+    targetType: astNode
+    targetReference: "sn:remediation.linux.configuration:1"
+    sourceLocation:
+      physicalPage: 768
+      printedPage: "768"
+      pageRegionIdentifier: p768-sn
+    sourceText: "SSLProtocol all -SSLv2 -SSLv3 –TLSv1 -TLSv1.1"
+    explanation: "TLSv1 앞의 제외 기호가 다른 항목의 하이픈과 달리 en dash로 표기되어 있다. 원문 표기를 유지했다."
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - "PDF physical page 768의 Apache 설정 예시를 육안으로 확인했다."
+    reviewedBy: null
+    reviewedAt: null
+    approvedBy: null
+    approvedAt: null
 ---
 
-## 원문 전사
+## 개요
 
-### PDF 페이지 766
+### 점검 내용
 
-~~~text transcription
-개요
-점검 내용 서버와 클라이언트 간 통신 시 데이터의 암호화 여부 점검
-점검 목적 서버와 클라이언트 간 통신 시 데이터의 암호화 전송 미흡으로 정보 유출의 위험을 방지하고자 함
-웹 애플리케이션 통신은 주로 텍스트 기반으로 이루어지므로, 서버와 클라이언트 간 암호화 프로세스를
-보안 위협
-구현하지 않을 경우 악의적인 사용자가 네트워크 도청(Sniffing)을 통해 정보를 탈취 및 도용할 수 있음
-※ Sniffing : 스니퍼(sniff: 냄새를 맡다, 코를 킁킁거리다)를 이용하여 네트워크 상의 데이터를
-참고 도청하는 행위
-※ 소스코드 및 취약점 점검 필요
-점검 대상 및 판단 기준
-대상 웹 애플리케이션 소스코드, 웹 애플리케이션 서버
-양호 : 중요 정보 전송구간에 암호화 통신이 적용된 경우
-판단 기준
-취약 : 중요 정보 전송구간에 암호화 통신이 이루어지지 않는 경우
-사이트의 중요 정보 전송구간(로그인, 회원가입, 회원정보관리, 게시판 등)에 대하여 암호화 통신(https,
-조치 방법
-애플리케이션방식) 적용
-조치 시 영향 일반적인 경우 영향 없음
-점검 및 조치 사례
-- 점검 방법
-Step 1) 중요 정보(인증정보, 개인정보, 로그인페이지 등)를 송수신하는 페이지 존재 여부 확인
-[ 중요 정보 송수신 페이지 확인 ]
-~~~
+서버와 클라이언트 간 통신 시 데이터의 암호화 여부 점검
 
-![PDF 페이지 766의 원문 점검항목 영역](../assets/sn/sn-page-766-source-region.png)
+### 점검 목적
 
-### PDF 페이지 767
+서버와 클라이언트 간 통신 시 데이터의 암호화 전송 미흡으로 정보 유출의 위험을 방지하고자 함
 
-~~~text transcription
-Step 2) 중요 정보 송수신 페이지가 암호화 통신(https, 데이터 암호화 등)을 하는지 확인
-[ 데이터 통신 시 패킷 내 중요 정보 평문 노출 유무 확인 ]
-Step 3) 취약한 버전의 암호 프로토콜 사용 시 암호화된 통신 내용이 유출될 가능성이 존재하므로 취약한 버전의
-SSL(SSL 2.0, 3.0) 사용 여부를 점검
-[ 취약한 버전의 암호 프로토콜 사용 여부 확인 ]
-~~~
+### 보안 위협
 
-![PDF 페이지 767의 원문 점검항목 영역](../assets/sn/sn-page-767-source-region.png)
+웹 애플리케이션 통신은 주로 텍스트 기반으로 이루어지므로, 서버와 클라이언트 간 암호화 프로세스를 구현하지 않을 경우 악의적인 사용자가 네트워크 도청(Sniffing)을 통해 정보를 탈취 및 도용할 수 있음
 
-### PDF 페이지 768
+### 참고
 
-~~~text transcription
-- 조치 방법
-1. 웹상에서의 전송 정보를 제한하여 불필요한 비밀번호, 주민등록번호, 계좌정보와 같은 중요 정보의 전송을
-최소화하여야 하며, 중요 정보에 대해서는 SSL 등의 암호화 통신을 사용하여 도청으로부터의 위험을 제거함
+> **참고**
+>
+> **Sniffing:** 스니퍼(sniff: 냄새를 맡다, 코를 킁킁거리다)를 이용하여 네트워크 상의 데이터를 도청하는 행위
+
+> **참고**
+>
+> 소스코드 및 취약점 점검 필요
+
+## 점검 대상 및 판단 기준
+
+### 대상
+
+웹 애플리케이션 소스코드, 웹 애플리케이션 서버
+
+### 판단 기준
+
+- **양호:** 중요 정보 전송구간에 암호화 통신이 적용된 경우
+- **취약:** 중요 정보 전송구간에 암호화 통신이 이루어지지 않는 경우
+
+### 조치 방법
+
+사이트의 중요 정보 전송구간(로그인, 회원가입, 회원정보관리, 게시판 등)에 대하여 암호화 통신(https, 애플리케이션방식) 적용
+
+### 조치 시 영향
+
+일반적인 경우 영향 없음
+
+## 점검 및 조치 사례
+
+### LINUX
+
+1. 중요 정보(인증정보, 개인정보, 로그인페이지 등)를 송수신하는 페이지 존재 여부 확인
+2. 중요 정보 송수신 페이지가 암호화 통신(https, 데이터 암호화 등)을 하는지 확인하고, 데이터 통신 시 패킷 내 중요 정보 평문 노출 유무 확인
+3. 취약한 버전의 암호 프로토콜 사용 시 암호화된 통신 내용이 유출될 가능성이 존재하므로 취약한 버전의 SSL(SSL 2.0, 3.0) 사용 여부를 점검
+
+   ```shell command
+   nmap --script ssl-enum-ciphers -p 443
+   ```
+
+   ```text output
+   PORT     STATE SERVICE
+   443/tcp  open  https
+   | ssl-enum-ciphers:
+   |   SSLv3:
+   |     ciphers:
+   |       TLS_DHE_RSA_WITH_AES_128_CBC_SHA (dh 1024) - A
+   |       TLS_DHE_RSA_WITH_AES_256_CBC_SHA (dh 1024) - A
+   |       TLS_DHE_RSA_WITH_CAMELLIA_128_CBC_SHA (dh 1024) - A
+   |       TLS_DHE_RSA_WITH_CAMELLIA_256_CBC_SHA (dh 1024) - A
+   |       TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (secp256r1) - A
+   |       TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (secp256r1) - A
+   |       TLS_RSA_WITH_AES_128_CBC_SHA (rsa 2048) - A
+   |       TLS_RSA_WITH_AES_256_CBC_SHA (rsa 2048) - A
+   |       TLS_RSA_WITH_CAMELLIA_128_CBC_SHA (rsa 2048) - A
+   |       TLS_RSA_WITH_CAMELLIA_256_CBC_SHA (rsa 2048) - A
+   |     compressors:
+   |       NULL
+   |     cipher preference: client
+   |     warnings:
+   |       CBC-mode cipher in SSLv3 (CVE-2014-3566)
+   |_      Key exchange (dh 1024) of lower strength than certificate key
+   ```
+
+4. **Apache:** `httpd-ssl.conf` 또는 `ssl.conf`의 SSL 관련 `VirtualHost` 설정에 아래를 추가
+
+   ```apache configuration
+   SSLProtocol all -SSLv2 -SSLv3 –TLSv1 -TLSv1.1
+   ```
+
+5. **IIS — SSL v2 사용 안 함:** 레지스트리의 `[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0\Server]` 하위에 '새로만들기' > 'DWord(32비트)' 값 선택 > 이름 부분에 'Enabled' 입력 > 데이터 부분에 '0' 입력 > 시스템 재부팅
+
+   ```text configuration
+   [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0\Server]
+   Enabled=0
+   ```
+
+6. **IIS — SSL v3 사용 안함:** 레지스트리의 `[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0\Server]` 하위에 '새로만들기' > 'DWord(32비트)' 값 선택 > 이름 부분에 'Enabled' 입력 > 데이터 부분에 '0' 입력 > 시스템 재부팅
+
+   ```text configuration
+   [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0\Server]
+   Enabled=0
+   ```
+
+### 추가 지침
+
+1. 웹상에서의 전송 정보를 제한하여 불필요한 비밀번호, 주민등록번호, 계좌정보와 같은 중요 정보의 전송을 최소화하여야 하며, 중요 정보에 대해서는 SSL 등의 암호화 통신을 사용하여 도청으로부터의 위험을 제거함
 2. 쿠키와 같이 클라이언트 사이드에서 노출되는 곳에 비밀번호, 인증인식 값, 개인정보 등의 중요 정보 제거
 3. 암호화 전송 시 프로토콜 설계의 결함이 있는 SSLv2, SSLv3은 비활성화 필수, TLSv1.2 이상 사용을 권장함
-※ Apache
-Apache 서버 설정을 통한 프로토콜 제어 예시
-httpd-ssl.conf 또는 ssl.conf의 SSL 관련 VirtualHost 설정에 아래를 추가 SSLProtocol all -SSLv2 -SSLv3 –TLSv1
--TLSv1.1
-※ IIS
-IIS 서버 설정을 통한 프로토콜 제어 예시
-[SSL v2 사용 안 함]
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SS
-L 2.0\Server]
-하위에 '새로만들기' > 'DWord(32비트)' 값 선택 > 이름 부분에 'Enabled' 입력 > 데이터 부분에 '0' 입력 > 시스템 재부팅
-[SSL v3 사용 안함]
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SS
-L 3.0\Server]
-하위에 '새로만들기' > 'DWord(32비트)' 값 선택 > 이름 부분에 'Enabled' 입력 > 데이터 부분에 '0' 입력 > 시스템 재부팅
-~~~
-
-![PDF 페이지 768의 원문 점검항목 영역](../assets/sn/sn-page-768-source-region.png)

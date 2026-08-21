@@ -2,64 +2,135 @@ schemaVersion: 1
 criterionSlug: w-30
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: w-30:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "w-30:overview.heading:1"
     sourceSpans:
       - physicalPage: 221
-        printedPage: '221'
+        printedPage: "221"
         pageRegionIdentifier: p221-w-30
-  - blockReference: w-30:sourceTranscription.sourcePage221.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "w-30:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 221
-        printedPage: '221'
+        printedPage: "221"
         pageRegionIdentifier: p221-w-30
-  - blockReference: w-30:sourceTranscription.sourcePage221.transcription:1
-    publicationDisposition: published
+  - blockReference: "w-30:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 221
-        printedPage: '221'
+        printedPage: "221"
         pageRegionIdentifier: p221-w-30
-  - blockReference: w-30:sourceTranscription.sourcePage221.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "w-30:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 221
-        printedPage: '221'
+        printedPage: "221"
         pageRegionIdentifier: p221-w-30
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/w-30/w-30-page-221-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 35e00d089e38b52083243c46f7231e35e54627587768d19448c1911d92fe9aff
-    alternativeText: PDF 페이지 221의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 221 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
+  - blockReference: "w-30:overview.inspectionPurpose.paragraph:1"
     sourceSpans:
       - physicalPage: 221
-        printedPage: '221'
+        printedPage: "221"
         pageRegionIdentifier: p221-w-30
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
+  - blockReference: "w-30:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 221
+        printedPage: "221"
+        pageRegionIdentifier: p221-w-30
+  - blockReference: "w-30:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 221
+        printedPage: "221"
+        pageRegionIdentifier: p221-w-30
+  - blockReference: "w-30:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 221
+        printedPage: "221"
+        pageRegionIdentifier: p221-w-30
+  - blockReference: "w-30:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 221
+        printedPage: "221"
+        pageRegionIdentifier: p221-w-30
+  - blockReference: "w-30:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 221
+        printedPage: "221"
+        pageRegionIdentifier: p221-w-30
+  - blockReference: "w-30:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 221
+        printedPage: "221"
+        pageRegionIdentifier: p221-w-30
+  - blockReference: "w-30:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 221
+        printedPage: "221"
+        pageRegionIdentifier: p221-w-30
+  - blockReference: "w-30:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 221
+        printedPage: "221"
+        pageRegionIdentifier: p221-w-30
+  - blockReference: "w-30:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 221
+        printedPage: "221"
+        pageRegionIdentifier: p221-w-30
+  - blockReference: "w-30:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 221
+        printedPage: "221"
+        pageRegionIdentifier: p221-w-30
+  - blockReference: "w-30:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 221
+        printedPage: "221"
+        pageRegionIdentifier: p221-w-30
+  - blockReference: "w-30:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 221
+        printedPage: "221"
+        pageRegionIdentifier: p221-w-30
+  - blockReference: "w-30:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 221
+        printedPage: "221"
+        pageRegionIdentifier: p221-w-30
+  - blockReference: "w-30:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 221
+        printedPage: "221"
+        pageRegionIdentifier: p221-w-30
+  - blockReference: "w-30:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 221
+        printedPage: "221"
+        pageRegionIdentifier: p221-w-30
+  - blockReference: "w-30:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 221
+        printedPage: "221"
+        pageRegionIdentifier: p221-w-30
+  - blockReference: "w-30:remediation.unspecified.heading:1"
+    sourceSpans:
+      - physicalPage: 221
+        printedPage: "221"
+        pageRegionIdentifier: p221-w-30
+  - blockReference: "w-30:remediation.unspecified.step:1"
+    sourceSpans:
+      - physicalPage: 221
+        printedPage: "221"
+        pageRegionIdentifier: p221-w-30
+  - blockReference: "w-30:remediation.unspecified.step:2"
+    sourceSpans:
+      - physicalPage: 221
+        printedPage: "221"
+        pageRegionIdentifier: p221-w-30
+  - blockReference: "w-30:remediation.unspecified.step:3"
+    sourceSpans:
+      - physicalPage: 221
+        printedPage: "221"
+        pageRegionIdentifier: p221-w-30
+  - blockReference: "w-30:remediation.unspecified.step.explanation:3"
+    sourceSpans:
+      - physicalPage: 221
+        printedPage: "221"
+        pageRegionIdentifier: p221-w-30
+assets: []
+

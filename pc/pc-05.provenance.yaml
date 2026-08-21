@@ -2,223 +2,247 @@ schemaVersion: 1
 criterionSlug: pc-05
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: pc-05:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "pc-05:overview.heading:1"
     sourceSpans:
       - physicalPage: 566
-        printedPage: '566'
+        printedPage: "566"
         pageRegionIdentifier: p566-pc-05
-  - blockReference: pc-05:sourceTranscription.sourcePage566.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "pc-05:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 566
-        printedPage: '566'
+        printedPage: "566"
         pageRegionIdentifier: p566-pc-05
-  - blockReference: pc-05:sourceTranscription.sourcePage566.transcription:1
-    publicationDisposition: published
+  - blockReference: "pc-05:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 566
-        printedPage: '566'
+        printedPage: "566"
         pageRegionIdentifier: p566-pc-05
-  - blockReference: pc-05:sourceTranscription.sourcePage566.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "pc-05:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 566
-        printedPage: '566'
+        printedPage: "566"
         pageRegionIdentifier: p566-pc-05
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - blockReference: pc-05:sourceTranscription.sourcePage567.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "pc-05:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 566
+        printedPage: "566"
+        pageRegionIdentifier: p566-pc-05
+  - blockReference: "pc-05:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 566
+        printedPage: "566"
+        pageRegionIdentifier: p566-pc-05
+  - blockReference: "pc-05:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 566
+        printedPage: "566"
+        pageRegionIdentifier: p566-pc-05
+  - blockReference: "pc-05:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 566
+        printedPage: "566"
+        pageRegionIdentifier: p566-pc-05
+  - blockReference: "pc-05:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 566
+        printedPage: "566"
+        pageRegionIdentifier: p566-pc-05
+  - blockReference: "pc-05:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 566
+        printedPage: "566"
+        pageRegionIdentifier: p566-pc-05
+  - blockReference: "pc-05:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 566
+        printedPage: "566"
+        pageRegionIdentifier: p566-pc-05
+  - blockReference: "pc-05:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 566
+        printedPage: "566"
+        pageRegionIdentifier: p566-pc-05
+  - blockReference: "pc-05:overview.reference.note.label:3"
+    sourceSpans:
+      - physicalPage: 566
+        printedPage: "566"
+        pageRegionIdentifier: p566-pc-05
+  - blockReference: "pc-05:overview.reference.note.content:3"
+    sourceSpans:
+      - physicalPage: 566
+        printedPage: "566"
+        pageRegionIdentifier: p566-pc-05
+  - blockReference: "pc-05:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 566
+        printedPage: "566"
+        pageRegionIdentifier: p566-pc-05
+  - blockReference: "pc-05:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 566
+        printedPage: "566"
+        pageRegionIdentifier: p566-pc-05
+  - blockReference: "pc-05:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 566
+        printedPage: "566"
+        pageRegionIdentifier: p566-pc-05
+  - blockReference: "pc-05:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 566
+        printedPage: "566"
+        pageRegionIdentifier: p566-pc-05
+  - blockReference: "pc-05:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 566
+        printedPage: "566"
+        pageRegionIdentifier: p566-pc-05
+  - blockReference: "pc-05:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 566
+        printedPage: "566"
+        pageRegionIdentifier: p566-pc-05
+  - blockReference: "pc-05:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 566
+        printedPage: "566"
+        pageRegionIdentifier: p566-pc-05
+  - blockReference: "pc-05:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 566
+        printedPage: "566"
+        pageRegionIdentifier: p566-pc-05
+  - blockReference: "pc-05:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 566
+        printedPage: "566"
+        pageRegionIdentifier: p566-pc-05
+  - blockReference: "pc-05:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 566
+        printedPage: "566"
+        pageRegionIdentifier: p566-pc-05
+  - blockReference: "pc-05:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 566
+        printedPage: "566"
+        pageRegionIdentifier: p566-pc-05
+  - blockReference: "pc-05:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 566
+        printedPage: "566"
+        pageRegionIdentifier: p566-pc-05
+  - blockReference: "pc-05:remediation.linux.paragraph:1"
+    sourceSpans:
+      - physicalPage: 566
+        printedPage: "566"
+        pageRegionIdentifier: p566-pc-05
+  - blockReference: "pc-05:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 566
+        printedPage: "566"
+        pageRegionIdentifier: p566-pc-05
+  - blockReference: "pc-05:remediation.linux.step.explanation:1"
+    sourceSpans:
+      - physicalPage: 566
+        printedPage: "566"
+        pageRegionIdentifier: p566-pc-05
+  - blockReference: "pc-05:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 566
+        printedPage: "566"
+        pageRegionIdentifier: p566-pc-05
+  - blockReference: "pc-05:remediation.linux.step:3"
     sourceSpans:
       - physicalPage: 567
-        printedPage: '567'
+        printedPage: "567"
         pageRegionIdentifier: p567-pc-05
-  - blockReference: pc-05:sourceTranscription.sourcePage567.transcription:1
-    publicationDisposition: published
+  - blockReference: "pc-05:remediation.linux.step.explanation:3"
     sourceSpans:
       - physicalPage: 567
-        printedPage: '567'
+        printedPage: "567"
         pageRegionIdentifier: p567-pc-05
-  - blockReference: pc-05:sourceTranscription.sourcePage567.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "pc-05:remediation.linux.table:1"
     sourceSpans:
       - physicalPage: 567
-        printedPage: '567'
+        printedPage: "567"
         pageRegionIdentifier: p567-pc-05
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: pc-05:sourceTranscription.sourcePage568.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 568
-        printedPage: '568'
-        pageRegionIdentifier: p568-pc-05
-  - blockReference: pc-05:sourceTranscription.sourcePage568.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 568
-        printedPage: '568'
-        pageRegionIdentifier: p568-pc-05
-  - blockReference: pc-05:sourceTranscription.sourcePage568.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 568
-        printedPage: '568'
-        pageRegionIdentifier: p568-pc-05
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: pc-05:sourceTranscription.sourcePage569.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 569
-        printedPage: '569'
-        pageRegionIdentifier: p569-pc-05
-  - blockReference: pc-05:sourceTranscription.sourcePage569.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 569
-        printedPage: '569'
-        pageRegionIdentifier: p569-pc-05
-  - blockReference: pc-05:sourceTranscription.sourcePage569.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 569
-        printedPage: '569'
-        pageRegionIdentifier: p569-pc-05
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/pc-05/pc-05-page-566-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 8d10580959c8a0928655c7883828c45951046f1f1048887c5aee113fb2a53aef
-    alternativeText: PDF 페이지 566의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 566 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 566
-        printedPage: '566'
-        pageRegionIdentifier: p566-pc-05
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - path: ../assets/pc-05/pc-05-page-567-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: dd0af6d088993ee708a9e7c240bab400abc202da179f5116820c9887424974b2
-    alternativeText: PDF 페이지 567의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 567 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "pc-05:remediation.linux.note.label:1"
     sourceSpans:
       - physicalPage: 567
-        printedPage: '567'
+        printedPage: "567"
         pageRegionIdentifier: p567-pc-05
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/pc-05/pc-05-page-568-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 127ae7a2f88c86d7b19f923a963de6d69bb2b111c9dab26657efb295069138db
-    alternativeText: PDF 페이지 568의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 568 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "pc-05:remediation.linux.note.item:1"
     sourceSpans:
+      - physicalPage: 567
+        printedPage: "567"
+        pageRegionIdentifier: p567-pc-05
+  - blockReference: "pc-05:remediation.linux.note.item:2"
+    sourceSpans:
+      - physicalPage: 567
+        printedPage: "567"
+        pageRegionIdentifier: p567-pc-05
+  - blockReference: "pc-05:remediation.linux.note.item:3"
+    sourceSpans:
+      - physicalPage: 567
+        printedPage: "567"
+        pageRegionIdentifier: p567-pc-05
+  - blockReference: "pc-05:remediation.linux.paragraph:2"
+    sourceSpans:
+      - physicalPage: 567
+        printedPage: "567"
+        pageRegionIdentifier: p567-pc-05
+  - blockReference: "pc-05:remediation.linux.table:2"
+    sourceSpans:
+      - physicalPage: 567
+        printedPage: "567"
+        pageRegionIdentifier: p567-pc-05
       - physicalPage: 568
-        printedPage: '568'
+        printedPage: "568"
         pageRegionIdentifier: p568-pc-05
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/pc-05/pc-05-page-569-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 9388a352b0ac7d03afc382b0906e2dd8cc512958ab4c2d44b6a3c1fc07fa722a
-    alternativeText: PDF 페이지 569의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 569 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "pc-05:remediation.supplementaryGuidance.heading:1"
     sourceSpans:
       - physicalPage: 569
-        printedPage: '569'
+        printedPage: "569"
         pageRegionIdentifier: p569-pc-05
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - blockReference: "pc-05:remediation.supplementaryGuidance.note.label:1"
+    sourceSpans:
+      - physicalPage: 569
+        printedPage: "569"
+        pageRegionIdentifier: p569-pc-05
+  - blockReference: "pc-05:remediation.supplementaryGuidance.note.content:1"
+    sourceSpans:
+      - physicalPage: 569
+        printedPage: "569"
+        pageRegionIdentifier: p569-pc-05
+  - blockReference: "pc-05:remediation.supplementaryGuidance.note.label:2"
+    sourceSpans:
+      - physicalPage: 569
+        printedPage: "569"
+        pageRegionIdentifier: p569-pc-05
+  - blockReference: "pc-05:remediation.supplementaryGuidance.note.content:2"
+    sourceSpans:
+      - physicalPage: 569
+        printedPage: "569"
+        pageRegionIdentifier: p569-pc-05
+  - blockReference: "pc-05:remediation.supplementaryGuidance.note.label:3"
+    sourceSpans:
+      - physicalPage: 569
+        printedPage: "569"
+        pageRegionIdentifier: p569-pc-05
+  - blockReference: "pc-05:remediation.supplementaryGuidance.note.content:3"
+    sourceSpans:
+      - physicalPage: 569
+        printedPage: "569"
+        pageRegionIdentifier: p569-pc-05
+  - blockReference: "pc-05:remediation.supplementaryGuidance.note.label:4"
+    sourceSpans:
+      - physicalPage: 569
+        printedPage: "569"
+        pageRegionIdentifier: p569-pc-05
+  - blockReference: "pc-05:remediation.supplementaryGuidance.note.content:4"
+    sourceSpans:
+      - physicalPage: 569
+        printedPage: "569"
+        pageRegionIdentifier: p569-pc-05
+assets: []

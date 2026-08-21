@@ -2,64 +2,159 @@ schemaVersion: 1
 criterionSlug: hv-16
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: hv-16:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "hv-16:overview.heading:1"
     sourceSpans:
       - physicalPage: 836
-        printedPage: '836'
+        printedPage: "836"
         pageRegionIdentifier: p836-hv-16
-  - blockReference: hv-16:sourceTranscription.sourcePage836.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "hv-16:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 836
-        printedPage: '836'
+        printedPage: "836"
         pageRegionIdentifier: p836-hv-16
-  - blockReference: hv-16:sourceTranscription.sourcePage836.transcription:1
-    publicationDisposition: published
+  - blockReference: "hv-16:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 836
-        printedPage: '836'
+        printedPage: "836"
         pageRegionIdentifier: p836-hv-16
-  - blockReference: hv-16:sourceTranscription.sourcePage836.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "hv-16:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 836
-        printedPage: '836'
+        printedPage: "836"
         pageRegionIdentifier: p836-hv-16
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/hv-16/hv-16-page-836-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 50034829076d5d0773d3744d151048ab5c51fd0f21e3e37a9cd51762ee8de040
-    alternativeText: PDF 페이지 836의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 836 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
+  - blockReference: "hv-16:overview.inspectionPurpose.paragraph:1"
     sourceSpans:
       - physicalPage: 836
-        printedPage: '836'
+        printedPage: "836"
         pageRegionIdentifier: p836-hv-16
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
+  - blockReference: "hv-16:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 836
+        printedPage: "836"
+        pageRegionIdentifier: p836-hv-16
+  - blockReference: "hv-16:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 836
+        printedPage: "836"
+        pageRegionIdentifier: p836-hv-16
+  - blockReference: "hv-16:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 836
+        printedPage: "836"
+        pageRegionIdentifier: p836-hv-16
+  - blockReference: "hv-16:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 836
+        printedPage: "836"
+        pageRegionIdentifier: p836-hv-16
+  - blockReference: "hv-16:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 836
+        printedPage: "836"
+        pageRegionIdentifier: p836-hv-16
+  - blockReference: "hv-16:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 836
+        printedPage: "836"
+        pageRegionIdentifier: p836-hv-16
+  - blockReference: "hv-16:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 836
+        printedPage: "836"
+        pageRegionIdentifier: p836-hv-16
+  - blockReference: "hv-16:overview.reference.note.label:3"
+    sourceSpans:
+      - physicalPage: 836
+        printedPage: "836"
+        pageRegionIdentifier: p836-hv-16
+  - blockReference: "hv-16:overview.reference.note.content:3"
+    sourceSpans:
+      - physicalPage: 836
+        printedPage: "836"
+        pageRegionIdentifier: p836-hv-16
+  - blockReference: "hv-16:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 836
+        printedPage: "836"
+        pageRegionIdentifier: p836-hv-16
+  - blockReference: "hv-16:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 836
+        printedPage: "836"
+        pageRegionIdentifier: p836-hv-16
+  - blockReference: "hv-16:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 836
+        printedPage: "836"
+        pageRegionIdentifier: p836-hv-16
+  - blockReference: "hv-16:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 836
+        printedPage: "836"
+        pageRegionIdentifier: p836-hv-16
+  - blockReference: "hv-16:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 836
+        printedPage: "836"
+        pageRegionIdentifier: p836-hv-16
+  - blockReference: "hv-16:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 836
+        printedPage: "836"
+        pageRegionIdentifier: p836-hv-16
+  - blockReference: "hv-16:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 836
+        printedPage: "836"
+        pageRegionIdentifier: p836-hv-16
+  - blockReference: "hv-16:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 836
+        printedPage: "836"
+        pageRegionIdentifier: p836-hv-16
+  - blockReference: "hv-16:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 836
+        printedPage: "836"
+        pageRegionIdentifier: p836-hv-16
+  - blockReference: "hv-16:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 836
+        printedPage: "836"
+        pageRegionIdentifier: p836-hv-16
+  - blockReference: "hv-16:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 836
+        printedPage: "836"
+        pageRegionIdentifier: p836-hv-16
+  - blockReference: "hv-16:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 836
+        printedPage: "836"
+        pageRegionIdentifier: p836-hv-16
+  - blockReference: "hv-16:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 836
+        printedPage: "836"
+        pageRegionIdentifier: p836-hv-16
+  - blockReference: "hv-16:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 836
+        printedPage: "836"
+        pageRegionIdentifier: p836-hv-16
+  - blockReference: "hv-16:remediation.linux.step:3"
+    sourceSpans:
+      - physicalPage: 836
+        printedPage: "836"
+        pageRegionIdentifier: p836-hv-16
+  - blockReference: "hv-16:remediation.linux.literal:1"
+    sourceSpans:
+      - physicalPage: 836
+        printedPage: "836"
+        pageRegionIdentifier: p836-hv-16
+  - blockReference: "hv-16:remediation.linux.step:4"
+    sourceSpans:
+      - physicalPage: 836
+        printedPage: "836"
+        pageRegionIdentifier: p836-hv-16
+assets: []

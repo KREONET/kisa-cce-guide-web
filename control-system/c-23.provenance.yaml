@@ -2,117 +2,204 @@ schemaVersion: 1
 criterionSlug: c-23
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: c-23:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "c-23:overview.heading:1"
     sourceSpans:
       - physicalPage: 511
-        printedPage: '511'
+        printedPage: "511"
         pageRegionIdentifier: p511-c-23
-  - blockReference: c-23:sourceTranscription.sourcePage511.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "c-23:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 511
-        printedPage: '511'
+        printedPage: "511"
         pageRegionIdentifier: p511-c-23
-  - blockReference: c-23:sourceTranscription.sourcePage511.transcription:1
-    publicationDisposition: published
+  - blockReference: "c-23:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 511
-        printedPage: '511'
+        printedPage: "511"
         pageRegionIdentifier: p511-c-23
-  - blockReference: c-23:sourceTranscription.sourcePage511.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "c-23:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 511
-        printedPage: '511'
+        printedPage: "511"
         pageRegionIdentifier: p511-c-23
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - blockReference: c-23:sourceTranscription.sourcePage512.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "c-23:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 511
+        printedPage: "511"
+        pageRegionIdentifier: p511-c-23
+  - blockReference: "c-23:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 511
+        printedPage: "511"
+        pageRegionIdentifier: p511-c-23
+  - blockReference: "c-23:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 511
+        printedPage: "511"
+        pageRegionIdentifier: p511-c-23
+  - blockReference: "c-23:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 511
+        printedPage: "511"
+        pageRegionIdentifier: p511-c-23
+  - blockReference: "c-23:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 511
+        printedPage: "511"
+        pageRegionIdentifier: p511-c-23
+  - blockReference: "c-23:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 511
+        printedPage: "511"
+        pageRegionIdentifier: p511-c-23
+  - blockReference: "c-23:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 511
+        printedPage: "511"
+        pageRegionIdentifier: p511-c-23
+  - blockReference: "c-23:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 511
+        printedPage: "511"
+        pageRegionIdentifier: p511-c-23
+  - blockReference: "c-23:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 511
+        printedPage: "511"
+        pageRegionIdentifier: p511-c-23
+  - blockReference: "c-23:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 511
+        printedPage: "511"
+        pageRegionIdentifier: p511-c-23
+  - blockReference: "c-23:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 511
+        printedPage: "511"
+        pageRegionIdentifier: p511-c-23
+  - blockReference: "c-23:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 511
+        printedPage: "511"
+        pageRegionIdentifier: p511-c-23
+  - blockReference: "c-23:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 511
+        printedPage: "511"
+        pageRegionIdentifier: p511-c-23
+  - blockReference: "c-23:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 511
+        printedPage: "511"
+        pageRegionIdentifier: p511-c-23
+  - blockReference: "c-23:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 511
+        printedPage: "511"
+        pageRegionIdentifier: p511-c-23
+  - blockReference: "c-23:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 511
+        printedPage: "511"
+        pageRegionIdentifier: p511-c-23
+  - blockReference: "c-23:remediation.heading:1"
     sourceSpans:
       - physicalPage: 512
-        printedPage: '512'
+        printedPage: "512"
         pageRegionIdentifier: p512-c-23
-  - blockReference: c-23:sourceTranscription.sourcePage512.transcription:1
-    publicationDisposition: published
+  - blockReference: "c-23:remediation.supplementaryGuidance.heading:1"
     sourceSpans:
       - physicalPage: 512
-        printedPage: '512'
+        printedPage: "512"
         pageRegionIdentifier: p512-c-23
-  - blockReference: c-23:sourceTranscription.sourcePage512.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "c-23:remediation.supplementaryGuidance.step:1"
     sourceSpans:
       - physicalPage: 512
-        printedPage: '512'
+        printedPage: "512"
         pageRegionIdentifier: p512-c-23
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/c-23/c-23-page-511-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: ca00dd64f7d4d20d0098b7f04379b67fc52b74343f193dbc496ab2aaedc6871e
-    alternativeText: PDF 페이지 511의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 511 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 511
-        printedPage: '511'
-        pageRegionIdentifier: p511-c-23
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - path: ../assets/c-23/c-23-page-512-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 9a668467cdaa50c4723d873cf51c979e43b603eb4293e09447f11cffd044277b
-    alternativeText: PDF 페이지 512의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 512 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "c-23:remediation.supplementaryGuidance.step:2"
     sourceSpans:
       - physicalPage: 512
-        printedPage: '512'
+        printedPage: "512"
         pageRegionIdentifier: p512-c-23
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - blockReference: "c-23:remediation.supplementaryGuidance.step:3"
+    sourceSpans:
+      - physicalPage: 512
+        printedPage: "512"
+        pageRegionIdentifier: p512-c-23
+  - blockReference: "c-23:remediation.supplementaryGuidance.step:4"
+    sourceSpans:
+      - physicalPage: 512
+        printedPage: "512"
+        pageRegionIdentifier: p512-c-23
+  - blockReference: "c-23:remediation.supplementaryGuidance.command:1"
+    sourceSpans:
+      - physicalPage: 512
+        printedPage: "512"
+        pageRegionIdentifier: p512-c-23
+  - blockReference: "c-23:remediation.supplementaryGuidance.step:5"
+    sourceSpans:
+      - physicalPage: 512
+        printedPage: "512"
+        pageRegionIdentifier: p512-c-23
+  - blockReference: "c-23:remediation.supplementaryGuidance.output:1"
+    sourceSpans:
+      - physicalPage: 512
+        printedPage: "512"
+        pageRegionIdentifier: p512-c-23
+  - blockReference: "c-23:remediation.supplementaryGuidance.step:6"
+    sourceSpans:
+      - physicalPage: 512
+        printedPage: "512"
+        pageRegionIdentifier: p512-c-23
+  - blockReference: "c-23:remediation.supplementaryGuidance.step:7"
+    sourceSpans:
+      - physicalPage: 512
+        printedPage: "512"
+        pageRegionIdentifier: p512-c-23
+  - blockReference: "c-23:remediation.supplementaryGuidance.step:8"
+    sourceSpans:
+      - physicalPage: 512
+        printedPage: "512"
+        pageRegionIdentifier: p512-c-23
+  - blockReference: "c-23:remediation.supplementaryGuidance.step:9"
+    sourceSpans:
+      - physicalPage: 512
+        printedPage: "512"
+        pageRegionIdentifier: p512-c-23
+  - blockReference: "c-23:remediation.supplementaryGuidance.command:2"
+    sourceSpans:
+      - physicalPage: 512
+        printedPage: "512"
+        pageRegionIdentifier: p512-c-23
+  - blockReference: "c-23:remediation.supplementaryGuidance.step:10"
+    sourceSpans:
+      - physicalPage: 512
+        printedPage: "512"
+        pageRegionIdentifier: p512-c-23
+  - blockReference: "c-23:remediation.supplementaryGuidance.step:11"
+    sourceSpans:
+      - physicalPage: 512
+        printedPage: "512"
+        pageRegionIdentifier: p512-c-23
+  - blockReference: "c-23:remediation.supplementaryGuidance.step:12"
+    sourceSpans:
+      - physicalPage: 512
+        printedPage: "512"
+        pageRegionIdentifier: p512-c-23
+  - blockReference: "c-23:remediation.supplementaryGuidance.step:13"
+    sourceSpans:
+      - physicalPage: 512
+        printedPage: "512"
+        pageRegionIdentifier: p512-c-23
+  - blockReference: "c-23:remediation.supplementaryGuidance.step:14"
+    sourceSpans:
+      - physicalPage: 512
+        printedPage: "512"
+        pageRegionIdentifier: p512-c-23
+  - blockReference: "c-23:remediation.supplementaryGuidance.step:15"
+    sourceSpans:
+      - physicalPage: 512
+        printedPage: "512"
+        pageRegionIdentifier: p512-c-23
+assets: []

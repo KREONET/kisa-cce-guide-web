@@ -2,64 +2,56 @@ schemaVersion: 1
 criterionSlug: c-16
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: c-16:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
-    sourceSpans:
-      - physicalPage: 500
-        printedPage: '500'
-        pageRegionIdentifier: p500-c-16
-  - blockReference: c-16:sourceTranscription.sourcePage500.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 500
-        printedPage: '500'
-        pageRegionIdentifier: p500-c-16
-  - blockReference: c-16:sourceTranscription.sourcePage500.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 500
-        printedPage: '500'
-        pageRegionIdentifier: p500-c-16
-  - blockReference: c-16:sourceTranscription.sourcePage500.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 500
-        printedPage: '500'
-        pageRegionIdentifier: p500-c-16
-        sourceBoundingBox:
-          - 0.05
-          - 0.1941
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/c-16/c-16-page-500-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 8bed2507ff56d0d69b79eda9fb1a6ccfdfc687a17fa83ebf8843793ed5989cb9
-    alternativeText: PDF 페이지 500의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 500 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 848
-    outputPixelDimensions:
-      - 714
-      - 848
-    sourceCrop:
-      - 0.05
-      - 0.1941
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 500
-        printedPage: '500'
-        pageRegionIdentifier: p500-c-16
-        sourceBoundingBox:
-          - 0.05
-          - 0.1941
-          - 0.95
-          - 0.95
+  - blockReference: "c-16:overview.heading:1"
+    sourceSpans: [{physicalPage: 500, printedPage: "500", pageRegionIdentifier: p500-c-16}]
+  - blockReference: "c-16:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 500, printedPage: "500", pageRegionIdentifier: p500-c-16}]
+  - blockReference: "c-16:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 500, printedPage: "500", pageRegionIdentifier: p500-c-16}]
+  - blockReference: "c-16:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 500, printedPage: "500", pageRegionIdentifier: p500-c-16}]
+  - blockReference: "c-16:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 500, printedPage: "500", pageRegionIdentifier: p500-c-16}]
+  - blockReference: "c-16:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 500, printedPage: "500", pageRegionIdentifier: p500-c-16}]
+  - blockReference: "c-16:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 500, printedPage: "500", pageRegionIdentifier: p500-c-16}]
+  - blockReference: "c-16:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 500, printedPage: "500", pageRegionIdentifier: p500-c-16}]
+  - blockReference: "c-16:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 500, printedPage: "500", pageRegionIdentifier: p500-c-16}]
+  - blockReference: "c-16:overview.reference.note.content:1"
+    sourceSpans: [{physicalPage: 500, printedPage: "500", pageRegionIdentifier: p500-c-16}]
+  - blockReference: "c-16:overview.reference.note.label:2"
+    sourceSpans: [{physicalPage: 500, printedPage: "500", pageRegionIdentifier: p500-c-16}]
+  - blockReference: "c-16:overview.reference.note.content:2"
+    sourceSpans: [{physicalPage: 500, printedPage: "500", pageRegionIdentifier: p500-c-16}]
+  - blockReference: "c-16:assessment.heading:1"
+    sourceSpans: [{physicalPage: 500, printedPage: "500", pageRegionIdentifier: p500-c-16}]
+  - blockReference: "c-16:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 500, printedPage: "500", pageRegionIdentifier: p500-c-16}]
+  - blockReference: "c-16:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 500, printedPage: "500", pageRegionIdentifier: p500-c-16}]
+  - blockReference: "c-16:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 500, printedPage: "500", pageRegionIdentifier: p500-c-16}]
+  - blockReference: "c-16:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 500, printedPage: "500", pageRegionIdentifier: p500-c-16}]
+  - blockReference: "c-16:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 500, printedPage: "500", pageRegionIdentifier: p500-c-16}]
+  - blockReference: "c-16:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 500, printedPage: "500", pageRegionIdentifier: p500-c-16}]
+  - blockReference: "c-16:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 500, printedPage: "500", pageRegionIdentifier: p500-c-16}]
+  - blockReference: "c-16:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 500, printedPage: "500", pageRegionIdentifier: p500-c-16}]
+  - blockReference: "c-16:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 500, printedPage: "500", pageRegionIdentifier: p500-c-16}]
+  - blockReference: "c-16:remediation.heading:1"
+    sourceSpans: [{physicalPage: 500, printedPage: "500", pageRegionIdentifier: p500-c-16}]
+  - blockReference: "c-16:remediation.supplementaryGuidance.heading:1"
+    sourceSpans: [{physicalPage: 500, printedPage: "500", pageRegionIdentifier: p500-c-16}]
+  - blockReference: "c-16:remediation.supplementaryGuidance.step:1"
+    sourceSpans: [{physicalPage: 500, printedPage: "500", pageRegionIdentifier: p500-c-16}]
+  - blockReference: "c-16:remediation.supplementaryGuidance.step:2"
+    sourceSpans: [{physicalPage: 500, printedPage: "500", pageRegionIdentifier: p500-c-16}]
+assets: []

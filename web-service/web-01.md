@@ -1,7 +1,8 @@
 ---
 schemaVersion: 1
-contentModel: extractedCriterion
+contentModel: systemCriterion
 contentModelVersion: 1
+
 criterion:
   code: WEB-01
   slug: web-01
@@ -9,74 +10,143 @@ criterion:
   severity:
     level: high
     sourceLabel: 상
+
 classification:
   domainIdentifier: web-service
   categoryIdentifier: web-service-account-management
+
 targetScope: nonExhaustive
 targetIdentifiers:
-  - unspecified
-sourceTargetText: 자동 전사본에서 확인 필요
+  - linux
+sourceTargetText: "Tomcat, JEUS"
+
 provenance:
   sourceDocumentIdentifier: kisa-cce-criteria-2026
   sourcePageRanges:
     - physicalPageStart: 274
       physicalPageEnd: 275
-      printedPageStart: '274'
-      printedPageEnd: '275'
-sourceAnnotations: []
+      printedPageStart: "274"
+      printedPageEnd: "275"
+
+sourceAnnotations:
+  - annotationIdentifier: web-01-source-001
+    annotationType: sourceDuplication
+    targetType: astNode
+    targetReference: "web-01:remediation.linux.step:4"
+    sourceLocation:
+      physicalPage: 275
+      printedPage: "275"
+      pageRegionIdentifier: p275-web-01
+    sourceText: "기본 관리자 계정의 `Name`을 유추하기 어려운 계정 이름 입력"
+    explanation: "JEUS 기본 관리자 계정 확인 절차와 계정명 변경 절차가 모두 Step 1로 표기되어 있다."
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - "PDF physical page 275의 두 Step 1 표기를 확인했다."
+    reviewedBy: null
+    reviewedAt: null
+    approvedBy: null
+    approvedAt: null
+  - annotationIdentifier: web-01-source-002
+    annotationType: sourceDuplication
+    targetType: astNode
+    targetReference: "web-01:remediation.linux.step:4"
+    sourceLocation:
+      physicalPage: 275
+      printedPage: "275"
+      pageRegionIdentifier: p275-web-01
+    sourceText: "`Activate Changes`을 눌러 설정 저장"
+    explanation: "같은 설정 저장 지시가 연속해서 두 번 기재되어 있다."
+    disposition: unresolved
+    reviewStatus: pending
+    verificationEvidence:
+      - "PDF physical page 275의 JEUS 계정명 변경 절차를 확인했다."
+    reviewedBy: null
+    reviewedAt: null
+    approvedBy: null
+    approvedAt: null
 ---
 
-## 원문 전사
+## 개요
 
-### PDF 페이지 274
+### 점검 내용
 
-~~~text transcription
-개요
-점검 내용 웹 서비스 설치 시 기본적으로 설정된 관리자 계정의 변경 후 사용 여부 점검
-기본 관리자 계정명과 같은 알려진 계정명을 유추하기 어려운 계정명으로 변경 후 사용하여 공격자에
-점검 목적
-의한 추측 공격 및 무단 접근 등을 방지하고 보안을 강화하기 위함
-기본 관리자 계정명을 변경하지 않고 사용할 경우, 공격자에 의한 계정 및 비밀번호 추측 공격이 가능하고,
-보안 위협
-이를 통해 불법적인 접근, 데이터 유출, 시스템 장애 등의 보안 사고가 발생할 수 있는 위험이 존재함
-※ 기본 계정: 웹 서비스 설치 시 기본적으로 생성되는 관리자 콘솔 계정
-참고
-※ 서비스별 기본 계정: IIS(Administrator), Tomcat(tomcat, admin), JEUS(administrator)
-점검 대상 및 판단 기준
-대상 Tomcat, JEUS
-양호 : 관리자 페이지를 사용하지 않거나, 계정명이 기본 계정명으로 설정되어 있지 않은 경우
-판단 기준 취약 : 계정명이 기본 계정명으로 설정되어 있거나, 추측하기 쉬운 문자 조합으로 이루어진 계정명을
-사용하는 경우
-조치 방법 기본 관리자 계정명을 추측하기 어려운 계정명으로 설정
-조치 시 영향 일반적인 경우 영향 없음
-점검 및 조치 사례
-l Tomcat
-Step 1) 기본 계정명 변경 또는 관리자 페이지 비활성화(기본값: 비활성화)
-# vi <Tomcat 설치 디렉터리>/conf/server.xml
-예시) <user username="admin" password="XNDJxndn264!@" roles="manager-gui"/>
-Step 2) Tomcat 재구동
-# systemctl restart tomcat
-※ “roles = manager-gui, manager-script, manager-jmx, manager-status” 설정 시 관리자 계정 및 페이지 활성화 상태
-~~~
+웹 서비스 설치 시 기본적으로 설정된 관리자 계정의 변경 후 사용 여부 점검
 
-![PDF 페이지 274의 원문 점검항목 영역](../assets/web-01/web-01-page-274-source-region.png)
+### 점검 목적
 
-### PDF 페이지 275
+기본 관리자 계정명과 같은 알려진 계정명을 유추하기 어려운 계정명으로 변경 후 사용하여 공격자에 의한 추측 공격 및 무단 접근 등을 방지하고 보안을 강화하기 위함
 
-~~~text transcription
-l JEUS
-Step 1) Security > Security Domains 페이지 해당 도메인 > Account & Policies Management > Users > 기본
-관리자 계정의 Name 확인
-[ 기본 관리자 계정 확인 ]
-Step 1) Lock & EDIT > Security > Security Domains 페이지 해당 도메인 > Account & Policies Management >
-Users > ADD > 기본 관리자 계정의 Name을 유추하기 어려운 계정 이름 입력 > Administrators 그룹
-체크 후 확인 > Accounts & Policies Management > policies > Role Permissions > AdministratorsRole >
-“Activate Changes”을 눌러 설정 저장(웹 서비스명과 연관된 단어 “administrator” 계정명 사용금지) >
-“Activate Changes”을 눌러 설정 저장
-Step 2) JEUS 재구동
-# ./stopServer –host [도메인명]:[포트 번호]
-# ./startDomainAdminServer –host [도메인명]:[포트 번호]
-※ 기본 계정명 변경이 불가능할 경우 초기 비밀번호 변경으로 보완 필요
-~~~
+### 보안 위협
 
-![PDF 페이지 275의 원문 점검항목 영역](../assets/web-01/web-01-page-275-source-region.png)
+기본 관리자 계정명을 변경하지 않고 사용할 경우, 공격자에 의한 계정 및 비밀번호 추측 공격이 가능하고, 이를 통해 불법적인 접근, 데이터 유출, 시스템 장애 등의 보안 사고가 발생할 수 있는 위험이 존재함
+
+### 참고
+
+> **참고**
+>
+> **기본 계정:** 웹 서비스 설치 시 기본적으로 생성되는 관리자 콘솔 계정
+
+> **참고**
+>
+> **서비스별 기본 계정:** IIS(Administrator), Tomcat(tomcat, admin), JEUS(administrator)
+
+## 점검 대상 및 판단 기준
+
+### 대상
+
+Tomcat, JEUS
+
+### 판단 기준
+
+- **양호:** 관리자 페이지를 사용하지 않거나, 계정명이 기본 계정명으로 설정되어 있지 않은 경우
+- **취약:** 계정명이 기본 계정명으로 설정되어 있거나, 추측하기 쉬운 문자 조합으로 이루어진 계정명을 사용하는 경우
+
+### 조치 방법
+
+기본 관리자 계정명을 추측하기 어려운 계정명으로 설정
+
+### 조치 시 영향
+
+일반적인 경우 영향 없음
+
+## 점검 및 조치 사례
+
+### Linux
+
+1. **Tomcat:** 기본 계정명 변경 또는 관리자 페이지 비활성화(기본값: 비활성화)
+
+   ```bash command
+   vi <Tomcat 설치 디렉터리>/conf/server.xml
+   ```
+
+   예시:
+
+   ```xml configuration
+   <user username="admin" password="XNDJxndn264!@" roles="manager-gui"/>
+   ```
+
+2. **Tomcat:** Tomcat 재구동
+
+   ```bash command
+   systemctl restart tomcat
+   ```
+
+> **참고**
+>
+> `roles = manager-gui, manager-script, manager-jmx, manager-status` 설정 시 관리자 계정 및 페이지 활성화 상태
+
+1. **JEUS:** `Security` > `Security Domains` 페이지 해당 도메인 > `Account & Policies Management` > `Users` > 기본 관리자 계정의 `Name` 확인
+
+2. **JEUS:** `Lock & EDIT` > `Security` > `Security Domains` 페이지 해당 도메인 > `Account & Policies Management` > `Users` > `ADD` > 기본 관리자 계정의 `Name`을 유추하기 어려운 계정 이름 입력 > `Administrators` 그룹 체크 후 확인 > `Accounts & Policies Management` > `policies` > `Role Permissions` > `AdministratorsRole` > `Activate Changes`을 눌러 설정 저장(웹 서비스명과 연관된 단어 `administrator` 계정명 사용금지) > `Activate Changes`을 눌러 설정 저장
+
+3. **JEUS:** JEUS 재구동
+
+   ```bash command
+   ./stopServer –host [도메인명]:[포트 번호]
+   ./startDomainAdminServer –host [도메인명]:[포트 번호]
+   ```
+
+> **참고**
+>
+> 기본 계정명 변경이 불가능할 경우 초기 비밀번호 변경으로 보완 필요

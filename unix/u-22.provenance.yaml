@@ -2,64 +2,124 @@ schemaVersion: 1
 criterionSlug: u-22
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: u-22:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "u-22:overview.heading:1"
     sourceSpans:
       - physicalPage: 49
-        printedPage: '49'
+        printedPage: "49"
         pageRegionIdentifier: p49-u-22
-  - blockReference: u-22:sourceTranscription.sourcePage49.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "u-22:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 49
-        printedPage: '49'
+        printedPage: "49"
         pageRegionIdentifier: p49-u-22
-  - blockReference: u-22:sourceTranscription.sourcePage49.transcription:1
-    publicationDisposition: published
+  - blockReference: "u-22:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 49
-        printedPage: '49'
+        printedPage: "49"
         pageRegionIdentifier: p49-u-22
-  - blockReference: u-22:sourceTranscription.sourcePage49.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "u-22:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 49
-        printedPage: '49'
+        printedPage: "49"
         pageRegionIdentifier: p49-u-22
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/u-22/u-22-page-49-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: b81282097c8bd294599345c556044bfa403b6176145b5501290740adcc84eb75
-    alternativeText: PDF 페이지 49의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 49 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
+  - blockReference: "u-22:overview.inspectionPurpose.paragraph:1"
     sourceSpans:
       - physicalPage: 49
-        printedPage: '49'
+        printedPage: "49"
         pageRegionIdentifier: p49-u-22
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
+  - blockReference: "u-22:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:remediation.solaris.heading:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:remediation.solaris.step:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+  - blockReference: "u-22:remediation.solaris.command:1"
+    sourceSpans:
+      - physicalPage: 49
+        printedPage: "49"
+        pageRegionIdentifier: p49-u-22
+assets: []

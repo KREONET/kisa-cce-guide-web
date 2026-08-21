@@ -2,117 +2,244 @@ schemaVersion: 1
 criterionSlug: hv-19
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: hv-19:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "hv-19:overview.heading:1"
     sourceSpans:
       - physicalPage: 840
-        printedPage: '840'
+        printedPage: "840"
         pageRegionIdentifier: p840-hv-19
-  - blockReference: hv-19:sourceTranscription.sourcePage840.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "hv-19:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 840
-        printedPage: '840'
+        printedPage: "840"
         pageRegionIdentifier: p840-hv-19
-  - blockReference: hv-19:sourceTranscription.sourcePage840.transcription:1
-    publicationDisposition: published
+  - blockReference: "hv-19:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 840
-        printedPage: '840'
+        printedPage: "840"
         pageRegionIdentifier: p840-hv-19
-  - blockReference: hv-19:sourceTranscription.sourcePage840.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "hv-19:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 840
-        printedPage: '840'
+        printedPage: "840"
         pageRegionIdentifier: p840-hv-19
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - blockReference: hv-19:sourceTranscription.sourcePage841.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "hv-19:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 840
+        printedPage: "840"
+        pageRegionIdentifier: p840-hv-19
+  - blockReference: "hv-19:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 840
+        printedPage: "840"
+        pageRegionIdentifier: p840-hv-19
+  - blockReference: "hv-19:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 840
+        printedPage: "840"
+        pageRegionIdentifier: p840-hv-19
+  - blockReference: "hv-19:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 840
+        printedPage: "840"
+        pageRegionIdentifier: p840-hv-19
+  - blockReference: "hv-19:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 840
+        printedPage: "840"
+        pageRegionIdentifier: p840-hv-19
+  - blockReference: "hv-19:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 840
+        printedPage: "840"
+        pageRegionIdentifier: p840-hv-19
+  - blockReference: "hv-19:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 840
+        printedPage: "840"
+        pageRegionIdentifier: p840-hv-19
+  - blockReference: "hv-19:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 840
+        printedPage: "840"
+        pageRegionIdentifier: p840-hv-19
+  - blockReference: "hv-19:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 840
+        printedPage: "840"
+        pageRegionIdentifier: p840-hv-19
+  - blockReference: "hv-19:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 840
+        printedPage: "840"
+        pageRegionIdentifier: p840-hv-19
+  - blockReference: "hv-19:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 840
+        printedPage: "840"
+        pageRegionIdentifier: p840-hv-19
+  - blockReference: "hv-19:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 840
+        printedPage: "840"
+        pageRegionIdentifier: p840-hv-19
+  - blockReference: "hv-19:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 840
+        printedPage: "840"
+        pageRegionIdentifier: p840-hv-19
+  - blockReference: "hv-19:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 840
+        printedPage: "840"
+        pageRegionIdentifier: p840-hv-19
+  - blockReference: "hv-19:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 840
+        printedPage: "840"
+        pageRegionIdentifier: p840-hv-19
+  - blockReference: "hv-19:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 840
+        printedPage: "840"
+        pageRegionIdentifier: p840-hv-19
+  - blockReference: "hv-19:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 840
+        printedPage: "840"
+        pageRegionIdentifier: p840-hv-19
+  - blockReference: "hv-19:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 840
+        printedPage: "840"
+        pageRegionIdentifier: p840-hv-19
+  - blockReference: "hv-19:remediation.linux.paragraph:1"
+    sourceSpans:
+      - physicalPage: 840
+        printedPage: "840"
+        pageRegionIdentifier: p840-hv-19
+  - blockReference: "hv-19:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 840
+        printedPage: "840"
+        pageRegionIdentifier: p840-hv-19
+  - blockReference: "hv-19:remediation.linux.literal:1"
+    sourceSpans:
+      - physicalPage: 840
+        printedPage: "840"
+        pageRegionIdentifier: p840-hv-19
+  - blockReference: "hv-19:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 840
+        printedPage: "840"
+        pageRegionIdentifier: p840-hv-19
+  - blockReference: "hv-19:remediation.linux.step:3"
+    sourceSpans:
+      - physicalPage: 840
+        printedPage: "840"
+        pageRegionIdentifier: p840-hv-19
+  - blockReference: "hv-19:remediation.linux.paragraph:2"
     sourceSpans:
       - physicalPage: 841
-        printedPage: '841'
+        printedPage: "841"
         pageRegionIdentifier: p841-hv-19
-  - blockReference: hv-19:sourceTranscription.sourcePage841.transcription:1
-    publicationDisposition: published
+  - blockReference: "hv-19:remediation.linux.step:4"
     sourceSpans:
       - physicalPage: 841
-        printedPage: '841'
+        printedPage: "841"
         pageRegionIdentifier: p841-hv-19
-  - blockReference: hv-19:sourceTranscription.sourcePage841.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "hv-19:remediation.linux.step:5"
     sourceSpans:
       - physicalPage: 841
-        printedPage: '841'
+        printedPage: "841"
         pageRegionIdentifier: p841-hv-19
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/hv-19/hv-19-page-840-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 81010332d21a23adf91922cb5dfe774b9e25ed3ef36f88fd437fa3349b2107d2
-    alternativeText: PDF 페이지 840의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 840 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 840
-        printedPage: '840'
-        pageRegionIdentifier: p840-hv-19
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - path: ../assets/hv-19/hv-19-page-841-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 44b0a7cdccb197425dfbb36dc07d49d36c9367c36831d2e59ce3e5c4cb192945
-    alternativeText: PDF 페이지 841의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 841 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "hv-19:remediation.linux.command:1"
     sourceSpans:
       - physicalPage: 841
-        printedPage: '841'
+        printedPage: "841"
         pageRegionIdentifier: p841-hv-19
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - blockReference: "hv-19:remediation.linux.step:6"
+    sourceSpans:
+      - physicalPage: 841
+        printedPage: "841"
+        pageRegionIdentifier: p841-hv-19
+  - blockReference: "hv-19:remediation.linux.command:2"
+    sourceSpans:
+      - physicalPage: 841
+        printedPage: "841"
+        pageRegionIdentifier: p841-hv-19
+  - blockReference: "hv-19:remediation.linux.step:7"
+    sourceSpans:
+      - physicalPage: 841
+        printedPage: "841"
+        pageRegionIdentifier: p841-hv-19
+  - blockReference: "hv-19:remediation.linux.command:3"
+    sourceSpans:
+      - physicalPage: 841
+        printedPage: "841"
+        pageRegionIdentifier: p841-hv-19
+  - blockReference: "hv-19:remediation.linux.step:8"
+    sourceSpans:
+      - physicalPage: 841
+        printedPage: "841"
+        pageRegionIdentifier: p841-hv-19
+  - blockReference: "hv-19:remediation.linux.command:4"
+    sourceSpans:
+      - physicalPage: 841
+        printedPage: "841"
+        pageRegionIdentifier: p841-hv-19
+  - blockReference: "hv-19:remediation.linux.step:9"
+    sourceSpans:
+      - physicalPage: 841
+        printedPage: "841"
+        pageRegionIdentifier: p841-hv-19
+  - blockReference: "hv-19:remediation.linux.command:5"
+    sourceSpans:
+      - physicalPage: 841
+        printedPage: "841"
+        pageRegionIdentifier: p841-hv-19
+  - blockReference: "hv-19:remediation.linux.step:10"
+    sourceSpans:
+      - physicalPage: 841
+        printedPage: "841"
+        pageRegionIdentifier: p841-hv-19
+  - blockReference: "hv-19:remediation.linux.command:6"
+    sourceSpans:
+      - physicalPage: 841
+        printedPage: "841"
+        pageRegionIdentifier: p841-hv-19
+  - blockReference: "hv-19:remediation.linux.step:11"
+    sourceSpans:
+      - physicalPage: 841
+        printedPage: "841"
+        pageRegionIdentifier: p841-hv-19
+  - blockReference: "hv-19:remediation.linux.command:7"
+    sourceSpans:
+      - physicalPage: 841
+        printedPage: "841"
+        pageRegionIdentifier: p841-hv-19
+  - blockReference: "hv-19:remediation.linux.step:12"
+    sourceSpans:
+      - physicalPage: 841
+        printedPage: "841"
+        pageRegionIdentifier: p841-hv-19
+  - blockReference: "hv-19:remediation.linux.command:8"
+    sourceSpans:
+      - physicalPage: 841
+        printedPage: "841"
+        pageRegionIdentifier: p841-hv-19
+  - blockReference: "hv-19:remediation.linux.step:13"
+    sourceSpans:
+      - physicalPage: 841
+        printedPage: "841"
+        pageRegionIdentifier: p841-hv-19
+  - blockReference: "hv-19:remediation.linux.command:9"
+    sourceSpans:
+      - physicalPage: 841
+        printedPage: "841"
+        pageRegionIdentifier: p841-hv-19
+  - blockReference: "hv-19:remediation.linux.step:14"
+    sourceSpans:
+      - physicalPage: 841
+        printedPage: "841"
+        pageRegionIdentifier: p841-hv-19
+assets: []

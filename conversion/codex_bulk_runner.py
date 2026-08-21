@@ -20,7 +20,7 @@ from typing import TextIO, cast
 from jsonschema import Draft202012Validator, FormatChecker
 
 from conversion.codex_result_importer import render_codex_candidate, validate_codex_result
-from conversion.codex_runner import run_codex_task
+from conversion.codex_runner import run_codex_task, validate_model_routing
 from conversion.codex_task_builder import DEFAULT_WORK_DIRECTORY, build_codex_task
 from conversion.common import JsonValue, as_mapping, as_sequence, load_json, load_yaml, sha256_file
 from conversion.common import repository_root as default_repository_root
@@ -54,6 +54,7 @@ class BulkItemRequest:
     resume: bool
     retries: int
     retry_backoff_seconds: float
+    use_user_config: bool = False
     log_directory: str | None = None
     log_level: str | None = None
     log_run_identifier: str | None = None
@@ -107,6 +108,8 @@ def selected_extracted_criterion_slugs(*, root: Path | None = None) -> tuple[str
 def _validate_configuration(
     *,
     workers: int,
+    model: str | None,
+    use_user_config: bool,
     retries: int,
     retry_backoff_seconds: float,
 ) -> None:
@@ -118,6 +121,7 @@ def _validate_configuration(
     if isinstance(retries, bool) or not 0 <= retries <= MAXIMUM_RETRIES:
         message = f"retries must be between 0 and {MAXIMUM_RETRIES}"
         raise ValueError(message)
+    validate_model_routing(model=model, use_user_config=use_user_config)
     if (
         not math.isfinite(retry_backoff_seconds)
         or not 0 <= retry_backoff_seconds <= MAXIMUM_RETRY_BACKOFF_SECONDS
@@ -272,13 +276,53 @@ def _candidate_is_verified(
     return all(report.get(name) == value for name, value in expected_fields.items())
 
 
+def _run_matches_request(
+    *,
+    run_path: Path,
+    result_path: Path,
+    task_path: Path,
+    model: str | None,
+    use_user_config: bool,
+) -> bool:
+    """Verify that a completed run used the current task and routing configuration."""
+
+    try:
+        task = load_json(task_path)
+        run = load_json(run_path)
+        expected_fields: dict[str, JsonValue] = {
+            "schemaVersion": 1,
+            "taskIdentifier": task.get("taskIdentifier"),
+            "taskChecksum": task.get("taskChecksum"),
+            "status": "completed",
+            "model": model or "configured-default",
+            "exitCode": 0,
+            "resultChecksum": sha256_file(result_path),
+        }
+    except (KeyError, OSError, TypeError, ValueError):
+        return False
+    if not all(run.get(name) == value for name, value in expected_fields.items()):
+        return False
+    # Run manifests created before user-config routing was added always ignored user config.
+    return run.get("userConfigLoaded", False) is use_user_config
+
+
 def _resume_state(
     *,
     paths: dict[str, Path],
     root: Path,
+    model: str | None,
+    use_user_config: bool,
 ) -> str:
     """Return the deepest verified stage reusable by a resumed item."""
 
+    if not _run_matches_request(
+        run_path=paths["run"],
+        result_path=paths["result"],
+        task_path=paths["task"],
+        model=model,
+        use_user_config=use_user_config,
+    ):
+        return "none"
     if not _result_is_valid(
         result_path=paths["result"],
         task_path=paths["task"],
@@ -356,6 +400,7 @@ def _run_vision_with_retries(
                 root=root,
                 work_directory=work_directory,
                 model=request.model,
+                use_user_config=request.use_user_config,
                 dry_run=request.dry_run,
                 runtime_logger=logger,
             )
@@ -432,7 +477,16 @@ def _process_item_pipeline(  # noqa: PLR0915
             duration_seconds=stage_duration_seconds,
         )
 
-        resume_state = _resume_state(paths=paths, root=repository) if request.resume else "none"
+        resume_state = (
+            _resume_state(
+                paths=paths,
+                root=repository,
+                model=request.model,
+                use_user_config=request.use_user_config,
+            )
+            if request.resume
+            else "none"
+        )
         item["resumeVerification"] = resume_state if request.resume else "notRequested"
         if resume_state == "verifiedCandidate":
             stages["visionRun"] = _stage_document(
@@ -1183,6 +1237,7 @@ def run_bulk_conversion(  # noqa: PLR0913
     work_directory: Path | None = None,
     workers: int | None = None,
     model: str | None = None,
+    use_user_config: bool = False,
     dry_run: bool = False,
     resume: bool = False,
     fail_fast: bool = False,
@@ -1217,6 +1272,8 @@ def run_bulk_conversion(  # noqa: PLR0913
         worker_count = workers if workers is not None else default_worker_count()
         _validate_configuration(
             workers=worker_count,
+            model=model,
+            use_user_config=use_user_config,
             retries=retries,
             retry_backoff_seconds=retry_backoff_seconds,
         )
@@ -1226,6 +1283,7 @@ def run_bulk_conversion(  # noqa: PLR0913
         configuration: dict[str, JsonValue] = {
             "workers": worker_count,
             "model": model or "configured-default",
+            "useUserConfig": use_user_config,
             "dryRun": dry_run,
             "resume": resume,
             "failFast": fail_fast,
@@ -1253,6 +1311,7 @@ def run_bulk_conversion(  # noqa: PLR0913
                 resume=resume,
                 retries=retries,
                 retry_backoff_seconds=retry_backoff_seconds,
+                use_user_config=use_user_config,
                 log_directory=logger.log_directory.resolve().as_posix(),
                 log_level=logger.level,
                 log_run_identifier=logger.run_identifier,
@@ -1389,6 +1448,11 @@ def _argument_parser() -> argparse.ArgumentParser:
         help=f"parallel worker processes, 1-{MAXIMUM_WORKERS}",
     )
     parser.add_argument("--model", help="optional Codex model override")
+    parser.add_argument(
+        "--use-user-config",
+        action="store_true",
+        help="load Codex user configuration for custom providers such as OpenCodeX",
+    )
     parser.add_argument("--dry-run", action="store_true", help="write plans without importing")
     parser.add_argument(
         "--resume",
@@ -1433,6 +1497,7 @@ def main() -> int:
             work_directory=arguments.work_directory,
             workers=arguments.workers,
             model=arguments.model,
+            use_user_config=arguments.use_user_config,
             dry_run=arguments.dry_run,
             resume=arguments.resume,
             fail_fast=arguments.fail_fast,

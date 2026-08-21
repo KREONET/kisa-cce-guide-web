@@ -2,753 +2,614 @@ schemaVersion: 1
 criterionSlug: ci
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: ci:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "ci:overview.heading:1"
     sourceSpans:
       - physicalPage: 679
-        printedPage: '679'
+        printedPage: "679"
         pageRegionIdentifier: p679-ci
-  - blockReference: ci:sourceTranscription.sourcePage679.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "ci:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 679
-        printedPage: '679'
+        printedPage: "679"
         pageRegionIdentifier: p679-ci
-  - blockReference: ci:sourceTranscription.sourcePage679.transcription:1
-    publicationDisposition: published
+  - blockReference: "ci:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 679
-        printedPage: '679'
+        printedPage: "679"
         pageRegionIdentifier: p679-ci
-  - blockReference: ci:sourceTranscription.sourcePage679.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "ci:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 679
-        printedPage: '679'
+        printedPage: "679"
         pageRegionIdentifier: p679-ci
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - blockReference: ci:sourceTranscription.sourcePage680.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "ci:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.reference.note.label:3"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.reference.note.content:3"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.reference.note.label:4"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.reference.note.content:4"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.reference.note.label:5"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.reference.note.content:5"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.reference.note.label:6"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.reference.note.content:6"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.reference.note.label:7"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.reference.note.content:7"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:remediation.linux.paragraph:1"
     sourceSpans:
       - physicalPage: 680
-        printedPage: '680'
+        printedPage: "680"
         pageRegionIdentifier: p680-ci
-  - blockReference: ci:sourceTranscription.sourcePage680.transcription:1
-    publicationDisposition: published
+  - blockReference: "ci:remediation.linux.paragraph:2"
     sourceSpans:
       - physicalPage: 680
-        printedPage: '680'
+        printedPage: "680"
         pageRegionIdentifier: p680-ci
-  - blockReference: ci:sourceTranscription.sourcePage680.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "ci:remediation.linux.step:1"
     sourceSpans:
       - physicalPage: 680
-        printedPage: '680'
+        printedPage: "680"
         pageRegionIdentifier: p680-ci
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: ci:sourceTranscription.sourcePage681.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 681
-        printedPage: '681'
-        pageRegionIdentifier: p681-ci
-  - blockReference: ci:sourceTranscription.sourcePage681.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 681
-        printedPage: '681'
-        pageRegionIdentifier: p681-ci
-  - blockReference: ci:sourceTranscription.sourcePage681.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 681
-        printedPage: '681'
-        pageRegionIdentifier: p681-ci
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: ci:sourceTranscription.sourcePage682.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 682
-        printedPage: '682'
-        pageRegionIdentifier: p682-ci
-  - blockReference: ci:sourceTranscription.sourcePage682.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 682
-        printedPage: '682'
-        pageRegionIdentifier: p682-ci
-  - blockReference: ci:sourceTranscription.sourcePage682.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 682
-        printedPage: '682'
-        pageRegionIdentifier: p682-ci
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: ci:sourceTranscription.sourcePage683.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 683
-        printedPage: '683'
-        pageRegionIdentifier: p683-ci
-  - blockReference: ci:sourceTranscription.sourcePage683.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 683
-        printedPage: '683'
-        pageRegionIdentifier: p683-ci
-  - blockReference: ci:sourceTranscription.sourcePage683.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 683
-        printedPage: '683'
-        pageRegionIdentifier: p683-ci
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: ci:sourceTranscription.sourcePage684.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 684
-        printedPage: '684'
-        pageRegionIdentifier: p684-ci
-  - blockReference: ci:sourceTranscription.sourcePage684.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 684
-        printedPage: '684'
-        pageRegionIdentifier: p684-ci
-  - blockReference: ci:sourceTranscription.sourcePage684.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 684
-        printedPage: '684'
-        pageRegionIdentifier: p684-ci
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: ci:sourceTranscription.sourcePage685.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 685
-        printedPage: '685'
-        pageRegionIdentifier: p685-ci
-  - blockReference: ci:sourceTranscription.sourcePage685.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 685
-        printedPage: '685'
-        pageRegionIdentifier: p685-ci
-  - blockReference: ci:sourceTranscription.sourcePage685.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 685
-        printedPage: '685'
-        pageRegionIdentifier: p685-ci
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: ci:sourceTranscription.sourcePage686.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 686
-        printedPage: '686'
-        pageRegionIdentifier: p686-ci
-  - blockReference: ci:sourceTranscription.sourcePage686.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 686
-        printedPage: '686'
-        pageRegionIdentifier: p686-ci
-  - blockReference: ci:sourceTranscription.sourcePage686.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 686
-        printedPage: '686'
-        pageRegionIdentifier: p686-ci
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: ci:sourceTranscription.sourcePage687.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 687
-        printedPage: '687'
-        pageRegionIdentifier: p687-ci
-  - blockReference: ci:sourceTranscription.sourcePage687.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 687
-        printedPage: '687'
-        pageRegionIdentifier: p687-ci
-  - blockReference: ci:sourceTranscription.sourcePage687.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 687
-        printedPage: '687'
-        pageRegionIdentifier: p687-ci
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: ci:sourceTranscription.sourcePage688.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 688
-        printedPage: '688'
-        pageRegionIdentifier: p688-ci
-  - blockReference: ci:sourceTranscription.sourcePage688.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 688
-        printedPage: '688'
-        pageRegionIdentifier: p688-ci
-  - blockReference: ci:sourceTranscription.sourcePage688.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 688
-        printedPage: '688'
-        pageRegionIdentifier: p688-ci
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: ci:sourceTranscription.sourcePage689.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 689
-        printedPage: '689'
-        pageRegionIdentifier: p689-ci
-  - blockReference: ci:sourceTranscription.sourcePage689.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 689
-        printedPage: '689'
-        pageRegionIdentifier: p689-ci
-  - blockReference: ci:sourceTranscription.sourcePage689.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 689
-        printedPage: '689'
-        pageRegionIdentifier: p689-ci
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: ci:sourceTranscription.sourcePage690.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 690
-        printedPage: '690'
-        pageRegionIdentifier: p690-ci
-  - blockReference: ci:sourceTranscription.sourcePage690.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 690
-        printedPage: '690'
-        pageRegionIdentifier: p690-ci
-  - blockReference: ci:sourceTranscription.sourcePage690.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 690
-        printedPage: '690'
-        pageRegionIdentifier: p690-ci
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: ci:sourceTranscription.sourcePage691.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 691
-        printedPage: '691'
-        pageRegionIdentifier: p691-ci
-  - blockReference: ci:sourceTranscription.sourcePage691.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 691
-        printedPage: '691'
-        pageRegionIdentifier: p691-ci
-  - blockReference: ci:sourceTranscription.sourcePage691.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 691
-        printedPage: '691'
-        pageRegionIdentifier: p691-ci
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: ci:sourceTranscription.sourcePage692.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 692
-        printedPage: '692'
-        pageRegionIdentifier: p692-ci
-  - blockReference: ci:sourceTranscription.sourcePage692.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 692
-        printedPage: '692'
-        pageRegionIdentifier: p692-ci
-  - blockReference: ci:sourceTranscription.sourcePage692.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 692
-        printedPage: '692'
-        pageRegionIdentifier: p692-ci
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/ci/ci-page-679-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 10f0ac3e94e86efaead7d4aedbf83e563daf8ceb58f406f449ccae4917dbb967
-    alternativeText: PDF 페이지 679의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 679 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 679
-        printedPage: '679'
-        pageRegionIdentifier: p679-ci
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - path: ../assets/ci/ci-page-680-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 14cd2943b5c5077b0ab0682bb1a3b7947ee860ada206f924421597b37c60794e
-    alternativeText: PDF 페이지 680의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 680 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "ci:remediation.linux.paragraph:3"
     sourceSpans:
       - physicalPage: 680
-        printedPage: '680'
+        printedPage: "680"
         pageRegionIdentifier: p680-ci
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/ci/ci-page-681-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: b0b243f9d7d795c83a19cf29087422c223addc50924cdb11998f70fb56846e24
-    alternativeText: PDF 페이지 681의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 681 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "ci:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 680
+        printedPage: "680"
+        pageRegionIdentifier: p680-ci
+  - blockReference: "ci:remediation.linux.step:3"
+    sourceSpans:
+      - physicalPage: 680
+        printedPage: "680"
+        pageRegionIdentifier: p680-ci
+  - blockReference: "ci:remediation.linux.step:4"
+    sourceSpans:
+      - physicalPage: 680
+        printedPage: "680"
+        pageRegionIdentifier: p680-ci
+  - blockReference: "ci:remediation.linux.step:5"
+    sourceSpans:
+      - physicalPage: 680
+        printedPage: "680"
+        pageRegionIdentifier: p680-ci
+  - blockReference: "ci:remediation.linux.paragraph:4"
+    sourceSpans:
+      - physicalPage: 680
+        printedPage: "680"
+        pageRegionIdentifier: p680-ci
+  - blockReference: "ci:remediation.linux.table:1"
+    sourceSpans:
+      - physicalPage: 680
+        printedPage: "680"
+        pageRegionIdentifier: p680-ci
+  - blockReference: "ci:remediation.linux.paragraph:5"
+    sourceSpans:
+      - physicalPage: 680
+        printedPage: "680"
+        pageRegionIdentifier: p680-ci
+  - blockReference: "ci:remediation.linux.table:2"
+    sourceSpans:
+      - physicalPage: 680
+        printedPage: "680"
+        pageRegionIdentifier: p680-ci
+  - blockReference: "ci:remediation.linux.paragraph:6"
     sourceSpans:
       - physicalPage: 681
-        printedPage: '681'
+        printedPage: "681"
         pageRegionIdentifier: p681-ci
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/ci/ci-page-682-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: b5e17000aa95abc0b11bfd4fe6c355b76e926aea700212765bfdd501ea907b99
-    alternativeText: PDF 페이지 682의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 682 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "ci:remediation.linux.paragraph:7"
+    sourceSpans:
+      - physicalPage: 681
+        printedPage: "681"
+        pageRegionIdentifier: p681-ci
+  - blockReference: "ci:remediation.linux.step:6"
+    sourceSpans:
+      - physicalPage: 681
+        printedPage: "681"
+        pageRegionIdentifier: p681-ci
+  - blockReference: "ci:remediation.linux.paragraph:8"
+    sourceSpans:
+      - physicalPage: 681
+        printedPage: "681"
+        pageRegionIdentifier: p681-ci
+  - blockReference: "ci:remediation.linux.step:7"
+    sourceSpans:
+      - physicalPage: 681
+        printedPage: "681"
+        pageRegionIdentifier: p681-ci
+  - blockReference: "ci:remediation.linux.step:8"
+    sourceSpans:
+      - physicalPage: 681
+        printedPage: "681"
+        pageRegionIdentifier: p681-ci
+  - blockReference: "ci:remediation.linux.step:9"
+    sourceSpans:
+      - physicalPage: 681
+        printedPage: "681"
+        pageRegionIdentifier: p681-ci
+  - blockReference: "ci:remediation.linux.item:1"
+    sourceSpans:
+      - physicalPage: 681
+        printedPage: "681"
+        pageRegionIdentifier: p681-ci
+  - blockReference: "ci:remediation.linux.item:2"
+    sourceSpans:
+      - physicalPage: 681
+        printedPage: "681"
+        pageRegionIdentifier: p681-ci
+  - blockReference: "ci:remediation.linux.step:10"
+    sourceSpans:
+      - physicalPage: 681
+        printedPage: "681"
+        pageRegionIdentifier: p681-ci
+  - blockReference: "ci:remediation.linux.step:11"
+    sourceSpans:
+      - physicalPage: 681
+        printedPage: "681"
+        pageRegionIdentifier: p681-ci
+  - blockReference: "ci:remediation.linux.paragraph:9"
     sourceSpans:
       - physicalPage: 682
-        printedPage: '682'
+        printedPage: "682"
         pageRegionIdentifier: p682-ci
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/ci/ci-page-683-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 5af1975d54bf3f22141a436240d9ecb2a9a42509220e23f5de55c3f6ba17ef82
-    alternativeText: PDF 페이지 683의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 683 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "ci:remediation.linux.table:3"
+    sourceSpans:
+      - physicalPage: 682
+        printedPage: "682"
+        pageRegionIdentifier: p682-ci
+  - blockReference: "ci:remediation.linux.paragraph:10"
     sourceSpans:
       - physicalPage: 683
-        printedPage: '683'
+        printedPage: "683"
         pageRegionIdentifier: p683-ci
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/ci/ci-page-684-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 4309ae5915df81ecbdce9a992d660d74969e99ada97fe02be0a8135694c74820
-    alternativeText: PDF 페이지 684의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 684 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "ci:remediation.linux.paragraph:11"
+    sourceSpans:
+      - physicalPage: 683
+        printedPage: "683"
+        pageRegionIdentifier: p683-ci
+  - blockReference: "ci:remediation.linux.step:12"
+    sourceSpans:
+      - physicalPage: 683
+        printedPage: "683"
+        pageRegionIdentifier: p683-ci
+  - blockReference: "ci:remediation.linux.literal:1"
+    sourceSpans:
+      - physicalPage: 683
+        printedPage: "683"
+        pageRegionIdentifier: p683-ci
+  - blockReference: "ci:remediation.linux.step:13"
+    sourceSpans:
+      - physicalPage: 683
+        printedPage: "683"
+        pageRegionIdentifier: p683-ci
+  - blockReference: "ci:remediation.linux.literal:2"
+    sourceSpans:
+      - physicalPage: 683
+        printedPage: "683"
+        pageRegionIdentifier: p683-ci
+  - blockReference: "ci:remediation.linux.step:14"
+    sourceSpans:
+      - physicalPage: 683
+        printedPage: "683"
+        pageRegionIdentifier: p683-ci
+  - blockReference: "ci:remediation.linux.literal:3"
+    sourceSpans:
+      - physicalPage: 683
+        printedPage: "683"
+        pageRegionIdentifier: p683-ci
+  - blockReference: "ci:remediation.linux.paragraph:12"
+    sourceSpans:
+      - physicalPage: 683
+        printedPage: "683"
+        pageRegionIdentifier: p683-ci
+  - blockReference: "ci:remediation.linux.step:15"
+    sourceSpans:
+      - physicalPage: 683
+        printedPage: "683"
+        pageRegionIdentifier: p683-ci
+  - blockReference: "ci:remediation.linux.step:16"
+    sourceSpans:
+      - physicalPage: 683
+        printedPage: "683"
+        pageRegionIdentifier: p683-ci
+  - blockReference: "ci:remediation.linux.step:17"
+    sourceSpans:
+      - physicalPage: 683
+        printedPage: "683"
+        pageRegionIdentifier: p683-ci
+  - blockReference: "ci:remediation.linux.table:4"
     sourceSpans:
       - physicalPage: 684
-        printedPage: '684'
+        printedPage: "684"
         pageRegionIdentifier: p684-ci
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/ci/ci-page-685-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 5b97e8f2164869b63dfcdbb70f56406e6ece0e58e15e16e63d9142e77598d44b
-    alternativeText: PDF 페이지 685의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 685 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "ci:remediation.linux.paragraph:13"
+    sourceSpans:
+      - physicalPage: 684
+        printedPage: "684"
+        pageRegionIdentifier: p684-ci
+  - blockReference: "ci:remediation.linux.paragraph:14"
+    sourceSpans:
+      - physicalPage: 684
+        printedPage: "684"
+        pageRegionIdentifier: p684-ci
+  - blockReference: "ci:remediation.linux.step:18"
+    sourceSpans:
+      - physicalPage: 684
+        printedPage: "684"
+        pageRegionIdentifier: p684-ci
+  - blockReference: "ci:remediation.linux.literal:4"
+    sourceSpans:
+      - physicalPage: 684
+        printedPage: "684"
+        pageRegionIdentifier: p684-ci
+  - blockReference: "ci:remediation.linux.step:19"
+    sourceSpans:
+      - physicalPage: 684
+        printedPage: "684"
+        pageRegionIdentifier: p684-ci
+  - blockReference: "ci:remediation.linux.literal:5"
+    sourceSpans:
+      - physicalPage: 684
+        printedPage: "684"
+        pageRegionIdentifier: p684-ci
+  - blockReference: "ci:remediation.linux.paragraph:15"
+    sourceSpans:
+      - physicalPage: 684
+        printedPage: "684"
+        pageRegionIdentifier: p684-ci
+  - blockReference: "ci:remediation.linux.step:20"
     sourceSpans:
       - physicalPage: 685
-        printedPage: '685'
+        printedPage: "685"
         pageRegionIdentifier: p685-ci
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/ci/ci-page-686-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 5e46489949187fb8d2b7b1fffbadb96a822d4ff4da3afeedc8df3fc9a4486550
-    alternativeText: PDF 페이지 686의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 686 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "ci:remediation.linux.step:21"
+    sourceSpans:
+      - physicalPage: 685
+        printedPage: "685"
+        pageRegionIdentifier: p685-ci
+  - blockReference: "ci:remediation.linux.paragraph:16"
+    sourceSpans:
+      - physicalPage: 685
+        printedPage: "685"
+        pageRegionIdentifier: p685-ci
+  - blockReference: "ci:remediation.linux.paragraph:17"
+    sourceSpans:
+      - physicalPage: 685
+        printedPage: "685"
+        pageRegionIdentifier: p685-ci
+  - blockReference: "ci:remediation.linux.step:22"
+    sourceSpans:
+      - physicalPage: 685
+        printedPage: "685"
+        pageRegionIdentifier: p685-ci
+  - blockReference: "ci:remediation.linux.literal:6"
+    sourceSpans:
+      - physicalPage: 685
+        printedPage: "685"
+        pageRegionIdentifier: p685-ci
+  - blockReference: "ci:remediation.linux.paragraph:18"
+    sourceSpans:
+      - physicalPage: 685
+        printedPage: "685"
+        pageRegionIdentifier: p685-ci
+  - blockReference: "ci:remediation.linux.step:23"
+    sourceSpans:
+      - physicalPage: 685
+        printedPage: "685"
+        pageRegionIdentifier: p685-ci
+  - blockReference: "ci:remediation.linux.step:24"
+    sourceSpans:
+      - physicalPage: 685
+        printedPage: "685"
+        pageRegionIdentifier: p685-ci
+  - blockReference: "ci:remediation.linux.step:25"
+    sourceSpans:
+      - physicalPage: 685
+        printedPage: "685"
+        pageRegionIdentifier: p685-ci
+  - blockReference: "ci:remediation.linux.paragraph:19"
     sourceSpans:
       - physicalPage: 686
-        printedPage: '686'
+        printedPage: "686"
         pageRegionIdentifier: p686-ci
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/ci/ci-page-687-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 6069898a97f462fb5544494b55cd2c076f407edd536822cb37cbf2cef29d74e7
-    alternativeText: PDF 페이지 687의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 687 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "ci:remediation.linux.configuration:1"
+    sourceSpans:
+      - physicalPage: 686
+        printedPage: "686"
+        pageRegionIdentifier: p686-ci
+  - blockReference: "ci:remediation.linux.paragraph:20"
+    sourceSpans:
+      - physicalPage: 686
+        printedPage: "686"
+        pageRegionIdentifier: p686-ci
+  - blockReference: "ci:remediation.linux.configuration:2"
+    sourceSpans:
+      - physicalPage: 686
+        printedPage: "686"
+        pageRegionIdentifier: p686-ci
+  - blockReference: "ci:remediation.linux.paragraph:21"
+    sourceSpans:
+      - physicalPage: 686
+        printedPage: "686"
+        pageRegionIdentifier: p686-ci
+  - blockReference: "ci:remediation.linux.configuration:3"
+    sourceSpans:
+      - physicalPage: 686
+        printedPage: "686"
+        pageRegionIdentifier: p686-ci
+  - blockReference: "ci:remediation.linux.paragraph:22"
     sourceSpans:
       - physicalPage: 687
-        printedPage: '687'
+        printedPage: "687"
         pageRegionIdentifier: p687-ci
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/ci/ci-page-688-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 80f0279cc16520531fdedc7444e112e95ee3f8d80de41a3f9f1c14a1eda30a03
-    alternativeText: PDF 페이지 688의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 688 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "ci:remediation.linux.paragraph:23"
+    sourceSpans:
+      - physicalPage: 687
+        printedPage: "687"
+        pageRegionIdentifier: p687-ci
+  - blockReference: "ci:remediation.linux.configuration:4"
+    sourceSpans:
+      - physicalPage: 687
+        printedPage: "687"
+        pageRegionIdentifier: p687-ci
+  - blockReference: "ci:remediation.linux.paragraph:24"
+    sourceSpans:
+      - physicalPage: 687
+        printedPage: "687"
+        pageRegionIdentifier: p687-ci
+  - blockReference: "ci:remediation.linux.paragraph:25"
+    sourceSpans:
+      - physicalPage: 687
+        printedPage: "687"
+        pageRegionIdentifier: p687-ci
+  - blockReference: "ci:remediation.linux.step:26"
     sourceSpans:
       - physicalPage: 688
-        printedPage: '688'
+        printedPage: "688"
         pageRegionIdentifier: p688-ci
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/ci/ci-page-689-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: f2c21c73ca0917a74bf4cf08fcc64c7aed716a3cc138d4c8be7a2c685292a25e
-    alternativeText: PDF 페이지 689의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 689 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "ci:remediation.linux.step:27"
+    sourceSpans:
+      - physicalPage: 688
+        printedPage: "688"
+        pageRegionIdentifier: p688-ci
+  - blockReference: "ci:remediation.linux.paragraph:26"
+    sourceSpans:
+      - physicalPage: 688
+        printedPage: "688"
+        pageRegionIdentifier: p688-ci
+  - blockReference: "ci:remediation.linux.step:28"
+    sourceSpans:
+      - physicalPage: 688
+        printedPage: "688"
+        pageRegionIdentifier: p688-ci
+  - blockReference: "ci:remediation.linux.step:29"
+    sourceSpans:
+      - physicalPage: 688
+        printedPage: "688"
+        pageRegionIdentifier: p688-ci
+  - blockReference: "ci:remediation.linux.step:30"
+    sourceSpans:
+      - physicalPage: 688
+        printedPage: "688"
+        pageRegionIdentifier: p688-ci
+  - blockReference: "ci:remediation.linux.step:31"
+    sourceSpans:
+      - physicalPage: 688
+        printedPage: "688"
+        pageRegionIdentifier: p688-ci
+  - blockReference: "ci:remediation.linux.step:32"
+    sourceSpans:
+      - physicalPage: 688
+        printedPage: "688"
+        pageRegionIdentifier: p688-ci
+  - blockReference: "ci:remediation.linux.paragraph:27"
     sourceSpans:
       - physicalPage: 689
-        printedPage: '689'
+        printedPage: "689"
         pageRegionIdentifier: p689-ci
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/ci/ci-page-690-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 9a0007e432886b57aa6f45c7e01e81ee6171184924a600fd8141d11161d34c59
-    alternativeText: PDF 페이지 690의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 690 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "ci:remediation.linux.configuration:5"
+    sourceSpans:
+      - physicalPage: 689
+        printedPage: "689"
+        pageRegionIdentifier: p689-ci
+  - blockReference: "ci:remediation.linux.paragraph:28"
+    sourceSpans:
+      - physicalPage: 689
+        printedPage: "689"
+        pageRegionIdentifier: p689-ci
+  - blockReference: "ci:remediation.linux.configuration:6"
+    sourceSpans:
+      - physicalPage: 689
+        printedPage: "689"
+        pageRegionIdentifier: p689-ci
+  - blockReference: "ci:remediation.linux.paragraph:29"
+    sourceSpans:
+      - physicalPage: 689
+        printedPage: "689"
+        pageRegionIdentifier: p689-ci
+  - blockReference: "ci:remediation.linux.configuration:7"
+    sourceSpans:
+      - physicalPage: 689
+        printedPage: "689"
+        pageRegionIdentifier: p689-ci
+  - blockReference: "ci:remediation.linux.paragraph:30"
     sourceSpans:
       - physicalPage: 690
-        printedPage: '690'
+        printedPage: "690"
         pageRegionIdentifier: p690-ci
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/ci/ci-page-691-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: d40d70e7bffa175c8ee6621077d5e89fcb80e66dd40845f3441c5789e83c2409
-    alternativeText: PDF 페이지 691의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 691 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "ci:remediation.linux.configuration:8"
+    sourceSpans:
+      - physicalPage: 690
+        printedPage: "690"
+        pageRegionIdentifier: p690-ci
+  - blockReference: "ci:remediation.linux.paragraph:31"
+    sourceSpans:
+      - physicalPage: 690
+        printedPage: "690"
+        pageRegionIdentifier: p690-ci
+  - blockReference: "ci:remediation.linux.configuration:9"
+    sourceSpans:
+      - physicalPage: 690
+        printedPage: "690"
+        pageRegionIdentifier: p690-ci
+  - blockReference: "ci:remediation.linux.paragraph:32"
     sourceSpans:
       - physicalPage: 691
-        printedPage: '691'
+        printedPage: "691"
         pageRegionIdentifier: p691-ci
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/ci/ci-page-692-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: bf4688324b20570721139f8adf902d60d535c6a4135499bdc02fcdb2ad1ff428
-    alternativeText: PDF 페이지 692의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 692 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "ci:remediation.linux.configuration:10"
+    sourceSpans:
+      - physicalPage: 691
+        printedPage: "691"
+        pageRegionIdentifier: p691-ci
+  - blockReference: "ci:remediation.linux.paragraph:33"
+    sourceSpans:
+      - physicalPage: 691
+        printedPage: "691"
+        pageRegionIdentifier: p691-ci
+  - blockReference: "ci:remediation.linux.configuration:11"
     sourceSpans:
       - physicalPage: 692
-        printedPage: '692'
+        printedPage: "692"
         pageRegionIdentifier: p692-ci
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+assets: []

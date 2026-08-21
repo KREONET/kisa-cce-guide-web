@@ -2,117 +2,199 @@ schemaVersion: 1
 criterionSlug: s-23
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: s-23:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "s-23:overview.heading:1"
     sourceSpans:
       - physicalPage: 385
-        printedPage: '385'
+        printedPage: "385"
         pageRegionIdentifier: p385-s-23
-  - blockReference: s-23:sourceTranscription.sourcePage385.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "s-23:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 385
-        printedPage: '385'
+        printedPage: "385"
         pageRegionIdentifier: p385-s-23
-  - blockReference: s-23:sourceTranscription.sourcePage385.transcription:1
-    publicationDisposition: published
+  - blockReference: "s-23:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 385
-        printedPage: '385'
+        printedPage: "385"
         pageRegionIdentifier: p385-s-23
-  - blockReference: s-23:sourceTranscription.sourcePage385.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "s-23:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 385
-        printedPage: '385'
+        printedPage: "385"
         pageRegionIdentifier: p385-s-23
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - blockReference: s-23:sourceTranscription.sourcePage386.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "s-23:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 385
+        printedPage: "385"
+        pageRegionIdentifier: p385-s-23
+  - blockReference: "s-23:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 385
+        printedPage: "385"
+        pageRegionIdentifier: p385-s-23
+  - blockReference: "s-23:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 385
+        printedPage: "385"
+        pageRegionIdentifier: p385-s-23
+  - blockReference: "s-23:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 385
+        printedPage: "385"
+        pageRegionIdentifier: p385-s-23
+  - blockReference: "s-23:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 385
+        printedPage: "385"
+        pageRegionIdentifier: p385-s-23
+  - blockReference: "s-23:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 385
+        printedPage: "385"
+        pageRegionIdentifier: p385-s-23
+  - blockReference: "s-23:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 385
+        printedPage: "385"
+        pageRegionIdentifier: p385-s-23
+  - blockReference: "s-23:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 385
+        printedPage: "385"
+        pageRegionIdentifier: p385-s-23
+  - blockReference: "s-23:overview.reference.note.label:3"
+    sourceSpans:
+      - physicalPage: 385
+        printedPage: "385"
+        pageRegionIdentifier: p385-s-23
+  - blockReference: "s-23:overview.reference.note.content:3"
+    sourceSpans:
+      - physicalPage: 385
+        printedPage: "385"
+        pageRegionIdentifier: p385-s-23
+  - blockReference: "s-23:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 385
+        printedPage: "385"
+        pageRegionIdentifier: p385-s-23
+  - blockReference: "s-23:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 385
+        printedPage: "385"
+        pageRegionIdentifier: p385-s-23
+  - blockReference: "s-23:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 385
+        printedPage: "385"
+        pageRegionIdentifier: p385-s-23
+  - blockReference: "s-23:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 385
+        printedPage: "385"
+        pageRegionIdentifier: p385-s-23
+  - blockReference: "s-23:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 385
+        printedPage: "385"
+        pageRegionIdentifier: p385-s-23
+  - blockReference: "s-23:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 385
+        printedPage: "385"
+        pageRegionIdentifier: p385-s-23
+  - blockReference: "s-23:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 385
+        printedPage: "385"
+        pageRegionIdentifier: p385-s-23
+  - blockReference: "s-23:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 385
+        printedPage: "385"
+        pageRegionIdentifier: p385-s-23
+  - blockReference: "s-23:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 385
+        printedPage: "385"
+        pageRegionIdentifier: p385-s-23
+  - blockReference: "s-23:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 385
+        printedPage: "385"
+        pageRegionIdentifier: p385-s-23
+  - blockReference: "s-23:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 385
+        printedPage: "385"
+        pageRegionIdentifier: p385-s-23
+  - blockReference: "s-23:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - physicalPage: 385
+        printedPage: "385"
+        pageRegionIdentifier: p385-s-23
+  - blockReference: "s-23:remediation.supplementaryGuidance.paragraph:1"
+    sourceSpans:
+      - physicalPage: 385
+        printedPage: "385"
+        pageRegionIdentifier: p385-s-23
+  - blockReference: "s-23:remediation.supplementaryGuidance.step:1"
+    sourceSpans:
+      - physicalPage: 385
+        printedPage: "385"
+        pageRegionIdentifier: p385-s-23
+  - blockReference: "s-23:remediation.supplementaryGuidance.step:2"
+    sourceSpans:
+      - physicalPage: 385
+        printedPage: "385"
+        pageRegionIdentifier: p385-s-23
+  - blockReference: "s-23:remediation.supplementaryGuidance.step:3"
+    sourceSpans:
+      - physicalPage: 385
+        printedPage: "385"
+        pageRegionIdentifier: p385-s-23
+  - blockReference: "s-23:remediation.supplementaryGuidance.step:4"
+    sourceSpans:
+      - physicalPage: 385
+        printedPage: "385"
+        pageRegionIdentifier: p385-s-23
+  - blockReference: "s-23:remediation.supplementaryGuidance.paragraph:2"
+    sourceSpans:
+      - physicalPage: 385
+        printedPage: "385"
+        pageRegionIdentifier: p385-s-23
+  - blockReference: "s-23:remediation.supplementaryGuidance.step:5"
+    sourceSpans:
+      - physicalPage: 385
+        printedPage: "385"
+        pageRegionIdentifier: p385-s-23
+  - blockReference: "s-23:remediation.supplementaryGuidance.step:6"
+    sourceSpans:
+      - physicalPage: 385
+        printedPage: "385"
+        pageRegionIdentifier: p385-s-23
+  - blockReference: "s-23:remediation.supplementaryGuidance.step:7"
     sourceSpans:
       - physicalPage: 386
-        printedPage: '386'
+        printedPage: "386"
         pageRegionIdentifier: p386-s-23
-  - blockReference: s-23:sourceTranscription.sourcePage386.transcription:1
-    publicationDisposition: published
+  - blockReference: "s-23:remediation.supplementaryGuidance.step:8"
     sourceSpans:
       - physicalPage: 386
-        printedPage: '386'
+        printedPage: "386"
         pageRegionIdentifier: p386-s-23
-  - blockReference: s-23:sourceTranscription.sourcePage386.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "s-23:remediation.supplementaryGuidance.paragraph:3"
     sourceSpans:
       - physicalPage: 386
-        printedPage: '386'
+        printedPage: "386"
         pageRegionIdentifier: p386-s-23
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/s-23/s-23-page-385-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: a3c17652c44292eabfaa484805f27d2a60f2f1be3934cc929b6ac5ba587b1507
-    alternativeText: PDF 페이지 385의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 385 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 385
-        printedPage: '385'
-        pageRegionIdentifier: p385-s-23
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - path: ../assets/s-23/s-23-page-386-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 42925a7304c5751edfb5ad313f6cee3ecef203b8208495243070cdf20242902a
-    alternativeText: PDF 페이지 386의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 386 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "s-23:remediation.supplementaryGuidance.step:9"
     sourceSpans:
       - physicalPage: 386
-        printedPage: '386'
+        printedPage: "386"
         pageRegionIdentifier: p386-s-23
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - blockReference: "s-23:remediation.supplementaryGuidance.step:10"
+    sourceSpans:
+      - physicalPage: 386
+        printedPage: "386"
+        pageRegionIdentifier: p386-s-23
+assets: []

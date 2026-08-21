@@ -2,117 +2,177 @@ schemaVersion: 1
 criterionSlug: web-14
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: web-14:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "web-14:overview.heading:1"
     sourceSpans:
       - physicalPage: 311
-        printedPage: '311'
+        printedPage: "311"
         pageRegionIdentifier: p311-web-14
-  - blockReference: web-14:sourceTranscription.sourcePage311.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "web-14:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 311
-        printedPage: '311'
+        printedPage: "311"
         pageRegionIdentifier: p311-web-14
-  - blockReference: web-14:sourceTranscription.sourcePage311.transcription:1
-    publicationDisposition: published
+  - blockReference: "web-14:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 311
-        printedPage: '311'
+        printedPage: "311"
         pageRegionIdentifier: p311-web-14
-  - blockReference: web-14:sourceTranscription.sourcePage311.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "web-14:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 311
-        printedPage: '311'
+        printedPage: "311"
         pageRegionIdentifier: p311-web-14
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - blockReference: web-14:sourceTranscription.sourcePage312.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "web-14:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 311
+        printedPage: "311"
+        pageRegionIdentifier: p311-web-14
+  - blockReference: "web-14:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 311
+        printedPage: "311"
+        pageRegionIdentifier: p311-web-14
+  - blockReference: "web-14:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 311
+        printedPage: "311"
+        pageRegionIdentifier: p311-web-14
+  - blockReference: "web-14:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 311
+        printedPage: "311"
+        pageRegionIdentifier: p311-web-14
+  - blockReference: "web-14:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 311
+        printedPage: "311"
+        pageRegionIdentifier: p311-web-14
+  - blockReference: "web-14:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 311
+        printedPage: "311"
+        pageRegionIdentifier: p311-web-14
+  - blockReference: "web-14:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 311
+        printedPage: "311"
+        pageRegionIdentifier: p311-web-14
+  - blockReference: "web-14:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 311
+        printedPage: "311"
+        pageRegionIdentifier: p311-web-14
+  - blockReference: "web-14:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 311
+        printedPage: "311"
+        pageRegionIdentifier: p311-web-14
+  - blockReference: "web-14:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 311
+        printedPage: "311"
+        pageRegionIdentifier: p311-web-14
+  - blockReference: "web-14:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 311
+        printedPage: "311"
+        pageRegionIdentifier: p311-web-14
+  - blockReference: "web-14:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 311
+        printedPage: "311"
+        pageRegionIdentifier: p311-web-14
+  - blockReference: "web-14:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 311
+        printedPage: "311"
+        pageRegionIdentifier: p311-web-14
+  - blockReference: "web-14:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 311
+        printedPage: "311"
+        pageRegionIdentifier: p311-web-14
+  - blockReference: "web-14:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 311
+        printedPage: "311"
+        pageRegionIdentifier: p311-web-14
+  - blockReference: "web-14:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 311
+        printedPage: "311"
+        pageRegionIdentifier: p311-web-14
+  - blockReference: "web-14:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 311
+        printedPage: "311"
+        pageRegionIdentifier: p311-web-14
+  - blockReference: "web-14:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 311
+        printedPage: "311"
+        pageRegionIdentifier: p311-web-14
+      - physicalPage: 312
+        printedPage: "312"
+        pageRegionIdentifier: p312-web-14
+  - blockReference: "web-14:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 311
+        printedPage: "311"
+        pageRegionIdentifier: p311-web-14
+  - blockReference: "web-14:remediation.linux.command:1"
+    sourceSpans:
+      - physicalPage: 311
+        printedPage: "311"
+        pageRegionIdentifier: p311-web-14
+  - blockReference: "web-14:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 311
+        printedPage: "311"
+        pageRegionIdentifier: p311-web-14
+  - blockReference: "web-14:remediation.linux.command:2"
+    sourceSpans:
+      - physicalPage: 311
+        printedPage: "311"
+        pageRegionIdentifier: p311-web-14
+  - blockReference: "web-14:remediation.linux.step:3"
     sourceSpans:
       - physicalPage: 312
-        printedPage: '312'
+        printedPage: "312"
         pageRegionIdentifier: p312-web-14
-  - blockReference: web-14:sourceTranscription.sourcePage312.transcription:1
-    publicationDisposition: published
+  - blockReference: "web-14:remediation.linux.command:3"
     sourceSpans:
       - physicalPage: 312
-        printedPage: '312'
+        printedPage: "312"
         pageRegionIdentifier: p312-web-14
-  - blockReference: web-14:sourceTranscription.sourcePage312.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "web-14:remediation.linux.step:4"
     sourceSpans:
       - physicalPage: 312
-        printedPage: '312'
+        printedPage: "312"
         pageRegionIdentifier: p312-web-14
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/web-14/web-14-page-311-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 8a06682e1951cd1b7cfa6db617c48d6cbd8846a3a09706875393a766ae86658d
-    alternativeText: PDF 페이지 311의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 311 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 311
-        printedPage: '311'
-        pageRegionIdentifier: p311-web-14
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - path: ../assets/web-14/web-14-page-312-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 1dbe41a5043b4755483b4f12766aa2c130dba9d0295fe8c097f62b227625889c
-    alternativeText: PDF 페이지 312의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 312 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "web-14:remediation.linux.configuration:1"
     sourceSpans:
       - physicalPage: 312
-        printedPage: '312'
+        printedPage: "312"
         pageRegionIdentifier: p312-web-14
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - blockReference: "web-14:remediation.linux.step:5"
+    sourceSpans:
+      - physicalPage: 312
+        printedPage: "312"
+        pageRegionIdentifier: p312-web-14
+  - blockReference: "web-14:remediation.linux.command:4"
+    sourceSpans:
+      - physicalPage: 312
+        printedPage: "312"
+        pageRegionIdentifier: p312-web-14
+  - blockReference: "web-14:remediation.linux.step:6"
+    sourceSpans:
+      - physicalPage: 312
+        printedPage: "312"
+        pageRegionIdentifier: p312-web-14
+  - blockReference: "web-14:remediation.linux.command:5"
+    sourceSpans:
+      - physicalPage: 312
+        printedPage: "312"
+        pageRegionIdentifier: p312-web-14
+assets: []

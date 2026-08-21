@@ -2,64 +2,270 @@ schemaVersion: 1
 criterionSlug: u-23
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: u-23:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "u-23:overview.heading:1"
     sourceSpans:
       - physicalPage: 50
-        printedPage: '50'
+        printedPage: "50"
         pageRegionIdentifier: p50-u-23
-  - blockReference: u-23:sourceTranscription.sourcePage50.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "u-23:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 50
-        printedPage: '50'
+        printedPage: "50"
         pageRegionIdentifier: p50-u-23
-  - blockReference: u-23:sourceTranscription.sourcePage50.transcription:1
-    publicationDisposition: published
+  - blockReference: "u-23:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 50
-        printedPage: '50'
+        printedPage: "50"
         pageRegionIdentifier: p50-u-23
-  - blockReference: u-23:sourceTranscription.sourcePage50.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "u-23:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 50
-        printedPage: '50'
+        printedPage: "50"
         pageRegionIdentifier: p50-u-23
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/u-23/u-23-page-50-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 25d4eddd74d01cd17647d8f2e2e232b2590659d6619b95c57fec5e19ff355f93
-    alternativeText: PDF 페이지 50의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 50 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
+  - blockReference: "u-23:overview.inspectionPurpose.paragraph:1"
     sourceSpans:
       - physicalPage: 50
-        printedPage: '50'
+        printedPage: "50"
         pageRegionIdentifier: p50-u-23
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
+  - blockReference: "u-23:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:overview.reference.note.label:3"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:overview.reference.note.content:3"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:remediation.solaris.heading:1"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:remediation.solaris.step:1"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:remediation.solaris.command:1"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:remediation.solaris.step:2"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:remediation.solaris.command:2"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:remediation.solaris.step:3"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:remediation.solaris.command:3"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:remediation.linux.command:1"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:remediation.linux.command:2"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:remediation.linux.step:3"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:remediation.linux.command:3"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:remediation.aix.heading:1"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:remediation.aix.step:1"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:remediation.aix.command:1"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:remediation.aix.step:2"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:remediation.aix.command:2"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:remediation.aix.step:3"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:remediation.aix.command:3"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:remediation.hp-ux.heading:1"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:remediation.hp-ux.step:1"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:remediation.hp-ux.command:1"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:remediation.hp-ux.step:2"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:remediation.hp-ux.command:2"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:remediation.hp-ux.step:3"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+  - blockReference: "u-23:remediation.hp-ux.command:3"
+    sourceSpans:
+      - physicalPage: 50
+        printedPage: "50"
+        pageRegionIdentifier: p50-u-23
+assets: []
+

@@ -2,117 +2,62 @@ schemaVersion: 1
 criterionSlug: hv-24
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: hv-24:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "hv-24:overview.heading:1"
+    sourceSpans: [{physicalPage: 848, printedPage: "848", pageRegionIdentifier: p848-hv-24}]
+  - blockReference: "hv-24:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 848, printedPage: "848", pageRegionIdentifier: p848-hv-24}]
+  - blockReference: "hv-24:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 848, printedPage: "848", pageRegionIdentifier: p848-hv-24}]
+  - blockReference: "hv-24:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 848, printedPage: "848", pageRegionIdentifier: p848-hv-24}]
+  - blockReference: "hv-24:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 848, printedPage: "848", pageRegionIdentifier: p848-hv-24}]
+  - blockReference: "hv-24:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 848, printedPage: "848", pageRegionIdentifier: p848-hv-24}]
+  - blockReference: "hv-24:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 848, printedPage: "848", pageRegionIdentifier: p848-hv-24}]
+  - blockReference: "hv-24:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 848, printedPage: "848", pageRegionIdentifier: p848-hv-24}]
+  - blockReference: "hv-24:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 848, printedPage: "848", pageRegionIdentifier: p848-hv-24}]
+  - blockReference: "hv-24:overview.reference.note.content:1"
+    sourceSpans: [{physicalPage: 848, printedPage: "848", pageRegionIdentifier: p848-hv-24}]
+  - blockReference: "hv-24:assessment.heading:1"
+    sourceSpans: [{physicalPage: 848, printedPage: "848", pageRegionIdentifier: p848-hv-24}]
+  - blockReference: "hv-24:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 848, printedPage: "848", pageRegionIdentifier: p848-hv-24}]
+  - blockReference: "hv-24:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 848, printedPage: "848", pageRegionIdentifier: p848-hv-24}]
+  - blockReference: "hv-24:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 848, printedPage: "848", pageRegionIdentifier: p848-hv-24}]
+  - blockReference: "hv-24:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 848, printedPage: "848", pageRegionIdentifier: p848-hv-24}]
+  - blockReference: "hv-24:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 848, printedPage: "848", pageRegionIdentifier: p848-hv-24}]
+  - blockReference: "hv-24:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 848, printedPage: "848", pageRegionIdentifier: p848-hv-24}]
+  - blockReference: "hv-24:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 848, printedPage: "848", pageRegionIdentifier: p848-hv-24}]
+  - blockReference: "hv-24:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 848, printedPage: "848", pageRegionIdentifier: p848-hv-24}]
+  - blockReference: "hv-24:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 848, printedPage: "848", pageRegionIdentifier: p848-hv-24}]
+  - blockReference: "hv-24:remediation.heading:1"
+    sourceSpans: [{physicalPage: 848, printedPage: "848", pageRegionIdentifier: p848-hv-24}]
+  - blockReference: "hv-24:remediation.linux.heading:1"
+    sourceSpans: [{physicalPage: 848, printedPage: "848", pageRegionIdentifier: p848-hv-24}]
+  - blockReference: "hv-24:remediation.linux.step:1"
+    sourceSpans: [{physicalPage: 848, printedPage: "848", pageRegionIdentifier: p848-hv-24}]
+  - blockReference: "hv-24:remediation.linux.step:2"
+    sourceSpans: [{physicalPage: 848, printedPage: "848", pageRegionIdentifier: p848-hv-24}]
+  - blockReference: "hv-24:remediation.linux.step:3"
     sourceSpans:
       - physicalPage: 848
-        printedPage: '848'
+        printedPage: "848"
         pageRegionIdentifier: p848-hv-24
-  - blockReference: hv-24:sourceTranscription.sourcePage848.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 848
-        printedPage: '848'
-        pageRegionIdentifier: p848-hv-24
-  - blockReference: hv-24:sourceTranscription.sourcePage848.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 848
-        printedPage: '848'
-        pageRegionIdentifier: p848-hv-24
-  - blockReference: hv-24:sourceTranscription.sourcePage848.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 848
-        printedPage: '848'
-        pageRegionIdentifier: p848-hv-24
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - blockReference: hv-24:sourceTranscription.sourcePage849.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
       - physicalPage: 849
-        printedPage: '849'
+        printedPage: "849"
         pageRegionIdentifier: p849-hv-24
-  - blockReference: hv-24:sourceTranscription.sourcePage849.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 849
-        printedPage: '849'
-        pageRegionIdentifier: p849-hv-24
-  - blockReference: hv-24:sourceTranscription.sourcePage849.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 849
-        printedPage: '849'
-        pageRegionIdentifier: p849-hv-24
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/hv-24/hv-24-page-848-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: c821ae5f33cef03e861292677234909211fadf10e049df151b0f8725749e39f7
-    alternativeText: PDF 페이지 848의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 848 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 848
-        printedPage: '848'
-        pageRegionIdentifier: p848-hv-24
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - path: ../assets/hv-24/hv-24-page-849-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 0aff44f58e50ee55d8b23ea41c1cada39579f1318a1b027f4aaa172bf402f631
-    alternativeText: PDF 페이지 849의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 849 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 849
-        printedPage: '849'
-        pageRegionIdentifier: p849-hv-24
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - blockReference: "hv-24:remediation.linux.step:4"
+    sourceSpans: [{physicalPage: 848, printedPage: "848", pageRegionIdentifier: p848-hv-24}]
+assets: []

@@ -52,11 +52,11 @@ def test_scoped_validation_passes() -> None:
 
 
 def test_release_validation_remains_blocked() -> None:
-    """Initial transcriptions must not be mistaken for a publishable release."""
+    """A structured corpus must remain blocked by outstanding release gates."""
 
     rule_identifiers = {issue.rule_identifier for issue in validate_repository(release=True)}
     assert "release-license-approved" in rule_identifiers
-    assert "release-structured-corpus" in rule_identifiers
+    assert "release-structured-corpus" not in rule_identifiers
     assert "release-review-approved" in rule_identifiers
     assert "release-test-profile-complete" in rule_identifiers
     assert "release-accessibility-report" in rule_identifiers
@@ -85,6 +85,33 @@ def test_every_markdown_leaf_has_provenance() -> None:
         assert len(references) == expected_count
         assert len(references) == len(set(references))
         assert [block.block_reference for block in leaf_blocks] == references
+
+
+def test_leaf_block_technical_literals_are_unique_in_source_order() -> None:
+    """Repeated literals in one source block must retain only their first occurrence."""
+
+    root = repository_root()
+    criterion = load_criterion(root / "unix/u-05.md")
+    heading_identifier_mapping = heading_identifiers(load_yaml(root / "data/taxonomy.yaml"))
+    leaf_blocks = extract_leaf_blocks(
+        criterion.body,
+        criterion_slug="u-05",
+        heading_identifier_mapping=heading_identifier_mapping,
+    )
+    solaris_table = next(
+        block
+        for block in leaf_blocks
+        if block.block_reference == "u-05:remediation.solaris.table:1"
+    )
+
+    assert solaris_table.technical_literals == (
+        "Test",
+        "x",
+        "500",
+        "Gen-User",
+        "/home/test",
+        "/usr/bin/bash",
+    )
 
 
 def test_build_is_deterministic() -> None:
@@ -260,9 +287,13 @@ def test_supplementary_guidance_must_be_the_last_remediation_heading() -> None:
     assert "markdown-section-headings" in _structure_rules(body)
 
 
-def test_extracted_criterion_keeps_its_transcription_contract() -> None:
-    """Intermediate transcription documents must stay on the 원문 전사 branch."""
+def test_structured_criterion_uses_its_web_application_contract() -> None:
+    """Converted documents must leave the intermediate transcription branch."""
 
-    body = load_criterion(repository_root() / "web-application/ae.md").body
-    assert _structure_rules(body, content_model="extractedCriterion") == []
-    assert "markdown-required-headings" in _structure_rules(body)
+    criterion = load_criterion(repository_root() / "web-application/ae.md")
+    assert criterion.metadata["contentModel"] == "webApplicationCriterion"
+    assert _structure_rules(criterion.body, content_model="webApplicationCriterion") == []
+    assert "markdown-required-headings" in _structure_rules(
+        criterion.body,
+        content_model="extractedCriterion",
+    )

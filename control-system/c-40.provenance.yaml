@@ -2,64 +2,119 @@ schemaVersion: 1
 criterionSlug: c-40
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: c-40:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "c-40:overview.heading:1"
     sourceSpans:
       - physicalPage: 536
-        printedPage: '536'
+        printedPage: "536"
         pageRegionIdentifier: p536-c-40
-  - blockReference: c-40:sourceTranscription.sourcePage536.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "c-40:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 536
-        printedPage: '536'
+        printedPage: "536"
         pageRegionIdentifier: p536-c-40
-  - blockReference: c-40:sourceTranscription.sourcePage536.transcription:1
-    publicationDisposition: published
+  - blockReference: "c-40:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 536
-        printedPage: '536'
+        printedPage: "536"
         pageRegionIdentifier: p536-c-40
-  - blockReference: c-40:sourceTranscription.sourcePage536.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "c-40:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 536
-        printedPage: '536'
+        printedPage: "536"
         pageRegionIdentifier: p536-c-40
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/c-40/c-40-page-536-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 5f5abacdc8a4a22dd3ba3685a47840e58c87693ac091513e3019528f1307b8ea
-    alternativeText: PDF 페이지 536의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 536 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
+  - blockReference: "c-40:overview.inspectionPurpose.paragraph:1"
     sourceSpans:
       - physicalPage: 536
-        printedPage: '536'
+        printedPage: "536"
         pageRegionIdentifier: p536-c-40
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
+  - blockReference: "c-40:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 536
+        printedPage: "536"
+        pageRegionIdentifier: p536-c-40
+  - blockReference: "c-40:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 536
+        printedPage: "536"
+        pageRegionIdentifier: p536-c-40
+  - blockReference: "c-40:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 536
+        printedPage: "536"
+        pageRegionIdentifier: p536-c-40
+  - blockReference: "c-40:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 536
+        printedPage: "536"
+        pageRegionIdentifier: p536-c-40
+  - blockReference: "c-40:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 536
+        printedPage: "536"
+        pageRegionIdentifier: p536-c-40
+  - blockReference: "c-40:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 536
+        printedPage: "536"
+        pageRegionIdentifier: p536-c-40
+  - blockReference: "c-40:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 536
+        printedPage: "536"
+        pageRegionIdentifier: p536-c-40
+  - blockReference: "c-40:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 536
+        printedPage: "536"
+        pageRegionIdentifier: p536-c-40
+  - blockReference: "c-40:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 536
+        printedPage: "536"
+        pageRegionIdentifier: p536-c-40
+  - blockReference: "c-40:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 536
+        printedPage: "536"
+        pageRegionIdentifier: p536-c-40
+  - blockReference: "c-40:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 536
+        printedPage: "536"
+        pageRegionIdentifier: p536-c-40
+  - blockReference: "c-40:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 536
+        printedPage: "536"
+        pageRegionIdentifier: p536-c-40
+  - blockReference: "c-40:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 536
+        printedPage: "536"
+        pageRegionIdentifier: p536-c-40
+  - blockReference: "c-40:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 536
+        printedPage: "536"
+        pageRegionIdentifier: p536-c-40
+  - blockReference: "c-40:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 536
+        printedPage: "536"
+        pageRegionIdentifier: p536-c-40
+  - blockReference: "c-40:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - physicalPage: 536
+        printedPage: "536"
+        pageRegionIdentifier: p536-c-40
+  - blockReference: "c-40:remediation.supplementaryGuidance.step:1"
+    sourceSpans:
+      - physicalPage: 536
+        printedPage: "536"
+        pageRegionIdentifier: p536-c-40
+  - blockReference: "c-40:remediation.supplementaryGuidance.step.explanation:1"
+    sourceSpans:
+      - physicalPage: 536
+        printedPage: "536"
+        pageRegionIdentifier: p536-c-40
+assets: []

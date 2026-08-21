@@ -2,117 +2,139 @@ schemaVersion: 1
 criterionSlug: c-27
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: c-27:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "c-27:overview.heading:1"
     sourceSpans:
       - physicalPage: 519
-        printedPage: '519'
+        printedPage: "519"
         pageRegionIdentifier: p519-c-27
-  - blockReference: c-27:sourceTranscription.sourcePage519.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "c-27:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 519
-        printedPage: '519'
+        printedPage: "519"
         pageRegionIdentifier: p519-c-27
-  - blockReference: c-27:sourceTranscription.sourcePage519.transcription:1
-    publicationDisposition: published
+  - blockReference: "c-27:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 519
-        printedPage: '519'
+        printedPage: "519"
         pageRegionIdentifier: p519-c-27
-  - blockReference: c-27:sourceTranscription.sourcePage519.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "c-27:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 519
-        printedPage: '519'
+        printedPage: "519"
         pageRegionIdentifier: p519-c-27
-        sourceBoundingBox:
-          - 0.05
-          - 0.1941
-          - 0.95
-          - 0.95
-  - blockReference: c-27:sourceTranscription.sourcePage520.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "c-27:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 519
+        printedPage: "519"
+        pageRegionIdentifier: p519-c-27
+  - blockReference: "c-27:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 519
+        printedPage: "519"
+        pageRegionIdentifier: p519-c-27
+  - blockReference: "c-27:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 519
+        printedPage: "519"
+        pageRegionIdentifier: p519-c-27
+  - blockReference: "c-27:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 519
+        printedPage: "519"
+        pageRegionIdentifier: p519-c-27
+  - blockReference: "c-27:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 519
+        printedPage: "519"
+        pageRegionIdentifier: p519-c-27
+  - blockReference: "c-27:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 519
+        printedPage: "519"
+        pageRegionIdentifier: p519-c-27
+  - blockReference: "c-27:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 519
+        printedPage: "519"
+        pageRegionIdentifier: p519-c-27
+  - blockReference: "c-27:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 519
+        printedPage: "519"
+        pageRegionIdentifier: p519-c-27
+  - blockReference: "c-27:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 519
+        printedPage: "519"
+        pageRegionIdentifier: p519-c-27
+  - blockReference: "c-27:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 519
+        printedPage: "519"
+        pageRegionIdentifier: p519-c-27
+  - blockReference: "c-27:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 519
+        printedPage: "519"
+        pageRegionIdentifier: p519-c-27
+  - blockReference: "c-27:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 519
+        printedPage: "519"
+        pageRegionIdentifier: p519-c-27
+  - blockReference: "c-27:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 519
+        printedPage: "519"
+        pageRegionIdentifier: p519-c-27
+  - blockReference: "c-27:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 519
+        printedPage: "519"
+        pageRegionIdentifier: p519-c-27
+  - blockReference: "c-27:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 519
+        printedPage: "519"
+        pageRegionIdentifier: p519-c-27
+  - blockReference: "c-27:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 519
+        printedPage: "519"
+        pageRegionIdentifier: p519-c-27
+  - blockReference: "c-27:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 519
+        printedPage: "519"
+        pageRegionIdentifier: p519-c-27
+  - blockReference: "c-27:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - physicalPage: 519
+        printedPage: "519"
+        pageRegionIdentifier: p519-c-27
+  - blockReference: "c-27:remediation.supplementaryGuidance.step:1"
+    sourceSpans:
+      - physicalPage: 519
+        printedPage: "519"
+        pageRegionIdentifier: p519-c-27
+  - blockReference: "c-27:remediation.supplementaryGuidance.note.label:1"
+    sourceSpans:
+      - physicalPage: 519
+        printedPage: "519"
+        pageRegionIdentifier: p519-c-27
+  - blockReference: "c-27:remediation.supplementaryGuidance.note.content:1"
+    sourceSpans:
+      - physicalPage: 519
+        printedPage: "519"
+        pageRegionIdentifier: p519-c-27
+  - blockReference: "c-27:remediation.supplementaryGuidance.step:2"
     sourceSpans:
       - physicalPage: 520
-        printedPage: '520'
+        printedPage: "520"
         pageRegionIdentifier: p520-c-27
-  - blockReference: c-27:sourceTranscription.sourcePage520.transcription:1
-    publicationDisposition: published
+  - blockReference: "c-27:remediation.supplementaryGuidance.configuration:1"
     sourceSpans:
       - physicalPage: 520
-        printedPage: '520'
+        printedPage: "520"
         pageRegionIdentifier: p520-c-27
-  - blockReference: c-27:sourceTranscription.sourcePage520.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 520
-        printedPage: '520'
-        pageRegionIdentifier: p520-c-27
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/c-27/c-27-page-519-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: b447f6e5eb60c1ac33cbb538904b11a563c6cc154158dae2c3d4d93ac8341dd9
-    alternativeText: PDF 페이지 519의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 519 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 848
-    outputPixelDimensions:
-      - 714
-      - 848
-    sourceCrop:
-      - 0.05
-      - 0.1941
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 519
-        printedPage: '519'
-        pageRegionIdentifier: p519-c-27
-        sourceBoundingBox:
-          - 0.05
-          - 0.1941
-          - 0.95
-          - 0.95
-  - path: ../assets/c-27/c-27-page-520-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 36f929078ca935ab5d319ccfdb7239297f2607c51be578c9caa3dbedc88d054e
-    alternativeText: PDF 페이지 520의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 520 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 520
-        printedPage: '520'
-        pageRegionIdentifier: p520-c-27
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+assets: []

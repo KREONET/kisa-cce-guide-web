@@ -2,64 +2,139 @@ schemaVersion: 1
 criterionSlug: w-26
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: w-26:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "w-26:overview.heading:1"
     sourceSpans:
       - physicalPage: 216
-        printedPage: '216'
+        printedPage: "216"
         pageRegionIdentifier: p216-w-26
-  - blockReference: w-26:sourceTranscription.sourcePage216.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "w-26:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 216
-        printedPage: '216'
+        printedPage: "216"
         pageRegionIdentifier: p216-w-26
-  - blockReference: w-26:sourceTranscription.sourcePage216.transcription:1
-    publicationDisposition: published
+  - blockReference: "w-26:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 216
-        printedPage: '216'
+        printedPage: "216"
         pageRegionIdentifier: p216-w-26
-  - blockReference: w-26:sourceTranscription.sourcePage216.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "w-26:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 216
-        printedPage: '216'
+        printedPage: "216"
         pageRegionIdentifier: p216-w-26
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/w-26/w-26-page-216-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: cd8296589032a485906f9d47f36f103fe777056a33b0452f82d7397b18af6b8a
-    alternativeText: PDF 페이지 216의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 216 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
+  - blockReference: "w-26:overview.inspectionPurpose.paragraph:1"
     sourceSpans:
       - physicalPage: 216
-        printedPage: '216'
+        printedPage: "216"
         pageRegionIdentifier: p216-w-26
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
+  - blockReference: "w-26:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 216
+        printedPage: "216"
+        pageRegionIdentifier: p216-w-26
+  - blockReference: "w-26:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 216
+        printedPage: "216"
+        pageRegionIdentifier: p216-w-26
+  - blockReference: "w-26:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 216
+        printedPage: "216"
+        pageRegionIdentifier: p216-w-26
+  - blockReference: "w-26:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 216
+        printedPage: "216"
+        pageRegionIdentifier: p216-w-26
+  - blockReference: "w-26:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 216
+        printedPage: "216"
+        pageRegionIdentifier: p216-w-26
+  - blockReference: "w-26:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 216
+        printedPage: "216"
+        pageRegionIdentifier: p216-w-26
+  - blockReference: "w-26:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 216
+        printedPage: "216"
+        pageRegionIdentifier: p216-w-26
+  - blockReference: "w-26:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 216
+        printedPage: "216"
+        pageRegionIdentifier: p216-w-26
+  - blockReference: "w-26:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 216
+        printedPage: "216"
+        pageRegionIdentifier: p216-w-26
+  - blockReference: "w-26:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 216
+        printedPage: "216"
+        pageRegionIdentifier: p216-w-26
+  - blockReference: "w-26:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 216
+        printedPage: "216"
+        pageRegionIdentifier: p216-w-26
+  - blockReference: "w-26:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 216
+        printedPage: "216"
+        pageRegionIdentifier: p216-w-26
+  - blockReference: "w-26:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 216
+        printedPage: "216"
+        pageRegionIdentifier: p216-w-26
+  - blockReference: "w-26:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 216
+        printedPage: "216"
+        pageRegionIdentifier: p216-w-26
+  - blockReference: "w-26:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 216
+        printedPage: "216"
+        pageRegionIdentifier: p216-w-26
+  - blockReference: "w-26:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 216
+        printedPage: "216"
+        pageRegionIdentifier: p216-w-26
+  - blockReference: "w-26:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 216
+        printedPage: "216"
+        pageRegionIdentifier: p216-w-26
+  - blockReference: "w-26:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 216
+        printedPage: "216"
+        pageRegionIdentifier: p216-w-26
+  - blockReference: "w-26:remediation.unspecified.heading:1"
+    sourceSpans:
+      - physicalPage: 216
+        printedPage: "216"
+        pageRegionIdentifier: p216-w-26
+  - blockReference: "w-26:remediation.unspecified.step:1"
+    sourceSpans:
+      - physicalPage: 216
+        printedPage: "216"
+        pageRegionIdentifier: p216-w-26
+  - blockReference: "w-26:remediation.unspecified.step:2"
+    sourceSpans:
+      - physicalPage: 216
+        printedPage: "216"
+        pageRegionIdentifier: p216-w-26
+  - blockReference: "w-26:remediation.unspecified.configuration:1"
+    sourceSpans:
+      - physicalPage: 216
+        printedPage: "216"
+        pageRegionIdentifier: p216-w-26
+assets: []

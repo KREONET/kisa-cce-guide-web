@@ -152,6 +152,97 @@ uv run python -m conversion.generate_corpus
 
 ## Codex 의미 구조화
 
+신규 변환의 권장 경로는 `conversion.codex_agent_pipeline`입니다. Codex가 content-addressed 격리 workspace에서 canonical-format Markdown과 provenance를 직접 작성하고, deterministic controller는 입력 경계와 결과의 안전성·정합성만 검증합니다.
+
+```text
+PDF evidence
+  -> content-addressed isolated workspace
+  -> Codex-owned Markdown + provenance conversion
+  -> deterministic boundary and repository validation
+  -> review-only candidate package
+```
+
+- Controller는 항목별 현재 Markdown과 provenance에서 criterion-bound evidence task를 만들고, U-01 Markdown reference, compact provenance example, 관련 PDF page image, transcript navigation aid, technical literal, target taxonomy slice만 workspace에 배치합니다. 원본 Markdown과 provenance를 중복 복사하지 않습니다.
+- Workspace 경로는 `work/codex-agent/jobs/<criterionSlug>/<taskChecksum>/`입니다. Task checksum은 prompt contract, status schema, compact references, 현재 criterion package checksum, evidence image와 task 내용을 결합한 content address입니다.
+- Codex는 [`codex_prompts/criterion-agent-v1.md`](codex_prompts/criterion-agent-v1.md)를 따릅니다. 모든 첨부 이미지를 vision으로 검사하고, `workspace-write` sandbox 안의 `output/criterion.md`, `output/provenance.yaml`, `output/status.json`을 직접 작성합니다. 종료 전 격리 workspace의 `validate_candidate.py`로 같은 production validator를 실행합니다.
+- Controller는 Codex가 작성한 내용, 구조, taxonomy 선택과 provenance를 다시 쓰거나 추론하지 않습니다. Workspace file allowlist와 immutable input checksum, status schema, metadata와 provenance schema, canonical Markdown 구조, technical literal, taxonomy identifier, block reference 순서, source page coverage를 검증합니다.
+- Agent contract version 1은 source-page crop을 candidate asset으로 게시하지 않으며 provenance의 `assets`를 비워 둡니다.
+- 생성물은 사람이 검토해야 하는 candidate입니다. Canonical Markdown, registry, review status를 자동으로 적용하거나 승인하지 않습니다.
+
+### Codex-native 실행
+
+U-03만 변환합니다. 재현 가능한 실행에서는 model identifier를 고정합니다.
+
+```bash
+uv run python -m conversion.codex_agent_pipeline u-03 \
+  --model <model-identifier>
+```
+
+실제 Codex 요청 없이 content-addressed workspace와 실행 계획을 확인합니다.
+
+```bash
+uv run python -m conversion.codex_agent_pipeline u-03 --dry-run
+```
+
+전체 `extractedCriterion` corpus를 manifest 순서로 변환합니다. 기본 worker 수는 4이며, 1부터 16까지 지정할 수 있습니다.
+
+```bash
+uv run python -m conversion.codex_agent_pipeline \
+  --workers 4 \
+  --model <model-identifier>
+```
+
+OpenCodeX를 통해 Claude를 사용할 때는 OpenCodeX를 먼저 시작하고, Codex 사용자 설정을 명시적으로 로드합니다. OpenCodeX의 namespaced model identifier를 사용해야 공급자 선택이 명확합니다.
+
+```bash
+ocx start
+uv run python -m conversion.codex_agent_pipeline u-03 \
+  --use-user-config \
+  --model anthropic/claude-opus-5
+```
+
+중단된 실행은 동일한 model routing과 content address로 재개합니다.
+
+```bash
+uv run python -m conversion.codex_agent_pipeline \
+  --model <model-identifier> \
+  --resume
+```
+
+주요 artifact는 다음과 같습니다.
+
+| 경로 | 역할 |
+| --- | --- |
+| `work/codex-agent/jobs/<slug>/<taskChecksum>/workspace/` | Immutable task, contract, status schema, compact references, page evidence와 격리된 output 경계 |
+| `workspace/output/criterion.md` | Codex가 직접 작성한 complete review candidate Markdown |
+| `workspace/output/provenance.yaml` | Codex가 직접 작성한 complete block-level provenance sidecar |
+| `workspace/output/status.json` | [`schemas/codex-agent-status.schema.json`](schemas/codex-agent-status.schema.json)으로 제한된 최종 상태 |
+| `work/codex-agent/jobs/<slug>/<taskChecksum>/events.jsonl` | Content-bearing raw Codex event stream |
+| `work/codex-agent/jobs/<slug>/<taskChecksum>/run.json` | Model routing, duration, exit status, event aggregate와 validation checksum |
+| `work/codex-agent/summary.json` | Manifest 순서의 corpus 결과와 `completed`, `skipped`, `dryRun`, `validationFailed`, `failed` 집계 |
+
+Status schema version 1은 task identifier와 checksum, `candidateWritten`, `complete` 또는 `needsSourceReview`, 모든 검토 page, unresolved question만 허용합니다. Validation report는 candidate, provenance, status checksum과 `validationStatus: passed`, `canonicalApplied: false`를 run manifest에 기록합니다.
+
+`--resume`은 같은 task checksum, model identifier, 사용자 설정 로드 여부를 가진 완료 run을 찾은 뒤 candidate 전체를 다시 검증합니다. 현재 파일의 validation 결과가 run manifest와 정확히 일치할 때만 `skipped`로 처리합니다. 이전 model 실행은 성공했지만 validator가 실패한 `validationFailed` run도 먼저 로컬에서 재검증하므로, validator 수정만으로 Codex를 다시 호출하지 않습니다. Candidate가 없거나 변경됐거나 재검증에 실패한 경우에만 같은 workspace에서 Codex 변환을 다시 실행합니다.
+
+| 옵션 | 동작 |
+| --- | --- |
+| `<slug>...` | 선택적인 `extractedCriterion` allowlist. 입력 순서와 관계없이 manifest 순서로 실행 |
+| `--workers <1-16>` | 병렬 worker 수 지정. 기본값은 `4` |
+| `--model <identifier>` | 모든 Codex agent run의 model 고정 |
+| `--use-user-config` | OpenCodeX 같은 사용자 정의 provider를 위해 Codex 사용자 설정 로드 |
+| `--dry-run` | Workspace와 summary만 생성하고 Codex를 실행하지 않음 |
+| `--resume` | 현재 routing과 전체 재검증 결과가 일치하는 완료 candidate만 건너뜀 |
+| `--work-directory <path>` | 기본 `work/codex-agent/` 대신 사용할 격리된 artifact root 지정 |
+
+기본 실행은 재현성과 격리를 위해 Codex 사용자 설정을 무시합니다. `--use-user-config`를 지정하면 사용자 설정의 provider, MCP server, 기타 실행 옵션도 함께 로드되므로, 신뢰할 수 있는 설정에서만 사용해야 합니다. 항목별 sandbox는 content-addressed workspace만 쓸 수 있습니다.
+
+한 항목의 실패는 다른 항목의 workspace와 상태를 변경하지 않습니다. 전체 corpus는 나머지 항목을 계속 처리하고, 실패가 하나라도 있으면 summary를 `completedWithFailures`로 기록하며 command는 non-zero exit code를 반환합니다.
+
+### Legacy structured-JSON migration pipeline
+
+다음 pipeline은 schema version 2 node JSON을 거쳐 review Markdown을 렌더링하는 기존 migration 경로입니다. 기존 `work/codex/` artifact를 재검증하거나 점진적으로 이전할 때만 사용합니다. 신규 변환은 Codex-native pipeline을 사용합니다.
+
 자동 전사 항목은 구현 코드가 만든 immutable evidence task와 Codex read-only 분석을 결합해 review candidate로 변환할 수 있습니다.
 
 ```text
@@ -189,6 +280,15 @@ uv run python -m conversion.codex_runner u-03
 uv run python -m conversion.codex_runner u-03 --model <model-identifier>
 ```
 
+OpenCodeX를 통해 Claude를 사용할 때는 OpenCodeX를 먼저 시작하고, Codex 사용자 설정을 명시적으로 로드합니다. OpenCodeX의 namespaced model identifier를 사용해야 공급자 선택이 명확합니다.
+
+```bash
+ocx start
+uv run python -m conversion.codex_runner u-03 \
+  --use-user-config \
+  --model anthropic/claude-opus-5
+```
+
 결과를 검증하고 review-only Markdown candidate를 생성합니다.
 
 ```bash
@@ -197,7 +297,7 @@ uv run python -m conversion.codex_result_importer u-03
 
 Task, JSONL event, structured result, run manifest, candidate는 `work/codex/` 아래에 생성되며 Git에서 제외됩니다. Importer는 page coverage, page-region reference, source excerpt, technical literal, heading hierarchy, annotation target을 검사합니다. Canonical Markdown과 review registry는 자동으로 변경하지 않습니다.
 
-### 전체 corpus 병렬 변환
+#### Legacy 전체 corpus 병렬 변환
 
 전체 실행은 `data/criteria-manifest.yaml`의 record 순서대로 모든 `extractedCriterion` 항목을 선택합니다. Positional slug를 지정하면 해당 allowlist만 선택하되 manifest 순서를 유지합니다. Worker가 완료되는 순서는 실행 순서와 summary 순서에 영향을 주지 않습니다.
 
@@ -221,6 +321,15 @@ uv run python -m conversion.codex_bulk_runner --dry-run
 uv run python -m conversion.codex_bulk_runner --model <model-identifier>
 ```
 
+OpenCodeX의 Claude 모델로 전체 corpus를 변환합니다.
+
+```bash
+ocx start
+uv run python -m conversion.codex_bulk_runner \
+  --use-user-config \
+  --model anthropic/claude-opus-5
+```
+
 중단되었거나 일부 항목이 실패한 실행을 검증된 artifact부터 재개합니다.
 
 ```bash
@@ -236,6 +345,7 @@ uv run python -m conversion.codex_bulk_runner \
 | `<slug>...` | 선택적인 `extractedCriterion` allowlist. 입력 순서와 관계없이 manifest 순서로 실행 |
 | `--workers <1-16>` | 병렬 worker 수 지정. 기본값은 `min(2, max(1, logicalCpuCount))` |
 | `--model <identifier>` | 모든 Codex vision run의 model 고정 |
+| `--use-user-config` | OpenCodeX 같은 사용자 정의 provider를 위해 Codex 사용자 설정 로드 |
 | `--dry-run` | Task와 vision run plan만 기록하고 importer 생략 |
 | `--resume` | 현재 checksum으로 검증된 result 또는 candidate만 재사용 |
 | `--fail-fast` | 첫 실패 후 새 항목 scheduling 중단. 실행 중인 worker는 완료를 기다리고, 시작하지 않은 항목은 `cancelled`로 기록 |
@@ -246,7 +356,9 @@ uv run python -m conversion.codex_bulk_runner \
 
 기본 worker 수는 최대 2인 보수적인 값이며, 설정 가능한 절대 상한은 16입니다. 전체 corpus의 첫 실행에는 작은 기본값을 권장합니다. 항목마다 여러 page image와 별도 Codex process를 사용하므로, 큰 병렬값은 API rate limit, 동시 요청 한도, input token 사용량, model context, 메모리 압박을 키울 수 있습니다. 제한에 도달하면 `--workers 1`로 낮추고 `--resume`으로 이어서 실행합니다.
 
-재개 실행도 현재 입력에서 task를 다시 생성합니다. Task identifier와 checksum, result와 candidate checksum, `validationStatus: passed`, `canonicalApplied: false`가 모두 일치하는 candidate는 `skipped`로 기록합니다. 현재 task에 유효한 result만 있으면 importer부터 재개하고 `resumedImport`로 기록합니다. 누락되거나 오래된 artifact는 vision 단계부터 다시 처리합니다.
+기본 실행은 재현성과 격리를 위해 Codex 사용자 설정을 무시합니다. `--use-user-config`를 지정하면 사용자 설정의 provider, MCP server, 기타 실행 옵션도 함께 로드되므로, 신뢰할 수 있는 설정에서만 사용해야 합니다. Read-only sandbox와 schema 검증은 그대로 유지됩니다.
+
+재개 실행도 현재 입력에서 task를 다시 생성합니다. Run manifest의 task identifier와 checksum, result checksum, model, 사용자 설정 로드 여부가 현재 요청과 일치해야 합니다. Candidate의 checksum, `validationStatus: passed`, `canonicalApplied: false`까지 모두 일치하면 `skipped`로 기록합니다. 현재 task와 실행 설정에 유효한 result만 있으면 importer부터 재개하고 `resumedImport`로 기록합니다. 누락되거나 오래된 artifact는 vision 단계부터 다시 처리합니다.
 
 한 항목의 실패는 다른 항목의 artifact를 손상시키지 않습니다. 기본 실행은 나머지 항목을 계속 처리하고 `work/codex/bulk-summary.json`에 `taskBuild`, `visionRun`, `importer`의 상태, 오류, `completed`, `resumedImport`, `skipped`, `dryRun`, `failed`, `cancelled` outcome을 manifest 순서로 기록합니다. Schema version 1 summary는 `schemas/codex-bulk-summary.schema.json` 검증을 통과한 뒤 원자적으로 교체됩니다. 실패 또는 취소가 하나라도 있으면 command는 non-zero exit code를 반환합니다.
 
@@ -364,26 +476,27 @@ uv run python -m conversion.validate_content \
 
 현재 차단 조건은 다음과 같습니다.
 
-- 380개 항목이 `extractedCriterion` 상태
 - 1,206개 review record가 모두 사람 승인 전 상태
-- 대체 텍스트와 원문 영역 시각 자산의 사람 검토 미완료
 - 자동 검증 결과가 review registry에 반영되지 않음
-- 65개 항목별 source inconsistency annotation이 미검토 상태
+- 231개 항목별 source annotation이 미검토 상태
 - 라이선스 유형, 허용 이용 범위, 필수 출처 문구가 미승인 상태
 - 시각·접근성 test profile이 미완성 상태
 - 접근성, 반응형, 인쇄 브라우저 QA 보고서가 없음
 - 공개 배포 구성이 승인되지 않음
+
+382개 항목은 분야별 `systemCriterion` 또는 `webApplicationCriterion`으로 구조화되었습니다.
+변환 중 사용한 815개 원문 영역 crop은 canonical asset에서 제거하고, 비공개 작업 증거로 보존했습니다.
 
 브라우저 QA 보고서는 `schemas/qa-report.schema.json`을 따라야 합니다. 보고서는 현재 canonical corpus checksum과 test profile version을 참조해야 하며, 빌드 과정에서 자동 생성하거나 덮어쓰지 않습니다.
 
 ## 범위와 한계
 
 - 원본 PDF가 점검·감사·법적 판단의 기준입니다.
-- 페이지 단위 자동 전사에는 줄 분리, 표 구조 손실, 이미지 설명 누락, 특수문자 손상 가능성이 있습니다.
-- 380개 초기 전사 항목의 명령어, 경로, 표, 판단 기준은 사람의 원문 대조를 완료하지 않았습니다.
-- 원문 영역 PNG는 시각 대조 자료입니다. 사람의 검토 완료를 의미하지 않습니다.
+- 자동 구조화에는 줄 분리, 표 구조 손실, 특수문자 손상 가능성이 있습니다.
+- 380개 자동 구조화 항목의 명령어, 경로, 표, 판단 기준은 사람의 원문 대조를 완료하지 않았습니다.
+- 비공개 작업 증거로 보존한 원문 영역 PNG는 사람의 검토 완료를 의미하지 않습니다.
 - 원문 내부의 코드, 중요도, 제목, 분류 차이는 자동 수정하지 않고 annotation으로 보존합니다.
-- 대상 시스템 metadata는 U-01과 U-02를 제외하면 아직 `unspecified`입니다.
+- 대상 시스템 metadata는 구조화 후보의 taxonomy 검증을 통과했지만, 사람 검토 전 상태입니다.
 - 검색 결과는 미검토 전사문을 포함합니다.
 - 이 저장소는 KISA가 운영하거나 승인한 저장소가 아닙니다.
 

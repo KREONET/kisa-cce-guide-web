@@ -2,117 +2,92 @@ schemaVersion: 1
 criterionSlug: u-20
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: u-20:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
-    sourceSpans:
-      - physicalPage: 46
-        printedPage: '46'
-        pageRegionIdentifier: p46-u-20
-  - blockReference: u-20:sourceTranscription.sourcePage46.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 46
-        printedPage: '46'
-        pageRegionIdentifier: p46-u-20
-  - blockReference: u-20:sourceTranscription.sourcePage46.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 46
-        printedPage: '46'
-        pageRegionIdentifier: p46-u-20
-  - blockReference: u-20:sourceTranscription.sourcePage46.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 46
-        printedPage: '46'
-        pageRegionIdentifier: p46-u-20
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - blockReference: u-20:sourceTranscription.sourcePage47.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 47
-        printedPage: '47'
-        pageRegionIdentifier: p47-u-20
-  - blockReference: u-20:sourceTranscription.sourcePage47.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 47
-        printedPage: '47'
-        pageRegionIdentifier: p47-u-20
-  - blockReference: u-20:sourceTranscription.sourcePage47.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 47
-        printedPage: '47'
-        pageRegionIdentifier: p47-u-20
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/u-20/u-20-page-46-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 5757cf1337cdaa5fd3430909d631784ab6256567526a409f5a0080747b6246ba
-    alternativeText: PDF 페이지 46의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 46 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 46
-        printedPage: '46'
-        pageRegionIdentifier: p46-u-20
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - path: ../assets/u-20/u-20-page-47-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: db0ddd74f0c9b769651777d981e0e56f4b83c4d3854ffcd2fb15f57a69473ed5
-    alternativeText: PDF 페이지 47의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 47 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 47
-        printedPage: '47'
-        pageRegionIdentifier: p47-u-20
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - blockReference: "u-20:overview.heading:1"
+    sourceSpans: [{physicalPage: 46, printedPage: "46", pageRegionIdentifier: p46-u-20}]
+  - blockReference: "u-20:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 46, printedPage: "46", pageRegionIdentifier: p46-u-20}]
+  - blockReference: "u-20:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 46, printedPage: "46", pageRegionIdentifier: p46-u-20}]
+  - blockReference: "u-20:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 46, printedPage: "46", pageRegionIdentifier: p46-u-20}]
+  - blockReference: "u-20:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 46, printedPage: "46", pageRegionIdentifier: p46-u-20}]
+  - blockReference: "u-20:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 46, printedPage: "46", pageRegionIdentifier: p46-u-20}]
+  - blockReference: "u-20:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 46, printedPage: "46", pageRegionIdentifier: p46-u-20}]
+  - blockReference: "u-20:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 46, printedPage: "46", pageRegionIdentifier: p46-u-20}]
+  - blockReference: "u-20:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 46, printedPage: "46", pageRegionIdentifier: p46-u-20}]
+  - blockReference: "u-20:overview.reference.note.content:1"
+    sourceSpans: [{physicalPage: 46, printedPage: "46", pageRegionIdentifier: p46-u-20}]
+  - blockReference: "u-20:assessment.heading:1"
+    sourceSpans: [{physicalPage: 46, printedPage: "46", pageRegionIdentifier: p46-u-20}]
+  - blockReference: "u-20:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 46, printedPage: "46", pageRegionIdentifier: p46-u-20}]
+  - blockReference: "u-20:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 46, printedPage: "46", pageRegionIdentifier: p46-u-20}]
+  - blockReference: "u-20:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 46, printedPage: "46", pageRegionIdentifier: p46-u-20}]
+  - blockReference: "u-20:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 46, printedPage: "46", pageRegionIdentifier: p46-u-20}]
+  - blockReference: "u-20:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 46, printedPage: "46", pageRegionIdentifier: p46-u-20}]
+  - blockReference: "u-20:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 46, printedPage: "46", pageRegionIdentifier: p46-u-20}]
+  - blockReference: "u-20:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 46, printedPage: "46", pageRegionIdentifier: p46-u-20}]
+  - blockReference: "u-20:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 46, printedPage: "46", pageRegionIdentifier: p46-u-20}]
+  - blockReference: "u-20:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 46, printedPage: "46", pageRegionIdentifier: p46-u-20}]
+  - blockReference: "u-20:remediation.heading:1"
+    sourceSpans: [{physicalPage: 46, printedPage: "46", pageRegionIdentifier: p46-u-20}]
+  - blockReference: "u-20:remediation.solaris.heading:1"
+    sourceSpans: [{physicalPage: 46, printedPage: "46", pageRegionIdentifier: p46-u-20}]
+  - blockReference: "u-20:remediation.solaris.step:1"
+    sourceSpans: [{physicalPage: 46, printedPage: "46", pageRegionIdentifier: p46-u-20}]
+  - blockReference: "u-20:remediation.solaris.command:1"
+    sourceSpans: [{physicalPage: 46, printedPage: "46", pageRegionIdentifier: p46-u-20}]
+  - blockReference: "u-20:remediation.aix.heading:1"
+    sourceSpans: [{physicalPage: 46, printedPage: "46", pageRegionIdentifier: p46-u-20}]
+  - blockReference: "u-20:remediation.aix.step:1"
+    sourceSpans: [{physicalPage: 46, printedPage: "46", pageRegionIdentifier: p46-u-20}]
+  - blockReference: "u-20:remediation.aix.command:1"
+    sourceSpans: [{physicalPage: 46, printedPage: "46", pageRegionIdentifier: p46-u-20}]
+  - blockReference: "u-20:remediation.hp-ux.heading:1"
+    sourceSpans: [{physicalPage: 46, printedPage: "46", pageRegionIdentifier: p46-u-20}]
+  - blockReference: "u-20:remediation.hp-ux.step:1"
+    sourceSpans: [{physicalPage: 46, printedPage: "46", pageRegionIdentifier: p46-u-20}]
+  - blockReference: "u-20:remediation.hp-ux.command:1"
+    sourceSpans: [{physicalPage: 46, printedPage: "46", pageRegionIdentifier: p46-u-20}]
+  - blockReference: "u-20:remediation.linux.heading:1"
+    sourceSpans: [{physicalPage: 46, printedPage: "46", pageRegionIdentifier: p46-u-20}]
+  - blockReference: "u-20:remediation.linux.paragraph:1"
+    sourceSpans: [{physicalPage: 46, printedPage: "46", pageRegionIdentifier: p46-u-20}]
+  - blockReference: "u-20:remediation.linux.step:1"
+    sourceSpans: [{physicalPage: 46, printedPage: "46", pageRegionIdentifier: p46-u-20}]
+  - blockReference: "u-20:remediation.linux.command:1"
+    sourceSpans: [{physicalPage: 46, printedPage: "46", pageRegionIdentifier: p46-u-20}]
+  - blockReference: "u-20:remediation.linux.paragraph:2"
+    sourceSpans: [{physicalPage: 47, printedPage: "47", pageRegionIdentifier: p47-u-20}]
+  - blockReference: "u-20:remediation.linux.step:2"
+    sourceSpans: [{physicalPage: 47, printedPage: "47", pageRegionIdentifier: p47-u-20}]
+  - blockReference: "u-20:remediation.linux.command:2"
+    sourceSpans: [{physicalPage: 47, printedPage: "47", pageRegionIdentifier: p47-u-20}]
+  - blockReference: "u-20:remediation.linux.step:3"
+    sourceSpans: [{physicalPage: 47, printedPage: "47", pageRegionIdentifier: p47-u-20}]
+  - blockReference: "u-20:remediation.linux.command:3"
+    sourceSpans: [{physicalPage: 47, printedPage: "47", pageRegionIdentifier: p47-u-20}]
+  - blockReference: "u-20:remediation.linux.paragraph:3"
+    sourceSpans: [{physicalPage: 47, printedPage: "47", pageRegionIdentifier: p47-u-20}]
+  - blockReference: "u-20:remediation.linux.step:4"
+    sourceSpans: [{physicalPage: 47, printedPage: "47", pageRegionIdentifier: p47-u-20}]
+  - blockReference: "u-20:remediation.linux.command:4"
+    sourceSpans: [{physicalPage: 47, printedPage: "47", pageRegionIdentifier: p47-u-20}]
+  - blockReference: "u-20:remediation.linux.step:5"
+    sourceSpans: [{physicalPage: 47, printedPage: "47", pageRegionIdentifier: p47-u-20}]
+  - blockReference: "u-20:remediation.linux.command:5"
+    sourceSpans: [{physicalPage: 47, printedPage: "47", pageRegionIdentifier: p47-u-20}]
+assets: []

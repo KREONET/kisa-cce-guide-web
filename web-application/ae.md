@@ -1,7 +1,8 @@
 ---
 schemaVersion: 1
-contentModel: extractedCriterion
+contentModel: webApplicationCriterion
 contentModelVersion: 1
+
 criterion:
   code: AE
   slug: ae
@@ -9,87 +10,99 @@ criterion:
   severity:
     level: high
     sourceLabel: 상
+
 classification:
   domainIdentifier: web-application
   categoryIdentifier: web-application-administrator-page-exposure
+
 targetScope: nonExhaustive
 targetIdentifiers:
-  - unspecified
-sourceTargetText: 자동 전사본에서 확인 필요
+  - solaris
+  - linux
+  - aix
+  - hp-ux
+sourceTargetText: "웹 애플리케이션 소스코드, 웹 애플리케이션 서버, 웹 방화벽"
+
 provenance:
   sourceDocumentIdentifier: kisa-cce-criteria-2026
   sourcePageRanges:
     - physicalPageStart: 775
       physicalPageEnd: 776
-      printedPageStart: '775'
-      printedPageEnd: '776'
+      printedPageStart: "775"
+      printedPageEnd: "776"
+
 sourceAnnotations:
-  - annotationIdentifier: ae-inventory-001
-    annotationType: sourceInconsistency
-    targetType: metadata
-    targetReference: /classification/categoryIdentifier
+  - annotationIdentifier: ae-source-001
+    annotationType: sourceTypographicalError
+    targetType: astNode
+    targetReference: "ae:remediation.supplementaryGuidance.step:6"
     sourceLocation:
-      physicalPage: 775
-      printedPage: '775'
-      pageRegionIdentifier: p775-ae
-    sourceText: 관리자페이지 노출
-    explanation: '{"affectedCodes": ["AE"], "anomalyType": "detailHeaderCategoryMismatch", "detailHeaderCategoryOrdinal": 19, "detailHeaderCategorySourceLabel": "관리자페이지 노출", "summaryCategoryOrdinal": 19, "summaryCategorySourceLabel": "관리자 페이지 노출"}'
+      physicalPage: 776
+      printedPage: "776"
+      pageRegionIdentifier: p776-ae
+    sourceText: "제한관리자"
+    explanation: "조치 방법 4번에서 '제한'과 '관리자' 사이의 구분이 누락된 것으로 보이나 원문을 보존했다."
     disposition: unresolved
     reviewStatus: pending
     verificationEvidence:
-      - 장별 항목표와 상세 머리글의 원문 값을 대조했다.
-    reviewedBy:
-    reviewedAt:
-    approvedBy:
-    approvedAt:
+      - "PDF physical page 776의 조치 방법 4번 문장을 확인했다."
+    reviewedBy: null
+    reviewedAt: null
+    approvedBy: null
+    approvedAt: null
 ---
 
-## 원문 전사
+## 개요
 
-### PDF 페이지 775
+### 점검 내용
 
-~~~text transcription
-개요
-점검 내용 유추 가능한 URL 또는 설계상의 오류로 인해 관리자 페이지 및 메뉴에 접근 가능 여부 점검
-관리자 페이지의 URL을 추측하기 어렵게 설정하고, 웹 사이트 설계 오류를 수정하여 비인가자의 관리자
-점검 목적
-메뉴 접근을 방지하기 위함
-웹 관리자의 권한이 노출될 경우, 웹 사이트 변조뿐만 아니라 취약성 정도에 따라 웹 애플리케이션
-보안 위협
-서버의 권한까지도 노출될 가능성이 있으므로 시스템 전체의 보안이 심각하게 위협받을 수 있음
-참고 ※ 소스코드 및 취약점 점검 필요
-점검 대상 및 판단 기준
-대상 웹 애플리케이션 소스코드, 웹 애플리케이션 서버, 웹 방화벽
-양호 : 유추하기 쉬운 URL로 관리자 페이지 접근이 불가능한 경우
-판단 기준
-취약 : 유추하기 쉬운 URL로 관리자 페이지 접근 또는 계정 로그인이 가능한 경우
-유추하기 어려운 이름(포트 번호 변경 포함)으로 관리자 페이지를 변경하여 비인가자가 접근할 수 없도록
-하고, 근본적인 해결을 위해 지정된 IP만 관리자 페이지에 접근할 수 있도록 제한함. 단, 부득이하게
-조치 방법
-관리자 페이지를 외부에 노출해야 하는 경우, 관리자 페이지 로그인 시 2차 인증(OTP, VPN, 인증서
-등)을 적용
-조치 시 영향 일반적인 경우 영향 없음
-점검 및 조치 사례
-- 점검 방법
-Step 1) 유추하기 쉬운 URL, 포트 등 접속을 시도하여 관리자 페이지가 노출되는지 확인
-[ 유추하기 쉬운 관리자 페이지 URL 접근 시도 ]
-~~~
+유추 가능한 URL 또는 설계상의 오류로 인해 관리자 페이지 및 메뉴에 접근 가능 여부 점검
 
-![PDF 페이지 775의 원문 점검항목 영역](../assets/ae/ae-page-775-source-region.png)
+### 점검 목적
 
-### PDF 페이지 776
+관리자 페이지의 URL을 추측하기 어렵게 설정하고, 웹 사이트 설계 오류를 수정하여 비인가자의 관리자 메뉴 접근을 방지하기 위함
 
-~~~text transcription
-Step 2) 추측하기 쉬운 관리자 계정(admin, adm, administrator, manager 등) 및 비밀번호를 입력하여 로그인 가능
-한지 확인
-[ 추측 가능한 관리자 계정 로그인 유무 확인 ]
-- 조치 방법
+### 보안 위협
+
+웹 관리자의 권한이 노출될 경우, 웹 사이트 변조뿐만 아니라 취약성 정도에 따라 웹 애플리케이션 서버의 권한까지도 노출될 가능성이 있으므로 시스템 전체의 보안이 심각하게 위협받을 수 있음
+
+### 참고
+
+> **참고**
+>
+> 소스코드 및 취약점 점검 필요
+
+## 점검 대상 및 판단 기준
+
+### 대상
+
+웹 애플리케이션 소스코드, 웹 애플리케이션 서버, 웹 방화벽
+
+### 판단 기준
+
+- **양호:** 유추하기 쉬운 URL로 관리자 페이지 접근이 불가능한 경우
+- **취약:** 유추하기 쉬운 URL로 관리자 페이지 접근 또는 계정 로그인이 가능한 경우
+
+### 조치 방법
+
+유추하기 어려운 이름(포트 번호 변경 포함)으로 관리자 페이지를 변경하여 비인가자가 접근할 수 없도록 하고, 근본적인 해결을 위해 지정된 IP만 관리자 페이지에 접근할 수 있도록 제한함. 단, 부득이하게 관리자 페이지를 외부에 노출해야 하는 경우, 관리자 페이지 로그인 시 2차 인증(OTP, VPN, 인증서 등)을 적용
+
+### 조치 시 영향
+
+일반적인 경우 영향 없음
+
+## 점검 및 조치 사례
+
+### 추가 지침
+
+**점검 방법**
+
+1. 유추하기 쉬운 URL, 포트 등 접속을 시도하여 관리자 페이지가 노출되는지 확인
+2. 추측하기 쉬운 관리자 계정(admin, adm, administrator, manager 등) 및 비밀번호를 입력하여 로그인 가능한지 확인
+
+**조치 방법**
+
 1. 일반 사용자의 접근이 불필요한 관리자 로그인 페이지 주소를 유추하기 어려운 URL 및 포트로 변경
 2. 관리자 페이지에 접근 가능한 IP를 지정하여 지정된 IP만 관리자 페이지에 접근 가능하도록 제한
-3. 부득이하게 관리자 페이지를 외부에 노출해야 하는 경우, 관리자 페이지 로그인 시 2차 인증(OTP, VPN,
-인증서 등)을 적용
-4. 지정된 IP만 관리자 페이지에 접근 가능하도록 제한관리자 페이지의 하위 페이지 URL을 직접 입력하여
-접근하지 못하도록 페이지 별 세션 검증 필요
-~~~
-
-![PDF 페이지 776의 원문 점검항목 영역](../assets/ae/ae-page-776-source-region.png)
+3. 부득이하게 관리자 페이지를 외부에 노출해야 하는 경우, 관리자 페이지 로그인 시 2차 인증(OTP, VPN, 인증서 등)을 적용
+4. 지정된 IP만 관리자 페이지에 접근 가능하도록 제한관리자 페이지의 하위 페이지 URL을 직접 입력하여 접근하지 못하도록 페이지 별 세션 검증 필요

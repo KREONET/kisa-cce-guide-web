@@ -2,117 +2,269 @@ schemaVersion: 1
 criterionSlug: n-17
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: n-17:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "n-17:overview.heading:1"
     sourceSpans:
       - physicalPage: 431
-        printedPage: '431'
+        printedPage: "431"
         pageRegionIdentifier: p431-n-17
-  - blockReference: n-17:sourceTranscription.sourcePage431.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "n-17:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 431
-        printedPage: '431'
+        printedPage: "431"
         pageRegionIdentifier: p431-n-17
-  - blockReference: n-17:sourceTranscription.sourcePage431.transcription:1
-    publicationDisposition: published
+  - blockReference: "n-17:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 431
-        printedPage: '431'
+        printedPage: "431"
         pageRegionIdentifier: p431-n-17
-  - blockReference: n-17:sourceTranscription.sourcePage431.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "n-17:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 431
-        printedPage: '431'
+        printedPage: "431"
         pageRegionIdentifier: p431-n-17
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - blockReference: n-17:sourceTranscription.sourcePage432.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "n-17:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 431
+        printedPage: "431"
+        pageRegionIdentifier: p431-n-17
+  - blockReference: "n-17:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 431
+        printedPage: "431"
+        pageRegionIdentifier: p431-n-17
+  - blockReference: "n-17:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 431
+        printedPage: "431"
+        pageRegionIdentifier: p431-n-17
+  - blockReference: "n-17:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 431
+        printedPage: "431"
+        pageRegionIdentifier: p431-n-17
+  - blockReference: "n-17:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 431
+        printedPage: "431"
+        pageRegionIdentifier: p431-n-17
+  - blockReference: "n-17:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 431
+        printedPage: "431"
+        pageRegionIdentifier: p431-n-17
+  - blockReference: "n-17:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 431
+        printedPage: "431"
+        pageRegionIdentifier: p431-n-17
+  - blockReference: "n-17:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 431
+        printedPage: "431"
+        pageRegionIdentifier: p431-n-17
+  - blockReference: "n-17:overview.reference.note.label:3"
+    sourceSpans:
+      - physicalPage: 431
+        printedPage: "431"
+        pageRegionIdentifier: p431-n-17
+  - blockReference: "n-17:overview.reference.note.content:3"
+    sourceSpans:
+      - physicalPage: 431
+        printedPage: "431"
+        pageRegionIdentifier: p431-n-17
+  - blockReference: "n-17:overview.reference.note.label:4"
+    sourceSpans:
+      - physicalPage: 431
+        printedPage: "431"
+        pageRegionIdentifier: p431-n-17
+  - blockReference: "n-17:overview.reference.note.content:4"
+    sourceSpans:
+      - physicalPage: 431
+        printedPage: "431"
+        pageRegionIdentifier: p431-n-17
+  - blockReference: "n-17:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 431
+        printedPage: "431"
+        pageRegionIdentifier: p431-n-17
+  - blockReference: "n-17:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 431
+        printedPage: "431"
+        pageRegionIdentifier: p431-n-17
+  - blockReference: "n-17:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 431
+        printedPage: "431"
+        pageRegionIdentifier: p431-n-17
+  - blockReference: "n-17:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 431
+        printedPage: "431"
+        pageRegionIdentifier: p431-n-17
+  - blockReference: "n-17:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 431
+        printedPage: "431"
+        pageRegionIdentifier: p431-n-17
+  - blockReference: "n-17:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 431
+        printedPage: "431"
+        pageRegionIdentifier: p431-n-17
+  - blockReference: "n-17:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 431
+        printedPage: "431"
+        pageRegionIdentifier: p431-n-17
+  - blockReference: "n-17:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 431
+        printedPage: "431"
+        pageRegionIdentifier: p431-n-17
+  - blockReference: "n-17:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 431
+        printedPage: "431"
+        pageRegionIdentifier: p431-n-17
+  - blockReference: "n-17:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 431
+        printedPage: "431"
+        pageRegionIdentifier: p431-n-17
+  - blockReference: "n-17:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 431
+        printedPage: "431"
+        pageRegionIdentifier: p431-n-17
+  - blockReference: "n-17:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 431
+        printedPage: "431"
+        pageRegionIdentifier: p431-n-17
+  - blockReference: "n-17:remediation.linux.paragraph:1"
+    sourceSpans:
+      - physicalPage: 431
+        printedPage: "431"
+        pageRegionIdentifier: p431-n-17
+  - blockReference: "n-17:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 431
+        printedPage: "431"
+        pageRegionIdentifier: p431-n-17
+  - blockReference: "n-17:remediation.linux.command:1"
+    sourceSpans:
+      - physicalPage: 431
+        printedPage: "431"
+        pageRegionIdentifier: p431-n-17
+  - blockReference: "n-17:remediation.linux.step:2"
     sourceSpans:
       - physicalPage: 432
-        printedPage: '432'
+        printedPage: "432"
         pageRegionIdentifier: p432-n-17
-  - blockReference: n-17:sourceTranscription.sourcePage432.transcription:1
-    publicationDisposition: published
+  - blockReference: "n-17:remediation.linux.command:2"
     sourceSpans:
       - physicalPage: 432
-        printedPage: '432'
+        printedPage: "432"
         pageRegionIdentifier: p432-n-17
-  - blockReference: n-17:sourceTranscription.sourcePage432.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "n-17:remediation.linux.step.explanation:2"
     sourceSpans:
       - physicalPage: 432
-        printedPage: '432'
+        printedPage: "432"
         pageRegionIdentifier: p432-n-17
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/n-17/n-17-page-431-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: bc458ba1483f81dfbfade9e7a635922ea354855fa3a1e41f6ff7750bc53363e2
-    alternativeText: PDF 페이지 431의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 431 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 431
-        printedPage: '431'
-        pageRegionIdentifier: p431-n-17
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - path: ../assets/n-17/n-17-page-432-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: bd4b52637bfcf770cdb2c5c20dad7c2fc78bc1c9e479ebcee62bedaabe272c7b
-    alternativeText: PDF 페이지 432의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 432 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "n-17:remediation.linux.step:3"
     sourceSpans:
       - physicalPage: 432
-        printedPage: '432'
+        printedPage: "432"
         pageRegionIdentifier: p432-n-17
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - blockReference: "n-17:remediation.linux.command:3"
+    sourceSpans:
+      - physicalPage: 432
+        printedPage: "432"
+        pageRegionIdentifier: p432-n-17
+  - blockReference: "n-17:remediation.linux.paragraph:2"
+    sourceSpans:
+      - physicalPage: 432
+        printedPage: "432"
+        pageRegionIdentifier: p432-n-17
+  - blockReference: "n-17:remediation.linux.step:4"
+    sourceSpans:
+      - physicalPage: 432
+        printedPage: "432"
+        pageRegionIdentifier: p432-n-17
+  - blockReference: "n-17:remediation.linux.command:4"
+    sourceSpans:
+      - physicalPage: 432
+        printedPage: "432"
+        pageRegionIdentifier: p432-n-17
+  - blockReference: "n-17:remediation.linux.output:1"
+    sourceSpans:
+      - physicalPage: 432
+        printedPage: "432"
+        pageRegionIdentifier: p432-n-17
+  - blockReference: "n-17:remediation.linux.step:5"
+    sourceSpans:
+      - physicalPage: 432
+        printedPage: "432"
+        pageRegionIdentifier: p432-n-17
+  - blockReference: "n-17:remediation.linux.command:5"
+    sourceSpans:
+      - physicalPage: 432
+        printedPage: "432"
+        pageRegionIdentifier: p432-n-17
+  - blockReference: "n-17:remediation.linux.output:2"
+    sourceSpans:
+      - physicalPage: 432
+        printedPage: "432"
+        pageRegionIdentifier: p432-n-17
+  - blockReference: "n-17:remediation.linux.paragraph:3"
+    sourceSpans:
+      - physicalPage: 432
+        printedPage: "432"
+        pageRegionIdentifier: p432-n-17
+  - blockReference: "n-17:remediation.linux.step:6"
+    sourceSpans:
+      - physicalPage: 432
+        printedPage: "432"
+        pageRegionIdentifier: p432-n-17
+  - blockReference: "n-17:remediation.linux.paragraph:4"
+    sourceSpans:
+      - physicalPage: 432
+        printedPage: "432"
+        pageRegionIdentifier: p432-n-17
+  - blockReference: "n-17:remediation.linux.step:7"
+    sourceSpans:
+      - physicalPage: 432
+        printedPage: "432"
+        pageRegionIdentifier: p432-n-17
+  - blockReference: "n-17:remediation.linux.command:6"
+    sourceSpans:
+      - physicalPage: 432
+        printedPage: "432"
+        pageRegionIdentifier: p432-n-17
+  - blockReference: "n-17:remediation.linux.step:8"
+    sourceSpans:
+      - physicalPage: 432
+        printedPage: "432"
+        pageRegionIdentifier: p432-n-17
+  - blockReference: "n-17:remediation.linux.command:7"
+    sourceSpans:
+      - physicalPage: 432
+        printedPage: "432"
+        pageRegionIdentifier: p432-n-17
+  - blockReference: "n-17:remediation.linux.paragraph:5"
+    sourceSpans:
+      - physicalPage: 432
+        printedPage: "432"
+        pageRegionIdentifier: p432-n-17
+  - blockReference: "n-17:remediation.linux.step:9"
+    sourceSpans:
+      - physicalPage: 432
+        printedPage: "432"
+        pageRegionIdentifier: p432-n-17
+  - blockReference: "n-17:remediation.linux.command:8"
+    sourceSpans:
+      - physicalPage: 432
+        printedPage: "432"
+        pageRegionIdentifier: p432-n-17
+assets: []

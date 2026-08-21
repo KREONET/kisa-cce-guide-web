@@ -2,64 +2,144 @@ schemaVersion: 1
 criterionSlug: hv-12
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: hv-12:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "hv-12:overview.heading:1"
     sourceSpans:
       - physicalPage: 826
-        printedPage: '826'
+        printedPage: "826"
         pageRegionIdentifier: p826-hv-12
-  - blockReference: hv-12:sourceTranscription.sourcePage826.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "hv-12:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 826
-        printedPage: '826'
+        printedPage: "826"
         pageRegionIdentifier: p826-hv-12
-  - blockReference: hv-12:sourceTranscription.sourcePage826.transcription:1
-    publicationDisposition: published
+  - blockReference: "hv-12:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 826
-        printedPage: '826'
+        printedPage: "826"
         pageRegionIdentifier: p826-hv-12
-  - blockReference: hv-12:sourceTranscription.sourcePage826.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "hv-12:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 826
-        printedPage: '826'
+        printedPage: "826"
         pageRegionIdentifier: p826-hv-12
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/hv-12/hv-12-page-826-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 3187445e631cd4efc3c9c909c4a0813faabc4925860a913d8e84768d63417f9e
-    alternativeText: PDF 페이지 826의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 826 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
+  - blockReference: "hv-12:overview.inspectionPurpose.paragraph:1"
     sourceSpans:
       - physicalPage: 826
-        printedPage: '826'
+        printedPage: "826"
         pageRegionIdentifier: p826-hv-12
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
+  - blockReference: "hv-12:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 826
+        printedPage: "826"
+        pageRegionIdentifier: p826-hv-12
+  - blockReference: "hv-12:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 826
+        printedPage: "826"
+        pageRegionIdentifier: p826-hv-12
+  - blockReference: "hv-12:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 826
+        printedPage: "826"
+        pageRegionIdentifier: p826-hv-12
+  - blockReference: "hv-12:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 826
+        printedPage: "826"
+        pageRegionIdentifier: p826-hv-12
+  - blockReference: "hv-12:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 826
+        printedPage: "826"
+        pageRegionIdentifier: p826-hv-12
+  - blockReference: "hv-12:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 826
+        printedPage: "826"
+        pageRegionIdentifier: p826-hv-12
+  - blockReference: "hv-12:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 826
+        printedPage: "826"
+        pageRegionIdentifier: p826-hv-12
+  - blockReference: "hv-12:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 826
+        printedPage: "826"
+        pageRegionIdentifier: p826-hv-12
+  - blockReference: "hv-12:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 826
+        printedPage: "826"
+        pageRegionIdentifier: p826-hv-12
+  - blockReference: "hv-12:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 826
+        printedPage: "826"
+        pageRegionIdentifier: p826-hv-12
+  - blockReference: "hv-12:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 826
+        printedPage: "826"
+        pageRegionIdentifier: p826-hv-12
+  - blockReference: "hv-12:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 826
+        printedPage: "826"
+        pageRegionIdentifier: p826-hv-12
+  - blockReference: "hv-12:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 826
+        printedPage: "826"
+        pageRegionIdentifier: p826-hv-12
+  - blockReference: "hv-12:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 826
+        printedPage: "826"
+        pageRegionIdentifier: p826-hv-12
+  - blockReference: "hv-12:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 826
+        printedPage: "826"
+        pageRegionIdentifier: p826-hv-12
+  - blockReference: "hv-12:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 826
+        printedPage: "826"
+        pageRegionIdentifier: p826-hv-12
+  - blockReference: "hv-12:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 826
+        printedPage: "826"
+        pageRegionIdentifier: p826-hv-12
+  - blockReference: "hv-12:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 826
+        printedPage: "826"
+        pageRegionIdentifier: p826-hv-12
+  - blockReference: "hv-12:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 826
+        printedPage: "826"
+        pageRegionIdentifier: p826-hv-12
+  - blockReference: "hv-12:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 826
+        printedPage: "826"
+        pageRegionIdentifier: p826-hv-12
+  - blockReference: "hv-12:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 826
+        printedPage: "826"
+        pageRegionIdentifier: p826-hv-12
+  - blockReference: "hv-12:remediation.linux.step:3"
+    sourceSpans:
+      - physicalPage: 826
+        printedPage: "826"
+        pageRegionIdentifier: p826-hv-12
+  - blockReference: "hv-12:remediation.linux.step:4"
+    sourceSpans:
+      - physicalPage: 826
+        printedPage: "826"
+        pageRegionIdentifier: p826-hv-12
+assets: []

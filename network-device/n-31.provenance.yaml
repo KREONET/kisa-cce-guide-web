@@ -2,117 +2,182 @@ schemaVersion: 1
 criterionSlug: n-31
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: n-31:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "n-31:overview.heading:1"
     sourceSpans:
       - physicalPage: 457
-        printedPage: '457'
+        printedPage: "457"
         pageRegionIdentifier: p457-n-31
-  - blockReference: n-31:sourceTranscription.sourcePage457.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "n-31:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 457
-        printedPage: '457'
+        printedPage: "457"
         pageRegionIdentifier: p457-n-31
-  - blockReference: n-31:sourceTranscription.sourcePage457.transcription:1
-    publicationDisposition: published
+  - blockReference: "n-31:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 457
-        printedPage: '457'
+        printedPage: "457"
         pageRegionIdentifier: p457-n-31
-  - blockReference: n-31:sourceTranscription.sourcePage457.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "n-31:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 457
-        printedPage: '457'
+        printedPage: "457"
         pageRegionIdentifier: p457-n-31
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - blockReference: n-31:sourceTranscription.sourcePage458.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "n-31:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 457
+        printedPage: "457"
+        pageRegionIdentifier: p457-n-31
+  - blockReference: "n-31:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 457
+        printedPage: "457"
+        pageRegionIdentifier: p457-n-31
+  - blockReference: "n-31:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 457
+        printedPage: "457"
+        pageRegionIdentifier: p457-n-31
+  - blockReference: "n-31:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 457
+        printedPage: "457"
+        pageRegionIdentifier: p457-n-31
+  - blockReference: "n-31:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 457
+        printedPage: "457"
+        pageRegionIdentifier: p457-n-31
+  - blockReference: "n-31:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 457
+        printedPage: "457"
+        pageRegionIdentifier: p457-n-31
+  - blockReference: "n-31:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 457
+        printedPage: "457"
+        pageRegionIdentifier: p457-n-31
+  - blockReference: "n-31:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 457
+        printedPage: "457"
+        pageRegionIdentifier: p457-n-31
+  - blockReference: "n-31:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 457
+        printedPage: "457"
+        pageRegionIdentifier: p457-n-31
+  - blockReference: "n-31:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 457
+        printedPage: "457"
+        pageRegionIdentifier: p457-n-31
+  - blockReference: "n-31:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 457
+        printedPage: "457"
+        pageRegionIdentifier: p457-n-31
+  - blockReference: "n-31:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 457
+        printedPage: "457"
+        pageRegionIdentifier: p457-n-31
+  - blockReference: "n-31:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 457
+        printedPage: "457"
+        pageRegionIdentifier: p457-n-31
+  - blockReference: "n-31:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 457
+        printedPage: "457"
+        pageRegionIdentifier: p457-n-31
+  - blockReference: "n-31:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 457
+        printedPage: "457"
+        pageRegionIdentifier: p457-n-31
+  - blockReference: "n-31:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 457
+        printedPage: "457"
+        pageRegionIdentifier: p457-n-31
+  - blockReference: "n-31:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 457
+        printedPage: "457"
+        pageRegionIdentifier: p457-n-31
+  - blockReference: "n-31:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 457
+        printedPage: "457"
+        pageRegionIdentifier: p457-n-31
+  - blockReference: "n-31:remediation.linux.paragraph:1"
+    sourceSpans:
+      - physicalPage: 457
+        printedPage: "457"
+        pageRegionIdentifier: p457-n-31
+  - blockReference: "n-31:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 457
+        printedPage: "457"
+        pageRegionIdentifier: p457-n-31
+  - blockReference: "n-31:remediation.linux.command:1"
+    sourceSpans:
+      - physicalPage: 457
+        printedPage: "457"
+        pageRegionIdentifier: p457-n-31
+  - blockReference: "n-31:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 457
+        printedPage: "457"
+        pageRegionIdentifier: p457-n-31
+  - blockReference: "n-31:remediation.linux.command:2"
+    sourceSpans:
+      - physicalPage: 457
+        printedPage: "457"
+        pageRegionIdentifier: p457-n-31
+  - blockReference: "n-31:remediation.linux.paragraph:2"
+    sourceSpans:
+      - physicalPage: 457
+        printedPage: "457"
+        pageRegionIdentifier: p457-n-31
+  - blockReference: "n-31:remediation.linux.step:3"
+    sourceSpans:
+      - physicalPage: 457
+        printedPage: "457"
+        pageRegionIdentifier: p457-n-31
+  - blockReference: "n-31:remediation.linux.step:4"
+    sourceSpans:
+      - physicalPage: 457
+        printedPage: "457"
+        pageRegionIdentifier: p457-n-31
+  - blockReference: "n-31:remediation.linux.command:3"
+    sourceSpans:
+      - physicalPage: 457
+        printedPage: "457"
+        pageRegionIdentifier: p457-n-31
+      - physicalPage: 458
+        printedPage: "458"
+        pageRegionIdentifier: p458-n-31
+  - blockReference: "n-31:remediation.linux.paragraph:3"
     sourceSpans:
       - physicalPage: 458
-        printedPage: '458'
+        printedPage: "458"
         pageRegionIdentifier: p458-n-31
-  - blockReference: n-31:sourceTranscription.sourcePage458.transcription:1
-    publicationDisposition: published
+  - blockReference: "n-31:remediation.linux.step:5"
     sourceSpans:
       - physicalPage: 458
-        printedPage: '458'
+        printedPage: "458"
         pageRegionIdentifier: p458-n-31
-  - blockReference: n-31:sourceTranscription.sourcePage458.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "n-31:remediation.linux.step:6"
     sourceSpans:
       - physicalPage: 458
-        printedPage: '458'
+        printedPage: "458"
         pageRegionIdentifier: p458-n-31
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/n-31/n-31-page-457-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 06b2372b2662cf3d9b80e81859bedfb237cdf47b86e58b955676c101f314fc9d
-    alternativeText: PDF 페이지 457의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 457 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 870
-    outputPixelDimensions:
-      - 714
-      - 870
-    sourceCrop:
-      - 0.05
-      - 0.1741
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 457
-        printedPage: '457'
-        pageRegionIdentifier: p457-n-31
-        sourceBoundingBox:
-          - 0.05
-          - 0.1741
-          - 0.95
-          - 0.95
-  - path: ../assets/n-31/n-31-page-458-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 26bfcce4c2321cf8e34d4603c0e904b1b956a1ed31c3a16dcf73bbf36b68b1b9
-    alternativeText: PDF 페이지 458의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 458 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "n-31:remediation.linux.command:4"
     sourceSpans:
       - physicalPage: 458
-        printedPage: '458'
+        printedPage: "458"
         pageRegionIdentifier: p458-n-31
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+assets: []

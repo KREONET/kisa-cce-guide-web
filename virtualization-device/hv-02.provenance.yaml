@@ -2,170 +2,114 @@ schemaVersion: 1
 criterionSlug: hv-02
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: hv-02:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "hv-02:overview.heading:1"
     sourceSpans:
-      - physicalPage: 793
-        printedPage: '793'
-        pageRegionIdentifier: p793-hv-02
-  - blockReference: hv-02:sourceTranscription.sourcePage793.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+      - {physicalPage: 793, printedPage: "793", pageRegionIdentifier: p793-hv-02}
+  - blockReference: "hv-02:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 793, printedPage: "793", pageRegionIdentifier: p793-hv-02}]
+  - blockReference: "hv-02:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 793, printedPage: "793", pageRegionIdentifier: p793-hv-02}]
+  - blockReference: "hv-02:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 793, printedPage: "793", pageRegionIdentifier: p793-hv-02}]
+  - blockReference: "hv-02:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 793, printedPage: "793", pageRegionIdentifier: p793-hv-02}]
+  - blockReference: "hv-02:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 793, printedPage: "793", pageRegionIdentifier: p793-hv-02}]
+  - blockReference: "hv-02:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 793, printedPage: "793", pageRegionIdentifier: p793-hv-02}]
+  - blockReference: "hv-02:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 793, printedPage: "793", pageRegionIdentifier: p793-hv-02}]
+  - blockReference: "hv-02:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 793, printedPage: "793", pageRegionIdentifier: p793-hv-02}]
+  - blockReference: "hv-02:overview.reference.note.content:1"
+    sourceSpans: [{physicalPage: 793, printedPage: "793", pageRegionIdentifier: p793-hv-02}]
+  - blockReference: "hv-02:overview.reference.note.label:2"
+    sourceSpans: [{physicalPage: 793, printedPage: "793", pageRegionIdentifier: p793-hv-02}]
+  - blockReference: "hv-02:overview.reference.note.content:2"
+    sourceSpans: [{physicalPage: 793, printedPage: "793", pageRegionIdentifier: p793-hv-02}]
+  - blockReference: "hv-02:overview.reference.note.label:3"
+    sourceSpans: [{physicalPage: 793, printedPage: "793", pageRegionIdentifier: p793-hv-02}]
+  - blockReference: "hv-02:overview.reference.note.content:3"
+    sourceSpans: [{physicalPage: 793, printedPage: "793", pageRegionIdentifier: p793-hv-02}]
+  - blockReference: "hv-02:assessment.heading:1"
+    sourceSpans: [{physicalPage: 793, printedPage: "793", pageRegionIdentifier: p793-hv-02}]
+  - blockReference: "hv-02:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 793, printedPage: "793", pageRegionIdentifier: p793-hv-02}]
+  - blockReference: "hv-02:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 793, printedPage: "793", pageRegionIdentifier: p793-hv-02}]
+  - blockReference: "hv-02:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 793, printedPage: "793", pageRegionIdentifier: p793-hv-02}]
+  - blockReference: "hv-02:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 793, printedPage: "793", pageRegionIdentifier: p793-hv-02}]
+  - blockReference: "hv-02:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 793, printedPage: "793", pageRegionIdentifier: p793-hv-02}]
+  - blockReference: "hv-02:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 793, printedPage: "793", pageRegionIdentifier: p793-hv-02}]
+  - blockReference: "hv-02:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 793, printedPage: "793", pageRegionIdentifier: p793-hv-02}]
+  - blockReference: "hv-02:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 793, printedPage: "793", pageRegionIdentifier: p793-hv-02}]
+  - blockReference: "hv-02:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 793, printedPage: "793", pageRegionIdentifier: p793-hv-02}]
+  - blockReference: "hv-02:remediation.heading:1"
+    sourceSpans: [{physicalPage: 793, printedPage: "793", pageRegionIdentifier: p793-hv-02}]
+  - blockReference: "hv-02:remediation.linux.heading:1"
     sourceSpans:
-      - physicalPage: 793
-        printedPage: '793'
-        pageRegionIdentifier: p793-hv-02
-  - blockReference: hv-02:sourceTranscription.sourcePage793.transcription:1
-    publicationDisposition: published
+      - {physicalPage: 793, printedPage: "793", pageRegionIdentifier: p793-hv-02}
+      - {physicalPage: 794, printedPage: "794", pageRegionIdentifier: p794-hv-02}
+      - {physicalPage: 795, printedPage: "795", pageRegionIdentifier: p795-hv-02}
+  - blockReference: "hv-02:remediation.linux.paragraph:1"
+    sourceSpans: [{physicalPage: 793, printedPage: "793", pageRegionIdentifier: p793-hv-02}]
+  - blockReference: "hv-02:remediation.linux.step:1"
+    sourceSpans: [{physicalPage: 793, printedPage: "793", pageRegionIdentifier: p793-hv-02}]
+  - blockReference: "hv-02:remediation.linux.literal:1"
+    sourceSpans: [{physicalPage: 793, printedPage: "793", pageRegionIdentifier: p793-hv-02}]
+  - blockReference: "hv-02:remediation.linux.step:2"
+    sourceSpans: [{physicalPage: 793, printedPage: "793", pageRegionIdentifier: p793-hv-02}]
+  - blockReference: "hv-02:remediation.linux.step:3"
+    sourceSpans: [{physicalPage: 793, printedPage: "793", pageRegionIdentifier: p793-hv-02}]
+  - blockReference: "hv-02:remediation.linux.step:4"
+    sourceSpans: [{physicalPage: 793, printedPage: "793", pageRegionIdentifier: p793-hv-02}]
+  - blockReference: "hv-02:remediation.linux.step:5"
     sourceSpans:
-      - physicalPage: 793
-        printedPage: '793'
-        pageRegionIdentifier: p793-hv-02
-  - blockReference: hv-02:sourceTranscription.sourcePage793.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+      - {physicalPage: 794, printedPage: "794", pageRegionIdentifier: p794-hv-02}
+  - blockReference: "hv-02:remediation.linux.step:6"
+    sourceSpans: [{physicalPage: 794, printedPage: "794", pageRegionIdentifier: p794-hv-02}]
+  - blockReference: "hv-02:remediation.linux.paragraph:2"
+    sourceSpans: [{physicalPage: 794, printedPage: "794", pageRegionIdentifier: p794-hv-02}]
+  - blockReference: "hv-02:remediation.linux.step:7"
+    sourceSpans: [{physicalPage: 794, printedPage: "794", pageRegionIdentifier: p794-hv-02}]
+  - blockReference: "hv-02:remediation.linux.command:1"
+    sourceSpans: [{physicalPage: 794, printedPage: "794", pageRegionIdentifier: p794-hv-02}]
+  - blockReference: "hv-02:remediation.linux.output:1"
     sourceSpans:
-      - physicalPage: 793
-        printedPage: '793'
-        pageRegionIdentifier: p793-hv-02
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - blockReference: hv-02:sourceTranscription.sourcePage794.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+      - {physicalPage: 794, printedPage: "794", pageRegionIdentifier: p794-hv-02}
+      - {physicalPage: 795, printedPage: "795", pageRegionIdentifier: p795-hv-02}
+  - blockReference: "hv-02:remediation.linux.step:8"
     sourceSpans:
-      - physicalPage: 794
-        printedPage: '794'
-        pageRegionIdentifier: p794-hv-02
-  - blockReference: hv-02:sourceTranscription.sourcePage794.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 794
-        printedPage: '794'
-        pageRegionIdentifier: p794-hv-02
-  - blockReference: hv-02:sourceTranscription.sourcePage794.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 794
-        printedPage: '794'
-        pageRegionIdentifier: p794-hv-02
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: hv-02:sourceTranscription.sourcePage795.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 795
-        printedPage: '795'
-        pageRegionIdentifier: p795-hv-02
-  - blockReference: hv-02:sourceTranscription.sourcePage795.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 795
-        printedPage: '795'
-        pageRegionIdentifier: p795-hv-02
-  - blockReference: hv-02:sourceTranscription.sourcePage795.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 795
-        printedPage: '795'
-        pageRegionIdentifier: p795-hv-02
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/hv-02/hv-02-page-793-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: f59864ebbb913770a5aa71c488635711ea232f6ed0e2d50d59ba3f4ceddfdc97
-    alternativeText: PDF 페이지 793의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 793 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 793
-        printedPage: '793'
-        pageRegionIdentifier: p793-hv-02
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - path: ../assets/hv-02/hv-02-page-794-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 6ae83fe254d6297ceabab9f6261a21e2c277586fee82502bf93d63cfd1925749
-    alternativeText: PDF 페이지 794의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 794 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 794
-        printedPage: '794'
-        pageRegionIdentifier: p794-hv-02
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/hv-02/hv-02-page-795-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 67a38650e26c96d3e25466836fef773840a92600333393f2194b4992780a7d94
-    alternativeText: PDF 페이지 795의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 795 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 795
-        printedPage: '795'
-        pageRegionIdentifier: p795-hv-02
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+      - {physicalPage: 795, printedPage: "795", pageRegionIdentifier: p795-hv-02}
+  - blockReference: "hv-02:remediation.linux.step:9"
+    sourceSpans: [{physicalPage: 795, printedPage: "795", pageRegionIdentifier: p795-hv-02}]
+  - blockReference: "hv-02:remediation.linux.command:2"
+    sourceSpans: [{physicalPage: 795, printedPage: "795", pageRegionIdentifier: p795-hv-02}]
+  - blockReference: "hv-02:remediation.linux.step:10"
+    sourceSpans: [{physicalPage: 795, printedPage: "795", pageRegionIdentifier: p795-hv-02}]
+  - blockReference: "hv-02:remediation.linux.command:3"
+    sourceSpans: [{physicalPage: 795, printedPage: "795", pageRegionIdentifier: p795-hv-02}]
+  - blockReference: "hv-02:remediation.linux.paragraph:3"
+    sourceSpans: [{physicalPage: 795, printedPage: "795", pageRegionIdentifier: p795-hv-02}]
+  - blockReference: "hv-02:remediation.linux.step:11"
+    sourceSpans: [{physicalPage: 795, printedPage: "795", pageRegionIdentifier: p795-hv-02}]
+  - blockReference: "hv-02:remediation.linux.command:4"
+    sourceSpans: [{physicalPage: 795, printedPage: "795", pageRegionIdentifier: p795-hv-02}]
+  - blockReference: "hv-02:remediation.linux.step:12"
+    sourceSpans: [{physicalPage: 795, printedPage: "795", pageRegionIdentifier: p795-hv-02}]
+  - blockReference: "hv-02:remediation.linux.command:5"
+    sourceSpans: [{physicalPage: 795, printedPage: "795", pageRegionIdentifier: p795-hv-02}]
+  - blockReference: "hv-02:remediation.linux.configuration:1"
+    sourceSpans: [{physicalPage: 795, printedPage: "795", pageRegionIdentifier: p795-hv-02}]
+  - blockReference: "hv-02:remediation.linux.step:13"
+    sourceSpans: [{physicalPage: 795, printedPage: "795", pageRegionIdentifier: p795-hv-02}]
+  - blockReference: "hv-02:remediation.linux.command:6"
+    sourceSpans: [{physicalPage: 795, printedPage: "795", pageRegionIdentifier: p795-hv-02}]
+assets: []

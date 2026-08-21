@@ -2,223 +2,187 @@ schemaVersion: 1
 criterionSlug: ia
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: ia:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "ia:overview.heading:1"
     sourceSpans:
       - physicalPage: 729
-        printedPage: '729'
+        printedPage: "729"
         pageRegionIdentifier: p729-ia
-  - blockReference: ia:sourceTranscription.sourcePage729.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "ia:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 729
-        printedPage: '729'
+        printedPage: "729"
         pageRegionIdentifier: p729-ia
-  - blockReference: ia:sourceTranscription.sourcePage729.transcription:1
-    publicationDisposition: published
+  - blockReference: "ia:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 729
-        printedPage: '729'
+        printedPage: "729"
         pageRegionIdentifier: p729-ia
-  - blockReference: ia:sourceTranscription.sourcePage729.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "ia:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 729
-        printedPage: '729'
+        printedPage: "729"
         pageRegionIdentifier: p729-ia
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - blockReference: ia:sourceTranscription.sourcePage730.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "ia:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 729
+        printedPage: "729"
+        pageRegionIdentifier: p729-ia
+  - blockReference: "ia:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 729
+        printedPage: "729"
+        pageRegionIdentifier: p729-ia
+  - blockReference: "ia:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 729
+        printedPage: "729"
+        pageRegionIdentifier: p729-ia
+  - blockReference: "ia:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 729
+        printedPage: "729"
+        pageRegionIdentifier: p729-ia
+  - blockReference: "ia:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 729
+        printedPage: "729"
+        pageRegionIdentifier: p729-ia
+  - blockReference: "ia:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 729
+        printedPage: "729"
+        pageRegionIdentifier: p729-ia
+  - blockReference: "ia:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 729
+        printedPage: "729"
+        pageRegionIdentifier: p729-ia
+  - blockReference: "ia:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 729
+        printedPage: "729"
+        pageRegionIdentifier: p729-ia
+  - blockReference: "ia:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 729
+        printedPage: "729"
+        pageRegionIdentifier: p729-ia
+  - blockReference: "ia:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 729
+        printedPage: "729"
+        pageRegionIdentifier: p729-ia
+  - blockReference: "ia:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 729
+        printedPage: "729"
+        pageRegionIdentifier: p729-ia
+  - blockReference: "ia:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 729
+        printedPage: "729"
+        pageRegionIdentifier: p729-ia
+  - blockReference: "ia:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 729
+        printedPage: "729"
+        pageRegionIdentifier: p729-ia
+  - blockReference: "ia:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 729
+        printedPage: "729"
+        pageRegionIdentifier: p729-ia
+  - blockReference: "ia:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 729
+        printedPage: "729"
+        pageRegionIdentifier: p729-ia
+  - blockReference: "ia:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 729
+        printedPage: "729"
+        pageRegionIdentifier: p729-ia
+  - blockReference: "ia:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 729
+        printedPage: "729"
+        pageRegionIdentifier: p729-ia
+  - blockReference: "ia:remediation.solaris.heading:1"
+    sourceSpans:
+      - physicalPage: 729
+        printedPage: "729"
+        pageRegionIdentifier: p729-ia
+  - blockReference: "ia:remediation.solaris.paragraph:1"
+    sourceSpans:
+      - physicalPage: 729
+        printedPage: "729"
+        pageRegionIdentifier: p729-ia
+  - blockReference: "ia:remediation.solaris.step:1"
+    sourceSpans:
+      - physicalPage: 729
+        printedPage: "729"
+        pageRegionIdentifier: p729-ia
+  - blockReference: "ia:remediation.solaris.step:2"
     sourceSpans:
       - physicalPage: 730
-        printedPage: '730'
+        printedPage: "730"
         pageRegionIdentifier: p730-ia
-  - blockReference: ia:sourceTranscription.sourcePage730.transcription:1
-    publicationDisposition: published
+  - blockReference: "ia:remediation.solaris.paragraph:2"
     sourceSpans:
       - physicalPage: 730
-        printedPage: '730'
+        printedPage: "730"
         pageRegionIdentifier: p730-ia
-  - blockReference: ia:sourceTranscription.sourcePage730.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "ia:remediation.solaris.step:3"
     sourceSpans:
       - physicalPage: 730
-        printedPage: '730'
+        printedPage: "730"
         pageRegionIdentifier: p730-ia
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: ia:sourceTranscription.sourcePage731.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 731
-        printedPage: '731'
-        pageRegionIdentifier: p731-ia
-  - blockReference: ia:sourceTranscription.sourcePage731.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 731
-        printedPage: '731'
-        pageRegionIdentifier: p731-ia
-  - blockReference: ia:sourceTranscription.sourcePage731.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 731
-        printedPage: '731'
-        pageRegionIdentifier: p731-ia
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: ia:sourceTranscription.sourcePage732.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 732
-        printedPage: '732'
-        pageRegionIdentifier: p732-ia
-  - blockReference: ia:sourceTranscription.sourcePage732.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 732
-        printedPage: '732'
-        pageRegionIdentifier: p732-ia
-  - blockReference: ia:sourceTranscription.sourcePage732.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 732
-        printedPage: '732'
-        pageRegionIdentifier: p732-ia
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/ia/ia-page-729-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 2607aca8ff9f6b4aaa02311d4199d43fa910b8a334a161fc959878e32ae24e48
-    alternativeText: PDF 페이지 729의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 729 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 729
-        printedPage: '729'
-        pageRegionIdentifier: p729-ia
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - path: ../assets/ia/ia-page-730-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 787fa3dd9b0ac9227b3077efcb4e5ad7bd724af7811fd55721c784a35f94f4f7
-    alternativeText: PDF 페이지 730의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 730 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "ia:remediation.solaris.step:4"
     sourceSpans:
       - physicalPage: 730
-        printedPage: '730'
+        printedPage: "730"
         pageRegionIdentifier: p730-ia
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/ia/ia-page-731-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 01437818386e283ebb99d9a15d536ef2ee4952f9b0b722dea2d3eb748b095cad
-    alternativeText: PDF 페이지 731의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 731 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "ia:remediation.solaris.step:5"
+    sourceSpans:
+      - physicalPage: 730
+        printedPage: "730"
+        pageRegionIdentifier: p730-ia
+  - blockReference: "ia:remediation.supplementaryGuidance.heading:1"
     sourceSpans:
       - physicalPage: 731
-        printedPage: '731'
+        printedPage: "731"
         pageRegionIdentifier: p731-ia
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/ia/ia-page-732-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 527e7b178296722ffd7fa2df031636ed8ea3918d7c1df92507eb37c9f694c84b
-    alternativeText: PDF 페이지 732의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 732 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "ia:remediation.supplementaryGuidance.item:1"
+    sourceSpans:
+      - physicalPage: 731
+        printedPage: "731"
+        pageRegionIdentifier: p731-ia
+  - blockReference: "ia:remediation.supplementaryGuidance.configuration:1"
+    sourceSpans:
+      - physicalPage: 731
+        printedPage: "731"
+        pageRegionIdentifier: p731-ia
+  - blockReference: "ia:remediation.supplementaryGuidance.item:2"
+    sourceSpans:
+      - physicalPage: 731
+        printedPage: "731"
+        pageRegionIdentifier: p731-ia
+  - blockReference: "ia:remediation.supplementaryGuidance.configuration:2"
+    sourceSpans:
+      - physicalPage: 731
+        printedPage: "731"
+        pageRegionIdentifier: p731-ia
+      - physicalPage: 732
+        printedPage: "732"
+        pageRegionIdentifier: p732-ia
+  - blockReference: "ia:remediation.supplementaryGuidance.item:3"
     sourceSpans:
       - physicalPage: 732
-        printedPage: '732'
+        printedPage: "732"
         pageRegionIdentifier: p732-ia
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - blockReference: "ia:remediation.supplementaryGuidance.configuration:3"
+    sourceSpans:
+      - physicalPage: 732
+        printedPage: "732"
+        pageRegionIdentifier: p732-ia
+assets: []

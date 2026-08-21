@@ -2,276 +2,446 @@ schemaVersion: 1
 criterionSlug: hv-06
 sourceDocumentIdentifier: kisa-cce-criteria-2026
 blockProvenance:
-  - blockReference: hv-06:sourceTranscription.heading:1
-    publicationDisposition: derived
-    derivationType: structuralHeading
+  - blockReference: "hv-06:overview.heading:1"
     sourceSpans:
       - physicalPage: 804
-        printedPage: '804'
+        printedPage: "804"
         pageRegionIdentifier: p804-hv-06
-  - blockReference: hv-06:sourceTranscription.sourcePage804.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "hv-06:overview.inspectionContent.heading:1"
     sourceSpans:
       - physicalPage: 804
-        printedPage: '804'
+        printedPage: "804"
         pageRegionIdentifier: p804-hv-06
-  - blockReference: hv-06:sourceTranscription.sourcePage804.transcription:1
-    publicationDisposition: published
+  - blockReference: "hv-06:overview.inspectionContent.paragraph:1"
     sourceSpans:
       - physicalPage: 804
-        printedPage: '804'
+        printedPage: "804"
         pageRegionIdentifier: p804-hv-06
-  - blockReference: hv-06:sourceTranscription.sourcePage804.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "hv-06:overview.inspectionPurpose.heading:1"
     sourceSpans:
       - physicalPage: 804
-        printedPage: '804'
+        printedPage: "804"
         pageRegionIdentifier: p804-hv-06
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - blockReference: hv-06:sourceTranscription.sourcePage805.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
+  - blockReference: "hv-06:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 804
+        printedPage: "804"
+        pageRegionIdentifier: p804-hv-06
+  - blockReference: "hv-06:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 804
+        printedPage: "804"
+        pageRegionIdentifier: p804-hv-06
+  - blockReference: "hv-06:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 804
+        printedPage: "804"
+        pageRegionIdentifier: p804-hv-06
+  - blockReference: "hv-06:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 804
+        printedPage: "804"
+        pageRegionIdentifier: p804-hv-06
+  - blockReference: "hv-06:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 804
+        printedPage: "804"
+        pageRegionIdentifier: p804-hv-06
+  - blockReference: "hv-06:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 804
+        printedPage: "804"
+        pageRegionIdentifier: p804-hv-06
+  - blockReference: "hv-06:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 804
+        printedPage: "804"
+        pageRegionIdentifier: p804-hv-06
+  - blockReference: "hv-06:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 804
+        printedPage: "804"
+        pageRegionIdentifier: p804-hv-06
+  - blockReference: "hv-06:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 804
+        printedPage: "804"
+        pageRegionIdentifier: p804-hv-06
+  - blockReference: "hv-06:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 804
+        printedPage: "804"
+        pageRegionIdentifier: p804-hv-06
+  - blockReference: "hv-06:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 804
+        printedPage: "804"
+        pageRegionIdentifier: p804-hv-06
+  - blockReference: "hv-06:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 804
+        printedPage: "804"
+        pageRegionIdentifier: p804-hv-06
+  - blockReference: "hv-06:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 804
+        printedPage: "804"
+        pageRegionIdentifier: p804-hv-06
+  - blockReference: "hv-06:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 804
+        printedPage: "804"
+        pageRegionIdentifier: p804-hv-06
+  - blockReference: "hv-06:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 804
+        printedPage: "804"
+        pageRegionIdentifier: p804-hv-06
+  - blockReference: "hv-06:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 804
+        printedPage: "804"
+        pageRegionIdentifier: p804-hv-06
+  - blockReference: "hv-06:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 804
+        printedPage: "804"
+        pageRegionIdentifier: p804-hv-06
+  - blockReference: "hv-06:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 804
+        printedPage: "804"
+        pageRegionIdentifier: p804-hv-06
+  - blockReference: "hv-06:remediation.linux.paragraph:1"
+    sourceSpans:
+      - physicalPage: 804
+        printedPage: "804"
+        pageRegionIdentifier: p804-hv-06
+  - blockReference: "hv-06:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 804
+        printedPage: "804"
+        pageRegionIdentifier: p804-hv-06
+  - blockReference: "hv-06:remediation.linux.literal:1"
+    sourceSpans:
+      - physicalPage: 804
+        printedPage: "804"
+        pageRegionIdentifier: p804-hv-06
+  - blockReference: "hv-06:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 804
+        printedPage: "804"
+        pageRegionIdentifier: p804-hv-06
+  - blockReference: "hv-06:remediation.linux.step:3"
+    sourceSpans:
+      - physicalPage: 804
+        printedPage: "804"
+        pageRegionIdentifier: p804-hv-06
+  - blockReference: "hv-06:remediation.linux.step:4"
     sourceSpans:
       - physicalPage: 805
-        printedPage: '805'
+        printedPage: "805"
         pageRegionIdentifier: p805-hv-06
-  - blockReference: hv-06:sourceTranscription.sourcePage805.transcription:1
-    publicationDisposition: published
+  - blockReference: "hv-06:remediation.linux.configuration:1"
     sourceSpans:
       - physicalPage: 805
-        printedPage: '805'
+        printedPage: "805"
         pageRegionIdentifier: p805-hv-06
-  - blockReference: hv-06:sourceTranscription.sourcePage805.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
+  - blockReference: "hv-06:remediation.linux.step:5"
     sourceSpans:
       - physicalPage: 805
-        printedPage: '805'
+        printedPage: "805"
         pageRegionIdentifier: p805-hv-06
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: hv-06:sourceTranscription.sourcePage806.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 806
-        printedPage: '806'
-        pageRegionIdentifier: p806-hv-06
-  - blockReference: hv-06:sourceTranscription.sourcePage806.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 806
-        printedPage: '806'
-        pageRegionIdentifier: p806-hv-06
-  - blockReference: hv-06:sourceTranscription.sourcePage806.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 806
-        printedPage: '806'
-        pageRegionIdentifier: p806-hv-06
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: hv-06:sourceTranscription.sourcePage807.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 807
-        printedPage: '807'
-        pageRegionIdentifier: p807-hv-06
-  - blockReference: hv-06:sourceTranscription.sourcePage807.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 807
-        printedPage: '807'
-        pageRegionIdentifier: p807-hv-06
-  - blockReference: hv-06:sourceTranscription.sourcePage807.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 807
-        printedPage: '807'
-        pageRegionIdentifier: p807-hv-06
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - blockReference: hv-06:sourceTranscription.sourcePage808.heading:1
-    publicationDisposition: derived
-    derivationType: sourcePageHeading
-    sourceSpans:
-      - physicalPage: 808
-        printedPage: '808'
-        pageRegionIdentifier: p808-hv-06
-  - blockReference: hv-06:sourceTranscription.sourcePage808.transcription:1
-    publicationDisposition: published
-    sourceSpans:
-      - physicalPage: 808
-        printedPage: '808'
-        pageRegionIdentifier: p808-hv-06
-  - blockReference: hv-06:sourceTranscription.sourcePage808.image:1
-    publicationDisposition: derived
-    derivationType: pdfPageSourceCrop
-    sourceSpans:
-      - physicalPage: 808
-        printedPage: '808'
-        pageRegionIdentifier: p808-hv-06
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-assets:
-  - path: ../assets/hv-06/hv-06-page-804-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: cea793931e335dc06f6243216cec979c6bce7c21f7ea4a9b065edf82a3bf3792
-    alternativeText: PDF 페이지 804의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 804 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 872
-    outputPixelDimensions:
-      - 714
-      - 872
-    sourceCrop:
-      - 0.05
-      - 0.1724
-      - 0.95
-      - 0.95
-    sourceSpans:
-      - physicalPage: 804
-        printedPage: '804'
-        pageRegionIdentifier: p804-hv-06
-        sourceBoundingBox:
-          - 0.05
-          - 0.1724
-          - 0.95
-          - 0.95
-  - path: ../assets/hv-06/hv-06-page-805-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 5ff664b979e4356cc43ca00cba61894a56fd2e23f9befd807514ad65dab97c57
-    alternativeText: PDF 페이지 805의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 805 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "hv-06:remediation.linux.step:6"
     sourceSpans:
       - physicalPage: 805
-        printedPage: '805'
+        printedPage: "805"
         pageRegionIdentifier: p805-hv-06
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/hv-06/hv-06-page-806-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 9dc15cf0bf30ec4bfefbbbea5b5f3597050394b14e90b90b79969d682e0e3d5d
-    alternativeText: PDF 페이지 806의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 806 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "hv-06:remediation.linux.configuration:2"
+    sourceSpans:
+      - physicalPage: 805
+        printedPage: "805"
+        pageRegionIdentifier: p805-hv-06
+  - blockReference: "hv-06:remediation.linux.note.label:1"
+    sourceSpans:
+      - physicalPage: 805
+        printedPage: "805"
+        pageRegionIdentifier: p805-hv-06
+  - blockReference: "hv-06:remediation.linux.note.item:1"
+    sourceSpans:
+      - physicalPage: 805
+        printedPage: "805"
+        pageRegionIdentifier: p805-hv-06
+  - blockReference: "hv-06:remediation.linux.note.item:2"
+    sourceSpans:
+      - physicalPage: 805
+        printedPage: "805"
+        pageRegionIdentifier: p805-hv-06
+  - blockReference: "hv-06:remediation.linux.note.item:3"
+    sourceSpans:
+      - physicalPage: 805
+        printedPage: "805"
+        pageRegionIdentifier: p805-hv-06
+  - blockReference: "hv-06:remediation.linux.note.item:4"
+    sourceSpans:
+      - physicalPage: 805
+        printedPage: "805"
+        pageRegionIdentifier: p805-hv-06
+  - blockReference: "hv-06:remediation.linux.note.item:5"
+    sourceSpans:
+      - physicalPage: 805
+        printedPage: "805"
+        pageRegionIdentifier: p805-hv-06
+  - blockReference: "hv-06:remediation.linux.note.item:6"
     sourceSpans:
       - physicalPage: 806
-        printedPage: '806'
+        printedPage: "806"
         pageRegionIdentifier: p806-hv-06
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/hv-06/hv-06-page-807-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 363c874400945fa25fcf5322d06f86e75568604d13e5407b1f15290f63fcd381
-    alternativeText: PDF 페이지 807의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 807 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "hv-06:remediation.linux.note.item:7"
+    sourceSpans:
+      - physicalPage: 806
+        printedPage: "806"
+        pageRegionIdentifier: p806-hv-06
+  - blockReference: "hv-06:remediation.linux.note.item:8"
+    sourceSpans:
+      - physicalPage: 806
+        printedPage: "806"
+        pageRegionIdentifier: p806-hv-06
+  - blockReference: "hv-06:remediation.linux.note.item:9"
+    sourceSpans:
+      - physicalPage: 806
+        printedPage: "806"
+        pageRegionIdentifier: p806-hv-06
+  - blockReference: "hv-06:remediation.linux.paragraph:2"
+    sourceSpans:
+      - physicalPage: 806
+        printedPage: "806"
+        pageRegionIdentifier: p806-hv-06
+  - blockReference: "hv-06:remediation.linux.step:7"
+    sourceSpans:
+      - physicalPage: 806
+        printedPage: "806"
+        pageRegionIdentifier: p806-hv-06
+  - blockReference: "hv-06:remediation.linux.step:8"
+    sourceSpans:
+      - physicalPage: 806
+        printedPage: "806"
+        pageRegionIdentifier: p806-hv-06
+  - blockReference: "hv-06:remediation.linux.step:9"
+    sourceSpans:
+      - physicalPage: 806
+        printedPage: "806"
+        pageRegionIdentifier: p806-hv-06
+  - blockReference: "hv-06:remediation.linux.step:10"
+    sourceSpans:
+      - physicalPage: 806
+        printedPage: "806"
+        pageRegionIdentifier: p806-hv-06
+  - blockReference: "hv-06:remediation.linux.paragraph:3"
+    sourceSpans:
+      - physicalPage: 806
+        printedPage: "806"
+        pageRegionIdentifier: p806-hv-06
+  - blockReference: "hv-06:remediation.linux.step:11"
+    sourceSpans:
+      - physicalPage: 806
+        printedPage: "806"
+        pageRegionIdentifier: p806-hv-06
+  - blockReference: "hv-06:remediation.linux.step:12"
+    sourceSpans:
+      - physicalPage: 806
+        printedPage: "806"
+        pageRegionIdentifier: p806-hv-06
+  - blockReference: "hv-06:remediation.linux.command:1"
+    sourceSpans:
+      - physicalPage: 806
+        printedPage: "806"
+        pageRegionIdentifier: p806-hv-06
+  - blockReference: "hv-06:remediation.linux.step:13"
+    sourceSpans:
+      - physicalPage: 806
+        printedPage: "806"
+        pageRegionIdentifier: p806-hv-06
+  - blockReference: "hv-06:remediation.linux.command:2"
+    sourceSpans:
+      - physicalPage: 806
+        printedPage: "806"
+        pageRegionIdentifier: p806-hv-06
+  - blockReference: "hv-06:remediation.linux.configuration:3"
+    sourceSpans:
+      - physicalPage: 806
+        printedPage: "806"
+        pageRegionIdentifier: p806-hv-06
+  - blockReference: "hv-06:remediation.linux.paragraph:4"
+    sourceSpans:
+      - physicalPage: 806
+        printedPage: "806"
+        pageRegionIdentifier: p806-hv-06
+  - blockReference: "hv-06:remediation.linux.step:14"
+    sourceSpans:
+      - physicalPage: 806
+        printedPage: "806"
+        pageRegionIdentifier: p806-hv-06
+  - blockReference: "hv-06:remediation.linux.literal:2"
+    sourceSpans:
+      - physicalPage: 806
+        printedPage: "806"
+        pageRegionIdentifier: p806-hv-06
+      - physicalPage: 807
+        printedPage: "807"
+        pageRegionIdentifier: p807-hv-06
+  - blockReference: "hv-06:remediation.linux.step:15"
+    sourceSpans:
+      - physicalPage: 806
+        printedPage: "806"
+        pageRegionIdentifier: p806-hv-06
+  - blockReference: "hv-06:remediation.linux.step.explanation:15"
+    sourceSpans:
+      - physicalPage: 806
+        printedPage: "806"
+        pageRegionIdentifier: p806-hv-06
+  - blockReference: "hv-06:remediation.linux.configuration:4"
+    sourceSpans:
+      - physicalPage: 806
+        printedPage: "806"
+        pageRegionIdentifier: p806-hv-06
+  - blockReference: "hv-06:remediation.linux.paragraph:5"
     sourceSpans:
       - physicalPage: 807
-        printedPage: '807'
+        printedPage: "807"
         pageRegionIdentifier: p807-hv-06
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
-  - path: ../assets/hv-06/hv-06-page-808-source-region.png
-    assetType: sourcePageCrop
-    renderingProfileIdentifier: pdfium-png-indexed-96-v1
-    checksumAlgorithm: sha256
-    checksumValue: 9c192c1ae030fdbcd7c8efb09e74dac38440ebee4bf1049a6228eca668cf3ffd
-    alternativeText: PDF 페이지 808의 원문 점검항목 영역
-    alternativeTextStatus: verificationRequired
-    caption: PDF 페이지 808 원문 점검항목 영역
-    originalPixelDimensions:
-      - 714
-      - 953
-    outputPixelDimensions:
-      - 714
-      - 953
-    sourceCrop:
-      - 0.05
-      - 0.1
-      - 0.95
-      - 0.95
+  - blockReference: "hv-06:remediation.linux.step:16"
+    sourceSpans:
+      - physicalPage: 807
+        printedPage: "807"
+        pageRegionIdentifier: p807-hv-06
+  - blockReference: "hv-06:remediation.linux.command:3"
+    sourceSpans:
+      - physicalPage: 807
+        printedPage: "807"
+        pageRegionIdentifier: p807-hv-06
+  - blockReference: "hv-06:remediation.linux.step:17"
+    sourceSpans:
+      - physicalPage: 807
+        printedPage: "807"
+        pageRegionIdentifier: p807-hv-06
+  - blockReference: "hv-06:remediation.linux.command:4"
+    sourceSpans:
+      - physicalPage: 807
+        printedPage: "807"
+        pageRegionIdentifier: p807-hv-06
+  - blockReference: "hv-06:remediation.linux.configuration:5"
+    sourceSpans:
+      - physicalPage: 807
+        printedPage: "807"
+        pageRegionIdentifier: p807-hv-06
+  - blockReference: "hv-06:remediation.linux.step:18"
+    sourceSpans:
+      - physicalPage: 807
+        printedPage: "807"
+        pageRegionIdentifier: p807-hv-06
+  - blockReference: "hv-06:remediation.linux.command:5"
+    sourceSpans:
+      - physicalPage: 807
+        printedPage: "807"
+        pageRegionIdentifier: p807-hv-06
+  - blockReference: "hv-06:remediation.linux.step:19"
+    sourceSpans:
+      - physicalPage: 807
+        printedPage: "807"
+        pageRegionIdentifier: p807-hv-06
+  - blockReference: "hv-06:remediation.linux.command:6"
+    sourceSpans:
+      - physicalPage: 807
+        printedPage: "807"
+        pageRegionIdentifier: p807-hv-06
+  - blockReference: "hv-06:remediation.linux.configuration:6"
+    sourceSpans:
+      - physicalPage: 807
+        printedPage: "807"
+        pageRegionIdentifier: p807-hv-06
+      - physicalPage: 808
+        printedPage: "808"
+        pageRegionIdentifier: p808-hv-06
+  - blockReference: "hv-06:remediation.linux.step:20"
+    sourceSpans:
+      - physicalPage: 807
+        printedPage: "807"
+        pageRegionIdentifier: p807-hv-06
+  - blockReference: "hv-06:remediation.linux.command:7"
+    sourceSpans:
+      - physicalPage: 807
+        printedPage: "807"
+        pageRegionIdentifier: p807-hv-06
+  - blockReference: "hv-06:remediation.linux.step:21"
+    sourceSpans:
+      - physicalPage: 807
+        printedPage: "807"
+        pageRegionIdentifier: p807-hv-06
+  - blockReference: "hv-06:remediation.linux.command:8"
+    sourceSpans:
+      - physicalPage: 807
+        printedPage: "807"
+        pageRegionIdentifier: p807-hv-06
+  - blockReference: "hv-06:remediation.linux.step:22"
+    sourceSpans:
+      - physicalPage: 807
+        printedPage: "807"
+        pageRegionIdentifier: p807-hv-06
+  - blockReference: "hv-06:remediation.linux.command:9"
     sourceSpans:
       - physicalPage: 808
-        printedPage: '808'
+        printedPage: "808"
         pageRegionIdentifier: p808-hv-06
-        sourceBoundingBox:
-          - 0.05
-          - 0.1
-          - 0.95
-          - 0.95
+  - blockReference: "hv-06:remediation.linux.configuration:7"
+    sourceSpans:
+      - physicalPage: 808
+        printedPage: "808"
+        pageRegionIdentifier: p808-hv-06
+  - blockReference: "hv-06:remediation.linux.step:23"
+    sourceSpans:
+      - physicalPage: 808
+        printedPage: "808"
+        pageRegionIdentifier: p808-hv-06
+  - blockReference: "hv-06:remediation.linux.command:10"
+    sourceSpans:
+      - physicalPage: 808
+        printedPage: "808"
+        pageRegionIdentifier: p808-hv-06
+  - blockReference: "hv-06:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - physicalPage: 808
+        printedPage: "808"
+        pageRegionIdentifier: p808-hv-06
+  - blockReference: "hv-06:remediation.supplementaryGuidance.note.label:1"
+    sourceSpans:
+      - physicalPage: 808
+        printedPage: "808"
+        pageRegionIdentifier: p808-hv-06
+  - blockReference: "hv-06:remediation.supplementaryGuidance.note.content:1"
+    sourceSpans:
+      - physicalPage: 808
+        printedPage: "808"
+        pageRegionIdentifier: p808-hv-06
+  - blockReference: "hv-06:remediation.supplementaryGuidance.note.label:2"
+    sourceSpans:
+      - physicalPage: 808
+        printedPage: "808"
+        pageRegionIdentifier: p808-hv-06
+  - blockReference: "hv-06:remediation.supplementaryGuidance.note.content:2"
+    sourceSpans:
+      - physicalPage: 808
+        printedPage: "808"
+        pageRegionIdentifier: p808-hv-06
+  - blockReference: "hv-06:remediation.supplementaryGuidance.note.label:3"
+    sourceSpans:
+      - physicalPage: 808
+        printedPage: "808"
+        pageRegionIdentifier: p808-hv-06
+  - blockReference: "hv-06:remediation.supplementaryGuidance.note.content:3"
+    sourceSpans:
+      - physicalPage: 808
+        printedPage: "808"
+        pageRegionIdentifier: p808-hv-06
+assets: []
+
