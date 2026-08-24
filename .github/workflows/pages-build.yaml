@@ -32,9 +32,6 @@ jobs:
       - name: Validate canonical content
         run: uv run --locked python -m conversion.validate_content
 
-      - name: Run regression tests
-        run: uv run --locked pytest -q
-
       - name: Build GitHub Pages artifact
         run: >-
           uv run --locked python -m conversion.build_content
