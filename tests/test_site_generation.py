@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import shutil
 from html.parser import HTMLParser
 from pathlib import Path
 from tempfile import TemporaryDirectory
@@ -80,6 +81,28 @@ def _inspect(path: Path) -> PageInspector:
     inspector = PageInspector()
     inspector.feed(path.read_text(encoding="utf-8"))
     return inspector
+
+
+def _copy_site(generated_site: Path, destination: Path) -> Path:
+    """Copy a generated site so a validation test can mutate it in isolation."""
+
+    copied_site = destination / "site"
+    shutil.copytree(generated_site, copied_site)
+    return copied_site
+
+
+def _issue_rule_identifiers(site_root: Path) -> set[str]:
+    """Validate one mutated full site and return its failed rule identifiers."""
+
+    manifest = load_yaml(repository_root() / "data/criteria-manifest.yaml")
+    return {
+        issue.rule_identifier
+        for issue in validate_site(
+            site_root=site_root,
+            manifest=manifest,
+            expected_html_page_count=EXPECTED_HTML_PAGE_COUNT,
+        )
+    }
 
 
 def _source_attribute_values(block: dict[str, JsonValue]) -> tuple[str, str, str]:
@@ -237,6 +260,113 @@ def test_generated_site_passes_static_validation(generated_site: Path) -> None:
         )
         == []
     )
+    assert not any(
+        '<th scope="col"></th>' in path.read_text(encoding="utf-8")
+        for path in generated_site.rglob("*.html")
+    )
+
+
+def test_search_page_keeps_a_script_independent_fallback(generated_site: Path) -> None:
+    """Search must retain a visible criterion list when scripts or fetch fail."""
+
+    search_html = (generated_site / "search" / "index.html").read_text(encoding="utf-8")
+    assert "data-search-fallback" in search_html
+    assert "<noscript>" not in search_html
+    assert search_html.count('<li><a href="/') >= EXPECTED_CRITERION_COUNT
+
+
+def test_static_validation_rejects_page_contract_regressions(
+    generated_site: Path,
+    tmp_path: Path,
+) -> None:
+    """Static validation must reject inaccessible or stale detail-page contracts."""
+
+    site_root = _copy_site(generated_site, tmp_path)
+    u_01_path = site_root / "unix" / "u-01" / "index.html"
+    u_01_html = u_01_path.read_text(encoding="utf-8")
+    assert 'data-criterion-code="U-01"' in u_01_html
+    assert 'rel="alternate" type="application/json"' in u_01_html
+    assert "<code " in u_01_html
+    u_01_html = u_01_html.replace(
+        'data-criterion-code="U-01"',
+        'data-criterion-code="U-02"',
+        1,
+    ).replace(
+        'rel="alternate" type="application/json"',
+        'rel="related" type="application/json"',
+    )
+    u_01_html = u_01_html.replace("<code ", "<span ", 1).replace(
+        "</code>",
+        "</span>",
+        1,
+    )
+    u_01_html = u_01_html.replace(
+        "</article>",
+        "<table><caption>보조 표</caption><tbody><tr><td>값</td></tr></tbody></table></article>",
+        1,
+    )
+    u_01_path.write_text(u_01_html, encoding="utf-8")
+
+    u_02_path = site_root / "unix" / "u-02" / "index.html"
+    u_02_html = u_02_path.read_text(encoding="utf-8")
+    assert "/dataset/criteria/unix/u-02.json" in u_02_html
+    u_02_path.write_text(
+        u_02_html.replace(
+            "/dataset/criteria/unix/u-02.json",
+            "/dataset/criteria/unix/u-01.json",
+        ),
+        encoding="utf-8",
+    )
+
+    home_path = site_root / "index.html"
+    home_html = home_path.read_text(encoding="utf-8")
+    assert 'aria-controls="site-navigation"' in home_html
+    home_path.write_text(
+        home_html.replace(
+            'aria-controls="site-navigation"',
+            'aria-controls="missing-navigation"',
+            1,
+        ),
+        encoding="utf-8",
+    )
+    (site_root / "unix" / "u-03" / "index.html").unlink()
+
+    rule_identifiers = _issue_rule_identifiers(site_root)
+    assert {
+        "site-aria-reference",
+        "site-criterion-alternate",
+        "site-criterion-attributes",
+        "site-criterion-route",
+        "site-pre-code",
+        "site-table-accessibility",
+    } <= rule_identifiers
+
+
+def test_static_validation_rejects_search_index_contract_regressions(
+    generated_site: Path,
+    tmp_path: Path,
+) -> None:
+    """Search validation must reject stale, duplicate, and malformed records."""
+
+    site_root = _copy_site(generated_site, tmp_path)
+    search_path = site_root / "dataset" / "search-index.json"
+    search_index = json.loads(search_path.read_text(encoding="utf-8"))
+    records = search_index["records"]
+    records[2]["route"] = "/missing/"
+    records[3]["code"] = records[2]["code"]
+    records[4].pop("exactTerms")
+    records[5]["targetLabels"] = records[5]["targetLabels"][:-1]
+    search_path.write_text(
+        json.dumps(search_index, ensure_ascii=False, separators=(",", ":")),
+        encoding="utf-8",
+    )
+
+    rule_identifiers = _issue_rule_identifiers(site_root)
+    assert {
+        "site-search-completeness",
+        "site-search-route",
+        "site-search-schema",
+    } <= rule_identifiers
 
 
 def test_detail_pages_expose_machine_attributes_and_block_ids(
@@ -249,7 +379,9 @@ def test_detail_pages_expose_machine_attributes_and_block_ids(
         "windows/w-01/index.html",
         "web-application/ci/index.html",
     ):
-        inspector = _inspect(generated_site / relative_path)
+        detail_path = generated_site / relative_path
+        detail_html = detail_path.read_text(encoding="utf-8")
+        inspector = _inspect(detail_path)
         assert all(inspector.article_attributes.values())
         assert inspector.article_attributes["data-content-model"] in {
             "systemCriterion",
@@ -259,6 +391,20 @@ def test_detail_pages_expose_machine_attributes_and_block_ids(
         assert not any(
             identifier.endswith(".transcription:1") for identifier in inspector.identifiers
         )
+        assert '<link rel="canonical" href="/' in detail_html
+        assert '<link rel="alternate" type="application/json" href="/' in detail_html
+        assert '<dl class="criterion-meta">' in detail_html
+        structured_data_text = detail_html.partition('<script type="application/ld+json">')[
+            2
+        ].partition("</script>")[0]
+        structured_data = json.loads(structured_data_text)
+        assert structured_data["@type"] == "TechArticle"
+        assert structured_data["identifier"] == inspector.article_attributes["data-criterion-code"]
+        assert structured_data["mainEntityOfPage"] == structured_data["url"]
+        assert "additionalProperty" not in structured_data
+        assert structured_data["articleSection"]
+        assert structured_data["keywords"]
+        assert structured_data["pagination"]
 
 
 def test_internal_links_resolve(generated_site: Path) -> None:
@@ -285,6 +431,40 @@ def test_internal_links_resolve(generated_site: Path) -> None:
                 assert parsed.fragment in target_inspector.identifiers, (html_path, link)
 
 
+def test_static_validation_resolves_relative_links_from_the_current_page(
+    generated_site: Path,
+    tmp_path: Path,
+) -> None:
+    """Relative links must resolve from the source page without escaping the site."""
+
+    site_root = _copy_site(generated_site, tmp_path)
+    detail_path = site_root / "unix" / "u-01" / "index.html"
+    detail_html = detail_path.read_text(encoding="utf-8")
+    detail_path.write_text(
+        detail_html.replace("</article>", '<a href="../">분야</a></article>', 1),
+        encoding="utf-8",
+    )
+    assert _issue_rule_identifiers(site_root) == set()
+
+    root_path = site_root / "index.html"
+    root_html = root_path.read_text(encoding="utf-8")
+    root_path.unlink()
+    assert "site-link" in _issue_rule_identifiers(site_root)
+    root_path.write_text(root_html, encoding="utf-8")
+
+    outside_path = tmp_path / "outside.html"
+    outside_path.write_text("<h1>outside</h1>", encoding="utf-8")
+    detail_path.write_text(
+        detail_html.replace(
+            "</article>",
+            '<a href="../../../outside.html">외부 파일</a></article>',
+            1,
+        ),
+        encoding="utf-8",
+    )
+    assert "site-link" in _issue_rule_identifiers(site_root)
+
+
 def test_subpath_build_prefixes_links() -> None:
     """A repository-subpath build must prefix public links without changing files."""
 
@@ -305,6 +485,20 @@ def test_subpath_build_prefixes_links() -> None:
             )
             == []
         )
+        index_path = output_root / "site" / "index.html"
+        index_html = index_path.read_text(encoding="utf-8")
+        assert "/kisa-cce-guide-web/search/" in index_html
+        index_path.write_text(
+            index_html.replace("/kisa-cce-guide-web/search/", "/search/", 1),
+            encoding="utf-8",
+        )
+        issues = validate_site(
+            site_root=output_root / "site",
+            manifest=manifest,
+            expected_html_page_count=EXPECTED_HTML_PAGE_COUNT,
+            base_path="/kisa-cce-guide-web",
+        )
+        assert "site-base-path" in {issue.rule_identifier for issue in issues}
 
 
 @pytest.mark.parametrize(

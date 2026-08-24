@@ -1,6 +1,7 @@
 const searchRoot = document.querySelector("[data-search-root]");
 
 if (searchRoot) {
+  const searchForm = searchRoot.querySelector("[data-search-form]");
   const searchInput = searchRoot.querySelector("[data-search-query]");
   const domainFilter = searchRoot.querySelector("[data-domain-filter]");
   const categoryFilter = searchRoot.querySelector("[data-category-filter]");
@@ -8,7 +9,12 @@ if (searchRoot) {
   const targetFilter = searchRoot.querySelector("[data-target-filter]");
   const status = searchRoot.querySelector("[data-search-status]");
   const resultList = searchRoot.querySelector("[data-search-results]");
+  const fallback = searchRoot.querySelector("[data-search-fallback]");
   const indexUrl = searchRoot.getAttribute("data-search-index-url");
+
+  fallback.hidden = true;
+  searchRoot.setAttribute("aria-busy", "true");
+  status.textContent = "검색 색인을 불러오는 중입니다.";
 
   const normalizeCode = (value) =>
     value.normalize("NFC").toLocaleLowerCase("en").replaceAll("-", "");
@@ -195,9 +201,16 @@ if (searchRoot) {
         updateCategoryOptions();
         applySearch(records);
       });
+      searchForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        applySearch(records);
+      });
+      searchRoot.setAttribute("aria-busy", "false");
       applySearch(records);
     })
     .catch(() => {
+      searchRoot.setAttribute("aria-busy", "false");
       status.textContent = "검색 색인을 불러오지 못했습니다.";
+      fallback.hidden = false;
     });
 }

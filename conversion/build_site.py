@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import html
+import json
 import shutil
 from collections import defaultdict
 from collections.abc import Mapping, Sequence
@@ -51,13 +52,48 @@ def _html_document(
     body: str,
     base_path: str,
     extra_scripts: Sequence[str] = (),
+    canonical_url: str | None = None,
+    current_navigation: str | None = None,
+    json_alternate_url: str | None = None,
+    structured_data: Mapping[str, JsonValue] | None = None,
 ) -> str:
     """Wrap one page in the shared accessible site shell."""
+
+    def navigation_current(identifier: str) -> str:
+        return ' aria-current="page"' if identifier == current_navigation else ""
 
     script_tags = "\n".join(
         f'<script src="{html.escape(_site_url(script, base_path=base_path), quote=True)}" defer></script>'
         for script in ["/assets/site.js", *extra_scripts]
     )
+    alternate_link = ""
+    if json_alternate_url is not None:
+        alternate_link = (
+            '  <link rel="alternate" type="application/json" href="'
+            + html.escape(json_alternate_url, quote=True)
+            + '">\n'
+        )
+    canonical_link = ""
+    if canonical_url is not None:
+        canonical_link = (
+            '  <link rel="canonical" href="' + html.escape(canonical_url, quote=True) + '">\n'
+        )
+    structured_data_script = ""
+    if structured_data is not None:
+        serialized_structured_data = json.dumps(
+            structured_data,
+            ensure_ascii=False,
+            separators=(",", ":"),
+            sort_keys=True,
+        )
+        serialized_structured_data = (
+            serialized_structured_data.replace("&", "\\u0026")
+            .replace("<", "\\u003c")
+            .replace(">", "\\u003e")
+        )
+        structured_data_script = (
+            '  <script type="application/ld+json">' + serialized_structured_data + "</script>\n"
+        )
     return f"""<!doctype html>
 <html lang="ko">
 <head>
@@ -66,24 +102,24 @@ def _html_document(
   <meta name="description" content="{html.escape(description, quote=True)}">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; object-src 'self'; base-uri 'self'">
   <title>{html.escape(title)}</title>
-  <link rel="stylesheet" href="{html.escape(_site_url("/assets/styles.css", base_path=base_path), quote=True)}">
+{canonical_link}{alternate_link}{structured_data_script}  <link rel="stylesheet" href="{html.escape(_site_url("/assets/styles.css", base_path=base_path), quote=True)}">
 </head>
 <body>
   <a class="skip-link" href="#main-content">본문으로 바로가기</a>
   <header class="site-header">
     <div class="site-header__inner">
       <a class="site-brand" href="{html.escape(_site_url("/", base_path=base_path), quote=True)}">KISA CCE 가이드 2026</a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" data-navigation-toggle>메뉴</button>
-      <nav id="site-navigation" class="site-nav" aria-label="주요 메뉴" data-site-navigation data-open="false">
-        <a href="{html.escape(_site_url("/", base_path=base_path), quote=True)}">분야</a>
-        <a href="{html.escape(_site_url("/search/", base_path=base_path), quote=True)}">검색</a>
-        <a href="{html.escape(_site_url("/anomalies/", base_path=base_path), quote=True)}">원문 이상</a>
+      <button class="nav-toggle" type="button" aria-expanded="true" aria-controls="site-navigation" data-navigation-toggle hidden>메뉴</button>
+      <nav id="site-navigation" class="site-nav" aria-label="주요 메뉴" data-site-navigation data-open="true">
+        <a href="{html.escape(_site_url("/", base_path=base_path), quote=True)}"{navigation_current("domains")}>분야</a>
+        <a href="{html.escape(_site_url("/search/", base_path=base_path), quote=True)}"{navigation_current("search")}>검색</a>
+        <a href="{html.escape(_site_url("/anomalies/", base_path=base_path), quote=True)}"{navigation_current("anomalies")}>원문 이상</a>
       </nav>
     </div>
   </header>
   {body}
   <footer class="site-footer">원문을 대체하지 않는 비공식 변환본 · KISA CCE 가이드 2026</footer>
-  <div class="visually-hidden" aria-live="polite" data-copy-status></div>
+  <div class="visually-hidden" role="status" aria-live="polite" aria-atomic="true" data-copy-status></div>
   {script_tags}
 </body>
 </html>
@@ -231,10 +267,16 @@ def _render_table(
     identifier = _block_identifier(block)
     headers = as_sequence(block["tableHeaders"], location="block.tableHeaders")
     rows = as_sequence(block["tableRows"], location="block.tableRows")
-    header_html = "".join(
-        f'<th scope="col">{_inline_html(_text(value, location="table.header"), parser=parser)}</th>'
-        for value in headers
-    )
+    header_cells = []
+    for column_index, value in enumerate(headers, start=1):
+        header_text = _text(value, location="table.header")
+        header_content = (
+            _inline_html(header_text, parser=parser)
+            if header_text
+            else f'<span class="visually-hidden">{column_index}번째 열</span>'
+        )
+        header_cells.append(f'<th scope="col">{header_content}</th>')
+    header_html = "".join(header_cells)
     row_html = []
     for row_value in rows:
         row = as_sequence(row_value, location="table.row")
@@ -297,10 +339,10 @@ def _render_code(block: Mapping[str, JsonValue]) -> str:
     code_attributes = _html_attributes(code_profile_attributes)
     return (
         f'<div class="code-block{transcription_class}">'
-        f'<button class="copy-button" type="button" data-copy-button="{html.escape(code_identifier, quote=True)}" '
+        f'<button class="copy-button" type="button" data-copy-button="{html.escape(code_identifier, quote=True)}" hidden '
         f'aria-controls="{html.escape(code_identifier, quote=True)}" '
         f'aria-label="{html.escape(content_label)} 복사">복사</button>'
-        f'<pre {pre_attributes} tabindex="0" aria-label="{html.escape(content_label, quote=True)} 내용"><code '
+        f'<pre {pre_attributes} aria-label="{html.escape(content_label, quote=True)} 내용"><code '
         f'id="{html.escape(code_identifier, quote=True)}" class="language-{html.escape(language, quote=True)}" '
         f"{code_attributes}>"
         f"{html.escape(content)}</code></pre></div>"
@@ -591,6 +633,8 @@ def _detail_page(
         source_document["sourceUrl"],
         location="source.sourceUrl",
     )
+    source_title = _text(source_document["title"], location="source.title")
+    source_publisher = _text(source_document["publisher"], location="source.publisher")
     article_attributes = (
         f'data-criterion-code="{html.escape(code, quote=True)}" '
         f'data-severity="{html.escape(severity_level, quote=True)}" '
@@ -668,6 +712,36 @@ def _detail_page(
         f"/dataset/criteria/{domain_identifier}/{_text(criterion['slug'], location='criterion.slug')}.json",
         base_path=base_path,
     )
+    criterion_url = _site_url(
+        f"/{domain_identifier}/{_text(criterion['slug'], location='criterion.slug')}/",
+        base_path=base_path,
+    )
+    structured_data: dict[str, JsonValue] = {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "identifier": code,
+        "name": f"{code} {title}",
+        "description": f"{code} {title} 점검항목",
+        "mainEntityOfPage": criterion_url,
+        "url": criterion_url,
+        "about": [domain_label, category_label, *target_labels],
+        "isPartOf": {
+            "@type": "CreativeWork",
+            "name": "KISA CCE 가이드 2026",
+        },
+        "isBasedOn": {
+            "@type": "CreativeWork",
+            "name": source_title,
+            "publisher": {
+                "@type": "Organization",
+                "name": source_publisher,
+            },
+            "url": pdf_url,
+        },
+        "articleSection": f"{domain_label} / {category_label}",
+        "keywords": [severity_source, *target_labels],
+        "pagination": f"{first_page}-{last_page}",
+    }
     body = (
         '<main id="main-content" class="page-shell">'
         + sidebar
@@ -676,21 +750,28 @@ def _detail_page(
         + f'<article class="criterion" {article_attributes}>'
         + '<header class="criterion__header">'
         + f"<h1>{html.escape(code)} {html.escape(title)}</h1>"
-        + '<div class="criterion-meta">'
-        + f'<span class="badge badge--{html.escape(severity_level)}">중요도 {html.escape(severity_source)}</span>'
-        + f'<span class="badge">{html.escape(domain_label)}</span>'
-        + f'<span class="badge">{html.escape(category_label)}</span>'
-        + f'<span class="badge badge--review">{html.escape(review_label)}</span>'
-        + "</div>"
-        + f"<p>대상: {html.escape(', '.join(target_labels))} · 원문 페이지: {first_page}-{last_page}</p>"
-        + f'<a class="visually-hidden" rel="alternate" type="application/json" href="{html.escape(dataset_url, quote=True)}">JSON 데이터</a>'
+        + '<dl class="criterion-meta">'
+        + '<dt class="visually-hidden">중요도</dt>'
+        + f'<dd class="badge badge--{html.escape(severity_level)}"><span aria-hidden="true">중요도 </span>{html.escape(severity_source)}</dd>'
+        + '<dt class="visually-hidden">분야</dt>'
+        + f'<dd class="badge">{html.escape(domain_label)}</dd>'
+        + '<dt class="visually-hidden">분류</dt>'
+        + f'<dd class="badge">{html.escape(category_label)}</dd>'
+        + '<dt class="visually-hidden">문서 상태</dt>'
+        + f'<dd class="badge badge--review">{html.escape(review_label)}</dd>'
+        + '<dt class="visually-hidden">대상</dt>'
+        + f'<dd><span aria-hidden="true">대상: </span>{html.escape(", ".join(target_labels))}</dd>'
+        + '<dt class="visually-hidden">원문 페이지</dt>'
+        + f'<dd><span aria-hidden="true">원문 페이지: </span>{first_page}-{last_page}</dd>'
+        + "</dl>"
+        + f'<p><a type="application/json" href="{html.escape(dataset_url, quote=True)}">JSON 데이터 보기</a></p>'
         + "</header>"
         + toc
         + _render_blocks(blocks, base_path=base_path)
         + annotation_html
         + '<section class="provenance"><h2>원문 및 출처</h2>'
         + f'<p><a href="{html.escape(pdf_url, quote=True)}">KISA 원문 게시물 보기</a></p>'
-        + f"<p>{html.escape(_text(source_document['title'], location='source.title'))} · {html.escape(_text(source_document['publisher'], location='source.publisher'))}</p>"
+        + f"<p>{html.escape(source_title)} · {html.escape(source_publisher)}</p>"
         + "</section></article>"
         + '<nav class="pager" aria-label="이전 및 다음 항목">'
         + "".join(pager_links)
@@ -701,6 +782,10 @@ def _detail_page(
         description=f"{code} {title} 점검항목",
         body=body,
         base_path=base_path,
+        canonical_url=criterion_url,
+        current_navigation="domains",
+        json_alternate_url=dataset_url,
+        structured_data=structured_data,
     )
 
 
@@ -826,6 +911,8 @@ def build_site(
             description="KISA CCE 2026 점검항목 검색 및 탐색",
             body=root_body,
             base_path=base_path,
+            canonical_url=_site_url("/", base_path=base_path),
+            current_navigation="domains",
         ),
         encoding="utf-8",
     )
@@ -869,6 +956,8 @@ def build_site(
                     description=f"{domain_label} {category_label} 점검항목",
                     body=category_body,
                     base_path=base_path,
+                    canonical_url=category_route,
+                    current_navigation="domains",
                 ),
                 encoding="utf-8",
             )
@@ -885,6 +974,8 @@ def build_site(
                 description=f"{domain_label} 점검항목",
                 body=domain_body,
                 base_path=base_path,
+                canonical_url=_site_url(f"/{domain_identifier}/", base_path=base_path),
+                current_navigation="domains",
             ),
             encoding="utf-8",
         )
@@ -915,20 +1006,35 @@ def build_site(
         )
         generated_paths.append(detail_path)
 
+    search_fallback = (
+        '<section aria-labelledby="search-fallback-heading" data-search-fallback>'
+        '<h2 id="search-fallback-heading">전체 점검항목</h2>'
+        "<p>브라우저 검색 기능을 사용할 수 없어, 전체 점검항목을 표시합니다.</p>"
+        + _criterion_list(manifest_records, base_path=base_path)
+        + "</section>"
+    )
     search_body = (
         '<main id="main-content" class="page-shell page-shell--single"><section class="surface" '
-        'data-search-root data-base-path="'
+        'role="search" aria-labelledby="search-heading" data-search-root data-base-path="'
         + html.escape("/" + base_path.strip("/") if base_path.strip("/") else "", quote=True)
         + '" data-search-index-url="'
         + html.escape(_site_url("/dataset/search-index.json", base_path=base_path), quote=True)
-        + '"><h1>전체 점검항목 검색</h1>'
-        '<label>검색어<input type="search" data-search-query placeholder="코드, 제목, 본문, 설정값"></label>'
-        '<div class="filters"><label>분야<select data-domain-filter><option value="">전체</option></select></label>'
-        '<label>분류<select data-category-filter><option value="">전체</option></select></label>'
-        '<label>중요도<select data-severity-filter><option value="">전체</option><option value="high">상</option><option value="medium">중</option><option value="low">하</option></select></label>'
-        '<label>대상<select data-target-filter><option value="">전체</option></select></label></div>'
-        '<p aria-live="polite" data-search-status>검색 색인을 불러오는 중입니다.</p>'
-        '<ul class="search-results" data-search-results></ul></section></main>'
+        + '"><h1 id="search-heading">전체 점검항목 검색</h1>'
+        '<form id="criterion-search-form" class="search-form" data-search-form action="'
+        + html.escape(_site_url("/search/", base_path=base_path), quote=True)
+        + '"><label><span class="visually-hidden">검색어</span><input name="q" type="search" data-search-query '
+        'aria-controls="search-results" aria-describedby="search-status" '
+        'placeholder="코드, 제목, 본문, 설정값"></label>'
+        '<button class="primary-button" type="submit">검색</button></form>'
+        '<div class="filters"><label>분야<select form="criterion-search-form" name="domain" data-domain-filter><option value="">전체</option></select></label>'
+        '<label>분류<select form="criterion-search-form" name="category" data-category-filter><option value="">전체</option></select></label>'
+        '<label>중요도<select form="criterion-search-form" name="severity" data-severity-filter><option value="">전체</option><option value="high">상</option><option value="medium">중</option><option value="low">하</option></select></label>'
+        '<label>대상<select form="criterion-search-form" name="target" data-target-filter><option value="">전체</option></select></label></div>'
+        '<p id="search-status" role="status" aria-live="polite" aria-atomic="true" '
+        "data-search-status>검색어와 필터를 입력하세요.</p>"
+        '<ul id="search-results" class="search-results" data-search-results></ul>'
+        + search_fallback
+        + "</section></main>"
     )
     search_path = site_root / "search" / "index.html"
     search_path.parent.mkdir()
@@ -938,7 +1044,9 @@ def build_site(
             description="KISA CCE 점검항목 검색",
             body=search_body,
             base_path=base_path,
+            canonical_url=_site_url("/search/", base_path=base_path),
             extra_scripts=("/assets/search.js",),
+            current_navigation="search",
         ),
         encoding="utf-8",
     )
@@ -1033,6 +1141,8 @@ def build_site(
             description="원문 이상 및 검토 대기 항목",
             body=anomaly_body,
             base_path=base_path,
+            canonical_url=_site_url("/anomalies/", base_path=base_path),
+            current_navigation="anomalies",
         ),
         encoding="utf-8",
     )
