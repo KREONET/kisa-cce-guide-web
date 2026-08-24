@@ -132,6 +132,11 @@ fenced code info string을 강제합니다.
 
 프로덕션 Python 의존성은 없습니다. 변환과 검증 도구는 development dependency로 관리합니다.
 
+브라우저 구문 강조에는 self-hosted `@highlightjs/cdn-assets` 11.12.0을 사용합니다. 선택한
+배포 자산과 BSD-3-Clause 라이선스, checksum은
+[`site_assets/vendor/highlight.js/`](site_assets/vendor/highlight.js/)에 보존합니다. 외부 CDN은
+사용하지 않습니다.
+
 ## 설치
 
 ```bash

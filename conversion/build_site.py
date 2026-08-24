@@ -1,4 +1,4 @@
-"""Build the dependency-free static website from normalized JSON."""
+"""Build the self-contained static website from normalized JSON."""
 
 from __future__ import annotations
 
@@ -7,6 +7,7 @@ import json
 import shutil
 from collections import defaultdict
 from collections.abc import Mapping, Sequence
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import cast
 
@@ -14,6 +15,74 @@ import rfc8785
 from markdown_it import MarkdownIt
 
 from conversion.common import JsonValue, as_mapping, as_sequence
+
+_HIGHLIGHT_LANGUAGE_ALIASES = {
+    "asp": "xml",
+    "batch": "dos",
+    "console": "shell",
+    "csh": "bash",
+    "freemarker": "xml",
+    "html": "xml",
+    "sh": "bash",
+    "shell": "bash",
+    "velocity": "xml",
+}
+_HIGHLIGHT_COMMON_LANGUAGES = frozenset(
+    {
+        "bash",
+        "c",
+        "cpp",
+        "csharp",
+        "css",
+        "diff",
+        "go",
+        "graphql",
+        "ini",
+        "java",
+        "javascript",
+        "json",
+        "kotlin",
+        "less",
+        "lua",
+        "makefile",
+        "markdown",
+        "objectivec",
+        "perl",
+        "php",
+        "php-template",
+        "plaintext",
+        "python",
+        "python-repl",
+        "r",
+        "ruby",
+        "rust",
+        "scss",
+        "shell",
+        "sql",
+        "swift",
+        "typescript",
+        "vbnet",
+        "wasm",
+        "xml",
+        "yaml",
+    }
+)
+_HIGHLIGHT_ADDITIONAL_LANGUAGE_SCRIPTS = {
+    language: f"/assets/vendor/highlight.js/languages/{language}.min.js"
+    for language in ("apache", "dos", "http", "nginx", "powershell", "properties")
+}
+_HIGHLIGHT_SUPPORTED_LANGUAGES = _HIGHLIGHT_COMMON_LANGUAGES | frozenset(
+    _HIGHLIGHT_ADDITIONAL_LANGUAGE_SCRIPTS
+)
+
+
+@dataclass(slots=True)
+class _TableOfContentsNode:
+    """Represent one heading and its ordered descendants."""
+
+    block: dict[str, JsonValue]
+    heading_level: int
+    children: list[_TableOfContentsNode] = field(default_factory=list)
 
 
 def _text(value: JsonValue, *, location: str) -> str:
@@ -45,6 +114,22 @@ def _inline_html(value: str, *, parser: MarkdownIt) -> str:
     return parser.renderInline(value)
 
 
+def _highlight_language(block: Mapping[str, JsonValue]) -> str | None:
+    """Return the explicit Highlight.js language for one eligible code block."""
+
+    if block.get("blockType") != "codeBlock":
+        return None
+    content_type = _text(
+        block.get("codeContentType", "literal"),
+        location="block.codeContentType",
+    )
+    language = _text(block.get("codeLanguage", "text"), location="block.codeLanguage")
+    if content_type == "transcription" or language in {"text", "plaintext"}:
+        return None
+    highlight_language = _HIGHLIGHT_LANGUAGE_ALIASES.get(language, language)
+    return highlight_language if highlight_language in _HIGHLIGHT_SUPPORTED_LANGUAGES else None
+
+
 def _html_document(
     *,
     title: str,
@@ -52,6 +137,7 @@ def _html_document(
     body: str,
     base_path: str,
     extra_scripts: Sequence[str] = (),
+    extra_stylesheets: Sequence[str] = (),
     canonical_url: str | None = None,
     current_navigation: str | None = None,
     json_alternate_url: str | None = None,
@@ -66,6 +152,12 @@ def _html_document(
         f'<script src="{html.escape(_site_url(script, base_path=base_path), quote=True)}" defer></script>'
         for script in ["/assets/site.js", *extra_scripts]
     )
+    stylesheet_tags = "\n".join(
+        f'  <link rel="stylesheet" href="{html.escape(_site_url(stylesheet, base_path=base_path), quote=True)}">'
+        for stylesheet in extra_stylesheets
+    )
+    if stylesheet_tags:
+        stylesheet_tags += "\n"
     alternate_link = ""
     if json_alternate_url is not None:
         alternate_link = (
@@ -102,13 +194,17 @@ def _html_document(
   <meta name="description" content="{html.escape(description, quote=True)}">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; object-src 'self'; base-uri 'self'">
   <title>{html.escape(title)}</title>
-{canonical_link}{alternate_link}{structured_data_script}  <link rel="stylesheet" href="{html.escape(_site_url("/assets/styles.css", base_path=base_path), quote=True)}">
+{canonical_link}{alternate_link}{structured_data_script}{stylesheet_tags}  <link rel="stylesheet" href="{html.escape(_site_url("/assets/styles.css", base_path=base_path), quote=True)}">
 </head>
 <body>
   <a class="skip-link" href="#main-content">본문으로 바로가기</a>
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-brand" href="{html.escape(_site_url("/", base_path=base_path), quote=True)}">KISA CCE 가이드 2026</a>
+      <a class="site-brand" href="{html.escape(_site_url("/", base_path=base_path), quote=True)}" aria-label="KISA CCE 가이드 2026 홈">
+        <span class="site-brand__mark" aria-hidden="true"></span>
+        <span class="site-brand__name">KISA CCE</span>
+        <span class="site-brand__edition">GUIDE 2026</span>
+      </a>
       <button class="nav-toggle" type="button" aria-expanded="true" aria-controls="site-navigation" data-navigation-toggle hidden>메뉴</button>
       <nav id="site-navigation" class="site-nav" aria-label="주요 메뉴" data-site-navigation data-open="true">
         <a href="{html.escape(_site_url("/", base_path=base_path), quote=True)}"{navigation_current("domains")}>분야</a>
@@ -118,7 +214,12 @@ def _html_document(
     </div>
   </header>
   {body}
-  <footer class="site-footer">원문을 대체하지 않는 비공식 변환본 · KISA CCE 가이드 2026</footer>
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="site-footer__brand"><span aria-hidden="true"></span>KISA CCE GUIDE</p>
+      <p>원문을 대체하지 않는 비공식 변환본 · KISA CCE 가이드 2026</p>
+    </div>
+  </footer>
   <div class="visually-hidden" role="status" aria-live="polite" aria-atomic="true" data-copy-status></div>
   {script_tags}
 </body>
@@ -192,6 +293,47 @@ def _block_identifier(block: Mapping[str, JsonValue]) -> str:
     """Return one normalized block reference."""
 
     return _text(block["blockReference"], location="block.blockReference")
+
+
+def _render_table_of_contents(heading_blocks: Sequence[dict[str, JsonValue]]) -> str:
+    """Render the document heading outline as valid nested lists."""
+
+    if len(heading_blocks) < 6:
+        return ""
+
+    roots: list[_TableOfContentsNode] = []
+    ancestors: list[_TableOfContentsNode] = []
+    for block in heading_blocks:
+        heading_level = int(cast("int", block["headingLevel"]))
+        node = _TableOfContentsNode(block=block, heading_level=heading_level)
+        while ancestors and heading_level <= ancestors[-1].heading_level:
+            ancestors.pop()
+        if ancestors:
+            ancestors[-1].children.append(node)
+        else:
+            roots.append(node)
+        ancestors.append(node)
+
+    def render_nodes(nodes: Sequence[_TableOfContentsNode], *, root: bool = False) -> str:
+        list_class = "toc__list toc__list--root" if root else "toc__list"
+        items = []
+        for node in nodes:
+            block_identifier = html.escape(_block_identifier(node.block), quote=True)
+            heading_text = html.escape(_text(node.block["content"], location="block.content"))
+            child_list = render_nodes(node.children) if node.children else ""
+            items.append(
+                f'<li class="toc__item" data-toc-heading-level="{node.heading_level}">'
+                f'<a href="#{block_identifier}" data-toc-heading-level="{node.heading_level}">'
+                f"{heading_text}</a>{child_list}</li>"
+            )
+        return f'<ul class="{list_class}">' + "".join(items) + "</ul>"
+
+    return (
+        '<nav class="toc" aria-labelledby="table-of-contents-title">'
+        '<strong class="toc__title" id="table-of-contents-title">목차</strong>'
+        + render_nodes(roots, root=True)
+        + "</nav>"
+    )
 
 
 def _html_attributes(attributes: Mapping[str, str]) -> str:
@@ -323,6 +465,8 @@ def _render_code(block: Mapping[str, JsonValue]) -> str:
         location="block.codeContentType",
     )
     content = _text(block["content"], location="block.content")
+    highlight_language = _highlight_language(block)
+    rendered_language = highlight_language or language
     transcription_class = " code-block--transcription" if content_type == "transcription" else ""
     content_label = {
         "command": "명령",
@@ -335,6 +479,8 @@ def _render_code(block: Mapping[str, JsonValue]) -> str:
         "data-code-content-type": content_type,
         "data-code-language": language,
     }
+    if highlight_language is not None:
+        code_profile_attributes["data-highlight-language"] = highlight_language
     pre_attributes = _block_attributes(block, extra=code_profile_attributes)
     code_attributes = _html_attributes(code_profile_attributes)
     return (
@@ -343,7 +489,7 @@ def _render_code(block: Mapping[str, JsonValue]) -> str:
         f'aria-controls="{html.escape(code_identifier, quote=True)}" '
         f'aria-label="{html.escape(content_label)} 복사">복사</button>'
         f'<pre {pre_attributes} aria-label="{html.escape(content_label, quote=True)} 내용"><code '
-        f'id="{html.escape(code_identifier, quote=True)}" class="language-{html.escape(language, quote=True)}" '
+        f'id="{html.escape(code_identifier, quote=True)}" class="language-{html.escape(rendered_language, quote=True)}" '
         f"{code_attributes}>"
         f"{html.escape(content)}</code></pre></div>"
     )
@@ -598,26 +744,33 @@ def _detail_page(
         for value in target_identifiers
     ]
     blocks = as_sequence(normalized["blocks"], location="normalized.blocks")
+    highlight_languages = sorted(
+        {
+            language
+            for block_value in blocks
+            if isinstance(block_value, dict)
+            and (language := _highlight_language(block_value)) is not None
+        }
+    )
+    highlight_scripts: tuple[str, ...] = ()
+    highlight_stylesheets: tuple[str, ...] = ()
+    if highlight_languages:
+        highlight_scripts = (
+            "/assets/vendor/highlight.js/highlight.min.js",
+            *(
+                _HIGHLIGHT_ADDITIONAL_LANGUAGE_SCRIPTS[language]
+                for language in highlight_languages
+                if language in _HIGHLIGHT_ADDITIONAL_LANGUAGE_SCRIPTS
+            ),
+            "/assets/highlight-init.js",
+        )
+        highlight_stylesheets = ("/assets/vendor/highlight.js/github-dark.min.css",)
     heading_blocks = [
         as_mapping(block, location="normalized.blocks[]")
         for block in blocks
         if isinstance(block, dict) and block.get("blockType") == "heading"
     ]
-    toc = ""
-    if len(heading_blocks) >= 6:
-        links = "".join(
-            '<li><a href="#'
-            + html.escape(_block_identifier(block), quote=True)
-            + '">'
-            + html.escape(_text(block["content"], location="block.content"))
-            + "</a></li>"
-            for block in heading_blocks
-        )
-        toc = (
-            '<nav class="toc" aria-label="문서 목차"><strong>목차</strong><ul>'
-            + links
-            + "</ul></nav>"
-        )
+    toc = _render_table_of_contents(heading_blocks)
     content_model = _text(normalized["contentModel"], location="normalized.contentModel")
     review_label = (
         "자동 전사 · 검토 필요" if content_model == "extractedCriterion" else "구조화 문서"
@@ -782,6 +935,8 @@ def _detail_page(
         description=f"{code} {title} 점검항목",
         body=body,
         base_path=base_path,
+        extra_scripts=highlight_scripts,
+        extra_stylesheets=highlight_stylesheets,
         canonical_url=criterion_url,
         current_navigation="domains",
         json_alternate_url=dataset_url,
@@ -826,7 +981,7 @@ def build_site(
 
     asset_directory = site_root / "assets"
     asset_directory.mkdir()
-    for asset_name in ("styles.css", "site.js", "search.js"):
+    for asset_name in ("styles.css", "site.js", "search.js", "highlight-init.js"):
         source_path = repository / "site_assets" / asset_name
         target_path = asset_directory / asset_name
         shutil.copy2(source_path, target_path)
@@ -845,6 +1000,12 @@ def build_site(
             for path in child_directory.rglob("*")
             if path.is_file()
         )
+    vendor_asset_source = repository / "site_assets" / "vendor"
+    vendor_asset_target = asset_directory / "vendor"
+    shutil.copytree(vendor_asset_source, vendor_asset_target)
+    generated_paths.extend(
+        path for path in sorted(vendor_asset_target.rglob("*")) if path.is_file()
+    )
 
     dataset_root = site_root / "dataset"
     criteria_dataset_root = dataset_root / "criteria"
@@ -895,13 +1056,24 @@ def build_site(
             + "개 점검항목</span></a>"
         )
     root_body = (
-        '<main id="main-content" class="page-shell page-shell--single"><section class="surface hero">'
-        "<h1>KISA CCE 가이드 2026</h1>"
-        "<p>382개 보안 점검항목을 분야별로 탐색하고, 코드·제목·본문·설정값으로 검색할 수 있는 비공식 웹 변환본입니다.</p>"
+        '<main id="main-content" class="page-shell page-shell--single page-shell--home">'
+        '<section class="hero" aria-labelledby="hero-heading">'
+        '<p class="hero__eyebrow">2026 SECURITY CHECKLIST</p>'
+        '<h1 id="hero-heading">KISA CCE 가이드</h1>'
+        '<p class="hero__lede">382개 보안 점검항목을 분야별로 탐색하고, 코드·제목·본문·설정값으로 검색할 수 있는 비공식 웹 변환본입니다.</p>'
         '<form class="search-form" action="'
         + html.escape(_site_url("/search/", base_path=base_path), quote=True)
         + '"><label><span class="visually-hidden">검색어</span><input name="q" type="search" placeholder="U-01, PermitRootLogin, 비밀번호 정책"></label>'
-        '<button class="primary-button" type="submit">검색</button></form>'
+        '<button class="primary-button" type="submit">점검항목 검색</button></form>'
+        '<dl class="hero__stats" aria-label="가이드 현황">'
+        '<div><dt>점검항목</dt><dd>382</dd></div>'
+        '<div><dt>기술 분야</dt><dd>12</dd></div>'
+        '<div><dt>데이터 형식</dt><dd>HTML + JSON</dd></div>'
+        '</dl></section>'
+        '<section class="surface domain-directory" aria-labelledby="domain-directory-heading">'
+        '<div class="section-heading"><div><p class="section-heading__eyebrow">TECHNICAL DOMAINS</p>'
+        '<h2 id="domain-directory-heading">분야별 점검항목</h2></div>'
+        '<p>운영 환경을 선택해 분류와 세부 점검항목을 확인하세요.</p></div>'
         '<div class="card-grid">' + "".join(domain_cards) + "</div></section></main>"
     )
     root_path = site_root / "index.html"

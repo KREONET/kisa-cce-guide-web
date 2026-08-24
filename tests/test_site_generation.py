@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import shutil
 from html.parser import HTMLParser
@@ -12,6 +13,7 @@ from urllib.parse import urlsplit
 import pytest
 
 from conversion.build_content import build
+from conversion.build_site import _render_table_of_contents
 from conversion.common import JsonValue, as_mapping, as_sequence, load_yaml, repository_root
 from conversion.site_validation import validate_site
 
@@ -36,6 +38,10 @@ class PageInspector(HTMLParser):
         self.note_attributes: list[dict[str, str | None]] = []
         self.table_header_scopes: list[str | None] = []
         self.skip_link_present = False
+        self.table_of_contents_list_depth = 0
+        self.maximum_table_of_contents_list_depth = 0
+        self.table_of_contents_link_depths: list[tuple[int, str | None]] = []
+        self._inside_table_of_contents = False
 
     def handle_starttag(
         self,
@@ -46,6 +52,7 @@ class PageInspector(HTMLParser):
 
         self.tags.append(tag)
         attribute_map = dict(attrs)
+        self._track_table_of_contents_start(tag, attribute_map)
         if tag == "html":
             self.html_language = attribute_map.get("lang")
         if tag == "h1":
@@ -73,6 +80,37 @@ class PageInspector(HTMLParser):
             self.note_attributes.append(attribute_map)
         if tag == "th":
             self.table_header_scopes.append(attribute_map.get("scope"))
+
+    def _track_table_of_contents_start(
+        self,
+        tag: str,
+        attribute_map: dict[str, str | None],
+    ) -> None:
+        """Collect nested table-of-contents depth and heading metadata."""
+
+        if tag == "nav" and "toc" in (attribute_map.get("class") or "").split():
+            self._inside_table_of_contents = True
+        if self._inside_table_of_contents and tag == "ul":
+            self.table_of_contents_list_depth += 1
+            self.maximum_table_of_contents_list_depth = max(
+                self.maximum_table_of_contents_list_depth,
+                self.table_of_contents_list_depth,
+            )
+        if self._inside_table_of_contents and tag == "a":
+            self.table_of_contents_link_depths.append(
+                (
+                    self.table_of_contents_list_depth,
+                    attribute_map.get("data-toc-heading-level"),
+                )
+            )
+
+    def handle_endtag(self, tag: str) -> None:
+        """Track nested table-of-contents list boundaries."""
+
+        if self._inside_table_of_contents and tag == "ul":
+            self.table_of_contents_list_depth -= 1
+        if self._inside_table_of_contents and tag == "nav":
+            self._inside_table_of_contents = False
 
 
 def _inspect(path: Path) -> PageInspector:
@@ -132,6 +170,46 @@ def _source_attribute_values(block: dict[str, JsonValue]) -> tuple[str, str, str
     )
 
 
+def _assert_highlight_contract(
+    *,
+    block: dict[str, JsonValue],
+    pre_attributes: dict[str, str | None],
+    code_attributes: dict[str, str | None],
+) -> None:
+    """Assert that syntax highlighting remains an optional explicit enhancement."""
+
+    if block["codeContentType"] == "transcription" or block["codeLanguage"] in {
+        "text",
+        "plaintext",
+    }:
+        assert "data-highlight-language" not in pre_attributes
+        assert "data-highlight-language" not in code_attributes
+    else:
+        assert pre_attributes["data-highlight-language"]
+        assert code_attributes["data-highlight-language"]
+
+
+def _assert_code_block_contract(
+    *,
+    inspector: PageInspector,
+    block: dict[str, JsonValue],
+    pre_attributes: dict[str, str | None],
+) -> None:
+    """Assert code metadata and optional highlighting attributes."""
+
+    assert pre_attributes["data-code-content-type"] == block["codeContentType"]
+    assert pre_attributes["data-code-language"] == block["codeLanguage"]
+    code_tag, code_attributes = inspector.elements_by_identifier[f"code-{block['blockReference']}"]
+    assert code_tag == "code"
+    assert code_attributes["data-code-content-type"] == block["codeContentType"]
+    assert code_attributes["data-code-language"] == block["codeLanguage"]
+    _assert_highlight_contract(
+        block=block,
+        pre_attributes=pre_attributes,
+        code_attributes=code_attributes,
+    )
+
+
 def _assert_block_contract(
     inspector: PageInspector,
     block: dict[str, JsonValue],
@@ -185,12 +263,11 @@ def _assert_block_contract(
         assert attributes["data-list-type"] == block["listType"]
         assert attributes["data-list-depth"] == str(block["listDepth"])
     if block_type == "codeBlock":
-        assert attributes["data-code-content-type"] == block["codeContentType"]
-        assert attributes["data-code-language"] == block["codeLanguage"]
-        code_tag, code_attributes = inspector.elements_by_identifier[f"code-{block_reference}"]
-        assert code_tag == "code"
-        assert code_attributes["data-code-content-type"] == block["codeContentType"]
-        assert code_attributes["data-code-language"] == block["codeLanguage"]
+        _assert_code_block_contract(
+            inspector=inspector,
+            block=block,
+            pre_attributes=attributes,
+        )
     if block_type in {"table", "image"}:
         caption_tag, _ = inspector.elements_by_identifier[f"caption-{block_reference}"]
         assert caption_tag == ("caption" if block_type == "table" else "figcaption")
@@ -242,6 +319,52 @@ def test_all_html_pages_have_required_landmarks(generated_site: Path) -> None:
         assert {"header", "nav", "main", "footer"} <= set(inspector.tags), html_path
 
 
+def test_table_of_contents_preserves_heading_hierarchy(generated_site: Path) -> None:
+    """TOC links must follow the same nested outline as document headings."""
+
+    for relative_path, expected_depth in (
+        (Path("web-application/ci/index.html"), 2),
+        (Path("unix/u-01/index.html"), 3),
+    ):
+        inspector = _inspect(generated_site / relative_path)
+        assert inspector.maximum_table_of_contents_list_depth == expected_depth
+        assert inspector.table_of_contents_link_depths
+        assert all(
+            heading_level is not None
+            for _, heading_level in inspector.table_of_contents_link_depths
+        )
+        assert all(
+            list_depth == int(heading_level) - 1
+            for list_depth, heading_level in inspector.table_of_contents_link_depths
+            if heading_level is not None
+        )
+
+
+def test_table_of_contents_collapses_skipped_heading_levels() -> None:
+    """Skipped levels must nest below the nearest lower heading without placeholders."""
+
+    heading_levels = [2, 4, 5, 3, 2, 3]
+    heading_blocks: list[dict[str, JsonValue]] = [
+        {
+            "blockReference": f"heading-{index}",
+            "content": f"Heading {index}",
+            "headingLevel": heading_level,
+        }
+        for index, heading_level in enumerate(heading_levels, start=1)
+    ]
+    inspector = PageInspector()
+    inspector.feed(_render_table_of_contents(heading_blocks))
+
+    assert inspector.table_of_contents_link_depths == [
+        (1, "2"),
+        (2, "4"),
+        (3, "5"),
+        (2, "3"),
+        (1, "2"),
+        (2, "3"),
+    ]
+
+
 def test_github_pages_marker_is_generated(generated_site: Path) -> None:
     """GitHub Pages must bypass Jekyll processing for generated static assets."""
 
@@ -273,6 +396,95 @@ def test_search_page_keeps_a_script_independent_fallback(generated_site: Path) -
     assert "data-search-fallback" in search_html
     assert "<noscript>" not in search_html
     assert search_html.count('<li><a href="/') >= EXPECTED_CRITERION_COUNT
+
+
+def test_highlight_assets_are_self_hosted_and_checksum_pinned(generated_site: Path) -> None:
+    """The approved Highlight.js distribution must be copied without alteration."""
+
+    expected_checksums = {
+        "highlight.min.js": "8ab71eb09c51f501e5e25157d9cff100e46cc29bcbfc744d0b746d451fca7f53",
+        "github-dark.min.css": "9f208d022102b1d0c7aebfecd8e42ca7997d5de636649d2b31ea63093d809019",
+        "LICENSE": "6c081431591d9df696c82dc598fe1423765b8a299b200ed00b281afd0f64c490",
+        "languages/apache.min.js": (
+            "9dc53948535832b25d4eb23d40fef70510317398fdaf15f8a3fcc3ae7e0c490c"
+        ),
+        "languages/dos.min.js": "e184a6f9cead550b7b39b6114d17cafd08904557317622d7ea488aed01cf31ee",
+        "languages/http.min.js": "b09b4afc1ce71f37f4434baccae5800e0812c6eb1db2cb8978fe9e4d668f45a6",
+        "languages/nginx.min.js": (
+            "8c53cc63ce0cf4ec0ad80b77273de23dec6974ab069d46d14d5c75febe880e1f"
+        ),
+        "languages/powershell.min.js": (
+            "fc298b3e0db362e531e6d58988b7a78f83da19df6b5d74db75bc961b2bfbfd3d"
+        ),
+        "languages/properties.min.js": (
+            "8a987022cc566fa5bfcd79058ec4ba010920d576fff809b92317295827402590"
+        ),
+    }
+    vendor_directory = generated_site / "assets" / "vendor" / "highlight.js"
+    for relative_path, expected_checksum in expected_checksums.items():
+        assert hashlib.sha256((vendor_directory / relative_path).read_bytes()).hexdigest() == (
+            expected_checksum
+        )
+
+
+def test_highlighting_is_explicit_and_progressively_enhanced(generated_site: Path) -> None:
+    """Only eligible explicit languages may load the self-hosted highlighter."""
+
+    criterion_html = (generated_site / "web-application" / "ci" / "index.html").read_text(
+        encoding="utf-8"
+    )
+    core_script = "/assets/vendor/highlight.js/highlight.min.js"
+    http_script = "/assets/vendor/highlight.js/languages/http.min.js"
+    initializer_script = "/assets/highlight-init.js"
+    assert core_script in criterion_html
+    assert http_script in criterion_html
+    assert initializer_script in criterion_html
+    assert criterion_html.index(core_script) < criterion_html.index(http_script)
+    assert criterion_html.index(http_script) < criterion_html.index(initializer_script)
+    assert "/assets/vendor/highlight.js/github-dark.min.css" in criterion_html
+    assert 'data-code-language="html" data-highlight-language="xml"' in criterion_html
+    assert 'data-code-language="velocity" data-highlight-language="xml"' in criterion_html
+
+    plaintext_html = (generated_site / "unix" / "u-01" / "index.html").read_text(encoding="utf-8")
+    assert core_script not in plaintext_html
+    assert initializer_script not in plaintext_html
+    assert "data-highlight-language" not in plaintext_html
+
+
+def test_every_code_block_follows_the_highlighting_policy(generated_site: Path) -> None:
+    """Every generated code block must opt in or remain untouched by policy."""
+
+    for dataset_path in sorted((generated_site / "dataset" / "criteria").rglob("*.json")):
+        normalized = json.loads(dataset_path.read_text(encoding="utf-8"))
+        code_blocks = [
+            as_mapping(value, location="normalized.blocks[]")
+            for value in as_sequence(normalized["blocks"], location="normalized.blocks")
+            if isinstance(value, dict) and value.get("blockType") == "codeBlock"
+        ]
+        if not code_blocks:
+            continue
+        domain_identifier = dataset_path.parent.name
+        detail_path = generated_site / domain_identifier / dataset_path.stem / "index.html"
+        detail_html = detail_path.read_text(encoding="utf-8")
+        inspector = _inspect(detail_path)
+        highlighted_block_count = 0
+        for block in code_blocks:
+            block_reference = block["blockReference"]
+            assert isinstance(block_reference, str)
+            _, pre_attributes = inspector.elements_by_identifier[block_reference]
+            _, code_attributes = inspector.elements_by_identifier[f"code-{block_reference}"]
+            _assert_highlight_contract(
+                block=block,
+                pre_attributes=pre_attributes,
+                code_attributes=code_attributes,
+            )
+            highlighted_block_count += int("data-highlight-language" in code_attributes)
+        if highlighted_block_count:
+            assert "/assets/vendor/highlight.js/highlight.min.js" in detail_html
+            assert "/assets/highlight-init.js" in detail_html
+        else:
+            assert "/assets/vendor/highlight.js/highlight.min.js" not in detail_html
+            assert "/assets/highlight-init.js" not in detail_html
 
 
 def test_static_validation_rejects_page_contract_regressions(
@@ -503,7 +715,7 @@ def test_subpath_build_prefixes_links() -> None:
 
 @pytest.mark.parametrize(
     ("domain_identifier", "slug"),
-    [("unix", "u-02"), ("windows", "w-01")],
+    [("unix", "u-02"), ("windows", "w-01"), ("web-application", "ci")],
 )
 def test_typed_blocks_expose_semantic_elements_and_machine_attributes(
     generated_site: Path,
