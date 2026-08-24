@@ -74,6 +74,7 @@ _HIGHLIGHT_ADDITIONAL_LANGUAGE_SCRIPTS = {
 _HIGHLIGHT_SUPPORTED_LANGUAGES = _HIGHLIGHT_COMMON_LANGUAGES | frozenset(
     _HIGHLIGHT_ADDITIONAL_LANGUAGE_SCRIPTS
 )
+_TABLE_OF_CONTENTS_MINIMUM_HEADING_COUNT = 6
 
 
 @dataclass(slots=True)
@@ -298,7 +299,7 @@ def _block_identifier(block: Mapping[str, JsonValue]) -> str:
 def _render_table_of_contents(heading_blocks: Sequence[dict[str, JsonValue]]) -> str:
     """Render the document heading outline as valid nested lists."""
 
-    if len(heading_blocks) < 6:
+    if len(heading_blocks) < _TABLE_OF_CONTENTS_MINIMUM_HEADING_COUNT:
         return ""
 
     roots: list[_TableOfContentsNode] = []
@@ -314,19 +315,26 @@ def _render_table_of_contents(heading_blocks: Sequence[dict[str, JsonValue]]) ->
             roots.append(node)
         ancestors.append(node)
 
-    def render_nodes(nodes: Sequence[_TableOfContentsNode], *, root: bool = False) -> str:
+    def render_nodes(
+        nodes: Sequence[_TableOfContentsNode],
+        *,
+        depth: int = 1,
+        root: bool = False,
+    ) -> str:
         list_class = "toc__list toc__list--root" if root else "toc__list"
         items = []
         for node in nodes:
             block_identifier = html.escape(_block_identifier(node.block), quote=True)
             heading_text = html.escape(_text(node.block["content"], location="block.content"))
-            child_list = render_nodes(node.children) if node.children else ""
+            child_list = render_nodes(node.children, depth=depth + 1) if node.children else ""
             items.append(
-                f'<li class="toc__item" data-toc-heading-level="{node.heading_level}">'
-                f'<a href="#{block_identifier}" data-toc-heading-level="{node.heading_level}">'
+                f'<li class="toc__item" data-toc-depth="{depth}" '
+                f'data-toc-heading-level="{node.heading_level}">'
+                f'<a href="#{block_identifier}" data-toc-depth="{depth}" '
+                f'data-toc-heading-level="{node.heading_level}">'
                 f"{heading_text}</a>{child_list}</li>"
             )
-        return f'<ul class="{list_class}">' + "".join(items) + "</ul>"
+        return f'<ul class="{list_class}" data-toc-depth="{depth}">' + "".join(items) + "</ul>"
 
     return (
         '<nav class="toc" aria-labelledby="table-of-contents-title">'

@@ -13,7 +13,10 @@ from urllib.parse import urlsplit
 import pytest
 
 from conversion.build_content import build
-from conversion.build_site import _render_table_of_contents
+from conversion.build_site import (
+    _TABLE_OF_CONTENTS_MINIMUM_HEADING_COUNT,
+    _render_table_of_contents,
+)
 from conversion.common import JsonValue, as_mapping, as_sequence, load_yaml, repository_root
 from conversion.site_validation import validate_site
 
@@ -40,7 +43,7 @@ class PageInspector(HTMLParser):
         self.skip_link_present = False
         self.table_of_contents_list_depth = 0
         self.maximum_table_of_contents_list_depth = 0
-        self.table_of_contents_link_depths: list[tuple[int, str | None]] = []
+        self.table_of_contents_link_depths: list[tuple[int, str | None, str | None]] = []
         self._inside_table_of_contents = False
 
     def handle_starttag(
@@ -101,6 +104,7 @@ class PageInspector(HTMLParser):
                 (
                     self.table_of_contents_list_depth,
                     attribute_map.get("data-toc-heading-level"),
+                    attribute_map.get("data-toc-depth"),
                 )
             )
 
@@ -320,24 +324,56 @@ def test_all_html_pages_have_required_landmarks(generated_site: Path) -> None:
 
 
 def test_table_of_contents_preserves_heading_hierarchy(generated_site: Path) -> None:
-    """TOC links must follow the same nested outline as document headings."""
+    """Every criterion TOC must reproduce its complete normalized heading tree."""
 
-    for relative_path, expected_depth in (
-        (Path("web-application/ci/index.html"), 2),
-        (Path("unix/u-01/index.html"), 3),
-    ):
-        inspector = _inspect(generated_site / relative_path)
-        assert inspector.maximum_table_of_contents_list_depth == expected_depth
-        assert inspector.table_of_contents_link_depths
-        assert all(
-            heading_level is not None
-            for _, heading_level in inspector.table_of_contents_link_depths
+    normalized_root = generated_site.parent / "normalized"
+    table_of_contents_page_count = 0
+    for normalized_path in sorted(normalized_root.rglob("*.json")):
+        normalized = as_mapping(
+            json.loads(normalized_path.read_text(encoding="utf-8")),
+            location=str(normalized_path),
         )
-        assert all(
-            list_depth == int(heading_level) - 1
-            for list_depth, heading_level in inspector.table_of_contents_link_depths
-            if heading_level is not None
+        heading_blocks = [
+            as_mapping(block, location=f"{normalized_path}.blocks[]")
+            for block in as_sequence(normalized["blocks"], location=f"{normalized_path}.blocks")
+            if isinstance(block, dict) and block.get("blockType") == "heading"
+        ]
+        classification = as_mapping(
+            normalized["classification"],
+            location=f"{normalized_path}.classification",
         )
+        criterion = as_mapping(
+            normalized["criterion"],
+            location=f"{normalized_path}.criterion",
+        )
+        domain_identifier = classification["domainIdentifier"]
+        slug = criterion["slug"]
+        assert isinstance(domain_identifier, str)
+        assert isinstance(slug, str)
+        inspector = _inspect(generated_site / domain_identifier / slug / "index.html")
+
+        if len(heading_blocks) < _TABLE_OF_CONTENTS_MINIMUM_HEADING_COUNT:
+            assert inspector.table_of_contents_link_depths == []
+            continue
+
+        table_of_contents_page_count += 1
+        ancestor_levels: list[int] = []
+        expected_links: list[tuple[int, str, str]] = []
+        for block in heading_blocks:
+            heading_level = block["headingLevel"]
+            assert isinstance(heading_level, int)
+            while ancestor_levels and heading_level <= ancestor_levels[-1]:
+                ancestor_levels.pop()
+            ancestor_levels.append(heading_level)
+            depth = len(ancestor_levels)
+            expected_links.append((depth, str(heading_level), str(depth)))
+
+        assert inspector.table_of_contents_link_depths == expected_links, normalized_path
+        assert inspector.maximum_table_of_contents_list_depth == max(
+            depth for depth, _, _ in expected_links
+        )
+
+    assert table_of_contents_page_count == EXPECTED_CRITERION_COUNT
 
 
 def test_table_of_contents_collapses_skipped_heading_levels() -> None:
@@ -356,12 +392,12 @@ def test_table_of_contents_collapses_skipped_heading_levels() -> None:
     inspector.feed(_render_table_of_contents(heading_blocks))
 
     assert inspector.table_of_contents_link_depths == [
-        (1, "2"),
-        (2, "4"),
-        (3, "5"),
-        (2, "3"),
-        (1, "2"),
-        (2, "3"),
+        (1, "2", "1"),
+        (2, "4", "2"),
+        (3, "5", "3"),
+        (2, "3", "2"),
+        (1, "2", "1"),
+        (2, "3", "2"),
     ]
 
 
