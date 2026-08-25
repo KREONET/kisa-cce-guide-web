@@ -115,6 +115,24 @@ def _inline_html(value: str, *, parser: MarkdownIt) -> str:
     return parser.renderInline(value)
 
 
+def _render_skill_document(value: str) -> str:
+    """Render a skill body as nested document HTML without exposing source markup."""
+
+    frontmatter_end = value.find("\n---", 3)
+    if not value.startswith("---\n") or frontmatter_end < 0:
+        msg = "skill document must contain YAML frontmatter"
+        raise ValueError(msg)
+    body = value[frontmatter_end + len("\n---") :].lstrip()
+    parser = MarkdownIt("commonmark", {"html": False})
+    tokens = parser.parse(body)
+    for token in tokens:
+        if token.type not in {"heading_open", "heading_close"}:
+            continue
+        level = int(token.tag[1:])
+        token.tag = f"h{min(level + 1, 6)}"
+    return parser.renderer.render(tokens, parser.options, {})
+
+
 def _highlight_language(block: Mapping[str, JsonValue]) -> str | None:
     """Return the explicit Highlight.js language for one eligible code block."""
 
@@ -992,6 +1010,13 @@ def build_site(
     )
     generated_paths: list[Path] = [nojekyll_path]
 
+    skill_source_path = repository / "skills" / "kisa-cce-guide-explorer" / "SKILL.md"
+    skill_document = skill_source_path.read_text(encoding="utf-8")
+    rendered_skill_document = _render_skill_document(skill_document)
+    public_skill_path = site_root / "SKILL.md"
+    public_skill_path.write_text(skill_document, encoding="utf-8")
+    generated_paths.append(public_skill_path)
+
     asset_directory = site_root / "assets"
     asset_directory.mkdir()
     for asset_name in (
@@ -1074,6 +1099,13 @@ def build_site(
             + str(count)
             + "개 점검항목</span></a>"
         )
+    skill_url = _site_url("/SKILL.md", base_path=base_path)
+    skill_page_url = _site_url("/skill/", base_path=base_path)
+    skill_usage_prompt = (
+        "이 사이트의 SKILL.md 지침을 따라, 빌드된 KISA CCE 가이드 웹페이지만 탐색하고 "
+        "[대상 환경과 보안 질문]에 관련된 점검항목을 찾아 "
+        "판단 기준, 조치 방법, 적용 대상과 근거 링크를 정리해줘."
+    )
     root_body = (
         '<main id="main-content" class="page-shell page-shell--single page-shell--home">'
         '<section class="hero" aria-labelledby="hero-heading">'
@@ -1093,7 +1125,27 @@ def build_site(
         '<div class="section-heading"><div><p class="section-heading__eyebrow">TECHNICAL DOMAINS</p>'
         '<h2 id="domain-directory-heading">분야별 점검항목</h2></div>'
         '<p>운영 환경을 선택해 분류와 세부 점검항목을 확인하세요.</p></div>'
-        '<div class="card-grid">' + "".join(domain_cards) + "</div></section></main>"
+        '<div class="card-grid">' + "".join(domain_cards) + "</div></section>"
+        '<section class="surface llm-guide" aria-labelledby="llm-guide-heading">'
+        '<div class="section-heading"><div><p class="section-heading__eyebrow">LLM ACCESS</p>'
+        '<h2 id="llm-guide-heading">LLM으로 가이드 사용하기</h2></div>'
+        '<p>빌드된 검색·분야·상세 페이지를 탐색하고, 화면에 보이는 내용으로 답합니다.</p></div>'
+        '<ol class="llm-guide__steps">'
+        '<li><strong>지침 제공</strong><span>LLM에 이 사이트와 <code>SKILL.md</code> 주소를 함께 전달합니다.</span></li>'
+        '<li><strong>자연어 질문</strong><span>대상 환경, 점검 목적, 필요한 결과를 문장으로 요청합니다.</span></li>'
+        '<li><strong>근거 확인</strong><span>선택된 항목의 코드, 판단 기준, 조치 방법과 링크를 확인합니다.</span></li>'
+        '</ol>'
+        '<div class="llm-guide__actions"><a class="primary-button" href="'
+        + html.escape(skill_page_url, quote=True)
+        + '">본문 보기</a></div>'
+        '<section class="llm-guide__prompt" aria-labelledby="llm-prompt-heading">'
+        '<h3 id="llm-prompt-heading">요청 예시</h3>'
+        '<div class="code-block"><button class="copy-button" type="button" '
+        'data-copy-button="llm-usage-prompt" hidden>복사</button><pre><code id="llm-usage-prompt">'
+        + html.escape(skill_usage_prompt)
+        + "</code></pre></div></section>"
+        "</section>"
+        "</main>"
     )
     root_path = site_root / "index.html"
     root_path.write_text(
@@ -1114,6 +1166,42 @@ def build_site(
         encoding="utf-8",
     )
     generated_paths.append(root_path)
+
+    skill_body = (
+        '<main id="main-content" class="page-shell page-shell--single skill-page">'
+        '<nav class="breadcrumb" aria-label="분류 경로"><ol><li><a href="'
+        + html.escape(_site_url("/", base_path=base_path), quote=True)
+        + '">홈</a></li><li>LLM 사용 지침</li></ol></nav>'
+        '<article class="surface skill-document" aria-labelledby="skill-page-heading">'
+        '<header class="skill-page__header"><p class="section-heading__eyebrow">INSTRUCTIONS</p>'
+        '<h1 id="skill-page-heading">LLM 사용 지침</h1>'
+        '<p>빌드된 웹페이지를 탐색하고, 보이는 KISA CCE 문서 내용으로 답하기 위한 지침입니다.</p>'
+        '<div class="llm-guide__actions"><a class="primary-button" href="'
+        + html.escape(skill_url, quote=True)
+        + '" download>SKILL.md 다운로드</a></div></header>'
+        '<div class="skill-document__body" data-skill-document>'
+        + rendered_skill_document
+        + "</div></article></main>"
+    )
+    skill_page_path = site_root / "skill" / "index.html"
+    skill_page_path.parent.mkdir(parents=True)
+    skill_page_path.write_text(
+        _html_document(
+            title="LLM 사용 지침 · KISA CCE 가이드 2026",
+            description="KISA CCE 가이드 웹페이지를 탐색하는 LLM용 SKILL.md 사용 지침",
+            body=skill_body,
+            base_path=base_path,
+            canonical_url=skill_page_url,
+            domain_navigation=_render_header_domain_navigation(
+                domains=domains,
+                current_domain=None,
+                current=False,
+                base_path=base_path,
+            ),
+        ),
+        encoding="utf-8",
+    )
+    generated_paths.append(skill_page_path)
 
     for domain_identifier in records_by_domain:
         domain = domains[domain_identifier]

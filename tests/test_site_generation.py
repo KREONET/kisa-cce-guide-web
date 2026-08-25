@@ -21,7 +21,7 @@ from conversion.common import JsonValue, as_mapping, as_sequence, load_yaml, rep
 from conversion.site_validation import validate_site
 
 EXPECTED_CRITERION_COUNT = 382
-EXPECTED_HTML_PAGE_COUNT = 468
+EXPECTED_HTML_PAGE_COUNT = 469
 
 
 class PageInspector(HTMLParser):
@@ -337,6 +337,68 @@ def test_shell_keeps_footer_at_viewport_bottom(generated_site: Path) -> None:
     assert "min-height: 100dvh;" in body_styles
     assert "margin-top: auto;" in footer_styles
     assert "body { display: block !important; min-height: 0 !important;" in print_styles
+
+
+def test_home_links_llm_usage_to_separate_skill_page(generated_site: Path) -> None:
+    """The home page must place LLM usage after domains and link its full instructions."""
+
+    repository = repository_root()
+    skill_source = (
+        repository / "skills" / "kisa-cce-guide-explorer" / "SKILL.md"
+    ).read_text(encoding="utf-8")
+    public_skill = (generated_site / "SKILL.md").read_text(encoding="utf-8")
+    home_html = (generated_site / "index.html").read_text(encoding="utf-8")
+    skill_html = (generated_site / "skill" / "index.html").read_text(encoding="utf-8")
+
+    assert public_skill == skill_source
+    assert '<section class="surface llm-guide"' in home_html
+    assert '<ol class="llm-guide__steps">' in home_html
+    assert 'href="/skill/">본문 보기</a>' in home_html
+    assert 'href="/SKILL.md" download' not in home_html
+    assert "파일 다운로드" not in home_html
+    assert 'data-copy-button="llm-usage-prompt"' in home_html
+    assert "INSTRUCTIONS" not in home_html
+    assert "data-skill-document" not in home_html
+    assert home_html.index('class="hero"') < home_html.index(
+        'class="surface domain-directory"'
+    )
+    assert home_html.index('class="surface domain-directory"') < home_html.index(
+        'class="surface llm-guide"'
+    )
+
+    assert '<main id="main-content" class="page-shell page-shell--single skill-page">' in skill_html
+    assert '<h1 id="skill-page-heading">LLM 사용 지침</h1>' in skill_html
+    assert 'href="/SKILL.md" download>SKILL.md 다운로드</a>' in skill_html
+    assert '<div class="skill-document__body" data-skill-document>' in skill_html
+    assert "<h2>KISA CCE Guide Explorer</h2>" in skill_html
+    assert "<h3>When to Use</h3>" in skill_html
+    assert "<h3>HTTP Usage</h3>" in skill_html
+    assert "<h3>Page Types</h3>" in skill_html
+    assert "<h3>Troubleshooting</h3>" in skill_html
+    assert "description: Finds and reads" not in skill_html
+    assert "dataset/search-index.json" not in skill_html
+
+
+def test_llm_usage_and_skill_page_are_responsive(generated_site: Path) -> None:
+    """The LLM usage chapter and separate skill article must fit narrow screens."""
+
+    stylesheet = (generated_site / "assets" / "styles.css").read_text(encoding="utf-8")
+    llm_styles = stylesheet.partition(".llm-guide {")[2].partition(
+        ".domain-directory {"
+    )[0]
+    compact_styles = stylesheet.partition("@media (max-width: 768px) {")[2].partition(
+        "@media (max-width: 480px) {"
+    )[0]
+
+    assert "grid-template-columns: repeat(3, minmax(0, 1fr));" in llm_styles
+    assert "max-width: 880px;" in llm_styles
+    assert "overflow: auto;" in llm_styles
+    assert "white-space: pre-wrap;" in llm_styles
+    assert "overflow-wrap: anywhere;" in llm_styles
+    assert "white-space: inherit;" in llm_styles
+    assert "overflow-wrap: inherit;" in llm_styles
+    assert ".llm-guide__steps { grid-template-columns: 1fr;" in compact_styles
+    assert ".skill-document__body { margin-top: var(--space-6);" in compact_styles
 
 
 def test_source_anomaly_pages_and_ui_are_not_published(generated_site: Path) -> None:

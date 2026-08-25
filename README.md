@@ -36,7 +36,7 @@
 | Review record | 1,206 |
 | 정규화 JSON | 382 |
 | 검색 색인 record | 382 |
-| 생성 HTML 페이지 | 468 |
+| 생성 HTML 페이지 | 469 |
 | 전역 원문 이상 annotation | 32 |
 | 항목별 원문 이상 annotation | 65 |
 | 사람 검토 완료 record | 0 |
@@ -426,7 +426,7 @@ uv run python -m conversion.serve_site --base-path /kisa-cce-guide-web
 - 검색 색인과 taxonomy JSON
 - 반응형 및 인쇄용 CSS
 
-생성된 사이트는 468개 HTML 페이지를 포함합니다. 모든 HTML 페이지의 언어, 단일 H1, landmark, skip link, 고유 anchor, 내부 링크, 이미지, 표, 검색 anchor는 정적 검사 대상입니다.
+생성된 사이트는 469개 HTML 페이지를 포함합니다. 모든 HTML 페이지의 언어, 단일 H1, landmark, skip link, 고유 anchor, 내부 링크, 이미지, 표, 검색 anchor는 정적 검사 대상입니다.
 
 라이선스 승인 전에는 원본 PDF를 사이트 산출물에 복사하지 않습니다.
 
@@ -459,7 +459,7 @@ git diff --check
 - Markdown image와 provenance asset의 1:1 대응
 - Asset 경로, SHA-256, PNG profile, pixel dimensions, crop 검증
 - 382개 route와 JSON dataset 생성
-- 468개 HTML 구조와 내부 링크 검사
+- 469개 HTML 구조와 내부 링크 검사
 - 하위 경로 URL 생성
 - 정규화 JSON과 정적 사이트 결정성
 - 검색 색인의 코드와 기술 literal
