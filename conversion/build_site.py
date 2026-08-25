@@ -210,7 +210,6 @@ def _html_document(
       <nav id="site-navigation" class="site-nav" aria-label="주요 메뉴" data-site-navigation data-open="true">
         <a href="{html.escape(_site_url("/", base_path=base_path), quote=True)}"{navigation_current("domains")}>분야</a>
         <a href="{html.escape(_site_url("/search/", base_path=base_path), quote=True)}"{navigation_current("search")}>검색</a>
-        <a href="{html.escape(_site_url("/anomalies/", base_path=base_path), quote=True)}"{navigation_current("anomalies")}>원문 이상</a>
       </nav>
     </div>
   </header>
@@ -802,34 +801,6 @@ def _detail_page(
         f'data-content-model="{html.escape(content_model, quote=True)}" '
         f'data-source-document="{html.escape(_text(provenance["sourceDocumentIdentifier"], location="provenance.sourceDocumentIdentifier"), quote=True)}"'
     )
-    annotations = as_sequence(normalized["annotations"], location="normalized.annotations")
-    annotation_html = ""
-    if annotations:
-        entries = []
-        for annotation_value in annotations:
-            annotation = as_mapping(annotation_value, location="normalized.annotations[]")
-            target = _text(annotation["targetReference"], location="annotation.targetReference")
-            target_link = (
-                f'<a href="#{html.escape(target, quote=True)}">대상 블록</a>'
-                if annotation.get("targetType") == "astNode"
-                else "metadata"
-            )
-            entries.append(
-                '<div class="annotation"><strong>'
-                + html.escape(
-                    _text(annotation["annotationType"], location="annotation.annotationType")
-                )
-                + "</strong><p>"
-                + html.escape(_text(annotation["explanation"], location="annotation.explanation"))
-                + "</p><p>"
-                + target_link
-                + "</p></div>"
-            )
-        annotation_html = (
-            '<section class="annotations"><h2>원문 이상 및 확인 필요</h2>'
-            + "".join(entries)
-            + "</section>"
-        )
     pager_links = []
     if previous_record is not None:
         pager_links.append(
@@ -929,7 +900,6 @@ def _detail_page(
         + "</header>"
         + toc
         + _render_blocks(blocks, base_path=base_path)
-        + annotation_html
         + '<section class="provenance"><h2>원문 및 출처</h2>'
         + f'<p><a href="{html.escape(pdf_url, quote=True)}">KISA 원문 게시물 보기</a></p>'
         + f"<p>{html.escape(source_title)} · {html.escape(source_publisher)}</p>"
@@ -959,7 +929,6 @@ def build_site(
     manifest: dict[str, JsonValue],
     taxonomy: dict[str, JsonValue],
     source_registry: dict[str, JsonValue],
-    source_annotations: dict[str, JsonValue],
     normalized_documents: Sequence[dict[str, JsonValue]],
     search_index: dict[str, JsonValue],
     base_path: str = "",
@@ -1231,102 +1200,6 @@ def build_site(
         encoding="utf-8",
     )
     generated_paths.append(search_path)
-
-    routes_by_code = {
-        _text(record["code"], location="manifest.code"): _text(
-            record["route"],
-            location="manifest.route",
-        )
-        for record in manifest_records
-    }
-    anomaly_entries: list[str] = []
-    anomaly_keys: set[tuple[str, str, str]] = set()
-    global_annotation_values = as_sequence(
-        source_annotations["annotations"],
-        location="sourceAnnotations.annotations",
-    )
-    for annotation_value in global_annotation_values:
-        annotation = as_mapping(
-            annotation_value,
-            location="sourceAnnotations.annotations[]",
-        )
-        source_text = _text(annotation["sourceText"], location="annotation.sourceText")
-        explanation = _text(annotation["explanation"], location="annotation.explanation")
-        target_reference = _text(
-            annotation["targetReference"],
-            location="annotation.targetReference",
-        )
-        anomaly_keys.add((source_text, explanation, target_reference))
-        route = routes_by_code.get(target_reference)
-        target_html = (
-            f'<a href="{html.escape(_site_url(route, base_path=base_path), quote=True)}"><strong>{html.escape(target_reference)}</strong></a>'
-            if route is not None
-            else f"<strong>{html.escape(target_reference)}</strong>"
-        )
-        anomaly_entries.append(
-            '<li class="anomaly-record">'
-            + target_html
-            + f"<p>원문: {html.escape(source_text)}</p>"
-            + f"<p>{html.escape(explanation)}</p>"
-            + f"<p>PDF 페이지 {int(cast('int', annotation['physicalPage']))} · "
-            + html.escape(_text(annotation["disposition"], location="annotation.disposition"))
-            + " · "
-            + html.escape(_text(annotation["reviewStatus"], location="annotation.reviewStatus"))
-            + "</p></li>"
-        )
-    for normalized in normalized_documents:
-        criterion = as_mapping(normalized["criterion"], location="normalized.criterion")
-        for annotation_value in as_sequence(
-            normalized["annotations"],
-            location="normalized.annotations",
-        ):
-            annotation = as_mapping(annotation_value, location="normalized.annotations[]")
-            source_text = _text(annotation["sourceText"], location="annotation.sourceText")
-            explanation = _text(annotation["explanation"], location="annotation.explanation")
-            code = _text(criterion["code"], location="criterion.code")
-            anomaly_key = (source_text, explanation, code)
-            if anomaly_key in anomaly_keys:
-                continue
-            anomaly_keys.add(anomaly_key)
-            route = routes_by_code[code]
-            source_location = as_mapping(
-                annotation["sourceLocation"],
-                location="annotation.sourceLocation",
-            )
-            anomaly_entries.append(
-                '<li class="anomaly-record"><a href="'
-                + html.escape(_site_url(route, base_path=base_path), quote=True)
-                + '"><strong>'
-                + html.escape(code)
-                + "</strong></a>"
-                + f"<p>원문: {html.escape(source_text)}</p>"
-                + f"<p>{html.escape(explanation)}</p>"
-                + f"<p>PDF 페이지 {int(cast('int', source_location['physicalPage']))} · "
-                + html.escape(_text(annotation["disposition"], location="annotation.disposition"))
-                + " · "
-                + html.escape(_text(annotation["reviewStatus"], location="annotation.reviewStatus"))
-                + "</p></li>"
-            )
-    anomaly_body = (
-        '<main id="main-content" class="page-shell page-shell--single"><section class="surface">'
-        "<h1>원문 이상 및 확인 필요</h1>"
-        "<p>원문 내부의 코드, 중요도, 제목, 분류, 기술 표기 차이를 자동 수정하지 않고 검토 대기 상태로 공개합니다.</p>"
-        '<ul class="anomaly-list">' + "".join(anomaly_entries) + "</ul></section></main>"
-    )
-    anomaly_path = site_root / "anomalies" / "index.html"
-    anomaly_path.parent.mkdir()
-    anomaly_path.write_text(
-        _html_document(
-            title="원문 이상 · KISA CCE 가이드 2026",
-            description="원문 이상 및 검토 대기 항목",
-            body=anomaly_body,
-            base_path=base_path,
-            canonical_url=_site_url("/anomalies/", base_path=base_path),
-            current_navigation="anomalies",
-        ),
-        encoding="utf-8",
-    )
-    generated_paths.append(anomaly_path)
 
     not_found_body = (
         '<main id="main-content" class="page-shell page-shell--single"><section class="surface">'

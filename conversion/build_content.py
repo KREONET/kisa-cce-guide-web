@@ -440,7 +440,6 @@ def build(
     _write_canonical_json(search_path, search_index)
     generated_paths.append(search_path)
     source_registry = load_yaml(repository / "data/source-registry.yaml")
-    source_annotations = load_yaml(repository / "data/source-annotations.yaml")
     from conversion.build_site import build_site  # noqa: PLC0415
 
     generated_paths.extend(
@@ -450,7 +449,6 @@ def build(
             manifest=manifest,
             taxonomy=taxonomy,
             source_registry=source_registry,
-            source_annotations=source_annotations,
             normalized_documents=normalized_documents,
             search_index=search_index,
             base_path=base_path,

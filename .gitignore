@@ -1,4 +1,7 @@
 .venv/
+.python-version
+.claude/
+.openai/
 build/
 dist/
 .pytest_cache/

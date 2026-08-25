@@ -21,7 +21,7 @@ from conversion.common import JsonValue, as_mapping, as_sequence, load_yaml, rep
 from conversion.site_validation import validate_site
 
 EXPECTED_CRITERION_COUNT = 382
-EXPECTED_HTML_PAGE_COUNT = 469
+EXPECTED_HTML_PAGE_COUNT = 468
 
 
 class PageInspector(HTMLParser):
@@ -321,6 +321,17 @@ def test_all_html_pages_have_required_landmarks(generated_site: Path) -> None:
         assert inspector.h1_count == 1, html_path
         assert inspector.skip_link_present, html_path
         assert {"header", "nav", "main", "footer"} <= set(inspector.tags), html_path
+
+
+def test_source_anomaly_pages_and_ui_are_not_published(generated_site: Path) -> None:
+    """Source-review records must not be rendered in public HTML."""
+
+    assert not (generated_site / "anomalies").exists()
+    for html_path in generated_site.rglob("*.html"):
+        html_text = html_path.read_text(encoding="utf-8")
+        assert "/anomalies/" not in html_text, html_path
+        assert "원문 이상" not in html_text, html_path
+        assert 'class="annotations"' not in html_text, html_path
 
 
 def test_table_of_contents_preserves_heading_hierarchy(generated_site: Path) -> None:
