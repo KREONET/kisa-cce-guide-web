@@ -334,6 +334,18 @@ def test_source_anomaly_pages_and_ui_are_not_published(generated_site: Path) -> 
         assert 'class="annotations"' not in html_text, html_path
 
 
+def test_source_attribution_section_is_not_rendered(generated_site: Path) -> None:
+    """Criterion pages must not render the redundant source-attribution section."""
+
+    for dataset_path in (generated_site / "dataset" / "criteria").rglob("*.json"):
+        domain_identifier = dataset_path.parent.name
+        detail_path = generated_site / domain_identifier / dataset_path.stem / "index.html"
+        detail_html = detail_path.read_text(encoding="utf-8")
+        assert "원문 및 출처" not in detail_html, detail_path
+        assert "KISA 원문 게시물 보기" not in detail_html, detail_path
+        assert 'class="provenance"' not in detail_html, detail_path
+
+
 def test_table_of_contents_preserves_heading_hierarchy(generated_site: Path) -> None:
     """Every criterion TOC must reproduce its complete normalized heading tree."""
 

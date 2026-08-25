@@ -900,10 +900,7 @@ def _detail_page(
         + "</header>"
         + toc
         + _render_blocks(blocks, base_path=base_path)
-        + '<section class="provenance"><h2>원문 및 출처</h2>'
-        + f'<p><a href="{html.escape(pdf_url, quote=True)}">KISA 원문 게시물 보기</a></p>'
-        + f"<p>{html.escape(source_title)} · {html.escape(source_publisher)}</p>"
-        + "</section></article>"
+        + "</article>"
         + '<nav class="pager" aria-label="이전 및 다음 항목">'
         + "".join(pager_links)
         + "</nav></div></main>"

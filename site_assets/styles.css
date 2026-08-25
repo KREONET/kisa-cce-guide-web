@@ -353,7 +353,7 @@ a:hover { text-decoration-thickness: 2px; }
 h1, h2, h3, h4 { color: var(--ink); font-weight: 700; text-wrap: balance; }
 h1 { margin: 0 0 var(--space-4); font-size: clamp(30px, 4.5vw, 48px); letter-spacing: -.035em; line-height: 1.2; }
 .criterion__header h1 { max-width: 22ch; color: var(--on-dark); }
-.criterion h2, .surface h2, .provenance h2 {
+.criterion h2, .surface h2 {
   scroll-margin-top: calc(var(--header-height) + 24px);
   margin: var(--space-16) 0 var(--space-6);
   padding: 0 0 var(--space-3);
@@ -362,7 +362,7 @@ h1 { margin: 0 0 var(--space-4); font-size: clamp(30px, 4.5vw, 48px); letter-spa
   letter-spacing: -.02em;
   line-height: 1.3;
 }
-.criterion h2::before, .surface > section > h2::before, .provenance h2::before {
+.criterion h2::before, .surface > section > h2::before {
   display: inline-block;
   width: 10px;
   height: 10px;
@@ -382,7 +382,7 @@ h1 { margin: 0 0 var(--space-4); font-size: clamp(30px, 4.5vw, 48px); letter-spa
   font-size: 18px;
   line-height: 1.4;
 }
-.criterion p, .criterion > ul, .criterion > ol, .note, .provenance { max-width: var(--reading-width); }
+.criterion p, .criterion > ul, .criterion > ol, .note { max-width: var(--reading-width); }
 .criterion p { margin: 0 0 var(--space-6); }
 .criterion > ul, .criterion > ol { margin: 0 0 var(--space-8); padding-left: 1.5rem; }
 .criterion li { margin-bottom: var(--space-2); }
@@ -624,10 +624,6 @@ tbody tr:last-child td { border-bottom: 0; }
 .source-visual a { display: block; padding: var(--space-3); background: var(--surface-soft); }
 .source-visual img { display: block; margin: 0 auto; }
 .source-visual figcaption { padding: var(--space-4); border-top: 1px solid var(--hairline); color: var(--muted); font-size: 13px; }
-.provenance { margin-top: var(--space-16); padding: var(--space-6); border: 1px solid var(--hairline); border-radius: var(--radius); }
-.provenance { border-left: 5px solid var(--hairline-strong); background: var(--surface-soft); }
-.provenance h2 { margin-top: 0; }
-.provenance p { margin-bottom: var(--space-3); }
 .pager { display: grid; grid-template-columns: 1fr 1fr; margin-top: var(--space-6); border: 1px solid var(--hairline); }
 .pager a, .pager span { min-height: 56px; padding: var(--space-4); }
 .pager a { display: flex; align-items: center; color: var(--body); font-weight: 700; text-decoration: none; }
@@ -817,7 +813,7 @@ input::placeholder { color: var(--muted); opacity: 1; }
     padding-right: var(--space-3);
     padding-left: var(--space-3);
   }
-  .filters, .toc, .note, .provenance { padding: var(--space-4); }
+  .filters, .toc, .note { padding: var(--space-4); }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -844,7 +840,7 @@ input::placeholder { color: var(--muted); opacity: 1; }
     forced-color-adjust: none;
     background: Highlight;
   }
-  .primary-button, .copy-button, .badge, .card, .surface, .criterion, .toc, .note, .provenance, .pager, .table-scroll {
+  .primary-button, .copy-button, .badge, .card, .surface, .criterion, .toc, .note, .pager, .table-scroll {
     border: 1px solid CanvasText !important;
   }
 }
@@ -856,7 +852,7 @@ input::placeholder { color: var(--muted); opacity: 1; }
     display: none !important;
   }
   .page-shell, .content { display: block !important; width: 100% !important; max-width: none !important; margin: 0 !important; padding: 0 !important; }
-  .criterion, .surface, .criterion__header, .note, .provenance, .code-block, .table-scroll {
+  .criterion, .surface, .criterion__header, .note, .code-block, .table-scroll {
     margin-right: 0 !important;
     margin-left: 0 !important;
     border-color: #777 !important;

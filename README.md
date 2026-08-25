@@ -424,12 +424,11 @@ uv run python -m conversion.serve_site --base-path /kisa-cce-guide-web
 - 404 페이지
 - 항목별 정규화 JSON
 - 검색 색인과 taxonomy JSON
-- 원문 게시물 링크
 - 반응형 및 인쇄용 CSS
 
 생성된 사이트는 468개 HTML 페이지를 포함합니다. 모든 HTML 페이지의 언어, 단일 H1, landmark, skip link, 고유 anchor, 내부 링크, 이미지, 표, 검색 anchor는 정적 검사 대상입니다.
 
-라이선스 승인 전에는 원본 PDF를 사이트 산출물에 복사하지 않습니다. 상세 페이지는 KISA 원문 게시물로 연결됩니다.
+라이선스 승인 전에는 원본 PDF를 사이트 산출물에 복사하지 않습니다.
 
 ## GitHub Pages
 
