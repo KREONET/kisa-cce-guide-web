@@ -323,6 +323,22 @@ def test_all_html_pages_have_required_landmarks(generated_site: Path) -> None:
         assert {"header", "nav", "main", "footer"} <= set(inspector.tags), html_path
 
 
+def test_shell_keeps_footer_at_viewport_bottom(generated_site: Path) -> None:
+    """Short pages must push the footer to the viewport bottom without affecting print."""
+
+    stylesheet = (generated_site / "assets" / "styles.css").read_text(encoding="utf-8")
+    body_styles = stylesheet.partition("body {")[2].partition("}")[0]
+    footer_styles = stylesheet.partition(".site-footer {")[2].partition("}")[0]
+    print_styles = stylesheet.partition("@media print {")[2]
+
+    assert "display: flex;" in body_styles
+    assert "flex-direction: column;" in body_styles
+    assert "min-height: 100vh;" in body_styles
+    assert "min-height: 100dvh;" in body_styles
+    assert "margin-top: auto;" in footer_styles
+    assert "body { display: block !important; min-height: 0 !important;" in print_styles
+
+
 def test_source_anomaly_pages_and_ui_are_not_published(generated_site: Path) -> None:
     """Source-review records must not be rendered in public HTML."""
 
@@ -332,6 +348,14 @@ def test_source_anomaly_pages_and_ui_are_not_published(generated_site: Path) -> 
         assert "/anomalies/" not in html_text, html_path
         assert "원문 이상" not in html_text, html_path
         assert 'class="annotations"' not in html_text, html_path
+
+
+def test_unofficial_conversion_disclaimer_is_not_rendered(generated_site: Path) -> None:
+    """Public pages must not render the removed unofficial-conversion disclaimer."""
+
+    for html_path in generated_site.rglob("*.html"):
+        html_text = html_path.read_text(encoding="utf-8")
+        assert "원문을 대체하지 않는 비공식 변환본" not in html_text, html_path
 
 
 def test_source_attribution_section_is_not_rendered(generated_site: Path) -> None:
@@ -346,36 +370,116 @@ def test_source_attribution_section_is_not_rendered(generated_site: Path) -> Non
         assert 'class="provenance"' not in detail_html, detail_path
 
 
-def test_mobile_menu_contains_domain_exploration(generated_site: Path) -> None:
-    """Detail pages must move domain exploration into the mobile primary menu."""
-
-    detail_html = (generated_site / "unix" / "u-01" / "index.html").read_text(
-        encoding="utf-8"
-    )
-    navigation_html = detail_html.partition('<nav id="site-navigation"')[2].partition(
-        "</nav>"
-    )[0]
-    assert '<details class="site-nav__domains"><summary>분야 탐색</summary>' in navigation_html
-    assert '<aside class="sidebar" aria-label="분야 탐색">' in detail_html
+def test_header_menu_contains_domain_exploration(generated_site: Path) -> None:
+    """Every page must expose domain exploration through the primary header menu."""
 
     taxonomy = load_yaml(repository_root() / "data/taxonomy.yaml")
     domain_values = as_sequence(taxonomy["domains"], location="taxonomy.domains")
+    domain_routes = []
     for domain_value in domain_values:
         domain = as_mapping(domain_value, location="taxonomy.domains[]")
         domain_identifier = domain["identifier"]
         assert isinstance(domain_identifier, str)
-        assert f'href="/{domain_identifier}/"' in navigation_html
+        domain_routes.append(f'href="/{domain_identifier}/"')
+
+    for html_path in generated_site.rglob("*.html"):
+        html_text = html_path.read_text(encoding="utf-8")
+        navigation_html = html_text.partition('<nav id="site-navigation"')[2].partition(
+            "</nav>"
+        )[0]
+        assert '<details class="site-nav__domains"' in navigation_html, html_path
+        assert "<summary>분야</summary>" in navigation_html, html_path
+        assert '<li><a href="/">전체 분야</a></li>' in navigation_html, html_path
+        for domain_route in domain_routes:
+            assert domain_route in navigation_html, html_path
+
+    detail_html = (generated_site / "unix" / "u-01" / "index.html").read_text(
+        encoding="utf-8"
+    )
+    assert 'href="/unix/" aria-current="location"' in detail_html
+    assert 'class="sidebar"' not in detail_html
 
     stylesheet = (generated_site / "assets" / "styles.css").read_text(encoding="utf-8")
     base_styles = stylesheet.partition("@media (max-width: 1080px) {")[0]
-    assert ".site-nav__domains { display: none; }" in base_styles
+    assert ".site-nav__domains { position: relative; display: block; }" in base_styles
     mobile_styles = stylesheet.partition("@media (max-width: 768px) {")[2].partition(
         "@media (max-width: 480px) {"
     )[0]
-    assert ".sidebar { display: none; }" in mobile_styles
-    assert ".site-nav__domains { display: block;" in mobile_styles
+    assert ".site-nav__domains { position: static; display: block;" in mobile_styles
+    assert "position: static;" in mobile_styles
+    assert "width: auto;" in mobile_styles
     assert "max-height: calc(100vh - var(--header-height) - 16px);" in mobile_styles
     assert "max-height: calc(100dvh - var(--header-height) - 16px);" in mobile_styles
+
+    site_script = (generated_site / "assets" / "site.js").read_text(encoding="utf-8")
+    assert 'navigation.querySelector(".site-nav__domains")' in site_script
+    assert 'window.matchMedia("(max-width: 768px)")' in site_script
+    assert 'compactNavigation.addEventListener("change", synchronizeNavigation);' in site_script
+    assert "navigation.contains(document.activeElement)" in site_script
+    assert "navigationButton.focus();" in site_script
+    assert 'domainNavigation?.querySelector("summary")?.focus();' in site_script
+    assert "domainNavigation.open = false;" in site_script
+    assert "sidebarDisclosure" not in site_script
+
+
+def test_document_table_of_contents_uses_responsive_sidebar(generated_site: Path) -> None:
+    """Desktop pages must use a sticky TOC while compact pages default to collapsed."""
+
+    detail_html = (generated_site / "unix" / "u-01" / "index.html").read_text(
+        encoding="utf-8"
+    )
+    assert detail_html.count('aria-label="문서 목차"') == 1
+    assert '<nav class="toc" aria-label="문서 목차" data-table-of-contents>' in detail_html
+    document_html = detail_html.partition(
+        '<div class="criterion__document criterion__document--with-toc">'
+    )[2].partition("</article>")[0]
+    assert document_html.index('<nav class="toc"') < document_html.index(
+        '<div class="criterion__body">'
+    )
+    assert (
+        'aria-controls="table-of-contents-content" data-table-of-contents-toggle hidden>목차'
+        in detail_html
+    )
+    assert '<div id="table-of-contents-content" data-table-of-contents-content>' in detail_html
+
+    site_script = (generated_site / "assets" / "site.js").read_text(encoding="utf-8")
+    assert 'window.matchMedia("(max-width: 1080px)")' in site_script
+    assert "tableOfContentsToggle.hidden = !compact;" in site_script
+    assert "tableOfContentsTitle.hidden = compact;" in site_script
+    assert "setTableOfContentsExpanded(!compact);" in site_script
+    assert 'addEventListener("change", synchronizeTableOfContents)' in site_script
+    assert "setTableOfContentsExpanded(tableOfContentsContent.hidden);" in site_script
+
+    stylesheet = (generated_site / "assets" / "styles.css").read_text(encoding="utf-8")
+    desktop_styles = stylesheet.partition("@media (min-width: 1081px) {")[2].partition(
+        ".note {"
+    )[0]
+    assert "position: sticky;" in desktop_styles
+    assert "max-height: calc(100dvh - var(--header-height) - 48px);" in desktop_styles
+
+    compact_styles = stylesheet.partition("@media (max-width: 1080px) {")[2].partition(
+        "@media (max-width: 768px) {"
+    )[0]
+    assert ".criterion__document--with-toc { display: block; }" in compact_styles
+    assert '.toc[data-enhanced="true"] .toc__title { display: none; }' in compact_styles
+    assert '.toc[data-enhanced="true"] .toc__toggle { display: flex; }' in compact_styles
+    assert (
+        '.toc__toggle[aria-expanded="true"]::after { content: "\N{MINUS SIGN}"; }'
+        in compact_styles
+    )
+
+
+def test_narrow_layout_prevents_root_horizontal_overflow(generated_site: Path) -> None:
+    """Narrow pages must contain hidden labels and allow hero statistics to shrink."""
+
+    stylesheet = (generated_site / "assets" / "styles.css").read_text(encoding="utf-8")
+    visually_hidden_styles = stylesheet.partition(".visually-hidden {")[2].partition("}")[0]
+    narrow_styles = stylesheet.partition("@media (max-width: 320px) {")[2].partition(
+        "@media (prefers-reduced-motion: reduce) {"
+    )[0]
+
+    assert "inset: 0 auto auto 0 !important;" in visually_hidden_styles
+    assert ".hero__stats > div" not in narrow_styles
 
 
 def test_table_of_contents_preserves_heading_hierarchy(generated_site: Path) -> None:

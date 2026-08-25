@@ -141,7 +141,7 @@ def _html_document(
     extra_stylesheets: Sequence[str] = (),
     canonical_url: str | None = None,
     current_navigation: str | None = None,
-    mobile_domain_navigation: str = "",
+    domain_navigation: str,
     json_alternate_url: str | None = None,
     structured_data: Mapping[str, JsonValue] | None = None,
 ) -> str:
@@ -188,6 +188,7 @@ def _html_document(
         structured_data_script = (
             '  <script type="application/ld+json">' + serialized_structured_data + "</script>\n"
         )
+    domain_navigation_markup = domain_navigation
     return f"""<!doctype html>
 <html lang="ko">
 <head>
@@ -209,8 +210,7 @@ def _html_document(
       </a>
       <button class="nav-toggle" type="button" aria-expanded="true" aria-controls="site-navigation" data-navigation-toggle hidden>메뉴</button>
       <nav id="site-navigation" class="site-nav" aria-label="주요 메뉴" data-site-navigation data-open="true">
-        <a href="{html.escape(_site_url("/", base_path=base_path), quote=True)}"{navigation_current("domains")}>분야</a>
-        {mobile_domain_navigation}
+        {domain_navigation_markup}
         <a href="{html.escape(_site_url("/search/", base_path=base_path), quote=True)}"{navigation_current("search")}>검색</a>
       </nav>
     </div>
@@ -219,7 +219,6 @@ def _html_document(
   <footer class="site-footer">
     <div class="site-footer__inner">
       <p class="site-footer__brand"><span aria-hidden="true"></span>KISA CCE GUIDE</p>
-      <p>원문을 대체하지 않는 비공식 변환본 · KISA CCE 가이드 2026</p>
     </div>
   </footer>
   <div class="visually-hidden" role="status" aria-live="polite" aria-atomic="true" data-copy-status></div>
@@ -278,7 +277,7 @@ def _render_domain_navigation_items(
         domains.items(),
         key=lambda item: int(cast("int", item[1]["order"])),
     ):
-        current = ' aria-current="page"' if domain_identifier == current_domain else ""
+        current = ' aria-current="location"' if domain_identifier == current_domain else ""
         label = _text(domain["label"], location="taxonomy.domain.label")
         route = _site_url(f"/{domain_identifier}/", base_path=base_path)
         items.append(
@@ -287,41 +286,26 @@ def _render_domain_navigation_items(
     return "".join(items)
 
 
-def _render_sidebar(
+def _render_header_domain_navigation(
     *,
     domains: Mapping[str, dict[str, JsonValue]],
     current_domain: str | None,
+    current: bool,
     base_path: str,
 ) -> str:
-    """Render desktop and tablet domain navigation."""
+    """Render domain navigation inside the primary header menu."""
 
     items = _render_domain_navigation_items(
         domains=domains,
         current_domain=current_domain,
         base_path=base_path,
     )
+    all_domains_route = html.escape(_site_url("/", base_path=base_path), quote=True)
+    current_attribute = ' data-current-navigation="true"' if current else ""
     return (
-        '<aside class="sidebar" aria-label="분야 탐색">'
-        '<details class="sidebar-disclosure" open><summary>분야 탐색</summary>'
-        '<p class="sidebar__title">분야</p><ul>' + items + "</ul></details></aside>"
-    )
-
-
-def _render_mobile_domain_navigation(
-    *,
-    domains: Mapping[str, dict[str, JsonValue]],
-    current_domain: str | None,
-    base_path: str,
-) -> str:
-    """Render domain navigation inside the mobile primary menu."""
-
-    items = _render_domain_navigation_items(
-        domains=domains,
-        current_domain=current_domain,
-        base_path=base_path,
-    )
-    return (
-        '<details class="site-nav__domains"><summary>분야 탐색</summary><ul>'
+        f'<details class="site-nav__domains"{current_attribute}>'
+        '<summary>분야</summary><ul>'
+        f'<li><a href="{all_domains_route}">전체 분야</a></li>'
         + items
         + "</ul></details>"
     )
@@ -333,7 +317,9 @@ def _block_identifier(block: Mapping[str, JsonValue]) -> str:
     return _text(block["blockReference"], location="block.blockReference")
 
 
-def _render_table_of_contents(heading_blocks: Sequence[dict[str, JsonValue]]) -> str:
+def _render_table_of_contents_outline(
+    heading_blocks: Sequence[dict[str, JsonValue]],
+) -> str:
     """Render the document heading outline as valid nested lists."""
 
     if len(heading_blocks) < _TABLE_OF_CONTENTS_MINIMUM_HEADING_COUNT:
@@ -373,11 +359,23 @@ def _render_table_of_contents(heading_blocks: Sequence[dict[str, JsonValue]]) ->
             )
         return f'<ul class="{list_class}" data-toc-depth="{depth}">' + "".join(items) + "</ul>"
 
+    return render_nodes(roots, root=True)
+
+
+def _render_table_of_contents(heading_blocks: Sequence[dict[str, JsonValue]]) -> str:
+    """Render the collapsible in-content document outline."""
+
+    outline = _render_table_of_contents_outline(heading_blocks)
+    if not outline:
+        return ""
     return (
-        '<nav class="toc" aria-labelledby="table-of-contents-title">'
+        '<nav class="toc" aria-label="문서 목차" data-table-of-contents>'
+        '<button class="toc__toggle" type="button" aria-expanded="true" '
+        'aria-controls="table-of-contents-content" data-table-of-contents-toggle hidden>목차</button>'
         '<strong class="toc__title" id="table-of-contents-title">목차</strong>'
-        + render_nodes(roots, root=True)
-        + "</nav>"
+        '<div id="table-of-contents-content" data-table-of-contents-content>'
+        + outline
+        + "</div></nav>"
     )
 
 
@@ -816,6 +814,7 @@ def _detail_page(
         if isinstance(block, dict) and block.get("blockType") == "heading"
     ]
     toc = _render_table_of_contents(heading_blocks)
+    document_class = "criterion__document criterion__document--with-toc" if toc else "criterion__document"
     content_model = _text(normalized["contentModel"], location="normalized.contentModel")
     review_label = (
         "자동 전사 · 검토 필요" if content_model == "extractedCriterion" else "구조화 문서"
@@ -866,11 +865,6 @@ def _detail_page(
             + html.escape(_text(next_record["code"], location="next.code"))
             + " →</a>"
         )
-    sidebar = _render_sidebar(
-        domains=domains,
-        current_domain=domain_identifier,
-        base_path=base_path,
-    )
     breadcrumb = (
         '<nav class="breadcrumb" aria-label="분류 경로"><ol>'
         f'<li><a href="{html.escape(_site_url("/", base_path=base_path), quote=True)}">홈</a></li>'
@@ -913,9 +907,8 @@ def _detail_page(
         "pagination": f"{first_page}-{last_page}",
     }
     body = (
-        '<main id="main-content" class="page-shell">'
-        + sidebar
-        + '<div class="content">'
+        '<main id="main-content" class="page-shell page-shell--detail">'
+        '<div class="content">'
         + breadcrumb
         + f'<article class="criterion" {article_attributes}>'
         + '<header class="criterion__header">'
@@ -936,9 +929,11 @@ def _detail_page(
         + "</dl>"
         + f'<p><a type="application/json" href="{html.escape(dataset_url, quote=True)}">JSON 데이터 보기</a></p>'
         + "</header>"
+        + f'<div class="{document_class}">'
         + toc
+        + '<div class="criterion__body">'
         + _render_blocks(blocks, base_path=base_path)
-        + "</article>"
+        + "</div></div></article>"
         + '<nav class="pager" aria-label="이전 및 다음 항목">'
         + "".join(pager_links)
         + "</nav></div></main>"
@@ -952,9 +947,10 @@ def _detail_page(
         extra_stylesheets=highlight_stylesheets,
         canonical_url=criterion_url,
         current_navigation="domains",
-        mobile_domain_navigation=_render_mobile_domain_navigation(
+        domain_navigation=_render_header_domain_navigation(
             domains=domains,
             current_domain=domain_identifier,
+            current=True,
             base_path=base_path,
         ),
         json_alternate_url=dataset_url,
@@ -1102,6 +1098,12 @@ def build_site(
             base_path=base_path,
             canonical_url=_site_url("/", base_path=base_path),
             current_navigation="domains",
+            domain_navigation=_render_header_domain_navigation(
+                domains=domains,
+                current_domain=None,
+                current=True,
+                base_path=base_path,
+            ),
         ),
         encoding="utf-8",
     )
@@ -1147,6 +1149,12 @@ def build_site(
                     base_path=base_path,
                     canonical_url=category_route,
                     current_navigation="domains",
+                    domain_navigation=_render_header_domain_navigation(
+                        domains=domains,
+                        current_domain=domain_identifier,
+                        current=True,
+                        base_path=base_path,
+                    ),
                 ),
                 encoding="utf-8",
             )
@@ -1165,6 +1173,12 @@ def build_site(
                 base_path=base_path,
                 canonical_url=_site_url(f"/{domain_identifier}/", base_path=base_path),
                 current_navigation="domains",
+                domain_navigation=_render_header_domain_navigation(
+                    domains=domains,
+                    current_domain=domain_identifier,
+                    current=True,
+                    base_path=base_path,
+                ),
             ),
             encoding="utf-8",
         )
@@ -1236,6 +1250,12 @@ def build_site(
             canonical_url=_site_url("/search/", base_path=base_path),
             extra_scripts=("/assets/search.js",),
             current_navigation="search",
+            domain_navigation=_render_header_domain_navigation(
+                domains=domains,
+                current_domain=None,
+                current=False,
+                base_path=base_path,
+            ),
         ),
         encoding="utf-8",
     )
@@ -1254,6 +1274,12 @@ def build_site(
             description="404",
             body=not_found_body,
             base_path=base_path,
+            domain_navigation=_render_header_domain_navigation(
+                domains=domains,
+                current_domain=None,
+                current=False,
+                base_path=base_path,
+            ),
         ),
         encoding="utf-8",
     )

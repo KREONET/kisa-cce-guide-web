@@ -2,9 +2,24 @@ const navigationButton = document.querySelector("[data-navigation-toggle]");
 const navigation = document.querySelector("[data-site-navigation]");
 
 if (navigationButton && navigation) {
+  const domainNavigation = navigation.querySelector(".site-nav__domains");
+  const compactNavigation = window.matchMedia("(max-width: 768px)");
   const closeNavigation = () => {
     navigation.dataset.open = "false";
     navigationButton.setAttribute("aria-expanded", "false");
+    if (domainNavigation) {
+      domainNavigation.open = false;
+    }
+  };
+  const synchronizeNavigation = (event) => {
+    if (navigation.contains(document.activeElement)) {
+      if (event.matches) {
+        navigationButton.focus();
+      } else {
+        domainNavigation?.querySelector("summary")?.focus();
+      }
+    }
+    closeNavigation();
   };
 
   navigation.dataset.enhanced = "true";
@@ -13,28 +28,56 @@ if (navigationButton && navigation) {
 
   navigationButton.addEventListener("click", () => {
     const open = navigation.dataset.open !== "true";
-    navigation.dataset.open = String(open);
-    navigationButton.setAttribute("aria-expanded", String(open));
+    if (open) {
+      navigation.dataset.open = "true";
+      navigationButton.setAttribute("aria-expanded", "true");
+    } else {
+      closeNavigation();
+    }
   });
+  compactNavigation.addEventListener("change", synchronizeNavigation);
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && navigation.dataset.open === "true") {
+    if (event.key !== "Escape") {
+      return;
+    }
+    if (domainNavigation?.open) {
+      domainNavigation.open = false;
+      domainNavigation.querySelector("summary")?.focus();
+    } else if (navigation.dataset.open === "true") {
       closeNavigation();
       navigationButton.focus();
     }
   });
 }
 
-const sidebarDisclosure = document.querySelector(".sidebar-disclosure");
-if (sidebarDisclosure) {
-  const desktopSidebar = window.matchMedia("(min-width: 861px)");
-  const keepDesktopSidebarOpen = () => {
-    if (desktopSidebar.matches) {
-      sidebarDisclosure.open = true;
-    }
+const tableOfContents = document.querySelector("[data-table-of-contents]");
+const tableOfContentsToggle = document.querySelector("[data-table-of-contents-toggle]");
+const tableOfContentsContent = document.querySelector("[data-table-of-contents-content]");
+const tableOfContentsTitle = tableOfContents?.querySelector(".toc__title");
+
+if (tableOfContents && tableOfContentsToggle && tableOfContentsContent && tableOfContentsTitle) {
+  const compactTableOfContents = window.matchMedia("(max-width: 1080px)");
+  const setTableOfContentsExpanded = (expanded) => {
+    tableOfContentsContent.hidden = !expanded;
+    tableOfContentsToggle.setAttribute("aria-expanded", String(expanded));
   };
-  keepDesktopSidebarOpen();
-  desktopSidebar.addEventListener("change", keepDesktopSidebarOpen);
+  const synchronizeTableOfContents = () => {
+    const compact = compactTableOfContents.matches;
+    if (compact && tableOfContentsContent.contains(document.activeElement)) {
+      tableOfContentsToggle.focus();
+    }
+    tableOfContents.dataset.enhanced = "true";
+    tableOfContentsToggle.hidden = !compact;
+    tableOfContentsTitle.hidden = compact;
+    setTableOfContentsExpanded(!compact);
+  };
+
+  synchronizeTableOfContents();
+  compactTableOfContents.addEventListener("change", synchronizeTableOfContents);
+  tableOfContentsToggle.addEventListener("click", () => {
+    setTableOfContentsExpanded(tableOfContentsContent.hidden);
+  });
 }
 
 const copyStatus = document.querySelector("[data-copy-status]");
