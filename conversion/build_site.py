@@ -994,7 +994,13 @@ def build_site(
 
     asset_directory = site_root / "assets"
     asset_directory.mkdir()
-    for asset_name in ("styles.css", "site.js", "search.js", "highlight-init.js"):
+    for asset_name in (
+        "styles.css",
+        "site.js",
+        "search-core.js",
+        "search.js",
+        "highlight-init.js",
+    ):
         source_path = repository / "site_assets" / asset_name
         target_path = asset_directory / asset_name
         shutil.copy2(source_path, target_path)
@@ -1226,9 +1232,10 @@ def build_site(
         '<form id="criterion-search-form" class="search-form" data-search-form action="'
         + html.escape(_site_url("/search/", base_path=base_path), quote=True)
         + '"><label><span class="visually-hidden">검색어</span><input name="q" type="search" data-search-query '
-        'aria-controls="search-results" aria-describedby="search-status" '
-        'placeholder="코드, 제목, 본문, 설정값"></label>'
+        'aria-controls="search-results" aria-describedby="search-help search-status" '
+        'placeholder="예: 리눅스에서 root 원격 로그인을 막고 싶어"></label>'
         '<button class="primary-button" type="submit">검색</button></form>'
+        '<p id="search-help" class="search-help">문장으로 질문하거나, 코드·설정값을 입력하세요.</p>'
         '<div class="filters"><label>분야<select form="criterion-search-form" name="domain" data-domain-filter><option value="">전체</option></select></label>'
         '<label>분류<select form="criterion-search-form" name="category" data-category-filter><option value="">전체</option></select></label>'
         '<label>중요도<select form="criterion-search-form" name="severity" data-severity-filter><option value="">전체</option><option value="high">상</option><option value="medium">중</option><option value="low">하</option></select></label>'
@@ -1248,7 +1255,7 @@ def build_site(
             body=search_body,
             base_path=base_path,
             canonical_url=_site_url("/search/", base_path=base_path),
-            extra_scripts=("/assets/search.js",),
+            extra_scripts=("/assets/search-core.js", "/assets/search.js"),
             current_navigation="search",
             domain_navigation=_render_header_domain_navigation(
                 domains=domains,

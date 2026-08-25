@@ -17,10 +17,9 @@ _ARTICLE_ATTRIBUTE_NAMES = (
 )
 _ARIA_ID_REFERENCE_ATTRIBUTES = ("aria-controls", "aria-describedby", "aria-labelledby")
 _TABLE_HEADER_SCOPES = {"col", "colgroup", "row", "rowgroup"}
+_SEARCH_SCHEMA_VERSION = 2
 _SEARCH_STRING_FIELDS = (
-    "recordIdentifier",
     "code",
-    "slug",
     "route",
     "title",
     "severityLevel",
@@ -30,14 +29,20 @@ _SEARCH_STRING_FIELDS = (
     "categoryIdentifier",
     "categoryLabel",
     "sourceTargetText",
-    "searchableText",
-    "criterionSourceChecksum",
-    "canonicalCorpusChecksum",
 )
+_SEARCH_SECTION_NAMES = {
+    "inspection",
+    "purpose",
+    "threat",
+    "judgment",
+    "action",
+    "impact",
+    "guidance",
+    "reference",
+}
 _SEARCH_STRING_LIST_FIELDS = (
     "targetIdentifiers",
     "targetLabels",
-    "headingAnchors",
     "exactTerms",
 )
 
@@ -214,13 +219,17 @@ def _has_search_record_schema(record: dict[str, JsonValue]) -> bool:
             continue
         if name != "exactTerms" and not value:
             valid = False
-        if name in {"exactTerms", "headingAnchors"} and len(value) != len(set(value)):
+        if name == "exactTerms" and len(value) != len(set(value)):
             valid = False
-    source_page_ranges = record.get("sourcePageRanges")
+    search_sections = record.get("searchSections")
     if (
-        not isinstance(source_page_ranges, list)
-        or not source_page_ranges
-        or not all(isinstance(value, dict) for value in source_page_ranges)
+        not isinstance(search_sections, dict)
+        or set(search_sections) != _SEARCH_SECTION_NAMES
+        or not all(isinstance(value, str) for value in search_sections.values())
+        or not all(
+            search_sections.get(name)
+            for name in ("inspection", "purpose", "judgment", "action", "guidance")
+        )
     ):
         valid = False
     target_identifiers = record.get("targetIdentifiers")
@@ -453,7 +462,7 @@ def validate_site(
     if search_path.is_file():
         search_index = load_json(search_path)
         if (
-            search_index.get("schemaVersion") != 1
+            search_index.get("schemaVersion") != _SEARCH_SCHEMA_VERSION
             or not isinstance(search_index.get("tokenizerVersion"), str)
             or not isinstance(search_index.get("caseFoldingVersion"), str)
             or not isinstance(search_index.get("canonicalCorpusChecksum"), str)
@@ -509,10 +518,8 @@ def validate_site(
             if manifest_record is None:
                 continue
             expected_search_values = {
-                "recordIdentifier": manifest_record.get("code"),
                 "order": record_order,
                 "code": manifest_record.get("code"),
-                "slug": manifest_record.get("slug"),
                 "route": manifest_record.get("route"),
                 "title": manifest_record.get("title"),
                 "severityLevel": manifest_record.get("severityLevel"),
@@ -543,21 +550,24 @@ def validate_site(
         u_01_exact_terms = (
             u_01_exact_terms_value if isinstance(u_01_exact_terms_value, list) else []
         )
-        u_01_searchable_value = u_01.get("searchableText") if u_01 is not None else None
-        u_02_searchable_value = u_02.get("searchableText") if u_02 is not None else None
-        u_01_searchable_text = (
-            u_01_searchable_value if isinstance(u_01_searchable_value, str) else ""
+        u_01_sections = u_01.get("searchSections") if u_01 is not None else None
+        u_02_sections = u_02.get("searchSections") if u_02 is not None else None
+        u_01_action = (
+            u_01_sections.get("action") if isinstance(u_01_sections, dict) else ""
         )
-        u_02_searchable_text = (
-            u_02_searchable_value if isinstance(u_02_searchable_value, str) else ""
+        u_02_inspection = (
+            u_02_sections.get("inspection") if isinstance(u_02_sections, dict) else ""
         )
         if (
             len(search_records) != len(manifest_values)
             or u_01 is None
             or u_02 is None
             or "/etc/ssh/sshd_config" not in u_01_exact_terms
-            or "PermitRootLogin No" not in u_01_searchable_text
-            or "비밀번호 관리정책 설정" not in u_02_searchable_text
+            or "PermitRootLogin No" not in u_01_exact_terms
+            or not isinstance(u_01_action, str)
+            or "root 계정으로 접속할 수 없도록" not in u_01_action
+            or not isinstance(u_02_inspection, str)
+            or "비밀번호 관리 정책 설정 여부" not in u_02_inspection
         ):
             issues.append(
                 SiteValidationIssue(
@@ -581,18 +591,6 @@ def validate_site(
                     )
                 )
                 continue
-            heading_anchors = record.get("headingAnchors")
-            if not isinstance(heading_anchors, list):
-                continue
-            for anchor_value in heading_anchors:
-                if isinstance(anchor_value, str) and anchor_value not in facts.identifiers:
-                    issues.append(
-                        SiteValidationIssue(
-                            "site-search-anchor",
-                            route,
-                            f"search anchor does not resolve: {anchor_value}",
-                        )
-                    )
     else:
         issues.append(
             SiteValidationIssue(

@@ -11,15 +11,11 @@ if (searchRoot) {
   const resultList = searchRoot.querySelector("[data-search-results]");
   const fallback = searchRoot.querySelector("[data-search-fallback]");
   const indexUrl = searchRoot.getAttribute("data-search-index-url");
+  const naturalSearch = globalThis.KisaNaturalSearch;
 
   fallback.hidden = true;
   searchRoot.setAttribute("aria-busy", "true");
   status.textContent = "검색 색인을 불러오는 중입니다.";
-
-  const normalizeCode = (value) =>
-    value.normalize("NFC").toLocaleLowerCase("en").replaceAll("-", "");
-  const normalizeText = (value) =>
-    value.normalize("NFC").toLocaleLowerCase("ko");
 
   const createOption = (value, label) => {
     const element = document.createElement("option");
@@ -45,42 +41,10 @@ if (searchRoot) {
     history.replaceState(null, "", query ? "?" + query : location.pathname);
   };
 
-  const scoreRecord = (record, query) => {
-    if (!query) {
-      return 1;
-    }
-    const normalizedQuery = normalizeText(query);
-    if (record.code === query) {
-      return 1000;
-    }
-    if (normalizeCode(record.code) === normalizeCode(query)) {
-      return 900;
-    }
-    if (record.exactTerms.includes(query)) {
-      return 800;
-    }
-    if (
-      record.exactTerms.some(
-        (term) => normalizeText(term) === normalizedQuery,
-      )
-    ) {
-      return 700;
-    }
-    const normalizedTitle = normalizeText(record.title);
-    if (normalizedTitle === normalizedQuery) {
-      return 600;
-    }
-    if (normalizedTitle.startsWith(normalizedQuery)) {
-      return 500;
-    }
-    const tokens = normalizedQuery.split(/\s+/).filter(Boolean);
-    const searchableText = normalizeText(record.searchableText);
-    return tokens.every((token) => searchableText.includes(token)) ? 400 : 0;
-  };
-
-  const renderResults = (records) => {
+  const renderResults = (rankedRecords, query, totalCount = rankedRecords.length) => {
     resultList.replaceChildren();
-    for (const record of records) {
+    for (const ranking of rankedRecords) {
+      const record = ranking.record;
       const item = document.createElement("li");
       item.className = "search-result";
       const link = document.createElement("a");
@@ -94,25 +58,37 @@ if (searchRoot) {
         record.categoryLabel +
         " · 중요도 " +
         record.severitySourceLabel;
+      if (query && ranking.matchedLabels.length) {
+        const matchReason = document.createElement("p");
+        matchReason.className = "search-result__match";
+        matchReason.textContent =
+          ranking.contextLabel +
+          " · 일치: " +
+          ranking.matchedLabels.slice(0, 5).join(" · ");
+        item.append(link, metadata, matchReason);
+      } else {
+        item.append(link, metadata);
+      }
       const context = document.createElement("p");
-      const searchableContext = record.searchableText.replace(/\s+/g, " ").trim();
-      context.textContent = searchableContext.slice(0, 180);
-      item.append(link, metadata, context);
+      context.textContent = ranking.context;
+      item.append(context);
       resultList.append(item);
     }
-    status.textContent = records.length
-      ? String(records.length) + "개 결과"
+    status.textContent = totalCount
+      ? (query ? "자연어 검색 · " : "") +
+        String(totalCount) +
+        "개 결과" +
+        (totalCount > rankedRecords.length
+          ? " · 관련도순 상위 " + String(rankedRecords.length) + "개 표시"
+          : "")
       : "일치하는 점검항목이 없습니다. 검색어나 필터를 변경해 주세요.";
   };
 
   const applySearch = (records) => {
     const query = searchInput.value.trim();
-    const filtered = records
-      .map((record) => ({record, score: scoreRecord(record, query)}))
-      .filter(({record, score}) => {
-        if (query && score === 0) {
-          return false;
-        }
+    const filtered = naturalSearch
+      .rankRecords(records, query, {includeContext: false})
+      .filter(({record}) => {
         if (domainFilter.value && record.domainIdentifier !== domainFilter.value) {
           return false;
         }
@@ -132,13 +108,12 @@ if (searchRoot) {
           targetFilter.value &&
           !record.targetIdentifiers.includes(targetFilter.value)
         );
-      })
-      .sort(
-        (left, right) =>
-          right.score - left.score || left.record.order - right.record.order,
-      )
-      .map(({record}) => record);
-    renderResults(filtered);
+      });
+    const visibleResults = naturalSearch.addResultContexts(
+      query ? filtered.slice(0, 50) : filtered,
+      query,
+    );
+    renderResults(visibleResults, query, filtered.length);
     updateQueryString();
   };
 

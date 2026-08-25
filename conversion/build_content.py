@@ -43,6 +43,66 @@ def _plain_search_text(value: str) -> str:
     return unicodedata.normalize("NFC", collapsed)
 
 
+_SEARCH_SECTION_NAMES = (
+    "inspection",
+    "purpose",
+    "threat",
+    "judgment",
+    "action",
+    "impact",
+    "guidance",
+    "reference",
+)
+
+
+def _search_section_name(block: dict[str, JsonValue]) -> str:
+    """Map one article block to its structured search section."""
+
+    semantic_path = block.get("semanticPath")
+    if not isinstance(semantic_path, list):
+        return "inspection"
+    path = [value for value in semantic_path if isinstance(value, str)]
+    section_by_path = {
+        ("overview", "inspectionContent"): "inspection",
+        ("overview", "inspectionPurpose"): "purpose",
+        ("overview", "securityThreat"): "threat",
+        ("assessment", "judgment"): "judgment",
+        ("assessment", "remediationMethod"): "action",
+        ("assessment", "remediationImpact"): "impact",
+        ("overview", "reference"): "reference",
+    }
+    if path[:1] == ["remediation"]:
+        return "guidance"
+    return section_by_path.get(tuple(path[:2]), "inspection")
+
+
+def _search_sections(blocks: list[JsonValue]) -> dict[str, JsonValue]:
+    """Derive weighted search sections from one normalized article JSON document."""
+
+    section_parts: dict[str, list[str]] = {name: [] for name in _SEARCH_SECTION_NAMES}
+    for block_value in blocks:
+        if (
+            not isinstance(block_value, dict)
+            or block_value.get("publicationDisposition") == "excluded"
+        ):
+            continue
+        semantic_path = block_value.get("semanticPath")
+        if not isinstance(semantic_path, list) or not semantic_path:
+            continue
+        if block_value.get("blockType") == "heading" and semantic_path[0] != "remediation":
+            continue
+        if semantic_path[:2] == ["assessment", "target"]:
+            continue
+        content_value = block_value.get("content")
+        if not isinstance(content_value, str):
+            continue
+        section_parts[_search_section_name(block_value)].append(content_value)
+    return {
+        name: _plain_search_text(" ".join(section_parts[name]))
+        for name in _SEARCH_SECTION_NAMES
+    }
+
+
 def _write_canonical_json(path: Path, value: JsonValue) -> None:
     """Write RFC 8785 canonical JSON without a trailing newline."""
 
@@ -219,7 +279,6 @@ def _search_record(
     *,
     manifest_record: dict[str, JsonValue],
     normalized_document: dict[str, JsonValue],
-    corpus_checksum: str,
     taxonomy: dict[str, JsonValue],
     record_order: int,
 ) -> dict[str, JsonValue]:
@@ -232,10 +291,6 @@ def _search_record(
     classification = as_mapping(
         normalized_document["classification"],
         location="normalizedCriterion.classification",
-    )
-    provenance = as_mapping(
-        normalized_document["provenance"],
-        location="normalizedCriterion.provenance",
     )
     domain_identifier = classification["domainIdentifier"]
     category_identifier = classification["categoryIdentifier"]
@@ -273,13 +328,7 @@ def _search_record(
         normalized_document["blocks"],
         location="normalizedCriterion.blocks",
     )
-    searchable_parts: list[str] = []
-    for block_value in blocks:
-        if not isinstance(block_value, dict):
-            continue
-        content_value = block_value.get("content")
-        if isinstance(content_value, str):
-            searchable_parts.append(content_value)
+    search_sections = _search_sections(blocks)
     title_value = criterion["title"]
     if not isinstance(title_value, str):
         msg = "normalized criterion title must be a string"
@@ -288,41 +337,21 @@ def _search_record(
     if not isinstance(source_target_text, str):
         msg = "normalized sourceTargetText must be a string"
         raise TypeError(msg)
-    searchable_text = _plain_search_text(
-        " ".join(
-            [
-                title_value,
-                cast("str", domain_label),
-                cast("str", category_label),
-                *cast("list[str]", target_labels),
-                source_target_text,
-                *searchable_parts,
-            ]
-        )
-    )
     exact_terms = sorted(
         {
             literal
             for block_value in blocks
             if isinstance(block_value, dict)
+            and block_value.get("publicationDisposition") != "excluded"
             for literal_value in [block_value.get("technicalLiterals")]
             if isinstance(literal_value, list)
             for literal in literal_value
             if isinstance(literal, str)
         }
     )
-    heading_anchors = [
-        block_value["blockReference"]
-        for block_value in blocks
-        if isinstance(block_value, dict)
-        and block_value.get("blockType") == "heading"
-        and isinstance(block_value.get("blockReference"), str)
-    ]
     return {
-        "recordIdentifier": criterion["code"],
         "order": record_order,
         "code": criterion["code"],
-        "slug": criterion["slug"],
         "route": manifest_record["route"],
         "title": title_value,
         "severityLevel": as_mapping(
@@ -340,12 +369,8 @@ def _search_record(
         "targetIdentifiers": target_identifiers,
         "targetLabels": target_labels,
         "sourceTargetText": source_target_text,
-        "sourcePageRanges": provenance["sourcePageRanges"],
-        "headingAnchors": heading_anchors,
-        "searchableText": searchable_text,
+        "searchSections": search_sections,
         "exactTerms": cast("JsonValue", exact_terms),
-        "criterionSourceChecksum": normalized_document["criterionSourceChecksum"],
-        "canonicalCorpusChecksum": corpus_checksum,
     }
 
 
@@ -418,7 +443,6 @@ def build(
                 location="manifest.criteria[]",
             ),
             normalized_document=normalized_document,
-            corpus_checksum=corpus_checksum,
             taxonomy=taxonomy,
             record_order=record_order,
         )
@@ -429,8 +453,8 @@ def build(
     ]
 
     search_index: dict[str, JsonValue] = {
-        "schemaVersion": 1,
-        "tokenizerVersion": "unicode-nfc-whitespace-v1",
+        "schemaVersion": 2,
+        "tokenizerVersion": "unicode-nfc-korean-sections-v2",
         "caseFoldingVersion": "unicode-default-v1",
         "canonicalCorpusChecksum": corpus_checksum,
         "records": search_records,

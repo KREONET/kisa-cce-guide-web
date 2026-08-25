@@ -591,6 +591,13 @@ def test_search_page_keeps_a_script_independent_fallback(generated_site: Path) -
     assert "data-search-fallback" in search_html
     assert "<noscript>" not in search_html
     assert search_html.count('<li><a href="/') >= EXPECTED_CRITERION_COUNT
+    assert 'placeholder="예: 리눅스에서 root 원격 로그인을 막고 싶어"' in search_html
+    assert 'id="search-help" class="search-help"' in search_html
+    natural_search_script = '<script src="/assets/search-core.js" defer></script>'
+    interface_script = '<script src="/assets/search.js" defer></script>'
+    assert natural_search_script in search_html
+    assert search_html.index(natural_search_script) < search_html.index(interface_script)
+    assert (generated_site / "assets" / "search-core.js").is_file()
 
 
 def test_highlight_assets_are_self_hosted_and_checksum_pinned(generated_site: Path) -> None:
@@ -761,7 +768,7 @@ def test_static_validation_rejects_search_index_contract_regressions(
     records = search_index["records"]
     records[2]["route"] = "/missing/"
     records[3]["code"] = records[2]["code"]
-    records[4].pop("exactTerms")
+    records[4].pop("searchSections")
     records[5]["targetLabels"] = records[5]["targetLabels"][:-1]
     search_path.write_text(
         json.dumps(search_index, ensure_ascii=False, separators=(",", ":")),

@@ -23,6 +23,8 @@ from conversion.validate_content import _validate_markdown_structure, validate_r
 HEADING_LEVEL_TWO = 2
 SOLARIS_RECOMMENDATION_ROW_COUNT = 17
 EXPECTED_CRITERION_COUNT = 382
+MAX_SEARCH_INDEX_BYTES = 1_450_000
+SEARCH_SCHEMA_VERSION = 2
 CANONICAL_EXEMPLAR_PATH = Path("unix/u-01.md")
 
 
@@ -138,18 +140,24 @@ def test_search_index_contains_exact_terms() -> None:
     build()
     search_path = repository_root() / "build" / "search" / "search-index.json"
     search_index = json.loads(search_path.read_text(encoding="utf-8"))
+    assert search_path.stat().st_size <= MAX_SEARCH_INDEX_BYTES
+    assert search_index["schemaVersion"] == SEARCH_SCHEMA_VERSION
+    assert search_index["tokenizerVersion"] == "unicode-nfc-korean-sections-v2"
     records = {record["code"]: record for record in search_index["records"]}
     assert len(records) == EXPECTED_CRITERION_COUNT
     assert {"U-01", "U-02", "W-01", "CI", "CA-19"} <= set(records)
+    assert all("searchableText" not in record for record in records.values())
     assert "/etc/ssh/sshd_config" in records["U-01"]["exactTerms"]
     assert "etc/securetty" in records["U-01"]["exactTerms"]
     assert "#pts/0" in records["U-01"]["exactTerms"]
-    assert "PermitRootLogin No" in records["U-01"]["searchableText"]
+    assert "root 계정의 원격터미널 접속 차단" in records["U-01"]["searchSections"]["inspection"]
+    assert "관리자 계정 탈취" in records["U-01"]["searchSections"]["purpose"]
+    assert "root 계정으로 접속할 수 없도록" in records["U-01"]["searchSections"]["action"]
     assert "/etc/security/pwquality.conf" in records["U-02"]["exactTerms"]
     assert "/etc/security/opasswd" in records["U-02"]["exactTerms"]
     assert "PASSWORD_MIN_DIGIT_CHARS= 1" in records["U-02"]["exactTerms"]
-    assert "비밀번호 관리정책 설정" in records["U-02"]["searchableText"]
-    assert "custom_404.html" in records["EP"]["searchableText"]
+    assert "비밀번호 관리 정책 설정 여부" in records["U-02"]["searchSections"]["inspection"]
+    assert any("custom_404.html" in term for term in records["EP"]["exactTerms"])
 
 
 def test_normalized_ast_preserves_semantics() -> None:

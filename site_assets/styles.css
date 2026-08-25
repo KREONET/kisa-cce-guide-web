@@ -751,6 +751,7 @@ input::placeholder { color: var(--muted); opacity: 1; }
   gap: var(--space-4);
 }
 .filters label { display: flex; flex-direction: column; gap: var(--space-2); color: var(--body); font-size: 12px; font-weight: 700; letter-spacing: .04em; }
+.search-help { margin: calc(var(--space-6) * -1) 0 var(--space-8); color: var(--muted); font-size: 14px; }
 [data-search-status] { min-height: 44px; margin: var(--space-4) 0; padding: var(--space-3) var(--space-4); border-left: 4px solid var(--primary); background: var(--surface-soft); color: var(--body); font-size: 14px; font-weight: 700; }
 .card-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: var(--space-8); gap: var(--space-6); }
 .card {
@@ -801,6 +802,7 @@ input::placeholder { color: var(--muted); opacity: 1; }
 }
 .search-result > a:hover { color: var(--link); text-decoration: underline; }
 .search-result p { margin: var(--space-2) 0 0; color: var(--muted); font-size: 14px; }
+.search-result .search-result__match { color: var(--success); font-weight: 700; }
 
 /* Footer chapter. */
 .site-footer { margin-top: auto; border-top: 4px solid var(--primary); background: var(--surface-dark); color: var(--on-dark-muted); }
