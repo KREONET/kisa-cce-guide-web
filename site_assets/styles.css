@@ -138,6 +138,7 @@ a:hover { text-decoration-thickness: 2px; }
   letter-spacing: .11em;
 }
 .site-nav { display: flex; align-items: stretch; align-self: stretch; }
+.site-nav__domains { display: none; }
 .site-nav a {
   position: relative;
   display: inline-flex;
@@ -756,6 +757,7 @@ input::placeholder { color: var(--muted); opacity: 1; }
 @media (max-width: 768px) {
   .site-header__inner, .page-shell, .site-footer__inner { width: calc(100% - 32px); }
   .site-header__inner { flex-wrap: wrap; }
+  .sidebar { display: none; }
   .nav-toggle { display: inline-flex; align-items: center; justify-content: center; }
   .site-nav { display: flex; flex: 1 0 100%; flex-direction: column; width: 100%; padding-bottom: var(--space-3); }
   .site-nav[data-enhanced="true"] {
@@ -764,13 +766,34 @@ input::placeholder { color: var(--muted); opacity: 1; }
     right: 16px;
     left: 16px;
     display: none;
+    max-height: calc(100vh - var(--header-height) - 16px);
+    max-height: calc(100dvh - var(--header-height) - 16px);
     padding: var(--space-2);
+    overflow-y: auto;
     border: 1px solid var(--hairline-strong);
     background: var(--surface-dark);
+    overscroll-behavior: contain;
   }
   .site-nav[data-enhanced="true"][data-open="true"] { display: flex; }
   .site-nav a { padding: 10px var(--space-4); }
   .site-nav a[aria-current="page"]::after { inset: 8px auto 8px 0; width: 4px; height: auto; }
+  .site-nav__domains { display: block; border-top: 1px solid var(--hairline-strong); }
+  .site-nav__domains > summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 44px;
+    padding: 10px var(--space-4);
+    color: var(--on-dark);
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .site-nav__domains > summary::after { color: var(--primary); content: "+"; font-size: 20px; }
+  .site-nav__domains[open] > summary::after { content: "−"; }
+  .site-nav__domains ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0; padding: 0; border-top: 1px solid var(--hairline-strong); list-style: none; }
+  .site-nav__domains li { min-width: 0; border-bottom: 1px solid var(--hairline-strong); }
+  .site-nav__domains li:nth-child(odd) { border-right: 1px solid var(--hairline-strong); }
+  .site-nav__domains a { min-height: 44px; font-size: 13px; line-height: 1.35; }
   .hero { min-height: auto; }
   .hero__stats { gap: var(--space-6); }
   .domain-directory { margin-top: var(--space-8); }

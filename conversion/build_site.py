@@ -141,6 +141,7 @@ def _html_document(
     extra_stylesheets: Sequence[str] = (),
     canonical_url: str | None = None,
     current_navigation: str | None = None,
+    mobile_domain_navigation: str = "",
     json_alternate_url: str | None = None,
     structured_data: Mapping[str, JsonValue] | None = None,
 ) -> str:
@@ -209,6 +210,7 @@ def _html_document(
       <button class="nav-toggle" type="button" aria-expanded="true" aria-controls="site-navigation" data-navigation-toggle hidden>메뉴</button>
       <nav id="site-navigation" class="site-nav" aria-label="주요 메뉴" data-site-navigation data-open="true">
         <a href="{html.escape(_site_url("/", base_path=base_path), quote=True)}"{navigation_current("domains")}>분야</a>
+        {mobile_domain_navigation}
         <a href="{html.escape(_site_url("/search/", base_path=base_path), quote=True)}"{navigation_current("search")}>검색</a>
       </nav>
     </div>
@@ -263,13 +265,13 @@ def _taxonomy_maps(
     return domains, categories, targets
 
 
-def _render_sidebar(
+def _render_domain_navigation_items(
     *,
     domains: Mapping[str, dict[str, JsonValue]],
     current_domain: str | None,
     base_path: str,
 ) -> str:
-    """Render domain navigation."""
+    """Render the shared ordered domain navigation items."""
 
     items = []
     for domain_identifier, domain in sorted(
@@ -282,10 +284,46 @@ def _render_sidebar(
         items.append(
             f'<li><a href="{html.escape(route, quote=True)}"{current}>{html.escape(label)}</a></li>'
         )
+    return "".join(items)
+
+
+def _render_sidebar(
+    *,
+    domains: Mapping[str, dict[str, JsonValue]],
+    current_domain: str | None,
+    base_path: str,
+) -> str:
+    """Render desktop and tablet domain navigation."""
+
+    items = _render_domain_navigation_items(
+        domains=domains,
+        current_domain=current_domain,
+        base_path=base_path,
+    )
     return (
         '<aside class="sidebar" aria-label="분야 탐색">'
         '<details class="sidebar-disclosure" open><summary>분야 탐색</summary>'
-        '<p class="sidebar__title">분야</p><ul>' + "".join(items) + "</ul></details></aside>"
+        '<p class="sidebar__title">분야</p><ul>' + items + "</ul></details></aside>"
+    )
+
+
+def _render_mobile_domain_navigation(
+    *,
+    domains: Mapping[str, dict[str, JsonValue]],
+    current_domain: str | None,
+    base_path: str,
+) -> str:
+    """Render domain navigation inside the mobile primary menu."""
+
+    items = _render_domain_navigation_items(
+        domains=domains,
+        current_domain=current_domain,
+        base_path=base_path,
+    )
+    return (
+        '<details class="site-nav__domains"><summary>분야 탐색</summary><ul>'
+        + items
+        + "</ul></details>"
     )
 
 
@@ -914,6 +952,11 @@ def _detail_page(
         extra_stylesheets=highlight_stylesheets,
         canonical_url=criterion_url,
         current_navigation="domains",
+        mobile_domain_navigation=_render_mobile_domain_navigation(
+            domains=domains,
+            current_domain=domain_identifier,
+            base_path=base_path,
+        ),
         json_alternate_url=dataset_url,
         structured_data=structured_data,
     )

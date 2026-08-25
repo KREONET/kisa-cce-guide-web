@@ -346,6 +346,38 @@ def test_source_attribution_section_is_not_rendered(generated_site: Path) -> Non
         assert 'class="provenance"' not in detail_html, detail_path
 
 
+def test_mobile_menu_contains_domain_exploration(generated_site: Path) -> None:
+    """Detail pages must move domain exploration into the mobile primary menu."""
+
+    detail_html = (generated_site / "unix" / "u-01" / "index.html").read_text(
+        encoding="utf-8"
+    )
+    navigation_html = detail_html.partition('<nav id="site-navigation"')[2].partition(
+        "</nav>"
+    )[0]
+    assert '<details class="site-nav__domains"><summary>분야 탐색</summary>' in navigation_html
+    assert '<aside class="sidebar" aria-label="분야 탐색">' in detail_html
+
+    taxonomy = load_yaml(repository_root() / "data/taxonomy.yaml")
+    domain_values = as_sequence(taxonomy["domains"], location="taxonomy.domains")
+    for domain_value in domain_values:
+        domain = as_mapping(domain_value, location="taxonomy.domains[]")
+        domain_identifier = domain["identifier"]
+        assert isinstance(domain_identifier, str)
+        assert f'href="/{domain_identifier}/"' in navigation_html
+
+    stylesheet = (generated_site / "assets" / "styles.css").read_text(encoding="utf-8")
+    base_styles = stylesheet.partition("@media (max-width: 1080px) {")[0]
+    assert ".site-nav__domains { display: none; }" in base_styles
+    mobile_styles = stylesheet.partition("@media (max-width: 768px) {")[2].partition(
+        "@media (max-width: 480px) {"
+    )[0]
+    assert ".sidebar { display: none; }" in mobile_styles
+    assert ".site-nav__domains { display: block;" in mobile_styles
+    assert "max-height: calc(100vh - var(--header-height) - 16px);" in mobile_styles
+    assert "max-height: calc(100dvh - var(--header-height) - 16px);" in mobile_styles
+
+
 def test_table_of_contents_preserves_heading_hierarchy(generated_site: Path) -> None:
     """Every criterion TOC must reproduce its complete normalized heading tree."""
 
@@ -746,6 +778,13 @@ def test_subpath_build_prefixes_links() -> None:
         assert "/kisa-cce-guide-web/search/" in inspector.links
         detail_inspector = _inspect(output_root / "site" / "unix" / "u-01" / "index.html")
         assert "/kisa-cce-guide-web/unix/" in detail_inspector.links
+        detail_html = (
+            output_root / "site" / "unix" / "u-01" / "index.html"
+        ).read_text(encoding="utf-8")
+        mobile_navigation_html = detail_html.partition('<nav id="site-navigation"')[2].partition(
+            "</nav>"
+        )[0]
+        assert 'href="/kisa-cce-guide-web/windows/"' in mobile_navigation_html
         manifest = load_yaml(repository_root() / "data/criteria-manifest.yaml")
         assert (
             validate_site(
