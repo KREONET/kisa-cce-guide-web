@@ -1,0 +1,615 @@
+schemaVersion: 1
+criterionSlug: ci
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "ci:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.reference.note.label:3"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.reference.note.content:3"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.reference.note.label:4"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.reference.note.content:4"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.reference.note.label:5"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.reference.note.content:5"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.reference.note.label:6"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.reference.note.content:6"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.reference.note.label:7"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:overview.reference.note.content:7"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 679
+        printedPage: "679"
+        pageRegionIdentifier: p679-ci
+  - blockReference: "ci:remediation.linux.paragraph:1"
+    sourceSpans:
+      - physicalPage: 680
+        printedPage: "680"
+        pageRegionIdentifier: p680-ci
+  - blockReference: "ci:remediation.linux.paragraph:2"
+    sourceSpans:
+      - physicalPage: 680
+        printedPage: "680"
+        pageRegionIdentifier: p680-ci
+  - blockReference: "ci:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 680
+        printedPage: "680"
+        pageRegionIdentifier: p680-ci
+  - blockReference: "ci:remediation.linux.paragraph:3"
+    sourceSpans:
+      - physicalPage: 680
+        printedPage: "680"
+        pageRegionIdentifier: p680-ci
+  - blockReference: "ci:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 680
+        printedPage: "680"
+        pageRegionIdentifier: p680-ci
+  - blockReference: "ci:remediation.linux.step:3"
+    sourceSpans:
+      - physicalPage: 680
+        printedPage: "680"
+        pageRegionIdentifier: p680-ci
+  - blockReference: "ci:remediation.linux.step:4"
+    sourceSpans:
+      - physicalPage: 680
+        printedPage: "680"
+        pageRegionIdentifier: p680-ci
+  - blockReference: "ci:remediation.linux.step:5"
+    sourceSpans:
+      - physicalPage: 680
+        printedPage: "680"
+        pageRegionIdentifier: p680-ci
+  - blockReference: "ci:remediation.linux.paragraph:4"
+    sourceSpans:
+      - physicalPage: 680
+        printedPage: "680"
+        pageRegionIdentifier: p680-ci
+  - blockReference: "ci:remediation.linux.table:1"
+    sourceSpans:
+      - physicalPage: 680
+        printedPage: "680"
+        pageRegionIdentifier: p680-ci
+  - blockReference: "ci:remediation.linux.paragraph:5"
+    sourceSpans:
+      - physicalPage: 680
+        printedPage: "680"
+        pageRegionIdentifier: p680-ci
+  - blockReference: "ci:remediation.linux.table:2"
+    sourceSpans:
+      - physicalPage: 680
+        printedPage: "680"
+        pageRegionIdentifier: p680-ci
+  - blockReference: "ci:remediation.linux.paragraph:6"
+    sourceSpans:
+      - physicalPage: 681
+        printedPage: "681"
+        pageRegionIdentifier: p681-ci
+  - blockReference: "ci:remediation.linux.paragraph:7"
+    sourceSpans:
+      - physicalPage: 681
+        printedPage: "681"
+        pageRegionIdentifier: p681-ci
+  - blockReference: "ci:remediation.linux.step:6"
+    sourceSpans:
+      - physicalPage: 681
+        printedPage: "681"
+        pageRegionIdentifier: p681-ci
+  - blockReference: "ci:remediation.linux.paragraph:8"
+    sourceSpans:
+      - physicalPage: 681
+        printedPage: "681"
+        pageRegionIdentifier: p681-ci
+  - blockReference: "ci:remediation.linux.step:7"
+    sourceSpans:
+      - physicalPage: 681
+        printedPage: "681"
+        pageRegionIdentifier: p681-ci
+  - blockReference: "ci:remediation.linux.step:8"
+    sourceSpans:
+      - physicalPage: 681
+        printedPage: "681"
+        pageRegionIdentifier: p681-ci
+  - blockReference: "ci:remediation.linux.step:9"
+    sourceSpans:
+      - physicalPage: 681
+        printedPage: "681"
+        pageRegionIdentifier: p681-ci
+  - blockReference: "ci:remediation.linux.item:1"
+    sourceSpans:
+      - physicalPage: 681
+        printedPage: "681"
+        pageRegionIdentifier: p681-ci
+  - blockReference: "ci:remediation.linux.item:2"
+    sourceSpans:
+      - physicalPage: 681
+        printedPage: "681"
+        pageRegionIdentifier: p681-ci
+  - blockReference: "ci:remediation.linux.step:10"
+    sourceSpans:
+      - physicalPage: 681
+        printedPage: "681"
+        pageRegionIdentifier: p681-ci
+  - blockReference: "ci:remediation.linux.step:11"
+    sourceSpans:
+      - physicalPage: 681
+        printedPage: "681"
+        pageRegionIdentifier: p681-ci
+  - blockReference: "ci:remediation.linux.paragraph:9"
+    sourceSpans:
+      - physicalPage: 682
+        printedPage: "682"
+        pageRegionIdentifier: p682-ci
+  - blockReference: "ci:remediation.linux.table:3"
+    sourceSpans:
+      - physicalPage: 682
+        printedPage: "682"
+        pageRegionIdentifier: p682-ci
+  - blockReference: "ci:remediation.linux.paragraph:10"
+    sourceSpans:
+      - physicalPage: 683
+        printedPage: "683"
+        pageRegionIdentifier: p683-ci
+  - blockReference: "ci:remediation.linux.paragraph:11"
+    sourceSpans:
+      - physicalPage: 683
+        printedPage: "683"
+        pageRegionIdentifier: p683-ci
+  - blockReference: "ci:remediation.linux.step:12"
+    sourceSpans:
+      - physicalPage: 683
+        printedPage: "683"
+        pageRegionIdentifier: p683-ci
+  - blockReference: "ci:remediation.linux.literal:1"
+    sourceSpans:
+      - physicalPage: 683
+        printedPage: "683"
+        pageRegionIdentifier: p683-ci
+  - blockReference: "ci:remediation.linux.step:13"
+    sourceSpans:
+      - physicalPage: 683
+        printedPage: "683"
+        pageRegionIdentifier: p683-ci
+  - blockReference: "ci:remediation.linux.literal:2"
+    sourceSpans:
+      - physicalPage: 683
+        printedPage: "683"
+        pageRegionIdentifier: p683-ci
+  - blockReference: "ci:remediation.linux.step:14"
+    sourceSpans:
+      - physicalPage: 683
+        printedPage: "683"
+        pageRegionIdentifier: p683-ci
+  - blockReference: "ci:remediation.linux.literal:3"
+    sourceSpans:
+      - physicalPage: 683
+        printedPage: "683"
+        pageRegionIdentifier: p683-ci
+  - blockReference: "ci:remediation.linux.paragraph:12"
+    sourceSpans:
+      - physicalPage: 683
+        printedPage: "683"
+        pageRegionIdentifier: p683-ci
+  - blockReference: "ci:remediation.linux.step:15"
+    sourceSpans:
+      - physicalPage: 683
+        printedPage: "683"
+        pageRegionIdentifier: p683-ci
+  - blockReference: "ci:remediation.linux.step:16"
+    sourceSpans:
+      - physicalPage: 683
+        printedPage: "683"
+        pageRegionIdentifier: p683-ci
+  - blockReference: "ci:remediation.linux.step:17"
+    sourceSpans:
+      - physicalPage: 683
+        printedPage: "683"
+        pageRegionIdentifier: p683-ci
+  - blockReference: "ci:remediation.linux.table:4"
+    sourceSpans:
+      - physicalPage: 684
+        printedPage: "684"
+        pageRegionIdentifier: p684-ci
+  - blockReference: "ci:remediation.linux.paragraph:13"
+    sourceSpans:
+      - physicalPage: 684
+        printedPage: "684"
+        pageRegionIdentifier: p684-ci
+  - blockReference: "ci:remediation.linux.paragraph:14"
+    sourceSpans:
+      - physicalPage: 684
+        printedPage: "684"
+        pageRegionIdentifier: p684-ci
+  - blockReference: "ci:remediation.linux.step:18"
+    sourceSpans:
+      - physicalPage: 684
+        printedPage: "684"
+        pageRegionIdentifier: p684-ci
+  - blockReference: "ci:remediation.linux.literal:4"
+    sourceSpans:
+      - physicalPage: 684
+        printedPage: "684"
+        pageRegionIdentifier: p684-ci
+  - blockReference: "ci:remediation.linux.step:19"
+    sourceSpans:
+      - physicalPage: 684
+        printedPage: "684"
+        pageRegionIdentifier: p684-ci
+  - blockReference: "ci:remediation.linux.literal:5"
+    sourceSpans:
+      - physicalPage: 684
+        printedPage: "684"
+        pageRegionIdentifier: p684-ci
+  - blockReference: "ci:remediation.linux.paragraph:15"
+    sourceSpans:
+      - physicalPage: 684
+        printedPage: "684"
+        pageRegionIdentifier: p684-ci
+  - blockReference: "ci:remediation.linux.step:20"
+    sourceSpans:
+      - physicalPage: 685
+        printedPage: "685"
+        pageRegionIdentifier: p685-ci
+  - blockReference: "ci:remediation.linux.step:21"
+    sourceSpans:
+      - physicalPage: 685
+        printedPage: "685"
+        pageRegionIdentifier: p685-ci
+  - blockReference: "ci:remediation.linux.paragraph:16"
+    sourceSpans:
+      - physicalPage: 685
+        printedPage: "685"
+        pageRegionIdentifier: p685-ci
+  - blockReference: "ci:remediation.linux.paragraph:17"
+    sourceSpans:
+      - physicalPage: 685
+        printedPage: "685"
+        pageRegionIdentifier: p685-ci
+  - blockReference: "ci:remediation.linux.step:22"
+    sourceSpans:
+      - physicalPage: 685
+        printedPage: "685"
+        pageRegionIdentifier: p685-ci
+  - blockReference: "ci:remediation.linux.literal:6"
+    sourceSpans:
+      - physicalPage: 685
+        printedPage: "685"
+        pageRegionIdentifier: p685-ci
+  - blockReference: "ci:remediation.linux.paragraph:18"
+    sourceSpans:
+      - physicalPage: 685
+        printedPage: "685"
+        pageRegionIdentifier: p685-ci
+  - blockReference: "ci:remediation.linux.step:23"
+    sourceSpans:
+      - physicalPage: 685
+        printedPage: "685"
+        pageRegionIdentifier: p685-ci
+  - blockReference: "ci:remediation.linux.step:24"
+    sourceSpans:
+      - physicalPage: 685
+        printedPage: "685"
+        pageRegionIdentifier: p685-ci
+  - blockReference: "ci:remediation.linux.step:25"
+    sourceSpans:
+      - physicalPage: 685
+        printedPage: "685"
+        pageRegionIdentifier: p685-ci
+  - blockReference: "ci:remediation.linux.paragraph:19"
+    sourceSpans:
+      - physicalPage: 686
+        printedPage: "686"
+        pageRegionIdentifier: p686-ci
+  - blockReference: "ci:remediation.linux.configuration:1"
+    sourceSpans:
+      - physicalPage: 686
+        printedPage: "686"
+        pageRegionIdentifier: p686-ci
+  - blockReference: "ci:remediation.linux.paragraph:20"
+    sourceSpans:
+      - physicalPage: 686
+        printedPage: "686"
+        pageRegionIdentifier: p686-ci
+  - blockReference: "ci:remediation.linux.configuration:2"
+    sourceSpans:
+      - physicalPage: 686
+        printedPage: "686"
+        pageRegionIdentifier: p686-ci
+  - blockReference: "ci:remediation.linux.paragraph:21"
+    sourceSpans:
+      - physicalPage: 686
+        printedPage: "686"
+        pageRegionIdentifier: p686-ci
+  - blockReference: "ci:remediation.linux.configuration:3"
+    sourceSpans:
+      - physicalPage: 686
+        printedPage: "686"
+        pageRegionIdentifier: p686-ci
+  - blockReference: "ci:remediation.linux.paragraph:22"
+    sourceSpans:
+      - physicalPage: 687
+        printedPage: "687"
+        pageRegionIdentifier: p687-ci
+  - blockReference: "ci:remediation.linux.paragraph:23"
+    sourceSpans:
+      - physicalPage: 687
+        printedPage: "687"
+        pageRegionIdentifier: p687-ci
+  - blockReference: "ci:remediation.linux.configuration:4"
+    sourceSpans:
+      - physicalPage: 687
+        printedPage: "687"
+        pageRegionIdentifier: p687-ci
+  - blockReference: "ci:remediation.linux.paragraph:24"
+    sourceSpans:
+      - physicalPage: 687
+        printedPage: "687"
+        pageRegionIdentifier: p687-ci
+  - blockReference: "ci:remediation.linux.paragraph:25"
+    sourceSpans:
+      - physicalPage: 687
+        printedPage: "687"
+        pageRegionIdentifier: p687-ci
+  - blockReference: "ci:remediation.linux.step:26"
+    sourceSpans:
+      - physicalPage: 688
+        printedPage: "688"
+        pageRegionIdentifier: p688-ci
+  - blockReference: "ci:remediation.linux.step:27"
+    sourceSpans:
+      - physicalPage: 688
+        printedPage: "688"
+        pageRegionIdentifier: p688-ci
+  - blockReference: "ci:remediation.linux.paragraph:26"
+    sourceSpans:
+      - physicalPage: 688
+        printedPage: "688"
+        pageRegionIdentifier: p688-ci
+  - blockReference: "ci:remediation.linux.step:28"
+    sourceSpans:
+      - physicalPage: 688
+        printedPage: "688"
+        pageRegionIdentifier: p688-ci
+  - blockReference: "ci:remediation.linux.step:29"
+    sourceSpans:
+      - physicalPage: 688
+        printedPage: "688"
+        pageRegionIdentifier: p688-ci
+  - blockReference: "ci:remediation.linux.step:30"
+    sourceSpans:
+      - physicalPage: 688
+        printedPage: "688"
+        pageRegionIdentifier: p688-ci
+  - blockReference: "ci:remediation.linux.step:31"
+    sourceSpans:
+      - physicalPage: 688
+        printedPage: "688"
+        pageRegionIdentifier: p688-ci
+  - blockReference: "ci:remediation.linux.step:32"
+    sourceSpans:
+      - physicalPage: 688
+        printedPage: "688"
+        pageRegionIdentifier: p688-ci
+  - blockReference: "ci:remediation.linux.paragraph:27"
+    sourceSpans:
+      - physicalPage: 689
+        printedPage: "689"
+        pageRegionIdentifier: p689-ci
+  - blockReference: "ci:remediation.linux.configuration:5"
+    sourceSpans:
+      - physicalPage: 689
+        printedPage: "689"
+        pageRegionIdentifier: p689-ci
+  - blockReference: "ci:remediation.linux.paragraph:28"
+    sourceSpans:
+      - physicalPage: 689
+        printedPage: "689"
+        pageRegionIdentifier: p689-ci
+  - blockReference: "ci:remediation.linux.configuration:6"
+    sourceSpans:
+      - physicalPage: 689
+        printedPage: "689"
+        pageRegionIdentifier: p689-ci
+  - blockReference: "ci:remediation.linux.paragraph:29"
+    sourceSpans:
+      - physicalPage: 689
+        printedPage: "689"
+        pageRegionIdentifier: p689-ci
+  - blockReference: "ci:remediation.linux.configuration:7"
+    sourceSpans:
+      - physicalPage: 689
+        printedPage: "689"
+        pageRegionIdentifier: p689-ci
+  - blockReference: "ci:remediation.linux.paragraph:30"
+    sourceSpans:
+      - physicalPage: 690
+        printedPage: "690"
+        pageRegionIdentifier: p690-ci
+  - blockReference: "ci:remediation.linux.configuration:8"
+    sourceSpans:
+      - physicalPage: 690
+        printedPage: "690"
+        pageRegionIdentifier: p690-ci
+  - blockReference: "ci:remediation.linux.paragraph:31"
+    sourceSpans:
+      - physicalPage: 690
+        printedPage: "690"
+        pageRegionIdentifier: p690-ci
+  - blockReference: "ci:remediation.linux.configuration:9"
+    sourceSpans:
+      - physicalPage: 690
+        printedPage: "690"
+        pageRegionIdentifier: p690-ci
+  - blockReference: "ci:remediation.linux.paragraph:32"
+    sourceSpans:
+      - physicalPage: 691
+        printedPage: "691"
+        pageRegionIdentifier: p691-ci
+  - blockReference: "ci:remediation.linux.configuration:10"
+    sourceSpans:
+      - physicalPage: 691
+        printedPage: "691"
+        pageRegionIdentifier: p691-ci
+  - blockReference: "ci:remediation.linux.paragraph:33"
+    sourceSpans:
+      - physicalPage: 691
+        printedPage: "691"
+        pageRegionIdentifier: p691-ci
+  - blockReference: "ci:remediation.linux.configuration:11"
+    sourceSpans:
+      - physicalPage: 692
+        printedPage: "692"
+        pageRegionIdentifier: p692-ci
+assets: []

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zeroday0619.github.io/kisa-cce-guide/schemas/policy-exceptions.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "exceptions"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "exceptions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "exceptionIdentifier",
+          "ruleIdentifier",
+          "targetReference",
+          "rationale",
+          "impact",
+          "approvedBy",
+          "approvedAt",
+          "expiresAt",
+          "status"
+        ],
+        "properties": {
+          "exceptionIdentifier": {"type": "string", "minLength": 1},
+          "ruleIdentifier": {"type": "string", "minLength": 1},
+          "targetReference": {"type": "string", "minLength": 1},
+          "rationale": {"type": "string", "minLength": 1},
+          "impact": {"type": "string", "minLength": 1},
+          "approvedBy": {"type": "string", "minLength": 1},
+          "approvedAt": {"type": "string", "format": "date-time"},
+          "expiresAt": {"type": ["string", "null"], "format": "date-time"},
+          "status": {"enum": ["active", "expired", "revoked"]}
+        }
+      }
+    }
+  }
+}

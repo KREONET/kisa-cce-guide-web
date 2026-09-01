@@ -1,0 +1,183 @@
+schemaVersion: 1
+criterionSlug: n-26
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "n-26:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 449
+        printedPage: "449"
+        pageRegionIdentifier: p449-n-26
+  - blockReference: "n-26:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 449
+        printedPage: "449"
+        pageRegionIdentifier: p449-n-26
+  - blockReference: "n-26:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 449
+        printedPage: "449"
+        pageRegionIdentifier: p449-n-26
+  - blockReference: "n-26:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 449
+        printedPage: "449"
+        pageRegionIdentifier: p449-n-26
+  - blockReference: "n-26:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 449
+        printedPage: "449"
+        pageRegionIdentifier: p449-n-26
+  - blockReference: "n-26:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 449
+        printedPage: "449"
+        pageRegionIdentifier: p449-n-26
+  - blockReference: "n-26:overview.securityThreat.item:1"
+    sourceSpans:
+      - physicalPage: 449
+        printedPage: "449"
+        pageRegionIdentifier: p449-n-26
+  - blockReference: "n-26:overview.securityThreat.item:2"
+    sourceSpans:
+      - physicalPage: 449
+        printedPage: "449"
+        pageRegionIdentifier: p449-n-26
+  - blockReference: "n-26:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 449
+        printedPage: "449"
+        pageRegionIdentifier: p449-n-26
+  - blockReference: "n-26:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 449
+        printedPage: "449"
+        pageRegionIdentifier: p449-n-26
+  - blockReference: "n-26:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 449
+        printedPage: "449"
+        pageRegionIdentifier: p449-n-26
+  - blockReference: "n-26:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 449
+        printedPage: "449"
+        pageRegionIdentifier: p449-n-26
+  - blockReference: "n-26:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 449
+        printedPage: "449"
+        pageRegionIdentifier: p449-n-26
+  - blockReference: "n-26:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 449
+        printedPage: "449"
+        pageRegionIdentifier: p449-n-26
+  - blockReference: "n-26:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 449
+        printedPage: "449"
+        pageRegionIdentifier: p449-n-26
+  - blockReference: "n-26:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 449
+        printedPage: "449"
+        pageRegionIdentifier: p449-n-26
+  - blockReference: "n-26:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 449
+        printedPage: "449"
+        pageRegionIdentifier: p449-n-26
+  - blockReference: "n-26:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 449
+        printedPage: "449"
+        pageRegionIdentifier: p449-n-26
+  - blockReference: "n-26:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 449
+        printedPage: "449"
+        pageRegionIdentifier: p449-n-26
+  - blockReference: "n-26:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 449
+        printedPage: "449"
+        pageRegionIdentifier: p449-n-26
+  - blockReference: "n-26:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 449
+        printedPage: "449"
+        pageRegionIdentifier: p449-n-26
+  - blockReference: "n-26:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 449
+        printedPage: "449"
+        pageRegionIdentifier: p449-n-26
+  - blockReference: "n-26:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 449
+        printedPage: "449"
+        pageRegionIdentifier: p449-n-26
+      - physicalPage: 450
+        printedPage: "450"
+        pageRegionIdentifier: p450-n-26
+  - blockReference: "n-26:remediation.linux.paragraph:1"
+    sourceSpans:
+      - physicalPage: 449
+        printedPage: "449"
+        pageRegionIdentifier: p449-n-26
+  - blockReference: "n-26:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 449
+        printedPage: "449"
+        pageRegionIdentifier: p449-n-26
+  - blockReference: "n-26:remediation.linux.command:1"
+    sourceSpans:
+      - physicalPage: 449
+        printedPage: "449"
+        pageRegionIdentifier: p449-n-26
+  - blockReference: "n-26:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 449
+        printedPage: "449"
+        pageRegionIdentifier: p449-n-26
+  - blockReference: "n-26:remediation.linux.command:2"
+    sourceSpans:
+      - physicalPage: 449
+        printedPage: "449"
+        pageRegionIdentifier: p449-n-26
+  - blockReference: "n-26:remediation.linux.note.label:1"
+    sourceSpans:
+      - physicalPage: 449
+        printedPage: "449"
+        pageRegionIdentifier: p449-n-26
+  - blockReference: "n-26:remediation.linux.note.content:1"
+    sourceSpans:
+      - physicalPage: 449
+        printedPage: "449"
+        pageRegionIdentifier: p449-n-26
+  - blockReference: "n-26:remediation.linux.paragraph:2"
+    sourceSpans:
+      - physicalPage: 450
+        printedPage: "450"
+        pageRegionIdentifier: p450-n-26
+  - blockReference: "n-26:remediation.linux.step:3"
+    sourceSpans:
+      - physicalPage: 450
+        printedPage: "450"
+        pageRegionIdentifier: p450-n-26
+  - blockReference: "n-26:remediation.linux.command:3"
+    sourceSpans:
+      - physicalPage: 450
+        printedPage: "450"
+        pageRegionIdentifier: p450-n-26
+  - blockReference: "n-26:remediation.linux.step:4"
+    sourceSpans:
+      - physicalPage: 450
+        printedPage: "450"
+        pageRegionIdentifier: p450-n-26
+  - blockReference: "n-26:remediation.linux.command:4"
+    sourceSpans:
+      - physicalPage: 450
+        printedPage: "450"
+        pageRegionIdentifier: p450-n-26
+assets: []

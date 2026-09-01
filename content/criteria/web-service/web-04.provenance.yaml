@@ -1,0 +1,275 @@
+schemaVersion: 1
+criterionSlug: web-04
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "web-04:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 280
+        printedPage: "280"
+        pageRegionIdentifier: p280-web-04
+  - blockReference: "web-04:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 280
+        printedPage: "280"
+        pageRegionIdentifier: p280-web-04
+  - blockReference: "web-04:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 280
+        printedPage: "280"
+        pageRegionIdentifier: p280-web-04
+  - blockReference: "web-04:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 280
+        printedPage: "280"
+        pageRegionIdentifier: p280-web-04
+  - blockReference: "web-04:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 280
+        printedPage: "280"
+        pageRegionIdentifier: p280-web-04
+  - blockReference: "web-04:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 280
+        printedPage: "280"
+        pageRegionIdentifier: p280-web-04
+  - blockReference: "web-04:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 280
+        printedPage: "280"
+        pageRegionIdentifier: p280-web-04
+  - blockReference: "web-04:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 280
+        printedPage: "280"
+        pageRegionIdentifier: p280-web-04
+  - blockReference: "web-04:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 280
+        printedPage: "280"
+        pageRegionIdentifier: p280-web-04
+  - blockReference: "web-04:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 280
+        printedPage: "280"
+        pageRegionIdentifier: p280-web-04
+  - blockReference: "web-04:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 280
+        printedPage: "280"
+        pageRegionIdentifier: p280-web-04
+  - blockReference: "web-04:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 280
+        printedPage: "280"
+        pageRegionIdentifier: p280-web-04
+  - blockReference: "web-04:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 280
+        printedPage: "280"
+        pageRegionIdentifier: p280-web-04
+  - blockReference: "web-04:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 280
+        printedPage: "280"
+        pageRegionIdentifier: p280-web-04
+  - blockReference: "web-04:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 280
+        printedPage: "280"
+        pageRegionIdentifier: p280-web-04
+  - blockReference: "web-04:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 280
+        printedPage: "280"
+        pageRegionIdentifier: p280-web-04
+  - blockReference: "web-04:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 280
+        printedPage: "280"
+        pageRegionIdentifier: p280-web-04
+  - blockReference: "web-04:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 280
+        printedPage: "280"
+        pageRegionIdentifier: p280-web-04
+  - blockReference: "web-04:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 280
+        printedPage: "280"
+        pageRegionIdentifier: p280-web-04
+  - blockReference: "web-04:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 280
+        printedPage: "280"
+        pageRegionIdentifier: p280-web-04
+  - blockReference: "web-04:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 280
+        printedPage: "280"
+        pageRegionIdentifier: p280-web-04
+  - blockReference: "web-04:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 280
+        printedPage: "280"
+        pageRegionIdentifier: p280-web-04
+  - blockReference: "web-04:remediation.linux.paragraph:1"
+    sourceSpans:
+      - physicalPage: 280
+        printedPage: "280"
+        pageRegionIdentifier: p280-web-04
+  - blockReference: "web-04:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 280
+        printedPage: "280"
+        pageRegionIdentifier: p280-web-04
+  - blockReference: "web-04:remediation.linux.command:1"
+    sourceSpans:
+      - physicalPage: 280
+        printedPage: "280"
+        pageRegionIdentifier: p280-web-04
+  - blockReference: "web-04:remediation.linux.configuration:1"
+    sourceSpans:
+      - physicalPage: 280
+        printedPage: "280"
+        pageRegionIdentifier: p280-web-04
+  - blockReference: "web-04:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 280
+        printedPage: "280"
+        pageRegionIdentifier: p280-web-04
+  - blockReference: "web-04:remediation.linux.command:2"
+    sourceSpans:
+      - physicalPage: 280
+        printedPage: "280"
+        pageRegionIdentifier: p280-web-04
+  - blockReference: "web-04:remediation.linux.note.label:1"
+    sourceSpans:
+      - physicalPage: 280
+        printedPage: "280"
+        pageRegionIdentifier: p280-web-04
+  - blockReference: "web-04:remediation.linux.note.content:1"
+    sourceSpans:
+      - physicalPage: 280
+        printedPage: "280"
+        pageRegionIdentifier: p280-web-04
+  - blockReference: "web-04:remediation.linux.note.label:2"
+    sourceSpans:
+      - physicalPage: 280
+        printedPage: "280"
+        pageRegionIdentifier: p280-web-04
+  - blockReference: "web-04:remediation.linux.note.content:2"
+    sourceSpans:
+      - physicalPage: 280
+        printedPage: "280"
+        pageRegionIdentifier: p280-web-04
+  - blockReference: "web-04:remediation.linux.paragraph:2"
+    sourceSpans:
+      - physicalPage: 281
+        printedPage: "281"
+        pageRegionIdentifier: p281-web-04
+  - blockReference: "web-04:remediation.linux.step:3"
+    sourceSpans:
+      - physicalPage: 281
+        printedPage: "281"
+        pageRegionIdentifier: p281-web-04
+  - blockReference: "web-04:remediation.linux.command:3"
+    sourceSpans:
+      - physicalPage: 281
+        printedPage: "281"
+        pageRegionIdentifier: p281-web-04
+  - blockReference: "web-04:remediation.linux.configuration:2"
+    sourceSpans:
+      - physicalPage: 281
+        printedPage: "281"
+        pageRegionIdentifier: p281-web-04
+  - blockReference: "web-04:remediation.linux.paragraph:3"
+    sourceSpans:
+      - physicalPage: 281
+        printedPage: "281"
+        pageRegionIdentifier: p281-web-04
+  - blockReference: "web-04:remediation.linux.step:4"
+    sourceSpans:
+      - physicalPage: 281
+        printedPage: "281"
+        pageRegionIdentifier: p281-web-04
+  - blockReference: "web-04:remediation.linux.command:4"
+    sourceSpans:
+      - physicalPage: 281
+        printedPage: "281"
+        pageRegionIdentifier: p281-web-04
+  - blockReference: "web-04:remediation.linux.configuration:3"
+    sourceSpans:
+      - physicalPage: 281
+        printedPage: "281"
+        pageRegionIdentifier: p281-web-04
+  - blockReference: "web-04:remediation.linux.step:5"
+    sourceSpans:
+      - physicalPage: 281
+        printedPage: "281"
+        pageRegionIdentifier: p281-web-04
+  - blockReference: "web-04:remediation.linux.command:5"
+    sourceSpans:
+      - physicalPage: 281
+        printedPage: "281"
+        pageRegionIdentifier: p281-web-04
+  - blockReference: "web-04:remediation.linux.paragraph:4"
+    sourceSpans:
+      - physicalPage: 281
+        printedPage: "281"
+        pageRegionIdentifier: p281-web-04
+  - blockReference: "web-04:remediation.linux.step:6"
+    sourceSpans:
+      - physicalPage: 281
+        printedPage: "281"
+        pageRegionIdentifier: p281-web-04
+  - blockReference: "web-04:remediation.linux.paragraph:5"
+    sourceSpans:
+      - physicalPage: 281
+        printedPage: "281"
+        pageRegionIdentifier: p281-web-04
+  - blockReference: "web-04:remediation.linux.step:7"
+    sourceSpans:
+      - physicalPage: 282
+        printedPage: "282"
+        pageRegionIdentifier: p282-web-04
+  - blockReference: "web-04:remediation.linux.command:6"
+    sourceSpans:
+      - physicalPage: 282
+        printedPage: "282"
+        pageRegionIdentifier: p282-web-04
+  - blockReference: "web-04:remediation.linux.configuration:4"
+    sourceSpans:
+      - physicalPage: 282
+        printedPage: "282"
+        pageRegionIdentifier: p282-web-04
+  - blockReference: "web-04:remediation.linux.paragraph:6"
+    sourceSpans:
+      - physicalPage: 282
+        printedPage: "282"
+        pageRegionIdentifier: p282-web-04
+  - blockReference: "web-04:remediation.linux.step:8"
+    sourceSpans:
+      - physicalPage: 282
+        printedPage: "282"
+        pageRegionIdentifier: p282-web-04
+  - blockReference: "web-04:remediation.linux.command:7"
+    sourceSpans:
+      - physicalPage: 282
+        printedPage: "282"
+        pageRegionIdentifier: p282-web-04
+  - blockReference: "web-04:remediation.linux.configuration:5"
+    sourceSpans:
+      - physicalPage: 282
+        printedPage: "282"
+        pageRegionIdentifier: p282-web-04
+  - blockReference: "web-04:remediation.linux.step:9"
+    sourceSpans:
+      - physicalPage: 282
+        printedPage: "282"
+        pageRegionIdentifier: p282-web-04
+  - blockReference: "web-04:remediation.linux.command:8"
+    sourceSpans:
+      - physicalPage: 282
+        printedPage: "282"
+        pageRegionIdentifier: p282-web-04
+assets: []

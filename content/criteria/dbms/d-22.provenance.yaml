@@ -1,0 +1,135 @@
+schemaVersion: 1
+criterionSlug: d-22
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "d-22:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 656
+        printedPage: "656"
+        pageRegionIdentifier: p656-d-22
+  - blockReference: "d-22:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 656
+        printedPage: "656"
+        pageRegionIdentifier: p656-d-22
+  - blockReference: "d-22:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 656
+        printedPage: "656"
+        pageRegionIdentifier: p656-d-22
+  - blockReference: "d-22:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 656
+        printedPage: "656"
+        pageRegionIdentifier: p656-d-22
+  - blockReference: "d-22:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 656
+        printedPage: "656"
+        pageRegionIdentifier: p656-d-22
+  - blockReference: "d-22:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 656
+        printedPage: "656"
+        pageRegionIdentifier: p656-d-22
+  - blockReference: "d-22:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 656
+        printedPage: "656"
+        pageRegionIdentifier: p656-d-22
+  - blockReference: "d-22:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 656
+        printedPage: "656"
+        pageRegionIdentifier: p656-d-22
+  - blockReference: "d-22:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 656
+        printedPage: "656"
+        pageRegionIdentifier: p656-d-22
+  - blockReference: "d-22:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 656
+        printedPage: "656"
+        pageRegionIdentifier: p656-d-22
+  - blockReference: "d-22:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 656
+        printedPage: "656"
+        pageRegionIdentifier: p656-d-22
+  - blockReference: "d-22:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 656
+        printedPage: "656"
+        pageRegionIdentifier: p656-d-22
+  - blockReference: "d-22:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 656
+        printedPage: "656"
+        pageRegionIdentifier: p656-d-22
+  - blockReference: "d-22:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 656
+        printedPage: "656"
+        pageRegionIdentifier: p656-d-22
+  - blockReference: "d-22:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 656
+        printedPage: "656"
+        pageRegionIdentifier: p656-d-22
+  - blockReference: "d-22:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 656
+        printedPage: "656"
+        pageRegionIdentifier: p656-d-22
+  - blockReference: "d-22:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 656
+        printedPage: "656"
+        pageRegionIdentifier: p656-d-22
+  - blockReference: "d-22:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 656
+        printedPage: "656"
+        pageRegionIdentifier: p656-d-22
+  - blockReference: "d-22:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 656
+        printedPage: "656"
+        pageRegionIdentifier: p656-d-22
+  - blockReference: "d-22:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 656
+        printedPage: "656"
+        pageRegionIdentifier: p656-d-22
+  - blockReference: "d-22:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - physicalPage: 656
+        printedPage: "656"
+        pageRegionIdentifier: p656-d-22
+  - blockReference: "d-22:remediation.supplementaryGuidance.step:1"
+    sourceSpans:
+      - physicalPage: 656
+        printedPage: "656"
+        pageRegionIdentifier: p656-d-22
+  - blockReference: "d-22:remediation.supplementaryGuidance.configuration:1"
+    sourceSpans:
+      - physicalPage: 656
+        printedPage: "656"
+        pageRegionIdentifier: p656-d-22
+  - blockReference: "d-22:remediation.supplementaryGuidance.command:1"
+    sourceSpans:
+      - physicalPage: 656
+        printedPage: "656"
+        pageRegionIdentifier: p656-d-22
+  - blockReference: "d-22:remediation.supplementaryGuidance.step:2"
+    sourceSpans:
+      - physicalPage: 656
+        printedPage: "656"
+        pageRegionIdentifier: p656-d-22
+  - blockReference: "d-22:remediation.supplementaryGuidance.command:2"
+    sourceSpans:
+      - physicalPage: 656
+        printedPage: "656"
+        pageRegionIdentifier: p656-d-22
+assets: []

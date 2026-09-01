@@ -1,0 +1,185 @@
+schemaVersion: 1
+criterionSlug: u-46
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "u-46:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 111
+        printedPage: "111"
+        pageRegionIdentifier: p111-u-46
+  - blockReference: "u-46:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 111
+        printedPage: "111"
+        pageRegionIdentifier: p111-u-46
+  - blockReference: "u-46:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 111
+        printedPage: "111"
+        pageRegionIdentifier: p111-u-46
+  - blockReference: "u-46:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 111
+        printedPage: "111"
+        pageRegionIdentifier: p111-u-46
+  - blockReference: "u-46:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 111
+        printedPage: "111"
+        pageRegionIdentifier: p111-u-46
+  - blockReference: "u-46:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 111
+        printedPage: "111"
+        pageRegionIdentifier: p111-u-46
+  - blockReference: "u-46:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 111
+        printedPage: "111"
+        pageRegionIdentifier: p111-u-46
+  - blockReference: "u-46:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 111
+        printedPage: "111"
+        pageRegionIdentifier: p111-u-46
+  - blockReference: "u-46:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 111
+        printedPage: "111"
+        pageRegionIdentifier: p111-u-46
+  - blockReference: "u-46:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 111
+        printedPage: "111"
+        pageRegionIdentifier: p111-u-46
+  - blockReference: "u-46:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 111
+        printedPage: "111"
+        pageRegionIdentifier: p111-u-46
+  - blockReference: "u-46:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 111
+        printedPage: "111"
+        pageRegionIdentifier: p111-u-46
+  - blockReference: "u-46:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 111
+        printedPage: "111"
+        pageRegionIdentifier: p111-u-46
+  - blockReference: "u-46:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 111
+        printedPage: "111"
+        pageRegionIdentifier: p111-u-46
+  - blockReference: "u-46:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 111
+        printedPage: "111"
+        pageRegionIdentifier: p111-u-46
+  - blockReference: "u-46:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 111
+        printedPage: "111"
+        pageRegionIdentifier: p111-u-46
+  - blockReference: "u-46:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 111
+        printedPage: "111"
+        pageRegionIdentifier: p111-u-46
+  - blockReference: "u-46:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 111
+        printedPage: "111"
+        pageRegionIdentifier: p111-u-46
+  - blockReference: "u-46:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 111
+        printedPage: "111"
+        pageRegionIdentifier: p111-u-46
+  - blockReference: "u-46:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 111
+        printedPage: "111"
+        pageRegionIdentifier: p111-u-46
+  - blockReference: "u-46:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 111
+        printedPage: "111"
+        pageRegionIdentifier: p111-u-46
+  - blockReference: "u-46:remediation.solaris.heading:1"
+    sourceSpans:
+      - physicalPage: 111
+        printedPage: "111"
+        pageRegionIdentifier: p111-u-46
+  - blockReference: "u-46:remediation.solaris.paragraph:1"
+    sourceSpans:
+      - physicalPage: 111
+        printedPage: "111"
+        pageRegionIdentifier: p111-u-46
+  - blockReference: "u-46:remediation.solaris.step:1"
+    sourceSpans:
+      - physicalPage: 111
+        printedPage: "111"
+        pageRegionIdentifier: p111-u-46
+  - blockReference: "u-46:remediation.solaris.configuration:1"
+    sourceSpans:
+      - physicalPage: 111
+        printedPage: "111"
+        pageRegionIdentifier: p111-u-46
+  - blockReference: "u-46:remediation.solaris.step:2"
+    sourceSpans:
+      - physicalPage: 111
+        printedPage: "111"
+        pageRegionIdentifier: p111-u-46
+  - blockReference: "u-46:remediation.solaris.paragraph:2"
+    sourceSpans:
+      - physicalPage: 111
+        printedPage: "111"
+        pageRegionIdentifier: p111-u-46
+  - blockReference: "u-46:remediation.solaris.step:3"
+    sourceSpans:
+      - physicalPage: 111
+        printedPage: "111"
+        pageRegionIdentifier: p111-u-46
+  - blockReference: "u-46:remediation.solaris.command:1"
+    sourceSpans:
+      - physicalPage: 111
+        printedPage: "111"
+        pageRegionIdentifier: p111-u-46
+  - blockReference: "u-46:remediation.solaris.step:4"
+    sourceSpans:
+      - physicalPage: 111
+        printedPage: "111"
+        pageRegionIdentifier: p111-u-46
+  - blockReference: "u-46:remediation.solaris.command:2"
+    sourceSpans:
+      - physicalPage: 111
+        printedPage: "111"
+        pageRegionIdentifier: p111-u-46
+  - blockReference: "u-46:remediation.solaris.paragraph:3"
+    sourceSpans:
+      - physicalPage: 111
+        printedPage: "111"
+        pageRegionIdentifier: p111-u-46
+  - blockReference: "u-46:remediation.solaris.step:5"
+    sourceSpans:
+      - physicalPage: 112
+        printedPage: "112"
+        pageRegionIdentifier: p112-u-46
+  - blockReference: "u-46:remediation.solaris.command:3"
+    sourceSpans:
+      - physicalPage: 112
+        printedPage: "112"
+        pageRegionIdentifier: p112-u-46
+  - blockReference: "u-46:remediation.solaris.step:6"
+    sourceSpans:
+      - physicalPage: 112
+        printedPage: "112"
+        pageRegionIdentifier: p112-u-46
+  - blockReference: "u-46:remediation.solaris.command:4"
+    sourceSpans:
+      - physicalPage: 112
+        printedPage: "112"
+        pageRegionIdentifier: p112-u-46
+assets: []

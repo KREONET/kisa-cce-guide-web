@@ -1,0 +1,148 @@
+schemaVersion: 1
+criterionSlug: au
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "au:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+      - physicalPage: 778
+        printedPage: "778"
+        pageRegionIdentifier: p778-au
+  - blockReference: "au:remediation.supplementaryGuidance.step:1"
+    sourceSpans:
+      - physicalPage: 777
+        printedPage: "777"
+        pageRegionIdentifier: p777-au
+  - blockReference: "au:remediation.supplementaryGuidance.step:2"
+    sourceSpans:
+      - physicalPage: 778
+        printedPage: "778"
+        pageRegionIdentifier: p778-au
+  - blockReference: "au:remediation.supplementaryGuidance.step:3"
+    sourceSpans:
+      - physicalPage: 778
+        printedPage: "778"
+        pageRegionIdentifier: p778-au
+  - blockReference: "au:remediation.supplementaryGuidance.step:4"
+    sourceSpans:
+      - physicalPage: 778
+        printedPage: "778"
+        pageRegionIdentifier: p778-au
+  - blockReference: "au:remediation.supplementaryGuidance.note.label:1"
+    sourceSpans:
+      - physicalPage: 778
+        printedPage: "778"
+        pageRegionIdentifier: p778-au
+  - blockReference: "au:remediation.supplementaryGuidance.note.content:1"
+    sourceSpans:
+      - physicalPage: 778
+        printedPage: "778"
+        pageRegionIdentifier: p778-au
+assets: []

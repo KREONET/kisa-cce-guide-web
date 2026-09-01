@@ -1,0 +1,155 @@
+schemaVersion: 1
+criterionSlug: s-08
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "s-08:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 365
+        printedPage: "365"
+        pageRegionIdentifier: p365-s-08
+  - blockReference: "s-08:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 365
+        printedPage: "365"
+        pageRegionIdentifier: p365-s-08
+  - blockReference: "s-08:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 365
+        printedPage: "365"
+        pageRegionIdentifier: p365-s-08
+  - blockReference: "s-08:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 365
+        printedPage: "365"
+        pageRegionIdentifier: p365-s-08
+  - blockReference: "s-08:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 365
+        printedPage: "365"
+        pageRegionIdentifier: p365-s-08
+  - blockReference: "s-08:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 365
+        printedPage: "365"
+        pageRegionIdentifier: p365-s-08
+  - blockReference: "s-08:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 365
+        printedPage: "365"
+        pageRegionIdentifier: p365-s-08
+  - blockReference: "s-08:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 365
+        printedPage: "365"
+        pageRegionIdentifier: p365-s-08
+  - blockReference: "s-08:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 365
+        printedPage: "365"
+        pageRegionIdentifier: p365-s-08
+  - blockReference: "s-08:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 365
+        printedPage: "365"
+        pageRegionIdentifier: p365-s-08
+  - blockReference: "s-08:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 365
+        printedPage: "365"
+        pageRegionIdentifier: p365-s-08
+  - blockReference: "s-08:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 365
+        printedPage: "365"
+        pageRegionIdentifier: p365-s-08
+  - blockReference: "s-08:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 365
+        printedPage: "365"
+        pageRegionIdentifier: p365-s-08
+  - blockReference: "s-08:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 365
+        printedPage: "365"
+        pageRegionIdentifier: p365-s-08
+  - blockReference: "s-08:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 365
+        printedPage: "365"
+        pageRegionIdentifier: p365-s-08
+  - blockReference: "s-08:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 365
+        printedPage: "365"
+        pageRegionIdentifier: p365-s-08
+  - blockReference: "s-08:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 365
+        printedPage: "365"
+        pageRegionIdentifier: p365-s-08
+  - blockReference: "s-08:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 365
+        printedPage: "365"
+        pageRegionIdentifier: p365-s-08
+  - blockReference: "s-08:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 365
+        printedPage: "365"
+        pageRegionIdentifier: p365-s-08
+  - blockReference: "s-08:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 365
+        printedPage: "365"
+        pageRegionIdentifier: p365-s-08
+  - blockReference: "s-08:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 365
+        printedPage: "365"
+        pageRegionIdentifier: p365-s-08
+  - blockReference: "s-08:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 365
+        printedPage: "365"
+        pageRegionIdentifier: p365-s-08
+  - blockReference: "s-08:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 365
+        printedPage: "365"
+        pageRegionIdentifier: p365-s-08
+  - blockReference: "s-08:remediation.unspecified.heading:1"
+    sourceSpans:
+      - physicalPage: 365
+        printedPage: "365"
+        pageRegionIdentifier: p365-s-08
+  - blockReference: "s-08:remediation.unspecified.paragraph:1"
+    sourceSpans:
+      - physicalPage: 365
+        printedPage: "365"
+        pageRegionIdentifier: p365-s-08
+  - blockReference: "s-08:remediation.unspecified.step:1"
+    sourceSpans:
+      - physicalPage: 365
+        printedPage: "365"
+        pageRegionIdentifier: p365-s-08
+  - blockReference: "s-08:remediation.unspecified.step:2"
+    sourceSpans:
+      - physicalPage: 365
+        printedPage: "365"
+        pageRegionIdentifier: p365-s-08
+  - blockReference: "s-08:remediation.unspecified.literal:1"
+    sourceSpans:
+      - physicalPage: 365
+        printedPage: "365"
+        pageRegionIdentifier: p365-s-08
+  - blockReference: "s-08:remediation.unspecified.step:3"
+    sourceSpans:
+      - physicalPage: 366
+        printedPage: "366"
+        pageRegionIdentifier: p366-s-08
+  - blockReference: "s-08:remediation.unspecified.literal:2"
+    sourceSpans:
+      - physicalPage: 366
+        printedPage: "366"
+        pageRegionIdentifier: p366-s-08
+assets: []

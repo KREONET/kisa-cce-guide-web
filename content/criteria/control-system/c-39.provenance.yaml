@@ -1,0 +1,125 @@
+schemaVersion: 1
+criterionSlug: c-39
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "c-39:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 535
+        printedPage: "535"
+        pageRegionIdentifier: p535-c-39
+  - blockReference: "c-39:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 535
+        printedPage: "535"
+        pageRegionIdentifier: p535-c-39
+  - blockReference: "c-39:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 535
+        printedPage: "535"
+        pageRegionIdentifier: p535-c-39
+  - blockReference: "c-39:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 535
+        printedPage: "535"
+        pageRegionIdentifier: p535-c-39
+  - blockReference: "c-39:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 535
+        printedPage: "535"
+        pageRegionIdentifier: p535-c-39
+  - blockReference: "c-39:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 535
+        printedPage: "535"
+        pageRegionIdentifier: p535-c-39
+  - blockReference: "c-39:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 535
+        printedPage: "535"
+        pageRegionIdentifier: p535-c-39
+  - blockReference: "c-39:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 535
+        printedPage: "535"
+        pageRegionIdentifier: p535-c-39
+  - blockReference: "c-39:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 535
+        printedPage: "535"
+        pageRegionIdentifier: p535-c-39
+  - blockReference: "c-39:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 535
+        printedPage: "535"
+        pageRegionIdentifier: p535-c-39
+  - blockReference: "c-39:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 535
+        printedPage: "535"
+        pageRegionIdentifier: p535-c-39
+  - blockReference: "c-39:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 535
+        printedPage: "535"
+        pageRegionIdentifier: p535-c-39
+  - blockReference: "c-39:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 535
+        printedPage: "535"
+        pageRegionIdentifier: p535-c-39
+  - blockReference: "c-39:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 535
+        printedPage: "535"
+        pageRegionIdentifier: p535-c-39
+  - blockReference: "c-39:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 535
+        printedPage: "535"
+        pageRegionIdentifier: p535-c-39
+  - blockReference: "c-39:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 535
+        printedPage: "535"
+        pageRegionIdentifier: p535-c-39
+  - blockReference: "c-39:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 535
+        printedPage: "535"
+        pageRegionIdentifier: p535-c-39
+  - blockReference: "c-39:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 535
+        printedPage: "535"
+        pageRegionIdentifier: p535-c-39
+  - blockReference: "c-39:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 535
+        printedPage: "535"
+        pageRegionIdentifier: p535-c-39
+  - blockReference: "c-39:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 535
+        printedPage: "535"
+        pageRegionIdentifier: p535-c-39
+  - blockReference: "c-39:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 535
+        printedPage: "535"
+        pageRegionIdentifier: p535-c-39
+  - blockReference: "c-39:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - physicalPage: 535
+        printedPage: "535"
+        pageRegionIdentifier: p535-c-39
+  - blockReference: "c-39:remediation.supplementaryGuidance.step:1"
+    sourceSpans:
+      - physicalPage: 535
+        printedPage: "535"
+        pageRegionIdentifier: p535-c-39
+  - blockReference: "c-39:remediation.supplementaryGuidance.step:2"
+    sourceSpans:
+      - physicalPage: 535
+        printedPage: "535"
+        pageRegionIdentifier: p535-c-39
+assets: []

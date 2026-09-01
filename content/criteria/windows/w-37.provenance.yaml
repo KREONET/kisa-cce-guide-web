@@ -1,0 +1,140 @@
+schemaVersion: 1
+criterionSlug: w-37
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "w-37:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 232
+        printedPage: "232"
+        pageRegionIdentifier: p232-w-37
+  - blockReference: "w-37:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 232
+        printedPage: "232"
+        pageRegionIdentifier: p232-w-37
+  - blockReference: "w-37:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 232
+        printedPage: "232"
+        pageRegionIdentifier: p232-w-37
+  - blockReference: "w-37:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 232
+        printedPage: "232"
+        pageRegionIdentifier: p232-w-37
+  - blockReference: "w-37:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 232
+        printedPage: "232"
+        pageRegionIdentifier: p232-w-37
+  - blockReference: "w-37:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 232
+        printedPage: "232"
+        pageRegionIdentifier: p232-w-37
+  - blockReference: "w-37:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 232
+        printedPage: "232"
+        pageRegionIdentifier: p232-w-37
+  - blockReference: "w-37:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 232
+        printedPage: "232"
+        pageRegionIdentifier: p232-w-37
+  - blockReference: "w-37:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 232
+        printedPage: "232"
+        pageRegionIdentifier: p232-w-37
+  - blockReference: "w-37:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 232
+        printedPage: "232"
+        pageRegionIdentifier: p232-w-37
+  - blockReference: "w-37:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 232
+        printedPage: "232"
+        pageRegionIdentifier: p232-w-37
+  - blockReference: "w-37:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 232
+        printedPage: "232"
+        pageRegionIdentifier: p232-w-37
+  - blockReference: "w-37:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 232
+        printedPage: "232"
+        pageRegionIdentifier: p232-w-37
+  - blockReference: "w-37:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 232
+        printedPage: "232"
+        pageRegionIdentifier: p232-w-37
+  - blockReference: "w-37:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 232
+        printedPage: "232"
+        pageRegionIdentifier: p232-w-37
+  - blockReference: "w-37:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 232
+        printedPage: "232"
+        pageRegionIdentifier: p232-w-37
+  - blockReference: "w-37:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 232
+        printedPage: "232"
+        pageRegionIdentifier: p232-w-37
+  - blockReference: "w-37:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 232
+        printedPage: "232"
+        pageRegionIdentifier: p232-w-37
+  - blockReference: "w-37:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 232
+        printedPage: "232"
+        pageRegionIdentifier: p232-w-37
+  - blockReference: "w-37:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 232
+        printedPage: "232"
+        pageRegionIdentifier: p232-w-37
+  - blockReference: "w-37:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 232
+        printedPage: "232"
+        pageRegionIdentifier: p232-w-37
+  - blockReference: "w-37:remediation.linux.paragraph:1"
+    sourceSpans:
+      - physicalPage: 232
+        printedPage: "232"
+        pageRegionIdentifier: p232-w-37
+  - blockReference: "w-37:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 232
+        printedPage: "232"
+        pageRegionIdentifier: p232-w-37
+  - blockReference: "w-37:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 232
+        printedPage: "232"
+        pageRegionIdentifier: p232-w-37
+  - blockReference: "w-37:remediation.linux.step:3"
+    sourceSpans:
+      - physicalPage: 232
+        printedPage: "232"
+        pageRegionIdentifier: p232-w-37
+  - blockReference: "w-37:remediation.linux.note.label:1"
+    sourceSpans:
+      - physicalPage: 232
+        printedPage: "232"
+        pageRegionIdentifier: p232-w-37
+  - blockReference: "w-37:remediation.linux.note.content:1"
+    sourceSpans:
+      - physicalPage: 232
+        printedPage: "232"
+        pageRegionIdentifier: p232-w-37
+assets: []

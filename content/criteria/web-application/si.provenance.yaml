@@ -1,0 +1,340 @@
+schemaVersion: 1
+criterionSlug: si
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "si:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:overview.reference.note.label:3"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:overview.reference.note.content:3"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 693
+        printedPage: "693"
+        pageRegionIdentifier: p693-si
+  - blockReference: "si:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 694
+        printedPage: "694"
+        pageRegionIdentifier: p694-si
+  - blockReference: "si:remediation.unspecified.heading:1"
+    sourceSpans:
+      - physicalPage: 695
+        printedPage: "695"
+        pageRegionIdentifier: p695-si
+  - blockReference: "si:remediation.unspecified.paragraph:1"
+    sourceSpans:
+      - physicalPage: 695
+        printedPage: "695"
+        pageRegionIdentifier: p695-si
+  - blockReference: "si:remediation.unspecified.step:1"
+    sourceSpans:
+      - physicalPage: 695
+        printedPage: "695"
+        pageRegionIdentifier: p695-si
+  - blockReference: "si:remediation.unspecified.literal:1"
+    sourceSpans:
+      - physicalPage: 695
+        printedPage: "695"
+        pageRegionIdentifier: p695-si
+  - blockReference: "si:remediation.unspecified.step:2"
+    sourceSpans:
+      - physicalPage: 695
+        printedPage: "695"
+        pageRegionIdentifier: p695-si
+  - blockReference: "si:remediation.unspecified.configuration:1"
+    sourceSpans:
+      - physicalPage: 695
+        printedPage: "695"
+        pageRegionIdentifier: p695-si
+  - blockReference: "si:remediation.unspecified.step:3"
+    sourceSpans:
+      - physicalPage: 695
+        printedPage: "695"
+        pageRegionIdentifier: p695-si
+  - blockReference: "si:remediation.unspecified.configuration:2"
+    sourceSpans:
+      - physicalPage: 695
+        printedPage: "695"
+        pageRegionIdentifier: p695-si
+  - blockReference: "si:remediation.unspecified.step:4"
+    sourceSpans:
+      - physicalPage: 695
+        printedPage: "695"
+        pageRegionIdentifier: p695-si
+  - blockReference: "si:remediation.unspecified.step.explanation:4"
+    sourceSpans:
+      - physicalPage: 696
+        printedPage: "696"
+        pageRegionIdentifier: p696-si
+  - blockReference: "si:remediation.unspecified.step:5"
+    sourceSpans:
+      - physicalPage: 696
+        printedPage: "696"
+        pageRegionIdentifier: p696-si
+  - blockReference: "si:remediation.unspecified.configuration:3"
+    sourceSpans:
+      - physicalPage: 696
+        printedPage: "696"
+        pageRegionIdentifier: p696-si
+  - blockReference: "si:remediation.unspecified.step:6"
+    sourceSpans:
+      - physicalPage: 696
+        printedPage: "696"
+        pageRegionIdentifier: p696-si
+  - blockReference: "si:remediation.unspecified.configuration:4"
+    sourceSpans:
+      - physicalPage: 696
+        printedPage: "696"
+        pageRegionIdentifier: p696-si
+  - blockReference: "si:remediation.unspecified.paragraph:2"
+    sourceSpans:
+      - physicalPage: 697
+        printedPage: "697"
+        pageRegionIdentifier: p697-si
+  - blockReference: "si:remediation.unspecified.step:7"
+    sourceSpans:
+      - physicalPage: 697
+        printedPage: "697"
+        pageRegionIdentifier: p697-si
+  - blockReference: "si:remediation.unspecified.literal:2"
+    sourceSpans:
+      - physicalPage: 697
+        printedPage: "697"
+        pageRegionIdentifier: p697-si
+  - blockReference: "si:remediation.unspecified.step:8"
+    sourceSpans:
+      - physicalPage: 697
+        printedPage: "697"
+        pageRegionIdentifier: p697-si
+  - blockReference: "si:remediation.unspecified.configuration:5"
+    sourceSpans:
+      - physicalPage: 697
+        printedPage: "697"
+        pageRegionIdentifier: p697-si
+  - blockReference: "si:remediation.unspecified.step:9"
+    sourceSpans:
+      - physicalPage: 698
+        printedPage: "698"
+        pageRegionIdentifier: p698-si
+  - blockReference: "si:remediation.unspecified.configuration:6"
+    sourceSpans:
+      - physicalPage: 698
+        printedPage: "698"
+        pageRegionIdentifier: p698-si
+  - blockReference: "si:remediation.unspecified.paragraph:3"
+    sourceSpans:
+      - physicalPage: 698
+        printedPage: "698"
+        pageRegionIdentifier: p698-si
+  - blockReference: "si:remediation.unspecified.step:10"
+    sourceSpans:
+      - physicalPage: 698
+        printedPage: "698"
+        pageRegionIdentifier: p698-si
+  - blockReference: "si:remediation.unspecified.configuration:7"
+    sourceSpans:
+      - physicalPage: 698
+        printedPage: "698"
+        pageRegionIdentifier: p698-si
+  - blockReference: "si:remediation.unspecified.step:11"
+    sourceSpans:
+      - physicalPage: 698
+        printedPage: "698"
+        pageRegionIdentifier: p698-si
+  - blockReference: "si:remediation.unspecified.configuration:8"
+    sourceSpans:
+      - physicalPage: 698
+        printedPage: "698"
+        pageRegionIdentifier: p698-si
+  - blockReference: "si:remediation.unspecified.paragraph:4"
+    sourceSpans:
+      - physicalPage: 699
+        printedPage: "699"
+        pageRegionIdentifier: p699-si
+  - blockReference: "si:remediation.unspecified.step:12"
+    sourceSpans:
+      - physicalPage: 699
+        printedPage: "699"
+        pageRegionIdentifier: p699-si
+  - blockReference: "si:remediation.unspecified.literal:3"
+    sourceSpans:
+      - physicalPage: 699
+        printedPage: "699"
+        pageRegionIdentifier: p699-si
+  - blockReference: "si:remediation.unspecified.step:13"
+    sourceSpans:
+      - physicalPage: 699
+        printedPage: "699"
+        pageRegionIdentifier: p699-si
+  - blockReference: "si:remediation.unspecified.configuration:9"
+    sourceSpans:
+      - physicalPage: 699
+        printedPage: "699"
+        pageRegionIdentifier: p699-si
+  - blockReference: "si:remediation.unspecified.step:14"
+    sourceSpans:
+      - physicalPage: 699
+        printedPage: "699"
+        pageRegionIdentifier: p699-si
+  - blockReference: "si:remediation.unspecified.configuration:10"
+    sourceSpans:
+      - physicalPage: 699
+        printedPage: "699"
+        pageRegionIdentifier: p699-si
+  - blockReference: "si:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - physicalPage: 694
+        printedPage: "694"
+        pageRegionIdentifier: p694-si
+  - blockReference: "si:remediation.supplementaryGuidance.step:1"
+    sourceSpans:
+      - physicalPage: 694
+        printedPage: "694"
+        pageRegionIdentifier: p694-si
+  - blockReference: "si:remediation.supplementaryGuidance.step:2"
+    sourceSpans:
+      - physicalPage: 694
+        printedPage: "694"
+        pageRegionIdentifier: p694-si
+  - blockReference: "si:remediation.supplementaryGuidance.step:3"
+    sourceSpans:
+      - physicalPage: 694
+        printedPage: "694"
+        pageRegionIdentifier: p694-si
+  - blockReference: "si:remediation.supplementaryGuidance.step:4"
+    sourceSpans:
+      - physicalPage: 694
+        printedPage: "694"
+        pageRegionIdentifier: p694-si
+  - blockReference: "si:remediation.supplementaryGuidance.table:1"
+    sourceSpans:
+      - physicalPage: 694
+        printedPage: "694"
+        pageRegionIdentifier: p694-si
+  - blockReference: "si:remediation.supplementaryGuidance.step:5"
+    sourceSpans:
+      - physicalPage: 694
+        printedPage: "694"
+        pageRegionIdentifier: p694-si
+  - blockReference: "si:remediation.supplementaryGuidance.step:6"
+    sourceSpans:
+      - physicalPage: 694
+        printedPage: "694"
+        pageRegionIdentifier: p694-si
+  - blockReference: "si:remediation.supplementaryGuidance.step:7"
+    sourceSpans:
+      - physicalPage: 694
+        printedPage: "694"
+        pageRegionIdentifier: p694-si
+assets: []

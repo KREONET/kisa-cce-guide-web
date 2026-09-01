@@ -1,0 +1,358 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zeroday0619.github.io/kisa-cce-guide/schemas/normalized-criterion.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "contentModel",
+    "contentModelVersion",
+    "criterion",
+    "classification",
+    "targetScope",
+    "targetIdentifiers",
+    "sourceTargetText",
+    "provenance",
+    "annotations",
+    "blocks",
+    "criterionSourceChecksum",
+    "generatorVersion"
+  ],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "contentModel": {"enum": ["systemCriterion", "webApplicationCriterion", "extractedCriterion"]},
+    "contentModelVersion": {"type": "integer", "minimum": 1},
+    "criterion": {"$ref": "#/$defs/criterion"},
+    "classification": {"$ref": "#/$defs/classification"},
+    "targetScope": {"enum": ["exhaustive", "nonExhaustive"]},
+    "targetIdentifiers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/identifier"},
+      "uniqueItems": true
+    },
+    "sourceTargetText": {"type": "string", "minLength": 1},
+    "provenance": {"$ref": "#/$defs/provenance"},
+    "annotations": {"type": "array", "items": {"$ref": "#/$defs/annotation"}},
+    "blocks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/block"}
+    },
+    "criterionSourceChecksum": {"$ref": "#/$defs/checksum"},
+    "generatorVersion": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "identifier": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "blockReference": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*:[A-Za-z0-9]+(?:[.-][A-Za-z0-9]+)*:[1-9][0-9]*$"
+    },
+    "semanticPathSegment": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*$"
+    },
+    "semanticRole": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9]*(?:[.-][A-Za-z0-9]+)*$"
+    },
+    "checksum": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "nullableString": {"type": ["string", "null"]},
+    "criterion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "slug", "title", "severity"],
+      "properties": {
+        "code": {"type": "string", "minLength": 1},
+        "slug": {"$ref": "#/$defs/identifier"},
+        "title": {"type": "string", "minLength": 1},
+        "severity": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["level", "sourceLabel"],
+          "properties": {
+            "level": {"enum": ["high", "medium", "low"]},
+            "sourceLabel": {"enum": ["상", "중", "하"]}
+          }
+        }
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["domainIdentifier", "categoryIdentifier"],
+      "properties": {
+        "domainIdentifier": {"$ref": "#/$defs/identifier"},
+        "categoryIdentifier": {"$ref": "#/$defs/identifier"}
+      }
+    },
+    "sourcePageRange": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["physicalPageStart", "physicalPageEnd", "printedPageStart", "printedPageEnd"],
+      "properties": {
+        "physicalPageStart": {"type": "integer", "minimum": 1},
+        "physicalPageEnd": {"type": "integer", "minimum": 1},
+        "printedPageStart": {"type": "string", "minLength": 1},
+        "printedPageEnd": {"type": "string", "minLength": 1}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceDocumentIdentifier", "sourcePageRanges"],
+      "properties": {
+        "sourceDocumentIdentifier": {"type": "string", "minLength": 1},
+        "sourcePageRanges": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/sourcePageRange"}
+        }
+      }
+    },
+    "sourceLocation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["physicalPage", "printedPage", "pageRegionIdentifier"],
+      "properties": {
+        "physicalPage": {"type": "integer", "minimum": 1},
+        "printedPage": {"type": "string", "minLength": 1},
+        "pageRegionIdentifier": {"$ref": "#/$defs/identifier"}
+      }
+    },
+    "annotation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "annotationIdentifier",
+        "annotationType",
+        "targetType",
+        "targetReference",
+        "sourceLocation",
+        "sourceText",
+        "explanation",
+        "disposition",
+        "reviewStatus",
+        "verificationEvidence",
+        "reviewedBy",
+        "reviewedAt",
+        "approvedBy",
+        "approvedAt"
+      ],
+      "properties": {
+        "annotationIdentifier": {"type": "string", "minLength": 1},
+        "annotationType": {
+          "enum": [
+            "sourceInconsistency",
+            "sourceDuplication",
+            "sourceOmission",
+            "sourceTypographicalError",
+            "missingReference",
+            "conversionDecision"
+          ]
+        },
+        "targetType": {"enum": ["astNode", "metadata", "pageRegion", "navigation", "document"]},
+        "targetReference": {"type": "string", "minLength": 1},
+        "sourceLocation": {"$ref": "#/$defs/sourceLocation"},
+        "sourceText": {"type": "string", "minLength": 1},
+        "explanation": {"type": "string", "minLength": 1},
+        "disposition": {"enum": ["preserved", "correctedWithNotice", "unresolved"]},
+        "reviewStatus": {"enum": ["pending", "reviewed"]},
+        "verificationEvidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "replacementText": {"type": "string", "minLength": 1},
+        "reviewedBy": {"$ref": "#/$defs/nullableString"},
+        "reviewedAt": {"type": ["string", "null"], "format": "date-time"},
+        "approvedBy": {"$ref": "#/$defs/nullableString"},
+        "approvedAt": {"type": ["string", "null"], "format": "date-time"}
+      }
+    },
+    "sourceSpan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["physicalPage", "printedPage", "pageRegionIdentifier"],
+      "properties": {
+        "physicalPage": {"type": "integer", "minimum": 1},
+        "printedPage": {"type": "string", "minLength": 1},
+        "pageRegionIdentifier": {"$ref": "#/$defs/identifier"},
+        "sourceBoundingBox": {
+          "type": "array",
+          "prefixItems": [
+            {"type": "number", "minimum": 0, "maximum": 1},
+            {"type": "number", "minimum": 0, "maximum": 1},
+            {"type": "number", "minimum": 0, "maximum": 1},
+            {"type": "number", "minimum": 0, "maximum": 1}
+          ],
+          "items": false,
+          "minItems": 4,
+          "maxItems": 4
+        }
+      }
+    },
+    "block": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "blockReference",
+        "blockType",
+        "content",
+        "semanticRole",
+        "semanticPath",
+        "sourceSpans",
+        "technicalLiterals",
+        "publicationDisposition"
+      ],
+      "properties": {
+        "blockReference": {"$ref": "#/$defs/blockReference"},
+        "blockType": {
+          "enum": ["heading", "paragraph", "listItem", "noteLabel", "noteContent", "codeBlock", "table", "image"]
+        },
+        "content": {"type": "string", "minLength": 1},
+        "semanticRole": {"$ref": "#/$defs/semanticRole"},
+        "semanticPath": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/semanticPathSegment"}
+        },
+        "parentBlockReference": {"$ref": "#/$defs/blockReference"},
+        "headingLevel": {"type": "integer", "minimum": 2, "maximum": 6},
+        "listType": {"enum": ["ordered", "unordered"]},
+        "listDepth": {"type": "integer", "minimum": 1},
+        "codeLanguage": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9+.#-]*$"},
+        "codeContentType": {
+          "enum": ["command", "configuration", "output", "literal", "transcription"]
+        },
+        "tableHeaders": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string"}
+        },
+        "tableRows": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string"}
+          }
+        },
+        "sourceSpans": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/sourceSpan"}
+        },
+        "technicalLiterals": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "publicationDisposition": {"enum": ["published", "derived", "excluded"]},
+        "derivationType": {"type": "string", "minLength": 1}
+        ,
+        "assetPath": {"type": "string", "minLength": 1},
+        "assetType": {"enum": ["sourceImage", "sourcePageCrop", "webOptimizedDerivative"]},
+        "renderingProfileIdentifier": {"type": "string", "minLength": 1},
+        "outputPixelDimensions": {
+          "type": "array",
+          "prefixItems": [
+            {"type": "integer", "minimum": 1},
+            {"type": "integer", "minimum": 1}
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "caption": {"type": ["string", "null"], "minLength": 1},
+        "alternativeText": {"type": "string", "minLength": 1},
+        "alternativeTextStatus": {"enum": ["verificationRequired", "reviewed"]}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"blockType": {"const": "heading"}}},
+          "then": {
+            "required": ["headingLevel"],
+            "properties": {"semanticRole": {"const": "heading"}}
+          }
+        },
+        {
+          "if": {"properties": {"blockType": {"const": "paragraph"}}},
+          "then": {"properties": {"semanticRole": {"const": "paragraph"}}}
+        },
+        {
+          "if": {"properties": {"blockType": {"const": "listItem"}}},
+          "then": {"required": ["listType", "listDepth"]}
+        },
+        {
+          "if": {"properties": {"blockType": {"const": "codeBlock"}}},
+          "then": {
+            "required": ["codeLanguage", "codeContentType"],
+            "oneOf": [
+              {
+                "properties": {
+                  "codeContentType": {"const": "command"},
+                  "semanticRole": {"const": "command"}
+                }
+              },
+              {
+                "properties": {
+                  "codeContentType": {"const": "configuration"},
+                  "semanticRole": {"const": "configuration"}
+                }
+              },
+              {
+                "properties": {
+                  "codeContentType": {"const": "output"},
+                  "semanticRole": {"const": "output"}
+                }
+              },
+              {
+                "properties": {
+                  "codeContentType": {"const": "literal"},
+                  "semanticRole": {"const": "literal"}
+                }
+              },
+              {
+                "properties": {
+                  "codeContentType": {"const": "transcription"},
+                  "semanticRole": {"const": "transcription"}
+                }
+              }
+            ]
+          }
+        },
+        {
+          "if": {"properties": {"blockType": {"const": "table"}}},
+          "then": {
+            "required": ["tableHeaders", "tableRows"],
+            "properties": {"semanticRole": {"const": "table"}}
+          }
+        },
+        {
+          "if": {"properties": {"blockType": {"const": "noteLabel"}}},
+          "then": {"properties": {"semanticRole": {"const": "note.label"}}}
+        },
+        {
+          "if": {"properties": {"blockType": {"const": "noteContent"}}},
+          "then": {"properties": {"semanticRole": {"const": "note.content"}}}
+        },
+        {
+          "if": {"properties": {"blockType": {"const": "image"}}},
+          "then": {
+            "properties": {"semanticRole": {"const": "image"}},
+            "required": [
+              "assetPath",
+              "assetType",
+              "renderingProfileIdentifier",
+              "outputPixelDimensions",
+              "alternativeText",
+              "alternativeTextStatus"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

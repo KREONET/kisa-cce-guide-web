@@ -1,0 +1,576 @@
+{
+  "schemaVersion": 1,
+  "domains": [
+    {
+      "identifier": "unix",
+      "label": "Unix 서버",
+      "sourceLabel": "UNIX",
+      "order": 1
+    },
+    {
+      "identifier": "windows",
+      "label": "Windows 서버",
+      "sourceLabel": "Windows 서버",
+      "order": 2
+    },
+    {
+      "identifier": "web-service",
+      "label": "웹 서비스",
+      "sourceLabel": "웹 서비스",
+      "order": 3
+    },
+    {
+      "identifier": "security-device",
+      "label": "보안 장비",
+      "sourceLabel": "보안 장비",
+      "order": 4
+    },
+    {
+      "identifier": "network-device",
+      "label": "네트워크 장비",
+      "sourceLabel": "네트워크 장비",
+      "order": 5
+    },
+    {
+      "identifier": "control-system",
+      "label": "제어시스템",
+      "sourceLabel": "제어시스템",
+      "order": 6
+    },
+    {
+      "identifier": "pc",
+      "label": "PC",
+      "sourceLabel": "PC",
+      "order": 7
+    },
+    {
+      "identifier": "dbms",
+      "label": "DBMS",
+      "sourceLabel": "DBMS",
+      "order": 8
+    },
+    {
+      "identifier": "mobile-communication",
+      "label": "이동통신",
+      "sourceLabel": "이동통신",
+      "order": 9
+    },
+    {
+      "identifier": "web-application",
+      "label": "Web Application(웹)",
+      "sourceLabel": "Web Application(웹)",
+      "order": 10
+    },
+    {
+      "identifier": "virtualization-device",
+      "label": "가상화 장비",
+      "sourceLabel": "가상화 장비",
+      "order": 11
+    },
+    {
+      "identifier": "cloud",
+      "label": "클라우드",
+      "sourceLabel": "클라우드",
+      "order": 12
+    }
+  ],
+  "categories": [
+    {
+      "identifier": "unix-account-management",
+      "domainIdentifier": "unix",
+      "label": "계정 관리",
+      "sourceLabel": "계정 관리",
+      "order": 1
+    },
+    {
+      "identifier": "unix-file-directory-management",
+      "domainIdentifier": "unix",
+      "label": "파일 및 디렉터리 관리",
+      "sourceLabel": "파일 및 디렉터리 관리",
+      "order": 2
+    },
+    {
+      "identifier": "unix-service-management",
+      "domainIdentifier": "unix",
+      "label": "서비스 관리",
+      "sourceLabel": "서비스 관리",
+      "order": 3
+    },
+    {
+      "identifier": "unix-patch-management",
+      "domainIdentifier": "unix",
+      "label": "패치 관리",
+      "sourceLabel": "패치 관리",
+      "order": 4
+    },
+    {
+      "identifier": "unix-log-management",
+      "domainIdentifier": "unix",
+      "label": "로그 관리",
+      "sourceLabel": "로그 관리",
+      "order": 5
+    },
+    {
+      "identifier": "windows-account-management",
+      "domainIdentifier": "windows",
+      "label": "계정 관리",
+      "sourceLabel": "계정 관리",
+      "order": 1
+    },
+    {
+      "identifier": "windows-service-management",
+      "domainIdentifier": "windows",
+      "label": "서비스 관리",
+      "sourceLabel": "서비스 관리",
+      "order": 2
+    },
+    {
+      "identifier": "windows-patch-management",
+      "domainIdentifier": "windows",
+      "label": "패치 관리",
+      "sourceLabel": "패치 관리",
+      "order": 3
+    },
+    {
+      "identifier": "windows-log-management",
+      "domainIdentifier": "windows",
+      "label": "로그 관리",
+      "sourceLabel": "로그 관리",
+      "order": 4
+    },
+    {
+      "identifier": "windows-security-management",
+      "domainIdentifier": "windows",
+      "label": "보안 관리",
+      "sourceLabel": "보안 관리",
+      "order": 5
+    },
+    {
+      "identifier": "web-service-account-management",
+      "domainIdentifier": "web-service",
+      "label": "계정 관리",
+      "sourceLabel": "계정 관리",
+      "order": 1
+    },
+    {
+      "identifier": "web-service-service-management",
+      "domainIdentifier": "web-service",
+      "label": "서비스 관리",
+      "sourceLabel": "서비스 관리",
+      "order": 2
+    },
+    {
+      "identifier": "web-service-security-configuration",
+      "domainIdentifier": "web-service",
+      "label": "보안 설정",
+      "sourceLabel": "보안 설정",
+      "order": 3
+    },
+    {
+      "identifier": "web-service-patch-log-management",
+      "domainIdentifier": "web-service",
+      "label": "패치 및 로그 관리",
+      "sourceLabel": "패치 및 로그 관리",
+      "order": 4
+    },
+    {
+      "identifier": "security-device-account-management",
+      "domainIdentifier": "security-device",
+      "label": "계정 관리",
+      "sourceLabel": "계정 관리",
+      "order": 1
+    },
+    {
+      "identifier": "security-device-access-management",
+      "domainIdentifier": "security-device",
+      "label": "접근 관리",
+      "sourceLabel": "접근 관리",
+      "order": 2
+    },
+    {
+      "identifier": "security-device-patch-management",
+      "domainIdentifier": "security-device",
+      "label": "패치 관리",
+      "sourceLabel": "패치 관리",
+      "order": 3
+    },
+    {
+      "identifier": "security-device-log-management",
+      "domainIdentifier": "security-device",
+      "label": "로그 관리",
+      "sourceLabel": "로그 관리",
+      "order": 4
+    },
+    {
+      "identifier": "security-device-function-management",
+      "domainIdentifier": "security-device",
+      "label": "기능 관리",
+      "sourceLabel": "기능 관리",
+      "order": 5
+    },
+    {
+      "identifier": "network-device-account-management",
+      "domainIdentifier": "network-device",
+      "label": "계정 관리",
+      "sourceLabel": "계정 관리",
+      "order": 1
+    },
+    {
+      "identifier": "network-device-access-management",
+      "domainIdentifier": "network-device",
+      "label": "접근 관리",
+      "sourceLabel": "접근 관리",
+      "order": 2
+    },
+    {
+      "identifier": "network-device-patch-management",
+      "domainIdentifier": "network-device",
+      "label": "패치 관리",
+      "sourceLabel": "패치 관리",
+      "order": 3
+    },
+    {
+      "identifier": "network-device-log-management",
+      "domainIdentifier": "network-device",
+      "label": "로그 관리",
+      "sourceLabel": "로그 관리",
+      "order": 4
+    },
+    {
+      "identifier": "network-device-function-management",
+      "domainIdentifier": "network-device",
+      "label": "기능 관리",
+      "sourceLabel": "기능 관리",
+      "order": 5
+    },
+    {
+      "identifier": "control-system-account-management",
+      "domainIdentifier": "control-system",
+      "label": "계정 관리",
+      "sourceLabel": "계정 관리",
+      "order": 1
+    },
+    {
+      "identifier": "control-system-service-management",
+      "domainIdentifier": "control-system",
+      "label": "서비스 관리",
+      "sourceLabel": "서비스 관리",
+      "order": 2
+    },
+    {
+      "identifier": "control-system-patch-management",
+      "domainIdentifier": "control-system",
+      "label": "패치 관리",
+      "sourceLabel": "패치 관리",
+      "order": 3
+    },
+    {
+      "identifier": "control-system-network-access-control",
+      "domainIdentifier": "control-system",
+      "label": "네트워크 접근통제",
+      "sourceLabel": "네트워크 접근통제",
+      "order": 4
+    },
+    {
+      "identifier": "control-system-physical-access-control",
+      "domainIdentifier": "control-system",
+      "label": "물리적 접근통제",
+      "sourceLabel": "물리적 접근통제",
+      "order": 5
+    },
+    {
+      "identifier": "control-system-security-threat-detection",
+      "domainIdentifier": "control-system",
+      "label": "보안위협 탐지",
+      "sourceLabel": "보안위협 탐지",
+      "order": 6
+    },
+    {
+      "identifier": "control-system-recovery-response",
+      "domainIdentifier": "control-system",
+      "label": "복구 대응",
+      "sourceLabel": "복구 대응",
+      "order": 7
+    },
+    {
+      "identifier": "control-system-security-management",
+      "domainIdentifier": "control-system",
+      "label": "보안 관리",
+      "sourceLabel": "보안 관리",
+      "order": 8
+    },
+    {
+      "identifier": "control-system-education-training",
+      "domainIdentifier": "control-system",
+      "label": "교육 훈련",
+      "sourceLabel": "교육 훈련",
+      "order": 9
+    },
+    {
+      "identifier": "pc-account-management",
+      "domainIdentifier": "pc",
+      "label": "계정 관리",
+      "sourceLabel": "계정 관리",
+      "order": 1
+    },
+    {
+      "identifier": "pc-service-management",
+      "domainIdentifier": "pc",
+      "label": "서비스 관리",
+      "sourceLabel": "서비스 관리",
+      "order": 2
+    },
+    {
+      "identifier": "pc-patch-management",
+      "domainIdentifier": "pc",
+      "label": "패치 관리",
+      "sourceLabel": "패치 관리",
+      "order": 3
+    },
+    {
+      "identifier": "pc-security-management",
+      "domainIdentifier": "pc",
+      "label": "보안 관리",
+      "sourceLabel": "보안 관리",
+      "order": 4
+    },
+    {
+      "identifier": "dbms-account-management",
+      "domainIdentifier": "dbms",
+      "label": "계정 관리",
+      "sourceLabel": "계정 관리",
+      "order": 1
+    },
+    {
+      "identifier": "dbms-access-management",
+      "domainIdentifier": "dbms",
+      "label": "접근 관리",
+      "sourceLabel": "접근 관리",
+      "order": 2
+    },
+    {
+      "identifier": "dbms-option-management",
+      "domainIdentifier": "dbms",
+      "label": "옵션 관리",
+      "sourceLabel": "옵션 관리",
+      "order": 3
+    },
+    {
+      "identifier": "dbms-patch-management",
+      "domainIdentifier": "dbms",
+      "label": "패치 관리",
+      "sourceLabel": "패치 관리",
+      "order": 4
+    },
+    {
+      "identifier": "mobile-communication-operations-management",
+      "domainIdentifier": "mobile-communication",
+      "label": "운영 관리",
+      "sourceLabel": "운영 관리",
+      "order": 1
+    },
+    {
+      "identifier": "web-application-code-injection",
+      "domainIdentifier": "web-application",
+      "label": "코드 인젝션 (Code Injection)",
+      "sourceLabel": "코드 인젝션 (Code Injection)",
+      "order": 1
+    },
+    {
+      "identifier": "web-application-sql-injection",
+      "domainIdentifier": "web-application",
+      "label": "SQL 인젝션 (SQL Injection)",
+      "sourceLabel": "SQL 인젝션 (SQL Injection)",
+      "order": 2
+    },
+    {
+      "identifier": "web-application-directory-indexing",
+      "domainIdentifier": "web-application",
+      "label": "디렉터리 인덱싱",
+      "sourceLabel": "디렉터리 인덱싱",
+      "order": 3
+    },
+    {
+      "identifier": "web-application-error-page",
+      "domainIdentifier": "web-application",
+      "label": "에러 페이지 적용 미흡",
+      "sourceLabel": "에러 페이지 적용 미흡",
+      "order": 4
+    },
+    {
+      "identifier": "web-application-information-disclosure",
+      "domainIdentifier": "web-application",
+      "label": "정보 누출",
+      "sourceLabel": "정보 누출",
+      "order": 5
+    },
+    {
+      "identifier": "web-application-cross-site-scripting",
+      "domainIdentifier": "web-application",
+      "label": "크로스사이트 스크립트",
+      "sourceLabel": "크로스사이트 스크립트",
+      "order": 6
+    },
+    {
+      "identifier": "web-application-csrf",
+      "domainIdentifier": "web-application",
+      "label": "크로스사이트 요청 위조(CSRF)",
+      "sourceLabel": "크로스사이트 요청 위조(CSRF)",
+      "order": 7
+    },
+    {
+      "identifier": "web-application-ssrf",
+      "domainIdentifier": "web-application",
+      "label": "서버사이드 요청 위조(SSRF)",
+      "sourceLabel": "서버사이드 요청 위조(SSRF)",
+      "order": 8
+    },
+    {
+      "identifier": "web-application-weak-password-policy",
+      "domainIdentifier": "web-application",
+      "label": "약한 비밀번호 정책",
+      "sourceLabel": "약한 비밀번호 정책",
+      "order": 9
+    },
+    {
+      "identifier": "web-application-insufficient-authentication",
+      "domainIdentifier": "web-application",
+      "label": "불충분한 인증 절차",
+      "sourceLabel": "불충분한 인증 절차",
+      "order": 10
+    },
+    {
+      "identifier": "web-application-insufficient-authorization",
+      "domainIdentifier": "web-application",
+      "label": "불충분한 권한 검증",
+      "sourceLabel": "불충분한 권한 검증",
+      "order": 11
+    },
+    {
+      "identifier": "web-application-weak-password-recovery",
+      "domainIdentifier": "web-application",
+      "label": "취약한 비밀번호 복구 절차",
+      "sourceLabel": "취약한 비밀번호 복구 절차",
+      "order": 12
+    },
+    {
+      "identifier": "web-application-missing-process-validation",
+      "domainIdentifier": "web-application",
+      "label": "프로세스 검증 누락",
+      "sourceLabel": "프로세스 검증 누락",
+      "order": 13
+    },
+    {
+      "identifier": "web-application-malicious-file-upload",
+      "domainIdentifier": "web-application",
+      "label": "악성 파일 업로드",
+      "sourceLabel": "악성 파일 업로드",
+      "order": 14
+    },
+    {
+      "identifier": "web-application-file-download",
+      "domainIdentifier": "web-application",
+      "label": "파일 다운로드",
+      "sourceLabel": "파일 다운로드",
+      "order": 15
+    },
+    {
+      "identifier": "web-application-insufficient-session-management",
+      "domainIdentifier": "web-application",
+      "label": "불충분한 세션 관리",
+      "sourceLabel": "불충분한 세션 관리",
+      "order": 16
+    },
+    {
+      "identifier": "web-application-plaintext-transmission",
+      "domainIdentifier": "web-application",
+      "label": "데이터 평문 전송",
+      "sourceLabel": "데이터 평문 전송",
+      "order": 17
+    },
+    {
+      "identifier": "web-application-cookie-tampering",
+      "domainIdentifier": "web-application",
+      "label": "쿠키 변조",
+      "sourceLabel": "쿠키 변조",
+      "order": 18
+    },
+    {
+      "identifier": "web-application-administrator-page-exposure",
+      "domainIdentifier": "web-application",
+      "label": "관리자 페이지 노출",
+      "sourceLabel": "관리자 페이지 노출",
+      "order": 19
+    },
+    {
+      "identifier": "web-application-automated-attack",
+      "domainIdentifier": "web-application",
+      "label": "자동화 공격",
+      "sourceLabel": "자동화 공격",
+      "order": 20
+    },
+    {
+      "identifier": "web-application-unnecessary-method",
+      "domainIdentifier": "web-application",
+      "label": "불필요한 Method 악용",
+      "sourceLabel": "불필요한 Method 악용",
+      "order": 21
+    },
+    {
+      "identifier": "virtualization-device-account-management",
+      "domainIdentifier": "virtualization-device",
+      "label": "계정 관리",
+      "sourceLabel": "계정 관리",
+      "order": 1
+    },
+    {
+      "identifier": "virtualization-device-system-service-management",
+      "domainIdentifier": "virtualization-device",
+      "label": "시스템 서비스 관리",
+      "sourceLabel": "시스템 서비스 관리",
+      "order": 2
+    },
+    {
+      "identifier": "virtualization-device-virtual-machine-management",
+      "domainIdentifier": "virtualization-device",
+      "label": "가상 머신 관리",
+      "sourceLabel": "가상 머신 관리",
+      "order": 3
+    },
+    {
+      "identifier": "virtualization-device-virtual-network-management",
+      "domainIdentifier": "virtualization-device",
+      "label": "가상 네트워크 관리",
+      "sourceLabel": "가상 네트워크 관리",
+      "order": 4
+    },
+    {
+      "identifier": "cloud-account-management",
+      "domainIdentifier": "cloud",
+      "label": "계정 관리",
+      "sourceLabel": "계정 관리",
+      "order": 1
+    },
+    {
+      "identifier": "cloud-permission-management",
+      "domainIdentifier": "cloud",
+      "label": "권한 관리",
+      "sourceLabel": "권한 관리",
+      "order": 2
+    },
+    {
+      "identifier": "cloud-virtual-resource-management",
+      "domainIdentifier": "cloud",
+      "label": "가상 리소스 관리",
+      "sourceLabel": "가상 리소스 관리",
+      "order": 3
+    },
+    {
+      "identifier": "cloud-operations-management",
+      "domainIdentifier": "cloud",
+      "label": "운영 관리",
+      "sourceLabel": "운영 관리",
+      "order": 4
+    }
+  ]
+}

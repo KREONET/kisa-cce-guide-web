@@ -1,0 +1,175 @@
+schemaVersion: 1
+criterionSlug: d-13
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "d-13:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 637
+        printedPage: "637"
+        pageRegionIdentifier: p637-d-13
+  - blockReference: "d-13:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 637
+        printedPage: "637"
+        pageRegionIdentifier: p637-d-13
+  - blockReference: "d-13:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 637
+        printedPage: "637"
+        pageRegionIdentifier: p637-d-13
+  - blockReference: "d-13:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 637
+        printedPage: "637"
+        pageRegionIdentifier: p637-d-13
+  - blockReference: "d-13:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 637
+        printedPage: "637"
+        pageRegionIdentifier: p637-d-13
+  - blockReference: "d-13:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 637
+        printedPage: "637"
+        pageRegionIdentifier: p637-d-13
+  - blockReference: "d-13:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 637
+        printedPage: "637"
+        pageRegionIdentifier: p637-d-13
+  - blockReference: "d-13:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 637
+        printedPage: "637"
+        pageRegionIdentifier: p637-d-13
+  - blockReference: "d-13:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 637
+        printedPage: "637"
+        pageRegionIdentifier: p637-d-13
+  - blockReference: "d-13:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 637
+        printedPage: "637"
+        pageRegionIdentifier: p637-d-13
+  - blockReference: "d-13:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 637
+        printedPage: "637"
+        pageRegionIdentifier: p637-d-13
+  - blockReference: "d-13:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 637
+        printedPage: "637"
+        pageRegionIdentifier: p637-d-13
+  - blockReference: "d-13:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 637
+        printedPage: "637"
+        pageRegionIdentifier: p637-d-13
+  - blockReference: "d-13:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 637
+        printedPage: "637"
+        pageRegionIdentifier: p637-d-13
+  - blockReference: "d-13:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 637
+        printedPage: "637"
+        pageRegionIdentifier: p637-d-13
+  - blockReference: "d-13:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 637
+        printedPage: "637"
+        pageRegionIdentifier: p637-d-13
+  - blockReference: "d-13:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 637
+        printedPage: "637"
+        pageRegionIdentifier: p637-d-13
+  - blockReference: "d-13:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 637
+        printedPage: "637"
+        pageRegionIdentifier: p637-d-13
+  - blockReference: "d-13:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 637
+        printedPage: "637"
+        pageRegionIdentifier: p637-d-13
+  - blockReference: "d-13:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 637
+        printedPage: "637"
+        pageRegionIdentifier: p637-d-13
+  - blockReference: "d-13:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 637
+        printedPage: "637"
+        pageRegionIdentifier: p637-d-13
+  - blockReference: "d-13:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 637
+        printedPage: "637"
+        pageRegionIdentifier: p637-d-13
+  - blockReference: "d-13:remediation.linux.paragraph:1"
+    sourceSpans:
+      - physicalPage: 637
+        printedPage: "637"
+        pageRegionIdentifier: p637-d-13
+  - blockReference: "d-13:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 637
+        printedPage: "637"
+        pageRegionIdentifier: p637-d-13
+  - blockReference: "d-13:remediation.linux.step.explanation:1"
+    sourceSpans:
+      - physicalPage: 637
+        printedPage: "637"
+        pageRegionIdentifier: p637-d-13
+  - blockReference: "d-13:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 637
+        printedPage: "637"
+        pageRegionIdentifier: p637-d-13
+  - blockReference: "d-13:remediation.linux.paragraph:2"
+    sourceSpans:
+      - physicalPage: 637
+        printedPage: "637"
+        pageRegionIdentifier: p637-d-13
+  - blockReference: "d-13:remediation.linux.step:3"
+    sourceSpans:
+      - physicalPage: 637
+        printedPage: "637"
+        pageRegionIdentifier: p637-d-13
+  - blockReference: "d-13:remediation.linux.step.explanation:3"
+    sourceSpans:
+      - physicalPage: 637
+        printedPage: "637"
+        pageRegionIdentifier: p637-d-13
+  - blockReference: "d-13:remediation.linux.step:4"
+    sourceSpans:
+      - physicalPage: 638
+        printedPage: "638"
+        pageRegionIdentifier: p638-d-13
+  - blockReference: "d-13:remediation.linux.paragraph:3"
+    sourceSpans:
+      - physicalPage: 638
+        printedPage: "638"
+        pageRegionIdentifier: p638-d-13
+  - blockReference: "d-13:remediation.linux.step:5"
+    sourceSpans:
+      - physicalPage: 638
+        printedPage: "638"
+        pageRegionIdentifier: p638-d-13
+  - blockReference: "d-13:remediation.linux.step.explanation:5"
+    sourceSpans:
+      - physicalPage: 638
+        printedPage: "638"
+        pageRegionIdentifier: p638-d-13
+  - blockReference: "d-13:remediation.linux.step:6"
+    sourceSpans:
+      - physicalPage: 638
+        printedPage: "638"
+        pageRegionIdentifier: p638-d-13
+assets: []

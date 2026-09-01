@@ -1,0 +1,2 @@
+*.provenance.yaml whitespace=-blank-at-eof
+content/criteria/dbms/d-25.md whitespace=-trailing-space

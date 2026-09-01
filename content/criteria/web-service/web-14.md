@@ -1,0 +1,116 @@
+---
+schemaVersion: 1
+contentModel: systemCriterion
+contentModelVersion: 1
+
+criterion:
+  code: WEB-14
+  slug: web-14
+  title: 웹 서비스 경로 내 파일의 접근 통제
+  severity:
+    level: high
+    sourceLabel: 상
+
+classification:
+  domainIdentifier: web-service
+  categoryIdentifier: web-service-service-management
+
+targetScope: nonExhaustive
+targetIdentifiers:
+  - linux
+sourceTargetText: "Apache, Tomcat, Nginx, IIS, JEUS, WebtoB"
+
+provenance:
+  sourceDocumentIdentifier: kisa-cce-criteria-2026
+  sourcePageRanges:
+    - physicalPageStart: 311
+      physicalPageEnd: 312
+      printedPageStart: "311"
+      printedPageEnd: "312"
+
+sourceAnnotations: []
+---
+
+## 개요
+
+### 점검 내용
+
+웹 서비스 경로의 파일들에 대해 관리자를 제외한 일반 사용자의 파일 접근 권한 제거 여부 점검
+
+### 점검 목적
+
+웹 서비스 경로의 파일들에 관리자를 제외한 일반 사용자의 파일 접근 권한을 제거함으로써 인가되지 않은 사용자가 허용되지 않는 파일에 접근하는 것을 차단하기 위함
+
+### 보안 위협
+
+웹 서비스 경로 파일에 비인가자가 접근 가능한 경우, 해당 파일의 수정 및 삭제로 인해 웹 서비스 운영 장애 및 계정 비밀번호 정보 등의 중요한 정보가 노출될 위험이 존재함
+
+### 참고
+
+> **참고**
+>
+> 웹 서비스 경로 내 파일/디렉터리에 접근 권한을 허용할 때는 필요한 때에만 설정하고, 필요한 특정 위치의 특정 사용자에게만 허용하도록 조치
+
+## 점검 대상 및 판단 기준
+
+### 대상
+
+Apache, Tomcat, Nginx, IIS, JEUS, WebtoB
+
+### 판단 기준
+
+- **양호:** 주요 설정 파일 및 디렉터리에 불필요한 접근 권한이 부여되지 않은 경우
+- **취약:** 주요 설정 파일 및 디렉터리에 불필요한 접근 권한이 부여된 경우
+
+### 조치 방법
+
+주요 설정 파일 및 디렉터리에 불필요한 접근 권한 제거 설정
+
+### 조치 시 영향
+
+일반적인 경우 영향 없음
+
+## 점검 및 조치 사례
+
+### LINUX
+
+1. **Apache:** 루트 디렉터리 내 불필요한 권한 삭제 또는 적절한 권한 부여
+
+   ```shell command
+   # chown –R <Apache 계정>]:<Apache 그룹> apache2.conf (또는 httpd.conf)
+   # chmod -R 750 apache2.conf (또는 httpd.conf)
+   ```
+
+2. **Tomcat:** 루트 디렉터리 불필요한 권한 삭제 또는 적절한 권한 부여
+
+   ```shell command
+   # chown –R [Tomcat 계정]:[Tomcat 그룹] web.xml
+   # chmod -R 750 web.xml
+   ```
+
+3. **Nginx:** 루트 디렉터리 불필요한 권한 삭제 또는 적절한 권한 부여
+
+   ```shell command
+   # chown –R <Nginx 계정>:<Nginx 그룹> web.xml
+   # chmod -R 750 web.xml
+   ```
+
+4. **IIS:** 실제 경로 디렉터리 내 불필요한 권한 삭제 또는 적절한 권한 부여
+
+   ```text configuration
+   web.config > 속성 > 보안 > 편집 > “그룹 또는 사용자 이름”의 불필요 권한 제거
+   ```
+
+5. **JEUS:** 루트 디렉터리 불필요한 권한 삭제 또는 적절한 권한 부여
+
+   ```shell command
+   # chown –R <Jeus 계정>:<Jeus 그룹> accounts.xml
+   # chmod -R 750 accounts.xml
+   ```
+
+6. **WebtoB:** 루트 디렉터리 불필요한 권한 삭제 또는 적절한 권한 부여
+
+   ```shell command
+   # chown –R <WebtoB 계정>:<WebtoB 그룹> http.m
+   # chmod -R 750 http.m
+   ```

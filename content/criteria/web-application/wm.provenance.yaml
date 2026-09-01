@@ -1,0 +1,319 @@
+schemaVersion: 1
+criterionSlug: wm
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "wm:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 779
+        printedPage: "779"
+        pageRegionIdentifier: p779-wm
+  - blockReference: "wm:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 779
+        printedPage: "779"
+        pageRegionIdentifier: p779-wm
+  - blockReference: "wm:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 779
+        printedPage: "779"
+        pageRegionIdentifier: p779-wm
+  - blockReference: "wm:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 779
+        printedPage: "779"
+        pageRegionIdentifier: p779-wm
+  - blockReference: "wm:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 779
+        printedPage: "779"
+        pageRegionIdentifier: p779-wm
+  - blockReference: "wm:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 779
+        printedPage: "779"
+        pageRegionIdentifier: p779-wm
+  - blockReference: "wm:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 779
+        printedPage: "779"
+        pageRegionIdentifier: p779-wm
+  - blockReference: "wm:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 779
+        printedPage: "779"
+        pageRegionIdentifier: p779-wm
+  - blockReference: "wm:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 779
+        printedPage: "779"
+        pageRegionIdentifier: p779-wm
+  - blockReference: "wm:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 779
+        printedPage: "779"
+        pageRegionIdentifier: p779-wm
+  - blockReference: "wm:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 779
+        printedPage: "779"
+        pageRegionIdentifier: p779-wm
+  - blockReference: "wm:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 779
+        printedPage: "779"
+        pageRegionIdentifier: p779-wm
+  - blockReference: "wm:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 779
+        printedPage: "779"
+        pageRegionIdentifier: p779-wm
+  - blockReference: "wm:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 779
+        printedPage: "779"
+        pageRegionIdentifier: p779-wm
+  - blockReference: "wm:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 779
+        printedPage: "779"
+        pageRegionIdentifier: p779-wm
+  - blockReference: "wm:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 779
+        printedPage: "779"
+        pageRegionIdentifier: p779-wm
+  - blockReference: "wm:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 779
+        printedPage: "779"
+        pageRegionIdentifier: p779-wm
+  - blockReference: "wm:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 779
+        printedPage: "779"
+        pageRegionIdentifier: p779-wm
+  - blockReference: "wm:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 779
+        printedPage: "779"
+        pageRegionIdentifier: p779-wm
+  - blockReference: "wm:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 779
+        printedPage: "779"
+        pageRegionIdentifier: p779-wm
+  - blockReference: "wm:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 779
+        printedPage: "779"
+        pageRegionIdentifier: p779-wm
+  - blockReference: "wm:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 779
+        printedPage: "779"
+        pageRegionIdentifier: p779-wm
+  - blockReference: "wm:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 779
+        printedPage: "779"
+        pageRegionIdentifier: p779-wm
+  - blockReference: "wm:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 779
+        printedPage: "779"
+        pageRegionIdentifier: p779-wm
+  - blockReference: "wm:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 779
+        printedPage: "779"
+        pageRegionIdentifier: p779-wm
+      - physicalPage: 780
+        printedPage: "780"
+        pageRegionIdentifier: p780-wm
+  - blockReference: "wm:remediation.linux.literal:1"
+    sourceSpans:
+      - physicalPage: 779
+        printedPage: "779"
+        pageRegionIdentifier: p779-wm
+      - physicalPage: 780
+        printedPage: "780"
+        pageRegionIdentifier: p780-wm
+  - blockReference: "wm:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 780
+        printedPage: "780"
+        pageRegionIdentifier: p780-wm
+  - blockReference: "wm:remediation.linux.step:3"
+    sourceSpans:
+      - physicalPage: 780
+        printedPage: "780"
+        pageRegionIdentifier: p780-wm
+  - blockReference: "wm:remediation.linux.literal:2"
+    sourceSpans:
+      - physicalPage: 780
+        printedPage: "780"
+        pageRegionIdentifier: p780-wm
+  - blockReference: "wm:remediation.linux.paragraph:1"
+    sourceSpans:
+      - physicalPage: 781
+        printedPage: "781"
+        pageRegionIdentifier: p781-wm
+  - blockReference: "wm:remediation.linux.step:4"
+    sourceSpans:
+      - physicalPage: 781
+        printedPage: "781"
+        pageRegionIdentifier: p781-wm
+  - blockReference: "wm:remediation.linux.command:1"
+    sourceSpans:
+      - physicalPage: 781
+        printedPage: "781"
+        pageRegionIdentifier: p781-wm
+  - blockReference: "wm:remediation.linux.step:5"
+    sourceSpans:
+      - physicalPage: 781
+        printedPage: "781"
+        pageRegionIdentifier: p781-wm
+  - blockReference: "wm:remediation.linux.configuration:1"
+    sourceSpans:
+      - physicalPage: 781
+        printedPage: "781"
+        pageRegionIdentifier: p781-wm
+  - blockReference: "wm:remediation.linux.step:6"
+    sourceSpans:
+      - physicalPage: 782
+        printedPage: "782"
+        pageRegionIdentifier: p782-wm
+  - blockReference: "wm:remediation.linux.configuration:2"
+    sourceSpans:
+      - physicalPage: 782
+        printedPage: "782"
+        pageRegionIdentifier: p782-wm
+  - blockReference: "wm:remediation.linux.step:7"
+    sourceSpans:
+      - physicalPage: 782
+        printedPage: "782"
+        pageRegionIdentifier: p782-wm
+  - blockReference: "wm:remediation.linux.configuration:3"
+    sourceSpans:
+      - physicalPage: 782
+        printedPage: "782"
+        pageRegionIdentifier: p782-wm
+  - blockReference: "wm:remediation.linux.step:8"
+    sourceSpans:
+      - physicalPage: 782
+        printedPage: "782"
+        pageRegionIdentifier: p782-wm
+  - blockReference: "wm:remediation.linux.configuration:4"
+    sourceSpans:
+      - physicalPage: 782
+        printedPage: "782"
+        pageRegionIdentifier: p782-wm
+  - blockReference: "wm:remediation.linux.paragraph:2"
+    sourceSpans:
+      - physicalPage: 783
+        printedPage: "783"
+        pageRegionIdentifier: p783-wm
+  - blockReference: "wm:remediation.linux.step:9"
+    sourceSpans:
+      - physicalPage: 783
+        printedPage: "783"
+        pageRegionIdentifier: p783-wm
+  - blockReference: "wm:remediation.linux.configuration:5"
+    sourceSpans:
+      - physicalPage: 783
+        printedPage: "783"
+        pageRegionIdentifier: p783-wm
+  - blockReference: "wm:remediation.linux.step:10"
+    sourceSpans:
+      - physicalPage: 783
+        printedPage: "783"
+        pageRegionIdentifier: p783-wm
+  - blockReference: "wm:remediation.linux.configuration:6"
+    sourceSpans:
+      - physicalPage: 783
+        printedPage: "783"
+        pageRegionIdentifier: p783-wm
+  - blockReference: "wm:remediation.linux.paragraph:3"
+    sourceSpans:
+      - physicalPage: 783
+        printedPage: "783"
+        pageRegionIdentifier: p783-wm
+  - blockReference: "wm:remediation.linux.paragraph:4"
+    sourceSpans:
+      - physicalPage: 784
+        printedPage: "784"
+        pageRegionIdentifier: p784-wm
+  - blockReference: "wm:remediation.linux.step:11"
+    sourceSpans:
+      - physicalPage: 784
+        printedPage: "784"
+        pageRegionIdentifier: p784-wm
+  - blockReference: "wm:remediation.linux.configuration:7"
+    sourceSpans:
+      - physicalPage: 784
+        printedPage: "784"
+        pageRegionIdentifier: p784-wm
+  - blockReference: "wm:remediation.linux.paragraph:5"
+    sourceSpans:
+      - physicalPage: 784
+        printedPage: "784"
+        pageRegionIdentifier: p784-wm
+  - blockReference: "wm:remediation.linux.paragraph:6"
+    sourceSpans:
+      - physicalPage: 784
+        printedPage: "784"
+        pageRegionIdentifier: p784-wm
+  - blockReference: "wm:remediation.linux.step:12"
+    sourceSpans:
+      - physicalPage: 784
+        printedPage: "784"
+        pageRegionIdentifier: p784-wm
+  - blockReference: "wm:remediation.linux.step:13"
+    sourceSpans:
+      - physicalPage: 784
+        printedPage: "784"
+        pageRegionIdentifier: p784-wm
+  - blockReference: "wm:remediation.linux.configuration:8"
+    sourceSpans:
+      - physicalPage: 784
+        printedPage: "784"
+        pageRegionIdentifier: p784-wm
+  - blockReference: "wm:remediation.linux.step:14"
+    sourceSpans:
+      - physicalPage: 785
+        printedPage: "785"
+        pageRegionIdentifier: p785-wm
+  - blockReference: "wm:remediation.linux.paragraph:7"
+    sourceSpans:
+      - physicalPage: 785
+        printedPage: "785"
+        pageRegionIdentifier: p785-wm
+  - blockReference: "wm:remediation.linux.step:15"
+    sourceSpans:
+      - physicalPage: 785
+        printedPage: "785"
+        pageRegionIdentifier: p785-wm
+      - physicalPage: 786
+        printedPage: "786"
+        pageRegionIdentifier: p786-wm
+  - blockReference: "wm:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - physicalPage: 781
+        printedPage: "781"
+        pageRegionIdentifier: p781-wm
+  - blockReference: "wm:remediation.supplementaryGuidance.step:1"
+    sourceSpans:
+      - physicalPage: 781
+        printedPage: "781"
+        pageRegionIdentifier: p781-wm
+  - blockReference: "wm:remediation.supplementaryGuidance.step:2"
+    sourceSpans:
+      - physicalPage: 781
+        printedPage: "781"
+        pageRegionIdentifier: p781-wm
+  - blockReference: "wm:remediation.supplementaryGuidance.step:3"
+    sourceSpans:
+      - physicalPage: 781
+        printedPage: "781"
+        pageRegionIdentifier: p781-wm
+assets: []

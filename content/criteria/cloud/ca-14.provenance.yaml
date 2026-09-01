@@ -1,0 +1,205 @@
+schemaVersion: 1
+criterionSlug: ca-14
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "ca-14:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:remediation.solaris.heading:1"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:remediation.solaris.step:1"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:remediation.solaris.item:1"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:remediation.solaris.item:2"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:remediation.solaris.item:3"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:remediation.linux.item:1"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:remediation.linux.item:2"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:remediation.linux.item:3"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:remediation.aix.heading:1"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:remediation.aix.step:1"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:remediation.aix.item:1"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:remediation.aix.item:2"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:remediation.aix.item:3"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:remediation.hp-ux.heading:1"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:remediation.hp-ux.step:1"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:remediation.hp-ux.item:1"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:remediation.hp-ux.item:2"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+  - blockReference: "ca-14:remediation.hp-ux.item:3"
+    sourceSpans:
+      - physicalPage: 867
+        printedPage: "867"
+        pageRegionIdentifier: p867-ca-14
+assets: []

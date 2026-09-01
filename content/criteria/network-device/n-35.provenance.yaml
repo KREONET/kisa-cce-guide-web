@@ -1,0 +1,180 @@
+schemaVersion: 1
+criterionSlug: n-35
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "n-35:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+  - blockReference: "n-35:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+  - blockReference: "n-35:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+  - blockReference: "n-35:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+  - blockReference: "n-35:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+  - blockReference: "n-35:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+  - blockReference: "n-35:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+  - blockReference: "n-35:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+  - blockReference: "n-35:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+  - blockReference: "n-35:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+  - blockReference: "n-35:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+  - blockReference: "n-35:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+  - blockReference: "n-35:overview.reference.note.label:3"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+  - blockReference: "n-35:overview.reference.note.content:3"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+  - blockReference: "n-35:overview.reference.note.label:4"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+  - blockReference: "n-35:overview.reference.note.content:4"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+  - blockReference: "n-35:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+  - blockReference: "n-35:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+  - blockReference: "n-35:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+  - blockReference: "n-35:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+  - blockReference: "n-35:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+  - blockReference: "n-35:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+  - blockReference: "n-35:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+  - blockReference: "n-35:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+  - blockReference: "n-35:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+  - blockReference: "n-35:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+  - blockReference: "n-35:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+  - blockReference: "n-35:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+  - blockReference: "n-35:remediation.linux.paragraph:1"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+  - blockReference: "n-35:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+  - blockReference: "n-35:remediation.linux.command:1"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+  - blockReference: "n-35:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+  - blockReference: "n-35:remediation.linux.command:2"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+  - blockReference: "n-35:remediation.linux.note.label:1"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+  - blockReference: "n-35:remediation.linux.note.content:1"
+    sourceSpans:
+      - physicalPage: 463
+        printedPage: "463"
+        pageRegionIdentifier: p463-n-35
+assets: []

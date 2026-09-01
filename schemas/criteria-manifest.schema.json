@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zeroday0619.github.io/kisa-cce-guide/schemas/criteria-manifest.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "completionStatus",
+    "expectedCriterionCount",
+    "registeredCriterionCount",
+    "criteria"
+  ],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "completionStatus": {"enum": ["partial", "complete"]},
+    "expectedCriterionCount": {"type": "integer", "minimum": 1},
+    "registeredCriterionCount": {"type": "integer", "minimum": 0},
+    "criteria": {"type": "array", "items": {"$ref": "#/$defs/criterion"}}
+  },
+  "$defs": {
+    "identifier": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "criterion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "slug",
+        "title",
+        "severityLevel",
+        "severitySourceLabel",
+        "domainIdentifier",
+        "categoryIdentifier",
+        "contentModel",
+        "contentModelVersion",
+        "sourceStartRegionIdentifier",
+        "sourceEndRegionIdentifier",
+        "route",
+        "technicalLiteralInventoryMode"
+      ],
+      "properties": {
+        "code": {"type": "string", "minLength": 1},
+        "slug": {"$ref": "#/$defs/identifier"},
+        "title": {"type": "string", "minLength": 1},
+        "severityLevel": {"enum": ["high", "medium", "low"]},
+        "severitySourceLabel": {"enum": ["상", "중", "하"]},
+        "domainIdentifier": {"$ref": "#/$defs/identifier"},
+        "categoryIdentifier": {"$ref": "#/$defs/identifier"},
+        "contentModel": {"enum": ["systemCriterion", "webApplicationCriterion", "extractedCriterion"]},
+        "contentModelVersion": {"type": "integer", "minimum": 1},
+        "sourceStartRegionIdentifier": {"type": "string", "minLength": 1},
+        "sourceEndRegionIdentifier": {"type": "string", "minLength": 1},
+        "route": {"type": "string", "pattern": "^/[a-z0-9-]+/[a-z0-9-]+/$"},
+        "technicalLiteralInventoryMode": {
+          "enum": ["extractedFromTypedAst", "sourceTranscriptSearchableText"]
+        }
+      }
+    }
+  }
+}

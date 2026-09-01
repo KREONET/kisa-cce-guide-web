@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zeroday0619.github.io/kisa-cce-guide/schemas/review-registry.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "completionStatus", "records"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "completionStatus": {"enum": ["partial", "complete"]},
+    "records": {"type": "array", "items": {"$ref": "#/$defs/reviewRecord"}}
+  },
+  "$defs": {
+    "nullableString": {"type": ["string", "null"]},
+    "checksum": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "reviewRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "subjectType",
+        "subjectIdentifier",
+        "subjectSourceChecksum",
+        "sourceDocumentIdentifier",
+        "sourceDocumentChecksum",
+        "transcriptionStatus",
+        "workflowStatus",
+        "sourceAnomalyStatus",
+        "reviewers",
+        "reviewedAt",
+        "automatedValidationResult",
+        "unresolvedConversionErrorCount",
+        "unresolvedSourceAnomalyCount",
+        "validationReportIdentifier",
+        "visualEvidenceIdentifiers",
+        "testProfileVersion"
+      ],
+      "properties": {
+        "subjectType": {"enum": ["criterion", "pageRegion"]},
+        "subjectIdentifier": {"type": "string", "minLength": 1},
+        "subjectSourceChecksum": {"$ref": "#/$defs/checksum"},
+        "sourceDocumentIdentifier": {"type": "string", "minLength": 1},
+        "sourceDocumentChecksum": {"$ref": "#/$defs/checksum"},
+        "transcriptionStatus": {"enum": ["verificationRequired", "machineChecked", "visuallyVerified"]},
+        "workflowStatus": {
+          "enum": ["extracted", "structured", "automatedChecksPassed", "visuallyReviewed", "approved"]
+        },
+        "sourceAnomalyStatus": {"enum": ["none", "reviewRequired", "reviewedWithOpenAnnotations", "resolved"]},
+        "reviewers": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+        "reviewedAt": {"type": ["string", "null"], "format": "date-time"},
+        "automatedValidationResult": {"enum": ["notRun", "passed", "failed"]},
+        "unresolvedConversionErrorCount": {"type": "integer", "minimum": 0},
+        "unresolvedSourceAnomalyCount": {"type": "integer", "minimum": 0},
+        "validationReportIdentifier": {"$ref": "#/$defs/nullableString"},
+        "visualEvidenceIdentifiers": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "testProfileVersion": {"type": ["integer", "null"], "minimum": 1}
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "workflowStatus": {
+                "enum": ["automatedChecksPassed", "visuallyReviewed", "approved"]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "automatedValidationResult": {"const": "passed"},
+              "validationReportIdentifier": {"type": "string", "minLength": 1}
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "workflowStatus": {"enum": ["visuallyReviewed", "approved"]}
+            }
+          },
+          "then": {
+            "properties": {
+              "transcriptionStatus": {"const": "visuallyVerified"},
+              "visualEvidenceIdentifiers": {"minItems": 1},
+              "testProfileVersion": {"type": "integer", "minimum": 1}
+            }
+          }
+        },
+        {
+          "if": {"properties": {"workflowStatus": {"const": "approved"}}},
+          "then": {
+            "properties": {
+              "sourceAnomalyStatus": {
+                "enum": ["none", "reviewedWithOpenAnnotations", "resolved"]
+              },
+              "reviewers": {"minItems": 1},
+              "reviewedAt": {"type": "string", "format": "date-time"},
+              "unresolvedConversionErrorCount": {"const": 0}
+            }
+          }
+        }
+      ]
+    }
+  }
+}

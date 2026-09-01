@@ -1,0 +1,167 @@
+schemaVersion: 1
+criterionSlug: u-02
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+
+blockProvenance:
+  - blockReferences:
+      - "u-02:overview.heading:1"
+      - "u-02:overview.inspectionContent.heading:1"
+      - "u-02:overview.inspectionContent.paragraph:1"
+      - "u-02:overview.inspectionPurpose.heading:1"
+      - "u-02:overview.inspectionPurpose.paragraph:1"
+      - "u-02:overview.securityThreat.heading:1"
+      - "u-02:overview.securityThreat.paragraph:1"
+      - "u-02:overview.reference.heading:1"
+      - "u-02:overview.reference.note.label:1"
+      - "u-02:overview.reference.note.item:1"
+      - "u-02:overview.reference.note.item:2"
+      - "u-02:assessment.heading:1"
+      - "u-02:assessment.target.heading:1"
+      - "u-02:assessment.target.paragraph:1"
+      - "u-02:assessment.judgment.heading:1"
+      - "u-02:assessment.judgment.good:1"
+      - "u-02:assessment.judgment.vulnerable:1"
+      - "u-02:assessment.remediationMethod.heading:1"
+      - "u-02:assessment.remediationMethod.paragraph:1"
+      - "u-02:assessment.remediationImpact.heading:1"
+      - "u-02:assessment.remediationImpact.paragraph:1"
+      - "u-02:remediation.heading:1"
+      - "u-02:remediation.solaris.heading:1"
+      - "u-02:remediation.solaris.step:1"
+      - "u-02:remediation.solaris.configuration:1"
+    sourceSpans:
+      - physicalPage: 15
+        printedPage: "15"
+        pageRegionIdentifier: p15-u-02
+
+  - blockReferences:
+      - "u-02:remediation.solaris.table:1"
+      - "u-02:remediation.solaris.note.label:1"
+      - "u-02:remediation.solaris.note.content:1"
+      - "u-02:remediation.solaris.note.label:2"
+      - "u-02:remediation.solaris.note.content:2"
+      - "u-02:remediation.solaris.note.label:3"
+      - "u-02:remediation.solaris.note.content:3"
+      - "u-02:remediation.solaris.note.label:4"
+      - "u-02:remediation.solaris.note.content:4"
+    sourceSpans:
+      - physicalPage: 16
+        printedPage: "16"
+        pageRegionIdentifier: p16-u-02
+
+  - blockReferences:
+      - "u-02:remediation.linux.heading:1"
+      - "u-02:remediation.linux.red-hat.heading:1"
+      - "u-02:remediation.linux.red-hat.step:1"
+      - "u-02:remediation.linux.red-hat.configuration:1"
+      - "u-02:remediation.linux.red-hat.step:2"
+      - "u-02:remediation.linux.red-hat.configuration:2"
+      - "u-02:remediation.linux.red-hat.step:3"
+      - "u-02:remediation.linux.red-hat.configuration:3"
+      - "u-02:remediation.linux.red-hat.step:4"
+      - "u-02:remediation.linux.red-hat.step:5"
+      - "u-02:remediation.linux.red-hat.configuration:4"
+      - "u-02:remediation.linux.red-hat.note.label:1"
+      - "u-02:remediation.linux.red-hat.note.content:1"
+      - "u-02:remediation.linux.red-hat.note.label:2"
+      - "u-02:remediation.linux.red-hat.note.content:2"
+      - "u-02:remediation.linux.red-hat.note.label:3"
+      - "u-02:remediation.linux.red-hat.note.content:3"
+      - "u-02:remediation.linux.red-hat.note.label:4"
+      - "u-02:remediation.linux.red-hat.note.content:4"
+      - "u-02:remediation.linux.debian.heading:1"
+      - "u-02:remediation.linux.debian.step:1"
+    sourceSpans:
+      - physicalPage: 17
+        printedPage: "17"
+        pageRegionIdentifier: p17-u-02
+
+  - blockReferences:
+      - "u-02:remediation.linux.debian.configuration:1"
+    sourceSpans:
+      - physicalPage: 17
+        printedPage: "17"
+        pageRegionIdentifier: p17-u-02
+      - physicalPage: 18
+        printedPage: "18"
+        pageRegionIdentifier: p18-u-02
+
+  - blockReferences:
+      - "u-02:remediation.linux.debian.step:2"
+      - "u-02:remediation.linux.debian.step.explanation:2"
+      - "u-02:remediation.linux.debian.step:3"
+      - "u-02:remediation.linux.debian.configuration:2"
+      - "u-02:remediation.linux.debian.table:1"
+      - "u-02:remediation.linux.debian.note.label:1"
+      - "u-02:remediation.linux.debian.note.content:1"
+      - "u-02:remediation.linux.debian.note.label:2"
+      - "u-02:remediation.linux.debian.note.content:2"
+      - "u-02:remediation.linux.debian.note.label:3"
+      - "u-02:remediation.linux.debian.note.content:3"
+      - "u-02:remediation.aix.heading:1"
+      - "u-02:remediation.aix.step:1"
+    sourceSpans:
+      - physicalPage: 18
+        printedPage: "18"
+        pageRegionIdentifier: p18-u-02
+
+  - blockReferences:
+      - "u-02:remediation.aix.configuration:1"
+    sourceSpans:
+      - physicalPage: 18
+        printedPage: "18"
+        pageRegionIdentifier: p18-u-02
+      - physicalPage: 19
+        printedPage: "19"
+        pageRegionIdentifier: p19-u-02
+
+  - blockReferences:
+      - "u-02:remediation.aix.table:1"
+      - "u-02:remediation.hp-ux.heading:1"
+      - "u-02:remediation.hp-ux.step:1"
+      - "u-02:remediation.hp-ux.configuration:1"
+    sourceSpans:
+      - physicalPage: 19
+        printedPage: "19"
+        pageRegionIdentifier: p19-u-02
+
+  - blockReferences:
+      - "u-02:remediation.hp-ux.table:1"
+    sourceSpans:
+      - physicalPage: 19
+        printedPage: "19"
+        pageRegionIdentifier: p19-u-02
+      - physicalPage: 20
+        printedPage: "20"
+        pageRegionIdentifier: p20-u-02
+
+  - blockReferences:
+      - "u-02:remediation.supplementaryGuidance.heading:1"
+    publicationDisposition: derived
+    sourceSpans:
+      - physicalPage: 20
+        printedPage: "20"
+        pageRegionIdentifier: p20-u-02
+
+  - blockReferences:
+      - "u-02:remediation.supplementaryGuidance.inappropriatePasswordTypes.heading:1"
+      - "u-02:remediation.supplementaryGuidance.inappropriatePasswordTypes.item:1"
+      - "u-02:remediation.supplementaryGuidance.inappropriatePasswordTypes.item:2"
+      - "u-02:remediation.supplementaryGuidance.inappropriatePasswordTypes.item:3"
+      - "u-02:remediation.supplementaryGuidance.inappropriatePasswordTypes.item:4"
+      - "u-02:remediation.supplementaryGuidance.passwordManagementMethods.heading:1"
+      - "u-02:remediation.supplementaryGuidance.passwordManagementMethods.paragraph:1"
+      - "u-02:remediation.supplementaryGuidance.passwordManagementMethods.step:1"
+      - "u-02:remediation.supplementaryGuidance.passwordManagementMethods.characterClass:1"
+      - "u-02:remediation.supplementaryGuidance.passwordManagementMethods.characterClass:2"
+      - "u-02:remediation.supplementaryGuidance.passwordManagementMethods.characterClass:3"
+      - "u-02:remediation.supplementaryGuidance.passwordManagementMethods.characterClass:4"
+      - "u-02:remediation.supplementaryGuidance.passwordManagementMethods.step:2"
+      - "u-02:remediation.supplementaryGuidance.passwordManagementMethods.step:3"
+    publicationDisposition: published
+    sourceSpans:
+      - physicalPage: 20
+        printedPage: "20"
+        pageRegionIdentifier: p20-u-02
+
+assets: []

@@ -1,0 +1,265 @@
+schemaVersion: 1
+criterionSlug: c-22
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "c-22:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 509
+        printedPage: "509"
+        pageRegionIdentifier: p509-c-22
+  - blockReference: "c-22:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 509
+        printedPage: "509"
+        pageRegionIdentifier: p509-c-22
+  - blockReference: "c-22:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 509
+        printedPage: "509"
+        pageRegionIdentifier: p509-c-22
+  - blockReference: "c-22:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 509
+        printedPage: "509"
+        pageRegionIdentifier: p509-c-22
+  - blockReference: "c-22:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 509
+        printedPage: "509"
+        pageRegionIdentifier: p509-c-22
+  - blockReference: "c-22:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 509
+        printedPage: "509"
+        pageRegionIdentifier: p509-c-22
+  - blockReference: "c-22:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 509
+        printedPage: "509"
+        pageRegionIdentifier: p509-c-22
+  - blockReference: "c-22:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 509
+        printedPage: "509"
+        pageRegionIdentifier: p509-c-22
+  - blockReference: "c-22:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 509
+        printedPage: "509"
+        pageRegionIdentifier: p509-c-22
+  - blockReference: "c-22:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 509
+        printedPage: "509"
+        pageRegionIdentifier: p509-c-22
+  - blockReference: "c-22:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 509
+        printedPage: "509"
+        pageRegionIdentifier: p509-c-22
+  - blockReference: "c-22:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 509
+        printedPage: "509"
+        pageRegionIdentifier: p509-c-22
+  - blockReference: "c-22:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 509
+        printedPage: "509"
+        pageRegionIdentifier: p509-c-22
+  - blockReference: "c-22:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 509
+        printedPage: "509"
+        pageRegionIdentifier: p509-c-22
+  - blockReference: "c-22:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 509
+        printedPage: "509"
+        pageRegionIdentifier: p509-c-22
+  - blockReference: "c-22:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 509
+        printedPage: "509"
+        pageRegionIdentifier: p509-c-22
+  - blockReference: "c-22:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 509
+        printedPage: "509"
+        pageRegionIdentifier: p509-c-22
+  - blockReference: "c-22:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 509
+        printedPage: "509"
+        pageRegionIdentifier: p509-c-22
+  - blockReference: "c-22:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 509
+        printedPage: "509"
+        pageRegionIdentifier: p509-c-22
+  - blockReference: "c-22:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 509
+        printedPage: "509"
+        pageRegionIdentifier: p509-c-22
+  - blockReference: "c-22:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 509
+        printedPage: "509"
+        pageRegionIdentifier: p509-c-22
+  - blockReference: "c-22:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 510
+        printedPage: "510"
+        pageRegionIdentifier: p510-c-22
+  - blockReference: "c-22:remediation.solaris.heading:1"
+    sourceSpans:
+      - physicalPage: 510
+        printedPage: "510"
+        pageRegionIdentifier: p510-c-22
+  - blockReference: "c-22:remediation.solaris.step:1"
+    sourceSpans:
+      - physicalPage: 510
+        printedPage: "510"
+        pageRegionIdentifier: p510-c-22
+  - blockReference: "c-22:remediation.solaris.step:2"
+    sourceSpans:
+      - physicalPage: 510
+        printedPage: "510"
+        pageRegionIdentifier: p510-c-22
+  - blockReference: "c-22:remediation.solaris.item:1"
+    sourceSpans:
+      - physicalPage: 510
+        printedPage: "510"
+        pageRegionIdentifier: p510-c-22
+  - blockReference: "c-22:remediation.solaris.item:2"
+    sourceSpans:
+      - physicalPage: 510
+        printedPage: "510"
+        pageRegionIdentifier: p510-c-22
+  - blockReference: "c-22:remediation.solaris.item:3"
+    sourceSpans:
+      - physicalPage: 510
+        printedPage: "510"
+        pageRegionIdentifier: p510-c-22
+  - blockReference: "c-22:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 510
+        printedPage: "510"
+        pageRegionIdentifier: p510-c-22
+  - blockReference: "c-22:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 510
+        printedPage: "510"
+        pageRegionIdentifier: p510-c-22
+  - blockReference: "c-22:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 510
+        printedPage: "510"
+        pageRegionIdentifier: p510-c-22
+  - blockReference: "c-22:remediation.linux.item:1"
+    sourceSpans:
+      - physicalPage: 510
+        printedPage: "510"
+        pageRegionIdentifier: p510-c-22
+  - blockReference: "c-22:remediation.linux.item:2"
+    sourceSpans:
+      - physicalPage: 510
+        printedPage: "510"
+        pageRegionIdentifier: p510-c-22
+  - blockReference: "c-22:remediation.linux.item:3"
+    sourceSpans:
+      - physicalPage: 510
+        printedPage: "510"
+        pageRegionIdentifier: p510-c-22
+  - blockReference: "c-22:remediation.aix.heading:1"
+    sourceSpans:
+      - physicalPage: 510
+        printedPage: "510"
+        pageRegionIdentifier: p510-c-22
+  - blockReference: "c-22:remediation.aix.step:1"
+    sourceSpans:
+      - physicalPage: 510
+        printedPage: "510"
+        pageRegionIdentifier: p510-c-22
+  - blockReference: "c-22:remediation.aix.step:2"
+    sourceSpans:
+      - physicalPage: 510
+        printedPage: "510"
+        pageRegionIdentifier: p510-c-22
+  - blockReference: "c-22:remediation.aix.item:1"
+    sourceSpans:
+      - physicalPage: 510
+        printedPage: "510"
+        pageRegionIdentifier: p510-c-22
+  - blockReference: "c-22:remediation.aix.item:2"
+    sourceSpans:
+      - physicalPage: 510
+        printedPage: "510"
+        pageRegionIdentifier: p510-c-22
+  - blockReference: "c-22:remediation.aix.item:3"
+    sourceSpans:
+      - physicalPage: 510
+        printedPage: "510"
+        pageRegionIdentifier: p510-c-22
+  - blockReference: "c-22:remediation.hp-ux.heading:1"
+    sourceSpans:
+      - physicalPage: 510
+        printedPage: "510"
+        pageRegionIdentifier: p510-c-22
+  - blockReference: "c-22:remediation.hp-ux.step:1"
+    sourceSpans:
+      - physicalPage: 510
+        printedPage: "510"
+        pageRegionIdentifier: p510-c-22
+  - blockReference: "c-22:remediation.hp-ux.step:2"
+    sourceSpans:
+      - physicalPage: 510
+        printedPage: "510"
+        pageRegionIdentifier: p510-c-22
+  - blockReference: "c-22:remediation.hp-ux.item:1"
+    sourceSpans:
+      - physicalPage: 510
+        printedPage: "510"
+        pageRegionIdentifier: p510-c-22
+  - blockReference: "c-22:remediation.hp-ux.item:2"
+    sourceSpans:
+      - physicalPage: 510
+        printedPage: "510"
+        pageRegionIdentifier: p510-c-22
+  - blockReference: "c-22:remediation.hp-ux.item:3"
+    sourceSpans:
+      - physicalPage: 510
+        printedPage: "510"
+        pageRegionIdentifier: p510-c-22
+  - blockReference: "c-22:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - physicalPage: 510
+        printedPage: "510"
+        pageRegionIdentifier: p510-c-22
+  - blockReference: "c-22:remediation.supplementaryGuidance.note.label:1"
+    sourceSpans:
+      - physicalPage: 510
+        printedPage: "510"
+        pageRegionIdentifier: p510-c-22
+  - blockReference: "c-22:remediation.supplementaryGuidance.note.content:1"
+    sourceSpans:
+      - physicalPage: 510
+        printedPage: "510"
+        pageRegionIdentifier: p510-c-22
+  - blockReference: "c-22:remediation.supplementaryGuidance.note.content:2"
+    sourceSpans:
+      - physicalPage: 510
+        printedPage: "510"
+        pageRegionIdentifier: p510-c-22
+  - blockReference: "c-22:remediation.supplementaryGuidance.note.content:3"
+    sourceSpans:
+      - physicalPage: 510
+        printedPage: "510"
+        pageRegionIdentifier: p510-c-22
+  - blockReference: "c-22:remediation.supplementaryGuidance.note.content:4"
+    sourceSpans:
+      - physicalPage: 510
+        printedPage: "510"
+        pageRegionIdentifier: p510-c-22
+assets: []

@@ -1,0 +1,79 @@
+schemaVersion: 1
+criterionSlug: web-10
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "web-10:overview.heading:1"
+    sourceSpans: [{physicalPage: 300, printedPage: "300", pageRegionIdentifier: p300-web-10}]
+  - blockReference: "web-10:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 300, printedPage: "300", pageRegionIdentifier: p300-web-10}]
+  - blockReference: "web-10:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 300, printedPage: "300", pageRegionIdentifier: p300-web-10}]
+  - blockReference: "web-10:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 300, printedPage: "300", pageRegionIdentifier: p300-web-10}]
+  - blockReference: "web-10:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 300, printedPage: "300", pageRegionIdentifier: p300-web-10}]
+  - blockReference: "web-10:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 300, printedPage: "300", pageRegionIdentifier: p300-web-10}]
+  - blockReference: "web-10:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 300, printedPage: "300", pageRegionIdentifier: p300-web-10}]
+  - blockReference: "web-10:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 300, printedPage: "300", pageRegionIdentifier: p300-web-10}]
+  - blockReference: "web-10:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 300, printedPage: "300", pageRegionIdentifier: p300-web-10}]
+  - blockReference: "web-10:assessment.heading:1"
+    sourceSpans: [{physicalPage: 300, printedPage: "300", pageRegionIdentifier: p300-web-10}]
+  - blockReference: "web-10:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 300, printedPage: "300", pageRegionIdentifier: p300-web-10}]
+  - blockReference: "web-10:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 300, printedPage: "300", pageRegionIdentifier: p300-web-10}]
+  - blockReference: "web-10:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 300, printedPage: "300", pageRegionIdentifier: p300-web-10}]
+  - blockReference: "web-10:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 300, printedPage: "300", pageRegionIdentifier: p300-web-10}]
+  - blockReference: "web-10:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 300, printedPage: "300", pageRegionIdentifier: p300-web-10}]
+  - blockReference: "web-10:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 300, printedPage: "300", pageRegionIdentifier: p300-web-10}]
+  - blockReference: "web-10:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 300, printedPage: "300", pageRegionIdentifier: p300-web-10}]
+  - blockReference: "web-10:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 300, printedPage: "300", pageRegionIdentifier: p300-web-10}]
+  - blockReference: "web-10:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 300, printedPage: "300", pageRegionIdentifier: p300-web-10}]
+  - blockReference: "web-10:remediation.heading:1"
+    sourceSpans: [{physicalPage: 300, printedPage: "300", pageRegionIdentifier: p300-web-10}]
+  - blockReference: "web-10:remediation.linux.heading:1"
+    sourceSpans: [{physicalPage: 300, printedPage: "300", pageRegionIdentifier: p300-web-10}]
+  - blockReference: "web-10:remediation.linux.step:1"
+    sourceSpans: [{physicalPage: 300, printedPage: "300", pageRegionIdentifier: p300-web-10}]
+  - blockReference: "web-10:remediation.linux.configuration:1"
+    sourceSpans: [{physicalPage: 300, printedPage: "300", pageRegionIdentifier: p300-web-10}]
+  - blockReference: "web-10:remediation.linux.step:2"
+    sourceSpans: [{physicalPage: 300, printedPage: "300", pageRegionIdentifier: p300-web-10}]
+  - blockReference: "web-10:remediation.linux.configuration:2"
+    sourceSpans:
+      - {physicalPage: 300, printedPage: "300", pageRegionIdentifier: p300-web-10}
+      - {physicalPage: 301, printedPage: "301", pageRegionIdentifier: p301-web-10}
+  - blockReference: "web-10:remediation.linux.step:3"
+    sourceSpans: [{physicalPage: 301, printedPage: "301", pageRegionIdentifier: p301-web-10}]
+  - blockReference: "web-10:remediation.linux.command:1"
+    sourceSpans: [{physicalPage: 301, printedPage: "301", pageRegionIdentifier: p301-web-10}]
+  - blockReference: "web-10:remediation.linux.configuration:3"
+    sourceSpans: [{physicalPage: 301, printedPage: "301", pageRegionIdentifier: p301-web-10}]
+  - blockReference: "web-10:remediation.linux.step:4"
+    sourceSpans: [{physicalPage: 301, printedPage: "301", pageRegionIdentifier: p301-web-10}]
+  - blockReference: "web-10:remediation.linux.configuration:4"
+    sourceSpans: [{physicalPage: 301, printedPage: "301", pageRegionIdentifier: p301-web-10}]
+  - blockReference: "web-10:remediation.linux.literal:1"
+    sourceSpans: [{physicalPage: 301, printedPage: "301", pageRegionIdentifier: p301-web-10}]
+  - blockReference: "web-10:remediation.linux.step:5"
+    sourceSpans: [{physicalPage: 301, printedPage: "301", pageRegionIdentifier: p301-web-10}]
+  - blockReference: "web-10:remediation.linux.command:2"
+    sourceSpans: [{physicalPage: 301, printedPage: "301", pageRegionIdentifier: p301-web-10}]
+  - blockReference: "web-10:remediation.linux.step:6"
+    sourceSpans: [{physicalPage: 302, printedPage: "302", pageRegionIdentifier: p302-web-10}]
+  - blockReference: "web-10:remediation.linux.command:3"
+    sourceSpans: [{physicalPage: 302, printedPage: "302", pageRegionIdentifier: p302-web-10}]
+  - blockReference: "web-10:remediation.linux.configuration:5"
+    sourceSpans: [{physicalPage: 302, printedPage: "302", pageRegionIdentifier: p302-web-10}]
+assets: []

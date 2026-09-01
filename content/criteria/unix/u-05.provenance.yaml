@@ -1,0 +1,170 @@
+schemaVersion: 1
+criterionSlug: u-05
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "u-05:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 27
+        printedPage: "27"
+        pageRegionIdentifier: p27-u-05
+  - blockReference: "u-05:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 27
+        printedPage: "27"
+        pageRegionIdentifier: p27-u-05
+  - blockReference: "u-05:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 27
+        printedPage: "27"
+        pageRegionIdentifier: p27-u-05
+  - blockReference: "u-05:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 27
+        printedPage: "27"
+        pageRegionIdentifier: p27-u-05
+  - blockReference: "u-05:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 27
+        printedPage: "27"
+        pageRegionIdentifier: p27-u-05
+  - blockReference: "u-05:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 27
+        printedPage: "27"
+        pageRegionIdentifier: p27-u-05
+  - blockReference: "u-05:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 27
+        printedPage: "27"
+        pageRegionIdentifier: p27-u-05
+  - blockReference: "u-05:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 27
+        printedPage: "27"
+        pageRegionIdentifier: p27-u-05
+  - blockReference: "u-05:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 27
+        printedPage: "27"
+        pageRegionIdentifier: p27-u-05
+  - blockReference: "u-05:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 27
+        printedPage: "27"
+        pageRegionIdentifier: p27-u-05
+  - blockReference: "u-05:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 27
+        printedPage: "27"
+        pageRegionIdentifier: p27-u-05
+  - blockReference: "u-05:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 27
+        printedPage: "27"
+        pageRegionIdentifier: p27-u-05
+  - blockReference: "u-05:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 27
+        printedPage: "27"
+        pageRegionIdentifier: p27-u-05
+  - blockReference: "u-05:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 27
+        printedPage: "27"
+        pageRegionIdentifier: p27-u-05
+  - blockReference: "u-05:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 27
+        printedPage: "27"
+        pageRegionIdentifier: p27-u-05
+  - blockReference: "u-05:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 27
+        printedPage: "27"
+        pageRegionIdentifier: p27-u-05
+  - blockReference: "u-05:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 27
+        printedPage: "27"
+        pageRegionIdentifier: p27-u-05
+  - blockReference: "u-05:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 27
+        printedPage: "27"
+        pageRegionIdentifier: p27-u-05
+  - blockReference: "u-05:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 27
+        printedPage: "27"
+        pageRegionIdentifier: p27-u-05
+  - blockReference: "u-05:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 27
+        printedPage: "27"
+        pageRegionIdentifier: p27-u-05
+  - blockReference: "u-05:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 27
+        printedPage: "27"
+        pageRegionIdentifier: p27-u-05
+  - blockReference: "u-05:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 27
+        printedPage: "27"
+        pageRegionIdentifier: p27-u-05
+  - blockReference: "u-05:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 27
+        printedPage: "27"
+        pageRegionIdentifier: p27-u-05
+  - blockReference: "u-05:remediation.solaris.heading:1"
+    sourceSpans:
+      - physicalPage: 27
+        printedPage: "27"
+        pageRegionIdentifier: p27-u-05
+  - blockReference: "u-05:remediation.solaris.step:1"
+    sourceSpans:
+      - physicalPage: 27
+        printedPage: "27"
+        pageRegionIdentifier: p27-u-05
+  - blockReference: "u-05:remediation.solaris.command:1"
+    sourceSpans:
+      - physicalPage: 27
+        printedPage: "27"
+        pageRegionIdentifier: p27-u-05
+  - blockReference: "u-05:remediation.solaris.step.explanation:1"
+    sourceSpans:
+      - physicalPage: 27
+        printedPage: "27"
+        pageRegionIdentifier: p27-u-05
+  - blockReference: "u-05:remediation.solaris.literal:1"
+    sourceSpans:
+      - physicalPage: 27
+        printedPage: "27"
+        pageRegionIdentifier: p27-u-05
+  - blockReference: "u-05:remediation.solaris.table:1"
+    sourceSpans:
+      - physicalPage: 27
+        printedPage: "27"
+        pageRegionIdentifier: p27-u-05
+  - blockReference: "u-05:remediation.solaris.note.label:1"
+    sourceSpans:
+      - physicalPage: 28
+        printedPage: "28"
+        pageRegionIdentifier: p28-u-05
+  - blockReference: "u-05:remediation.solaris.note.content:1"
+    sourceSpans:
+      - physicalPage: 28
+        printedPage: "28"
+        pageRegionIdentifier: p28-u-05
+  - blockReference: "u-05:remediation.solaris.note.label:2"
+    sourceSpans:
+      - physicalPage: 28
+        printedPage: "28"
+        pageRegionIdentifier: p28-u-05
+  - blockReference: "u-05:remediation.solaris.note.content:2"
+    sourceSpans:
+      - physicalPage: 28
+        printedPage: "28"
+        pageRegionIdentifier: p28-u-05
+assets: []

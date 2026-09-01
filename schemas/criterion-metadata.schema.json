@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zeroday0619.github.io/kisa-cce-guide/schemas/criterion-metadata.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "contentModel",
+    "contentModelVersion",
+    "criterion",
+    "classification",
+    "targetScope",
+    "targetIdentifiers",
+    "sourceTargetText",
+    "provenance",
+    "sourceAnnotations"
+  ],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "contentModel": {"enum": ["systemCriterion", "webApplicationCriterion", "extractedCriterion"]},
+    "contentModelVersion": {"type": "integer", "minimum": 1},
+    "criterion": {"$ref": "#/$defs/criterion"},
+    "classification": {"$ref": "#/$defs/classification"},
+    "targetScope": {"enum": ["exhaustive", "nonExhaustive"]},
+    "targetIdentifiers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/identifier"},
+      "uniqueItems": true
+    },
+    "sourceTargetText": {"type": "string", "minLength": 1},
+    "provenance": {"$ref": "#/$defs/provenance"},
+    "sourceAnnotations": {"type": "array", "items": {"$ref": "#/$defs/annotation"}}
+  },
+  "$defs": {
+    "identifier": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "nullableString": {"type": ["string", "null"]},
+    "criterion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "slug", "title", "severity"],
+      "properties": {
+        "code": {"type": "string", "pattern": "^[A-Z]+(?:-[0-9]{2,3})?$"},
+        "slug": {"$ref": "#/$defs/identifier"},
+        "title": {"type": "string", "minLength": 1},
+        "severity": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["level", "sourceLabel"],
+          "properties": {
+            "level": {"enum": ["high", "medium", "low"]},
+            "sourceLabel": {"enum": ["상", "중", "하"]}
+          }
+        }
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["domainIdentifier", "categoryIdentifier"],
+      "properties": {
+        "domainIdentifier": {"$ref": "#/$defs/identifier"},
+        "categoryIdentifier": {"$ref": "#/$defs/identifier"}
+      }
+    },
+    "sourcePageRange": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["physicalPageStart", "physicalPageEnd", "printedPageStart", "printedPageEnd"],
+      "properties": {
+        "physicalPageStart": {"type": "integer", "minimum": 1},
+        "physicalPageEnd": {"type": "integer", "minimum": 1},
+        "printedPageStart": {"type": "string", "minLength": 1},
+        "printedPageEnd": {"type": "string", "minLength": 1}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceDocumentIdentifier", "sourcePageRanges"],
+      "properties": {
+        "sourceDocumentIdentifier": {"type": "string", "minLength": 1},
+        "sourcePageRanges": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/sourcePageRange"}
+        }
+      }
+    },
+    "sourceLocation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["physicalPage", "printedPage", "pageRegionIdentifier"],
+      "properties": {
+        "physicalPage": {"type": "integer", "minimum": 1},
+        "printedPage": {"type": "string", "minLength": 1},
+        "pageRegionIdentifier": {"type": "string", "minLength": 1}
+      }
+    },
+    "annotation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "annotationIdentifier",
+        "annotationType",
+        "targetType",
+        "targetReference",
+        "sourceLocation",
+        "sourceText",
+        "explanation",
+        "disposition",
+        "reviewStatus",
+        "verificationEvidence",
+        "reviewedBy",
+        "reviewedAt",
+        "approvedBy",
+        "approvedAt"
+      ],
+      "properties": {
+        "annotationIdentifier": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "annotationType": {
+          "enum": [
+            "sourceInconsistency",
+            "sourceDuplication",
+            "sourceOmission",
+            "sourceTypographicalError",
+            "missingReference",
+            "conversionDecision"
+          ]
+        },
+        "targetType": {"enum": ["astNode", "metadata", "pageRegion", "navigation", "document"]},
+        "targetReference": {"type": "string", "minLength": 1},
+        "sourceLocation": {"$ref": "#/$defs/sourceLocation"},
+        "sourceText": {"type": "string", "minLength": 1},
+        "explanation": {"type": "string", "minLength": 1},
+        "disposition": {"enum": ["preserved", "correctedWithNotice", "unresolved"]},
+        "reviewStatus": {"enum": ["pending", "reviewed"]},
+        "verificationEvidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "replacementText": {"type": "string", "minLength": 1},
+        "reviewedBy": {"$ref": "#/$defs/nullableString"},
+        "reviewedAt": {"type": ["string", "null"], "format": "date-time"},
+        "approvedBy": {"$ref": "#/$defs/nullableString"},
+        "approvedAt": {"type": ["string", "null"], "format": "date-time"}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"reviewStatus": {"const": "reviewed"}}},
+          "then": {
+            "properties": {
+              "reviewedBy": {"type": "string", "minLength": 1},
+              "reviewedAt": {"type": "string", "format": "date-time"}
+            }
+          }
+        },
+        {
+          "if": {"properties": {"disposition": {"const": "correctedWithNotice"}}},
+          "then": {
+            "required": ["replacementText"],
+            "properties": {
+              "approvedBy": {"type": "string", "minLength": 1},
+              "approvedAt": {"type": "string", "format": "date-time"}
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,163 @@
+schemaVersion: 1
+criterionSlug: w-48
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "w-48:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:remediation.unspecified.heading:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+      - physicalPage: 247
+        printedPage: "247"
+        pageRegionIdentifier: p247-w-48
+  - blockReference: "w-48:remediation.unspecified.paragraph:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:remediation.unspecified.step:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:remediation.unspecified.step:2"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:remediation.unspecified.configuration:1"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:remediation.unspecified.paragraph:2"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:remediation.unspecified.step:3"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:remediation.unspecified.step:4"
+    sourceSpans:
+      - physicalPage: 246
+        printedPage: "246"
+        pageRegionIdentifier: p246-w-48
+  - blockReference: "w-48:remediation.unspecified.paragraph:3"
+    sourceSpans:
+      - physicalPage: 247
+        printedPage: "247"
+        pageRegionIdentifier: p247-w-48
+  - blockReference: "w-48:remediation.unspecified.step:5"
+    sourceSpans:
+      - physicalPage: 247
+        printedPage: "247"
+        pageRegionIdentifier: p247-w-48
+  - blockReference: "w-48:remediation.unspecified.step:6"
+    sourceSpans:
+      - physicalPage: 247
+        printedPage: "247"
+        pageRegionIdentifier: p247-w-48
+assets: []

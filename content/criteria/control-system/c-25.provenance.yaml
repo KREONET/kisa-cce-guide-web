@@ -1,0 +1,71 @@
+schemaVersion: 1
+criterionSlug: c-25
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "c-25:overview.heading:1"
+    sourceSpans: [{physicalPage: 515, printedPage: "515", pageRegionIdentifier: p515-c-25}]
+  - blockReference: "c-25:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 515, printedPage: "515", pageRegionIdentifier: p515-c-25}]
+  - blockReference: "c-25:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 515, printedPage: "515", pageRegionIdentifier: p515-c-25}]
+  - blockReference: "c-25:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 515, printedPage: "515", pageRegionIdentifier: p515-c-25}]
+  - blockReference: "c-25:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 515, printedPage: "515", pageRegionIdentifier: p515-c-25}]
+  - blockReference: "c-25:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 515, printedPage: "515", pageRegionIdentifier: p515-c-25}]
+  - blockReference: "c-25:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 515, printedPage: "515", pageRegionIdentifier: p515-c-25}]
+  - blockReference: "c-25:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 515, printedPage: "515", pageRegionIdentifier: p515-c-25}]
+  - blockReference: "c-25:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 515, printedPage: "515", pageRegionIdentifier: p515-c-25}]
+  - blockReference: "c-25:overview.reference.note.content:1"
+    sourceSpans: [{physicalPage: 515, printedPage: "515", pageRegionIdentifier: p515-c-25}]
+  - blockReference: "c-25:overview.reference.note.label:2"
+    sourceSpans: [{physicalPage: 515, printedPage: "515", pageRegionIdentifier: p515-c-25}]
+  - blockReference: "c-25:overview.reference.note.content:2"
+    sourceSpans: [{physicalPage: 515, printedPage: "515", pageRegionIdentifier: p515-c-25}]
+  - blockReference: "c-25:assessment.heading:1"
+    sourceSpans: [{physicalPage: 515, printedPage: "515", pageRegionIdentifier: p515-c-25}]
+  - blockReference: "c-25:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 515, printedPage: "515", pageRegionIdentifier: p515-c-25}]
+  - blockReference: "c-25:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 515, printedPage: "515", pageRegionIdentifier: p515-c-25}]
+  - blockReference: "c-25:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 515, printedPage: "515", pageRegionIdentifier: p515-c-25}]
+  - blockReference: "c-25:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 515, printedPage: "515", pageRegionIdentifier: p515-c-25}]
+  - blockReference: "c-25:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 515, printedPage: "515", pageRegionIdentifier: p515-c-25}]
+  - blockReference: "c-25:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 515, printedPage: "515", pageRegionIdentifier: p515-c-25}]
+  - blockReference: "c-25:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 515, printedPage: "515", pageRegionIdentifier: p515-c-25}]
+  - blockReference: "c-25:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 515, printedPage: "515", pageRegionIdentifier: p515-c-25}]
+  - blockReference: "c-25:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 515, printedPage: "515", pageRegionIdentifier: p515-c-25}]
+  - blockReference: "c-25:remediation.heading:1"
+    sourceSpans: [{physicalPage: 515, printedPage: "515", pageRegionIdentifier: p515-c-25}]
+  - blockReference: "c-25:remediation.supplementaryGuidance.heading:1"
+    sourceSpans: [{physicalPage: 515, printedPage: "515", pageRegionIdentifier: p515-c-25}]
+  - blockReference: "c-25:remediation.supplementaryGuidance.step:1"
+    sourceSpans: [{physicalPage: 515, printedPage: "515", pageRegionIdentifier: p515-c-25}]
+  - blockReference: "c-25:remediation.supplementaryGuidance.step:2"
+    sourceSpans:
+      - physicalPage: 515
+        printedPage: "515"
+        pageRegionIdentifier: p515-c-25
+      - physicalPage: 516
+        printedPage: "516"
+        pageRegionIdentifier: p516-c-25
+  - blockReference: "c-25:remediation.supplementaryGuidance.item:1"
+    sourceSpans: [{physicalPage: 515, printedPage: "515", pageRegionIdentifier: p515-c-25}]
+  - blockReference: "c-25:remediation.supplementaryGuidance.item:2"
+    sourceSpans: [{physicalPage: 516, printedPage: "516", pageRegionIdentifier: p516-c-25}]
+  - blockReference: "c-25:remediation.supplementaryGuidance.item:3"
+    sourceSpans: [{physicalPage: 516, printedPage: "516", pageRegionIdentifier: p516-c-25}]
+  - blockReference: "c-25:remediation.supplementaryGuidance.step:3"
+    sourceSpans: [{physicalPage: 516, printedPage: "516", pageRegionIdentifier: p516-c-25}]
+assets: []

@@ -1,0 +1,158 @@
+schemaVersion: 1
+criterionSlug: w-50
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "w-50:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 249
+        printedPage: "249"
+        pageRegionIdentifier: p249-w-50
+  - blockReference: "w-50:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 249
+        printedPage: "249"
+        pageRegionIdentifier: p249-w-50
+  - blockReference: "w-50:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 249
+        printedPage: "249"
+        pageRegionIdentifier: p249-w-50
+  - blockReference: "w-50:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 249
+        printedPage: "249"
+        pageRegionIdentifier: p249-w-50
+  - blockReference: "w-50:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 249
+        printedPage: "249"
+        pageRegionIdentifier: p249-w-50
+  - blockReference: "w-50:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 249
+        printedPage: "249"
+        pageRegionIdentifier: p249-w-50
+  - blockReference: "w-50:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 249
+        printedPage: "249"
+        pageRegionIdentifier: p249-w-50
+  - blockReference: "w-50:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 249
+        printedPage: "249"
+        pageRegionIdentifier: p249-w-50
+  - blockReference: "w-50:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 249
+        printedPage: "249"
+        pageRegionIdentifier: p249-w-50
+  - blockReference: "w-50:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 249
+        printedPage: "249"
+        pageRegionIdentifier: p249-w-50
+  - blockReference: "w-50:overview.reference.output:1"
+    sourceSpans:
+      - physicalPage: 249
+        printedPage: "249"
+        pageRegionIdentifier: p249-w-50
+  - blockReference: "w-50:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 249
+        printedPage: "249"
+        pageRegionIdentifier: p249-w-50
+  - blockReference: "w-50:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 249
+        printedPage: "249"
+        pageRegionIdentifier: p249-w-50
+  - blockReference: "w-50:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 249
+        printedPage: "249"
+        pageRegionIdentifier: p249-w-50
+  - blockReference: "w-50:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 249
+        printedPage: "249"
+        pageRegionIdentifier: p249-w-50
+  - blockReference: "w-50:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 249
+        printedPage: "249"
+        pageRegionIdentifier: p249-w-50
+  - blockReference: "w-50:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 249
+        printedPage: "249"
+        pageRegionIdentifier: p249-w-50
+  - blockReference: "w-50:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 249
+        printedPage: "249"
+        pageRegionIdentifier: p249-w-50
+  - blockReference: "w-50:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 249
+        printedPage: "249"
+        pageRegionIdentifier: p249-w-50
+  - blockReference: "w-50:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 249
+        printedPage: "249"
+        pageRegionIdentifier: p249-w-50
+  - blockReference: "w-50:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 249
+        printedPage: "249"
+        pageRegionIdentifier: p249-w-50
+  - blockReference: "w-50:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 249
+        printedPage: "249"
+        pageRegionIdentifier: p249-w-50
+  - blockReference: "w-50:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 249
+        printedPage: "249"
+        pageRegionIdentifier: p249-w-50
+  - blockReference: "w-50:remediation.solaris.heading:1"
+    sourceSpans:
+      - physicalPage: 249
+        printedPage: "249"
+        pageRegionIdentifier: p249-w-50
+      - physicalPage: 250
+        printedPage: "250"
+        pageRegionIdentifier: p250-w-50
+  - blockReference: "w-50:remediation.solaris.paragraph:1"
+    sourceSpans:
+      - physicalPage: 249
+        printedPage: "249"
+        pageRegionIdentifier: p249-w-50
+  - blockReference: "w-50:remediation.solaris.step:1"
+    sourceSpans:
+      - physicalPage: 249
+        printedPage: "249"
+        pageRegionIdentifier: p249-w-50
+  - blockReference: "w-50:remediation.solaris.step:2"
+    sourceSpans:
+      - physicalPage: 249
+        printedPage: "249"
+        pageRegionIdentifier: p249-w-50
+  - blockReference: "w-50:remediation.solaris.paragraph:2"
+    sourceSpans:
+      - physicalPage: 250
+        printedPage: "250"
+        pageRegionIdentifier: p250-w-50
+  - blockReference: "w-50:remediation.solaris.step:3"
+    sourceSpans:
+      - physicalPage: 250
+        printedPage: "250"
+        pageRegionIdentifier: p250-w-50
+  - blockReference: "w-50:remediation.solaris.step:4"
+    sourceSpans:
+      - physicalPage: 250
+        printedPage: "250"
+        pageRegionIdentifier: p250-w-50
+assets: []

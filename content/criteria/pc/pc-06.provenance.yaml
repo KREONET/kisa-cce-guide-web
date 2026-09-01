@@ -1,0 +1,145 @@
+schemaVersion: 1
+criterionSlug: pc-06
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "pc-06:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 570
+        printedPage: "570"
+        pageRegionIdentifier: p570-pc-06
+  - blockReference: "pc-06:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 570
+        printedPage: "570"
+        pageRegionIdentifier: p570-pc-06
+  - blockReference: "pc-06:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 570
+        printedPage: "570"
+        pageRegionIdentifier: p570-pc-06
+  - blockReference: "pc-06:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 570
+        printedPage: "570"
+        pageRegionIdentifier: p570-pc-06
+  - blockReference: "pc-06:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 570
+        printedPage: "570"
+        pageRegionIdentifier: p570-pc-06
+  - blockReference: "pc-06:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 570
+        printedPage: "570"
+        pageRegionIdentifier: p570-pc-06
+  - blockReference: "pc-06:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 570
+        printedPage: "570"
+        pageRegionIdentifier: p570-pc-06
+  - blockReference: "pc-06:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 570
+        printedPage: "570"
+        pageRegionIdentifier: p570-pc-06
+  - blockReference: "pc-06:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 570
+        printedPage: "570"
+        pageRegionIdentifier: p570-pc-06
+  - blockReference: "pc-06:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 570
+        printedPage: "570"
+        pageRegionIdentifier: p570-pc-06
+  - blockReference: "pc-06:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 570
+        printedPage: "570"
+        pageRegionIdentifier: p570-pc-06
+  - blockReference: "pc-06:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 570
+        printedPage: "570"
+        pageRegionIdentifier: p570-pc-06
+  - blockReference: "pc-06:overview.reference.note.label:3"
+    sourceSpans:
+      - physicalPage: 570
+        printedPage: "570"
+        pageRegionIdentifier: p570-pc-06
+  - blockReference: "pc-06:overview.reference.note.content:3"
+    sourceSpans:
+      - physicalPage: 570
+        printedPage: "570"
+        pageRegionIdentifier: p570-pc-06
+  - blockReference: "pc-06:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 570
+        printedPage: "570"
+        pageRegionIdentifier: p570-pc-06
+  - blockReference: "pc-06:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 570
+        printedPage: "570"
+        pageRegionIdentifier: p570-pc-06
+  - blockReference: "pc-06:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 570
+        printedPage: "570"
+        pageRegionIdentifier: p570-pc-06
+  - blockReference: "pc-06:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 570
+        printedPage: "570"
+        pageRegionIdentifier: p570-pc-06
+  - blockReference: "pc-06:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 570
+        printedPage: "570"
+        pageRegionIdentifier: p570-pc-06
+  - blockReference: "pc-06:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 570
+        printedPage: "570"
+        pageRegionIdentifier: p570-pc-06
+  - blockReference: "pc-06:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 570
+        printedPage: "570"
+        pageRegionIdentifier: p570-pc-06
+  - blockReference: "pc-06:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 570
+        printedPage: "570"
+        pageRegionIdentifier: p570-pc-06
+  - blockReference: "pc-06:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 570
+        printedPage: "570"
+        pageRegionIdentifier: p570-pc-06
+  - blockReference: "pc-06:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 570
+        printedPage: "570"
+        pageRegionIdentifier: p570-pc-06
+  - blockReference: "pc-06:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 570
+        printedPage: "570"
+        pageRegionIdentifier: p570-pc-06
+  - blockReference: "pc-06:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 570
+        printedPage: "570"
+        pageRegionIdentifier: p570-pc-06
+  - blockReference: "pc-06:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 570
+        printedPage: "570"
+        pageRegionIdentifier: p570-pc-06
+  - blockReference: "pc-06:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 570
+        printedPage: "570"
+        pageRegionIdentifier: p570-pc-06
+assets: []

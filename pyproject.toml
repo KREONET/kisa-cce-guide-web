@@ -1,0 +1,89 @@
+[project]
+name = "kisa-cce-guide-conversion"
+version = "0.1.0"
+description = "Canonical document conversion tooling for the KISA CCE Guide 2026"
+requires-python = ">=3.13,<3.15"
+dependencies = [
+    "jinja2>=3.1,<4",
+    "markupsafe>=3,<4",
+]
+
+[dependency-groups]
+dev = [
+    "jsonschema>=4.26.0",
+    "markdown-it-py>=4.2.0",
+    "pdfplumber>=0.11.10",
+    "pytest>=9.1.1",
+    "rfc8785>=0.1.4",
+    "ruamel-yaml>=0.19.1",
+    "ruff>=0.16.3",
+    "ty>=0.0.72",
+]
+
+[tool.pytest.ini_options]
+addopts = ["--strict-config", "--strict-markers"]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+  "COM812",
+  "CPY001",
+  "D202",
+  "D203",
+  "D213",
+  "ISC001",
+  "TC002",
+  "TC003",
+  "TRY004",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"conversion/build_content.py" = ["T201"]
+"conversion/build_sites_bundle.py" = ["T201"]
+"conversion/build_site.py" = [
+  "C901",
+  "E501",
+  "PLR0912",
+  "PLR0911",
+  "PLR0913",
+  "PLR0915",
+  "PLR2004",
+]
+"conversion/codex_result_importer.py" = [
+  "C901",
+  "PLR0911",
+  "PLR0912",
+  "PLR0915",
+  "T201",
+]
+"conversion/codex_runner.py" = ["S603", "T201"]
+"conversion/codex_task_builder.py" = ["T201"]
+"conversion/common.py" = ["C901", "PLR0912", "PLR0913", "PLR0915", "S105"]
+"conversion/generate_corpus.py" = [
+  "A002",
+  "C901",
+  "PLR0912",
+  "PLR0913",
+  "PLR0915",
+  "PLR2004",
+  "T201",
+]
+"conversion/site_validation.py" = ["C901", "PERF401", "PLR0912", "PLR0915"]
+"conversion/serve_site.py" = ["C901", "T201"]
+"conversion/validate_content.py" = [
+  "C901",
+  "PERF401",
+  "PLR0911",
+  "PLR0912",
+  "PLR0913",
+  "PLR0915",
+  "PLR2004",
+  "T201",
+]
+"tests/**/*.py" = ["S101"]

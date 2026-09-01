@@ -1,0 +1,125 @@
+schemaVersion: 1
+criterionSlug: w-07
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "w-07:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 184
+        printedPage: "184"
+        pageRegionIdentifier: p184-w-07
+  - blockReference: "w-07:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 184
+        printedPage: "184"
+        pageRegionIdentifier: p184-w-07
+  - blockReference: "w-07:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 184
+        printedPage: "184"
+        pageRegionIdentifier: p184-w-07
+  - blockReference: "w-07:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 184
+        printedPage: "184"
+        pageRegionIdentifier: p184-w-07
+  - blockReference: "w-07:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 184
+        printedPage: "184"
+        pageRegionIdentifier: p184-w-07
+  - blockReference: "w-07:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 184
+        printedPage: "184"
+        pageRegionIdentifier: p184-w-07
+  - blockReference: "w-07:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 184
+        printedPage: "184"
+        pageRegionIdentifier: p184-w-07
+  - blockReference: "w-07:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 184
+        printedPage: "184"
+        pageRegionIdentifier: p184-w-07
+  - blockReference: "w-07:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 184
+        printedPage: "184"
+        pageRegionIdentifier: p184-w-07
+  - blockReference: "w-07:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 184
+        printedPage: "184"
+        pageRegionIdentifier: p184-w-07
+  - blockReference: "w-07:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 184
+        printedPage: "184"
+        pageRegionIdentifier: p184-w-07
+  - blockReference: "w-07:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 184
+        printedPage: "184"
+        pageRegionIdentifier: p184-w-07
+  - blockReference: "w-07:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 184
+        printedPage: "184"
+        pageRegionIdentifier: p184-w-07
+  - blockReference: "w-07:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 184
+        printedPage: "184"
+        pageRegionIdentifier: p184-w-07
+  - blockReference: "w-07:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 184
+        printedPage: "184"
+        pageRegionIdentifier: p184-w-07
+  - blockReference: "w-07:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 184
+        printedPage: "184"
+        pageRegionIdentifier: p184-w-07
+  - blockReference: "w-07:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 184
+        printedPage: "184"
+        pageRegionIdentifier: p184-w-07
+  - blockReference: "w-07:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 184
+        printedPage: "184"
+        pageRegionIdentifier: p184-w-07
+  - blockReference: "w-07:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 184
+        printedPage: "184"
+        pageRegionIdentifier: p184-w-07
+  - blockReference: "w-07:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 184
+        printedPage: "184"
+        pageRegionIdentifier: p184-w-07
+  - blockReference: "w-07:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 184
+        printedPage: "184"
+        pageRegionIdentifier: p184-w-07
+  - blockReference: "w-07:remediation.solaris.heading:1"
+    sourceSpans:
+      - physicalPage: 184
+        printedPage: "184"
+        pageRegionIdentifier: p184-w-07
+  - blockReference: "w-07:remediation.solaris.step:1"
+    sourceSpans:
+      - physicalPage: 184
+        printedPage: "184"
+        pageRegionIdentifier: p184-w-07
+  - blockReference: "w-07:remediation.solaris.step:2"
+    sourceSpans:
+      - physicalPage: 184
+        printedPage: "184"
+        pageRegionIdentifier: p184-w-07
+assets: []

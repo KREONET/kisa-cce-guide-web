@@ -1,0 +1,230 @@
+schemaVersion: 1
+criterionSlug: n-02
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "n-02:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 395
+        printedPage: "395"
+        pageRegionIdentifier: p395-n-02
+  - blockReference: "n-02:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 395
+        printedPage: "395"
+        pageRegionIdentifier: p395-n-02
+  - blockReference: "n-02:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 395
+        printedPage: "395"
+        pageRegionIdentifier: p395-n-02
+  - blockReference: "n-02:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 395
+        printedPage: "395"
+        pageRegionIdentifier: p395-n-02
+  - blockReference: "n-02:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 395
+        printedPage: "395"
+        pageRegionIdentifier: p395-n-02
+  - blockReference: "n-02:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 395
+        printedPage: "395"
+        pageRegionIdentifier: p395-n-02
+  - blockReference: "n-02:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 395
+        printedPage: "395"
+        pageRegionIdentifier: p395-n-02
+  - blockReference: "n-02:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 395
+        printedPage: "395"
+        pageRegionIdentifier: p395-n-02
+  - blockReference: "n-02:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 395
+        printedPage: "395"
+        pageRegionIdentifier: p395-n-02
+  - blockReference: "n-02:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 395
+        printedPage: "395"
+        pageRegionIdentifier: p395-n-02
+  - blockReference: "n-02:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 395
+        printedPage: "395"
+        pageRegionIdentifier: p395-n-02
+  - blockReference: "n-02:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 395
+        printedPage: "395"
+        pageRegionIdentifier: p395-n-02
+  - blockReference: "n-02:overview.reference.note.label:3"
+    sourceSpans:
+      - physicalPage: 395
+        printedPage: "395"
+        pageRegionIdentifier: p395-n-02
+  - blockReference: "n-02:overview.reference.note.content:3"
+    sourceSpans:
+      - physicalPage: 395
+        printedPage: "395"
+        pageRegionIdentifier: p395-n-02
+  - blockReference: "n-02:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 395
+        printedPage: "395"
+        pageRegionIdentifier: p395-n-02
+  - blockReference: "n-02:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 395
+        printedPage: "395"
+        pageRegionIdentifier: p395-n-02
+  - blockReference: "n-02:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 395
+        printedPage: "395"
+        pageRegionIdentifier: p395-n-02
+  - blockReference: "n-02:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 395
+        printedPage: "395"
+        pageRegionIdentifier: p395-n-02
+  - blockReference: "n-02:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 395
+        printedPage: "395"
+        pageRegionIdentifier: p395-n-02
+  - blockReference: "n-02:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 395
+        printedPage: "395"
+        pageRegionIdentifier: p395-n-02
+  - blockReference: "n-02:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 395
+        printedPage: "395"
+        pageRegionIdentifier: p395-n-02
+  - blockReference: "n-02:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 395
+        printedPage: "395"
+        pageRegionIdentifier: p395-n-02
+  - blockReference: "n-02:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 395
+        printedPage: "395"
+        pageRegionIdentifier: p395-n-02
+  - blockReference: "n-02:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 395
+        printedPage: "395"
+        pageRegionIdentifier: p395-n-02
+  - blockReference: "n-02:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 395
+        printedPage: "395"
+        pageRegionIdentifier: p395-n-02
+  - blockReference: "n-02:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - physicalPage: 395
+        printedPage: "395"
+        pageRegionIdentifier: p395-n-02
+  - blockReference: "n-02:remediation.supplementaryGuidance.step:1"
+    sourceSpans:
+      - physicalPage: 395
+        printedPage: "395"
+        pageRegionIdentifier: p395-n-02
+  - blockReference: "n-02:remediation.supplementaryGuidance.step:2"
+    sourceSpans:
+      - physicalPage: 396
+        printedPage: "396"
+        pageRegionIdentifier: p396-n-02
+  - blockReference: "n-02:remediation.supplementaryGuidance.note.label:1"
+    sourceSpans:
+      - physicalPage: 396
+        printedPage: "396"
+        pageRegionIdentifier: p396-n-02
+  - blockReference: "n-02:remediation.supplementaryGuidance.note.content:1"
+    sourceSpans:
+      - physicalPage: 396
+        printedPage: "396"
+        pageRegionIdentifier: p396-n-02
+  - blockReference: "n-02:remediation.supplementaryGuidance.note.content:2"
+    sourceSpans:
+      - physicalPage: 396
+        printedPage: "396"
+        pageRegionIdentifier: p396-n-02
+  - blockReference: "n-02:remediation.supplementaryGuidance.note.item:1"
+    sourceSpans:
+      - physicalPage: 396
+        printedPage: "396"
+        pageRegionIdentifier: p396-n-02
+  - blockReference: "n-02:remediation.supplementaryGuidance.note.item:2"
+    sourceSpans:
+      - physicalPage: 396
+        printedPage: "396"
+        pageRegionIdentifier: p396-n-02
+  - blockReference: "n-02:remediation.supplementaryGuidance.note.item:3"
+    sourceSpans:
+      - physicalPage: 396
+        printedPage: "396"
+        pageRegionIdentifier: p396-n-02
+  - blockReference: "n-02:remediation.supplementaryGuidance.note.item:4"
+    sourceSpans:
+      - physicalPage: 396
+        printedPage: "396"
+        pageRegionIdentifier: p396-n-02
+  - blockReference: "n-02:remediation.supplementaryGuidance.note.item:5"
+    sourceSpans:
+      - physicalPage: 396
+        printedPage: "396"
+        pageRegionIdentifier: p396-n-02
+  - blockReference: "n-02:remediation.supplementaryGuidance.note.item:6"
+    sourceSpans:
+      - physicalPage: 396
+        printedPage: "396"
+        pageRegionIdentifier: p396-n-02
+  - blockReference: "n-02:remediation.supplementaryGuidance.note.item:7"
+    sourceSpans:
+      - physicalPage: 396
+        printedPage: "396"
+        pageRegionIdentifier: p396-n-02
+  - blockReference: "n-02:remediation.supplementaryGuidance.paragraph:1"
+    sourceSpans:
+      - physicalPage: 396
+        printedPage: "396"
+        pageRegionIdentifier: p396-n-02
+  - blockReference: "n-02:remediation.supplementaryGuidance.step:3"
+    sourceSpans:
+      - physicalPage: 396
+        printedPage: "396"
+        pageRegionIdentifier: p396-n-02
+  - blockReference: "n-02:remediation.supplementaryGuidance.command:1"
+    sourceSpans:
+      - physicalPage: 396
+        printedPage: "396"
+        pageRegionIdentifier: p396-n-02
+  - blockReference: "n-02:remediation.supplementaryGuidance.step:4"
+    sourceSpans:
+      - physicalPage: 396
+        printedPage: "396"
+        pageRegionIdentifier: p396-n-02
+  - blockReference: "n-02:remediation.supplementaryGuidance.command:2"
+    sourceSpans:
+      - physicalPage: 396
+        printedPage: "396"
+        pageRegionIdentifier: p396-n-02
+  - blockReference: "n-02:remediation.supplementaryGuidance.output:1"
+    sourceSpans:
+      - physicalPage: 396
+        printedPage: "396"
+        pageRegionIdentifier: p396-n-02
+  - blockReference: "n-02:remediation.supplementaryGuidance.configuration:1"
+    sourceSpans:
+      - physicalPage: 396
+        printedPage: "396"
+        pageRegionIdentifier: p396-n-02
+assets: []

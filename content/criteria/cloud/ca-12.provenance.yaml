@@ -1,0 +1,70 @@
+schemaVersion: 1
+criterionSlug: ca-12
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "ca-12:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 865
+        printedPage: "865"
+        pageRegionIdentifier: p865-ca-12
+  - blockReference: "ca-12:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 865, printedPage: "865", pageRegionIdentifier: p865-ca-12}]
+  - blockReference: "ca-12:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 865, printedPage: "865", pageRegionIdentifier: p865-ca-12}]
+  - blockReference: "ca-12:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 865, printedPage: "865", pageRegionIdentifier: p865-ca-12}]
+  - blockReference: "ca-12:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 865, printedPage: "865", pageRegionIdentifier: p865-ca-12}]
+  - blockReference: "ca-12:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 865, printedPage: "865", pageRegionIdentifier: p865-ca-12}]
+  - blockReference: "ca-12:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 865, printedPage: "865", pageRegionIdentifier: p865-ca-12}]
+  - blockReference: "ca-12:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 865, printedPage: "865", pageRegionIdentifier: p865-ca-12}]
+  - blockReference: "ca-12:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 865, printedPage: "865", pageRegionIdentifier: p865-ca-12}]
+  - blockReference: "ca-12:assessment.heading:1"
+    sourceSpans: [{physicalPage: 865, printedPage: "865", pageRegionIdentifier: p865-ca-12}]
+  - blockReference: "ca-12:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 865, printedPage: "865", pageRegionIdentifier: p865-ca-12}]
+  - blockReference: "ca-12:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 865, printedPage: "865", pageRegionIdentifier: p865-ca-12}]
+  - blockReference: "ca-12:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 865, printedPage: "865", pageRegionIdentifier: p865-ca-12}]
+  - blockReference: "ca-12:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 865, printedPage: "865", pageRegionIdentifier: p865-ca-12}]
+  - blockReference: "ca-12:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 865, printedPage: "865", pageRegionIdentifier: p865-ca-12}]
+  - blockReference: "ca-12:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 865, printedPage: "865", pageRegionIdentifier: p865-ca-12}]
+  - blockReference: "ca-12:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 865, printedPage: "865", pageRegionIdentifier: p865-ca-12}]
+  - blockReference: "ca-12:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 865, printedPage: "865", pageRegionIdentifier: p865-ca-12}]
+  - blockReference: "ca-12:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 865, printedPage: "865", pageRegionIdentifier: p865-ca-12}]
+  - blockReference: "ca-12:remediation.heading:1"
+    sourceSpans: [{physicalPage: 865, printedPage: "865", pageRegionIdentifier: p865-ca-12}]
+  - blockReference: "ca-12:remediation.supplementaryGuidance.heading:1"
+    sourceSpans: [{physicalPage: 865, printedPage: "865", pageRegionIdentifier: p865-ca-12}]
+  - blockReference: "ca-12:remediation.supplementaryGuidance.step:1"
+    sourceSpans: [{physicalPage: 865, printedPage: "865", pageRegionIdentifier: p865-ca-12}]
+  - blockReference: "ca-12:remediation.supplementaryGuidance.item:1"
+    sourceSpans: [{physicalPage: 865, printedPage: "865", pageRegionIdentifier: p865-ca-12}]
+  - blockReference: "ca-12:remediation.supplementaryGuidance.item:2"
+    sourceSpans: [{physicalPage: 865, printedPage: "865", pageRegionIdentifier: p865-ca-12}]
+  - blockReference: "ca-12:remediation.supplementaryGuidance.item:3"
+    sourceSpans: [{physicalPage: 865, printedPage: "865", pageRegionIdentifier: p865-ca-12}]
+  - blockReference: "ca-12:remediation.supplementaryGuidance.item:4"
+    sourceSpans: [{physicalPage: 865, printedPage: "865", pageRegionIdentifier: p865-ca-12}]
+  - blockReference: "ca-12:remediation.supplementaryGuidance.item:5"
+    sourceSpans: [{physicalPage: 865, printedPage: "865", pageRegionIdentifier: p865-ca-12}]
+  - blockReference: "ca-12:remediation.supplementaryGuidance.item:6"
+    sourceSpans: [{physicalPage: 865, printedPage: "865", pageRegionIdentifier: p865-ca-12}]
+  - blockReference: "ca-12:remediation.supplementaryGuidance.step:2"
+    sourceSpans: [{physicalPage: 865, printedPage: "865", pageRegionIdentifier: p865-ca-12}]
+  - blockReference: "ca-12:remediation.supplementaryGuidance.step:3"
+    sourceSpans: [{physicalPage: 865, printedPage: "865", pageRegionIdentifier: p865-ca-12}]
+  - blockReference: "ca-12:remediation.supplementaryGuidance.step:4"
+    sourceSpans: [{physicalPage: 865, printedPage: "865", pageRegionIdentifier: p865-ca-12}]
+assets: []

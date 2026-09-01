@@ -1,0 +1,301 @@
+schemaVersion: 1
+criterionSlug: u-57
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "u-57:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 139
+        printedPage: "139"
+        pageRegionIdentifier: p139-u-57
+  - blockReference: "u-57:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 139
+        printedPage: "139"
+        pageRegionIdentifier: p139-u-57
+  - blockReference: "u-57:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 139
+        printedPage: "139"
+        pageRegionIdentifier: p139-u-57
+  - blockReference: "u-57:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 139
+        printedPage: "139"
+        pageRegionIdentifier: p139-u-57
+  - blockReference: "u-57:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 139
+        printedPage: "139"
+        pageRegionIdentifier: p139-u-57
+  - blockReference: "u-57:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 139
+        printedPage: "139"
+        pageRegionIdentifier: p139-u-57
+  - blockReference: "u-57:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 139
+        printedPage: "139"
+        pageRegionIdentifier: p139-u-57
+  - blockReference: "u-57:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 139
+        printedPage: "139"
+        pageRegionIdentifier: p139-u-57
+  - blockReference: "u-57:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 139
+        printedPage: "139"
+        pageRegionIdentifier: p139-u-57
+  - blockReference: "u-57:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 139
+        printedPage: "139"
+        pageRegionIdentifier: p139-u-57
+  - blockReference: "u-57:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 139
+        printedPage: "139"
+        pageRegionIdentifier: p139-u-57
+  - blockReference: "u-57:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 139
+        printedPage: "139"
+        pageRegionIdentifier: p139-u-57
+  - blockReference: "u-57:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 139
+        printedPage: "139"
+        pageRegionIdentifier: p139-u-57
+  - blockReference: "u-57:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 139
+        printedPage: "139"
+        pageRegionIdentifier: p139-u-57
+  - blockReference: "u-57:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 139
+        printedPage: "139"
+        pageRegionIdentifier: p139-u-57
+  - blockReference: "u-57:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 139
+        printedPage: "139"
+        pageRegionIdentifier: p139-u-57
+  - blockReference: "u-57:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 139
+        printedPage: "139"
+        pageRegionIdentifier: p139-u-57
+  - blockReference: "u-57:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 139
+        printedPage: "139"
+        pageRegionIdentifier: p139-u-57
+  - blockReference: "u-57:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 139
+        printedPage: "139"
+        pageRegionIdentifier: p139-u-57
+  - blockReference: "u-57:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 139
+        printedPage: "139"
+        pageRegionIdentifier: p139-u-57
+  - blockReference: "u-57:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 139
+        printedPage: "139"
+        pageRegionIdentifier: p139-u-57
+  - blockReference: "u-57:remediation.unspecified.heading:1"
+    sourceSpans:
+      - physicalPage: 139
+        printedPage: "139"
+        pageRegionIdentifier: p139-u-57
+  - blockReference: "u-57:remediation.unspecified.paragraph:1"
+    sourceSpans:
+      - physicalPage: 139
+        printedPage: "139"
+        pageRegionIdentifier: p139-u-57
+  - blockReference: "u-57:remediation.unspecified.step:1"
+    sourceSpans:
+      - physicalPage: 139
+        printedPage: "139"
+        pageRegionIdentifier: p139-u-57
+  - blockReference: "u-57:remediation.unspecified.command:1"
+    sourceSpans:
+      - physicalPage: 139
+        printedPage: "139"
+        pageRegionIdentifier: p139-u-57
+  - blockReference: "u-57:remediation.unspecified.step:2"
+    sourceSpans:
+      - physicalPage: 139
+        printedPage: "139"
+        pageRegionIdentifier: p139-u-57
+  - blockReference: "u-57:remediation.unspecified.paragraph:2"
+    sourceSpans:
+      - physicalPage: 139
+        printedPage: "139"
+        pageRegionIdentifier: p139-u-57
+  - blockReference: "u-57:remediation.unspecified.step:3"
+    sourceSpans:
+      - physicalPage: 139
+        printedPage: "139"
+        pageRegionIdentifier: p139-u-57
+  - blockReference: "u-57:remediation.unspecified.command:2"
+    sourceSpans:
+      - physicalPage: 139
+        printedPage: "139"
+        pageRegionIdentifier: p139-u-57
+  - blockReference: "u-57:remediation.unspecified.configuration:1"
+    sourceSpans:
+      - physicalPage: 139
+        printedPage: "139"
+        pageRegionIdentifier: p139-u-57
+  - blockReference: "u-57:remediation.unspecified.step:4"
+    sourceSpans:
+      - physicalPage: 139
+        printedPage: "139"
+        pageRegionIdentifier: p139-u-57
+  - blockReference: "u-57:remediation.unspecified.command:3"
+    sourceSpans:
+      - physicalPage: 139
+        printedPage: "139"
+        pageRegionIdentifier: p139-u-57
+  - blockReference: "u-57:remediation.unspecified.step:5"
+    sourceSpans:
+      - physicalPage: 140
+        printedPage: "140"
+        pageRegionIdentifier: p140-u-57
+  - blockReference: "u-57:remediation.unspecified.paragraph:3"
+    sourceSpans:
+      - physicalPage: 140
+        printedPage: "140"
+        pageRegionIdentifier: p140-u-57
+  - blockReference: "u-57:remediation.unspecified.step:6"
+    sourceSpans:
+      - physicalPage: 140
+        printedPage: "140"
+        pageRegionIdentifier: p140-u-57
+  - blockReference: "u-57:remediation.unspecified.command:4"
+    sourceSpans:
+      - physicalPage: 140
+        printedPage: "140"
+        pageRegionIdentifier: p140-u-57
+  - blockReference: "u-57:remediation.unspecified.configuration:2"
+    sourceSpans:
+      - physicalPage: 140
+        printedPage: "140"
+        pageRegionIdentifier: p140-u-57
+  - blockReference: "u-57:remediation.unspecified.step:7"
+    sourceSpans:
+      - physicalPage: 140
+        printedPage: "140"
+        pageRegionIdentifier: p140-u-57
+  - blockReference: "u-57:remediation.unspecified.command:5"
+    sourceSpans:
+      - physicalPage: 140
+        printedPage: "140"
+        pageRegionIdentifier: p140-u-57
+  - blockReference: "u-57:remediation.unspecified.step:8"
+    sourceSpans:
+      - physicalPage: 140
+        printedPage: "140"
+        pageRegionIdentifier: p140-u-57
+  - blockReference: "u-57:remediation.unspecified.note.label:1"
+    sourceSpans:
+      - physicalPage: 140
+        printedPage: "140"
+        pageRegionIdentifier: p140-u-57
+  - blockReference: "u-57:remediation.unspecified.note.content:1"
+    sourceSpans:
+      - physicalPage: 140
+        printedPage: "140"
+        pageRegionIdentifier: p140-u-57
+  - blockReference: "u-57:remediation.unspecified.paragraph:4"
+    sourceSpans:
+      - physicalPage: 140
+        printedPage: "140"
+        pageRegionIdentifier: p140-u-57
+  - blockReference: "u-57:remediation.unspecified.step:9"
+    sourceSpans:
+      - physicalPage: 140
+        printedPage: "140"
+        pageRegionIdentifier: p140-u-57
+  - blockReference: "u-57:remediation.unspecified.command:6"
+    sourceSpans:
+      - physicalPage: 140
+        printedPage: "140"
+        pageRegionIdentifier: p140-u-57
+  - blockReference: "u-57:remediation.unspecified.configuration:3"
+    sourceSpans:
+      - physicalPage: 140
+        printedPage: "140"
+        pageRegionIdentifier: p140-u-57
+  - blockReference: "u-57:remediation.unspecified.step:10"
+    sourceSpans:
+      - physicalPage: 140
+        printedPage: "140"
+        pageRegionIdentifier: p140-u-57
+  - blockReference: "u-57:remediation.unspecified.command:7"
+    sourceSpans:
+      - physicalPage: 140
+        printedPage: "140"
+        pageRegionIdentifier: p140-u-57
+  - blockReference: "u-57:remediation.unspecified.step:11"
+    sourceSpans:
+      - physicalPage: 140
+        printedPage: "140"
+        pageRegionIdentifier: p140-u-57
+  - blockReference: "u-57:remediation.unspecified.paragraph:5"
+    sourceSpans:
+      - physicalPage: 140
+        printedPage: "140"
+        pageRegionIdentifier: p140-u-57
+  - blockReference: "u-57:remediation.unspecified.step:12"
+    sourceSpans:
+      - physicalPage: 140
+        printedPage: "140"
+        pageRegionIdentifier: p140-u-57
+  - blockReference: "u-57:remediation.unspecified.command:8"
+    sourceSpans:
+      - physicalPage: 140
+        printedPage: "140"
+        pageRegionIdentifier: p140-u-57
+  - blockReference: "u-57:remediation.unspecified.configuration:4"
+    sourceSpans:
+      - physicalPage: 140
+        printedPage: "140"
+        pageRegionIdentifier: p140-u-57
+  - blockReference: "u-57:remediation.unspecified.step:13"
+    sourceSpans:
+      - physicalPage: 140
+        printedPage: "140"
+        pageRegionIdentifier: p140-u-57
+  - blockReference: "u-57:remediation.unspecified.command:9"
+    sourceSpans:
+      - physicalPage: 140
+        printedPage: "140"
+        pageRegionIdentifier: p140-u-57
+  - blockReference: "u-57:remediation.unspecified.step:14"
+    sourceSpans:
+      - physicalPage: 140
+        printedPage: "140"
+        pageRegionIdentifier: p140-u-57
+  - blockReference: "u-57:remediation.unspecified.configuration:5"
+    sourceSpans:
+      - physicalPage: 140
+        printedPage: "140"
+        pageRegionIdentifier: p140-u-57
+  - blockReference: "u-57:remediation.unspecified.step:15"
+    sourceSpans:
+      - physicalPage: 140
+        printedPage: "140"
+        pageRegionIdentifier: p140-u-57
+  - blockReference: "u-57:remediation.unspecified.command:10"
+    sourceSpans:
+      - physicalPage: 140
+        printedPage: "140"
+        pageRegionIdentifier: p140-u-57
+assets: []
+

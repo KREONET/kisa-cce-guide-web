@@ -1,0 +1,145 @@
+schemaVersion: 1
+criterionSlug: s-21
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "s-21:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 383
+        printedPage: "383"
+        pageRegionIdentifier: p383-s-21
+  - blockReference: "s-21:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 383
+        printedPage: "383"
+        pageRegionIdentifier: p383-s-21
+  - blockReference: "s-21:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 383
+        printedPage: "383"
+        pageRegionIdentifier: p383-s-21
+  - blockReference: "s-21:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 383
+        printedPage: "383"
+        pageRegionIdentifier: p383-s-21
+  - blockReference: "s-21:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 383
+        printedPage: "383"
+        pageRegionIdentifier: p383-s-21
+  - blockReference: "s-21:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 383
+        printedPage: "383"
+        pageRegionIdentifier: p383-s-21
+  - blockReference: "s-21:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 383
+        printedPage: "383"
+        pageRegionIdentifier: p383-s-21
+  - blockReference: "s-21:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 383
+        printedPage: "383"
+        pageRegionIdentifier: p383-s-21
+  - blockReference: "s-21:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 383
+        printedPage: "383"
+        pageRegionIdentifier: p383-s-21
+  - blockReference: "s-21:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 383
+        printedPage: "383"
+        pageRegionIdentifier: p383-s-21
+  - blockReference: "s-21:overview.reference.note.label:2"
+    sourceSpans:
+      - physicalPage: 383
+        printedPage: "383"
+        pageRegionIdentifier: p383-s-21
+  - blockReference: "s-21:overview.reference.note.content:2"
+    sourceSpans:
+      - physicalPage: 383
+        printedPage: "383"
+        pageRegionIdentifier: p383-s-21
+  - blockReference: "s-21:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 383
+        printedPage: "383"
+        pageRegionIdentifier: p383-s-21
+  - blockReference: "s-21:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 383
+        printedPage: "383"
+        pageRegionIdentifier: p383-s-21
+  - blockReference: "s-21:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 383
+        printedPage: "383"
+        pageRegionIdentifier: p383-s-21
+  - blockReference: "s-21:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 383
+        printedPage: "383"
+        pageRegionIdentifier: p383-s-21
+  - blockReference: "s-21:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 383
+        printedPage: "383"
+        pageRegionIdentifier: p383-s-21
+  - blockReference: "s-21:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 383
+        printedPage: "383"
+        pageRegionIdentifier: p383-s-21
+  - blockReference: "s-21:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 383
+        printedPage: "383"
+        pageRegionIdentifier: p383-s-21
+  - blockReference: "s-21:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 383
+        printedPage: "383"
+        pageRegionIdentifier: p383-s-21
+  - blockReference: "s-21:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 383
+        printedPage: "383"
+        pageRegionIdentifier: p383-s-21
+  - blockReference: "s-21:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 383
+        printedPage: "383"
+        pageRegionIdentifier: p383-s-21
+  - blockReference: "s-21:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 383
+        printedPage: "383"
+        pageRegionIdentifier: p383-s-21
+  - blockReference: "s-21:remediation.unspecified.heading:1"
+    sourceSpans:
+      - physicalPage: 383
+        printedPage: "383"
+        pageRegionIdentifier: p383-s-21
+  - blockReference: "s-21:remediation.unspecified.step:1"
+    sourceSpans:
+      - physicalPage: 383
+        printedPage: "383"
+        pageRegionIdentifier: p383-s-21
+  - blockReference: "s-21:remediation.unspecified.step:2"
+    sourceSpans:
+      - physicalPage: 383
+        printedPage: "383"
+        pageRegionIdentifier: p383-s-21
+  - blockReference: "s-21:remediation.unspecified.literal:1"
+    sourceSpans:
+      - physicalPage: 383
+        printedPage: "383"
+        pageRegionIdentifier: p383-s-21
+  - blockReference: "s-21:remediation.unspecified.step.explanation:2"
+    sourceSpans:
+      - physicalPage: 383
+        printedPage: "383"
+        pageRegionIdentifier: p383-s-21
+assets: []

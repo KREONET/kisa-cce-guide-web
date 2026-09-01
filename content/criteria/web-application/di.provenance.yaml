@@ -1,0 +1,73 @@
+schemaVersion: 1
+criterionSlug: di
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "di:overview.heading:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:overview.reference.note.content:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:assessment.heading:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:remediation.heading:1"
+    sourceSpans:
+      - {physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}
+      - {physicalPage: 701, printedPage: "701", pageRegionIdentifier: p701-di}
+      - {physicalPage: 702, printedPage: "702", pageRegionIdentifier: p702-di}
+  - blockReference: "di:remediation.linux.heading:1"
+    sourceSpans:
+      - {physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}
+      - {physicalPage: 701, printedPage: "701", pageRegionIdentifier: p701-di}
+      - {physicalPage: 702, printedPage: "702", pageRegionIdentifier: p702-di}
+  - blockReference: "di:remediation.linux.step:1"
+    sourceSpans: [{physicalPage: 700, printedPage: "700", pageRegionIdentifier: p700-di}]
+  - blockReference: "di:remediation.linux.step:2"
+    sourceSpans: [{physicalPage: 701, printedPage: "701", pageRegionIdentifier: p701-di}]
+  - blockReference: "di:remediation.linux.configuration:1"
+    sourceSpans: [{physicalPage: 701, printedPage: "701", pageRegionIdentifier: p701-di}]
+  - blockReference: "di:remediation.linux.step:3"
+    sourceSpans: [{physicalPage: 701, printedPage: "701", pageRegionIdentifier: p701-di}]
+  - blockReference: "di:remediation.linux.configuration:2"
+    sourceSpans: [{physicalPage: 701, printedPage: "701", pageRegionIdentifier: p701-di}]
+  - blockReference: "di:remediation.linux.step:4"
+    sourceSpans: [{physicalPage: 701, printedPage: "701", pageRegionIdentifier: p701-di}]
+  - blockReference: "di:remediation.linux.step:5"
+    sourceSpans: [{physicalPage: 702, printedPage: "702", pageRegionIdentifier: p702-di}]
+  - blockReference: "di:remediation.linux.step:6"
+    sourceSpans: [{physicalPage: 702, printedPage: "702", pageRegionIdentifier: p702-di}]
+  - blockReference: "di:remediation.linux.configuration:3"
+    sourceSpans: [{physicalPage: 702, printedPage: "702", pageRegionIdentifier: p702-di}]
+assets: []

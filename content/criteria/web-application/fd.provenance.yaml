@@ -1,0 +1,117 @@
+schemaVersion: 1
+criterionSlug: fd
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "fd:overview.heading:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:overview.reference.note.content:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:overview.reference.note.label:2"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:overview.reference.note.content:2"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:assessment.heading:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 753, printedPage: "753", pageRegionIdentifier: p753-fd}]
+  - blockReference: "fd:remediation.heading:1"
+    sourceSpans: [{physicalPage: 754, printedPage: "754", pageRegionIdentifier: p754-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.heading:1"
+    sourceSpans: [{physicalPage: 754, printedPage: "754", pageRegionIdentifier: p754-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.paragraph:1"
+    sourceSpans: [{physicalPage: 754, printedPage: "754", pageRegionIdentifier: p754-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.step:1"
+    sourceSpans: [{physicalPage: 754, printedPage: "754", pageRegionIdentifier: p754-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.literal:1"
+    sourceSpans: [{physicalPage: 754, printedPage: "754", pageRegionIdentifier: p754-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.step:2"
+    sourceSpans: [{physicalPage: 754, printedPage: "754", pageRegionIdentifier: p754-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.literal:2"
+    sourceSpans: [{physicalPage: 754, printedPage: "754", pageRegionIdentifier: p754-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.step:3"
+    sourceSpans: [{physicalPage: 755, printedPage: "755", pageRegionIdentifier: p755-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.literal:3"
+    sourceSpans: [{physicalPage: 755, printedPage: "755", pageRegionIdentifier: p755-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.note.label:1"
+    sourceSpans: [{physicalPage: 755, printedPage: "755", pageRegionIdentifier: p755-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.note.content:1"
+    sourceSpans: [{physicalPage: 755, printedPage: "755", pageRegionIdentifier: p755-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.table:1"
+    sourceSpans: [{physicalPage: 755, printedPage: "755", pageRegionIdentifier: p755-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.note.label:2"
+    sourceSpans: [{physicalPage: 756, printedPage: "756", pageRegionIdentifier: p756-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.note.content:2"
+    sourceSpans: [{physicalPage: 756, printedPage: "756", pageRegionIdentifier: p756-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.table:2"
+    sourceSpans: [{physicalPage: 756, printedPage: "756", pageRegionIdentifier: p756-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.step:4"
+    sourceSpans: [{physicalPage: 756, printedPage: "756", pageRegionIdentifier: p756-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.step:5"
+    sourceSpans: [{physicalPage: 756, printedPage: "756", pageRegionIdentifier: p756-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.step:6"
+    sourceSpans: [{physicalPage: 756, printedPage: "756", pageRegionIdentifier: p756-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.step:7"
+    sourceSpans: [{physicalPage: 756, printedPage: "756", pageRegionIdentifier: p756-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.paragraph:2"
+    sourceSpans: [{physicalPage: 756, printedPage: "756", pageRegionIdentifier: p756-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.step:8"
+    sourceSpans: [{physicalPage: 756, printedPage: "756", pageRegionIdentifier: p756-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.step:9"
+    sourceSpans: [{physicalPage: 756, printedPage: "756", pageRegionIdentifier: p756-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.step:10"
+    sourceSpans: [{physicalPage: 756, printedPage: "756", pageRegionIdentifier: p756-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.step:11"
+    sourceSpans: [{physicalPage: 756, printedPage: "756", pageRegionIdentifier: p756-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.paragraph:3"
+    sourceSpans: [{physicalPage: 757, printedPage: "757", pageRegionIdentifier: p757-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.step:12"
+    sourceSpans: [{physicalPage: 757, printedPage: "757", pageRegionIdentifier: p757-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.configuration:1"
+    sourceSpans: [{physicalPage: 757, printedPage: "757", pageRegionIdentifier: p757-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.paragraph:4"
+    sourceSpans: [{physicalPage: 758, printedPage: "758", pageRegionIdentifier: p758-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.step:13"
+    sourceSpans: [{physicalPage: 758, printedPage: "758", pageRegionIdentifier: p758-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.configuration:2"
+    sourceSpans: [{physicalPage: 758, printedPage: "758", pageRegionIdentifier: p758-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.paragraph:5"
+    sourceSpans: [{physicalPage: 758, printedPage: "758", pageRegionIdentifier: p758-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.step:14"
+    sourceSpans: [{physicalPage: 758, printedPage: "758", pageRegionIdentifier: p758-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.step:15"
+    sourceSpans: [{physicalPage: 758, printedPage: "758", pageRegionIdentifier: p758-fd}]
+  - blockReference: "fd:remediation.supplementaryGuidance.configuration:3"
+    sourceSpans: [{physicalPage: 758, printedPage: "758", pageRegionIdentifier: p758-fd}]
+assets: []

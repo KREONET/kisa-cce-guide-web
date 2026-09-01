@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko" data-theme="light" data-theme-preference="system">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ description }}">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; object-src 'self'; base-uri 'self'">
+  <script src="{{ theme_initialization_url }}"></script>
+  <title>{{ title }}</title>
+{% if canonical_url %}  <link rel="canonical" href="{{ canonical_url }}">
+{% endif %}{% if json_alternate_url %}  <link rel="alternate" type="application/json" href="{{ json_alternate_url }}">
+{% endif %}{% if structured_data %}  <script type="application/ld+json">{{ structured_data | tojson }}</script>
+{% endif %}{% for stylesheet_url in stylesheet_urls %}  <link rel="stylesheet" href="{{ stylesheet_url }}">
+{% endfor %}  <link rel="stylesheet" href="{{ site_stylesheet_url }}">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">본문으로 바로가기</a>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-brand" href="{{ home_url }}" aria-label="KISA CCE 가이드 2026 홈">
+        <span class="site-brand__mark" aria-hidden="true"></span>
+        <span class="site-brand__name">KISA CCE</span>
+        <span class="site-brand__edition">GUIDE 2026</span>
+      </a>
+      <div class="site-header__controls">
+        <label class="theme-selector" for="theme-selector">
+          <span class="theme-selector__label">화면 테마</span>
+          <select id="theme-selector" data-theme-selector>
+            <option value="system">시스템</option>
+            <option value="light">화이트</option>
+            <option value="dark">다크</option>
+            <option value="oled">OLED 블랙</option>
+          </select>
+        </label>
+        <button class="nav-toggle" type="button" aria-expanded="true" aria-controls="site-navigation" data-navigation-toggle hidden>메뉴</button>
+      </div>
+      <nav id="site-navigation" class="site-nav" aria-label="주요 메뉴" data-site-navigation data-open="true">
+        {% include "partials/domain-navigation.html" %}
+        <a href="{{ search_url }}"{% if current_navigation == "search" %} aria-current="page"{% endif %}>검색</a>
+      </nav>
+    </div>
+  </header>
+  {% block content required %}{% endblock %}
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="site-footer__brand"><span aria-hidden="true"></span>KISA CCE GUIDE</p>
+      <p class="site-footer__license">라이선스: {{ license_label }}</p>
+    </div>
+  </footer>
+  <div class="visually-hidden" role="status" aria-live="polite" aria-atomic="true" data-copy-status></div>
+{% for script_url in script_urls %}  <script src="{{ script_url }}" defer></script>
+{% endfor %}</body>
+</html>

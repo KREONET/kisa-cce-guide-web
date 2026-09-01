@@ -1,0 +1,114 @@
+schemaVersion: 1
+criterionSlug: fu
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "fu:overview.heading:1"
+    sourceSpans: [{physicalPage: 744, printedPage: "744", pageRegionIdentifier: p744-fu}]
+  - blockReference: "fu:overview.inspectionContent.heading:1"
+    sourceSpans: [{physicalPage: 744, printedPage: "744", pageRegionIdentifier: p744-fu}]
+  - blockReference: "fu:overview.inspectionContent.paragraph:1"
+    sourceSpans: [{physicalPage: 744, printedPage: "744", pageRegionIdentifier: p744-fu}]
+  - blockReference: "fu:overview.inspectionPurpose.heading:1"
+    sourceSpans: [{physicalPage: 744, printedPage: "744", pageRegionIdentifier: p744-fu}]
+  - blockReference: "fu:overview.inspectionPurpose.paragraph:1"
+    sourceSpans: [{physicalPage: 744, printedPage: "744", pageRegionIdentifier: p744-fu}]
+  - blockReference: "fu:overview.securityThreat.heading:1"
+    sourceSpans: [{physicalPage: 744, printedPage: "744", pageRegionIdentifier: p744-fu}]
+  - blockReference: "fu:overview.securityThreat.paragraph:1"
+    sourceSpans: [{physicalPage: 744, printedPage: "744", pageRegionIdentifier: p744-fu}]
+  - blockReference: "fu:overview.reference.heading:1"
+    sourceSpans: [{physicalPage: 744, printedPage: "744", pageRegionIdentifier: p744-fu}]
+  - blockReference: "fu:overview.reference.note.label:1"
+    sourceSpans: [{physicalPage: 744, printedPage: "744", pageRegionIdentifier: p744-fu}]
+  - blockReference: "fu:overview.reference.note.content:1"
+    sourceSpans: [{physicalPage: 744, printedPage: "744", pageRegionIdentifier: p744-fu}]
+  - blockReference: "fu:overview.reference.note.label:2"
+    sourceSpans: [{physicalPage: 744, printedPage: "744", pageRegionIdentifier: p744-fu}]
+  - blockReference: "fu:overview.reference.note.content:2"
+    sourceSpans: [{physicalPage: 744, printedPage: "744", pageRegionIdentifier: p744-fu}]
+  - blockReference: "fu:overview.reference.note.label:3"
+    sourceSpans: [{physicalPage: 744, printedPage: "744", pageRegionIdentifier: p744-fu}]
+  - blockReference: "fu:overview.reference.note.content:3"
+    sourceSpans: [{physicalPage: 744, printedPage: "744", pageRegionIdentifier: p744-fu}]
+  - blockReference: "fu:overview.reference.note.label:4"
+    sourceSpans: [{physicalPage: 744, printedPage: "744", pageRegionIdentifier: p744-fu}]
+  - blockReference: "fu:overview.reference.note.content:4"
+    sourceSpans: [{physicalPage: 744, printedPage: "744", pageRegionIdentifier: p744-fu}]
+  - blockReference: "fu:assessment.heading:1"
+    sourceSpans: [{physicalPage: 744, printedPage: "744", pageRegionIdentifier: p744-fu}]
+  - blockReference: "fu:assessment.target.heading:1"
+    sourceSpans: [{physicalPage: 744, printedPage: "744", pageRegionIdentifier: p744-fu}]
+  - blockReference: "fu:assessment.target.paragraph:1"
+    sourceSpans: [{physicalPage: 744, printedPage: "744", pageRegionIdentifier: p744-fu}]
+  - blockReference: "fu:assessment.judgment.heading:1"
+    sourceSpans: [{physicalPage: 744, printedPage: "744", pageRegionIdentifier: p744-fu}]
+  - blockReference: "fu:assessment.judgment.good:1"
+    sourceSpans: [{physicalPage: 744, printedPage: "744", pageRegionIdentifier: p744-fu}]
+  - blockReference: "fu:assessment.judgment.vulnerable:1"
+    sourceSpans: [{physicalPage: 744, printedPage: "744", pageRegionIdentifier: p744-fu}]
+  - blockReference: "fu:assessment.remediationMethod.heading:1"
+    sourceSpans: [{physicalPage: 744, printedPage: "744", pageRegionIdentifier: p744-fu}]
+  - blockReference: "fu:assessment.remediationMethod.paragraph:1"
+    sourceSpans: [{physicalPage: 744, printedPage: "744", pageRegionIdentifier: p744-fu}]
+  - blockReference: "fu:assessment.remediationImpact.heading:1"
+    sourceSpans: [{physicalPage: 744, printedPage: "744", pageRegionIdentifier: p744-fu}]
+  - blockReference: "fu:assessment.remediationImpact.paragraph:1"
+    sourceSpans: [{physicalPage: 744, printedPage: "744", pageRegionIdentifier: p744-fu}]
+  - blockReference: "fu:remediation.heading:1"
+    sourceSpans: [{physicalPage: 744, printedPage: "744", pageRegionIdentifier: p744-fu}]
+  - blockReference: "fu:remediation.linux.heading:1"
+    sourceSpans: [{physicalPage: 744, printedPage: "744", pageRegionIdentifier: p744-fu}]
+  - blockReference: "fu:remediation.linux.paragraph:1"
+    sourceSpans: [{physicalPage: 744, printedPage: "744", pageRegionIdentifier: p744-fu}]
+  - blockReference: "fu:remediation.linux.step:1"
+    sourceSpans: [{physicalPage: 744, printedPage: "744", pageRegionIdentifier: p744-fu}]
+  - blockReference: "fu:remediation.linux.step:2"
+    sourceSpans: [{physicalPage: 745, printedPage: "745", pageRegionIdentifier: p745-fu}]
+  - blockReference: "fu:remediation.linux.step:3"
+    sourceSpans: [{physicalPage: 745, printedPage: "745", pageRegionIdentifier: p745-fu}]
+  - blockReference: "fu:remediation.linux.paragraph:2"
+    sourceSpans: [{physicalPage: 746, printedPage: "746", pageRegionIdentifier: p746-fu}]
+  - blockReference: "fu:remediation.linux.step:4"
+    sourceSpans: [{physicalPage: 746, printedPage: "746", pageRegionIdentifier: p746-fu}]
+  - blockReference: "fu:remediation.linux.step:5"
+    sourceSpans: [{physicalPage: 746, printedPage: "746", pageRegionIdentifier: p746-fu}]
+  - blockReference: "fu:remediation.linux.step:6"
+    sourceSpans: [{physicalPage: 746, printedPage: "746", pageRegionIdentifier: p746-fu}]
+  - blockReference: "fu:remediation.linux.step:7"
+    sourceSpans: [{physicalPage: 746, printedPage: "746", pageRegionIdentifier: p746-fu}]
+  - blockReference: "fu:remediation.linux.step:8"
+    sourceSpans: [{physicalPage: 746, printedPage: "746", pageRegionIdentifier: p746-fu}]
+  - blockReference: "fu:remediation.linux.step:9"
+    sourceSpans: [{physicalPage: 746, printedPage: "746", pageRegionIdentifier: p746-fu}]
+  - blockReference: "fu:remediation.linux.step:10"
+    sourceSpans: [{physicalPage: 746, printedPage: "746", pageRegionIdentifier: p746-fu}]
+  - blockReference: "fu:remediation.linux.step:11"
+    sourceSpans: [{physicalPage: 746, printedPage: "746", pageRegionIdentifier: p746-fu}]
+  - blockReference: "fu:remediation.linux.paragraph:3"
+    sourceSpans: [{physicalPage: 747, printedPage: "747", pageRegionIdentifier: p747-fu}]
+  - blockReference: "fu:remediation.linux.paragraph:4"
+    sourceSpans: [{physicalPage: 747, printedPage: "747", pageRegionIdentifier: p747-fu}]
+  - blockReference: "fu:remediation.linux.configuration:1"
+    sourceSpans:
+      - {physicalPage: 747, printedPage: "747", pageRegionIdentifier: p747-fu}
+      - {physicalPage: 748, printedPage: "748", pageRegionIdentifier: p748-fu}
+  - blockReference: "fu:remediation.linux.paragraph:5"
+    sourceSpans: [{physicalPage: 749, printedPage: "749", pageRegionIdentifier: p749-fu}]
+  - blockReference: "fu:remediation.linux.paragraph:6"
+    sourceSpans: [{physicalPage: 749, printedPage: "749", pageRegionIdentifier: p749-fu}]
+  - blockReference: "fu:remediation.linux.configuration:2"
+    sourceSpans:
+      - {physicalPage: 749, printedPage: "749", pageRegionIdentifier: p749-fu}
+      - {physicalPage: 750, printedPage: "750", pageRegionIdentifier: p750-fu}
+      - {physicalPage: 751, printedPage: "751", pageRegionIdentifier: p751-fu}
+  - blockReference: "fu:remediation.linux.paragraph:7"
+    sourceSpans: [{physicalPage: 751, printedPage: "751", pageRegionIdentifier: p751-fu}]
+  - blockReference: "fu:remediation.linux.paragraph:8"
+    sourceSpans: [{physicalPage: 751, printedPage: "751", pageRegionIdentifier: p751-fu}]
+  - blockReference: "fu:remediation.linux.paragraph:9"
+    sourceSpans: [{physicalPage: 751, printedPage: "751", pageRegionIdentifier: p751-fu}]
+  - blockReference: "fu:remediation.linux.configuration:3"
+    sourceSpans:
+      - {physicalPage: 751, printedPage: "751", pageRegionIdentifier: p751-fu}
+      - {physicalPage: 752, printedPage: "752", pageRegionIdentifier: p752-fu}
+assets: []

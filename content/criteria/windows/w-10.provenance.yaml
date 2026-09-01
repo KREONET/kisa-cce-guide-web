@@ -1,0 +1,155 @@
+schemaVersion: 1
+criterionSlug: w-10
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "w-10:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 189
+        printedPage: "189"
+        pageRegionIdentifier: p189-w-10
+  - blockReference: "w-10:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 189
+        printedPage: "189"
+        pageRegionIdentifier: p189-w-10
+  - blockReference: "w-10:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 189
+        printedPage: "189"
+        pageRegionIdentifier: p189-w-10
+  - blockReference: "w-10:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 189
+        printedPage: "189"
+        pageRegionIdentifier: p189-w-10
+  - blockReference: "w-10:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 189
+        printedPage: "189"
+        pageRegionIdentifier: p189-w-10
+  - blockReference: "w-10:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 189
+        printedPage: "189"
+        pageRegionIdentifier: p189-w-10
+  - blockReference: "w-10:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 189
+        printedPage: "189"
+        pageRegionIdentifier: p189-w-10
+  - blockReference: "w-10:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 189
+        printedPage: "189"
+        pageRegionIdentifier: p189-w-10
+  - blockReference: "w-10:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 189
+        printedPage: "189"
+        pageRegionIdentifier: p189-w-10
+  - blockReference: "w-10:overview.reference.note.content:1"
+    sourceSpans:
+      - physicalPage: 189
+        printedPage: "189"
+        pageRegionIdentifier: p189-w-10
+  - blockReference: "w-10:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 189
+        printedPage: "189"
+        pageRegionIdentifier: p189-w-10
+  - blockReference: "w-10:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 189
+        printedPage: "189"
+        pageRegionIdentifier: p189-w-10
+  - blockReference: "w-10:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 189
+        printedPage: "189"
+        pageRegionIdentifier: p189-w-10
+  - blockReference: "w-10:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 189
+        printedPage: "189"
+        pageRegionIdentifier: p189-w-10
+  - blockReference: "w-10:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 189
+        printedPage: "189"
+        pageRegionIdentifier: p189-w-10
+  - blockReference: "w-10:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 189
+        printedPage: "189"
+        pageRegionIdentifier: p189-w-10
+  - blockReference: "w-10:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 189
+        printedPage: "189"
+        pageRegionIdentifier: p189-w-10
+  - blockReference: "w-10:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 189
+        printedPage: "189"
+        pageRegionIdentifier: p189-w-10
+  - blockReference: "w-10:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 189
+        printedPage: "189"
+        pageRegionIdentifier: p189-w-10
+  - blockReference: "w-10:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 189
+        printedPage: "189"
+        pageRegionIdentifier: p189-w-10
+  - blockReference: "w-10:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 189
+        printedPage: "189"
+        pageRegionIdentifier: p189-w-10
+  - blockReference: "w-10:remediation.linux.heading:1"
+    sourceSpans:
+      - physicalPage: 189
+        printedPage: "189"
+        pageRegionIdentifier: p189-w-10
+  - blockReference: "w-10:remediation.linux.paragraph:1"
+    sourceSpans:
+      - physicalPage: 189
+        printedPage: "189"
+        pageRegionIdentifier: p189-w-10
+  - blockReference: "w-10:remediation.linux.step:1"
+    sourceSpans:
+      - physicalPage: 189
+        printedPage: "189"
+        pageRegionIdentifier: p189-w-10
+  - blockReference: "w-10:remediation.linux.paragraph:2"
+    sourceSpans:
+      - physicalPage: 189
+        printedPage: "189"
+        pageRegionIdentifier: p189-w-10
+  - blockReference: "w-10:remediation.linux.step:2"
+    sourceSpans:
+      - physicalPage: 189
+        printedPage: "189"
+        pageRegionIdentifier: p189-w-10
+  - blockReference: "w-10:remediation.linux.step:3"
+    sourceSpans:
+      - physicalPage: 189
+        printedPage: "189"
+        pageRegionIdentifier: p189-w-10
+  - blockReference: "w-10:remediation.linux.paragraph:3"
+    sourceSpans:
+      - physicalPage: 190
+        printedPage: "190"
+        pageRegionIdentifier: p190-w-10
+  - blockReference: "w-10:remediation.linux.step:4"
+    sourceSpans:
+      - physicalPage: 190
+        printedPage: "190"
+        pageRegionIdentifier: p190-w-10
+  - blockReference: "w-10:remediation.linux.step:5"
+    sourceSpans:
+      - physicalPage: 190
+        printedPage: "190"
+        pageRegionIdentifier: p190-w-10
+assets: []

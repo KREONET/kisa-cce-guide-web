@@ -1,0 +1,130 @@
+schemaVersion: 1
+criterionSlug: pc-14
+sourceDocumentIdentifier: kisa-cce-criteria-2026
+blockProvenance:
+  - blockReference: "pc-14:overview.heading:1"
+    sourceSpans:
+      - physicalPage: 584
+        printedPage: "584"
+        pageRegionIdentifier: p584-pc-14
+  - blockReference: "pc-14:overview.inspectionContent.heading:1"
+    sourceSpans:
+      - physicalPage: 584
+        printedPage: "584"
+        pageRegionIdentifier: p584-pc-14
+  - blockReference: "pc-14:overview.inspectionContent.paragraph:1"
+    sourceSpans:
+      - physicalPage: 584
+        printedPage: "584"
+        pageRegionIdentifier: p584-pc-14
+  - blockReference: "pc-14:overview.inspectionPurpose.heading:1"
+    sourceSpans:
+      - physicalPage: 584
+        printedPage: "584"
+        pageRegionIdentifier: p584-pc-14
+  - blockReference: "pc-14:overview.inspectionPurpose.paragraph:1"
+    sourceSpans:
+      - physicalPage: 584
+        printedPage: "584"
+        pageRegionIdentifier: p584-pc-14
+  - blockReference: "pc-14:overview.securityThreat.heading:1"
+    sourceSpans:
+      - physicalPage: 584
+        printedPage: "584"
+        pageRegionIdentifier: p584-pc-14
+  - blockReference: "pc-14:overview.securityThreat.paragraph:1"
+    sourceSpans:
+      - physicalPage: 584
+        printedPage: "584"
+        pageRegionIdentifier: p584-pc-14
+  - blockReference: "pc-14:overview.reference.heading:1"
+    sourceSpans:
+      - physicalPage: 584
+        printedPage: "584"
+        pageRegionIdentifier: p584-pc-14
+  - blockReference: "pc-14:overview.reference.note.label:1"
+    sourceSpans:
+      - physicalPage: 584
+        printedPage: "584"
+        pageRegionIdentifier: p584-pc-14
+  - blockReference: "pc-14:assessment.heading:1"
+    sourceSpans:
+      - physicalPage: 584
+        printedPage: "584"
+        pageRegionIdentifier: p584-pc-14
+  - blockReference: "pc-14:assessment.target.heading:1"
+    sourceSpans:
+      - physicalPage: 584
+        printedPage: "584"
+        pageRegionIdentifier: p584-pc-14
+  - blockReference: "pc-14:assessment.target.paragraph:1"
+    sourceSpans:
+      - physicalPage: 584
+        printedPage: "584"
+        pageRegionIdentifier: p584-pc-14
+  - blockReference: "pc-14:assessment.judgment.heading:1"
+    sourceSpans:
+      - physicalPage: 584
+        printedPage: "584"
+        pageRegionIdentifier: p584-pc-14
+  - blockReference: "pc-14:assessment.judgment.good:1"
+    sourceSpans:
+      - physicalPage: 584
+        printedPage: "584"
+        pageRegionIdentifier: p584-pc-14
+  - blockReference: "pc-14:assessment.judgment.vulnerable:1"
+    sourceSpans:
+      - physicalPage: 584
+        printedPage: "584"
+        pageRegionIdentifier: p584-pc-14
+  - blockReference: "pc-14:assessment.remediationMethod.heading:1"
+    sourceSpans:
+      - physicalPage: 584
+        printedPage: "584"
+        pageRegionIdentifier: p584-pc-14
+  - blockReference: "pc-14:assessment.remediationMethod.paragraph:1"
+    sourceSpans:
+      - physicalPage: 584
+        printedPage: "584"
+        pageRegionIdentifier: p584-pc-14
+  - blockReference: "pc-14:assessment.remediationImpact.heading:1"
+    sourceSpans:
+      - physicalPage: 584
+        printedPage: "584"
+        pageRegionIdentifier: p584-pc-14
+  - blockReference: "pc-14:assessment.remediationImpact.paragraph:1"
+    sourceSpans:
+      - physicalPage: 584
+        printedPage: "584"
+        pageRegionIdentifier: p584-pc-14
+  - blockReference: "pc-14:remediation.heading:1"
+    sourceSpans:
+      - physicalPage: 584
+        printedPage: "584"
+        pageRegionIdentifier: p584-pc-14
+  - blockReference: "pc-14:remediation.supplementaryGuidance.heading:1"
+    sourceSpans:
+      - physicalPage: 584
+        printedPage: "584"
+        pageRegionIdentifier: p584-pc-14
+  - blockReference: "pc-14:remediation.supplementaryGuidance.step:1"
+    sourceSpans:
+      - physicalPage: 584
+        printedPage: "584"
+        pageRegionIdentifier: p584-pc-14
+  - blockReference: "pc-14:remediation.supplementaryGuidance.step.explanation:1"
+    sourceSpans:
+      - physicalPage: 584
+        printedPage: "584"
+        pageRegionIdentifier: p584-pc-14
+  - blockReference: "pc-14:remediation.supplementaryGuidance.note.label:1"
+    sourceSpans:
+      - physicalPage: 584
+        printedPage: "584"
+        pageRegionIdentifier: p584-pc-14
+  - blockReference: "pc-14:remediation.supplementaryGuidance.note.content:1"
+    sourceSpans:
+      - physicalPage: 584
+        printedPage: "584"
+        pageRegionIdentifier: p584-pc-14
+assets: []
