@@ -4,23 +4,6 @@
 
 이 저장소는 KISA가 운영하거나 승인한 공식 배포본이 아닙니다. 원본 PDF가 점검, 감사와 법적 판단의 기준입니다. 변환 규칙과 승인 조건은 [문서 변환 정책](CONVERSION_POLICY.md)을 따릅니다.
 
-## 현재 상태
-
-현재 repository evidence에서 확인한 상태입니다.
-
-| 항목 | 현재 값 |
-| --- | ---: |
-| 원문 물리 페이지 | 873 |
-| 기술 분야 | 12 |
-| Canonical criterion | 382 |
-| Provenance sidecar | 382 |
-| `systemCriterion` | 361 |
-| `webApplicationCriterion` | 21 |
-| `extractedCriterion` | 0 |
-| 사람 승인 완료 review record | 0 |
-
-382개 항목은 모두 의미 구조화된 content model을 사용합니다. 이는 사람의 원문 대조와 릴리스 승인이 끝났다는 의미가 아닙니다. Review registry에는 `approved` record가 없습니다.
-
 ## 원문
 
 | 항목 | 내용 |
@@ -78,7 +61,7 @@ uv run python -m conversion.serve_site --no-build
 - [Legacy 변환 워크플로](docs/operations/legacy-conversion.md): Structured-JSON migration 경로
 - [빌드와 릴리스](docs/operations/build-and-release.md): 사이트 생성, 검증과 릴리스 게이트
 
-## 기여 경계
+## 기여
 
 - 변환 오류는 Markdown, metadata, provenance, 검색 색인 또는 HTML이 원문과 다른 경우입니다.
 - 원문 이상은 PDF 내부의 코드, 중요도, 제목, 분류 또는 기술 표기가 서로 충돌하는 경우입니다.
