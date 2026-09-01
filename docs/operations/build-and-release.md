@@ -55,9 +55,13 @@ uv run python -m conversion.serve_site \
 
 공통 header의 화면 테마 선택기는 시스템 설정, 화이트, 다크, OLED 블랙을 제공한다. 명시적으로 선택한 값은 브라우저에 저장하며, 시스템 설정은 운영체제의 밝은 화면과 어두운 화면 변경을 따른다. OLED 블랙은 본문 canvas와 주요 surface를 `#000000`으로 렌더링하고, 인쇄 출력은 선택한 화면 테마와 관계없이 흰 배경과 검은 글자를 사용한다.
 
-## GitHub Pages 검토 artifact
+## GitHub Pages 배포
 
-`.github/workflows/pages-build.yaml`은 수동 실행에서 base path를 적용하고, canonical 검증 후 검토 artifact를 생성한다. `.nojekyll`을 포함하지만 공개 배포 job은 구성하지 않는다.
+`.github/workflows/pages-build.yml`은 수동 실행에서 GitHub Pages base path를 적용하고, 릴리스 검증과 사이트 생성을 통과한 Pages 전용 artifact를 `github-pages` environment에 배포한다. 릴리스 조건을 충족하지 못하면 배포 작업은 실행되지 않는다.
+
+빌드 작업은 `contents: read`, `pages: read` 권한만 사용한다. 배포 작업은 `pages: write`, `id-token: write` 권한만 사용한다.
+
+저장소의 `Settings > Pages > Build and deployment > Source`는 `GitHub Actions`로 설정해야 한다.
 
 ## 품질 검사
 

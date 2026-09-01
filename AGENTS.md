@@ -64,7 +64,7 @@ This file applies to the entire repository.
 - Do not copy the source PDF or legacy source-region crops into public site artifacts.
 - Preserve internal `sourceAnnotations` and provenance data. Do not expose anomaly pages, annotation UI, or provenance sections unless policy, implementation, and tests are updated together.
 - Keep public normalized JSON and source-review data behavior aligned with the current schemas and tests.
-- `.github/workflows/pages-build.yaml` builds a manual review artifact with read-only repository permissions. Do not add a deployment job without an explicit request.
+- `.github/workflows/pages-build.yml` validates, builds, and deploys the generated site through the `github-pages` environment when manually dispatched. Preserve the Pages-specific artifact format and least-privilege deployment permissions.
 - Normal canonical validation does not establish release readiness.
 - Release claims require `conversion.validate_content --release`, human-approved review records, current QA evidence, resolved exceptions, and deterministic clean builds.
 
