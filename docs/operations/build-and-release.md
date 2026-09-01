@@ -30,8 +30,11 @@ uv run python -m conversion.build_sites_bundle
 | `content/assets/` | 공개가 허용된 criterion asset |
 | `data/` | Taxonomy, manifest와 공개 dataset 입력 |
 | `site/assets/` | CSS, JavaScript와 self-hosted vendor asset |
+| `site/templates/` | Jinja 기반 공통 shell, 페이지와 HTML partial |
 | `site/skill/kisa-cce-guide-explorer/SKILL.md` | `/SKILL.md`와 `/skill/` 페이지 원본 |
 | `site/hosting/worker.js` | 호스팅 bundle server entrypoint |
+
+사이트 생성기는 `site/templates/`를 `FileSystemLoader`로 읽고, HTML 자동 이스케이프와 `StrictUndefined`를 적용한다. Markdown HTML은 raw HTML을 비활성화한 renderer에서 생성된 결과만 명시적으로 삽입한다.
 
 구문 강조 자산과 BSD-3-Clause 라이선스, checksum은 `site/assets/vendor/highlight.js/`에 보존한다. 외부 CDN은 사용하지 않는다.
 
@@ -50,6 +53,8 @@ uv run python -m conversion.serve_site \
 
 빌드는 홈, 12개 분야, 분류, 382개 criterion, 검색, 404, 정규화 JSON, taxonomy JSON, `/SKILL.md`, `/skill/`, 반응형·접근성·인쇄 자산을 생성한다. 모든 HTML의 언어, 단일 H1, landmark, skip link, anchor, 내부 링크, 이미지, 표와 검색 anchor를 정적 검사한다. 원본 PDF는 사이트에 복사하지 않는다.
 
+공통 header의 화면 테마 선택기는 시스템 설정, 화이트, 다크, OLED 블랙을 제공한다. 명시적으로 선택한 값은 브라우저에 저장하며, 시스템 설정은 운영체제의 밝은 화면과 어두운 화면 변경을 따른다. OLED 블랙은 본문 canvas와 주요 surface를 `#000000`으로 렌더링하고, 인쇄 출력은 선택한 화면 테마와 관계없이 흰 배경과 검은 글자를 사용한다.
+
 ## GitHub Pages 검토 artifact
 
 `.github/workflows/pages-build.yaml`은 수동 실행에서 base path를 적용하고, canonical 검증 후 검토 artifact를 생성한다. `.nojekyll`을 포함하지만 공개 배포 job은 구성하지 않는다.
@@ -62,6 +67,7 @@ uv run ruff format --check .
 uv run ruff check .
 uv run ty check conversion tests
 uv run pytest -q
+node --test tests/search-core.test.cjs tests/theme.test.cjs
 git diff --check
 ```
 

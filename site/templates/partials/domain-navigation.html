@@ -1,0 +1,1 @@
+<details class="site-nav__domains"{% if domain_navigation_current %} data-current-navigation="true"{% endif %}><summary>분야</summary><ul><li><a href="{{ home_url }}">전체 분야</a></li>{% for item in domain_navigation_items %}<li><a href="{{ item.url }}"{% if item.current %} aria-current="location"{% endif %}>{{ item.label }}</a></li>{% endfor %}</ul></details>

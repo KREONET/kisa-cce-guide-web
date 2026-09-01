@@ -58,6 +58,7 @@ uv run python -m conversion.serve_site --no-build
 | `data/` | Manifest, taxonomy, source, review, annotation과 policy registry |
 | `schemas/` | Canonical 및 생성 데이터 JSON Schema |
 | `site/assets/` | 정적 사이트 CSS, JavaScript와 vendor asset |
+| `site/templates/` | Jinja 기반 공통 shell, 페이지와 HTML partial |
 | `site/hosting/` | 호스팅 server entrypoint |
 | `site/skill/` | 빌드된 사이트에 배포되는 LLM 탐색 지침 |
 | `docs/` | 아키텍처, 운영과 디자인 문서 |

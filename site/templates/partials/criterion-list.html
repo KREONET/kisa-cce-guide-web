@@ -1,0 +1,1 @@
+{% macro criterion_list(records) -%}<ul class="criterion-list">{% for record in records %}<li><a href="{{ record.url }}"><strong>{{ record.code }}</strong><span>{{ record.title }}</span><span class="badge">{{ record.severity }}</span></a></li>{% endfor %}</ul>{%- endmacro %}

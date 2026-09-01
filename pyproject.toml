@@ -3,7 +3,10 @@ name = "kisa-cce-guide-conversion"
 version = "0.1.0"
 description = "Canonical document conversion tooling for the KISA CCE Guide 2026"
 requires-python = ">=3.13,<3.15"
-dependencies = []
+dependencies = [
+    "jinja2>=3.1,<4",
+    "markupsafe>=3,<4",
+]
 
 [dependency-groups]
 dev = [

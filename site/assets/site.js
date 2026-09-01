@@ -1,3 +1,60 @@
+const themeStorageKey = "kisa-cce-guide-theme";
+const allowedThemePreferences = new Set(["system", "light", "dark", "oled"]);
+const themeSelector = document.querySelector("[data-theme-selector]");
+const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+const resolveTheme = (preference) => {
+  if (preference === "system") {
+    return systemTheme.matches ? "dark" : "light";
+  }
+  return preference;
+};
+
+const applyThemePreference = (preference, persist = false) => {
+  if (!allowedThemePreferences.has(preference)) {
+    return;
+  }
+  document.documentElement.dataset.themePreference = preference;
+  document.documentElement.dataset.theme = resolveTheme(preference);
+  if (themeSelector) {
+    themeSelector.value = preference;
+  }
+  if (!persist) {
+    return;
+  }
+  try {
+    window.localStorage.setItem(themeStorageKey, preference);
+  } catch {
+    // Theme changes still apply when storage is unavailable.
+  }
+};
+
+const initialThemePreference = document.documentElement.dataset.themePreference;
+applyThemePreference(
+  allowedThemePreferences.has(initialThemePreference) ? initialThemePreference : "system",
+);
+
+themeSelector?.addEventListener("change", () => {
+  applyThemePreference(themeSelector.value, true);
+});
+
+systemTheme.addEventListener("change", () => {
+  if (document.documentElement.dataset.themePreference === "system") {
+    applyThemePreference("system");
+  }
+});
+
+window.addEventListener("storage", (event) => {
+  if (event.key !== themeStorageKey) {
+    return;
+  }
+  if (event.newValue === null) {
+    applyThemePreference("system");
+  } else if (allowedThemePreferences.has(event.newValue)) {
+    applyThemePreference(event.newValue);
+  }
+});
+
 const navigationButton = document.querySelector("[data-navigation-toggle]");
 const navigation = document.querySelector("[data-site-navigation]");
 

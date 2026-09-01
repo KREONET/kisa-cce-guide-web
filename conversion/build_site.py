@@ -2,23 +2,26 @@
 
 from __future__ import annotations
 
-import html
-import json
 import shutil
 from collections import defaultdict
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass, field
+from functools import cache
 from pathlib import Path
 from typing import cast
 
 import rfc8785
+from jinja2 import Environment, FileSystemLoader, StrictUndefined, select_autoescape
 from markdown_it import MarkdownIt
+from markupsafe import Markup
 
 from conversion.common import JsonValue, as_mapping, as_sequence
 from conversion.paths import (
     CANONICAL_ASSET_DIRECTORY,
     SITE_ASSET_DIRECTORY,
     SITE_SKILL_DIRECTORY,
+    SITE_TEMPLATE_DIRECTORY,
+    repository_root,
 )
 
 _HIGHLIGHT_LANGUAGE_ALIASES = {
@@ -86,7 +89,8 @@ _TABLE_OF_CONTENTS_MINIMUM_HEADING_COUNT = 6
 class _TableOfContentsNode:
     """Represent one heading and its ordered descendants."""
 
-    block: dict[str, JsonValue]
+    identifier: str
+    text: str
     heading_level: int
     children: list[_TableOfContentsNode] = field(default_factory=list)
 
@@ -118,6 +122,20 @@ def _inline_html(value: str, *, parser: MarkdownIt) -> str:
     """Render constrained inline Markdown."""
 
     return parser.renderInline(value)
+
+
+def _inline_markup(value: str, *, parser: MarkdownIt) -> Markup:
+    """Mark raw-HTML-disabled Markdown output as trusted template content."""
+
+    # Raw HTML is disabled, so only renderer-owned inline tags cross this boundary.
+    return Markup(_inline_html(value, parser=parser))  # noqa: S704
+
+
+def _rendered_markup(value: str) -> Markup:
+    """Mark controlled renderer output for composition in another template."""
+
+    # The value has already passed through Jinja or raw-HTML-disabled Markdown.
+    return Markup(value)  # noqa: S704
 
 
 def _render_skill_document(value: str) -> str:
@@ -154,103 +172,86 @@ def _highlight_language(block: Mapping[str, JsonValue]) -> str | None:
     return highlight_language if highlight_language in _HIGHLIGHT_SUPPORTED_LANGUAGES else None
 
 
-def _html_document(
+@cache
+def _template_environment(template_directory: Path) -> Environment:
+    """Create one strict deterministic Jinja environment per template directory."""
+
+    environment = Environment(
+        loader=FileSystemLoader(template_directory),
+        autoescape=select_autoescape(enabled_extensions=("html", "xml"), default_for_string=True),
+        undefined=StrictUndefined,
+        auto_reload=False,
+        trim_blocks=False,
+        lstrip_blocks=False,
+        newline_sequence="\n",
+        keep_trailing_newline=True,
+    )
+    environment.policies["json.dumps_kwargs"] = {
+        "ensure_ascii": False,
+        "separators": (",", ":"),
+        "sort_keys": True,
+    }
+    return environment
+
+
+def _default_template_environment() -> Environment:
+    """Return the repository template environment for direct renderer tests."""
+
+    return _template_environment(repository_root() / SITE_TEMPLATE_DIRECTORY)
+
+
+def _render_page(
     *,
+    environment: Environment,
+    template_name: str,
     title: str,
     description: str,
-    body: str,
     base_path: str,
+    domains: Mapping[str, dict[str, JsonValue]],
+    current_domain: str | None,
     extra_scripts: Sequence[str] = (),
     extra_stylesheets: Sequence[str] = (),
     canonical_url: str | None = None,
     current_navigation: str | None = None,
-    domain_navigation: str,
+    domain_navigation_current: bool = False,
     license_label: str,
     json_alternate_url: str | None = None,
     structured_data: Mapping[str, JsonValue] | None = None,
+    page_context: Mapping[str, object] | None = None,
 ) -> str:
-    """Wrap one page in the shared accessible site shell."""
+    """Render one complete page through the shared Jinja template shell."""
 
-    def navigation_current(identifier: str) -> str:
-        return ' aria-current="page"' if identifier == current_navigation else ""
-
-    script_tags = "\n".join(
-        f'<script src="{html.escape(_site_url(script, base_path=base_path), quote=True)}" defer></script>'
-        for script in ["/assets/site.js", *extra_scripts]
-    )
-    stylesheet_tags = "\n".join(
-        f'  <link rel="stylesheet" href="{html.escape(_site_url(stylesheet, base_path=base_path), quote=True)}">'
-        for stylesheet in extra_stylesheets
-    )
-    if stylesheet_tags:
-        stylesheet_tags += "\n"
-    alternate_link = ""
-    if json_alternate_url is not None:
-        alternate_link = (
-            '  <link rel="alternate" type="application/json" href="'
-            + html.escape(json_alternate_url, quote=True)
-            + '">\n'
-        )
-    canonical_link = ""
-    if canonical_url is not None:
-        canonical_link = (
-            '  <link rel="canonical" href="' + html.escape(canonical_url, quote=True) + '">\n'
-        )
-    structured_data_script = ""
-    if structured_data is not None:
-        serialized_structured_data = json.dumps(
-            structured_data,
-            ensure_ascii=False,
-            separators=(",", ":"),
-            sort_keys=True,
-        )
-        serialized_structured_data = (
-            serialized_structured_data.replace("&", "\\u0026")
-            .replace("<", "\\u003c")
-            .replace(">", "\\u003e")
-        )
-        structured_data_script = (
-            '  <script type="application/ld+json">' + serialized_structured_data + "</script>\n"
-        )
-    domain_navigation_markup = domain_navigation
-    return f"""<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{html.escape(description, quote=True)}">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; object-src 'self'; base-uri 'self'">
-  <title>{html.escape(title)}</title>
-{canonical_link}{alternate_link}{structured_data_script}{stylesheet_tags}  <link rel="stylesheet" href="{html.escape(_site_url("/assets/styles.css", base_path=base_path), quote=True)}">
-</head>
-<body>
-  <a class="skip-link" href="#main-content">본문으로 바로가기</a>
-  <header class="site-header">
-    <div class="site-header__inner">
-      <a class="site-brand" href="{html.escape(_site_url("/", base_path=base_path), quote=True)}" aria-label="KISA CCE 가이드 2026 홈">
-        <span class="site-brand__mark" aria-hidden="true"></span>
-        <span class="site-brand__name">KISA CCE</span>
-        <span class="site-brand__edition">GUIDE 2026</span>
-      </a>
-      <button class="nav-toggle" type="button" aria-expanded="true" aria-controls="site-navigation" data-navigation-toggle hidden>메뉴</button>
-      <nav id="site-navigation" class="site-nav" aria-label="주요 메뉴" data-site-navigation data-open="true">
-        {domain_navigation_markup}
-        <a href="{html.escape(_site_url("/search/", base_path=base_path), quote=True)}"{navigation_current("search")}>검색</a>
-      </nav>
-    </div>
-  </header>
-  {body}
-  <footer class="site-footer">
-    <div class="site-footer__inner">
-      <p class="site-footer__brand"><span aria-hidden="true"></span>KISA CCE GUIDE</p>
-      <p class="site-footer__license">라이선스: {html.escape(license_label)}</p>
-    </div>
-  </footer>
-  <div class="visually-hidden" role="status" aria-live="polite" aria-atomic="true" data-copy-status></div>
-  {script_tags}
-</body>
-</html>
-"""
+    context: dict[str, object] = {
+        "canonical_url": canonical_url,
+        "current_navigation": current_navigation,
+        "description": description,
+        "domain_navigation_current": domain_navigation_current,
+        "domain_navigation_items": _domain_navigation_view(
+            domains=domains,
+            current_domain=current_domain,
+            base_path=base_path,
+        ),
+        "home_url": _site_url("/", base_path=base_path),
+        "json_alternate_url": json_alternate_url,
+        "license_label": license_label,
+        "script_urls": [
+            _site_url(script, base_path=base_path) for script in ["/assets/site.js", *extra_scripts]
+        ],
+        "search_url": _site_url("/search/", base_path=base_path),
+        "site_stylesheet_url": _site_url("/assets/styles.css", base_path=base_path),
+        "structured_data": structured_data,
+        "stylesheet_urls": [
+            _site_url(stylesheet, base_path=base_path) for stylesheet in extra_stylesheets
+        ],
+        "theme_initialization_url": _site_url(
+            "/assets/theme-init.js",
+            base_path=base_path,
+        ),
+        "title": title,
+    }
+    if page_context is not None:
+        context.update(page_context)
+    return environment.get_template(template_name).render(context)
 
 
 def _taxonomy_maps(
@@ -289,49 +290,29 @@ def _taxonomy_maps(
     return domains, categories, targets
 
 
-def _render_domain_navigation_items(
+def _domain_navigation_view(
     *,
     domains: Mapping[str, dict[str, JsonValue]],
     current_domain: str | None,
     base_path: str,
-) -> str:
-    """Render the shared ordered domain navigation items."""
+) -> list[dict[str, object]]:
+    """Build ordered domain navigation items for the shared template."""
 
-    items = []
+    items: list[dict[str, object]] = []
     for domain_identifier, domain in sorted(
         domains.items(),
         key=lambda item: int(cast("int", item[1]["order"])),
     ):
-        current = ' aria-current="location"' if domain_identifier == current_domain else ""
         label = _text(domain["label"], location="taxonomy.domain.label")
         route = _site_url(f"/{domain_identifier}/", base_path=base_path)
         items.append(
-            f'<li><a href="{html.escape(route, quote=True)}"{current}>{html.escape(label)}</a></li>'
+            {
+                "current": domain_identifier == current_domain,
+                "label": label,
+                "url": route,
+            }
         )
-    return "".join(items)
-
-
-def _render_header_domain_navigation(
-    *,
-    domains: Mapping[str, dict[str, JsonValue]],
-    current_domain: str | None,
-    current: bool,
-    base_path: str,
-) -> str:
-    """Render domain navigation inside the primary header menu."""
-
-    items = _render_domain_navigation_items(
-        domains=domains,
-        current_domain=current_domain,
-        base_path=base_path,
-    )
-    all_domains_route = html.escape(_site_url("/", base_path=base_path), quote=True)
-    current_attribute = ' data-current-navigation="true"' if current else ""
-    return (
-        f'<details class="site-nav__domains"{current_attribute}>'
-        "<summary>분야</summary><ul>"
-        f'<li><a href="{all_domains_route}">전체 분야</a></li>' + items + "</ul></details>"
-    )
+    return items
 
 
 def _block_identifier(block: Mapping[str, JsonValue]) -> str:
@@ -342,8 +323,10 @@ def _block_identifier(block: Mapping[str, JsonValue]) -> str:
 
 def _render_table_of_contents_outline(
     heading_blocks: Sequence[dict[str, JsonValue]],
+    *,
+    environment: Environment | None = None,
 ) -> str:
-    """Render the document heading outline as valid nested lists."""
+    """Render the document heading outline with the recursive Jinja partial."""
 
     if len(heading_blocks) < _TABLE_OF_CONTENTS_MINIMUM_HEADING_COUNT:
         return ""
@@ -352,7 +335,11 @@ def _render_table_of_contents_outline(
     ancestors: list[_TableOfContentsNode] = []
     for block in heading_blocks:
         heading_level = int(cast("int", block["headingLevel"]))
-        node = _TableOfContentsNode(block=block, heading_level=heading_level)
+        node = _TableOfContentsNode(
+            identifier=_block_identifier(block),
+            text=_text(block["content"], location="block.content"),
+            heading_level=heading_level,
+        )
         while ancestors and heading_level <= ancestors[-1].heading_level:
             ancestors.pop()
         if ancestors:
@@ -360,53 +347,42 @@ def _render_table_of_contents_outline(
         else:
             roots.append(node)
         ancestors.append(node)
-
-    def render_nodes(
-        nodes: Sequence[_TableOfContentsNode],
-        *,
-        depth: int = 1,
-        root: bool = False,
-    ) -> str:
-        list_class = "toc__list toc__list--root" if root else "toc__list"
-        items = []
-        for node in nodes:
-            block_identifier = html.escape(_block_identifier(node.block), quote=True)
-            heading_text = html.escape(_text(node.block["content"], location="block.content"))
-            child_list = render_nodes(node.children, depth=depth + 1) if node.children else ""
-            items.append(
-                f'<li class="toc__item" data-toc-depth="{depth}" '
-                f'data-toc-heading-level="{node.heading_level}">'
-                f'<a href="#{block_identifier}" data-toc-depth="{depth}" '
-                f'data-toc-heading-level="{node.heading_level}">'
-                f"{heading_text}</a>{child_list}</li>"
-            )
-        return f'<ul class="{list_class}" data-toc-depth="{depth}">' + "".join(items) + "</ul>"
-
-    return render_nodes(roots, root=True)
-
-
-def _render_table_of_contents(heading_blocks: Sequence[dict[str, JsonValue]]) -> str:
-    """Render the collapsible in-content document outline."""
-
-    outline = _render_table_of_contents_outline(heading_blocks)
-    if not outline:
-        return ""
-    return (
-        '<nav class="toc" aria-label="문서 목차" data-table-of-contents>'
-        '<button class="toc__toggle" type="button" aria-expanded="true" '
-        'aria-controls="table-of-contents-content" data-table-of-contents-toggle hidden>목차</button>'
-        '<strong class="toc__title" id="table-of-contents-title">목차</strong>'
-        '<div id="table-of-contents-content" data-table-of-contents-content>'
-        + outline
-        + "</div></nav>"
+    active_environment = environment or _default_template_environment()
+    return active_environment.get_template("partials/table-of-contents.html").render(
+        nodes=roots,
+        outline_only=True,
     )
 
 
-def _html_attributes(attributes: Mapping[str, str]) -> str:
-    """Serialize deterministic escaped HTML attributes."""
+def _render_table_of_contents(
+    heading_blocks: Sequence[dict[str, JsonValue]],
+    *,
+    environment: Environment | None = None,
+) -> str:
+    """Render the collapsible document outline through Jinja."""
 
-    return " ".join(
-        f'{name}="{html.escape(value, quote=True)}"' for name, value in attributes.items()
+    if len(heading_blocks) < _TABLE_OF_CONTENTS_MINIMUM_HEADING_COUNT:
+        return ""
+    roots: list[_TableOfContentsNode] = []
+    ancestors: list[_TableOfContentsNode] = []
+    for block in heading_blocks:
+        heading_level = int(cast("int", block["headingLevel"]))
+        node = _TableOfContentsNode(
+            identifier=_block_identifier(block),
+            text=_text(block["content"], location="block.content"),
+            heading_level=heading_level,
+        )
+        while ancestors and heading_level <= ancestors[-1].heading_level:
+            ancestors.pop()
+        if ancestors:
+            ancestors[-1].children.append(node)
+        else:
+            roots.append(node)
+        ancestors.append(node)
+    active_environment = environment or _default_template_environment()
+    return active_environment.get_template("partials/table-of-contents.html").render(
+        nodes=roots,
+        outline_only=False,
     )
 
 
@@ -414,8 +390,8 @@ def _block_attributes(
     block: Mapping[str, JsonValue],
     *,
     extra: Mapping[str, str] | None = None,
-) -> str:
-    """Expose normalized identity, semantics, hierarchy, and provenance on one element."""
+) -> dict[str, str]:
+    """Build deterministic semantic and provenance attributes for one block."""
 
     identifier = _block_identifier(block)
     semantic_path = as_sequence(block["semanticPath"], location="block.semanticPath")
@@ -462,159 +438,16 @@ def _block_attributes(
         attributes["data-parent-block-reference"] = parent_reference
     if extra is not None:
         attributes.update(extra)
-    return _html_attributes(attributes)
+    return attributes
 
 
-def _render_table(
-    block: Mapping[str, JsonValue],
-    *,
-    parser: MarkdownIt,
-) -> str:
-    """Render a typed accessible table."""
-
-    identifier = _block_identifier(block)
-    headers = as_sequence(block["tableHeaders"], location="block.tableHeaders")
-    rows = as_sequence(block["tableRows"], location="block.tableRows")
-    header_cells = []
-    for column_index, value in enumerate(headers, start=1):
-        header_text = _text(value, location="table.header")
-        header_content = (
-            _inline_html(header_text, parser=parser)
-            if header_text
-            else f'<span class="visually-hidden">{column_index}번째 열</span>'
-        )
-        header_cells.append(f'<th scope="col">{header_content}</th>')
-    header_html = "".join(header_cells)
-    row_html = []
-    for row_value in rows:
-        row = as_sequence(row_value, location="table.row")
-        if len(row) != len(headers):
-            msg = f"{identifier} table row has {len(row)} cells; expected {len(headers)} cells"
-            raise ValueError(msg)
-        cells = "".join(
-            f"<td>{_inline_html(_text(value, location='table.cell'), parser=parser)}</td>"
-            for value in row
-        )
-        row_html.append(f"<tr>{cells}</tr>")
-    caption_value = block.get("caption")
-    label = (
-        caption_value
-        if isinstance(caption_value, str) and caption_value
-        else f"원문 표 {_text(block['semanticRole'], location='block.semanticRole')}"
-    )
-    caption_identifier = f"caption-{identifier}"
-    table_attributes = _block_attributes(
-        block,
-        extra={
-            "data-table-column-count": str(len(headers)),
-            "data-table-row-count": str(len(rows)),
-        },
-    )
-    return (
-        '<div class="table-scroll" role="region" '
-        f'aria-labelledby="{html.escape(caption_identifier, quote=True)}" tabindex="0">'
-        f'<table {table_attributes}><caption id="{html.escape(caption_identifier, quote=True)}">'
-        f"{html.escape(label)}</caption><thead><tr>{header_html}</tr></thead>"
-        f"<tbody>{''.join(row_html)}</tbody></table>"
-        "</div>"
-    )
-
-
-def _render_code(block: Mapping[str, JsonValue]) -> str:
-    """Render a typed code or transcription block."""
-
-    identifier = _block_identifier(block)
-    code_identifier = f"code-{identifier}"
-    language = _text(block.get("codeLanguage", "text"), location="block.codeLanguage")
-    content_type = _text(
-        block.get("codeContentType", "literal"),
-        location="block.codeContentType",
-    )
-    content = _text(block["content"], location="block.content")
-    highlight_language = _highlight_language(block)
-    rendered_language = highlight_language or language
-    transcription_class = " code-block--transcription" if content_type == "transcription" else ""
-    content_label = {
-        "command": "명령",
-        "configuration": "설정",
-        "output": "출력",
-        "literal": "리터럴",
-        "transcription": "원문 전사",
-    }.get(content_type, content_type)
-    code_profile_attributes = {
-        "data-code-content-type": content_type,
-        "data-code-language": language,
-    }
-    if highlight_language is not None:
-        code_profile_attributes["data-highlight-language"] = highlight_language
-    pre_attributes = _block_attributes(block, extra=code_profile_attributes)
-    code_attributes = _html_attributes(code_profile_attributes)
-    return (
-        f'<div class="code-block{transcription_class}">'
-        f'<button class="copy-button" type="button" data-copy-button="{html.escape(code_identifier, quote=True)}" hidden '
-        f'aria-controls="{html.escape(code_identifier, quote=True)}" '
-        f'aria-label="{html.escape(content_label)} 복사">복사</button>'
-        f'<pre {pre_attributes} aria-label="{html.escape(content_label, quote=True)} 내용"><code '
-        f'id="{html.escape(code_identifier, quote=True)}" class="language-{html.escape(rendered_language, quote=True)}" '
-        f"{code_attributes}>"
-        f"{html.escape(content)}</code></pre></div>"
-    )
-
-
-def _render_image(
-    block: Mapping[str, JsonValue],
+def _render_blocks(
+    block_values: list[JsonValue],
     *,
     base_path: str,
+    environment: Environment | None = None,
 ) -> str:
-    """Render a source image with a keyboard-accessible full-size link."""
-
-    identifier = _block_identifier(block)
-    asset_path = _text(block["assetPath"], location="block.assetPath")
-    alternative_text = _text(block["alternativeText"], location="block.alternativeText")
-    alternative_text_status = _text(
-        block["alternativeTextStatus"],
-        location="block.alternativeTextStatus",
-    )
-    pixel_dimensions = as_sequence(
-        block["outputPixelDimensions"],
-        location="block.outputPixelDimensions",
-    )
-    pixel_width = int(cast("int", pixel_dimensions[0]))
-    pixel_height = int(cast("int", pixel_dimensions[1]))
-    caption_value = block.get("caption")
-    caption = caption_value if isinstance(caption_value, str) else alternative_text
-    asset_url = _site_url("/" + asset_path.lstrip("/"), base_path=base_path)
-    review_status = (
-        '<span class="badge badge--review">대체 텍스트 검토 필요</span>'
-        if alternative_text_status == "verificationRequired"
-        else '<span class="badge">대체 텍스트 검토 완료</span>'
-    )
-    caption_identifier = f"caption-{identifier}"
-    figure_attributes = _block_attributes(
-        block,
-        extra={
-            "data-asset-type": _text(block["assetType"], location="block.assetType"),
-            "data-rendering-profile": _text(
-                block["renderingProfileIdentifier"],
-                location="block.renderingProfileIdentifier",
-            ),
-            "data-alternative-text-status": alternative_text_status,
-        },
-    )
-    return (
-        f'<figure class="source-visual" {figure_attributes} '
-        f'aria-labelledby="{html.escape(caption_identifier, quote=True)}">'
-        f'<a href="{html.escape(asset_url, quote=True)}" aria-label="{html.escape(alternative_text, quote=True)} 원본 크기로 보기">'
-        f'<img src="{html.escape(asset_url, quote=True)}" alt="{html.escape(alternative_text, quote=True)}" '
-        f'width="{pixel_width}" height="{pixel_height}" '
-        'loading="lazy" decoding="async"></a>'
-        f'<figcaption id="{html.escape(caption_identifier, quote=True)}">'
-        f"{html.escape(caption)} {review_status}</figcaption></figure>"
-    )
-
-
-def _render_blocks(block_values: list[JsonValue], *, base_path: str) -> str:
-    """Render typed blocks while preserving list and parent ownership."""
+    """Build typed block views and render them with the recursive Jinja partial."""
 
     parser = _inline_renderer()
     blocks = [
@@ -629,57 +462,169 @@ def _render_blocks(block_values: list[JsonValue], *, base_path: str) -> str:
         else:
             top_level.append(block)
 
-    def render_list_item(block: dict[str, JsonValue]) -> str:
+    def build_list_item(block: dict[str, JsonValue]) -> dict[str, object]:
         identifier = _block_identifier(block)
         list_type = _text(block["listType"], location="block.listType")
         list_depth = str(int(cast("int", block["listDepth"])))
-        content = _inline_html(
+        content = _inline_markup(
             _text(block["content"], location="block.content"),
             parser=parser,
         )
-        child_values = children.get(identifier, [])
-        child_html = render_sequence(child_values)
-        attributes = _block_attributes(
-            block,
-            extra={"data-list-type": list_type, "data-list-depth": list_depth},
-        )
-        return f"<li {attributes}>{content}{child_html}</li>"
+        return {
+            "attributes": _block_attributes(
+                block,
+                extra={"data-list-type": list_type, "data-list-depth": list_depth},
+            ),
+            "children": build_sequence(children.get(identifier, [])),
+            "content": content,
+        }
 
-    def render_single(block: dict[str, JsonValue]) -> str:
+    def build_single(block: dict[str, JsonValue]) -> dict[str, object]:
         block_type = _text(block["blockType"], location="block.blockType")
         content = _text(block["content"], location="block.content")
         if block_type == "heading":
             heading_level = int(cast("int", block["headingLevel"]))
-            attributes = _block_attributes(
-                block,
-                extra={"data-heading-level": str(heading_level)},
-            )
-            return (
-                f"<h{heading_level} {attributes}>"
-                f"{_inline_html(content, parser=parser)}</h{heading_level}>"
-            )
-        if block_type == "paragraph":
-            return f"<p {_block_attributes(block)}>{_inline_html(content, parser=parser)}</p>"
+            return {
+                "attributes": _block_attributes(
+                    block,
+                    extra={"data-heading-level": str(heading_level)},
+                ),
+                "content": _inline_markup(content, parser=parser),
+                "heading_level": heading_level,
+                "kind": "heading",
+            }
+        if block_type in {"paragraph", "noteContent", "noteLabel"}:
+            return {
+                "attributes": _block_attributes(block),
+                "content": _inline_markup(content, parser=parser),
+                "css_class": "note__label" if block_type == "noteLabel" else None,
+                "kind": "paragraph",
+            }
         if block_type == "codeBlock":
-            return _render_code(block)
-        if block_type == "table":
-            return _render_table(block, parser=parser)
-        if block_type == "image":
-            return _render_image(block, base_path=base_path)
-        if block_type == "listItem":
-            return render_list_item(block)
-        if block_type == "noteContent":
-            return f"<p {_block_attributes(block)}>{_inline_html(content, parser=parser)}</p>"
-        if block_type == "noteLabel":
-            return (
-                f'<p class="note__label" {_block_attributes(block)}>'
-                f"{_inline_html(content, parser=parser)}</p>"
+            identifier = _block_identifier(block)
+            language = _text(block.get("codeLanguage", "text"), location="block.codeLanguage")
+            content_type = _text(
+                block.get("codeContentType", "literal"),
+                location="block.codeContentType",
             )
+            highlight_language = _highlight_language(block)
+            code_attributes = {
+                "data-code-content-type": content_type,
+                "data-code-language": language,
+            }
+            if highlight_language is not None:
+                code_attributes["data-highlight-language"] = highlight_language
+            return {
+                "attributes": _block_attributes(block, extra=code_attributes),
+                "code_attributes": code_attributes,
+                "code_identifier": f"code-{identifier}",
+                "content": content,
+                "content_label": {
+                    "command": "명령",
+                    "configuration": "설정",
+                    "output": "출력",
+                    "literal": "리터럴",
+                    "transcription": "원문 전사",
+                }.get(content_type, content_type),
+                "kind": "code",
+                "rendered_language": highlight_language or language,
+                "transcription_class": (
+                    " code-block--transcription" if content_type == "transcription" else ""
+                ),
+            }
+        if block_type == "table":
+            identifier = _block_identifier(block)
+            headers = as_sequence(block["tableHeaders"], location="block.tableHeaders")
+            rows = as_sequence(block["tableRows"], location="block.tableRows")
+            rendered_headers: list[dict[str, Markup | None]] = []
+            for value in headers:
+                header_text = _text(value, location="table.header")
+                rendered_headers.append(
+                    {
+                        "content": (
+                            _inline_markup(header_text, parser=parser) if header_text else None
+                        )
+                    }
+                )
+            rendered_rows: list[list[Markup]] = []
+            for row_value in rows:
+                row = as_sequence(row_value, location="table.row")
+                if len(row) != len(headers):
+                    msg = (
+                        f"{identifier} table row has {len(row)} cells; "
+                        f"expected {len(headers)} cells"
+                    )
+                    raise ValueError(msg)
+                rendered_rows.append(
+                    [
+                        _inline_markup(_text(value, location="table.cell"), parser=parser)
+                        for value in row
+                    ]
+                )
+            caption_value = block.get("caption")
+            label = (
+                caption_value
+                if isinstance(caption_value, str) and caption_value
+                else f"원문 표 {_text(block['semanticRole'], location='block.semanticRole')}"
+            )
+            return {
+                "attributes": _block_attributes(
+                    block,
+                    extra={
+                        "data-table-column-count": str(len(headers)),
+                        "data-table-row-count": str(len(rows)),
+                    },
+                ),
+                "caption_identifier": f"caption-{identifier}",
+                "headers": rendered_headers,
+                "kind": "table",
+                "label": label,
+                "rows": rendered_rows,
+            }
+        if block_type == "image":
+            identifier = _block_identifier(block)
+            asset_path = _text(block["assetPath"], location="block.assetPath")
+            alternative_text = _text(
+                block["alternativeText"],
+                location="block.alternativeText",
+            )
+            alternative_text_status = _text(
+                block["alternativeTextStatus"],
+                location="block.alternativeTextStatus",
+            )
+            pixel_dimensions = as_sequence(
+                block["outputPixelDimensions"],
+                location="block.outputPixelDimensions",
+            )
+            caption_value = block.get("caption")
+            return {
+                "alternative_text": alternative_text,
+                "asset_url": _site_url("/" + asset_path.lstrip("/"), base_path=base_path),
+                "attributes": _block_attributes(
+                    block,
+                    extra={
+                        "data-asset-type": _text(block["assetType"], location="block.assetType"),
+                        "data-rendering-profile": _text(
+                            block["renderingProfileIdentifier"],
+                            location="block.renderingProfileIdentifier",
+                        ),
+                        "data-alternative-text-status": alternative_text_status,
+                    },
+                ),
+                "caption": caption_value if isinstance(caption_value, str) else alternative_text,
+                "caption_identifier": f"caption-{identifier}",
+                "kind": "image",
+                "pixel_height": int(cast("int", pixel_dimensions[1])),
+                "pixel_width": int(cast("int", pixel_dimensions[0])),
+                "verification_required": alternative_text_status == "verificationRequired",
+            }
+        if block_type == "listItem":
+            return build_list_item(block)
         msg = f"unsupported normalized block type: {block_type}"
         raise ValueError(msg)
 
-    def render_sequence(sequence: Sequence[dict[str, JsonValue]]) -> str:
-        parts: list[str] = []
+    def build_sequence(sequence: Sequence[dict[str, JsonValue]]) -> list[dict[str, object]]:
+        parts: list[dict[str, object]] = []
         index = 0
         while index < len(sequence):
             block = sequence[index]
@@ -701,10 +646,13 @@ def _render_blocks(block_values: list[JsonValue], *, base_path: str) -> str:
                 tag = "ol" if list_type == "ordered" else "ul"
                 first_list_depth = str(int(cast("int", grouped[0]["listDepth"])))
                 parts.append(
-                    f'<{tag} data-list-type="{html.escape(_text(list_type, location="block.listType"), quote=True)}" '
-                    f'data-list-depth="{html.escape(first_list_depth, quote=True)}">'
-                    + "".join(render_list_item(item) for item in grouped)
-                    + f"</{tag}>"
+                    {
+                        "items": [build_list_item(item) for item in grouped],
+                        "kind": "list",
+                        "list_depth": first_list_depth,
+                        "list_type": _text(list_type, location="block.listType"),
+                        "tag": tag,
+                    }
                 )
                 continue
             if block_type == "noteLabel":
@@ -718,52 +666,53 @@ def _render_blocks(block_values: list[JsonValue], *, base_path: str) -> str:
                     index += 1
                 note_label_identifier = _block_identifier(note_blocks[0])
                 parts.append(
-                    '<aside class="note" role="note" aria-labelledby="'
-                    + html.escape(note_label_identifier, quote=True)
-                    + '" data-note-label-reference="'
-                    + html.escape(note_label_identifier, quote=True)
-                    + '">'
-                    + render_single(note_blocks[0])
-                    + render_sequence(note_blocks[1:])
-                    + "</aside>"
+                    {
+                        "children": [
+                            build_single(note_blocks[0]),
+                            *build_sequence(note_blocks[1:]),
+                        ],
+                        "kind": "note",
+                        "label_identifier": note_label_identifier,
+                    }
                 )
                 continue
-            parts.append(render_single(block))
+            parts.append(build_single(block))
             index += 1
-        return "".join(parts)
+        return parts
 
-    return render_sequence(top_level)
+    active_environment = environment or _default_template_environment()
+    return active_environment.get_template("partials/blocks.html").render(
+        blocks=build_sequence(top_level)
+    )
 
 
-def _criterion_list(
+def _criterion_list_view(
     records: Sequence[Mapping[str, JsonValue]],
     *,
     base_path: str,
-) -> str:
-    """Render a static criterion list."""
+) -> list[dict[str, str]]:
+    """Build ordered static criterion-list items for Jinja templates."""
 
-    items = []
+    items: list[dict[str, str]] = []
     for record in records:
-        code = _text(record["code"], location="manifest.code")
-        title = _text(record["title"], location="manifest.title")
         route = _text(record["route"], location="manifest.route")
-        severity = _text(record["severitySourceLabel"], location="manifest.severity")
         items.append(
-            '<li><a href="'
-            + html.escape(_site_url(route, base_path=base_path), quote=True)
-            + '"><strong>'
-            + html.escape(code)
-            + "</strong><span>"
-            + html.escape(title)
-            + '</span><span class="badge">'
-            + html.escape(severity)
-            + "</span></a></li>"
+            {
+                "code": _text(record["code"], location="manifest.code"),
+                "severity": _text(
+                    record["severitySourceLabel"],
+                    location="manifest.severity",
+                ),
+                "title": _text(record["title"], location="manifest.title"),
+                "url": _site_url(route, base_path=base_path),
+            }
         )
-    return '<ul class="criterion-list">' + "".join(items) + "</ul>"
+    return items
 
 
 def _detail_page(
     *,
+    environment: Environment,
     normalized: dict[str, JsonValue],
     previous_record: dict[str, JsonValue] | None,
     next_record: dict[str, JsonValue] | None,
@@ -837,7 +786,7 @@ def _detail_page(
         for block in blocks
         if isinstance(block, dict) and block.get("blockType") == "heading"
     ]
-    toc = _render_table_of_contents(heading_blocks)
+    toc = _render_table_of_contents(heading_blocks, environment=environment)
     document_class = (
         "criterion__document criterion__document--with-toc" if toc else "criterion__document"
     )
@@ -858,46 +807,6 @@ def _detail_page(
     )
     source_title = _text(source_document["title"], location="source.title")
     source_publisher = _text(source_document["publisher"], location="source.publisher")
-    article_attributes = (
-        f'data-criterion-code="{html.escape(code, quote=True)}" '
-        f'data-severity="{html.escape(severity_level, quote=True)}" '
-        f'data-content-model="{html.escape(content_model, quote=True)}" '
-        f'data-source-document="{html.escape(_text(provenance["sourceDocumentIdentifier"], location="provenance.sourceDocumentIdentifier"), quote=True)}"'
-    )
-    pager_links = []
-    if previous_record is not None:
-        pager_links.append(
-            '<a rel="prev" href="'
-            + html.escape(
-                _site_url(
-                    _text(previous_record["route"], location="previous.route"), base_path=base_path
-                ),
-                quote=True,
-            )
-            + '">← '
-            + html.escape(_text(previous_record["code"], location="previous.code"))
-            + "</a>"
-        )
-    else:
-        pager_links.append("<span></span>")
-    if next_record is not None:
-        pager_links.append(
-            '<a rel="next" href="'
-            + html.escape(
-                _site_url(_text(next_record["route"], location="next.route"), base_path=base_path),
-                quote=True,
-            )
-            + '">'
-            + html.escape(_text(next_record["code"], location="next.code"))
-            + " →</a>"
-        )
-    breadcrumb = (
-        '<nav class="breadcrumb" aria-label="분류 경로"><ol>'
-        f'<li><a href="{html.escape(_site_url("/", base_path=base_path), quote=True)}">홈</a></li>'
-        f'<li><a href="{html.escape(_site_url(f"/{domain_identifier}/", base_path=base_path), quote=True)}">{html.escape(domain_label)}</a></li>'
-        f'<li><a href="{html.escape(_site_url(f"/{domain_identifier}/{category_identifier}/", base_path=base_path), quote=True)}">{html.escape(category_label)}</a></li>'
-        f"<li>{html.escape(code)}</li></ol></nav>"
-    )
     dataset_url = _site_url(
         f"/dataset/criteria/{domain_identifier}/{_text(criterion['slug'], location='criterion.slug')}.json",
         base_path=base_path,
@@ -932,56 +841,78 @@ def _detail_page(
         "keywords": [severity_source, *target_labels],
         "pagination": f"{first_page}-{last_page}",
     }
-    body = (
-        '<main id="main-content" class="page-shell page-shell--detail">'
-        '<div class="content">'
-        + breadcrumb
-        + f'<article class="criterion" {article_attributes}>'
-        + '<header class="criterion__header">'
-        + f"<h1>{html.escape(code)} {html.escape(title)}</h1>"
-        + '<dl class="criterion-meta">'
-        + '<dt class="visually-hidden">중요도</dt>'
-        + f'<dd class="badge badge--{html.escape(severity_level)}"><span aria-hidden="true">중요도 </span>{html.escape(severity_source)}</dd>'
-        + '<dt class="visually-hidden">분야</dt>'
-        + f'<dd class="badge">{html.escape(domain_label)}</dd>'
-        + '<dt class="visually-hidden">분류</dt>'
-        + f'<dd class="badge">{html.escape(category_label)}</dd>'
-        + '<dt class="visually-hidden">문서 상태</dt>'
-        + f'<dd class="badge badge--review">{html.escape(review_label)}</dd>'
-        + '<dt class="visually-hidden">대상</dt>'
-        + f'<dd><span aria-hidden="true">대상: </span>{html.escape(", ".join(target_labels))}</dd>'
-        + '<dt class="visually-hidden">원문 페이지</dt>'
-        + f'<dd><span aria-hidden="true">원문 페이지: </span>{first_page}-{last_page}</dd>'
-        + "</dl>"
-        + f'<p><a type="application/json" href="{html.escape(dataset_url, quote=True)}">JSON 데이터 보기</a></p>'
-        + "</header>"
-        + f'<div class="{document_class}">'
-        + toc
-        + '<div class="criterion__body">'
-        + _render_blocks(blocks, base_path=base_path)
-        + "</div></div></article>"
-        + '<nav class="pager" aria-label="이전 및 다음 항목">'
-        + "".join(pager_links)
-        + "</nav></div></main>"
+    previous_item = (
+        {
+            "code": _text(previous_record["code"], location="previous.code"),
+            "url": _site_url(
+                _text(previous_record["route"], location="previous.route"),
+                base_path=base_path,
+            ),
+        }
+        if previous_record is not None
+        else None
     )
-    return _html_document(
+    next_item = (
+        {
+            "code": _text(next_record["code"], location="next.code"),
+            "url": _site_url(
+                _text(next_record["route"], location="next.route"),
+                base_path=base_path,
+            ),
+        }
+        if next_record is not None
+        else None
+    )
+    return _render_page(
+        environment=environment,
+        template_name="pages/criterion.html",
         title=f"{code} {title} · KISA CCE 가이드 2026",
         description=f"{code} {title} 점검항목",
-        body=body,
         base_path=base_path,
+        domains=domains,
+        current_domain=domain_identifier,
         extra_scripts=highlight_scripts,
         extra_stylesheets=highlight_stylesheets,
         canonical_url=criterion_url,
         current_navigation="domains",
-        domain_navigation=_render_header_domain_navigation(
-            domains=domains,
-            current_domain=domain_identifier,
-            current=True,
-            base_path=base_path,
-        ),
+        domain_navigation_current=True,
         license_label=license_label,
         json_alternate_url=dataset_url,
         structured_data=structured_data,
+        page_context={
+            "category_label": category_label,
+            "category_url": _site_url(
+                f"/{domain_identifier}/{category_identifier}/",
+                base_path=base_path,
+            ),
+            "code": code,
+            "content_model": content_model,
+            "criterion_title": title,
+            "dataset_url": dataset_url,
+            "document_class": document_class,
+            "domain_label": domain_label,
+            "domain_url": _site_url(f"/{domain_identifier}/", base_path=base_path),
+            "first_page": first_page,
+            "last_page": last_page,
+            "next_item": next_item,
+            "previous_item": previous_item,
+            "rendered_blocks": _rendered_markup(
+                _render_blocks(
+                    blocks,
+                    base_path=base_path,
+                    environment=environment,
+                )
+            ),
+            "review_label": review_label,
+            "severity_level": severity_level,
+            "severity_source": severity_source,
+            "source_document_identifier": _text(
+                provenance["sourceDocumentIdentifier"],
+                location="provenance.sourceDocumentIdentifier",
+            ),
+            "table_of_contents": _rendered_markup(toc),
+            "target_labels": target_labels,
+        },
     )
 
 
@@ -1002,6 +933,7 @@ def build_site(
     if site_root.exists():
         shutil.rmtree(site_root)
     site_root.mkdir(parents=True)
+    environment = _template_environment(repository / SITE_TEMPLATE_DIRECTORY)
     nojekyll_path = site_root / ".nojekyll"
     nojekyll_path.write_text("", encoding="utf-8")
     domains, categories, targets = _taxonomy_maps(taxonomy)
@@ -1034,6 +966,7 @@ def build_site(
     asset_directory.mkdir()
     for asset_name in (
         "styles.css",
+        "theme-init.js",
         "site.js",
         "search-core.js",
         "search.js",
@@ -1096,7 +1029,7 @@ def build_site(
         records_by_domain[domain_identifier].append(record)
         records_by_category[(domain_identifier, category_identifier)].append(record)
 
-    domain_cards = []
+    domain_cards: list[dict[str, object]] = []
     for domain_identifier, domain in sorted(
         domains.items(),
         key=lambda item: int(cast("int", item[1]["order"])),
@@ -1104,13 +1037,11 @@ def build_site(
         label = _text(domain["label"], location="domain.label")
         count = len(records_by_domain[domain_identifier])
         domain_cards.append(
-            '<a class="card" href="'
-            + html.escape(_site_url(f"/{domain_identifier}/", base_path=base_path), quote=True)
-            + '"><strong>'
-            + html.escape(label)
-            + "</strong><span>"
-            + str(count)
-            + "개 점검항목</span></a>"
+            {
+                "count": count,
+                "label": label,
+                "url": _site_url(f"/{domain_identifier}/", base_path=base_path),
+            }
         )
     skill_url = _site_url("/SKILL.md", base_path=base_path)
     skill_page_url = _site_url("/skill/", base_path=base_path)
@@ -1119,100 +1050,47 @@ def build_site(
         "[대상 환경과 보안 질문]에 관련된 점검항목을 찾아 "
         "판단 기준, 조치 방법, 적용 대상과 근거 링크를 정리해줘."
     )
-    root_body = (
-        '<main id="main-content" class="page-shell page-shell--single page-shell--home">'
-        '<section class="hero" aria-labelledby="hero-heading">'
-        '<p class="hero__eyebrow">2026 SECURITY CHECKLIST</p>'
-        '<h1 id="hero-heading">KISA CCE 가이드</h1>'
-        '<p class="hero__lede">382개 보안 점검항목을 분야별로 탐색하고, 코드·제목·본문·설정값으로 검색할 수 있는 비공식 웹 변환본입니다.</p>'
-        '<form class="search-form" action="'
-        + html.escape(_site_url("/search/", base_path=base_path), quote=True)
-        + '"><label><span class="visually-hidden">검색어</span><input name="q" type="search" placeholder="U-01, PermitRootLogin, 비밀번호 정책"></label>'
-        '<button class="primary-button" type="submit">점검항목 검색</button></form>'
-        '<dl class="hero__stats" aria-label="가이드 현황">'
-        "<div><dt>점검항목</dt><dd>382</dd></div>"
-        "<div><dt>기술 분야</dt><dd>12</dd></div>"
-        "<div><dt>데이터 형식</dt><dd>HTML + JSON</dd></div>"
-        "</dl></section>"
-        '<section class="surface domain-directory" aria-labelledby="domain-directory-heading">'
-        '<div class="section-heading"><div><p class="section-heading__eyebrow">TECHNICAL DOMAINS</p>'
-        '<h2 id="domain-directory-heading">분야별 점검항목</h2></div>'
-        "<p>운영 환경을 선택해 분류와 세부 점검항목을 확인하세요.</p></div>"
-        '<div class="card-grid">' + "".join(domain_cards) + "</div></section>"
-        '<section class="surface llm-guide" aria-labelledby="llm-guide-heading">'
-        '<div class="section-heading"><div><p class="section-heading__eyebrow">LLM ACCESS</p>'
-        '<h2 id="llm-guide-heading">LLM으로 가이드 사용하기</h2></div>'
-        "<p>빌드된 검색·분야·상세 페이지를 탐색하고, 화면에 보이는 내용으로 답합니다.</p></div>"
-        '<ol class="llm-guide__steps">'
-        "<li><strong>지침 제공</strong><span>LLM에 이 사이트와 <code>SKILL.md</code> 주소를 함께 전달합니다.</span></li>"
-        "<li><strong>자연어 질문</strong><span>대상 환경, 점검 목적, 필요한 결과를 문장으로 요청합니다.</span></li>"
-        "<li><strong>근거 확인</strong><span>선택된 항목의 코드, 판단 기준, 조치 방법과 링크를 확인합니다.</span></li>"
-        "</ol>"
-        '<div class="llm-guide__actions"><a class="primary-button" href="'
-        + html.escape(skill_page_url, quote=True)
-        + '">본문 보기</a></div>'
-        '<section class="llm-guide__prompt" aria-labelledby="llm-prompt-heading">'
-        '<h3 id="llm-prompt-heading">요청 예시</h3>'
-        '<div class="code-block"><button class="copy-button" type="button" '
-        'data-copy-button="llm-usage-prompt" hidden>복사</button><pre><code id="llm-usage-prompt">'
-        + html.escape(skill_usage_prompt)
-        + "</code></pre></div></section>"
-        "</section>"
-        "</main>"
-    )
     root_path = site_root / "index.html"
     root_path.write_text(
-        _html_document(
+        _render_page(
+            environment=environment,
+            template_name="pages/home.html",
             title="KISA CCE 가이드 2026",
             description="KISA CCE 2026 점검항목 검색 및 탐색",
-            body=root_body,
             base_path=base_path,
+            domains=domains,
+            current_domain=None,
             canonical_url=_site_url("/", base_path=base_path),
             current_navigation="domains",
-            domain_navigation=_render_header_domain_navigation(
-                domains=domains,
-                current_domain=None,
-                current=True,
-                base_path=base_path,
-            ),
+            domain_navigation_current=True,
             license_label=license_label,
+            page_context={
+                "domain_cards": domain_cards,
+                "skill_page_url": skill_page_url,
+                "skill_usage_prompt": skill_usage_prompt,
+            },
         ),
         encoding="utf-8",
     )
     generated_paths.append(root_path)
 
-    skill_body = (
-        '<main id="main-content" class="page-shell page-shell--single skill-page">'
-        '<nav class="breadcrumb" aria-label="분류 경로"><ol><li><a href="'
-        + html.escape(_site_url("/", base_path=base_path), quote=True)
-        + '">홈</a></li><li>LLM 사용 지침</li></ol></nav>'
-        '<article class="surface skill-document" aria-labelledby="skill-page-heading">'
-        '<header class="skill-page__header"><p class="section-heading__eyebrow">INSTRUCTIONS</p>'
-        '<h1 id="skill-page-heading">LLM 사용 지침</h1>'
-        "<p>빌드된 웹페이지를 탐색하고, 보이는 KISA CCE 문서 내용으로 답하기 위한 지침입니다.</p>"
-        '<div class="llm-guide__actions"><a class="primary-button" href="'
-        + html.escape(skill_url, quote=True)
-        + '" download>SKILL.md 다운로드</a></div></header>'
-        '<div class="skill-document__body" data-skill-document>'
-        + rendered_skill_document
-        + "</div></article></main>"
-    )
     skill_page_path = site_root / "skill" / "index.html"
     skill_page_path.parent.mkdir(parents=True)
     skill_page_path.write_text(
-        _html_document(
+        _render_page(
+            environment=environment,
+            template_name="pages/skill.html",
             title="LLM 사용 지침 · KISA CCE 가이드 2026",
             description="KISA CCE 가이드 웹페이지를 탐색하는 LLM용 SKILL.md 사용 지침",
-            body=skill_body,
             base_path=base_path,
+            domains=domains,
+            current_domain=None,
             canonical_url=skill_page_url,
-            domain_navigation=_render_header_domain_navigation(
-                domains=domains,
-                current_domain=None,
-                current=False,
-                base_path=base_path,
-            ),
             license_label=license_label,
+            page_context={
+                "rendered_skill_document": _rendered_markup(rendered_skill_document),
+                "skill_url": skill_url,
+            },
         ),
         encoding="utf-8",
     )
@@ -1221,7 +1099,7 @@ def build_site(
     for domain_identifier in records_by_domain:
         domain = domains[domain_identifier]
         domain_label = _text(domain["label"], location="domain.label")
-        sections = []
+        sections: list[dict[str, object]] = []
         domain_categories = [
             (category_identifier, category)
             for (candidate_domain, category_identifier), category in categories.items()
@@ -1237,59 +1115,61 @@ def build_site(
                 f"/{domain_identifier}/{category_identifier}/",
                 base_path=base_path,
             )
-            sections.append(
-                f'<section><h2><a href="{html.escape(category_route, quote=True)}">{html.escape(category_label)}</a></h2>'
-                + _criterion_list(category_records, base_path=base_path)
-                + "</section>"
+            category_record_views = _criterion_list_view(
+                category_records,
+                base_path=base_path,
             )
-            category_body = (
-                '<main id="main-content" class="page-shell page-shell--single"><section class="surface">'
-                f"<h1>{html.escape(domain_label)} · {html.escape(category_label)}</h1>"
-                + _criterion_list(category_records, base_path=base_path)
-                + "</section></main>"
+            sections.append(
+                {
+                    "label": category_label,
+                    "records": category_record_views,
+                    "url": category_route,
+                }
             )
             category_path = site_root / domain_identifier / category_identifier / "index.html"
             category_path.parent.mkdir(parents=True, exist_ok=True)
             category_path.write_text(
-                _html_document(
+                _render_page(
+                    environment=environment,
+                    template_name="pages/listing.html",
                     title=f"{category_label} · {domain_label}",
                     description=f"{domain_label} {category_label} 점검항목",
-                    body=category_body,
                     base_path=base_path,
+                    domains=domains,
+                    current_domain=domain_identifier,
                     canonical_url=category_route,
                     current_navigation="domains",
-                    domain_navigation=_render_header_domain_navigation(
-                        domains=domains,
-                        current_domain=domain_identifier,
-                        current=True,
-                        base_path=base_path,
-                    ),
+                    domain_navigation_current=True,
                     license_label=license_label,
+                    page_context={
+                        "heading": f"{domain_label} · {category_label}",
+                        "records": category_record_views,
+                        "sections": [],
+                    },
                 ),
                 encoding="utf-8",
             )
             generated_paths.append(category_path)
-        domain_body = (
-            '<main id="main-content" class="page-shell page-shell--single"><section class="surface">'
-            f"<h1>{html.escape(domain_label)}</h1>" + "".join(sections) + "</section></main>"
-        )
         domain_path = site_root / domain_identifier / "index.html"
         domain_path.parent.mkdir(parents=True, exist_ok=True)
         domain_path.write_text(
-            _html_document(
+            _render_page(
+                environment=environment,
+                template_name="pages/listing.html",
                 title=f"{domain_label} · KISA CCE 가이드 2026",
                 description=f"{domain_label} 점검항목",
-                body=domain_body,
                 base_path=base_path,
+                domains=domains,
+                current_domain=domain_identifier,
                 canonical_url=_site_url(f"/{domain_identifier}/", base_path=base_path),
                 current_navigation="domains",
-                domain_navigation=_render_header_domain_navigation(
-                    domains=domains,
-                    current_domain=domain_identifier,
-                    current=True,
-                    base_path=base_path,
-                ),
+                domain_navigation_current=True,
                 license_label=license_label,
+                page_context={
+                    "heading": domain_label,
+                    "records": [],
+                    "sections": sections,
+                },
             ),
             encoding="utf-8",
         )
@@ -1307,6 +1187,7 @@ def build_site(
         detail_path.parent.mkdir(parents=True, exist_ok=True)
         detail_path.write_text(
             _detail_page(
+                environment=environment,
                 normalized=normalized,
                 previous_record=previous_record,
                 next_record=next_record,
@@ -1321,79 +1202,46 @@ def build_site(
         )
         generated_paths.append(detail_path)
 
-    search_fallback = (
-        '<section aria-labelledby="search-fallback-heading" data-search-fallback>'
-        '<h2 id="search-fallback-heading">전체 점검항목</h2>'
-        "<p>브라우저 검색 기능을 사용할 수 없어, 전체 점검항목을 표시합니다.</p>"
-        + _criterion_list(manifest_records, base_path=base_path)
-        + "</section>"
-    )
-    search_body = (
-        '<main id="main-content" class="page-shell page-shell--single"><section class="surface" '
-        'role="search" aria-labelledby="search-heading" data-search-root data-base-path="'
-        + html.escape("/" + base_path.strip("/") if base_path.strip("/") else "", quote=True)
-        + '" data-search-index-url="'
-        + html.escape(_site_url("/dataset/search-index.json", base_path=base_path), quote=True)
-        + '"><h1 id="search-heading">전체 점검항목 검색</h1>'
-        '<form id="criterion-search-form" class="search-form" data-search-form action="'
-        + html.escape(_site_url("/search/", base_path=base_path), quote=True)
-        + '"><label><span class="visually-hidden">검색어</span><input name="q" type="search" data-search-query '
-        'aria-controls="search-results" aria-describedby="search-help search-status" '
-        'placeholder="예: 리눅스에서 root 원격 로그인을 막고 싶어"></label>'
-        '<button class="primary-button" type="submit">검색</button></form>'
-        '<p id="search-help" class="search-help">문장으로 질문하거나, 코드·설정값을 입력하세요.</p>'
-        '<div class="filters"><label>분야<select form="criterion-search-form" name="domain" data-domain-filter><option value="">전체</option></select></label>'
-        '<label>분류<select form="criterion-search-form" name="category" data-category-filter><option value="">전체</option></select></label>'
-        '<label>중요도<select form="criterion-search-form" name="severity" data-severity-filter><option value="">전체</option><option value="high">상</option><option value="medium">중</option><option value="low">하</option></select></label>'
-        '<label>대상<select form="criterion-search-form" name="target" data-target-filter><option value="">전체</option></select></label></div>'
-        '<p id="search-status" role="status" aria-live="polite" aria-atomic="true" '
-        "data-search-status>검색어와 필터를 입력하세요.</p>"
-        '<ul id="search-results" class="search-results" data-search-results></ul>'
-        + search_fallback
-        + "</section></main>"
-    )
     search_path = site_root / "search" / "index.html"
     search_path.parent.mkdir()
     search_path.write_text(
-        _html_document(
+        _render_page(
+            environment=environment,
+            template_name="pages/search.html",
             title="검색 · KISA CCE 가이드 2026",
             description="KISA CCE 점검항목 검색",
-            body=search_body,
             base_path=base_path,
+            domains=domains,
+            current_domain=None,
             canonical_url=_site_url("/search/", base_path=base_path),
             extra_scripts=("/assets/search-core.js", "/assets/search.js"),
             current_navigation="search",
-            domain_navigation=_render_header_domain_navigation(
-                domains=domains,
-                current_domain=None,
-                current=False,
-                base_path=base_path,
-            ),
             license_label=license_label,
+            page_context={
+                "normalized_base_path": (
+                    "/" + base_path.strip("/") if base_path.strip("/") else ""
+                ),
+                "records": _criterion_list_view(manifest_records, base_path=base_path),
+                "search_index_url": _site_url(
+                    "/dataset/search-index.json",
+                    base_path=base_path,
+                ),
+            },
         ),
         encoding="utf-8",
     )
     generated_paths.append(search_path)
 
-    not_found_body = (
-        '<main id="main-content" class="page-shell page-shell--single"><section class="surface">'
-        "<h1>페이지를 찾을 수 없습니다</h1><p>주소를 확인하거나 전체 검색을 이용해 주세요.</p>"
-        f'<p><a href="{html.escape(_site_url("/search/", base_path=base_path), quote=True)}">전체 검색</a></p>'
-        "</section></main>"
-    )
     not_found_path = site_root / "404.html"
     not_found_path.write_text(
-        _html_document(
+        _render_page(
+            environment=environment,
+            template_name="pages/not-found.html",
             title="페이지를 찾을 수 없습니다",
             description="404",
-            body=not_found_body,
             base_path=base_path,
-            domain_navigation=_render_header_domain_navigation(
-                domains=domains,
-                current_domain=None,
-                current=False,
-                base_path=base_path,
-            ),
+            domains=domains,
+            current_domain=None,
             license_label=license_label,
         ),
         encoding="utf-8",

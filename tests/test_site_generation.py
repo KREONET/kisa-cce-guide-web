@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 import shutil
 from html.parser import HTMLParser
 from pathlib import Path
@@ -11,11 +12,15 @@ from tempfile import TemporaryDirectory
 from urllib.parse import urlsplit
 
 import pytest
+from jinja2 import StrictUndefined, UndefinedError
 
 from conversion.build_content import build
 from conversion.build_site import (
     _TABLE_OF_CONTENTS_MINIMUM_HEADING_COUNT,
+    _inline_markup,
+    _inline_renderer,
     _render_table_of_contents,
+    _template_environment,
 )
 from conversion.common import JsonValue, as_mapping, as_sequence, load_yaml, repository_root
 from conversion.paths import SITE_SKILL_DIRECTORY
@@ -24,6 +29,10 @@ from conversion.site_validation import validate_site
 EXPECTED_CRITERION_COUNT = 382
 EXPECTED_HTML_PAGE_COUNT = 469
 EXPECTED_LICENSE = "공공누리 - 공공저작물 자유이용허락"
+HEX_SHORT_LENGTH = 3
+SRGB_LINEAR_THRESHOLD = 0.04045
+MINIMUM_TEXT_CONTRAST = 4.5
+MINIMUM_UI_CONTRAST = 3.0
 
 
 class PageInspector(HTMLParser):
@@ -127,12 +136,94 @@ def _inspect(path: Path) -> PageInspector:
     return inspector
 
 
+def _theme_palette(stylesheet: str, selector: str) -> dict[str, str]:
+    """Return hexadecimal custom properties from one theme selector."""
+
+    declaration_block = stylesheet.partition(f"{selector} {{")[2].partition("}")[0]
+    assert declaration_block
+    return dict(
+        re.findall(
+            r"--([a-z0-9-]+):\s*(#[0-9a-fA-F]{3,6});",
+            declaration_block,
+        )
+    )
+
+
+def _contrast_ratio(foreground: str, background: str) -> float:
+    """Calculate a WCAG contrast ratio for two hexadecimal colors."""
+
+    def relative_luminance(color: str) -> float:
+        value = color.removeprefix("#")
+        if len(value) == HEX_SHORT_LENGTH:
+            value = "".join(character * 2 for character in value)
+        channels = [int(value[index : index + 2], 16) / 255 for index in (0, 2, 4)]
+        linear_channels = [
+            channel / 12.92
+            if channel <= SRGB_LINEAR_THRESHOLD
+            else ((channel + 0.055) / 1.055) ** 2.4
+            for channel in channels
+        ]
+        return (
+            (0.2126 * linear_channels[0])
+            + (0.7152 * linear_channels[1])
+            + (0.0722 * linear_channels[2])
+        )
+
+    foreground_luminance = relative_luminance(foreground)
+    background_luminance = relative_luminance(background)
+    lighter = max(foreground_luminance, background_luminance)
+    darker = min(foreground_luminance, background_luminance)
+    return (lighter + 0.05) / (darker + 0.05)
+
+
 def _copy_site(generated_site: Path, destination: Path) -> Path:
     """Copy a generated site so a validation test can mutate it in isolation."""
 
     copied_site = destination / "site"
     shutil.copytree(generated_site, copied_site)
     return copied_site
+
+
+def test_template_environment_is_strict_and_autoescapes(tmp_path: Path) -> None:
+    """The shared Jinja environment must escape HTML and reject missing context."""
+
+    template_path = tmp_path / "contract.html"
+    template_path.write_text(
+        "<p>{{ value }}</p><script>{{ payload | tojson }}</script>", encoding="utf-8"
+    )
+    environment = _template_environment(tmp_path)
+
+    assert environment.undefined is StrictUndefined
+    autoescape = environment.autoescape
+    assert callable(autoescape)
+    assert autoescape("contract.html")
+    rendered = environment.get_template("contract.html").render(
+        payload={"value": "</script><script>alert(1)</script>"},
+        value='<strong data-test="escape">unsafe</strong>',
+    )
+    assert "&lt;strong data-test=&#34;escape&#34;&gt;unsafe&lt;/strong&gt;" in rendered
+    assert "</script><script>" not in rendered
+    assert "\\u003c/script\\u003e" in rendered
+
+    with pytest.raises(UndefinedError):
+        environment.get_template("contract.html").render(payload={})
+
+
+def test_inline_markdown_trust_boundary_rejects_raw_html(tmp_path: Path) -> None:
+    """Trusted Markdown markup must contain renderer tags but escape source HTML."""
+
+    template_path = tmp_path / "markdown.html"
+    template_path.write_text("<div>{{ content }}</div>", encoding="utf-8")
+    environment = _template_environment(tmp_path)
+    content = _inline_markup(
+        '**강조** <script data-test="unsafe">alert(1)</script>',
+        parser=_inline_renderer(),
+    )
+
+    rendered = environment.get_template("markdown.html").render(content=content)
+    assert "<strong>강조</strong>" in rendered
+    assert "<script" not in rendered
+    assert "&lt;script data-test=&quot;unsafe&quot;&gt;" in rendered
 
 
 def _issue_rule_identifiers(site_root: Path) -> set[str]:
@@ -348,6 +439,93 @@ def test_shell_keeps_footer_at_viewport_bottom(generated_site: Path) -> None:
     assert "min-height: 100dvh;" in body_styles
     assert "margin-top: auto;" in footer_styles
     assert "body { display: block !important; min-height: 0 !important;" in print_styles
+
+
+def test_theme_control_and_initialization_are_present_on_every_page(
+    generated_site: Path,
+) -> None:
+    """Every page must expose one labeled selector and initialize its theme before CSS."""
+
+    initialization_script = '<script src="/assets/theme-init.js"></script>'
+    stylesheet_link = '<link rel="stylesheet" href="/assets/styles.css">'
+    for html_path in sorted(generated_site.rglob("*.html")):
+        html_text = html_path.read_text(encoding="utf-8")
+        head = html_text.partition("<head>")[2].partition("</head>")[0]
+        assert html_text.count("data-theme-selector") == 1, html_path
+        assert html_text.count('for="theme-selector"') == 1, html_path
+        assert html_text.count('id="theme-selector"') == 1, html_path
+        assert html_text.count('<option value="system">시스템</option>') == 1, html_path
+        assert html_text.count('<option value="light">화이트</option>') == 1, html_path
+        assert html_text.count('<option value="dark">다크</option>') == 1, html_path
+        assert html_text.count('<option value="oled">OLED 블랙</option>') == 1, html_path
+        assert initialization_script in head, html_path
+        assert "unsafe-inline" not in head, html_path
+        assert head.index("Content-Security-Policy") < head.index(initialization_script), html_path
+        assert head.index(initialization_script) < head.index(stylesheet_link), html_path
+        assert "defer" not in initialization_script
+        assert "async" not in initialization_script
+
+    assert (generated_site / "assets" / "theme-init.js").is_file()
+
+
+def test_theme_scripts_persist_and_synchronize_valid_preferences(
+    generated_site: Path,
+) -> None:
+    """Theme scripts must validate storage and synchronize system and tab changes."""
+
+    initialization_script = (generated_site / "assets" / "theme-init.js").read_text(
+        encoding="utf-8"
+    )
+    site_script = (generated_site / "assets" / "site.js").read_text(encoding="utf-8")
+
+    assert 'new Set(["system", "light", "dark", "oled"])' in initialization_script
+    assert "window.localStorage.getItem(storageKey)" in initialization_script
+    assert 'window.matchMedia?.("(prefers-color-scheme: dark)")' in initialization_script
+    assert "root.dataset.themePreference = preference;" in initialization_script
+    assert "root.dataset.theme = resolvedTheme;" in initialization_script
+    assert "window.localStorage.setItem(themeStorageKey, preference);" in site_script
+    assert 'systemTheme.addEventListener("change"' in site_script
+    assert 'window.addEventListener("storage"' in site_script
+
+
+def test_theme_palettes_meet_readability_contrast_contract(generated_site: Path) -> None:
+    """Representative text, controls, boundaries, and statuses must meet WCAG contrast."""
+
+    stylesheet = (generated_site / "assets" / "styles.css").read_text(encoding="utf-8")
+    palettes = {
+        "light": _theme_palette(stylesheet, ":root"),
+        "dark": _theme_palette(stylesheet, ':root[data-theme="dark"]'),
+        "oled": _theme_palette(stylesheet, ':root[data-theme="oled"]'),
+    }
+    text_pairs = (
+        ("body", "canvas"),
+        ("muted", "canvas"),
+        ("link", "canvas"),
+        ("primary-text", "surface-soft"),
+        ("on-dark", "surface-dark"),
+        ("on-primary", "primary"),
+        ("code-text", "code-surface"),
+        ("badge-high-text", "badge-high-background"),
+        ("badge-medium-text", "badge-medium-background"),
+        ("success", "badge-low-background"),
+        ("review", "badge-review-background"),
+        ("body", "note-background"),
+    )
+    for theme_name, palette in palettes.items():
+        for foreground_name, background_name in text_pairs:
+            assert (
+                _contrast_ratio(palette[foreground_name], palette[background_name])
+                >= MINIMUM_TEXT_CONTRAST
+            ), (theme_name, foreground_name, background_name)
+        assert _contrast_ratio(palette["hairline"], palette["surface-soft"]) >= MINIMUM_UI_CONTRAST
+
+    assert palettes["oled"]["canvas"] == "#000"
+    assert palettes["oled"]["surface"] == "#000"
+    assert ':root[data-theme="dark"] {\n  color-scheme: dark;' in stylesheet
+    assert ':root[data-theme="oled"] {\n  color-scheme: dark;' in stylesheet
+    print_styles = stylesheet.partition("@media print {")[2]
+    assert ':root[data-theme="dark"]' in print_styles
+    assert "color-scheme: light;" in print_styles
 
 
 def test_home_links_llm_usage_to_separate_skill_page(generated_site: Path) -> None:
@@ -952,6 +1130,7 @@ def test_subpath_build_prefixes_links() -> None:
         detail_html = (output_root / "site" / "unix" / "u-01" / "index.html").read_text(
             encoding="utf-8"
         )
+        assert '<script src="/kisa-cce-guide-web/assets/theme-init.js"></script>' in detail_html
         mobile_navigation_html = detail_html.partition('<nav id="site-navigation"')[2].partition(
             "</nav>"
         )[0]
