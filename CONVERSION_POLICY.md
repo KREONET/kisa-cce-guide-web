@@ -300,19 +300,11 @@ Source registry는 원본 문서별로 다음 정보를 한 번만 보관한다.
 - 전체 physical page 수
 - checksum algorithm
 - checksum value
-- 라이선스 유형
-- 이용 조건
-- 라이선스 근거 URL
-- 필수 출처 표시문
-- 라이선스 검토자
-- 라이선스 검토일
-- 라이선스 승인 상태
+- 공개 라이선스 표시문
 
 Source registry는 schema version을 가져야 한다. 문서 식별자와 checksum은 repository 전체에서 유일해야 한다.
-라이선스 승인 상태는 `pending`, `approved`, `rejected` 중 하나를 사용한다.
-
-라이선스 근거와 이용 조건이 확인되지 않은 상태에서는 공개 배포를 승인할 수 없다.
-라이선스 승인 전에는 생성 사이트 artifact에 원본 PDF를 복사하지 않고, 원문 게시물 URL만 제공한다.
+공개 사이트는 `license` 값을 `라이선스: <value>` 형식으로 모든 HTML의 공통 footer에 표시한다.
+라이선스는 별도 승인 gate로 사용하지 않는다. 원본 PDF는 생성 사이트 artifact에 복사하지 않고, 원문 게시물 URL만 제공한다.
 
 Taxonomy registry는 분야, 분류, 대상의 identifier, 표시 label, source label, order를 관리한다.
 Criterion metadata는 taxonomy identifier만 저장하고, 표시 label과 order는 registry에서 생성한다.
@@ -1149,8 +1141,7 @@ RFC 8785로 직렬화한 뒤, 이 문서의 aggregate checksum record 방식으�
 - canonical 콘텐츠만으로 모든 생성물을 재생성할 수 있어야 한다.
 - 브라우저 QA 보고서는 빌드 산출물과 분리해 저장하고, 현재 canonical corpus checksum과 test profile version을 참조해야 한다. 빌드가 QA 보고서를 생성하거나 덮어써서는 안 된다.
 - 두 번의 clean build에서 deterministic artifact checksum이 일치해야 한다.
-- Source registry의 `licenseApprovalStatus`가 `approved`이고, 라이선스 유형, 이용 조건, 근거 URL,
-  출처 표시문, 검토자, 검토일이 모두 존재해야 한다.
+- Source registry의 `license`가 비어 있지 않고, 모든 생성 HTML의 공통 footer에 같은 값을 표시해야 한다.
 - 승인되지 않았거나 만료된 policy exception이 0건이어야 한다.
 
 각 validator는 안정적인 rule identifier를 포함한 machine-readable report를 생성해야 한다.

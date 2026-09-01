@@ -23,6 +23,7 @@ from conversion.site_validation import validate_site
 
 EXPECTED_CRITERION_COUNT = 382
 EXPECTED_HTML_PAGE_COUNT = 469
+EXPECTED_LICENSE = "공공누리 - 공공저작물 자유이용허락"
 
 
 class PageInspector(HTMLParser):
@@ -322,6 +323,15 @@ def test_all_html_pages_have_required_landmarks(generated_site: Path) -> None:
         assert inspector.h1_count == 1, html_path
         assert inspector.skip_link_present, html_path
         assert {"header", "nav", "main", "footer"} <= set(inspector.tags), html_path
+
+
+def test_all_html_pages_display_public_license(generated_site: Path) -> None:
+    """Every page must expose the canonical public license exactly once."""
+
+    expected_text = f"라이선스: {EXPECTED_LICENSE}"
+    for html_path in sorted(generated_site.rglob("*.html")):
+        html_text = html_path.read_text(encoding="utf-8")
+        assert html_text.count(expected_text) == 1, html_path
 
 
 def test_shell_keeps_footer_at_viewport_bottom(generated_site: Path) -> None:

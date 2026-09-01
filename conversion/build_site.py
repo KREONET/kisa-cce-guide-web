@@ -165,6 +165,7 @@ def _html_document(
     canonical_url: str | None = None,
     current_navigation: str | None = None,
     domain_navigation: str,
+    license_label: str,
     json_alternate_url: str | None = None,
     structured_data: Mapping[str, JsonValue] | None = None,
 ) -> str:
@@ -242,6 +243,7 @@ def _html_document(
   <footer class="site-footer">
     <div class="site-footer__inner">
       <p class="site-footer__brand"><span aria-hidden="true"></span>KISA CCE GUIDE</p>
+      <p class="site-footer__license">라이선스: {html.escape(license_label)}</p>
     </div>
   </footer>
   <div class="visually-hidden" role="status" aria-live="polite" aria-atomic="true" data-copy-status></div>
@@ -769,6 +771,7 @@ def _detail_page(
     categories: Mapping[tuple[str, str], dict[str, JsonValue]],
     targets: Mapping[str, str],
     source_document: Mapping[str, JsonValue],
+    license_label: str,
     base_path: str,
 ) -> str:
     """Render one criterion detail page."""
@@ -976,6 +979,7 @@ def _detail_page(
             current=True,
             base_path=base_path,
         ),
+        license_label=license_label,
         json_alternate_url=dataset_url,
         structured_data=structured_data,
     )
@@ -1012,6 +1016,10 @@ def build_site(
     source_document = as_mapping(
         source_documents[0],
         location="sourceRegistry.documents[0]",
+    )
+    license_label = _text(
+        source_document["license"],
+        location="sourceRegistry.documents[0].license",
     )
     generated_paths: list[Path] = [nojekyll_path]
 
@@ -1167,6 +1175,7 @@ def build_site(
                 current=True,
                 base_path=base_path,
             ),
+            license_label=license_label,
         ),
         encoding="utf-8",
     )
@@ -1203,6 +1212,7 @@ def build_site(
                 current=False,
                 base_path=base_path,
             ),
+            license_label=license_label,
         ),
         encoding="utf-8",
     )
@@ -1254,6 +1264,7 @@ def build_site(
                         current=True,
                         base_path=base_path,
                     ),
+                    license_label=license_label,
                 ),
                 encoding="utf-8",
             )
@@ -1278,6 +1289,7 @@ def build_site(
                     current=True,
                     base_path=base_path,
                 ),
+                license_label=license_label,
             ),
             encoding="utf-8",
         )
@@ -1302,6 +1314,7 @@ def build_site(
                 categories=categories,
                 targets=targets,
                 source_document=source_document,
+                license_label=license_label,
                 base_path=base_path,
             ),
             encoding="utf-8",
@@ -1356,6 +1369,7 @@ def build_site(
                 current=False,
                 base_path=base_path,
             ),
+            license_label=license_label,
         ),
         encoding="utf-8",
     )
@@ -1380,6 +1394,7 @@ def build_site(
                 current=False,
                 base_path=base_path,
             ),
+            license_label=license_label,
         ),
         encoding="utf-8",
     )

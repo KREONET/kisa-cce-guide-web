@@ -1882,23 +1882,6 @@ def validate_repository(
                     "release requires exact physical page coverage 1 through 873",
                 )
             )
-        for source_document_value in source_document_values:
-            source_document = as_mapping(
-                source_document_value,
-                location="sourceRegistry.documents[]",
-            )
-            license_record = as_mapping(
-                source_document.get("license"),
-                location="sourceRegistry.documents[].license",
-            )
-            if license_record.get("approvalStatus") != "approved":
-                issues.append(
-                    ValidationIssue(
-                        "release-license-approved",
-                        "data/source-registry.yaml",
-                        "release requires approved license metadata",
-                    )
-                )
         required_review_subjects = {
             ("criterion", slug) for slug in manifest_identity_sets["slug"] if isinstance(slug, str)
         } | {

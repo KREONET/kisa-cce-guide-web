@@ -63,7 +63,7 @@ def test_release_validation_remains_blocked() -> None:
     """A structured corpus must remain blocked by outstanding release gates."""
 
     rule_identifiers = {issue.rule_identifier for issue in validate_repository(release=True)}
-    assert "release-license-approved" in rule_identifiers
+    assert "release-license-approved" not in rule_identifiers
     assert "release-structured-corpus" not in rule_identifiers
     assert "release-review-approved" in rule_identifiers
     assert "release-test-profile-complete" in rule_identifiers

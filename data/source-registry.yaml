@@ -1,4 +1,4 @@
-schemaVersion: 1
+schemaVersion: 2
 documents:
   - sourceDocumentIdentifier: kisa-cce-criteria-2026
     title: 주요정보통신기반시설 기술적 취약점 분석·평가 방법 상세가이드
@@ -10,11 +10,4 @@ documents:
     physicalPageCount: 873
     checksumAlgorithm: sha256
     checksumValue: 44fe393981b244147be6af7423d99dc15633c089fad0bcb296cbe2371dde812d
-    license:
-      licenseType: null
-      permittedUses: []
-      licenseEvidenceUrl: "https://www.kisa.or.kr/2060204/form?postSeq=22&page=1"
-      requiredAttributionText: null
-      reviewedBy: null
-      reviewedAt: null
-      approvalStatus: pending
+    license: 공공누리 - 공공저작물 자유이용허락

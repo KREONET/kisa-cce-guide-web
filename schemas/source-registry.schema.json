@@ -5,7 +5,7 @@
   "additionalProperties": false,
   "required": ["schemaVersion", "documents"],
   "properties": {
-    "schemaVersion": {"const": 1},
+    "schemaVersion": {"const": 2},
     "documents": {
       "type": "array",
       "minItems": 1,
@@ -13,44 +13,8 @@
     }
   },
   "$defs": {
-    "nullableString": {"type": ["string", "null"]},
     "checksum": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
-    "license": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "licenseType",
-        "permittedUses",
-        "licenseEvidenceUrl",
-        "requiredAttributionText",
-        "reviewedBy",
-        "reviewedAt",
-        "approvalStatus"
-      ],
-      "properties": {
-        "licenseType": {"$ref": "#/$defs/nullableString"},
-        "permittedUses": {"type": "array", "items": {"type": "string"}},
-        "licenseEvidenceUrl": {"type": "string", "format": "uri"},
-        "requiredAttributionText": {"$ref": "#/$defs/nullableString"},
-        "reviewedBy": {"$ref": "#/$defs/nullableString"},
-        "reviewedAt": {"type": ["string", "null"], "format": "date-time"},
-        "approvalStatus": {"enum": ["pending", "approved", "rejected"]}
-      },
-      "allOf": [
-        {
-          "if": {"properties": {"approvalStatus": {"const": "approved"}}},
-          "then": {
-            "properties": {
-              "licenseType": {"type": "string", "minLength": 1},
-              "permittedUses": {"minItems": 1},
-              "requiredAttributionText": {"type": "string", "minLength": 1},
-              "reviewedBy": {"type": "string", "minLength": 1},
-              "reviewedAt": {"type": "string", "format": "date-time"}
-            }
-          }
-        }
-      ]
-    },
+    "license": {"type": "string", "minLength": 1},
     "sourceDocument": {
       "type": "object",
       "additionalProperties": false,

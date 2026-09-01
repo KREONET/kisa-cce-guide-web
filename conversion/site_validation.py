@@ -602,7 +602,7 @@ def validate_site(
             SiteValidationIssue(
                 "site-unapproved-source-copy",
                 public_source_document_path.as_posix(),
-                "source PDF must not be copied into the site artifact before license approval",
+                "source PDF must not be copied into the site artifact",
             )
         )
     return issues

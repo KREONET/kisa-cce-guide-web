@@ -19,7 +19,7 @@
 | `extractedCriterion` | 0 |
 | 사람 승인 완료 review record | 0 |
 
-382개 항목은 모두 의미 구조화된 content model을 사용합니다. 이는 사람의 원문 대조와 릴리스 승인이 끝났다는 의미가 아닙니다. `data/source-registry.yaml`의 라이선스 승인 상태는 `pending`이고, review registry에는 `approved` record가 없습니다.
+382개 항목은 모두 의미 구조화된 content model을 사용합니다. 이는 사람의 원문 대조와 릴리스 승인이 끝났다는 의미가 아닙니다. Review registry에는 `approved` record가 없습니다.
 
 ## 원문
 
@@ -30,9 +30,8 @@
 | 배포일 | 2025-12-24 |
 | 원본 파일 | [content/source/kisa-cce-criteria-2026.pdf](content/source/kisa-cce-criteria-2026.pdf) |
 | 원문 게시물 | <https://www.kisa.or.kr/2060204/form?postSeq=22&page=1> |
+| 라이선스 | 공공누리 - 공공저작물 자유이용허락 |
 | PDF SHA-256 | `44fe393981b244147be6af7423d99dc15633c089fad0bcb296cbe2371dde812d` |
-
-라이선스 유형, 허용 이용 범위와 필수 출처 표시문이 승인되기 전에는 생성 사이트와 변환 자산을 공개 배포하지 않습니다.
 
 ## 빠른 시작
 
