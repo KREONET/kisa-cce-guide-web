@@ -25,6 +25,12 @@ from conversion.common import (
     repository_root,
     sha256_file,
 )
+from conversion.paths import (
+    CRITERION_ASSET_REFERENCE_DIRECTORY,
+    SOURCE_DOCUMENT_PATH,
+    canonical_asset_directory,
+    criterion_directory,
+)
 from conversion.runtime_logging import add_logging_arguments, configure_runtime_logging
 
 SOURCE_DOCUMENT_IDENTIFIER = "kisa-cce-criteria-2026"
@@ -270,7 +276,7 @@ def _render_source_crop(
         )
     )
     filename = f"{criterion.slug}-page-{physical_page}-source-region.png"
-    asset_directory = repository / "assets" / criterion.slug
+    asset_directory = canonical_asset_directory(repository, criterion.slug)
     asset_directory.mkdir(parents=True, exist_ok=True)
     asset_path = asset_directory / filename
     page_image = cropped_page.to_image(
@@ -286,7 +292,7 @@ def _render_source_crop(
     pixel_width, pixel_height = page_image.original.size
     return VisualAsset(
         physical_page=physical_page,
-        markdown_path=f"../assets/{criterion.slug}/{filename}",
+        markdown_path=(CRITERION_ASSET_REFERENCE_DIRECTORY / criterion.slug / filename).as_posix(),
         checksum_value=sha256_file(asset_path),
         pixel_width=pixel_width,
         pixel_height=pixel_height,
@@ -801,7 +807,7 @@ def generate(*, root: Path | None = None) -> None:
     visual_assets_by_slug: dict[str, dict[int, VisualAsset]] = {}
     criterion_regions: list[dict[str, JsonValue]] = []
     page_owner: dict[int, CriterionInventory] = {}
-    with pdfplumber.open(repository / "kisa-cce-criteria-2026.pdf") as document:
+    with pdfplumber.open(repository / SOURCE_DOCUMENT_PATH) as document:
         pages = cast("list[PdfPage]", document.pages)
         if len(pages) != 873:
             msg = f"expected 873 PDF pages, got {len(pages)}"
@@ -810,12 +816,14 @@ def generate(*, root: Path | None = None) -> None:
             transcripts: dict[int, str] = {}
             visual_assets: dict[int, VisualAsset] = {}
             if criterion.slug not in STRUCTURED_SLUGS:
-                asset_directory = repository / "assets" / criterion.slug
+                asset_directory = canonical_asset_directory(repository, criterion.slug)
                 if asset_directory.is_dir():
                     for stale_asset in asset_directory.glob(
                         f"{criterion.slug}-page-*-source-region.png"
                     ):
                         stale_asset.unlink()
+                    if not any(asset_directory.iterdir()):
+                        asset_directory.rmdir()
             for physical_page in range(
                 criterion.source_start_page,
                 criterion.source_end_page + 1,
@@ -863,7 +871,8 @@ def generate(*, root: Path | None = None) -> None:
         annotations = (
             as_sequence(
                 load_criterion_metadata(
-                    repository / criterion.domain_identifier / f"{criterion.slug}.md"
+                    criterion_directory(repository, criterion.domain_identifier)
+                    / f"{criterion.slug}.md"
                 )["sourceAnnotations"],
                 location=f"{criterion.slug}.sourceAnnotations",
             )
@@ -873,9 +882,11 @@ def generate(*, root: Path | None = None) -> None:
         annotations_by_slug[criterion.slug] = annotations
         if not structured:
             metadata = _criterion_metadata(criterion, annotations)
-            criterion_directory = repository / criterion.domain_identifier
-            criterion_directory.mkdir(parents=True, exist_ok=True)
-            (criterion_directory / f"{criterion.slug}.md").write_text(
+            criterion_source_directory = criterion_directory(
+                repository, criterion.domain_identifier
+            )
+            criterion_source_directory.mkdir(parents=True, exist_ok=True)
+            (criterion_source_directory / f"{criterion.slug}.md").write_text(
                 _criterion_markdown(
                     criterion,
                     metadata,
@@ -885,7 +896,7 @@ def generate(*, root: Path | None = None) -> None:
                 encoding="utf-8",
             )
             _write_yaml(
-                criterion_directory / f"{criterion.slug}.provenance.yaml",
+                criterion_source_directory / f"{criterion.slug}.provenance.yaml",
                 _criterion_provenance(
                     criterion,
                     visual_assets_by_slug[criterion.slug],

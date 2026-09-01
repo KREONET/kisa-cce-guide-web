@@ -18,6 +18,12 @@ from conversion.common import (
     load_yaml,
     repository_root,
 )
+from conversion.paths import (
+    BUILD_DIRECTORY,
+    CRITERIA_DIRECTORY,
+    SOURCE_DOCUMENT_PATH,
+    criterion_directory,
+)
 from conversion.validate_content import _validate_markdown_structure, validate_repository
 
 HEADING_LEVEL_TWO = 2
@@ -25,7 +31,7 @@ SOLARIS_RECOMMENDATION_ROW_COUNT = 17
 EXPECTED_CRITERION_COUNT = 382
 MAX_SEARCH_INDEX_BYTES = 1_450_000
 SEARCH_SCHEMA_VERSION = 2
-CANONICAL_EXEMPLAR_PATH = Path("unix/u-01.md")
+CANONICAL_EXEMPLAR_PATH = CRITERIA_DIRECTORY / "unix/u-01.md"
 
 
 def _canonical_exemplar_body() -> str:
@@ -75,8 +81,8 @@ def test_every_markdown_leaf_has_provenance() -> None:
     # block in addition to its note items.
     expected_counts = {"u-01": 63, "u-02": 90}
     for slug, expected_count in expected_counts.items():
-        criterion = load_criterion(root / "unix" / f"{slug}.md")
-        provenance = load_yaml(root / "unix" / f"{slug}.provenance.yaml")
+        criterion = load_criterion(criterion_directory(root, "unix") / f"{slug}.md")
+        provenance = load_yaml(criterion_directory(root, "unix") / f"{slug}.provenance.yaml")
         leaf_blocks = extract_leaf_blocks(
             criterion.body,
             criterion_slug=slug,
@@ -93,7 +99,7 @@ def test_leaf_block_technical_literals_are_unique_in_source_order() -> None:
     """Repeated literals in one source block must retain only their first occurrence."""
 
     root = repository_root()
-    criterion = load_criterion(root / "unix/u-05.md")
+    criterion = load_criterion(criterion_directory(root, "unix") / "u-05.md")
     heading_identifier_mapping = heading_identifiers(load_yaml(root / "data/taxonomy.yaml"))
     leaf_blocks = extract_leaf_blocks(
         criterion.body,
@@ -138,7 +144,7 @@ def test_search_index_contains_exact_terms() -> None:
     """The initial index must retain code, path, and setting literals."""
 
     build()
-    search_path = repository_root() / "build" / "search" / "search-index.json"
+    search_path = repository_root() / BUILD_DIRECTORY / "search" / "search-index.json"
     search_index = json.loads(search_path.read_text(encoding="utf-8"))
     assert search_path.stat().st_size <= MAX_SEARCH_INDEX_BYTES
     assert search_index["schemaVersion"] == SEARCH_SCHEMA_VERSION
@@ -165,8 +171,12 @@ def test_normalized_ast_preserves_semantics() -> None:
 
     build()
     root = repository_root()
-    u_01 = json.loads((root / "build/normalized/unix/u-01.json").read_text(encoding="utf-8"))
-    u_02 = json.loads((root / "build/normalized/unix/u-02.json").read_text(encoding="utf-8"))
+    u_01 = json.loads(
+        (root / BUILD_DIRECTORY / "normalized/unix/u-01.json").read_text(encoding="utf-8")
+    )
+    u_02 = json.loads(
+        (root / BUILD_DIRECTORY / "normalized/unix/u-02.json").read_text(encoding="utf-8")
+    )
     u_01_blocks = {block["blockReference"]: block for block in u_01["blocks"]}
     u_02_blocks = {block["blockReference"]: block for block in u_02["blocks"]}
     assert u_01_blocks["u-01:overview.heading:1"]["headingLevel"] == HEADING_LEVEL_TWO
@@ -204,7 +214,7 @@ def test_internal_source_links_exist() -> None:
 
     root = repository_root()
     required_paths = [
-        root / "kisa-cce-criteria-2026.pdf",
+        root / SOURCE_DOCUMENT_PATH,
         root / "README.md",
         root / "CONVERSION_POLICY.md",
     ]
@@ -298,7 +308,7 @@ def test_supplementary_guidance_must_be_the_last_remediation_heading() -> None:
 def test_structured_criterion_uses_its_web_application_contract() -> None:
     """Converted documents must leave the intermediate transcription branch."""
 
-    criterion = load_criterion(repository_root() / "web-application/ae.md")
+    criterion = load_criterion(criterion_directory(repository_root(), "web-application") / "ae.md")
     assert criterion.metadata["contentModel"] == "webApplicationCriterion"
     assert _structure_rules(criterion.body, content_model="webApplicationCriterion") == []
     assert "markdown-required-headings" in _structure_rules(

@@ -18,6 +18,7 @@ from conversion.build_site import (
     _render_table_of_contents,
 )
 from conversion.common import JsonValue, as_mapping, as_sequence, load_yaml, repository_root
+from conversion.paths import SITE_SKILL_DIRECTORY
 from conversion.site_validation import validate_site
 
 EXPECTED_CRITERION_COUNT = 382
@@ -344,7 +345,7 @@ def test_home_links_llm_usage_to_separate_skill_page(generated_site: Path) -> No
 
     repository = repository_root()
     skill_source = (
-        repository / "skills" / "kisa-cce-guide-explorer" / "SKILL.md"
+        repository / SITE_SKILL_DIRECTORY / "kisa-cce-guide-explorer" / "SKILL.md"
     ).read_text(encoding="utf-8")
     public_skill = (generated_site / "SKILL.md").read_text(encoding="utf-8")
     home_html = (generated_site / "index.html").read_text(encoding="utf-8")
@@ -359,9 +360,7 @@ def test_home_links_llm_usage_to_separate_skill_page(generated_site: Path) -> No
     assert 'data-copy-button="llm-usage-prompt"' in home_html
     assert "INSTRUCTIONS" not in home_html
     assert "data-skill-document" not in home_html
-    assert home_html.index('class="hero"') < home_html.index(
-        'class="surface domain-directory"'
-    )
+    assert home_html.index('class="hero"') < home_html.index('class="surface domain-directory"')
     assert home_html.index('class="surface domain-directory"') < home_html.index(
         'class="surface llm-guide"'
     )
@@ -383,9 +382,7 @@ def test_llm_usage_and_skill_page_are_responsive(generated_site: Path) -> None:
     """The LLM usage chapter and separate skill article must fit narrow screens."""
 
     stylesheet = (generated_site / "assets" / "styles.css").read_text(encoding="utf-8")
-    llm_styles = stylesheet.partition(".llm-guide {")[2].partition(
-        ".domain-directory {"
-    )[0]
+    llm_styles = stylesheet.partition(".llm-guide {")[2].partition(".domain-directory {")[0]
     compact_styles = stylesheet.partition("@media (max-width: 768px) {")[2].partition(
         "@media (max-width: 480px) {"
     )[0]
@@ -446,18 +443,14 @@ def test_header_menu_contains_domain_exploration(generated_site: Path) -> None:
 
     for html_path in generated_site.rglob("*.html"):
         html_text = html_path.read_text(encoding="utf-8")
-        navigation_html = html_text.partition('<nav id="site-navigation"')[2].partition(
-            "</nav>"
-        )[0]
+        navigation_html = html_text.partition('<nav id="site-navigation"')[2].partition("</nav>")[0]
         assert '<details class="site-nav__domains"' in navigation_html, html_path
         assert "<summary>분야</summary>" in navigation_html, html_path
         assert '<li><a href="/">전체 분야</a></li>' in navigation_html, html_path
         for domain_route in domain_routes:
             assert domain_route in navigation_html, html_path
 
-    detail_html = (generated_site / "unix" / "u-01" / "index.html").read_text(
-        encoding="utf-8"
-    )
+    detail_html = (generated_site / "unix" / "u-01" / "index.html").read_text(encoding="utf-8")
     assert 'href="/unix/" aria-current="location"' in detail_html
     assert 'class="sidebar"' not in detail_html
 
@@ -487,9 +480,7 @@ def test_header_menu_contains_domain_exploration(generated_site: Path) -> None:
 def test_document_table_of_contents_uses_responsive_sidebar(generated_site: Path) -> None:
     """Desktop pages must use a sticky TOC while compact pages default to collapsed."""
 
-    detail_html = (generated_site / "unix" / "u-01" / "index.html").read_text(
-        encoding="utf-8"
-    )
+    detail_html = (generated_site / "unix" / "u-01" / "index.html").read_text(encoding="utf-8")
     assert detail_html.count('aria-label="문서 목차"') == 1
     assert '<nav class="toc" aria-label="문서 목차" data-table-of-contents>' in detail_html
     document_html = detail_html.partition(
@@ -513,9 +504,7 @@ def test_document_table_of_contents_uses_responsive_sidebar(generated_site: Path
     assert "setTableOfContentsExpanded(tableOfContentsContent.hidden);" in site_script
 
     stylesheet = (generated_site / "assets" / "styles.css").read_text(encoding="utf-8")
-    desktop_styles = stylesheet.partition("@media (min-width: 1081px) {")[2].partition(
-        ".note {"
-    )[0]
+    desktop_styles = stylesheet.partition("@media (min-width: 1081px) {")[2].partition(".note {")[0]
     assert "position: sticky;" in desktop_styles
     assert "max-height: calc(100dvh - var(--header-height) - 48px);" in desktop_styles
 
@@ -526,8 +515,7 @@ def test_document_table_of_contents_uses_responsive_sidebar(generated_site: Path
     assert '.toc[data-enhanced="true"] .toc__title { display: none; }' in compact_styles
     assert '.toc[data-enhanced="true"] .toc__toggle { display: flex; }' in compact_styles
     assert (
-        '.toc__toggle[aria-expanded="true"]::after { content: "\N{MINUS SIGN}"; }'
-        in compact_styles
+        '.toc__toggle[aria-expanded="true"]::after { content: "\N{MINUS SIGN}"; }' in compact_styles
     )
 
 
@@ -951,9 +939,9 @@ def test_subpath_build_prefixes_links() -> None:
         assert "/kisa-cce-guide-web/search/" in inspector.links
         detail_inspector = _inspect(output_root / "site" / "unix" / "u-01" / "index.html")
         assert "/kisa-cce-guide-web/unix/" in detail_inspector.links
-        detail_html = (
-            output_root / "site" / "unix" / "u-01" / "index.html"
-        ).read_text(encoding="utf-8")
+        detail_html = (output_root / "site" / "unix" / "u-01" / "index.html").read_text(
+            encoding="utf-8"
+        )
         mobile_navigation_html = detail_html.partition('<nav id="site-navigation"')[2].partition(
             "</nav>"
         )[0]

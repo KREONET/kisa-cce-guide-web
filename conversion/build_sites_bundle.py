@@ -13,6 +13,7 @@ from PIL import Image
 
 from conversion.build_content import build
 from conversion.common import repository_root
+from conversion.paths import BUILD_DIRECTORY, DISTRIBUTION_DIRECTORY, SITE_HOSTING_DIRECTORY
 from conversion.runtime_logging import add_logging_arguments, configure_runtime_logging
 
 HOSTING_IMAGE_SCALE_DIVISOR = 2
@@ -110,16 +111,16 @@ def build_sites_bundle(*, root: Path | None = None) -> list[Path]:
 
     repository = root or repository_root()
     build(root=repository)
-    distribution_directory = repository / "dist"
+    distribution_directory = repository / DISTRIBUTION_DIRECTORY
     shutil.rmtree(distribution_directory, ignore_errors=True)
     client_directory = distribution_directory / "client"
     server_directory = distribution_directory / "server"
-    shutil.copytree(repository / "build" / "site", client_directory)
+    shutil.copytree(repository / BUILD_DIRECTORY / "site", client_directory)
     dimensions_by_public_path = _optimize_hosting_images(client_directory)
     _update_hosted_html(client_directory, dimensions_by_public_path)
     _update_hosted_datasets(client_directory, dimensions_by_public_path)
     server_directory.mkdir(parents=True)
-    worker_source = repository / "site_hosting" / "worker.js"
+    worker_source = repository / SITE_HOSTING_DIRECTORY / "worker.js"
     worker_target = server_directory / "index.js"
     shutil.copy2(worker_source, worker_target)
     return [

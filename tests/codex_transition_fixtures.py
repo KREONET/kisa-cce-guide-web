@@ -20,6 +20,7 @@ from conversion.common import (
     load_yaml,
     region_source_checksum,
 )
+from conversion.paths import CANONICAL_ASSET_DIRECTORY, CRITERIA_DIRECTORY
 
 
 def _yaml_text(document: dict[str, JsonValue]) -> str:
@@ -81,16 +82,19 @@ def _restore_committed_package(source: Path, repository: Path, slug: str) -> tup
         if isinstance(value, dict) and value.get("slug") == slug
     )
     domain_identifier = cast("str", manifest_record["domainIdentifier"])
-    package_paths = (
+    head_package_paths = (
         f"{domain_identifier}/{slug}.md",
         f"{domain_identifier}/{slug}.provenance.yaml",
     )
-    for relative_path in package_paths:
-        destination = repository / relative_path
+    for head_relative_path in head_package_paths:
+        destination = repository / CRITERIA_DIRECTORY / head_relative_path
         destination.parent.mkdir(parents=True, exist_ok=True)
-        _atomic_replace(destination, _git_output(source, "show", f"HEAD:{relative_path}"))
+        source_bytes = _git_output(source, "show", f"HEAD:{head_relative_path}").replace(
+            b"../assets/", b"../../assets/"
+        )
+        _atomic_replace(destination, source_bytes)
 
-    asset_paths = tuple(
+    head_asset_paths = tuple(
         line
         for line in _git_output(
             source,
@@ -105,14 +109,18 @@ def _restore_committed_package(source: Path, repository: Path, slug: str) -> tup
         .splitlines()
         if line
     )
-    if not asset_paths:
+    if not head_asset_paths:
         message = f"HEAD contains no legacy source-crop assets for {slug}"
         raise RuntimeError(message)
-    for relative_path in asset_paths:
-        destination = repository / relative_path
+    asset_paths: list[str] = []
+    for head_relative_path in head_asset_paths:
+        relative_asset_path = Path(head_relative_path).relative_to("assets")
+        destination_relative_path = CANONICAL_ASSET_DIRECTORY / relative_asset_path
+        destination = repository / destination_relative_path
         destination.parent.mkdir(parents=True, exist_ok=True)
-        _atomic_replace(destination, _git_output(source, "show", f"HEAD:{relative_path}"))
-    return asset_paths
+        _atomic_replace(destination, _git_output(source, "show", f"HEAD:{head_relative_path}"))
+        asset_paths.append(destination_relative_path.as_posix())
+    return tuple(asset_paths)
 
 
 def _reset_review_state(

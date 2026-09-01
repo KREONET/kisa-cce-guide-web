@@ -20,6 +20,7 @@ from conversion.common import (
     load_yaml,
     repository_root,
 )
+from conversion.paths import WORK_DIRECTORY
 from conversion.runtime_logging import add_logging_arguments, configure_runtime_logging
 
 REPORT_TYPES = ("accessibility", "responsive", "print")
@@ -208,7 +209,7 @@ def _argument_parser() -> argparse.ArgumentParser:
     scaffold_parser.add_argument(
         "--output-directory",
         type=Path,
-        default=Path("work/qa-reports"),
+        default=WORK_DIRECTORY / "qa-reports",
         help="output directory; existing reports are never overwritten",
     )
     add_logging_arguments(scaffold_parser)

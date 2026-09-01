@@ -69,7 +69,7 @@ def _write_manifest(root: Path, criteria: list[tuple[str, str]]) -> None:
 def _worker_item(request: BulkItemRequest, *, outcome: str) -> dict[str, JsonValue]:
     """Build a schema-valid deterministic item returned by a fake worker."""
 
-    path_prefix = f"work/{request.slug}"
+    path_prefix = f".artifacts/work/{request.slug}"
     paths: dict[str, JsonValue] = {
         "task": f"{path_prefix}/task.json",
         "result": f"{path_prefix}/result.json",
@@ -908,7 +908,7 @@ def test_main_forwards_progress_and_logging_options_without_changing_stdout(
 
         observed_arguments.update(arguments)
         return {
-            "summaryPath": "work/codex/bulk-summary.json",
+            "summaryPath": ".artifacts/work/codex/bulk-summary.json",
             "status": "completed",
             "counts": {"failed": 0, "cancelled": 0},
         }
@@ -935,7 +935,7 @@ def test_main_forwards_progress_and_logging_options_without_changing_stdout(
 
     captured = capsys.readouterr()
     assert exit_code == 0
-    assert captured.out == "work/codex/bulk-summary.json\n"
+    assert captured.out == ".artifacts/work/codex/bulk-summary.json\n"
     assert captured.err == ""
     assert observed_arguments["progress_enabled"] is False
     assert observed_arguments["model"] == "anthropic/claude-opus-5"

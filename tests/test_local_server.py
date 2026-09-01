@@ -11,6 +11,8 @@ from urllib.request import urlopen
 
 import pytest
 
+from conversion import serve_site
+from conversion.paths import BUILD_DIRECTORY
 from conversion.serve_site import create_local_server, normalize_base_path
 
 
@@ -22,6 +24,27 @@ def test_normalize_base_path() -> None:
     assert normalize_base_path("kisa-cce-guide-web/") == "/kisa-cce-guide-web"
     with pytest.raises(argparse.ArgumentTypeError, match="invalid base path"):
         normalize_base_path("/../private")
+
+
+def test_no_build_reports_the_artifact_site_path(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    """The no-build failure must identify the shared generated-site location."""
+
+    monkeypatch.setattr(serve_site, "repository_root", lambda: tmp_path)
+    monkeypatch.setattr(
+        serve_site.sys,
+        "argv",
+        ["serve-site", "--no-build", "--log-directory", str(tmp_path / "logs")],
+    )
+
+    assert serve_site.main() == 1
+
+    captured = capsys.readouterr()
+    expected_site_path = (BUILD_DIRECTORY / "site" / "index.html").as_posix()
+    assert f"{expected_site_path} is missing" in captured.err
 
 
 def test_local_server_serves_root_and_custom_404(tmp_path: Path) -> None:

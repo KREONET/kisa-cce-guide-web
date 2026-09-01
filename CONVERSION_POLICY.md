@@ -5,7 +5,7 @@
 | 상태 | Draft |
 | 버전 | 0.1 |
 | 대상 | KISA CCE 가이드 2026 웹 변환 콘텐츠 |
-| 기준 원문 | `kisa-cce-criteria-2026.pdf` |
+| 기준 원문 | `content/source/kisa-cce-criteria-2026.pdf` |
 
 ## 목적
 
@@ -103,6 +103,17 @@ Canonical criterion package
      -> 인쇄 결과
 ```
 
+### 저장소 경로 계약
+
+- Canonical criterion과 provenance sidecar는 `content/criteria/<domainIdentifier>/`에 저장한다.
+- Criterion에 필요한 원문 영역 시각 자산은 `content/assets/<criterionSlug>/`에 저장한다.
+- Checksum으로 고정된 기준 원문은 `content/source/kisa-cce-criteria-2026.pdf`에 저장한다.
+- 변환 실행 계약과 compact reference는 `conversion/prompts/`에 저장한다.
+- 정적 사이트의 source asset, hosting entrypoint, 배포용 LLM 지침은 각각 `site/assets/`, `site/hosting/`, `site/skill/`에 저장한다.
+- 생성 결과, 호스팅 bundle, 변환 workspace와 로그는 각각 `.artifacts/build/`, `.artifacts/dist/`, `.artifacts/work/`에 저장하며 Git에 포함해서는 안 된다.
+- Repository 경로 이동은 `/<domainIdentifier>/<criterionSlug>/` public route와 canonical anchor를 변경해서는 안 된다.
+- `sourceAnnotations`와 provenance는 경로 이동 뒤에도 canonical 콘텐츠와 내부 검토 데이터에 유지해야 한다.
+
 ### 원본 계층
 
 - 원본 PDF는 변경하지 않는다.
@@ -118,11 +129,11 @@ Canonical criterion package
 
 - 권장 변환 경로는 `conversion.codex_agent_pipeline`의 Codex-native pipeline이다. Structured node JSON과 deterministic candidate renderer를 사용하는 기존 pipeline은 legacy migration 경로로만 유지한다.
 - Controller는 항목별 현재 Markdown과 provenance에서 source page, transcript, 관련된 모든 PDF page image, checksum, target taxonomy slice를 결합한 task를 만들고, compact canonical references, prompt contract, status schema와 함께 immutable workspace로 생성한다. 원본 Markdown과 provenance를 workspace에 중복 복사해서는 안 된다.
-- Workspace는 `work/codex-agent/jobs/<criterionSlug>/<taskChecksum>/workspace/`에 생성한다. Task checksum은 workspace 입력과 conversion contract를 결합한 content address여야 한다.
+- Workspace는 `.artifacts/work/codex-agent/jobs/<criterionSlug>/<taskChecksum>/workspace/`에 생성한다. Task checksum은 workspace 입력과 conversion contract를 결합한 content address여야 한다.
 - Codex는 repository가 아닌 항목별 workspace를 writable root로 사용해야 한다. `workspace-write` sandbox와 ephemeral session을 유지하고, 관련된 모든 PDF page image를 vision으로 직접 검사해야 한다. Transcript만 검사하거나 page image를 표본 추출해서는 안 된다.
 - Codex CLI는 사용자 설정을 기본적으로 무시해야 한다. OpenCodeX를 통해 Claude 같은 사용자 정의 provider를 사용하는 경우에만 명시적 옵션으로 사용자 설정을 로드하고 provider-qualified model identifier를 지정해야 한다.
 - 사용자 설정을 로드해도 항목별 workspace sandbox, ephemeral session, JSONL event 저장, status output schema 검증을 유지해야 한다. 사용자 설정은 provider 외 MCP server와 기타 실행 설정도 포함할 수 있으므로 신뢰할 수 있는 설정만 사용해야 한다.
-- Codex는 `codex_prompts/criterion-agent-v1.md` 계약에 따라 `output/criterion.md`, `output/provenance.yaml`, `output/status.json`을 직접 작성하고 종료 전에 격리 workspace의 production validator를 실행해야 한다. Controller는 Codex가 작성한 내용, 구조, taxonomy 선택, source annotation 또는 provenance를 다시 쓰거나 추론해서는 안 된다.
+- Codex는 `conversion/prompts/criterion-agent-v1.md` 계약에 따라 `output/criterion.md`, `output/provenance.yaml`, `output/status.json`을 직접 작성하고 종료 전에 격리 workspace의 production validator를 실행해야 한다. Controller는 Codex가 작성한 내용, 구조, taxonomy 선택, source annotation 또는 provenance를 다시 쓰거나 추론해서는 안 된다.
 - `output/criterion.md`는 YAML front matter와 semantic body를 포함하는 complete canonical-format candidate여야 한다. `output/provenance.yaml`은 parsed Markdown leaf 전체를 문서 순서대로 연결하는 complete provenance sidecar여야 한다.
 - Agent contract version 1은 source-page crop을 candidate asset으로 게시해서는 안 되며 provenance의 `assets`는 빈 배열이어야 한다.
 - Codex의 마지막 응답은 `schemas/codex-agent-status.schema.json` version 1을 만족하는 bounded status JSON이어야 한다. Status는 task identifier와 checksum, `candidateWritten`, `complete` 또는 `needsSourceReview`, 검토한 모든 physical page, unresolved question만 선언할 수 있다.
@@ -144,7 +155,7 @@ Canonical criterion package
 - Codex는 canonical Markdown, provenance, registry, review status를 직접 수정해서는 안 된다.
 - Codex 결과의 source page coverage, source excerpt, technical literal, heading hierarchy, annotation target을 deterministic importer가 검증한다.
 - Schema 또는 semantic validation에 실패한 결과는 candidate로 렌더링하거나 canonical 콘텐츠에 반영해서는 안 된다.
-- 검증된 결과는 `work/codex/candidates/<criterionSlug>/` 아래의 review-only artifact로 생성한다.
+- 검증된 결과는 `.artifacts/work/codex/candidates/<criterionSlug>/` 아래의 review-only artifact로 생성한다.
 - Codex 결과는 `structured`, `visuallyReviewed`, `approved` 상태를 자동으로 부여해서는 안 된다.
 - Candidate를 canonical criterion package로 반영하는 단계는 별도 사람 검토와 명시적 적용 작업을 요구한다.
 
@@ -156,13 +167,13 @@ Canonical criterion package
 - `--dry-run`은 workspace와 summary를 생성하되 Codex를 실행해서는 안 된다.
 - 재개 실행은 현재 입력에서 같은 content address를 다시 계산해야 한다. 기존 run의 성공 상태, task checksum, model identifier, 사용자 설정 로드 여부가 현재 요청과 일치하고, candidate package 전체를 현재 validator로 재검증한 결과가 run manifest의 validation record와 정확히 일치하는 경우에만 `skipped`로 기록해야 한다.
 - Candidate, provenance 또는 status가 누락·변경됐거나 재검증에 실패하면 완료 artifact를 재사용해서는 안 된다. 이전 model 실행이 candidate를 작성했지만 validation만 실패한 경우에는 현재 validator로 먼저 재검증해야 하며, 재검증이 통과하면 Codex를 다시 실행해서는 안 된다.
-- 한 항목의 실패는 다른 항목의 workspace와 상태를 변경해서는 안 된다. 기본 실행은 독립 항목을 계속 처리하고 `work/codex-agent/summary.json`에 `completed`, `skipped`, `dryRun`, `validationFailed`, `failed` count와 manifest 순서의 item을 기록해야 한다. 실패가 하나라도 있으면 summary status는 `completedWithFailures`이고 command는 non-zero exit code를 반환해야 한다.
+- 한 항목의 실패는 다른 항목의 workspace와 상태를 변경해서는 안 된다. 기본 실행은 독립 항목을 계속 처리하고 `.artifacts/work/codex-agent/summary.json`에 `completed`, `skipped`, `dryRun`, `validationFailed`, `failed` count와 manifest 순서의 item을 기록해야 한다. 실패가 하나라도 있으면 summary status는 `completedWithFailures`이고 command는 non-zero exit code를 반환해야 한다.
 - Worker 수를 늘리기 전에 Codex 서비스의 rate limit, 동시 요청 한도, 항목별 PDF page image 수, model context와 input token 사용량, 프로세스별 메모리 사용량을 확인해야 한다. Rate limit 또는 자원 압박이 발생하면 worker 수를 줄이고 checksum 기반 재개를 사용해야 한다.
 
 ### Legacy structured-JSON 전체 corpus 병렬 변환
 
 - 전체 변환 대상은 `data/criteria-manifest.yaml`의 record 순서대로 선택한 모든 `extractedCriterion` 항목이다. 일부 slug allowlist를 지정해도 대상은 manifest 순서로 filtering해야 한다. 실행 순서와 summary item 순서는 이 순서를 유지해야 하며, worker 완료 순서에 의존해서는 안 된다.
-- 각 항목은 `taskBuild`, `visionRun`, `importer`의 세 단계를 순서대로 실행한다. 한 항목의 단계별 artifact는 `work/codex/tasks/<criterionSlug>/`, `work/codex/results/<criterionSlug>/`, `work/codex/candidates/<criterionSlug>/`에 격리해야 한다.
+- 각 항목은 `taskBuild`, `visionRun`, `importer`의 세 단계를 순서대로 실행한다. 한 항목의 단계별 artifact는 `.artifacts/work/codex/tasks/<criterionSlug>/`, `.artifacts/work/codex/results/<criterionSlug>/`, `.artifacts/work/codex/candidates/<criterionSlug>/`에 격리해야 한다.
 - 병렬 worker 수는 1부터 16까지 설정 가능해야 한다. 기본값은 `min(2, max(1, logicalCpuCount))`로 계산하고, 전체 corpus 실행에는 이 작은 기본값을 사용해야 한다.
 - 병렬 실행은 항목별 read-only Codex 분석만 동시 수행해야 한다. Candidate를 canonical Markdown, provenance, registry에 적용하거나 review status를 변경하는 작업을 포함해서는 안 된다.
 - 재개 실행도 각 task를 현재 입력에서 다시 생성해야 한다. Run manifest의 `schemaVersion`, task identifier와 checksum, result checksum, model, 사용자 설정 로드 여부, 성공 상태를 현재 요청과 대조해야 한다. Candidate의 result와 candidate checksum, `validationStatus: passed`, `canonicalApplied: false`도 모두 검증한 경우에만 건너뛸 수 있다. Result만 현재 task와 실행 설정에 유효하면 importer부터 재개하고, 검증이 누락되거나 불일치하면 Codex vision 분석부터 다시 처리해야 한다.
@@ -180,11 +191,11 @@ Canonical criterion package
 - Bulk 진행률은 부모 process만 갱신하고, 완료 수, 전체 수, 백분율, 경과 시간, 처리율, outcome별 건수를 제공해야 한다.
 - TTY에서는 한 줄을 갱신하고 종료 시 newline을 기록해야 한다. CI와 non-TTY에서는 carriage return 없이 완전한 line을 기록해야 한다.
 - 공통 runtime logger 기반 실행 도구는 `--log-level`, `--log-directory`를 지원해야 한다. Legacy bulk runner는 진행률을 비활성화하는 `--no-progress`를 추가로 지원해야 한다.
-- 기본 file log 경로인 `work/logs/`와 변환 작업 경로인 `work/codex-agent/`, `work/codex/`는 생성 산출물이며 Git에 포함해서는 안 된다.
+- 기본 file log 경로인 `.artifacts/work/logs/`와 변환 작업 경로인 `.artifacts/work/codex-agent/`, `.artifacts/work/codex/`는 생성 산출물이며 Git에 포함해서는 안 된다.
 
 #### Codex 통신 로그
 
-- `codex exec --json`의 stdout은 Codex-native pipeline에서 `work/codex-agent/jobs/<criterionSlug>/<taskChecksum>/events.jsonl`, legacy pipeline에서 `work/codex/results/<criterionSlug>/events.jsonl`에 변형 없이 저장해야 한다. 이 raw artifact는 runtime JSONL이 아니며 redaction 또는 content filtering을 적용한 운영 로그로 취급해서는 안 된다.
+- `codex exec --json`의 stdout은 Codex-native pipeline에서 `.artifacts/work/codex-agent/jobs/<criterionSlug>/<taskChecksum>/events.jsonl`, legacy pipeline에서 `.artifacts/work/codex/results/<criterionSlug>/events.jsonl`에 변형 없이 저장해야 한다. 이 raw artifact는 runtime JSONL이 아니며 redaction 또는 content filtering을 적용한 운영 로그로 취급해서는 안 된다.
 - Upstream Codex event의 `type`은 `thread.started`, `turn.started`, `turn.completed`, `turn.failed`, `item.*`, `error`를 포함한다. Event type이 추가되더라도 content body를 runtime JSONL로 전달해서는 안 된다.
 - `thread.started.thread_id`, event와 `item.type`별 count, JSON object와 invalid JSON line count, `turn.completed.usage`의 non-negative integer `*_tokens` field만 raw event stream에서 runtime aggregate로 추출해야 한다.
 - `item_type_counts`는 `item.type`이 있는 event 수를 세어야 한다. Agent message, reasoning, command execution 등 item의 content body를 읽거나 저장해서는 안 된다.
@@ -210,10 +221,10 @@ Legacy runtime logger의 `output_paths`는 `events`, `result`, `run`, `stderr` �
 
 - 점검항목별 criterion package를 사람이 수정하는 canonical 콘텐츠로 사용한다.
 - Criterion package는 Markdown, YAML front matter, 필수 provenance sidecar, 선택적 table sidecar, 원본 asset으로 구성한다.
-- 기본 파일은 `<domainIdentifier>/<criterionSlug>.md` 형식을 사용한다.
-- 복잡한 표는 `<domainIdentifier>/<criterionSlug>.tables.yaml`에 저장한다.
-- Block-level provenance와 asset metadata는 `<domainIdentifier>/<criterionSlug>.provenance.yaml`에 저장해야 한다.
-- 원본 asset은 `assets/<criterionSlug>/` 아래에 저장한다.
+- 기본 파일은 `content/criteria/<domainIdentifier>/<criterionSlug>.md` 형식을 사용한다.
+- 복잡한 표는 `content/criteria/<domainIdentifier>/<criterionSlug>.tables.yaml`에 저장한다.
+- Block-level provenance와 asset metadata는 `content/criteria/<domainIdentifier>/<criterionSlug>.provenance.yaml`에 저장해야 한다.
+- 원본 asset은 `content/assets/<criterionSlug>/` 아래에 저장한다.
 - Markdown은 CommonMark 문법을 기본으로 사용한다.
 - 허용 확장은 YAML front matter와 GFM table로 제한한다.
 - 유형별 note는 이 문서에서 정의한 CommonMark blockquote profile로 표현한다.
@@ -425,7 +436,7 @@ sourceAnnotations:
 - `criterion.slug`는 원문 code를 ASCII lowercase로 변환한 값이어야 한다. `U-01`은 `u-01`, `CI`는 `ci`로 변환한다.
 - Slug는 `^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$` 형식을 충족해야 한다.
 - Slug와 route는 repository 전체에서 유일해야 한다.
-- 파일 경로는 `<domainIdentifier>/<criterionSlug>.md` 형식을 사용한다.
+- 파일 경로는 `content/criteria/<domainIdentifier>/<criterionSlug>.md` 형식을 사용한다.
 - Criterion route는 `/<domainIdentifier>/<criterionSlug>/` 형식을 사용한다.
 - Reserved route와의 충돌은 build error로 처리한다.
 - route와 anchor는 제목이 아니라 코드와 의미 역할에서 생성한다.
@@ -436,7 +447,7 @@ sourceAnnotations:
 
 렌더러는 metadata를 이용해 H1을 생성한다. Markdown 본문은 H2부터 시작한다.
 
-`unix/u-01.md`는 이 정책의 정본 서식 exemplar다. 변환을 완료한 모든 점검항목은 이 문서와 동일한 heading 구성,
+`content/criteria/unix/u-01.md`는 이 정책의 정본 서식 exemplar다. 변환을 완료한 모든 점검항목은 이 문서와 동일한 heading 구성,
 서식, 표기 규약을 따라야 한다. 이 절과 `정본 서식 계약` 절이 상충하면 `정본 서식 계약`을 우선 적용한다.
 
 시스템 점검항목의 기본 구조는 다음과 같다.
@@ -471,7 +482,7 @@ sourceAnnotations:
 
 ## 정본 서식 계약
 
-변환을 완료한 모든 점검항목은 `unix/u-01.md`와 동일한 서식 계약을 따라야 한다. 이 계약은
+변환을 완료한 모든 점검항목은 `content/criteria/unix/u-01.md`와 동일한 서식 계약을 따라야 한다. 이 계약은
 `systemCriterion`과 `webApplicationCriterion`에 공통 적용한다. `extractedCriterion`은 변환 완료 상태가 아닌
 중간 산출물이며 `원문 전사` 구조를 사용한다.
 
@@ -569,7 +580,7 @@ sourceAnnotations:
 
 - Heading 계약, 판단 기준 표기, 참고 blockquote profile, fenced code info string은 repository validator가
   강제한다. Codex 결과 importer와 repository validator는 동일한 heading 상수를 사용해야 한다.
-- 정본 서식 계약을 변경하려면 `unix/u-01.md`, 이 절, validator 규칙, reference fixture를 함께 변경해야 한다.
+- 정본 서식 계약을 변경하려면 `content/criteria/unix/u-01.md`, 이 절, validator 규칙, reference fixture를 함께 변경해야 한다.
 
 ### 구조 규칙
 
@@ -874,13 +885,18 @@ Checksum 이름은 다음 의미로 구분한다.
 
 모든 checksum은 SHA-256을 사용하고 lowercase hexadecimal로 저장한다. Aggregate checksum은 다음 방식으로 계산한다.
 
-1. 포함 파일의 repository-relative POSIX path와 실제 file byte의 SHA-256을 구한다.
-2. Path를 UTF-8 byte 순서로 정렬한다.
-3. 각 파일을 `<sha256><two spaces><relativePath><LF>` record로 직렬화한다.
+1. 포함 파일의 실제 byte에 대한 SHA-256과 checksum 범위에서 정의한 POSIX logical path를 구한다.
+2. Logical path를 UTF-8 byte 순서로 정렬한다.
+3. 각 파일을 `<sha256><two spaces><logicalPath><LF>` record로 직렬화한다.
 4. 전체 record byte의 SHA-256을 aggregate checksum으로 사용한다.
 
 `criterionSourceChecksum`에는 해당 criterion의 Markdown, `.tables.yaml`, `.provenance.yaml`, canonical asset을 포함한다.
-`canonicalCorpusChecksum`에는 모든 criterion source와 `data/`, `schemas/` 아래의 canonical 파일을 포함한다.
+Criterion package의 logical path는 각각 `<domainIdentifier>/<criterionSlug>.*`와
+`assets/<criterionSlug>/<assetPath>`를 사용한다. `content/criteria/`와 `content/assets/` 같은 물리 저장 prefix는
+logical path에 포함하지 않는다. 따라서 file byte와 package 내부 경로가 동일한 저장소 구조 이동은 기존 review
+identity를 무효화하지 않는다.
+`canonicalCorpusChecksum`에는 `content/criteria/` 아래의 모든 criterion source와 `data/`, `schemas/` 아래의 canonical 파일을 포함한다.
+이 checksum의 logical path는 repository-relative POSIX path를 사용한다.
 원본 PDF, 생성물, raw extraction, page render, screenshot은 corpus aggregate에서 제외한다.
 원본 PDF는 `sourceDocumentChecksum`으로 별도 검증한다.
 
@@ -1154,7 +1170,7 @@ RFC 8785로 직렬화한 뒤, 이 문서의 aggregate checksum record 방식으�
 
 ## 참고 자료
 
-- [KISA CCE 가이드 2026 원본 PDF](kisa-cce-criteria-2026.pdf)
+- [KISA CCE 가이드 2026 원본 PDF](content/source/kisa-cce-criteria-2026.pdf)
 - [저장소 README](README.md)
 - [OpenAI Codex non-interactive mode](https://developers.openai.com/codex/noninteractive)
 - [OpenCodeX Codex integration](https://github.com/lidge-jun/opencodex/blob/main/docs-site/src/content/docs/guides/codex-integration.md)

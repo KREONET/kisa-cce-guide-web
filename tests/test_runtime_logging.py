@@ -17,6 +17,7 @@ from typing import IO
 import pytest
 
 from conversion import runtime_logging
+from conversion.paths import WORK_DIRECTORY
 from conversion.runtime_logging import (
     LOG_DIRECTORY_ENVIRONMENT_VARIABLE,
     LOG_LEVEL_ENVIRONMENT_VARIABLE,
@@ -97,6 +98,7 @@ def _read_json_lines(path: Path) -> list[dict[str, object]]:
 def test_logging_arguments_accept_environment_defaults_and_cli_override(tmp_path: Path) -> None:
     """Shared arguments must normalize env defaults and prefer explicit CLI values."""
 
+    assert runtime_logging.DEFAULT_LOG_DIRECTORY == WORK_DIRECTORY / "logs"
     parser = argparse.ArgumentParser()
     environment = {
         LOG_LEVEL_ENVIRONMENT_VARIABLE: "debug",

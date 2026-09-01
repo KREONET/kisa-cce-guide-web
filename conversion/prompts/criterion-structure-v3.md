@@ -3,7 +3,7 @@
 Convert exactly one KISA CCE criterion from source-page images into structured data.
 This is a vision OCR and semantic structuring task, not transcript reformatting.
 
-`unix/u-01.md` is the canonical formatting exemplar for this repository. Every converted criterion must
+`content/criteria/unix/u-01.md` is the canonical formatting exemplar for this repository. Every converted criterion must
 produce the same heading composition, section body forms, and notation as that document. The canonical
 format contract in the conversion policy is normative; this prompt restates the parts you must satisfy.
 

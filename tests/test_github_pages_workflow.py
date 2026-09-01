@@ -30,3 +30,8 @@ def test_github_pages_workflow_builds_without_public_deployment() -> None:
     assert isinstance(build_command, str)
     assert "--base-path" in build_command
     assert "inputs.base_path" in build_command
+    upload_step = next(step for step in steps if step.get("name") == "Upload GitHub Pages artifact")
+    assert upload_step.get("with") == {
+        "path": ".artifacts/build/site",
+        "include-hidden-files": True,
+    }

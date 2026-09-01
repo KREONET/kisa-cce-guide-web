@@ -30,6 +30,7 @@ from conversion.common import (
     provenance_by_reference,
     repository_root,
 )
+from conversion.paths import BUILD_DIRECTORY, criterion_directory
 from conversion.runtime_logging import add_logging_arguments, configure_runtime_logging
 from conversion.validate_content import validate_repository
 
@@ -98,8 +99,7 @@ def _search_sections(blocks: list[JsonValue]) -> dict[str, JsonValue]:
             continue
         section_parts[_search_section_name(block_value)].append(content_value)
     return {
-        name: _plain_search_text(" ".join(section_parts[name]))
-        for name in _SEARCH_SECTION_NAMES
+        name: _plain_search_text(" ".join(section_parts[name])) for name in _SEARCH_SECTION_NAMES
     }
 
 
@@ -142,9 +142,9 @@ def _normalized_criterion(
     if not isinstance(domain_identifier, str):
         msg = "manifest criterion domainIdentifier must be a string"
         raise TypeError(msg)
-    criterion_directory = root / domain_identifier
-    criterion_document = load_criterion(criterion_directory / f"{slug_value}.md")
-    provenance = load_yaml(criterion_directory / f"{slug_value}.provenance.yaml")
+    criterion_source_directory = criterion_directory(root, domain_identifier)
+    criterion_document = load_criterion(criterion_source_directory / f"{slug_value}.md")
+    provenance = load_yaml(criterion_source_directory / f"{slug_value}.provenance.yaml")
     leaf_blocks = extract_leaf_blocks(
         criterion_document.body,
         criterion_slug=slug_value,
@@ -383,7 +383,7 @@ def build(
     """Build the canonical corpus and return generated artifact paths."""
 
     repository = root or repository_root()
-    output_directory = output_root or repository / "build"
+    output_directory = output_root or repository / BUILD_DIRECTORY
     if output_root is None:
         # Replacing generated directories prevents removed criteria from leaving stale files.
         for generated_directory_name in ("normalized", "search", "site"):

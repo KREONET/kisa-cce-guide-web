@@ -20,6 +20,7 @@ from conversion.codex_task_builder import (
     load_codex_task,
 )
 from conversion.common import JsonValue, as_mapping, as_sequence, repository_root, sha256_file
+from conversion.paths import criterion_directory
 from conversion.runtime_logging import REDACTED_VALUE, RuntimeLogger, configure_runtime_logging
 from tests.codex_transition_fixtures import create_codex_transition_repository
 
@@ -1404,7 +1405,7 @@ def test_importer_validates_and_renders_review_candidate(tmp_path: Path) -> None
         "   ~~~"
     ) in candidate
     assert (candidate_path.parent / "validation.json").is_file()
-    canonical_path = repository_root() / "unix" / "u-03.md"
+    canonical_path = criterion_directory(repository_root(), "unix") / "u-03.md"
     assert canonical_path.read_text(encoding="utf-8").startswith("---\nschemaVersion: 1")
 
 

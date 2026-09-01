@@ -1,7 +1,7 @@
 const assert = require("node:assert/strict");
 const test = require("node:test");
 
-require("../site_assets/search-core.js");
+require("../site/assets/search-core.js");
 
 const {analyzeQuery, rankRecords} = globalThis.KisaNaturalSearch;
 

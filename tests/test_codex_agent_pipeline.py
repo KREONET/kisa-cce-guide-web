@@ -11,6 +11,7 @@ import pytest
 
 from conversion import codex_agent_pipeline
 from conversion.common import JsonValue, as_mapping, as_sequence, repository_root, sha256_file
+from conversion.paths import criterion_directory
 from tests.codex_transition_fixtures import create_codex_transition_repository
 
 EXPECTED_U_03_PAGE_COUNT = 4
@@ -254,8 +255,8 @@ def _canonical_candidate_job(tmp_path: Path) -> tuple[codex_agent_pipeline.Agent
     """Build a complete checksum-bound canonical package for validator tests."""
 
     root = repository_root()
-    source_criterion = root / "unix" / "u-01.md"
-    source_provenance = root / "unix" / "u-01.provenance.yaml"
+    source_criterion = criterion_directory(root, "unix") / "u-01.md"
+    source_provenance = criterion_directory(root, "unix") / "u-01.provenance.yaml"
     job_directory = tmp_path / "jobs" / "u-01" / "isolated-success"
     workspace = job_directory / "workspace"
     output_directory = workspace / "output"

@@ -45,15 +45,21 @@ from conversion.common import (
     repository_root,
     sha256_file,
 )
+from conversion.paths import (
+    CRITERIA_DIRECTORY,
+    PROMPT_DIRECTORY,
+    WORK_DIRECTORY,
+    criterion_directory,
+)
 from conversion.runtime_logging import add_logging_arguments, configure_runtime_logging
 from conversion.validate_content import _validate_markdown_structure
 
 AGENT_SCHEMA_VERSION = 1
-DEFAULT_AGENT_WORK_DIRECTORY = Path("work/codex-agent")
-AGENT_CONTRACT_PATH = Path("codex_prompts/criterion-agent-v1.md")
+DEFAULT_AGENT_WORK_DIRECTORY = WORK_DIRECTORY / "codex-agent"
+AGENT_CONTRACT_PATH = PROMPT_DIRECTORY / "criterion-agent-v1.md"
 AGENT_STATUS_SCHEMA_PATH = Path("schemas/codex-agent-status.schema.json")
-REFERENCE_CRITERION_PATH = Path("unix/u-01.md")
-REFERENCE_PROVENANCE_PATH = Path("codex_prompts/provenance-example-v1.yaml")
+REFERENCE_CRITERION_PATH = CRITERIA_DIRECTORY / "unix/u-01.md"
+REFERENCE_PROVENANCE_PATH = PROMPT_DIRECTORY / "provenance-example-v1.yaml"
 CRITERION_METADATA_SCHEMA_PATH = Path("schemas/criterion-metadata.schema.json")
 PROVENANCE_SCHEMA_PATH = Path("schemas/provenance-sidecar.schema.json")
 MAXIMUM_WORKERS = 16
@@ -211,8 +217,9 @@ def build_agent_job(  # noqa: PLR0915
         message = f"{slug} has no domain identifier"
         raise TypeError(message)
 
-    source_criterion_path = repository / domain_identifier / f"{slug}.md"
-    source_provenance_path = repository / domain_identifier / f"{slug}.provenance.yaml"
+    criterion_source_directory = criterion_directory(repository, domain_identifier)
+    source_criterion_path = criterion_source_directory / f"{slug}.md"
+    source_provenance_path = criterion_source_directory / f"{slug}.provenance.yaml"
     criterion = load_criterion(source_criterion_path)
     provenance = load_yaml(source_provenance_path)
     evidence = _page_evidence(

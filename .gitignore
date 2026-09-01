@@ -2,13 +2,9 @@
 .python-version
 .claude/
 .openai/
-build/
-dist/
+.artifacts/
 .pytest_cache/
 .ruff_cache/
 .ty/
 __pycache__/
 *.py[cod]
-work/codex/
-work/codex-*/
-work/logs/

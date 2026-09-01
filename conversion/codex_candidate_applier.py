@@ -46,6 +46,12 @@ from conversion.common import (
     repository_root,
     sha256_file,
 )
+from conversion.paths import (
+    CANONICAL_ASSET_DIRECTORY,
+    CRITERION_ASSET_REFERENCE_DIRECTORY,
+    canonical_asset_directory,
+    criterion_directory,
+)
 from conversion.runtime_logging import add_logging_arguments, configure_runtime_logging
 from conversion.validate_content import validate_repository
 
@@ -455,16 +461,20 @@ def _canonical_asset_path(asset_path: str, *, slug: str) -> str:
     """Normalize one result asset path to the criterion-relative canonical form."""
 
     normalized = asset_path.lstrip("/")
-    if normalized.startswith("../assets/"):
+    reference_prefix = CRITERION_ASSET_REFERENCE_DIRECTORY.as_posix()
+    repository_prefix = CANONICAL_ASSET_DIRECTORY.as_posix()
+    if normalized.startswith(f"{reference_prefix}/"):
         canonical_path = normalized
+    elif normalized.startswith(f"{repository_prefix}/"):
+        canonical_path = f"{reference_prefix}/{normalized.removeprefix(f'{repository_prefix}/')}"
     elif normalized.startswith("assets/"):
-        canonical_path = f"../{normalized}"
+        canonical_path = f"{reference_prefix}/{normalized.removeprefix('assets/')}"
     else:
-        msg = f"result asset path must be under assets/{slug}: {asset_path}"
+        msg = f"result asset path must be under {repository_prefix}/{slug}: {asset_path}"
         raise ValueError(msg)
-    expected_prefix = f"../assets/{slug}/"
+    expected_prefix = f"{reference_prefix}/{slug}/"
     if not canonical_path.startswith(expected_prefix) or "\\" in canonical_path:
-        msg = f"result asset path must be under assets/{slug}: {asset_path}"
+        msg = f"result asset path must be under {repository_prefix}/{slug}: {asset_path}"
         raise ValueError(msg)
     relative_parts = Path(canonical_path.removeprefix(expected_prefix)).parts
     if not relative_parts or any(part in {"", ".", ".."} for part in relative_parts):
@@ -489,14 +499,14 @@ def _prepare_assets(  # noqa: C901, PLR0912, PLR0915
     ]
     retained_by_path: dict[str, dict[str, JsonValue]] = {}
     source_crop_paths: list[Path] = []
-    criterion_directory = root / domain_identifier
-    expected_asset_directory = (root / "assets" / slug).resolve()
+    criterion_source_directory = criterion_directory(root, domain_identifier)
+    expected_asset_directory = canonical_asset_directory(root, slug).resolve()
     for asset in existing_assets:
         declared_path = asset.get("path")
         if not isinstance(declared_path, str):
             msg = f"{slug} provenance asset has no path"
             raise TypeError(msg)
-        resolved_path = (criterion_directory / declared_path).resolve()
+        resolved_path = (criterion_source_directory / declared_path).resolve()
         if (
             not resolved_path.is_relative_to(expected_asset_directory)
             or not resolved_path.is_file()
@@ -883,11 +893,14 @@ def _intended_criterion_checksum(  # noqa: PLR0913
         Path(domain_identifier) / f"{slug}.md": markdown_bytes,
         Path(domain_identifier) / f"{slug}.provenance.yaml": provenance_bytes,
     }
-    table_path = root / domain_identifier / f"{slug}.tables.yaml"
+    table_path = criterion_directory(root, domain_identifier) / f"{slug}.tables.yaml"
     if table_path.exists():
-        intended[table_path.relative_to(root)] = table_path.read_bytes()
+        intended[Path(domain_identifier) / table_path.name] = table_path.read_bytes()
     for asset_path in retained_asset_paths:
-        intended[asset_path.relative_to(root)] = asset_path.read_bytes()
+        logical_asset_path = Path("assets") / asset_path.relative_to(
+            root / CANONICAL_ASSET_DIRECTORY
+        )
+        intended[logical_asset_path] = asset_path.read_bytes()
     records = "".join(
         f"{hashlib.sha256(content).hexdigest()}  {path.as_posix()}\n"
         for path, content in sorted(intended.items(), key=lambda item: item[0].as_posix().encode())
@@ -908,8 +921,9 @@ def _prepare_canonical_package(
     if not isinstance(domain_identifier, str):
         msg = f"{slug} manifest record has no domainIdentifier"
         raise TypeError(msg)
-    criterion_path = root / domain_identifier / f"{slug}.md"
-    provenance_path = root / domain_identifier / f"{slug}.provenance.yaml"
+    criterion_source_directory = criterion_directory(root, domain_identifier)
+    criterion_path = criterion_source_directory / f"{slug}.md"
+    provenance_path = criterion_source_directory / f"{slug}.provenance.yaml"
     existing_criterion = load_criterion(criterion_path)
     existing_provenance = load_yaml(provenance_path)
     canonical_render = _render_canonical(
@@ -930,7 +944,7 @@ def _prepare_canonical_package(
     )
     provenance_source = _yaml_text(canonical_render.provenance)
     retained_asset_paths = [
-        (root / domain_identifier / cast("str", asset["path"])).resolve()
+        (criterion_source_directory / cast("str", asset["path"])).resolve()
         for asset in (
             as_mapping(value, location="provenance.assets[]")
             for value in as_sequence(
@@ -1198,7 +1212,7 @@ def _copy_source_crop_evidence(
 ) -> tuple[Path, ...]:
     """Copy intermediate page crops into review evidence before canonical removal."""
 
-    asset_root = (root / "assets" / slug).resolve()
+    asset_root = canonical_asset_directory(root, slug).resolve()
     evidence_root = work_directory / "evidence" / slug
     copied: list[Path] = []
     for source_path in source_crop_paths:

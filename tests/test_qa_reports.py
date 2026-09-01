@@ -8,7 +8,9 @@ from pathlib import Path
 import pytest
 from jsonschema import Draft202012Validator
 
+from conversion import qa_reports
 from conversion.common import load_json, repository_root
+from conversion.paths import WORK_DIRECTORY
 from conversion.qa_reports import REPORT_TYPES, scaffold_reports, validate_report
 
 
@@ -42,6 +44,14 @@ def test_scaffold_reports_are_deterministic_pending_documents(tmp_path: Path) ->
                 expected_report_type=path.stem,
             )
         } == {"qa-report-result"}
+
+
+def test_scaffold_parser_uses_the_shared_work_directory() -> None:
+    """Pending browser reports must default to the consolidated artifact root."""
+
+    arguments = qa_reports._argument_parser().parse_args(["scaffold"])  # noqa: SLF001
+
+    assert arguments.output_directory == WORK_DIRECTORY / "qa-reports"
 
 
 def test_scaffold_refuses_to_overwrite_existing_report(tmp_path: Path) -> None:

@@ -24,10 +24,11 @@ from conversion.common import (
     repository_root,
     sha256_file,
 )
+from conversion.paths import WORK_DIRECTORY, criterion_directory
 from conversion.runtime_logging import add_logging_arguments, configure_runtime_logging
 from conversion.validate_content import validate_repository
 
-DEFAULT_WORK_DIRECTORY = Path("work/codex-agent-sol-release")
+DEFAULT_WORK_DIRECTORY = WORK_DIRECTORY / "codex-agent-sol-release"
 
 
 @dataclass(frozen=True)
@@ -202,7 +203,7 @@ def _source_crop_paths(
 ) -> tuple[Path, ...]:
     """Select checksum-verified legacy source crops and reject orphaned assets."""
 
-    provenance = load_yaml(root / domain_identifier / f"{slug}.provenance.yaml")
+    provenance = load_yaml(criterion_directory(root, domain_identifier) / f"{slug}.provenance.yaml")
     _assets, _assets_by_node, source_crop_paths = legacy_applier._prepare_assets(  # noqa: SLF001
         [],
         provenance,
@@ -268,8 +269,8 @@ def _prepare_candidate(
         domain_identifier=domain_identifier,
         content_model=content_model,
         content_model_version=content_model_version,
-        criterion_path=root / domain_identifier / f"{slug}.md",
-        provenance_path=root / domain_identifier / f"{slug}.provenance.yaml",
+        criterion_path=criterion_directory(root, domain_identifier) / f"{slug}.md",
+        provenance_path=criterion_directory(root, domain_identifier) / f"{slug}.provenance.yaml",
         criterion_bytes=criterion_bytes,
         provenance_bytes=provenance_bytes,
         criterion_checksum=checksum,

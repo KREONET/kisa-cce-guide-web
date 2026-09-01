@@ -44,6 +44,12 @@ from conversion.common import (
     repository_root,
     sha256_file,
 )
+from conversion.paths import (
+    BUILD_DIRECTORY,
+    CRITERION_ASSET_REFERENCE_DIRECTORY,
+    canonical_asset_directory,
+    criterion_directory,
+)
 from conversion.runtime_logging import add_logging_arguments, configure_runtime_logging
 
 SCHEMA_BINDINGS = {
@@ -96,7 +102,8 @@ WEB_APPLICATION_CODES = frozenset(
         "WM",
     }
 )
-# The canonical exemplar unix/u-01.md writes judgment items with the colon inside the strong
+# The canonical exemplar content/criteria/unix/u-01.md writes judgment items with the colon inside
+# the strong
 # span and exactly one space after it, so the validator matches that literal notation instead
 # of accepting any emphasis arrangement.
 JUDGMENT_ITEM_PATTERN = re.compile(r"^\*\*(양호|취약):\*\* (?=\S)")
@@ -396,7 +403,7 @@ def _validate_release_generated_outputs(
             issues.append(
                 ValidationIssue(
                     "release-deterministic-build",
-                    "build",
+                    BUILD_DIRECTORY.as_posix(),
                     "two clean builds produced different file sets or bytes",
                 )
             )
@@ -406,7 +413,7 @@ def _validate_release_generated_outputs(
             issues.append(
                 ValidationIssue(
                     "release-normalized-count",
-                    "build/normalized",
+                    (BUILD_DIRECTORY / "normalized").as_posix(),
                     "normalized criterion count differs from the exact code allowlist",
                 )
             )
@@ -415,7 +422,7 @@ def _validate_release_generated_outputs(
             issues.append(
                 ValidationIssue(
                     "release-search-index",
-                    "build/search",
+                    (BUILD_DIRECTORY / "search").as_posix(),
                     "search index is missing",
                 )
             )
@@ -429,7 +436,7 @@ def _validate_release_generated_outputs(
                 issues.append(
                     ValidationIssue(
                         "release-search-index",
-                        "build/search/search-index.json",
+                        (BUILD_DIRECTORY / "search/search-index.json").as_posix(),
                         "search index code set differs from the allowlist",
                     )
                 )
@@ -609,7 +616,8 @@ def _validate_assets(
             )
         )
 
-    expected_asset_directory = (root / "assets" / slug).resolve()
+    expected_asset_directory = canonical_asset_directory(root, slug).resolve()
+    expected_asset_prefix = (*CRITERION_ASSET_REFERENCE_DIRECTORY.parts, slug)
     image_blocks_by_path = {
         block.asset_path: block for block in image_blocks if isinstance(block.asset_path, str)
     }
@@ -621,14 +629,16 @@ def _validate_assets(
         if (
             Path(declared_path).is_absolute()
             or "\\" in declared_path
-            or len(declared_parts) < 4
-            or declared_parts[:3] != ("..", "assets", slug)
+            or len(declared_parts) < len(expected_asset_prefix) + 1
+            or declared_parts[: len(expected_asset_prefix)] != expected_asset_prefix
         ):
             issues.append(
                 ValidationIssue(
                     "asset-path-format",
                     relative_criterion_path,
-                    f"asset path must be ../assets/{slug}/<filename>: {declared_path}",
+                    "asset path must be "
+                    f"{CRITERION_ASSET_REFERENCE_DIRECTORY.as_posix()}/"
+                    f"{slug}/<filename>: {declared_path}",
                 )
             )
             continue
@@ -1106,9 +1116,9 @@ def _validate_criterion(
                 "missing domainIdentifier",
             )
         ]
-    criterion_directory = root / domain_identifier
-    criterion_path = criterion_directory / f"{slug}.md"
-    provenance_path = criterion_directory / f"{slug}.provenance.yaml"
+    criterion_source_directory = criterion_directory(root, domain_identifier)
+    criterion_path = criterion_source_directory / f"{slug}.md"
+    provenance_path = criterion_source_directory / f"{slug}.provenance.yaml"
     relative_criterion_path = criterion_path.relative_to(root).as_posix()
     try:
         criterion = load_criterion(criterion_path)
@@ -1356,7 +1366,7 @@ def _validate_criterion(
     issues.extend(
         _validate_assets(
             root=root,
-            criterion_directory=criterion_directory,
+            criterion_directory=criterion_source_directory,
             slug=slug,
             relative_criterion_path=relative_criterion_path,
             provenance=provenance,
@@ -1986,7 +1996,8 @@ def validate_repository(
                 if not isinstance(criterion_domain_identifier, str):
                     continue
                 criterion_document = load_criterion(
-                    repository / criterion_domain_identifier / f"{review_key[1]}.md"
+                    criterion_directory(repository, criterion_domain_identifier)
+                    / f"{review_key[1]}.md"
                 )
                 annotation_values = as_sequence(
                     criterion_document.metadata["sourceAnnotations"],
@@ -2098,7 +2109,7 @@ def _argument_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--report",
         type=Path,
-        default=Path("build/reports/content-validation.json"),
+        default=BUILD_DIRECTORY / "reports" / "content-validation.json",
         help="validation report output path",
     )
     add_logging_arguments(parser)

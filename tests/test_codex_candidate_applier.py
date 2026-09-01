@@ -37,6 +37,10 @@ from conversion.common import (
     repository_root,
     sha256_file,
 )
+from conversion.paths import (
+    CRITERIA_DIRECTORY,
+    canonical_asset_directory,
+)
 from conversion.validate_content import ValidationIssue, _valid_system_semantic_path
 from tests.codex_transition_fixtures import create_codex_transition_repository
 from tests.test_codex_pipeline import _fake_result
@@ -192,7 +196,7 @@ def _prepare_application(
     )
     source_crop_checksums = {
         path.name: sha256_file(path)
-        for path in sorted((repository / "assets" / APPLICATION_SLUG).glob("*.png"))
+        for path in sorted(canonical_asset_directory(repository, APPLICATION_SLUG).glob("*.png"))
     }
     assert len(source_crop_checksums) == EXPECTED_SOURCE_CROP_COUNT
     return PreparedApplication(
@@ -256,8 +260,12 @@ def _prepare_batch_application(tmp_path: Path) -> PreparedBatchApplication:
         }
     )
     second_paths = as_mapping(second_task["paths"], location="task.paths")
-    second_paths["criterionMarkdown"] = f"unix/{second_slug}.md"
-    second_paths["criterionProvenance"] = f"unix/{second_slug}.provenance.yaml"
+    second_paths["criterionMarkdown"] = (
+        CRITERIA_DIRECTORY / "unix" / f"{second_slug}.md"
+    ).as_posix()
+    second_paths["criterionProvenance"] = (
+        CRITERIA_DIRECTORY / "unix" / f"{second_slug}.provenance.yaml"
+    ).as_posix()
     second_task["taskChecksum"] = calculate_codex_task_checksum(second_task)
     second_task_path = work_directory / "tasks" / second_slug / "task.json"
     second_task_path.parent.mkdir(parents=True)
@@ -453,7 +461,7 @@ def test_asset_preparation_removes_crops_and_preserves_declared_visual(
 ) -> None:
     """Only source-page crops move to evidence; declared meaningful assets remain canonical."""
 
-    asset_directory = tmp_path / "assets/u-99"
+    asset_directory = canonical_asset_directory(tmp_path, "u-99")
     asset_directory.mkdir(parents=True)
     meaningful_path = asset_directory / "diagram.png"
     source_crop_path = asset_directory / "page-99.png"
@@ -462,12 +470,12 @@ def test_asset_preparation_removes_crops_and_preserves_declared_visual(
     provenance: dict[str, JsonValue] = {
         "assets": [
             {
-                "path": "../assets/u-99/page-99.png",
+                "path": "../../assets/u-99/page-99.png",
                 "assetType": "sourcePageCrop",
                 "checksumValue": sha256_file(source_crop_path),
             },
             {
-                "path": "../assets/u-99/diagram.png",
+                "path": "../../assets/u-99/diagram.png",
                 "assetType": "sourceImage",
                 "checksumValue": sha256_file(meaningful_path),
                 "alternativeText": "Old description",
@@ -492,12 +500,12 @@ def test_asset_preparation_removes_crops_and_preserves_declared_visual(
     )
     assert source_crop_paths == (source_crop_path,)
     assert [asset["path"] for asset in cast("list[dict[str, JsonValue]]", assets)] == [
-        "../assets/u-99/diagram.png"
+        "../../assets/u-99/diagram.png"
     ]
     retained = assets_by_node["remediation.linux.diagram"]
     assert retained["alternativeText"] == "Meaningful configuration flow"
     assert retained["alternativeTextStatus"] == "verificationRequired"
-    assert nodes[0]["assetPath"] == "../assets/u-99/diagram.png"
+    assert nodes[0]["assetPath"] == "../../assets/u-99/diagram.png"
 
 
 def test_dynamic_taxonomy_registers_u03_versions_and_reuses_existing_terms(
@@ -600,8 +608,8 @@ def test_applier_updates_canonical_package_and_preserves_crop_evidence(tmp_path:
     assert len(references) == len(set(references))
     assert provenance["assets"] == []
 
-    canonical_asset_directory = prepared.repository / "assets" / APPLICATION_SLUG
-    assert not list(canonical_asset_directory.glob("*.png"))
+    application_asset_directory = canonical_asset_directory(prepared.repository, APPLICATION_SLUG)
+    assert not list(application_asset_directory.glob("*.png"))
     evidence_directory = prepared.work_directory / "evidence" / APPLICATION_SLUG
     assert {
         path.name: sha256_file(path) for path in sorted(evidence_directory.glob("*.png"))
@@ -698,11 +706,11 @@ def test_applier_rolls_back_every_canonical_change_on_validation_failure(
     original_bytes = {path: path.read_bytes() for path in tracked_paths}
     original_assets = {
         path: path.read_bytes()
-        for path in (prepared.repository / "assets" / APPLICATION_SLUG).glob("*.png")
+        for path in canonical_asset_directory(prepared.repository, APPLICATION_SLUG).glob("*.png")
     }
     validation_failure = ValidationIssue(
         "forced-test-failure",
-        "unix/u-03.md",
+        "content/criteria/unix/u-03.md",
         "The post-replacement repository validation failed.",
     )
     validation_call_count = 0
@@ -811,7 +819,7 @@ def test_batch_rolls_back_all_packages_and_taxonomy_together(
     original_assets = {
         path: path.read_bytes()
         for slug in prepared.slugs
-        for path in (prepared.repository / "assets" / slug).glob("*.png")
+        for path in canonical_asset_directory(prepared.repository, slug).glob("*.png")
     }
     validation_call_count = 0
 

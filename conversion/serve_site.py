@@ -14,6 +14,7 @@ from urllib.parse import urlsplit, urlunsplit
 
 from conversion.build_content import build
 from conversion.common import repository_root
+from conversion.paths import BUILD_DIRECTORY
 from conversion.runtime_logging import add_logging_arguments, configure_runtime_logging
 
 DEFAULT_HOST = "127.0.0.1"
@@ -161,7 +162,7 @@ def _argument_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--no-build",
         action="store_true",
-        help="serve the existing build/site directory without rebuilding",
+        help="serve the existing .artifacts/build/site directory without rebuilding",
     )
     add_logging_arguments(parser)
     return parser
@@ -185,13 +186,13 @@ def main() -> int:
             requested_port=arguments.port,
         )
         repository = repository_root()
-        site_directory = repository / "build" / "site"
+        site_directory = repository / BUILD_DIRECTORY / "site"
         if not arguments.no_build:
             logger.info("Local site build started", event="site.build_started")
             build(root=repository, base_path=arguments.base_path)
             logger.info("Local site build completed", event="site.build_completed")
         elif not (site_directory / "index.html").is_file():
-            message = "build/site/index.html is missing; run without --no-build"
+            message = ".artifacts/build/site/index.html is missing; run without --no-build"
             logger.error(
                 "Generated local site is missing",
                 event="command.failed",

@@ -16,6 +16,14 @@ from markdown_it import MarkdownIt
 from markdown_it.token import Token
 from ruamel.yaml import YAML
 
+from conversion.paths import (
+    CANONICAL_ASSET_DIRECTORY,
+    criterion_directory,
+)
+from conversion.paths import (
+    repository_root as _repository_root,
+)
+
 type JsonScalar = bool | int | float | str | None
 type JsonValue = JsonScalar | list[JsonValue] | dict[str, JsonValue]
 
@@ -111,9 +119,9 @@ class _NoteState:
 
 
 def repository_root() -> Path:
-    """Return the repository root containing the conversion package."""
+    """Return the repository root through the shared path contract."""
 
-    return Path(__file__).resolve().parent.parent
+    return _repository_root()
 
 
 def _normalize_loaded_value(value: object, *, location: str) -> JsonValue:
@@ -793,16 +801,38 @@ def criterion_source_checksum(
     """Calculate a criterion package checksum without generated files."""
 
     criterion_paths = [
-        root / domain_identifier / f"{slug}.md",
-        root / domain_identifier / f"{slug}.provenance.yaml",
+        (
+            criterion_directory(root, domain_identifier) / f"{slug}.md",
+            Path(domain_identifier) / f"{slug}.md",
+        ),
+        (
+            criterion_directory(root, domain_identifier) / f"{slug}.provenance.yaml",
+            Path(domain_identifier) / f"{slug}.provenance.yaml",
+        ),
     ]
-    optional_table_path = root / domain_identifier / f"{slug}.tables.yaml"
+    optional_table_path = criterion_directory(root, domain_identifier) / f"{slug}.tables.yaml"
     if optional_table_path.exists():
-        criterion_paths.append(optional_table_path)
-    asset_directory = root / "assets" / slug
+        criterion_paths.append(
+            (optional_table_path, Path(domain_identifier) / f"{slug}.tables.yaml")
+        )
+    asset_directory = root / CANONICAL_ASSET_DIRECTORY / slug
     if asset_directory.exists():
-        criterion_paths.extend(path for path in asset_directory.rglob("*") if path.is_file())
-    return aggregate_checksum(criterion_paths, root=root)
+        criterion_paths.extend(
+            (
+                path,
+                Path("assets") / slug / path.relative_to(asset_directory),
+            )
+            for path in asset_directory.rglob("*")
+            if path.is_file()
+        )
+    records = "".join(
+        f"{sha256_file(path)}  {logical_path.as_posix()}\n"
+        for path, logical_path in sorted(
+            criterion_paths,
+            key=lambda item: item[1].as_posix().encode(),
+        )
+    )
+    return hashlib.sha256(records.encode()).hexdigest()
 
 
 def canonical_corpus_checksum(
@@ -823,17 +853,17 @@ def canonical_corpus_checksum(
         if not isinstance(slug, str) or not isinstance(domain_identifier, str):
             msg = "criterion manifest record requires slug and domainIdentifier"
             raise TypeError(msg)
-        criterion_directory = root / domain_identifier
+        criterion_source_directory = criterion_directory(root, domain_identifier)
         canonical_paths.extend(
             [
-                criterion_directory / f"{slug}.md",
-                criterion_directory / f"{slug}.provenance.yaml",
+                criterion_source_directory / f"{slug}.md",
+                criterion_source_directory / f"{slug}.provenance.yaml",
             ]
         )
-        optional_table_path = criterion_directory / f"{slug}.tables.yaml"
+        optional_table_path = criterion_source_directory / f"{slug}.tables.yaml"
         if optional_table_path.exists():
             canonical_paths.append(optional_table_path)
-        asset_directory = root / "assets" / slug
+        asset_directory = root / CANONICAL_ASSET_DIRECTORY / slug
         if asset_directory.exists():
             canonical_paths.extend(path for path in asset_directory.rglob("*") if path.is_file())
     return aggregate_checksum((path for path in canonical_paths if path.is_file()), root=root)

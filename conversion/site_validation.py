@@ -8,6 +8,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 from conversion.common import JsonValue, as_mapping, as_sequence, load_json
+from conversion.paths import SOURCE_DOCUMENT_PATH
 
 _ARTICLE_ATTRIBUTE_NAMES = (
     "data-criterion-code",
@@ -552,12 +553,8 @@ def validate_site(
         )
         u_01_sections = u_01.get("searchSections") if u_01 is not None else None
         u_02_sections = u_02.get("searchSections") if u_02 is not None else None
-        u_01_action = (
-            u_01_sections.get("action") if isinstance(u_01_sections, dict) else ""
-        )
-        u_02_inspection = (
-            u_02_sections.get("inspection") if isinstance(u_02_sections, dict) else ""
-        )
+        u_01_action = u_01_sections.get("action") if isinstance(u_01_sections, dict) else ""
+        u_02_inspection = u_02_sections.get("inspection") if isinstance(u_02_sections, dict) else ""
         if (
             len(search_records) != len(manifest_values)
             or u_01 is None
@@ -599,11 +596,12 @@ def validate_site(
                 "public search index is missing",
             )
         )
-    if (site_root / "source" / "kisa-cce-criteria-2026.pdf").exists():
+    public_source_document_path = Path("source") / SOURCE_DOCUMENT_PATH.name
+    if (site_root / public_source_document_path).exists():
         issues.append(
             SiteValidationIssue(
                 "site-unapproved-source-copy",
-                "source/kisa-cce-criteria-2026.pdf",
+                public_source_document_path.as_posix(),
                 "source PDF must not be copied into the site artifact before license approval",
             )
         )

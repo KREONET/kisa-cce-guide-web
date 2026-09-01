@@ -26,11 +26,17 @@ from conversion.common import (
     repository_root,
     sha256_file,
 )
+from conversion.paths import (
+    CRITERIA_DIRECTORY,
+    PROMPT_DIRECTORY,
+    WORK_DIRECTORY,
+    criterion_directory,
+)
 from conversion.runtime_logging import add_logging_arguments, configure_runtime_logging
 
 PROMPT_VERSION = 3
-DEFAULT_WORK_DIRECTORY = Path("work/codex")
-PROMPT_TEMPLATE_PATH = Path("codex_prompts/criterion-structure-v3.md")
+DEFAULT_WORK_DIRECTORY = WORK_DIRECTORY / "codex"
+PROMPT_TEMPLATE_PATH = PROMPT_DIRECTORY / "criterion-structure-v3.md"
 RESULT_SCHEMA_PATH = Path("schemas/codex-criterion-result.schema.json")
 TASK_SCHEMA_PATH = Path("schemas/codex-criterion-task.schema.json")
 CONVERSION_POLICY_PATH = Path("CONVERSION_POLICY.md")
@@ -218,7 +224,7 @@ def _page_evidence(
         if not isinstance(raw_asset_path, str):
             msg = f"{slug} page {physical_page} asset path must be a string"
             raise TypeError(msg)
-        asset_path = (root / domain_identifier / raw_asset_path).resolve()
+        asset_path = (criterion_directory(root, domain_identifier) / raw_asset_path).resolve()
         evidence.append(
             {
                 "physicalPage": physical_page,
@@ -249,8 +255,9 @@ def build_codex_task(
     if not isinstance(domain_identifier, str):
         msg = f"{slug} has no domain identifier"
         raise TypeError(msg)
-    criterion_path = repository / domain_identifier / f"{slug}.md"
-    provenance_path = repository / domain_identifier / f"{slug}.provenance.yaml"
+    criterion_source_directory = criterion_directory(repository, domain_identifier)
+    criterion_path = criterion_source_directory / f"{slug}.md"
+    provenance_path = criterion_source_directory / f"{slug}.provenance.yaml"
     criterion = load_criterion(criterion_path)
     provenance = load_yaml(provenance_path)
     evidence = _page_evidence(
@@ -283,7 +290,10 @@ def build_codex_task(
         "taxonomy": TAXONOMY_PATH.as_posix(),
         "promptTemplate": PROMPT_TEMPLATE_PATH.as_posix(),
         "resultSchema": RESULT_SCHEMA_PATH.as_posix(),
-        "structuredExemplars": ["unix/u-01.md", "unix/u-02.md"],
+        "structuredExemplars": [
+            (CRITERIA_DIRECTORY / "unix/u-01.md").as_posix(),
+            (CRITERIA_DIRECTORY / "unix/u-02.md").as_posix(),
+        ],
     }
     task: dict[str, JsonValue] = {
         "schemaVersion": 2,

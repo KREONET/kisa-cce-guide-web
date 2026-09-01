@@ -19,7 +19,9 @@ from pathlib import Path
 from types import TracebackType
 from typing import IO, Self
 
-DEFAULT_LOG_DIRECTORY = Path("work/logs")
+from conversion.paths import WORK_DIRECTORY
+
+DEFAULT_LOG_DIRECTORY = WORK_DIRECTORY / "logs"
 DEFAULT_LOG_LEVEL = "INFO"
 LOG_LEVEL_ENVIRONMENT_VARIABLE = "KISA_CCE_LOG_LEVEL"
 LOG_DIRECTORY_ENVIRONMENT_VARIABLE = "KISA_CCE_LOG_DIRECTORY"

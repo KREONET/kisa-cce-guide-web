@@ -15,6 +15,11 @@ import rfc8785
 from markdown_it import MarkdownIt
 
 from conversion.common import JsonValue, as_mapping, as_sequence
+from conversion.paths import (
+    CANONICAL_ASSET_DIRECTORY,
+    SITE_ASSET_DIRECTORY,
+    SITE_SKILL_DIRECTORY,
+)
 
 _HIGHLIGHT_LANGUAGE_ALIASES = {
     "asp": "xml",
@@ -322,10 +327,8 @@ def _render_header_domain_navigation(
     current_attribute = ' data-current-navigation="true"' if current else ""
     return (
         f'<details class="site-nav__domains"{current_attribute}>'
-        '<summary>분야</summary><ul>'
-        f'<li><a href="{all_domains_route}">전체 분야</a></li>'
-        + items
-        + "</ul></details>"
+        "<summary>분야</summary><ul>"
+        f'<li><a href="{all_domains_route}">전체 분야</a></li>' + items + "</ul></details>"
     )
 
 
@@ -832,7 +835,9 @@ def _detail_page(
         if isinstance(block, dict) and block.get("blockType") == "heading"
     ]
     toc = _render_table_of_contents(heading_blocks)
-    document_class = "criterion__document criterion__document--with-toc" if toc else "criterion__document"
+    document_class = (
+        "criterion__document criterion__document--with-toc" if toc else "criterion__document"
+    )
     content_model = _text(normalized["contentModel"], location="normalized.contentModel")
     review_label = (
         "자동 전사 · 검토 필요" if content_model == "extractedCriterion" else "구조화 문서"
@@ -1010,7 +1015,7 @@ def build_site(
     )
     generated_paths: list[Path] = [nojekyll_path]
 
-    skill_source_path = repository / "skills" / "kisa-cce-guide-explorer" / "SKILL.md"
+    skill_source_path = repository / SITE_SKILL_DIRECTORY / "kisa-cce-guide-explorer" / "SKILL.md"
     skill_document = skill_source_path.read_text(encoding="utf-8")
     rendered_skill_document = _render_skill_document(skill_document)
     public_skill_path = site_root / "SKILL.md"
@@ -1026,11 +1031,11 @@ def build_site(
         "search.js",
         "highlight-init.js",
     ):
-        source_path = repository / "site_assets" / asset_name
+        source_path = repository / SITE_ASSET_DIRECTORY / asset_name
         target_path = asset_directory / asset_name
         shutil.copy2(source_path, target_path)
         generated_paths.append(target_path)
-    canonical_asset_directory = repository / "assets"
+    canonical_asset_directory = repository / CANONICAL_ASSET_DIRECTORY
     if canonical_asset_directory.is_dir():
         shutil.copytree(
             canonical_asset_directory,
@@ -1044,7 +1049,7 @@ def build_site(
             for path in child_directory.rglob("*")
             if path.is_file()
         )
-    vendor_asset_source = repository / "site_assets" / "vendor"
+    vendor_asset_source = repository / SITE_ASSET_DIRECTORY / "vendor"
     vendor_asset_target = asset_directory / "vendor"
     shutil.copytree(vendor_asset_source, vendor_asset_target)
     generated_paths.extend(
@@ -1117,24 +1122,24 @@ def build_site(
         + '"><label><span class="visually-hidden">검색어</span><input name="q" type="search" placeholder="U-01, PermitRootLogin, 비밀번호 정책"></label>'
         '<button class="primary-button" type="submit">점검항목 검색</button></form>'
         '<dl class="hero__stats" aria-label="가이드 현황">'
-        '<div><dt>점검항목</dt><dd>382</dd></div>'
-        '<div><dt>기술 분야</dt><dd>12</dd></div>'
-        '<div><dt>데이터 형식</dt><dd>HTML + JSON</dd></div>'
-        '</dl></section>'
+        "<div><dt>점검항목</dt><dd>382</dd></div>"
+        "<div><dt>기술 분야</dt><dd>12</dd></div>"
+        "<div><dt>데이터 형식</dt><dd>HTML + JSON</dd></div>"
+        "</dl></section>"
         '<section class="surface domain-directory" aria-labelledby="domain-directory-heading">'
         '<div class="section-heading"><div><p class="section-heading__eyebrow">TECHNICAL DOMAINS</p>'
         '<h2 id="domain-directory-heading">분야별 점검항목</h2></div>'
-        '<p>운영 환경을 선택해 분류와 세부 점검항목을 확인하세요.</p></div>'
+        "<p>운영 환경을 선택해 분류와 세부 점검항목을 확인하세요.</p></div>"
         '<div class="card-grid">' + "".join(domain_cards) + "</div></section>"
         '<section class="surface llm-guide" aria-labelledby="llm-guide-heading">'
         '<div class="section-heading"><div><p class="section-heading__eyebrow">LLM ACCESS</p>'
         '<h2 id="llm-guide-heading">LLM으로 가이드 사용하기</h2></div>'
-        '<p>빌드된 검색·분야·상세 페이지를 탐색하고, 화면에 보이는 내용으로 답합니다.</p></div>'
+        "<p>빌드된 검색·분야·상세 페이지를 탐색하고, 화면에 보이는 내용으로 답합니다.</p></div>"
         '<ol class="llm-guide__steps">'
-        '<li><strong>지침 제공</strong><span>LLM에 이 사이트와 <code>SKILL.md</code> 주소를 함께 전달합니다.</span></li>'
-        '<li><strong>자연어 질문</strong><span>대상 환경, 점검 목적, 필요한 결과를 문장으로 요청합니다.</span></li>'
-        '<li><strong>근거 확인</strong><span>선택된 항목의 코드, 판단 기준, 조치 방법과 링크를 확인합니다.</span></li>'
-        '</ol>'
+        "<li><strong>지침 제공</strong><span>LLM에 이 사이트와 <code>SKILL.md</code> 주소를 함께 전달합니다.</span></li>"
+        "<li><strong>자연어 질문</strong><span>대상 환경, 점검 목적, 필요한 결과를 문장으로 요청합니다.</span></li>"
+        "<li><strong>근거 확인</strong><span>선택된 항목의 코드, 판단 기준, 조치 방법과 링크를 확인합니다.</span></li>"
+        "</ol>"
         '<div class="llm-guide__actions"><a class="primary-button" href="'
         + html.escape(skill_page_url, quote=True)
         + '">본문 보기</a></div>'
@@ -1175,7 +1180,7 @@ def build_site(
         '<article class="surface skill-document" aria-labelledby="skill-page-heading">'
         '<header class="skill-page__header"><p class="section-heading__eyebrow">INSTRUCTIONS</p>'
         '<h1 id="skill-page-heading">LLM 사용 지침</h1>'
-        '<p>빌드된 웹페이지를 탐색하고, 보이는 KISA CCE 문서 내용으로 답하기 위한 지침입니다.</p>'
+        "<p>빌드된 웹페이지를 탐색하고, 보이는 KISA CCE 문서 내용으로 답하기 위한 지침입니다.</p>"
         '<div class="llm-guide__actions"><a class="primary-button" href="'
         + html.escape(skill_url, quote=True)
         + '" download>SKILL.md 다운로드</a></div></header>'
