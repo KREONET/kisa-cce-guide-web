@@ -77,7 +77,6 @@ uv run python -m conversion.serve_site --no-build
 - [변환 워크플로](docs/operations/conversion-workflows.md): Codex-native 실행과 재개
 - [Legacy 변환 워크플로](docs/operations/legacy-conversion.md): Structured-JSON migration 경로
 - [빌드와 릴리스](docs/operations/build-and-release.md): 사이트 생성, 검증과 릴리스 게이트
-- [NVIDIA 디자인 참고 분석](docs/design/nvidia-reference-analysis.md): 현재 UI의 외부 참고 분석
 
 ## 기여 경계
 
