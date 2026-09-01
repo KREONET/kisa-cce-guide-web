@@ -102,7 +102,7 @@ node --test tests/search-core.test.cjs
 
 - Validate the requested behavior, not only a nearby proxy.
 - Preserve deterministic ordering and output. Do not add wall-clock timestamps, absolute host paths, hostnames, or unstable iteration order to canonical generated data.
-- The full suite has legacy tests that require source-crop fixtures absent from current HEAD. Report those failures separately; do not suppress them or classify them as new regressions without evidence.
+- Codex transition tests regenerate checksum-pinned U-03 through U-05 fixtures from the source PDF. Preserve those fixture checksums and do not reintroduce a dependency on Git history.
 - If an environment prevents a required socket, browser, or deployment acceptance check, mark that exact check as `Verification required`.
 
 ## Documentation

@@ -4,23 +4,36 @@ from __future__ import annotations
 
 import os
 import shutil
-import subprocess
 import tempfile
 from io import StringIO
 from pathlib import Path
 from typing import cast
 
+import pdfplumber
 from ruamel.yaml import YAML
 
+from conversion import generate_corpus
 from conversion.common import (
     JsonValue,
     as_mapping,
     as_sequence,
     criterion_source_checksum,
+    load_json,
     load_yaml,
     region_source_checksum,
 )
-from conversion.paths import CANONICAL_ASSET_DIRECTORY, CRITERIA_DIRECTORY
+from conversion.paths import (
+    CANONICAL_ASSET_DIRECTORY,
+    DATA_DIRECTORY,
+    SOURCE_DOCUMENT_PATH,
+    criterion_directory,
+)
+
+EXPECTED_EXTRACTED_PACKAGE_CHECKSUMS = {
+    "u-03": "e24d5bf5aa79b7a736159e73fce9c514c7b4c258741fecce8614af58b33677be",
+    "u-04": "464b4ac21280d8969702362b956ae52c9ed8a5c8c01f56e534f5ea40ecf76201",
+    "u-05": "554bd667d90a52ff11a3ef6d71beac8c1ef71d24831947871fa0b373bfaf0a3a",
+}
 
 
 def _yaml_text(document: dict[str, JsonValue]) -> str:
@@ -49,78 +62,113 @@ def _atomic_replace(path: Path, content: bytes) -> None:
         temporary_path.unlink(missing_ok=True)
 
 
-def _git_output(source: Path, *arguments: str) -> bytes:
-    """Read one committed legacy fixture artifact with a clear checkout requirement."""
+def _restore_extracted_packages(
+    repository: Path,
+    slugs: tuple[str, ...],
+) -> dict[str, tuple[str, ...]]:
+    """Rebuild immutable extracted fixtures from the checksum-pinned source PDF."""
 
-    git_binary = shutil.which("git")
-    if git_binary is None:
-        message = "Codex transition tests require Git to read the legacy fixture snapshot"
+    inventory = load_json(repository / DATA_DIRECTORY / "derived/authoritative-inventory.json")
+    criteria = {
+        criterion.slug: criterion
+        for value in as_sequence(
+            inventory["criteria"],
+            location="authoritativeInventory.criteria",
+        )
+        if (criterion := generate_corpus.CriterionInventory.from_value(value)).slug in slugs
+    }
+    missing_slugs = sorted(set(slugs) - set(criteria))
+    if missing_slugs:
+        message = f"authoritative inventory contains no criteria for: {', '.join(missing_slugs)}"
         raise RuntimeError(message)
-    try:
-        process = subprocess.run(  # noqa: S603
-            [git_binary, *arguments],
-            cwd=source,
-            check=True,
-            capture_output=True,
-        )
-    except (FileNotFoundError, subprocess.CalledProcessError) as error:
-        message = (
-            "Codex transition tests require a Git checkout whose HEAD contains the "
-            "legacy extracted criterion corpus"
-        )
-        raise RuntimeError(message) from error
-    return process.stdout
 
-
-def _restore_committed_package(source: Path, repository: Path, slug: str) -> tuple[str, ...]:
-    """Restore one extracted criterion package from the pre-transition HEAD snapshot."""
-
-    manifest = load_yaml(source / "data/criteria-manifest.yaml")
-    manifest_record = next(
-        as_mapping(value, location="manifest.criteria[]")
-        for value in as_sequence(manifest["criteria"], location="manifest.criteria")
-        if isinstance(value, dict) and value.get("slug") == slug
+    anomalies_document = load_json(repository / DATA_DIRECTORY / "derived/inventory-anomalies.json")
+    anomalies = as_sequence(
+        anomalies_document["anomalies"],
+        location="inventoryAnomalies.anomalies",
     )
-    domain_identifier = cast("str", manifest_record["domainIdentifier"])
-    head_package_paths = (
-        f"{domain_identifier}/{slug}.md",
-        f"{domain_identifier}/{slug}.provenance.yaml",
-    )
-    for head_relative_path in head_package_paths:
-        destination = repository / CRITERIA_DIRECTORY / head_relative_path
-        destination.parent.mkdir(parents=True, exist_ok=True)
-        source_bytes = _git_output(source, "show", f"HEAD:{head_relative_path}").replace(
-            b"../assets/", b"../../assets/"
-        )
-        _atomic_replace(destination, source_bytes)
+    assets_by_slug: dict[str, tuple[str, ...]] = {}
+    with pdfplumber.open(repository / SOURCE_DOCUMENT_PATH) as document:
+        pages = cast("list[generate_corpus.PdfPage]", document.pages)
+        for slug in slugs:
+            criterion = criteria[slug]
+            asset_directory = repository / CANONICAL_ASSET_DIRECTORY / slug
+            # The copied repository uses hard links, so the destination entries must be
+            # removed before the renderer writes files that may also exist in the source.
+            if asset_directory.is_symlink():
+                asset_directory.unlink()
+            elif asset_directory.is_dir():
+                shutil.rmtree(asset_directory)
+            else:
+                asset_directory.unlink(missing_ok=True)
+            transcripts: dict[int, str] = {}
+            visual_assets: dict[int, generate_corpus.VisualAsset] = {}
+            for physical_page in range(
+                criterion.source_start_page,
+                criterion.source_end_page + 1,
+            ):
+                page = pages[physical_page - 1]
+                transcript, bounding_box = generate_corpus._transcript(  # noqa: SLF001
+                    page,
+                    first_page=physical_page == criterion.source_start_page,
+                    physical_page=physical_page,
+                )
+                transcripts[physical_page] = transcript
+                visual_assets[physical_page] = generate_corpus._render_source_crop(  # noqa: SLF001
+                    page,
+                    criterion=criterion,
+                    physical_page=physical_page,
+                    bounding_box=bounding_box,
+                    repository=repository,
+                )
 
-    head_asset_paths = tuple(
-        line
-        for line in _git_output(
-            source,
-            "ls-tree",
-            "-r",
-            "--name-only",
-            "HEAD",
-            "--",
-            f"assets/{slug}",
-        )
-        .decode()
-        .splitlines()
-        if line
-    )
-    if not head_asset_paths:
-        message = f"HEAD contains no legacy source-crop assets for {slug}"
-        raise RuntimeError(message)
-    asset_paths: list[str] = []
-    for head_relative_path in head_asset_paths:
-        relative_asset_path = Path(head_relative_path).relative_to("assets")
-        destination_relative_path = CANONICAL_ASSET_DIRECTORY / relative_asset_path
-        destination = repository / destination_relative_path
-        destination.parent.mkdir(parents=True, exist_ok=True)
-        _atomic_replace(destination, _git_output(source, "show", f"HEAD:{head_relative_path}"))
-        asset_paths.append(destination_relative_path.as_posix())
-    return tuple(asset_paths)
+            metadata = generate_corpus._criterion_metadata(  # noqa: SLF001
+                criterion,
+                generate_corpus._criterion_annotations(criterion, anomalies),  # noqa: SLF001
+            )
+            criterion_source_directory = criterion_directory(
+                repository,
+                criterion.domain_identifier,
+            )
+            _atomic_replace(
+                criterion_source_directory / f"{slug}.md",
+                generate_corpus._criterion_markdown(  # noqa: SLF001
+                    criterion,
+                    metadata,
+                    transcripts,
+                    visual_assets,
+                ).encode(),
+            )
+            _atomic_replace(
+                criterion_source_directory / f"{slug}.provenance.yaml",
+                _yaml_text(
+                    generate_corpus._criterion_provenance(  # noqa: SLF001
+                        criterion,
+                        visual_assets,
+                    )
+                ).encode(),
+            )
+            assets_by_slug[slug] = tuple(
+                (
+                    CANONICAL_ASSET_DIRECTORY
+                    / slug
+                    / f"{slug}-page-{physical_page}-source-region.png"
+                ).as_posix()
+                for physical_page in visual_assets
+            )
+            actual_checksum = criterion_source_checksum(
+                slug,
+                criterion.domain_identifier,
+                root=repository,
+            )
+            expected_checksum = EXPECTED_EXTRACTED_PACKAGE_CHECKSUMS[slug]
+            if actual_checksum != expected_checksum:
+                message = (
+                    f"regenerated fixture checksum differs for {slug}: "
+                    f"expected {expected_checksum}, got {actual_checksum}"
+                )
+                raise RuntimeError(message)
+    return assets_by_slug
 
 
 def _reset_review_state(
@@ -153,24 +201,21 @@ def create_codex_transition_repository(
 ) -> Path:
     """Create an isolated repository at the legacy Codex transition boundary.
 
-    Git HEAD supplies the legacy extracted packages because the working tree represents
-    the completed canonical conversion. This avoids shipping duplicate binary source crops
-    while keeping production eligibility rules strict.
+    The checksum-pinned source PDF and authoritative inventory deterministically regenerate
+    the selected extracted packages without shipping duplicate binary source crops.
     """
 
     ignored = shutil.ignore_patterns(
         ".git",
+        ".artifacts",
         ".pytest_cache",
         ".ruff_cache",
         ".venv",
         "__pycache__",
-        "dist",
-        "site",
-        "work",
     )
     shutil.copytree(source, destination, copy_function=os.link, ignore=ignored)
 
-    assets_by_slug = {slug: _restore_committed_package(source, destination, slug) for slug in slugs}
+    assets_by_slug = _restore_extracted_packages(destination, slugs)
     manifest_path = destination / "data/criteria-manifest.yaml"
     manifest = load_yaml(manifest_path)
     manifest_records = [

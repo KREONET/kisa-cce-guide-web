@@ -40,6 +40,7 @@ from conversion.common import (
 from conversion.paths import (
     CRITERIA_DIRECTORY,
     canonical_asset_directory,
+    criterion_directory,
 )
 from conversion.validate_content import ValidationIssue, _valid_system_semantic_path
 from tests.codex_transition_fixtures import create_codex_transition_repository
@@ -237,7 +238,9 @@ def _prepare_batch_application(tmp_path: Path) -> PreparedBatchApplication:
     second_manifest = next(
         record for record in manifest_records if record.get("slug") == second_slug
     )
-    second_criterion = load_criterion(repository / APPLICATION_DOMAIN / f"{second_slug}.md")
+    second_criterion = load_criterion(
+        criterion_directory(repository, APPLICATION_DOMAIN) / f"{second_slug}.md"
+    )
     second_criterion_metadata = as_mapping(
         second_criterion.metadata["criterion"],
         location="criterion.criterion",
@@ -588,13 +591,16 @@ def test_applier_updates_canonical_package_and_preserves_crop_evidence(tmp_path:
         root=prepared.repository,
         work_directory=prepared.work_directory,
     )
-    assert output_path == prepared.repository / APPLICATION_DOMAIN / f"{APPLICATION_SLUG}.md"
+    assert output_path == (
+        criterion_directory(prepared.repository, APPLICATION_DOMAIN) / f"{APPLICATION_SLUG}.md"
+    )
 
     criterion = load_criterion(output_path)
     assert criterion.metadata["contentModel"] == "systemCriterion"
     assert criterion.metadata["targetIdentifiers"] == ["solaris", "linux", "aix", "hp-ux"]
     provenance = load_yaml(
-        prepared.repository / APPLICATION_DOMAIN / f"{APPLICATION_SLUG}.provenance.yaml"
+        criterion_directory(prepared.repository, APPLICATION_DOMAIN)
+        / f"{APPLICATION_SLUG}.provenance.yaml"
     )
     blocks = extract_leaf_blocks(
         criterion.body,
@@ -696,9 +702,13 @@ def test_applier_rolls_back_every_canonical_change_on_validation_failure(
     """A post-replacement validation failure must restore files, assets, and candidate state."""
 
     prepared = _prepare_application(tmp_path)
+    application_criterion_directory = criterion_directory(
+        prepared.repository,
+        APPLICATION_DOMAIN,
+    )
     tracked_paths = [
-        prepared.repository / APPLICATION_DOMAIN / f"{APPLICATION_SLUG}.md",
-        prepared.repository / APPLICATION_DOMAIN / f"{APPLICATION_SLUG}.provenance.yaml",
+        application_criterion_directory / f"{APPLICATION_SLUG}.md",
+        application_criterion_directory / f"{APPLICATION_SLUG}.provenance.yaml",
         prepared.repository / "data/criteria-manifest.yaml",
         prepared.repository / "data/review-registry.yaml",
         prepared.work_directory / "candidates/u-03/validation.json",
@@ -769,8 +779,12 @@ def test_batch_prevalidates_original_taxonomy_before_one_compiled_apply(
         root=prepared.repository,
         work_directory=prepared.work_directory,
     )
+    application_criterion_directory = criterion_directory(
+        prepared.repository,
+        APPLICATION_DOMAIN,
+    )
     assert output_paths == tuple(
-        prepared.repository / APPLICATION_DOMAIN / f"{slug}.md" for slug in prepared.slugs
+        application_criterion_directory / f"{slug}.md" for slug in prepared.slugs
     )
     assert sha256_file(prepared.repository / "data/taxonomy.yaml") != original_taxonomy_checksum
     taxonomy = load_yaml(prepared.repository / "data/taxonomy.yaml")
@@ -801,9 +815,13 @@ def test_batch_rolls_back_all_packages_and_taxonomy_together(
     """Any batch post-validation failure must restore every package and shared registry."""
 
     prepared = _prepare_batch_application(tmp_path)
+    application_criterion_directory = criterion_directory(
+        prepared.repository,
+        APPLICATION_DOMAIN,
+    )
     tracked_paths = [
         *(
-            prepared.repository / APPLICATION_DOMAIN / f"{slug}{suffix}"
+            application_criterion_directory / f"{slug}{suffix}"
             for slug in prepared.slugs
             for suffix in (".md", ".provenance.yaml")
         ),
