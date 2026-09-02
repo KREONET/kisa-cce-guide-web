@@ -1071,6 +1071,7 @@ def test_runner_logs_allowlisted_success_metadata_and_aggregated_events(  # noqa
         return subprocess.CompletedProcess(command, 0, "", "")
 
     console_stream = io.StringIO()
+    monkeypatch.setattr(codex_runner.shutil, "which", lambda _name: "/usr/bin/codex")
     monkeypatch.setattr(codex_runner, "_codex_version", lambda _executable: "codex 1.2.3")
     monkeypatch.setattr(codex_runner, "_prompt", lambda *_args, **_kwargs: prompt_marker)
     monkeypatch.setattr(codex_runner.subprocess, "run", fake_subprocess_run)
@@ -1201,6 +1202,7 @@ def test_runner_logs_nonzero_process_failure_without_raw_error_bodies(
         return subprocess.CompletedProcess(command, CODEX_PROCESS_FAILURE_EXIT_CODE, "", "")
 
     console_stream = io.StringIO()
+    monkeypatch.setattr(codex_runner.shutil, "which", lambda _name: "/usr/bin/codex")
     monkeypatch.setattr(codex_runner, "_codex_version", lambda _executable: "codex 1.2.3")
     monkeypatch.setattr(codex_runner, "_prompt", lambda *_args, **_kwargs: "test prompt")
     monkeypatch.setattr(codex_runner.subprocess, "run", fake_subprocess_run)
@@ -1282,6 +1284,7 @@ def test_runner_logs_failed_schema_validation_without_result_body(
         return subprocess.CompletedProcess(command, 0, "", "")
 
     console_stream = io.StringIO()
+    monkeypatch.setattr(codex_runner.shutil, "which", lambda _name: "/usr/bin/codex")
     monkeypatch.setattr(codex_runner, "_codex_version", lambda _executable: "codex 1.2.3")
     monkeypatch.setattr(codex_runner, "_prompt", lambda *_args, **_kwargs: "test prompt")
     monkeypatch.setattr(codex_runner.subprocess, "run", fake_subprocess_run)

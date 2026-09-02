@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import base64
+import errno
 import os
 import shutil
 import tempfile
@@ -9,26 +11,27 @@ from io import StringIO
 from pathlib import Path
 from typing import cast
 
-import pdfplumber
 from ruamel.yaml import YAML
 
-from conversion import generate_corpus
 from conversion.common import (
     JsonValue,
     as_mapping,
     as_sequence,
     criterion_source_checksum,
-    load_json,
     load_yaml,
     region_source_checksum,
 )
 from conversion.paths import (
     CANONICAL_ASSET_DIRECTORY,
-    DATA_DIRECTORY,
-    SOURCE_DOCUMENT_PATH,
     criterion_directory,
 )
 
+TRANSITION_FIXTURE_DIRECTORY = Path("tests/fixtures/codex-transition")
+TRANSITION_FIXTURE_DOMAIN_IDENTIFIERS = {
+    "u-03": "unix",
+    "u-04": "unix",
+    "u-05": "unix",
+}
 EXPECTED_EXTRACTED_PACKAGE_CHECKSUMS = {
     "u-03": "e24d5bf5aa79b7a736159e73fce9c514c7b4c258741fecce8614af58b33677be",
     "u-04": "464b4ac21280d8969702362b956ae52c9ed8a5c8c01f56e534f5ea40ecf76201",
@@ -62,112 +65,84 @@ def _atomic_replace(path: Path, content: bytes) -> None:
         temporary_path.unlink(missing_ok=True)
 
 
+def _link_or_copy(source: str, destination: str) -> str:
+    """Prefer hard links while supporting temporary directories on another filesystem."""
+
+    try:
+        os.link(source, destination)
+    except OSError as error:
+        if error.errno != errno.EXDEV:
+            raise
+        shutil.copy2(source, destination)
+    return destination
+
+
 def _restore_extracted_packages(
     repository: Path,
     slugs: tuple[str, ...],
 ) -> dict[str, tuple[str, ...]]:
-    """Rebuild immutable extracted fixtures from the checksum-pinned source PDF."""
+    """Restore checksum-pinned extracted snapshots without platform-specific rendering."""
 
-    inventory = load_json(repository / DATA_DIRECTORY / "derived/authoritative-inventory.json")
-    criteria = {
-        criterion.slug: criterion
-        for value in as_sequence(
-            inventory["criteria"],
-            location="authoritativeInventory.criteria",
-        )
-        if (criterion := generate_corpus.CriterionInventory.from_value(value)).slug in slugs
-    }
-    missing_slugs = sorted(set(slugs) - set(criteria))
+    missing_slugs = sorted(set(slugs) - set(EXPECTED_EXTRACTED_PACKAGE_CHECKSUMS))
     if missing_slugs:
-        message = f"authoritative inventory contains no criteria for: {', '.join(missing_slugs)}"
+        message = f"transition fixture contains no packages for: {', '.join(missing_slugs)}"
         raise RuntimeError(message)
 
-    anomalies_document = load_json(repository / DATA_DIRECTORY / "derived/inventory-anomalies.json")
-    anomalies = as_sequence(
-        anomalies_document["anomalies"],
-        location="inventoryAnomalies.anomalies",
-    )
+    fixture_directory = repository / TRANSITION_FIXTURE_DIRECTORY
     assets_by_slug: dict[str, tuple[str, ...]] = {}
-    with pdfplumber.open(repository / SOURCE_DOCUMENT_PATH) as document:
-        pages = cast("list[generate_corpus.PdfPage]", document.pages)
-        for slug in slugs:
-            criterion = criteria[slug]
-            asset_directory = repository / CANONICAL_ASSET_DIRECTORY / slug
-            # The copied repository uses hard links, so the destination entries must be
-            # removed before the renderer writes files that may also exist in the source.
-            if asset_directory.is_symlink():
-                asset_directory.unlink()
-            elif asset_directory.is_dir():
-                shutil.rmtree(asset_directory)
-            else:
-                asset_directory.unlink(missing_ok=True)
-            transcripts: dict[int, str] = {}
-            visual_assets: dict[int, generate_corpus.VisualAsset] = {}
-            for physical_page in range(
-                criterion.source_start_page,
-                criterion.source_end_page + 1,
-            ):
-                page = pages[physical_page - 1]
-                transcript, bounding_box = generate_corpus._transcript(  # noqa: SLF001
-                    page,
-                    first_page=physical_page == criterion.source_start_page,
-                    physical_page=physical_page,
-                )
-                transcripts[physical_page] = transcript
-                visual_assets[physical_page] = generate_corpus._render_source_crop(  # noqa: SLF001
-                    page,
-                    criterion=criterion,
-                    physical_page=physical_page,
-                    bounding_box=bounding_box,
-                    repository=repository,
-                )
+    for slug in slugs:
+        domain_identifier = TRANSITION_FIXTURE_DOMAIN_IDENTIFIERS[slug]
+        criterion_source_directory = criterion_directory(repository, domain_identifier)
+        fixture_criterion_directory = fixture_directory / "criteria" / domain_identifier
+        for suffix in (".md", ".provenance.yaml"):
+            source_path = fixture_criterion_directory / f"{slug}{suffix}"
+            _atomic_replace(
+                criterion_source_directory / f"{slug}{suffix}",
+                source_path.read_bytes(),
+            )
 
-            metadata = generate_corpus._criterion_metadata(  # noqa: SLF001
-                criterion,
-                generate_corpus._criterion_annotations(criterion, anomalies),  # noqa: SLF001
-            )
-            criterion_source_directory = criterion_directory(
-                repository,
-                criterion.domain_identifier,
-            )
+        asset_directory = repository / CANONICAL_ASSET_DIRECTORY / slug
+        # The copied repository uses hard links, so replacing the directory prevents
+        # fixture restoration from mutating files in the source checkout.
+        if asset_directory.is_symlink():
+            asset_directory.unlink()
+        elif asset_directory.is_dir():
+            shutil.rmtree(asset_directory)
+        else:
+            asset_directory.unlink(missing_ok=True)
+        asset_directory.mkdir(parents=True)
+
+        fixture_assets = sorted(
+            (fixture_directory / "assets" / slug).glob("*.png.base64"),
+            key=lambda path: path.name.encode(),
+        )
+        if not fixture_assets:
+            message = f"transition fixture contains no assets for: {slug}"
+            raise RuntimeError(message)
+        asset_paths: list[str] = []
+        for source_path in fixture_assets:
+            asset_name = source_path.name.removesuffix(".base64")
+            destination_path = asset_directory / asset_name
+            encoded_asset = b"".join(source_path.read_bytes().split())
             _atomic_replace(
-                criterion_source_directory / f"{slug}.md",
-                generate_corpus._criterion_markdown(  # noqa: SLF001
-                    criterion,
-                    metadata,
-                    transcripts,
-                    visual_assets,
-                ).encode(),
+                destination_path,
+                base64.b64decode(encoded_asset, validate=True),
             )
-            _atomic_replace(
-                criterion_source_directory / f"{slug}.provenance.yaml",
-                _yaml_text(
-                    generate_corpus._criterion_provenance(  # noqa: SLF001
-                        criterion,
-                        visual_assets,
-                    )
-                ).encode(),
+            asset_paths.append((CANONICAL_ASSET_DIRECTORY / slug / asset_name).as_posix())
+        assets_by_slug[slug] = tuple(asset_paths)
+
+        actual_checksum = criterion_source_checksum(
+            slug,
+            domain_identifier,
+            root=repository,
+        )
+        expected_checksum = EXPECTED_EXTRACTED_PACKAGE_CHECKSUMS[slug]
+        if actual_checksum != expected_checksum:
+            message = (
+                f"transition fixture checksum differs for {slug}: "
+                f"expected {expected_checksum}, got {actual_checksum}"
             )
-            assets_by_slug[slug] = tuple(
-                (
-                    CANONICAL_ASSET_DIRECTORY
-                    / slug
-                    / f"{slug}-page-{physical_page}-source-region.png"
-                ).as_posix()
-                for physical_page in visual_assets
-            )
-            actual_checksum = criterion_source_checksum(
-                slug,
-                criterion.domain_identifier,
-                root=repository,
-            )
-            expected_checksum = EXPECTED_EXTRACTED_PACKAGE_CHECKSUMS[slug]
-            if actual_checksum != expected_checksum:
-                message = (
-                    f"regenerated fixture checksum differs for {slug}: "
-                    f"expected {expected_checksum}, got {actual_checksum}"
-                )
-                raise RuntimeError(message)
+            raise RuntimeError(message)
     return assets_by_slug
 
 
@@ -201,8 +176,8 @@ def create_codex_transition_repository(
 ) -> Path:
     """Create an isolated repository at the legacy Codex transition boundary.
 
-    The checksum-pinned source PDF and authoritative inventory deterministically regenerate
-    the selected extracted packages without shipping duplicate binary source crops.
+    Repository-owned snapshots preserve the selected extracted packages without invoking
+    platform-specific PDF rendering during the test run.
     """
 
     ignored = shutil.ignore_patterns(
@@ -213,7 +188,7 @@ def create_codex_transition_repository(
         ".venv",
         "__pycache__",
     )
-    shutil.copytree(source, destination, copy_function=os.link, ignore=ignored)
+    shutil.copytree(source, destination, copy_function=_link_or_copy, ignore=ignored)
 
     assets_by_slug = _restore_extracted_packages(destination, slugs)
     manifest_path = destination / "data/criteria-manifest.yaml"
