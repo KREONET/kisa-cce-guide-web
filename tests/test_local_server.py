@@ -15,6 +15,8 @@ from conversion import serve_site
 from conversion.paths import BUILD_DIRECTORY
 from conversion.serve_site import create_local_server, normalize_base_path
 
+TEST_WORKER_COUNT = 3
+
 
 def test_normalize_base_path() -> None:
     """Valid hosting prefixes must normalize to one leading slash."""
@@ -45,6 +47,54 @@ def test_no_build_reports_the_artifact_site_path(
     captured = capsys.readouterr()
     expected_site_path = (BUILD_DIRECTORY / "site" / "index.html").as_posix()
     assert f"{expected_site_path} is missing" in captured.err
+
+
+def test_rebuild_forwards_worker_count(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    """The local server must pass its exact worker count to the site builder."""
+
+    forwarded_workers: list[int] = []
+
+    def fake_build(*, root: Path, base_path: str, workers: int) -> list[Path]:
+        assert root == tmp_path
+        assert base_path == ""
+        forwarded_workers.append(workers)
+        return []
+
+    class FakeServer:
+        """Provide the server surface used by the command entry point."""
+
+        server_address = ("127.0.0.1", 8000)
+
+        def serve_forever(self) -> None:
+            """Return immediately instead of starting a socket loop."""
+
+        def server_close(self) -> None:
+            """Close the fake server without side effects."""
+
+    monkeypatch.setattr(serve_site, "repository_root", lambda: tmp_path)
+    monkeypatch.setattr(serve_site, "build", fake_build)
+    monkeypatch.setattr(serve_site, "create_local_server", lambda **_arguments: FakeServer())
+    monkeypatch.setattr(
+        serve_site.sys,
+        "argv",
+        [
+            "serve-site",
+            "--workers",
+            str(TEST_WORKER_COUNT),
+            "--log-directory",
+            str(tmp_path / "logs"),
+        ],
+    )
+
+    assert serve_site.main() == 0
+
+    captured = capsys.readouterr()
+    assert "local site: http://127.0.0.1:8000/" in captured.out
+    assert forwarded_workers == [TEST_WORKER_COUNT]
 
 
 def test_local_server_serves_root_and_custom_404(tmp_path: Path) -> None:

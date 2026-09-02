@@ -6,6 +6,7 @@ import argparse
 import json
 import re
 import sys
+from concurrent.futures import Executor
 from dataclasses import asdict, dataclass
 from itertools import pairwise
 from pathlib import Path
@@ -43,6 +44,12 @@ from conversion.common import (
     region_source_checksum,
     repository_root,
     sha256_file,
+)
+from conversion.parallel import (
+    default_worker_count,
+    parse_worker_count,
+    process_executor,
+    validate_worker_count,
 )
 from conversion.paths import (
     BUILD_DIRECTORY,
@@ -119,6 +126,38 @@ class ValidationIssue:
     rule_identifier: str
     location: str
     message: str
+
+
+@dataclass(frozen=True)
+class _AnnotationOccurrence:
+    """Record where a criterion introduced one annotation identifier."""
+
+    identifier: str
+    issue_offset: int
+    location: str
+
+
+@dataclass(frozen=True)
+class _CriterionValidationResult:
+    """Contain one criterion's independent validation result."""
+
+    issues: tuple[ValidationIssue, ...]
+    annotation_occurrences: tuple[_AnnotationOccurrence, ...]
+
+
+@dataclass(frozen=True)
+class _CriterionValidationJob:
+    """Contain shared context and an ordered criterion batch for one worker."""
+
+    root: Path
+    manifest_records: tuple[dict[str, JsonValue], ...]
+    criterion_schema: dict[str, JsonValue]
+    provenance_schema: dict[str, JsonValue]
+    taxonomy: dict[str, JsonValue]
+    page_regions: dict[str, dict[str, JsonValue]]
+    source_document_identifiers: set[str]
+    review_records: dict[tuple[str, str], dict[str, JsonValue]]
+    release: bool
 
 
 def _numeric_bounding_box(value: JsonValue) -> tuple[float, float, float, float] | None:
@@ -385,18 +424,30 @@ def _validate_release_generated_outputs(
     expected_codes: set[str],
     criteria_values: list[JsonValue],
     test_profile_version: JsonValue,
+    workers: int,
+    executor: Executor | None,
 ) -> list[ValidationIssue]:
     """Run two clean builds and require searchable, semantic, and QA artifacts."""
 
     # The lazy import avoids a module cycle during ordinary corpus builds.
-    from conversion.build_content import build  # noqa: PLC0415
+    from conversion.build_content import _build_validated  # noqa: PLC0415
 
     issues: list[ValidationIssue] = []
     with TemporaryDirectory() as first_directory, TemporaryDirectory() as second_directory:
         first_root = Path(first_directory)
         second_root = Path(second_directory)
-        first_paths = build(root=repository, output_root=first_root)
-        second_paths = build(root=repository, output_root=second_root)
+        first_paths = _build_validated(
+            root=repository,
+            output_root=first_root,
+            workers=workers,
+            executor=executor,
+        )
+        second_paths = _build_validated(
+            root=repository,
+            output_root=second_root,
+            workers=workers,
+            executor=executor,
+        )
         first_outputs = {path.relative_to(first_root): path.read_bytes() for path in first_paths}
         second_outputs = {path.relative_to(second_root): path.read_bytes() for path in second_paths}
         if first_outputs != second_outputs:
@@ -462,6 +513,7 @@ def _validate_release_generated_outputs(
             site_root=first_root / "site",
             manifest={"criteria": criteria_values},
             expected_html_page_count=469,
+            executor=executor,
         )
         issues.extend(
             ValidationIssue(
@@ -1096,26 +1148,32 @@ def _validate_criterion(
     page_regions: dict[str, dict[str, JsonValue]],
     source_document_identifiers: set[str],
     review_records: dict[tuple[str, str], dict[str, JsonValue]],
-    annotation_identifiers: set[str],
     release: bool,
-) -> list[ValidationIssue]:
+) -> _CriterionValidationResult:
     """Validate one criterion package and its cross-registry references."""
 
     issues: list[ValidationIssue] = []
+    annotation_occurrences: list[_AnnotationOccurrence] = []
     slug = manifest_record.get("slug")
     code = manifest_record.get("code")
     if not isinstance(slug, str) or not isinstance(code, str):
-        return [ValidationIssue("criterion-manifest", "criteria[]", "missing code or slug")]
+        return _CriterionValidationResult(
+            issues=(ValidationIssue("criterion-manifest", "criteria[]", "missing code or slug"),),
+            annotation_occurrences=(),
+        )
 
     domain_identifier = manifest_record.get("domainIdentifier")
     if not isinstance(domain_identifier, str):
-        return [
-            ValidationIssue(
-                "criterion-manifest",
-                "criteria[]",
-                "missing domainIdentifier",
-            )
-        ]
+        return _CriterionValidationResult(
+            issues=(
+                ValidationIssue(
+                    "criterion-manifest",
+                    "criteria[]",
+                    "missing domainIdentifier",
+                ),
+            ),
+            annotation_occurrences=(),
+        )
     criterion_source_directory = criterion_directory(root, domain_identifier)
     criterion_path = criterion_source_directory / f"{slug}.md"
     provenance_path = criterion_source_directory / f"{slug}.provenance.yaml"
@@ -1124,7 +1182,10 @@ def _validate_criterion(
         criterion = load_criterion(criterion_path)
         provenance = load_yaml(provenance_path)
     except (OSError, ValueError) as error:
-        return [ValidationIssue("criterion-load", relative_criterion_path, str(error))]
+        return _CriterionValidationResult(
+            issues=(ValidationIssue("criterion-load", relative_criterion_path, str(error)),),
+            annotation_occurrences=(),
+        )
 
     issues.extend(
         _schema_issues(
@@ -1326,7 +1387,10 @@ def _validate_criterion(
                 str(error),
             )
         )
-        return issues
+        return _CriterionValidationResult(
+            issues=tuple(issues),
+            annotation_occurrences=tuple(annotation_occurrences),
+        )
     references = flatten_block_references(provenance)
     if len(leaf_blocks) != len(references):
         issues.append(
@@ -1511,15 +1575,13 @@ def _validate_criterion(
         )
         annotation_identifier = annotation.get("annotationIdentifier")
         if isinstance(annotation_identifier, str):
-            if annotation_identifier in annotation_identifiers:
-                issues.append(
-                    ValidationIssue(
-                        "annotation-identifier-unique",
-                        relative_criterion_path,
-                        f"duplicate annotation identifier {annotation_identifier}",
-                    )
+            annotation_occurrences.append(
+                _AnnotationOccurrence(
+                    identifier=annotation_identifier,
+                    issue_offset=len(issues),
+                    location=relative_criterion_path,
                 )
-            annotation_identifiers.add(annotation_identifier)
+            )
         target_type = annotation.get("targetType")
         target_reference = annotation.get("targetReference")
         source_location = annotation.get("sourceLocation")
@@ -1636,16 +1698,113 @@ def _validate_criterion(
                 "extractedCriterion must remain in extracted workflow status",
             )
         )
-    return issues
+    return _CriterionValidationResult(
+        issues=tuple(issues),
+        annotation_occurrences=tuple(annotation_occurrences),
+    )
+
+
+def _run_criterion_validation_job(
+    job: _CriterionValidationJob,
+) -> tuple[_CriterionValidationResult, ...]:
+    """Validate an ordered criterion batch without shared mutable state."""
+
+    return tuple(
+        _validate_criterion(
+            root=job.root,
+            manifest_record=manifest_record,
+            criterion_schema=job.criterion_schema,
+            provenance_schema=job.provenance_schema,
+            taxonomy=job.taxonomy,
+            page_regions=job.page_regions,
+            source_document_identifiers=job.source_document_identifiers,
+            review_records=job.review_records,
+            release=job.release,
+        )
+        for manifest_record in job.manifest_records
+    )
+
+
+def _criterion_validation_jobs(
+    *,
+    repository: Path,
+    manifest_records: list[dict[str, JsonValue]],
+    criterion_schema: dict[str, JsonValue],
+    provenance_schema: dict[str, JsonValue],
+    taxonomy: dict[str, JsonValue],
+    page_regions: dict[str, dict[str, JsonValue]],
+    source_document_identifiers: set[str],
+    review_records: dict[tuple[str, str], dict[str, JsonValue]],
+    release: bool,
+    workers: int,
+) -> list[_CriterionValidationJob]:
+    """Partition criteria into stable batches that balance process overhead."""
+
+    if not manifest_records:
+        return []
+    batch_count = min(len(manifest_records), workers * 4)
+    batch_size = max(1, (len(manifest_records) + batch_count - 1) // batch_count)
+    return [
+        _CriterionValidationJob(
+            root=repository,
+            manifest_records=tuple(manifest_records[start : start + batch_size]),
+            criterion_schema=criterion_schema,
+            provenance_schema=provenance_schema,
+            taxonomy=taxonomy,
+            page_regions=page_regions,
+            source_document_identifiers=source_document_identifiers,
+            review_records=review_records,
+            release=release,
+        )
+        for start in range(0, len(manifest_records), batch_size)
+    ]
+
+
+def _merge_criterion_validation_results(
+    results: list[_CriterionValidationResult],
+) -> list[ValidationIssue]:
+    """Restore cross-criterion annotation checks in manifest order."""
+
+    annotation_identifiers: set[str] = set()
+    merged_issues: list[ValidationIssue] = []
+    for result in results:
+        criterion_issues = list(result.issues)
+        inserted_issue_count = 0
+        for occurrence in result.annotation_occurrences:
+            if occurrence.identifier in annotation_identifiers:
+                criterion_issues.insert(
+                    occurrence.issue_offset + inserted_issue_count,
+                    ValidationIssue(
+                        "annotation-identifier-unique",
+                        occurrence.location,
+                        f"duplicate annotation identifier {occurrence.identifier}",
+                    ),
+                )
+                inserted_issue_count += 1
+            else:
+                annotation_identifiers.add(occurrence.identifier)
+        merged_issues.extend(criterion_issues)
+    return merged_issues
 
 
 def validate_repository(
     *,
     root: Path | None = None,
     release: bool = False,
+    workers: int = 1,
+    executor: Executor | None = None,
 ) -> list[ValidationIssue]:
     """Validate the canonical corpus or the full release gate."""
 
+    worker_count = validate_worker_count(workers)
+    if executor is None and worker_count > 1:
+        with process_executor(worker_count) as owned_executor:
+            return validate_repository(
+                root=root,
+                release=release,
+                workers=worker_count,
+                executor=owned_executor,
+            )
     repository = root or repository_root()
     documents, issues = _load_and_validate_bound_documents(repository)
     issues.extend(_validate_all_schema_documents(repository))
@@ -1812,23 +1971,30 @@ def validate_repository(
 
     criterion_schema = load_json(repository / "schemas/criterion-metadata.schema.json")
     provenance_schema = load_json(repository / "schemas/provenance-sidecar.schema.json")
-    annotation_identifiers: set[str] = set()
-    for criterion_value in criteria_values:
-        criterion_record = as_mapping(criterion_value, location="manifest.criteria[]")
-        issues.extend(
-            _validate_criterion(
-                root=repository,
-                manifest_record=criterion_record,
-                criterion_schema=criterion_schema,
-                provenance_schema=provenance_schema,
-                taxonomy=taxonomy,
-                page_regions=page_regions,
-                source_document_identifiers=set(source_document_checksums),
-                review_records=review_records,
-                annotation_identifiers=annotation_identifiers,
-                release=release,
-            )
-        )
+    criterion_records = [
+        as_mapping(criterion_value, location="manifest.criteria[]")
+        for criterion_value in criteria_values
+    ]
+    validation_jobs = _criterion_validation_jobs(
+        repository=repository,
+        manifest_records=criterion_records,
+        criterion_schema=criterion_schema,
+        provenance_schema=provenance_schema,
+        taxonomy=taxonomy,
+        page_regions=page_regions,
+        source_document_identifiers=set(source_document_checksums),
+        review_records=review_records,
+        release=release,
+        workers=worker_count,
+    )
+    if executor is None:
+        validation_batches = [_run_criterion_validation_job(job) for job in validation_jobs]
+    else:
+        validation_batches = list(executor.map(_run_criterion_validation_job, validation_jobs))
+    criterion_results = [
+        result for validation_batch in validation_batches for result in validation_batch
+    ]
+    issues.extend(_merge_criterion_validation_results(criterion_results))
 
     if release:
         expected_codes = {
@@ -2057,6 +2223,8 @@ def validate_repository(
                 expected_codes=expected_codes,
                 criteria_values=criteria_values,
                 test_profile_version=current_test_profile_version,
+                workers=worker_count,
+                executor=executor,
             )
         )
     return issues
@@ -2095,6 +2263,12 @@ def _argument_parser() -> argparse.ArgumentParser:
         default=BUILD_DIRECTORY / "reports" / "content-validation.json",
         help="validation report output path",
     )
+    parser.add_argument(
+        "--workers",
+        type=parse_worker_count,
+        default=default_worker_count(),
+        help="parallel worker processes for criterion and site validation",
+    )
     add_logging_arguments(parser)
     return parser
 
@@ -2115,7 +2289,11 @@ def main() -> int:
             validation_scope=scope,
         )
         root = repository_root()
-        issues = validate_repository(root=root, release=arguments.release)
+        issues = validate_repository(
+            root=root,
+            release=arguments.release,
+            workers=arguments.workers,
+        )
         report_path = arguments.report
         if not report_path.is_absolute():
             report_path = root / report_path
@@ -2125,6 +2303,7 @@ def main() -> int:
             event="validation.report_written",
             issue_count=len(issues),
             report_path=str(report_path),
+            workers=arguments.workers,
         )
         if issues:
             logger.error(

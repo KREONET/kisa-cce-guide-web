@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from concurrent.futures import Executor
 from dataclasses import dataclass, field
 from html.parser import HTMLParser
 from pathlib import Path
@@ -62,7 +63,10 @@ class _TableFacts:
     """Collected accessibility facts for one table."""
 
     caption_count: int = 0
+    caption_text_parts: list[str] = field(default_factory=list)
     header_scopes: list[str | None] = field(default_factory=list)
+    labelled_by_identifier: str | None = None
+    table_identifier: str | None = None
 
 
 @dataclass
@@ -73,6 +77,7 @@ class _PageFacts:
     h1_count: int = 0
     tags: list[str] = field(default_factory=list)
     identifiers: list[str] = field(default_factory=list)
+    tags_by_identifier: dict[str, str] = field(default_factory=dict)
     links: list[str] = field(default_factory=list)
     resources: list[str] = field(default_factory=list)
     skip_link_present: bool = False
@@ -95,6 +100,7 @@ class _PageParser(HTMLParser):
         super().__init__()
         self.facts = _PageFacts()
         self._table_stack: list[int] = []
+        self._caption_table_stack: list[int] = []
         self._pre_stack: list[int] = []
 
     def handle_starttag(
@@ -113,6 +119,7 @@ class _PageParser(HTMLParser):
         identifier = attributes.get("id")
         if identifier is not None:
             self.facts.identifiers.append(identifier)
+            self.facts.tags_by_identifier[identifier] = tag
         href = attributes.get("href")
         if href is not None:
             self.facts.links.append(href)
@@ -138,10 +145,16 @@ class _PageParser(HTMLParser):
             if attributes.get("width") and attributes.get("height"):
                 self.facts.image_with_dimensions_count += 1
         if tag == "table":
-            self.facts.tables.append(_TableFacts())
+            self.facts.tables.append(
+                _TableFacts(
+                    labelled_by_identifier=attributes.get("aria-labelledby"),
+                    table_identifier=identifier,
+                )
+            )
             self._table_stack.append(len(self.facts.tables) - 1)
         elif tag == "caption" and self._table_stack:
             self.facts.tables[self._table_stack[-1]].caption_count += 1
+            self._caption_table_stack.append(self._table_stack[-1])
         elif tag == "th" and self._table_stack:
             self.facts.tables[self._table_stack[-1]].header_scopes.append(attributes.get("scope"))
         if tag == "pre":
@@ -155,8 +168,16 @@ class _PageParser(HTMLParser):
 
         if tag == "table" and self._table_stack:
             self._table_stack.pop()
+        if tag == "caption" and self._caption_table_stack:
+            self._caption_table_stack.pop()
         if tag == "pre" and self._pre_stack:
             self._pre_stack.pop()
+
+    def handle_data(self, data: str) -> None:
+        """Collect caption text, including text nested in inline elements."""
+
+        if self._caption_table_stack:
+            self.facts.tables[self._caption_table_stack[-1]].caption_text_parts.append(data)
 
 
 def _page_facts(path: Path) -> _PageFacts:
@@ -250,6 +271,7 @@ def validate_site(
     manifest: dict[str, JsonValue],
     expected_html_page_count: int,
     base_path: str = "",
+    executor: Executor | None = None,
 ) -> list[SiteValidationIssue]:
     """Validate semantic HTML, public resources, anchors, and search fixtures."""
 
@@ -264,7 +286,11 @@ def validate_site(
                 f"expected {expected_html_page_count} HTML pages, got {len(html_paths)}",
             )
         )
-    facts_by_path = {path: _page_facts(path) for path in html_paths}
+    if executor is None:
+        page_facts = [_page_facts(path) for path in html_paths]
+    else:
+        page_facts = list(executor.map(_page_facts, html_paths))
+    facts_by_path = dict(zip(html_paths, page_facts, strict=True))
     for html_path, facts in facts_by_path.items():
         location = html_path.relative_to(site_root).as_posix()
         if facts.html_language != "ko":
@@ -281,6 +307,7 @@ def validate_site(
             )
         if len(facts.identifiers) != len(set(facts.identifiers)):
             issues.append(SiteValidationIssue("site-anchor-unique", location, "duplicate ID"))
+        identifier_set = set(facts.identifiers)
         if facts.image_count != facts.image_with_alternative_text_count:
             issues.append(
                 SiteValidationIssue("site-image-alt", location, "image alternative text is missing")
@@ -290,7 +317,16 @@ def validate_site(
                 SiteValidationIssue("site-image-size", location, "image dimensions are missing")
             )
         if any(
-            table.caption_count != 1
+            table.caption_count > 1
+            or (table.caption_count == 1 and not "".join(table.caption_text_parts).strip())
+            or (
+                table.caption_count == 0
+                and (
+                    table.labelled_by_identifier == table.table_identifier
+                    or facts.tags_by_identifier.get(table.labelled_by_identifier or "")
+                    not in {"h2", "h3", "h4", "h5", "h6"}
+                )
+            )
             or not table.header_scopes
             or any(scope not in _TABLE_HEADER_SCOPES for scope in table.header_scopes)
             for table in facts.tables
@@ -299,7 +335,7 @@ def validate_site(
                 SiteValidationIssue(
                     "site-table-accessibility",
                     location,
-                    "each table must have one caption and scoped headers",
+                    "each table must have a caption or heading label and scoped headers",
                 )
             )
         if any(code_count != 1 for code_count in facts.pre_code_counts):
@@ -310,7 +346,6 @@ def validate_site(
                     "each preformatted region must contain exactly one code element",
                 )
             )
-        identifier_set = set(facts.identifiers)
         for attribute_name, reference_value in facts.aria_id_references:
             reference_identifiers = reference_value.split() if reference_value else []
             if not reference_identifiers or any(

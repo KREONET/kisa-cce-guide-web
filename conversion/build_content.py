@@ -7,11 +7,14 @@ import re
 import shutil
 import sys
 import unicodedata
+from concurrent.futures import Executor
+from dataclasses import dataclass
 from pathlib import Path
 from typing import cast
 
 import rfc8785
 from jsonschema import Draft202012Validator, FormatChecker
+from jsonschema.protocols import Validator
 
 from conversion import GENERATOR_VERSION
 from conversion.common import (
@@ -29,6 +32,12 @@ from conversion.common import (
     provenance_attributes_by_reference,
     provenance_by_reference,
     repository_root,
+)
+from conversion.parallel import (
+    default_worker_count,
+    parse_worker_count,
+    process_executor,
+    validate_worker_count,
 )
 from conversion.paths import BUILD_DIRECTORY, criterion_directory
 from conversion.runtime_logging import add_logging_arguments, configure_runtime_logging
@@ -54,6 +63,15 @@ _SEARCH_SECTION_NAMES = (
     "guidance",
     "reference",
 )
+
+
+@dataclass(frozen=True)
+class _NormalizationJob:
+    """Contain the immutable inputs for one normalized criterion."""
+
+    root: Path
+    manifest_record: dict[str, JsonValue]
+    heading_identifier_mapping: dict[str, str]
 
 
 def _search_section_name(block: dict[str, JsonValue]) -> str:
@@ -113,17 +131,22 @@ def _write_canonical_json(path: Path, value: JsonValue) -> None:
 def _validate_generated_document(
     *,
     document: dict[str, JsonValue],
-    schema_path: Path,
+    validator: Validator,
+    schema_name: str,
 ) -> None:
     """Reject generated output that does not satisfy its public schema."""
 
-    schema = load_json(schema_path)
-    validator = Draft202012Validator(schema, format_checker=FormatChecker())
     errors = sorted(validator.iter_errors(document), key=lambda item: list(item.path))
     if errors:
         messages = "; ".join(error.message for error in errors)
-        msg = f"{schema_path.name}: generated output is invalid: {messages}"
+        msg = f"{schema_name}: generated output is invalid: {messages}"
         raise ValueError(msg)
+
+
+def _generated_document_validator(schema_path: Path) -> Validator:
+    """Compile one generated-document schema for reuse throughout a build."""
+
+    return Draft202012Validator(load_json(schema_path), format_checker=FormatChecker())
 
 
 def _normalized_criterion(
@@ -275,6 +298,16 @@ def _normalized_criterion(
     }
 
 
+def _run_normalization_job(job: _NormalizationJob) -> dict[str, JsonValue]:
+    """Normalize one criterion in an isolated worker process."""
+
+    return _normalized_criterion(
+        root=job.root,
+        manifest_record=job.manifest_record,
+        heading_identifier_mapping=job.heading_identifier_mapping,
+    )
+
+
 def _search_record(
     *,
     manifest_record: dict[str, JsonValue],
@@ -374,30 +407,37 @@ def _search_record(
     }
 
 
-def build(
+def _build(  # noqa: PLR0913
     *,
-    root: Path | None = None,
-    output_root: Path | None = None,
+    repository: Path,
+    output_directory: Path,
     base_path: str = "",
+    workers: int,
+    executor: Executor | None,
+    validate_corpus: bool,
 ) -> list[Path]:
     """Build the canonical corpus and return generated artifact paths."""
 
-    repository = root or repository_root()
-    output_directory = output_root or repository / BUILD_DIRECTORY
-    if output_root is None:
+    if output_directory == repository / BUILD_DIRECTORY:
         # Replacing generated directories prevents removed criteria from leaving stale files.
         for generated_directory_name in ("normalized", "search", "site"):
             shutil.rmtree(
                 output_directory / generated_directory_name,
                 ignore_errors=True,
             )
-    issues = validate_repository(root=repository, release=False)
-    if issues:
-        joined = "\n".join(
-            f"{issue.rule_identifier}: {issue.location}: {issue.message}" for issue in issues
+    if validate_corpus:
+        issues = validate_repository(
+            root=repository,
+            release=False,
+            workers=workers,
+            executor=executor,
         )
-        msg = f"canonical corpus validation failed:\n{joined}"
-        raise ValueError(msg)
+        if issues:
+            joined = "\n".join(
+                f"{issue.rule_identifier}: {issue.location}: {issue.message}" for issue in issues
+            )
+            msg = f"canonical corpus validation failed:\n{joined}"
+            raise ValueError(msg)
 
     manifest = load_yaml(repository / "data/criteria-manifest.yaml")
     criteria = as_sequence(manifest["criteria"], location="manifest.criteria")
@@ -405,19 +445,34 @@ def build(
     heading_identifier_mapping = heading_identifiers(taxonomy)
     normalized_schema_path = repository / "schemas/normalized-criterion.schema.json"
     search_schema_path = repository / "schemas/search-index.schema.json"
+    normalized_validator = _generated_document_validator(normalized_schema_path)
+    search_validator = _generated_document_validator(search_schema_path)
     generated_paths: list[Path] = []
-    normalized_documents: list[dict[str, JsonValue]] = []
-
-    for criterion_value in criteria:
-        manifest_record = as_mapping(criterion_value, location="manifest.criteria[]")
-        normalized_document = _normalized_criterion(
+    manifest_records = [
+        as_mapping(criterion_value, location="manifest.criteria[]") for criterion_value in criteria
+    ]
+    normalization_jobs = [
+        _NormalizationJob(
             root=repository,
             manifest_record=manifest_record,
             heading_identifier_mapping=heading_identifier_mapping,
         )
+        for manifest_record in manifest_records
+    ]
+    if executor is None:
+        normalized_documents = [_run_normalization_job(job) for job in normalization_jobs]
+    else:
+        normalized_documents = list(executor.map(_run_normalization_job, normalization_jobs))
+
+    for manifest_record, normalized_document in zip(
+        manifest_records,
+        normalized_documents,
+        strict=True,
+    ):
         _validate_generated_document(
             document=normalized_document,
-            schema_path=normalized_schema_path,
+            validator=normalized_validator,
+            schema_name=normalized_schema_path.name,
         )
         slug_value = manifest_record["slug"]
         if not isinstance(slug_value, str):
@@ -430,11 +485,6 @@ def build(
         output_path = output_directory / "normalized" / domain_identifier / f"{slug_value}.json"
         _write_canonical_json(output_path, normalized_document)
         generated_paths.append(output_path)
-        normalized_documents.append(normalized_document)
-
-    manifest_records = [
-        as_mapping(criterion_value, location="manifest.criteria[]") for criterion_value in criteria
-    ]
     corpus_checksum = canonical_corpus_checksum(manifest_records, root=repository)
     search_records: list[JsonValue] = [
         _search_record(
@@ -459,7 +509,11 @@ def build(
         "canonicalCorpusChecksum": corpus_checksum,
         "records": search_records,
     }
-    _validate_generated_document(document=search_index, schema_path=search_schema_path)
+    _validate_generated_document(
+        document=search_index,
+        validator=search_validator,
+        schema_name=search_schema_path.name,
+    )
     search_path = output_directory / "search" / "search-index.json"
     _write_canonical_json(search_path, search_index)
     generated_paths.append(search_path)
@@ -481,6 +535,59 @@ def build(
     return generated_paths
 
 
+def _build_validated(
+    *,
+    root: Path,
+    output_root: Path,
+    base_path: str = "",
+    workers: int = 1,
+    executor: Executor | None = None,
+) -> list[Path]:
+    """Build a corpus that the current caller has already validated."""
+
+    return _build(
+        repository=root,
+        output_directory=output_root,
+        base_path=base_path,
+        workers=validate_worker_count(workers),
+        executor=executor,
+        validate_corpus=False,
+    )
+
+
+def build(
+    *,
+    root: Path | None = None,
+    output_root: Path | None = None,
+    base_path: str = "",
+    workers: int = 1,
+    executor: Executor | None = None,
+) -> list[Path]:
+    """Build the canonical corpus and return generated artifact paths."""
+
+    worker_count = validate_worker_count(workers)
+    repository = root or repository_root()
+    output_directory = output_root or repository / BUILD_DIRECTORY
+    if executor is not None or worker_count == 1:
+        return _build(
+            repository=repository,
+            output_directory=output_directory,
+            base_path=base_path,
+            workers=worker_count,
+            executor=executor,
+            validate_corpus=True,
+        )
+    with process_executor(worker_count) as owned_executor:
+        return _build(
+            repository=repository,
+            output_directory=output_directory,
+            base_path=base_path,
+            workers=worker_count,
+            executor=owned_executor,
+            validate_corpus=True,
+        )
+
+
 def _argument_parser() -> argparse.ArgumentParser:
     """Build the corpus-builder command-line parser."""
 
@@ -489,6 +596,12 @@ def _argument_parser() -> argparse.ArgumentParser:
         "--base-path",
         default="",
         help="optional hosting path prefix such as /kisa-cce",
+    )
+    parser.add_argument(
+        "--workers",
+        type=parse_worker_count,
+        default=default_worker_count(),
+        help="parallel worker processes for validation and normalization",
     )
     add_logging_arguments(parser)
     return parser
@@ -507,15 +620,20 @@ def main() -> int:
             "Corpus build started",
             event="command.started",
             base_path=arguments.base_path,
+            workers=arguments.workers,
         )
         try:
-            generated_paths = build(base_path=arguments.base_path)
+            generated_paths = build(
+                base_path=arguments.base_path,
+                workers=arguments.workers,
+            )
         except ValueError as error:
             logger.exception(
                 "Corpus build failed",
                 event="command.failed",
                 error=error,
                 base_path=arguments.base_path,
+                workers=arguments.workers,
             )
             print(str(error), file=sys.stderr)
             return 1
@@ -532,6 +650,7 @@ def main() -> int:
             event="command.completed",
             artifact_count=len(generated_paths),
             output_roots=output_roots,
+            workers=arguments.workers,
         )
         print(f"generated {len(generated_paths)} artifacts under {', '.join(output_roots)}")
     return 0

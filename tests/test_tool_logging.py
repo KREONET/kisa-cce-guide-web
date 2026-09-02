@@ -28,6 +28,8 @@ from conversion import (
     validate_content,
 )
 
+TEST_WORKER_COUNT = 3
+
 EXECUTABLE_TOOL_NAMES = {
     "build_content.py",
     "build_sites_bundle.py",
@@ -162,7 +164,8 @@ def test_build_content_main_logs_handled_failure(
 ) -> None:
     """An error converted to exit code one must be written as a failed command event."""
 
-    def fail_build(*, base_path: str) -> list[Path]:
+    def fail_build(*, base_path: str, workers: int) -> list[Path]:
+        assert workers == TEST_WORKER_COUNT
         message = f"invalid base path: {base_path}"
         raise ValueError(message)
 
@@ -170,7 +173,15 @@ def test_build_content_main_logs_handled_failure(
     monkeypatch.setattr(
         sys,
         "argv",
-        ["build-content", "--base-path", "/invalid", "--log-directory", str(tmp_path)],
+        [
+            "build-content",
+            "--base-path",
+            "/invalid",
+            "--workers",
+            str(TEST_WORKER_COUNT),
+            "--log-directory",
+            str(tmp_path),
+        ],
     )
 
     assert build_content.main() == 1
@@ -188,15 +199,70 @@ def test_build_sites_bundle_main_uses_shared_logging_configuration(
 ) -> None:
     """The bundle command must honor shared logging arguments."""
 
-    monkeypatch.setattr(build_sites_bundle, "build_sites_bundle", lambda: [tmp_path / "index.html"])
+    forwarded_workers: list[int] = []
+
+    def fake_build_sites_bundle(*, workers: int) -> list[Path]:
+        forwarded_workers.append(workers)
+        return [tmp_path / "index.html"]
+
+    monkeypatch.setattr(
+        build_sites_bundle,
+        "build_sites_bundle",
+        fake_build_sites_bundle,
+    )
     monkeypatch.setattr(
         sys,
         "argv",
-        ["build-sites-bundle", "--log-directory", str(tmp_path)],
+        [
+            "build-sites-bundle",
+            "--workers",
+            str(TEST_WORKER_COUNT),
+            "--log-directory",
+            str(tmp_path),
+        ],
     )
 
     assert build_sites_bundle.main() == 0
 
     captured = capsys.readouterr()
     assert captured.out == "generated 1 Sites deployment artifacts\n"
+    assert forwarded_workers == [TEST_WORKER_COUNT]
     assert _log_events(tmp_path) == ["command.started", "command.completed"]
+
+
+def test_validate_content_main_forwards_worker_count(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    """The validation command must pass its exact worker count to the validator."""
+
+    forwarded_workers: list[int] = []
+
+    def fake_validate_repository(*, root: Path, release: bool, workers: int) -> list[object]:
+        assert root.is_dir()
+        assert not release
+        forwarded_workers.append(workers)
+        return []
+
+    monkeypatch.setattr(validate_content, "repository_root", lambda: tmp_path)
+    monkeypatch.setattr(validate_content, "validate_repository", fake_validate_repository)
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "validate-content",
+            "--workers",
+            str(TEST_WORKER_COUNT),
+            "--report",
+            str(tmp_path / "report.json"),
+            "--log-directory",
+            str(tmp_path / "logs"),
+        ],
+    )
+
+    assert validate_content.main() == 0
+
+    captured = capsys.readouterr()
+    assert captured.out == "canonical corpus validation passed\n"
+    assert forwarded_workers == [TEST_WORKER_COUNT]

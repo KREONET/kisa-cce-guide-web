@@ -9,6 +9,10 @@ uv run python -m conversion.validate_content
 uv run python -m conversion.build_content
 ```
 
+두 명령은 기본적으로 사용 가능한 CPU 수와 8개 상한 안에서 criterion 단위 프로세스 작업을 병렬로 실행한다.
+재현이나 디버깅을 위해 직렬 실행이 필요하면 `--workers 1`을 지정한다. 병렬 실행도 validation issue,
+정규화 문서, 검색 record와 생성 경로를 manifest 순서로 병합하므로 직렬 실행과 같은 파일 집합과 byte를 생성한다.
+
 하위 경로에 배포할 URL을 만들 때는 base path를 지정한다.
 
 ```bash
@@ -21,6 +25,8 @@ uv run python -m conversion.build_content \
 ```bash
 uv run python -m conversion.build_sites_bundle
 ```
+
+호스팅 bundle과 로컬 서버의 자동 빌드도 같은 `--workers` 옵션을 지원한다.
 
 정적 결과는 `.artifacts/build/`, 호스팅 bundle은 `.artifacts/dist/client/`와 `.artifacts/dist/server/`에 생성한다.
 
