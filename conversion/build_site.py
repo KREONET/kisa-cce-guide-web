@@ -83,6 +83,11 @@ _HIGHLIGHT_SUPPORTED_LANGUAGES = _HIGHLIGHT_COMMON_LANGUAGES | frozenset(
     _HIGHLIGHT_ADDITIONAL_LANGUAGE_SCRIPTS
 )
 _TABLE_OF_CONTENTS_MINIMUM_HEADING_COUNT = 6
+_JUDGMENT_ROLES = ("good", "vulnerable")
+_JUDGMENT_LABEL_BY_ROLE = {
+    "good": "양호:",
+    "vulnerable": "취약:",
+}
 
 
 @dataclass(slots=True)
@@ -453,6 +458,14 @@ def _render_blocks(
     blocks = [
         as_mapping(block_value, location="normalized.blocks[]") for block_value in block_values
     ]
+    heading_identifier_by_semantic_path = {
+        tuple(
+            _text(value, location="block.semanticPath[]")
+            for value in as_sequence(block["semanticPath"], location="block.semanticPath")
+        ): _block_identifier(block)
+        for block in blocks
+        if block.get("blockType") == "heading"
+    }
     children: dict[str, list[dict[str, JsonValue]]] = defaultdict(list)
     top_level: list[dict[str, JsonValue]] = []
     for block in blocks:
@@ -477,6 +490,30 @@ def _render_blocks(
             ),
             "children": build_sequence(children.get(identifier, [])),
             "content": content,
+        }
+
+    def build_judgment_item(block: dict[str, JsonValue]) -> dict[str, object]:
+        identifier = _block_identifier(block)
+        semantic_role = _text(block["semanticRole"], location="block.semanticRole")
+        label = _JUDGMENT_LABEL_BY_ROLE.get(semantic_role)
+        if label is None:
+            msg = f"unsupported judgment semantic role: {semantic_role}"
+            raise ValueError(msg)
+        source_content = _text(block["content"], location="block.content")
+        content_prefix = f"**{label}** "
+        if not source_content.startswith(content_prefix):
+            msg = f"{identifier} judgment content must start with {content_prefix!r}"
+            raise ValueError(msg)
+        list_type = _text(block["listType"], location="block.listType")
+        list_depth = str(int(cast("int", block["listDepth"])))
+        return {
+            "attributes": _block_attributes(
+                block,
+                extra={"data-list-type": list_type, "data-list-depth": list_depth},
+            ),
+            "content": _inline_markup(source_content.removeprefix(content_prefix), parser=parser),
+            "heading_identifier": f"{identifier}-heading",
+            "label": label,
         }
 
     def build_single(block: dict[str, JsonValue]) -> dict[str, object]:
@@ -562,11 +599,18 @@ def _render_blocks(
                     ]
                 )
             caption_value = block.get("caption")
-            label = (
-                caption_value
-                if isinstance(caption_value, str) and caption_value
-                else f"원문 표 {_text(block['semanticRole'], location='block.semanticRole')}"
-            )
+            caption = caption_value if isinstance(caption_value, str) and caption_value else None
+            if caption is not None:
+                label_identifier = f"caption-{identifier}"
+            else:
+                semantic_path = tuple(
+                    _text(value, location="block.semanticPath[]")
+                    for value in as_sequence(block["semanticPath"], location="block.semanticPath")
+                )
+                label_identifier = heading_identifier_by_semantic_path.get(semantic_path)
+                if label_identifier is None:
+                    msg = f"{identifier} table has no caption or semantic heading"
+                    raise ValueError(msg)
             return {
                 "attributes": _block_attributes(
                     block,
@@ -575,10 +619,10 @@ def _render_blocks(
                         "data-table-row-count": str(len(rows)),
                     },
                 ),
-                "caption_identifier": f"caption-{identifier}",
+                "caption": caption,
                 "headers": rendered_headers,
                 "kind": "table",
-                "label": label,
+                "label_identifier": label_identifier,
                 "rows": rendered_rows,
             }
         if block_type == "image":
@@ -643,6 +687,24 @@ def _render_blocks(
                         break
                     grouped.append(candidate)
                     index += 1
+                if semantic_path == ["assessment", "judgment"]:
+                    semantic_roles = tuple(
+                        _text(item["semanticRole"], location="block.semanticRole")
+                        for item in grouped
+                    )
+                    if list_type != "unordered" or semantic_roles != _JUDGMENT_ROLES:
+                        msg = (
+                            "assessment judgment must contain ordered good and vulnerable "
+                            "unordered items"
+                        )
+                        raise ValueError(msg)
+                    parts.append(
+                        {
+                            "items": [build_judgment_item(item) for item in grouped],
+                            "kind": "judgments",
+                        }
+                    )
+                    continue
                 tag = "ol" if list_type == "ordered" else "ul"
                 first_list_depth = str(int(cast("int", grouped[0]["listDepth"])))
                 parts.append(
@@ -791,9 +853,6 @@ def _detail_page(
         "criterion__document criterion__document--with-toc" if toc else "criterion__document"
     )
     content_model = _text(normalized["contentModel"], location="normalized.contentModel")
-    review_label = (
-        "자동 전사 · 검토 필요" if content_model == "extractedCriterion" else "구조화 문서"
-    )
     source_ranges = as_sequence(
         provenance["sourcePageRanges"],
         location="provenance.sourcePageRanges",
@@ -888,7 +947,6 @@ def _detail_page(
             "code": code,
             "content_model": content_model,
             "criterion_title": title,
-            "dataset_url": dataset_url,
             "document_class": document_class,
             "domain_label": domain_label,
             "domain_url": _site_url(f"/{domain_identifier}/", base_path=base_path),
@@ -903,7 +961,6 @@ def _detail_page(
                     environment=environment,
                 )
             ),
-            "review_label": review_label,
             "severity_level": severity_level,
             "severity_source": severity_source,
             "source_document_identifier": _text(

@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import json
+import os
+import shutil
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
@@ -19,12 +21,18 @@ from conversion.common import (
     repository_root,
 )
 from conversion.paths import (
-    BUILD_DIRECTORY,
     CRITERIA_DIRECTORY,
     SOURCE_DOCUMENT_PATH,
     criterion_directory,
 )
-from conversion.validate_content import _validate_markdown_structure, validate_repository
+from conversion.validate_content import (
+    ValidationIssue,
+    _AnnotationOccurrence,
+    _CriterionValidationResult,
+    _merge_criterion_validation_results,
+    _validate_markdown_structure,
+    validate_repository,
+)
 
 HEADING_LEVEL_TWO = 2
 SOLARIS_RECOMMENDATION_ROW_COUNT = 17
@@ -53,16 +61,96 @@ def _structure_rules(body: str, *, content_model: str = "systemCriterion") -> li
     ]
 
 
+def _link_or_copy_file(source: str, destination: str) -> str:
+    """Hard-link fixture files when possible and copy across filesystems."""
+
+    try:
+        os.link(source, destination)
+    except OSError:
+        return shutil.copy2(source, destination)
+    return destination
+
+
+def _copy_validation_repository(destination: Path) -> Path:
+    """Create a lightweight isolated copy of every canonical validation input."""
+
+    source = repository_root()
+    destination.mkdir()
+    for directory_name in ("content", "data", "schemas"):
+        shutil.copytree(
+            source / directory_name,
+            destination / directory_name,
+            copy_function=_link_or_copy_file,
+        )
+    manifest_path = destination / "data/criteria-manifest.yaml"
+    manifest_path.unlink()
+    shutil.copy2(source / "data/criteria-manifest.yaml", manifest_path)
+    return destination
+
+
 def test_scoped_validation_passes() -> None:
     """The complete canonical corpus must validate."""
 
-    assert validate_repository(release=False) == []
+    sequential_issues = validate_repository(release=False, workers=1)
+    parallel_issues = validate_repository(release=False, workers=4)
+
+    assert sequential_issues == parallel_issues == []
+
+
+def test_parallel_validation_merge_preserves_annotation_issue_order() -> None:
+    """Cross-worker annotation duplicates must appear at their source-order offset."""
+
+    first_result = _CriterionValidationResult(
+        issues=(),
+        annotation_occurrences=(
+            _AnnotationOccurrence("annotation-1", 0, "content/criteria/unix/u-01.md"),
+        ),
+    )
+    before_issue = ValidationIssue("before", "u-02", "before annotation")
+    after_issue = ValidationIssue("after", "u-02", "after annotation")
+    second_result = _CriterionValidationResult(
+        issues=(before_issue, after_issue),
+        annotation_occurrences=(
+            _AnnotationOccurrence("annotation-1", 1, "content/criteria/unix/u-02.md"),
+        ),
+    )
+
+    assert _merge_criterion_validation_results([first_result, second_result]) == [
+        before_issue,
+        ValidationIssue(
+            "annotation-identifier-unique",
+            "content/criteria/unix/u-02.md",
+            "duplicate annotation identifier annotation-1",
+        ),
+        after_issue,
+    ]
+
+
+def test_parallel_validation_preserves_ordered_failures(tmp_path: Path) -> None:
+    """Parallel validation must return the exact serial issue sequence for invalid input."""
+
+    repository = _copy_validation_repository(tmp_path / "repository")
+    manifest_path = repository / "data/criteria-manifest.yaml"
+    manifest = manifest_path.read_text(encoding="utf-8")
+    manifest_path.write_text(
+        manifest.replace("route: /unix/u-02/", "route: /unix/u-01/", 1),
+        encoding="utf-8",
+    )
+
+    sequential_issues = validate_repository(root=repository, release=False, workers=1)
+    parallel_issues = validate_repository(root=repository, release=False, workers=4)
+
+    assert sequential_issues
+    assert sequential_issues == parallel_issues
+    assert "manifest-identity-unique" in {issue.rule_identifier for issue in sequential_issues}
 
 
 def test_release_validation_remains_blocked() -> None:
     """A structured corpus must remain blocked by outstanding release gates."""
 
-    rule_identifiers = {issue.rule_identifier for issue in validate_repository(release=True)}
+    rule_identifiers = {
+        issue.rule_identifier for issue in validate_repository(release=True, workers=4)
+    }
     assert "release-license-approved" not in rule_identifiers
     assert "release-structured-corpus" not in rule_identifiers
     assert "release-review-approved" in rule_identifiers
@@ -128,11 +216,14 @@ def test_build_is_deterministic() -> None:
     with TemporaryDirectory() as first_directory, TemporaryDirectory() as second_directory:
         first_root = Path(first_directory)
         second_root = Path(second_directory)
-        first_paths = build(output_root=first_root)
+        first_paths = build(output_root=first_root, workers=1)
         first_bytes = {path.relative_to(first_root): path.read_bytes() for path in first_paths}
-        second_paths = build(output_root=second_root)
+        second_paths = build(output_root=second_root, workers=4)
         second_bytes = {path.relative_to(second_root): path.read_bytes() for path in second_paths}
     assert first_bytes == second_bytes
+    assert [path.relative_to(first_root) for path in first_paths] == [
+        path.relative_to(second_root) for path in second_paths
+    ]
     assert all(
         not content.endswith(b"\n")
         for path, content in first_bytes.items()
@@ -140,11 +231,11 @@ def test_build_is_deterministic() -> None:
     )
 
 
-def test_search_index_contains_exact_terms() -> None:
+def test_search_index_contains_exact_terms(tmp_path: Path) -> None:
     """The initial index must retain code, path, and setting literals."""
 
-    build()
-    search_path = repository_root() / BUILD_DIRECTORY / "search" / "search-index.json"
+    build(output_root=tmp_path)
+    search_path = tmp_path / "search" / "search-index.json"
     search_index = json.loads(search_path.read_text(encoding="utf-8"))
     assert search_path.stat().st_size <= MAX_SEARCH_INDEX_BYTES
     assert search_index["schemaVersion"] == SEARCH_SCHEMA_VERSION
@@ -166,17 +257,12 @@ def test_search_index_contains_exact_terms() -> None:
     assert any("custom_404.html" in term for term in records["EP"]["exactTerms"])
 
 
-def test_normalized_ast_preserves_semantics() -> None:
+def test_normalized_ast_preserves_semantics(tmp_path: Path) -> None:
     """Typed blocks must retain hierarchy, code profile, and derivation state."""
 
-    build()
-    root = repository_root()
-    u_01 = json.loads(
-        (root / BUILD_DIRECTORY / "normalized/unix/u-01.json").read_text(encoding="utf-8")
-    )
-    u_02 = json.loads(
-        (root / BUILD_DIRECTORY / "normalized/unix/u-02.json").read_text(encoding="utf-8")
-    )
+    build(output_root=tmp_path)
+    u_01 = json.loads((tmp_path / "normalized/unix/u-01.json").read_text(encoding="utf-8"))
+    u_02 = json.loads((tmp_path / "normalized/unix/u-02.json").read_text(encoding="utf-8"))
     u_01_blocks = {block["blockReference"]: block for block in u_01["blocks"]}
     u_02_blocks = {block["blockReference"]: block for block in u_02["blocks"]}
     assert u_01_blocks["u-01:overview.heading:1"]["headingLevel"] == HEADING_LEVEL_TWO

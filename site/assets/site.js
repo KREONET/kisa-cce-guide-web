@@ -118,6 +118,7 @@ if (tableOfContents && tableOfContentsToggle && tableOfContentsContent && tableO
   const setTableOfContentsExpanded = (expanded) => {
     tableOfContentsContent.hidden = !expanded;
     tableOfContentsToggle.setAttribute("aria-expanded", String(expanded));
+    tableOfContents.dataset.expanded = String(expanded);
   };
   const synchronizeTableOfContents = () => {
     const compact = compactTableOfContents.matches;
@@ -125,8 +126,8 @@ if (tableOfContents && tableOfContentsToggle && tableOfContentsContent && tableO
       tableOfContentsToggle.focus();
     }
     tableOfContents.dataset.enhanced = "true";
-    tableOfContentsToggle.hidden = !compact;
-    tableOfContentsTitle.hidden = compact;
+    tableOfContentsToggle.hidden = false;
+    tableOfContentsTitle.hidden = true;
     setTableOfContentsExpanded(!compact);
   };
 
@@ -140,20 +141,36 @@ if (tableOfContents && tableOfContentsToggle && tableOfContentsContent && tableO
 const copyStatus = document.querySelector("[data-copy-status]");
 const clipboardAvailable =
   navigator.clipboard && typeof navigator.clipboard.writeText === "function";
+const copyClickDelayMilliseconds = 500;
+const copyPointerMovementThreshold = 8;
+const copyStatusDurationMilliseconds = 1200;
 
-for (const button of document.querySelectorAll("[data-copy-button]")) {
-  if (!clipboardAvailable) {
+for (const surface of document.querySelectorAll("[data-copy-surface]")) {
+  const targetIdentifier = surface.getAttribute("data-copy-surface");
+  const code = targetIdentifier ? document.getElementById(targetIdentifier) : null;
+  const control = surface.querySelector("[data-copy-control]");
+  if (!clipboardAvailable || !code || !control) {
     continue;
   }
-  button.hidden = false;
-  button.addEventListener("click", async () => {
-    const targetIdentifier = button.getAttribute("data-copy-button");
-    const code = targetIdentifier
-      ? document.getElementById(targetIdentifier)
-      : null;
-    if (!code) {
-      return;
+  surface.dataset.copyEnabled = "true";
+  control.hidden = false;
+  let pendingCopyTimeout = null;
+  let pointerOrigin = null;
+  let pointerMoved = false;
+  let copyStateTimeout = null;
+
+  const setCopyState = (state) => {
+    surface.dataset.copyState = state;
+    if (copyStateTimeout !== null) {
+      window.clearTimeout(copyStateTimeout);
     }
+    copyStateTimeout = window.setTimeout(() => {
+      delete surface.dataset.copyState;
+      copyStateTimeout = null;
+    }, copyStatusDurationMilliseconds);
+  };
+
+  const copyCode = async () => {
     try {
       if (copyStatus) {
         copyStatus.textContent = "";
@@ -162,15 +179,58 @@ for (const button of document.querySelectorAll("[data-copy-button]")) {
       if (copyStatus) {
         copyStatus.textContent = "코드를 복사했습니다.";
       }
+      setCopyState("success");
     } catch {
       if (copyStatus) {
         copyStatus.textContent = "복사할 수 없습니다. 내용을 직접 선택해 주세요.";
       }
+      setCopyState("error");
+    }
+  };
+  control.addEventListener("click", async (event) => {
+    event.stopPropagation();
+    await copyCode();
+  });
+  surface.addEventListener("pointerdown", (event) => {
+    pointerOrigin = {x: event.clientX, y: event.clientY};
+    pointerMoved = false;
+  });
+  surface.addEventListener("pointermove", (event) => {
+    if (
+      pointerOrigin
+      && Math.hypot(event.clientX - pointerOrigin.x, event.clientY - pointerOrigin.y)
+        > copyPointerMovementThreshold
+    ) {
+      pointerMoved = true;
+    }
+  });
+  surface.addEventListener("pointercancel", () => {
+    pointerMoved = true;
+  });
+  surface.addEventListener("click", (event) => {
+    if (event.target === control || control.contains(event.target) || pointerMoved) {
+      return;
+    }
+    if (pendingCopyTimeout !== null) {
+      window.clearTimeout(pendingCopyTimeout);
+    }
+    pendingCopyTimeout = window.setTimeout(async () => {
+      pendingCopyTimeout = null;
+      const selection = window.getSelection?.();
+      if (!selection || selection.isCollapsed) {
+        await copyCode();
+      }
+    }, copyClickDelayMilliseconds);
+  });
+  surface.addEventListener("dblclick", () => {
+    if (pendingCopyTimeout !== null) {
+      window.clearTimeout(pendingCopyTimeout);
+      pendingCopyTimeout = null;
     }
   });
 }
 
-const updateCodeScrollRegion = (region) => {
+const updateHorizontalScrollRegion = (region) => {
   if (region.scrollWidth > region.clientWidth) {
     region.setAttribute("tabindex", "0");
   } else {
@@ -178,23 +238,23 @@ const updateCodeScrollRegion = (region) => {
   }
 };
 
-const codeScrollRegions = document.querySelectorAll(".code-block pre");
-const updateCodeScrollRegions = () => {
-  for (const region of codeScrollRegions) {
-    updateCodeScrollRegion(region);
+const horizontalScrollRegions = document.querySelectorAll(".code-block pre, .table-scroll");
+const updateHorizontalScrollRegions = () => {
+  for (const region of horizontalScrollRegions) {
+    updateHorizontalScrollRegion(region);
   }
 };
 
-requestAnimationFrame(updateCodeScrollRegions);
-window.addEventListener("resize", updateCodeScrollRegions);
+requestAnimationFrame(updateHorizontalScrollRegions);
+window.addEventListener("resize", updateHorizontalScrollRegions);
 
 if ("ResizeObserver" in window) {
   const codeResizeObserver = new ResizeObserver((entries) => {
     for (const entry of entries) {
-      updateCodeScrollRegion(entry.target);
+      updateHorizontalScrollRegion(entry.target);
     }
   });
-  for (const region of codeScrollRegions) {
+  for (const region of horizontalScrollRegions) {
     codeResizeObserver.observe(region);
   }
 }

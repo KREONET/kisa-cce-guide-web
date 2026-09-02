@@ -6,6 +6,7 @@ import hashlib
 import json
 import re
 import shutil
+from concurrent.futures import ThreadPoolExecutor
 from html.parser import HTMLParser
 from pathlib import Path
 from tempfile import TemporaryDirectory
@@ -19,6 +20,7 @@ from conversion.build_site import (
     _TABLE_OF_CONTENTS_MINIMUM_HEADING_COUNT,
     _inline_markup,
     _inline_renderer,
+    _render_blocks,
     _render_table_of_contents,
     _template_environment,
 )
@@ -28,6 +30,7 @@ from conversion.site_validation import validate_site
 
 EXPECTED_CRITERION_COUNT = 382
 EXPECTED_HTML_PAGE_COUNT = 469
+EXPECTED_TABLE_COUNT = 69
 EXPECTED_LICENSE = "공공누리 - 공공저작물 자유이용허락"
 HEX_SHORT_LENGTH = 3
 SRGB_LINEAR_THRESHOLD = 0.04045
@@ -307,6 +310,28 @@ def _assert_code_block_contract(
     )
 
 
+def _assert_table_block_contract(
+    *,
+    inspector: PageInspector,
+    block: dict[str, JsonValue],
+    attributes: dict[str, str | None],
+) -> None:
+    """Assert that a table keeps a source caption or semantic heading label."""
+
+    block_reference = block["blockReference"]
+    assert isinstance(block_reference, str)
+    caption = block.get("caption")
+    if isinstance(caption, str) and caption:
+        caption_tag, _ = inspector.elements_by_identifier[f"caption-{block_reference}"]
+        assert caption_tag == "caption"
+        return
+    labelled_by_identifier = attributes["aria-labelledby"]
+    assert labelled_by_identifier is not None
+    labelled_by_tag, _ = inspector.elements_by_identifier[labelled_by_identifier]
+    assert labelled_by_tag in {"h2", "h3", "h4", "h5", "h6"}
+    assert f"caption-{block_reference}" not in inspector.elements_by_identifier
+
+
 def _assert_block_contract(
     inspector: PageInspector,
     block: dict[str, JsonValue],
@@ -335,6 +360,12 @@ def _assert_block_contract(
         "table": "table",
         "image": "figure",
     }.get(block_type)
+    if (
+        block_type == "listItem"
+        and semantic_role in {"good", "vulnerable"}
+        and semantic_path_values == ["assessment", "judgment"]
+    ):
+        expected_tag = "section"
     if block_type == "heading":
         heading_level = block["headingLevel"]
         assert isinstance(heading_level, int)
@@ -365,10 +396,15 @@ def _assert_block_contract(
             block=block,
             pre_attributes=attributes,
         )
-    if block_type in {"table", "image"}:
-        caption_tag, _ = inspector.elements_by_identifier[f"caption-{block_reference}"]
-        assert caption_tag == ("caption" if block_type == "table" else "figcaption")
+    if block_type == "table":
+        _assert_table_block_contract(
+            inspector=inspector,
+            block=block,
+            attributes=attributes,
+        )
     if block_type == "image":
+        caption_tag, _ = inspector.elements_by_identifier[f"caption-{block_reference}"]
+        assert caption_tag == "figcaption"
         assert attributes["data-asset-type"] == block["assetType"]
         assert attributes["data-rendering-profile"] == block["renderingProfileIdentifier"]
         assert attributes["data-alternative-text-status"] == block["alternativeTextStatus"]
@@ -439,6 +475,23 @@ def test_shell_keeps_footer_at_viewport_bottom(generated_site: Path) -> None:
     assert "min-height: 100dvh;" in body_styles
     assert "margin-top: auto;" in footer_styles
     assert "body { display: block !important; min-height: 0 !important;" in print_styles
+
+
+def test_primary_page_shells_share_desktop_container_width(generated_site: Path) -> None:
+    """Home, listing, and criterion pages must share the desktop container width."""
+
+    stylesheet = (generated_site / "assets" / "styles.css").read_text(encoding="utf-8")
+    root_styles = stylesheet.partition(":root {")[2].partition("}")[0]
+    shell_styles = stylesheet.partition(".page-shell {")[2].partition("}")[0]
+    shell_modifier_styles = stylesheet.partition(".page-shell--single")[2].partition(".content {")[
+        0
+    ]
+
+    assert "--container-width: 1280px;" in root_styles
+    assert "width: min(var(--container-width), calc(100% - 48px));" in shell_styles
+    assert "1120px" not in shell_modifier_styles
+    assert "max-width:" not in shell_modifier_styles
+    assert ".skill-page { max-width: 1120px; }" in stylesheet
 
 
 def test_theme_control_and_initialization_are_present_on_every_page(
@@ -545,7 +598,9 @@ def test_home_links_llm_usage_to_separate_skill_page(generated_site: Path) -> No
     assert 'href="/skill/">본문 보기</a>' in home_html
     assert 'href="/SKILL.md" download' not in home_html
     assert "파일 다운로드" not in home_html
-    assert 'data-copy-button="llm-usage-prompt"' in home_html
+    assert 'data-copy-surface="llm-usage-prompt"' in home_html
+    assert 'data-copy-control="llm-usage-prompt" hidden' in home_html
+    assert 'class="copy-button"' not in home_html
     assert "INSTRUCTIONS" not in home_html
     assert "data-skill-document" not in home_html
     assert home_html.index('class="hero"') < home_html.index('class="surface domain-directory"')
@@ -626,6 +681,23 @@ def test_source_attribution_section_is_not_rendered(generated_site: Path) -> Non
         assert 'class="provenance"' not in detail_html, detail_path
 
 
+def test_document_status_and_json_button_are_not_rendered(generated_site: Path) -> None:
+    """Criterion headers must omit internal status and the redundant dataset button."""
+
+    for dataset_path in sorted((generated_site / "dataset" / "criteria").glob("*/*.json")):
+        domain_identifier = dataset_path.parent.name
+        detail_path = generated_site / domain_identifier / dataset_path.stem / "index.html"
+        detail_html = detail_path.read_text(encoding="utf-8")
+        criterion_header = detail_html.partition('<header class="criterion__header">')[2].partition(
+            "</header>"
+        )[0]
+        assert "문서 상태" not in criterion_header, detail_path
+        assert "구조화 문서" not in criterion_header, detail_path
+        assert "자동 전사 · 검토 필요" not in criterion_header, detail_path
+        assert "JSON 데이터 보기" not in criterion_header, detail_path
+        assert '<link rel="alternate" type="application/json"' in detail_html, detail_path
+
+
 def test_header_menu_contains_domain_exploration(generated_site: Path) -> None:
     """Every page must expose domain exploration through the primary header menu."""
 
@@ -674,8 +746,10 @@ def test_header_menu_contains_domain_exploration(generated_site: Path) -> None:
     assert "sidebarDisclosure" not in site_script
 
 
-def test_document_table_of_contents_uses_responsive_sidebar(generated_site: Path) -> None:
-    """Desktop pages must use a sticky TOC while compact pages default to collapsed."""
+def test_document_table_of_contents_uses_a_responsive_floating_panel(
+    generated_site: Path,
+) -> None:
+    """Desktop TOCs must float at the upper right and remain collapsible."""
 
     detail_html = (generated_site / "unix" / "u-01" / "index.html").read_text(encoding="utf-8")
     assert detail_html.count('aria-label="문서 목차"') == 1
@@ -694,26 +768,30 @@ def test_document_table_of_contents_uses_responsive_sidebar(generated_site: Path
 
     site_script = (generated_site / "assets" / "site.js").read_text(encoding="utf-8")
     assert 'window.matchMedia("(max-width: 1080px)")' in site_script
-    assert "tableOfContentsToggle.hidden = !compact;" in site_script
-    assert "tableOfContentsTitle.hidden = compact;" in site_script
+    assert "tableOfContents.dataset.expanded = String(expanded);" in site_script
+    assert "tableOfContentsToggle.hidden = false;" in site_script
+    assert "tableOfContentsTitle.hidden = true;" in site_script
     assert "setTableOfContentsExpanded(!compact);" in site_script
     assert 'addEventListener("change", synchronizeTableOfContents)' in site_script
     assert "setTableOfContentsExpanded(tableOfContentsContent.hidden);" in site_script
 
     stylesheet = (generated_site / "assets" / "styles.css").read_text(encoding="utf-8")
+    base_styles = stylesheet.partition("@media (min-width: 1081px) {")[0]
     desktop_styles = stylesheet.partition("@media (min-width: 1081px) {")[2].partition(".note {")[0]
-    assert "position: sticky;" in desktop_styles
+    assert ".criterion__document--with-toc { display: flow-root; }" in base_styles
+    assert 'toc[data-enhanced="true"] .toc__toggle { display: flex; }' in base_styles
+    assert "float: right;" in desktop_styles
+    assert "width: min(240px, 32%);" in desktop_styles
+    assert "position: sticky;" not in desktop_styles
     assert "max-height: calc(100dvh - var(--header-height) - 48px);" in desktop_styles
+    assert '.toc[data-expanded="false"]' in desktop_styles
 
     compact_styles = stylesheet.partition("@media (max-width: 1080px) {")[2].partition(
         "@media (max-width: 768px) {"
     )[0]
-    assert ".criterion__document--with-toc { display: block; }" in compact_styles
-    assert '.toc[data-enhanced="true"] .toc__title { display: none; }' in compact_styles
-    assert '.toc[data-enhanced="true"] .toc__toggle { display: flex; }' in compact_styles
-    assert (
-        '.toc__toggle[aria-expanded="true"]::after { content: "\N{MINUS SIGN}"; }' in compact_styles
-    )
+    assert "float: right;" not in compact_styles
+    assert ".toc { margin-bottom: var(--space-8); }" in compact_styles
+    assert '.toc__toggle[aria-expanded="true"]::after { content: "\N{MINUS SIGN}"; }' in base_styles
 
 
 def test_narrow_layout_prevents_root_horizontal_overflow(generated_site: Path) -> None:
@@ -727,6 +805,210 @@ def test_narrow_layout_prevents_root_horizontal_overflow(generated_site: Path) -
 
     assert "inset: 0 auto auto 0 !important;" in visually_hidden_styles
     assert ".hero__stats > div" not in narrow_styles
+
+
+def test_judgment_items_render_as_heading_sections(generated_site: Path) -> None:
+    """Judgment labels must be H4 headings rather than list-item prefixes."""
+
+    dataset_root = generated_site / "dataset" / "criteria"
+    page_count = 0
+    for dataset_path in sorted(dataset_root.glob("*/*.json")):
+        normalized = as_mapping(
+            json.loads(dataset_path.read_text(encoding="utf-8")),
+            location=str(dataset_path),
+        )
+        judgment_blocks = [
+            as_mapping(value, location=f"{dataset_path}.blocks[]")
+            for value in as_sequence(normalized["blocks"], location=f"{dataset_path}.blocks")
+            if isinstance(value, dict)
+            and value.get("semanticRole") in {"good", "vulnerable"}
+            and value.get("semanticPath") == ["assessment", "judgment"]
+        ]
+        assert [block["semanticRole"] for block in judgment_blocks] == ["good", "vulnerable"]
+
+        relative_path = dataset_path.relative_to(dataset_root)
+        detail_path = generated_site / relative_path.parent / relative_path.stem / "index.html"
+        detail_html = detail_path.read_text(encoding="utf-8")
+        inspector = _inspect(detail_path)
+        assert detail_html.count('<div class="judgment-criteria">') == 1
+        for block, label in zip(judgment_blocks, ("양호:", "취약:"), strict=True):
+            block_reference = block["blockReference"]
+            assert isinstance(block_reference, str)
+            heading_identifier = f"{block_reference}-heading"
+            group_tag, group_attributes = inspector.elements_by_identifier[block_reference]
+            heading_tag, _ = inspector.elements_by_identifier[heading_identifier]
+            assert group_tag == "section"
+            assert group_attributes["aria-labelledby"] == heading_identifier
+            assert heading_tag == "h4"
+            assert f'<h4 id="{heading_identifier}">{label}</h4>' in detail_html
+            assert f'<li id="{block_reference}"' not in detail_html
+        page_count += 1
+
+    assert page_count == EXPECTED_CRITERION_COUNT
+
+
+def test_tables_only_force_horizontal_scroll_for_intrinsic_overflow(
+    generated_site: Path,
+) -> None:
+    """Tables that fit their container must not cross a fixed minimum-width threshold."""
+
+    stylesheet = (generated_site / "assets" / "styles.css").read_text(encoding="utf-8")
+    table_scroll_styles = stylesheet.partition(".table-scroll {")[2].partition("}")[0]
+    table_styles = stylesheet.partition("table {")[2].partition("}")[0]
+
+    assert "overflow: auto;" in table_scroll_styles
+    assert "min-width: min(640px, 100%);" in table_styles
+    assert "min-width: 640px;" not in table_styles
+    site_script = (generated_site / "assets" / "site.js").read_text(encoding="utf-8")
+    assert 'document.querySelectorAll(".code-block pre, .table-scroll")' in site_script
+    assert "updateHorizontalScrollRegion(region);" in site_script
+
+
+def test_captionless_tables_use_semantic_heading_labels(generated_site: Path) -> None:
+    """Tables without source captions must use their nearest semantic heading as a label."""
+
+    table_count = 0
+    for dataset_path in sorted((generated_site / "dataset" / "criteria").glob("*/*.json")):
+        normalized = json.loads(dataset_path.read_text(encoding="utf-8"))
+        blocks = [
+            as_mapping(value, location=f"{dataset_path}.blocks[]")
+            for value in as_sequence(normalized["blocks"], location=f"{dataset_path}.blocks")
+        ]
+        heading_identifiers_by_path = {
+            tuple(as_sequence(block["semanticPath"], location="block.semanticPath")): block[
+                "blockReference"
+            ]
+            for block in blocks
+            if block["blockType"] == "heading"
+        }
+        table_blocks = [block for block in blocks if block["blockType"] == "table"]
+        if not table_blocks:
+            continue
+        domain_identifier = dataset_path.parent.name
+        detail_path = generated_site / domain_identifier / dataset_path.stem / "index.html"
+        detail_html = detail_path.read_text(encoding="utf-8")
+        inspector = _inspect(detail_path)
+        assert "원문 표 table" not in detail_html
+        assert "<caption" not in detail_html
+        for block in table_blocks:
+            block_reference = block["blockReference"]
+            semantic_path = tuple(as_sequence(block["semanticPath"], location="block.semanticPath"))
+            expected_heading_identifier = heading_identifiers_by_path[semantic_path]
+            assert isinstance(block_reference, str)
+            assert isinstance(expected_heading_identifier, str)
+            table_tag, table_attributes = inspector.elements_by_identifier[block_reference]
+            assert table_tag == "table"
+            assert table_attributes["aria-labelledby"] == expected_heading_identifier
+            assert (
+                f'<div class="table-scroll" role="region" '
+                f'aria-labelledby="{expected_heading_identifier}"' in detail_html
+            )
+            table_count += 1
+
+    assert table_count == EXPECTED_TABLE_COUNT
+
+
+def test_source_table_caption_remains_visible(generated_site: Path) -> None:
+    """A real source caption must remain the visible accessible name."""
+
+    normalized = json.loads(
+        (generated_site / "dataset/criteria/web-service/web-16.json").read_text(encoding="utf-8")
+    )
+    blocks = [
+        as_mapping(value, location="web-16.blocks[]")
+        for value in as_sequence(normalized["blocks"], location="web-16.blocks")
+    ]
+    heading = next(
+        block for block in blocks if block["blockReference"] == "web-16:remediation.linux.heading:1"
+    )
+    source_table = next(
+        block for block in blocks if block["blockReference"] == "web-16:remediation.linux.table:2"
+    )
+    table = {**source_table, "caption": "ServerTokens 옵션별 반환 정보"}
+
+    with pytest.raises(ValueError, match="table has no caption or semantic heading"):
+        _render_blocks([source_table], base_path="")
+    rendered = _render_blocks([heading, table], base_path="")
+
+    assert (
+        '<caption id="caption-web-16:remediation.linux.table:2">'
+        "ServerTokens 옵션별 반환 정보</caption>" in rendered
+    )
+    assert 'role="region" aria-labelledby="caption-web-16:remediation.linux.table:2"' in rendered
+
+
+def test_static_validation_rejects_unlabelled_table(
+    generated_site: Path,
+    tmp_path: Path,
+) -> None:
+    """A table without a source caption must retain its semantic heading label."""
+
+    site_root = _copy_site(generated_site, tmp_path)
+    detail_path = site_root / "web-service/web-16/index.html"
+    detail_html = detail_path.read_text(encoding="utf-8")
+    table_pattern = re.compile(
+        r'(<table id="web-16:remediation\.linux\.table:2"[^>]*?) '
+        r'aria-labelledby="web-16:remediation\.linux\.heading:1"'
+    )
+    mutated_html, replacement_count = table_pattern.subn(r"\1", detail_html, count=1)
+    assert replacement_count == 1
+    detail_path.write_text(mutated_html, encoding="utf-8")
+
+    assert "site-table-accessibility" in _issue_rule_identifiers(site_root)
+
+    non_heading_label, non_heading_label_count = table_pattern.subn(
+        r'\1 aria-labelledby="web-16:remediation.linux.table:2"',
+        detail_html,
+        count=1,
+    )
+    assert non_heading_label_count == 1
+    detail_path.write_text(non_heading_label, encoding="utf-8")
+    assert "site-table-accessibility" in _issue_rule_identifiers(site_root)
+
+    empty_caption, empty_caption_count = re.subn(
+        r'(<table id="web-16:remediation\.linux\.table:2"[^>]*>)',
+        r'\1<caption id="caption-web-16:remediation.linux.table:2"></caption>',
+        mutated_html,
+        count=1,
+    )
+    assert empty_caption_count == 1
+    detail_path.write_text(empty_caption, encoding="utf-8")
+    assert "site-table-accessibility" in _issue_rule_identifiers(site_root)
+
+
+def test_code_blocks_are_buttonless_click_to_copy_surfaces(generated_site: Path) -> None:
+    """Code blocks must expose one target without rendering separate copy buttons."""
+
+    copy_surface_count = 0
+    for html_path in sorted(generated_site.rglob("*.html")):
+        html = html_path.read_text(encoding="utf-8")
+        assert 'class="copy-button"' not in html, html_path
+        copy_surfaces = re.findall(
+            r'<div class="code-block[^"]*" data-copy-surface="([^"]+)">'
+            r'<button class="code-copy-control"[^>]*data-copy-control="([^"]+)"',
+            html,
+        )
+        for target_identifier, control_identifier in copy_surfaces:
+            assert target_identifier, html_path
+            assert control_identifier == target_identifier, html_path
+            assert f'id="{target_identifier}"' in html, html_path
+            copy_surface_count += 1
+    assert copy_surface_count > 0
+
+    base_html = (repository_root() / "site/templates/base.html").read_text(encoding="utf-8")
+    assert 'role="status" aria-live="polite" aria-atomic="true" data-copy-status' in base_html
+    stylesheet = (generated_site / "assets" / "styles.css").read_text(encoding="utf-8")
+    assert '.code-block[data-copy-enabled="true"] { cursor: copy; }' in stylesheet
+    assert ".copy-button" not in stylesheet
+    assert ".code-copy-control:focus-visible" in stylesheet
+    assert '.code-block[data-copy-state="success"]::after { content: "복사됨"; }' in stylesheet
+    assert '.code-block[data-copy-state="error"]::after { content: "복사 실패"; }' in stylesheet
+    site_script = (generated_site / "assets" / "site.js").read_text(encoding="utf-8")
+    assert 'document.querySelectorAll("[data-copy-surface]")' in site_script
+    assert 'surface.querySelector("[data-copy-control]")' in site_script
+    assert 'surface.addEventListener("pointermove"' in site_script
+    assert 'surface.addEventListener("dblclick"' in site_script
+    assert "window.getSelection?.();" in site_script
 
 
 def test_table_of_contents_preserves_heading_hierarchy(generated_site: Path) -> None:
@@ -817,14 +1099,19 @@ def test_generated_site_passes_static_validation(generated_site: Path) -> None:
     """The complete site must pass semantic, link, image, and search checks."""
 
     manifest = load_yaml(repository_root() / "data/criteria-manifest.yaml")
-    assert (
-        validate_site(
+    sequential_issues = validate_site(
+        site_root=generated_site,
+        manifest=manifest,
+        expected_html_page_count=EXPECTED_HTML_PAGE_COUNT,
+    )
+    with ThreadPoolExecutor(max_workers=4) as executor:
+        parallel_issues = validate_site(
             site_root=generated_site,
             manifest=manifest,
             expected_html_page_count=EXPECTED_HTML_PAGE_COUNT,
+            executor=executor,
         )
-        == []
-    )
+    assert sequential_issues == parallel_issues == []
     assert not any(
         '<th scope="col"></th>' in path.read_text(encoding="utf-8")
         for path in generated_site.rglob("*.html")

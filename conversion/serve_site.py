@@ -14,6 +14,7 @@ from urllib.parse import urlsplit, urlunsplit
 
 from conversion.build_content import build
 from conversion.common import repository_root
+from conversion.parallel import default_worker_count, parse_worker_count
 from conversion.paths import BUILD_DIRECTORY
 from conversion.runtime_logging import add_logging_arguments, configure_runtime_logging
 
@@ -164,6 +165,12 @@ def _argument_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="serve the existing .artifacts/build/site directory without rebuilding",
     )
+    parser.add_argument(
+        "--workers",
+        type=parse_worker_count,
+        default=default_worker_count(),
+        help="parallel worker processes used when rebuilding",
+    )
     add_logging_arguments(parser)
     return parser
 
@@ -184,12 +191,17 @@ def main() -> int:
             build_enabled=not arguments.no_build,
             host=arguments.host,
             requested_port=arguments.port,
+            workers=arguments.workers,
         )
         repository = repository_root()
         site_directory = repository / BUILD_DIRECTORY / "site"
         if not arguments.no_build:
             logger.info("Local site build started", event="site.build_started")
-            build(root=repository, base_path=arguments.base_path)
+            build(
+                root=repository,
+                base_path=arguments.base_path,
+                workers=arguments.workers,
+            )
             logger.info("Local site build completed", event="site.build_completed")
         elif not (site_directory / "index.html").is_file():
             message = ".artifacts/build/site/index.html is missing; run without --no-build"

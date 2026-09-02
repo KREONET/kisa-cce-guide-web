@@ -13,6 +13,7 @@ from PIL import Image
 
 from conversion.build_content import build
 from conversion.common import repository_root
+from conversion.parallel import default_worker_count, parse_worker_count, validate_worker_count
 from conversion.paths import BUILD_DIRECTORY, DISTRIBUTION_DIRECTORY, SITE_HOSTING_DIRECTORY
 from conversion.runtime_logging import add_logging_arguments, configure_runtime_logging
 
@@ -106,11 +107,11 @@ def _update_hosted_datasets(
         raise ValueError(msg)
 
 
-def build_sites_bundle(*, root: Path | None = None) -> list[Path]:
+def build_sites_bundle(*, root: Path | None = None, workers: int = 1) -> list[Path]:
     """Build and stage the validated static site and Worker entry point."""
 
     repository = root or repository_root()
-    build(root=repository)
+    build(root=repository, workers=validate_worker_count(workers))
     distribution_directory = repository / DISTRIBUTION_DIRECTORY
     shutil.rmtree(distribution_directory, ignore_errors=True)
     client_directory = distribution_directory / "client"
@@ -133,6 +134,12 @@ def _argument_parser() -> argparse.ArgumentParser:
     """Build the Sites deployment command-line parser."""
 
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--workers",
+        type=parse_worker_count,
+        default=default_worker_count(),
+        help="parallel worker processes for validation and normalization",
+    )
     add_logging_arguments(parser)
     return parser
 
@@ -147,11 +154,12 @@ def main() -> int:
         log_directory=arguments.log_directory,
     ) as logger:
         logger.info("Sites deployment build started", event="command.started")
-        generated_paths = build_sites_bundle()
+        generated_paths = build_sites_bundle(workers=arguments.workers)
         logger.info(
             "Sites deployment build completed",
             event="command.completed",
             artifact_count=len(generated_paths),
+            workers=arguments.workers,
         )
         print(f"generated {len(generated_paths)} Sites deployment artifacts")
     return 0

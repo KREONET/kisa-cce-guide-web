@@ -862,6 +862,7 @@ U-01의 다음 항목은 annotation 동작을 검증하는 fixture로 사용한�
 - RFC 8785 입력은 I-JSON 제약을 충족해야 하며, canonical JSON 뒤에 newline이나 추가 whitespace를 붙이지 않는다.
 - Array는 manifest 또는 원문 순서를 사용한다. Set 성격의 exact term은 정렬하고 중복을 제거한 뒤 직렬화한다.
 - Wall-clock timestamp, absolute path, hostname을 deterministic output에 포함해서는 안 된다.
+- 병렬 검증과 생성 결과는 작업 완료 순서가 아니라 manifest와 정렬된 입력 순서로 병합한다.
 - Locale은 `ko-KR`, timezone은 `UTC`로 고정한다.
 - Generator와 parser version은 lockfile 또는 build manifest로 고정한다.
 - 동일 입력의 clean build를 두 번 실행하고 canonical JSON, 검색 색인, normalized DOM snapshot의 checksum을 비교한다.
@@ -898,12 +899,14 @@ identity를 무효화하지 않는다.
 - 문서당 `<h1>`을 하나만 생성한다.
 - 주요 구역은 `<section>`과 연결된 heading identifier를 사용한다.
 - 분류 경로는 `<nav aria-label="분류 경로">`로 렌더링한다.
-- 점검 내용, 목적, 위협, 대상, 판단 기준의 label-value 관계는 `<dl>`로 렌더링한다.
+- 점검 내용, 목적, 위협, 대상은 고정 H3 label 뒤에 해당 본문 block을 렌더링한다.
+- 판단 기준의 양호와 취약은 각각 `<section>`으로 묶고, label은 `<h4>`, 내용은 `<p>`로 분리한다.
 - 절차는 `<ol>`과 `<li>`로 렌더링한다.
 - 참고 항목은 `<ul>` 또는 `<aside>`로 렌더링한다.
 - 명령어와 설정은 `<pre><code>`로 렌더링한다.
 - 파일 경로와 설정 키는 inline `<code>`로 렌더링한다.
-- 표는 `<table>`, `<caption>`, `<thead>`, `<tbody>`, `<th>`, `<td>`와 올바른 header-cell 관계로 렌더링한다.
+- 표는 `<table>`, `<thead>`, `<tbody>`, `<th>`, `<td>`와 올바른 header-cell 관계로 렌더링한다.
+  원문 caption이 있으면 `<caption>`을 보존하고, 없으면 인접 heading을 `aria-labelledby`로 연결한다.
 - source annotation은 본문 수정으로 위장하지 않고 별도 영역에 표시한다.
 - provenance 영역에서 원본 문서와 page range를 확인할 수 있어야 한다.
 - `<article>`에 `data-criterion-code`, `data-severity`, `data-content-model`, `data-source-document` 속성을 제공해야 한다.
