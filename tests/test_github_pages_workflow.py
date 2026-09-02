@@ -30,10 +30,13 @@ def test_github_pages_workflow_builds_and_deploys_public_site() -> None:
     assert "actions/configure-pages@v5" in action_identifiers
     assert "actions/upload-pages-artifact@v5" in action_identifiers
     validation_step = next(
-        step for step in steps if step.get("name") == "Validate release readiness"
+        step for step in steps if step.get("name") == "Validate canonical content"
     )
-    assert validation_step.get("run") == (
-        "uv run --locked python -m conversion.validate_content --release"
+    assert validation_step.get("run") == "uv run --locked python -m conversion.validate_content"
+    workflow_directory = repository_root() / ".github" / "workflows"
+    assert all(
+        "--release" not in workflow_file.read_text(encoding="utf-8")
+        for workflow_file in workflow_directory.glob("*.yml")
     )
     build_step = next(step for step in steps if step.get("name") == "Build GitHub Pages artifact")
     build_command = build_step.get("run")

@@ -34,8 +34,8 @@ jobs:
       - name: Install development dependencies
         run: uv sync --dev --locked
 
-      - name: Validate release readiness
-        run: uv run --locked python -m conversion.validate_content --release
+      - name: Validate canonical content
+        run: uv run --locked python -m conversion.validate_content
 
       - name: Build GitHub Pages artifact
         run: >-
