@@ -600,9 +600,18 @@ def test_source_anomaly_pages_and_ui_are_not_published(generated_site: Path) -> 
 def test_unofficial_conversion_disclaimer_is_not_rendered(generated_site: Path) -> None:
     """Public pages must not render the removed unofficial-conversion disclaimer."""
 
+    home_html = (generated_site / "index.html").read_text(encoding="utf-8")
+    assert (
+        '<p class="hero__lede">주요정보통신기반시설 기술적 취약점 분석·평가 방법 '
+        "상세가이드</p>" in home_html
+    )
     for html_path in generated_site.rglob("*.html"):
         html_text = html_path.read_text(encoding="utf-8")
-        assert "원문을 대체하지 않는 비공식 변환본" not in html_text, html_path
+        for removed_phrase in (
+            "원문을 대체하지 않는 비공식 변환본",
+            "비공식 웹 변환본",
+        ):
+            assert removed_phrase not in html_text, html_path
 
 
 def test_source_attribution_section_is_not_rendered(generated_site: Path) -> None:
