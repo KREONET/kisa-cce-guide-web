@@ -2,9 +2,10 @@
 
 from __future__ import annotations
 
+import base64
+import errno
 import os
 import shutil
-import subprocess
 import tempfile
 from io import StringIO
 from pathlib import Path
@@ -20,7 +21,22 @@ from conversion.common import (
     load_yaml,
     region_source_checksum,
 )
-from conversion.paths import CANONICAL_ASSET_DIRECTORY, CRITERIA_DIRECTORY
+from conversion.paths import (
+    CANONICAL_ASSET_DIRECTORY,
+    criterion_directory,
+)
+
+TRANSITION_FIXTURE_DIRECTORY = Path("tests/fixtures/codex-transition")
+TRANSITION_FIXTURE_DOMAIN_IDENTIFIERS = {
+    "u-03": "unix",
+    "u-04": "unix",
+    "u-05": "unix",
+}
+EXPECTED_EXTRACTED_PACKAGE_CHECKSUMS = {
+    "u-03": "e24d5bf5aa79b7a736159e73fce9c514c7b4c258741fecce8614af58b33677be",
+    "u-04": "464b4ac21280d8969702362b956ae52c9ed8a5c8c01f56e534f5ea40ecf76201",
+    "u-05": "554bd667d90a52ff11a3ef6d71beac8c1ef71d24831947871fa0b373bfaf0a3a",
+}
 
 
 def _yaml_text(document: dict[str, JsonValue]) -> str:
@@ -49,78 +65,85 @@ def _atomic_replace(path: Path, content: bytes) -> None:
         temporary_path.unlink(missing_ok=True)
 
 
-def _git_output(source: Path, *arguments: str) -> bytes:
-    """Read one committed legacy fixture artifact with a clear checkout requirement."""
+def _link_or_copy(source: str, destination: str) -> str:
+    """Prefer hard links while supporting temporary directories on another filesystem."""
 
-    git_binary = shutil.which("git")
-    if git_binary is None:
-        message = "Codex transition tests require Git to read the legacy fixture snapshot"
-        raise RuntimeError(message)
     try:
-        process = subprocess.run(  # noqa: S603
-            [git_binary, *arguments],
-            cwd=source,
-            check=True,
-            capture_output=True,
-        )
-    except (FileNotFoundError, subprocess.CalledProcessError) as error:
-        message = (
-            "Codex transition tests require a Git checkout whose HEAD contains the "
-            "legacy extracted criterion corpus"
-        )
-        raise RuntimeError(message) from error
-    return process.stdout
+        os.link(source, destination)
+    except OSError as error:
+        if error.errno != errno.EXDEV:
+            raise
+        shutil.copy2(source, destination)
+    return destination
 
 
-def _restore_committed_package(source: Path, repository: Path, slug: str) -> tuple[str, ...]:
-    """Restore one extracted criterion package from the pre-transition HEAD snapshot."""
+def _restore_extracted_packages(
+    repository: Path,
+    slugs: tuple[str, ...],
+) -> dict[str, tuple[str, ...]]:
+    """Restore checksum-pinned extracted snapshots without platform-specific rendering."""
 
-    manifest = load_yaml(source / "data/criteria-manifest.yaml")
-    manifest_record = next(
-        as_mapping(value, location="manifest.criteria[]")
-        for value in as_sequence(manifest["criteria"], location="manifest.criteria")
-        if isinstance(value, dict) and value.get("slug") == slug
-    )
-    domain_identifier = cast("str", manifest_record["domainIdentifier"])
-    head_package_paths = (
-        f"{domain_identifier}/{slug}.md",
-        f"{domain_identifier}/{slug}.provenance.yaml",
-    )
-    for head_relative_path in head_package_paths:
-        destination = repository / CRITERIA_DIRECTORY / head_relative_path
-        destination.parent.mkdir(parents=True, exist_ok=True)
-        source_bytes = _git_output(source, "show", f"HEAD:{head_relative_path}").replace(
-            b"../assets/", b"../../assets/"
-        )
-        _atomic_replace(destination, source_bytes)
-
-    head_asset_paths = tuple(
-        line
-        for line in _git_output(
-            source,
-            "ls-tree",
-            "-r",
-            "--name-only",
-            "HEAD",
-            "--",
-            f"assets/{slug}",
-        )
-        .decode()
-        .splitlines()
-        if line
-    )
-    if not head_asset_paths:
-        message = f"HEAD contains no legacy source-crop assets for {slug}"
+    missing_slugs = sorted(set(slugs) - set(EXPECTED_EXTRACTED_PACKAGE_CHECKSUMS))
+    if missing_slugs:
+        message = f"transition fixture contains no packages for: {', '.join(missing_slugs)}"
         raise RuntimeError(message)
-    asset_paths: list[str] = []
-    for head_relative_path in head_asset_paths:
-        relative_asset_path = Path(head_relative_path).relative_to("assets")
-        destination_relative_path = CANONICAL_ASSET_DIRECTORY / relative_asset_path
-        destination = repository / destination_relative_path
-        destination.parent.mkdir(parents=True, exist_ok=True)
-        _atomic_replace(destination, _git_output(source, "show", f"HEAD:{head_relative_path}"))
-        asset_paths.append(destination_relative_path.as_posix())
-    return tuple(asset_paths)
+
+    fixture_directory = repository / TRANSITION_FIXTURE_DIRECTORY
+    assets_by_slug: dict[str, tuple[str, ...]] = {}
+    for slug in slugs:
+        domain_identifier = TRANSITION_FIXTURE_DOMAIN_IDENTIFIERS[slug]
+        criterion_source_directory = criterion_directory(repository, domain_identifier)
+        fixture_criterion_directory = fixture_directory / "criteria" / domain_identifier
+        for suffix in (".md", ".provenance.yaml"):
+            source_path = fixture_criterion_directory / f"{slug}{suffix}"
+            _atomic_replace(
+                criterion_source_directory / f"{slug}{suffix}",
+                source_path.read_bytes(),
+            )
+
+        asset_directory = repository / CANONICAL_ASSET_DIRECTORY / slug
+        # The copied repository uses hard links, so replacing the directory prevents
+        # fixture restoration from mutating files in the source checkout.
+        if asset_directory.is_symlink():
+            asset_directory.unlink()
+        elif asset_directory.is_dir():
+            shutil.rmtree(asset_directory)
+        else:
+            asset_directory.unlink(missing_ok=True)
+        asset_directory.mkdir(parents=True)
+
+        fixture_assets = sorted(
+            (fixture_directory / "assets" / slug).glob("*.png.base64"),
+            key=lambda path: path.name.encode(),
+        )
+        if not fixture_assets:
+            message = f"transition fixture contains no assets for: {slug}"
+            raise RuntimeError(message)
+        asset_paths: list[str] = []
+        for source_path in fixture_assets:
+            asset_name = source_path.name.removesuffix(".base64")
+            destination_path = asset_directory / asset_name
+            encoded_asset = b"".join(source_path.read_bytes().split())
+            _atomic_replace(
+                destination_path,
+                base64.b64decode(encoded_asset, validate=True),
+            )
+            asset_paths.append((CANONICAL_ASSET_DIRECTORY / slug / asset_name).as_posix())
+        assets_by_slug[slug] = tuple(asset_paths)
+
+        actual_checksum = criterion_source_checksum(
+            slug,
+            domain_identifier,
+            root=repository,
+        )
+        expected_checksum = EXPECTED_EXTRACTED_PACKAGE_CHECKSUMS[slug]
+        if actual_checksum != expected_checksum:
+            message = (
+                f"transition fixture checksum differs for {slug}: "
+                f"expected {expected_checksum}, got {actual_checksum}"
+            )
+            raise RuntimeError(message)
+    return assets_by_slug
 
 
 def _reset_review_state(
@@ -153,24 +176,21 @@ def create_codex_transition_repository(
 ) -> Path:
     """Create an isolated repository at the legacy Codex transition boundary.
 
-    Git HEAD supplies the legacy extracted packages because the working tree represents
-    the completed canonical conversion. This avoids shipping duplicate binary source crops
-    while keeping production eligibility rules strict.
+    Repository-owned snapshots preserve the selected extracted packages without invoking
+    platform-specific PDF rendering during the test run.
     """
 
     ignored = shutil.ignore_patterns(
         ".git",
+        ".artifacts",
         ".pytest_cache",
         ".ruff_cache",
         ".venv",
         "__pycache__",
-        "dist",
-        "site",
-        "work",
     )
-    shutil.copytree(source, destination, copy_function=os.link, ignore=ignored)
+    shutil.copytree(source, destination, copy_function=_link_or_copy, ignore=ignored)
 
-    assets_by_slug = {slug: _restore_committed_package(source, destination, slug) for slug in slugs}
+    assets_by_slug = _restore_extracted_packages(destination, slugs)
     manifest_path = destination / "data/criteria-manifest.yaml"
     manifest = load_yaml(manifest_path)
     manifest_records = [

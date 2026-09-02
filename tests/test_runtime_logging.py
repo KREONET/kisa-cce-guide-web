@@ -367,7 +367,13 @@ def test_tty_progress_uses_in_place_updates_and_finishes_with_newline() -> None:
 
     stream = _TerminalStream(terminal=True)
     clock = _NumberClock(iter([0.0, 1.0, 1.0]))
-    reporter = ProgressReporter(1, description="Convert", stream=stream, clock=clock)
+    reporter = ProgressReporter(
+        1,
+        description="Convert",
+        stream=stream,
+        clock=clock,
+        environment={},
+    )
 
     reporter.update(outcome="completed")
     reporter.finish()
@@ -402,7 +408,7 @@ def test_progress_clear_and_refresh_coordinate_with_other_tty_writers() -> None:
 
     stream = _TerminalStream(terminal=True)
     clock = _NumberClock(iter([0.0, 1.0, 2.0, 2.0]))
-    reporter = ProgressReporter(1, stream=stream, clock=clock)
+    reporter = ProgressReporter(1, stream=stream, clock=clock, environment={})
 
     reporter.update(outcome="completed")
     reporter.clear()

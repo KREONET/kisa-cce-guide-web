@@ -63,6 +63,10 @@ uv run python -m conversion.serve_site \
 
 저장소의 `Settings > Pages > Build and deployment > Source`는 `GitHub Actions`로 설정해야 한다.
 
+## Pytest CI
+
+`.github/workflows/pytest.yml`은 pull request, `main` branch push와 수동 실행에서 Python 3.13으로 전체 pytest suite를 실행한다. Workflow는 read-only repository 권한과 `uv.lock` 기반 dependency cache를 사용하며, 같은 ref의 이전 실행은 취소한다.
+
 ## 품질 검사
 
 ```bash
