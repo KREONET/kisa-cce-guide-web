@@ -57,7 +57,7 @@ uv run python -m conversion.serve_site \
 
 ## GitHub Pages 배포
 
-`.github/workflows/pages-build.yml`은 수동 실행에서 GitHub Pages base path를 적용하고, 릴리스 검증과 사이트 생성을 통과한 Pages 전용 artifact를 `github-pages` environment에 배포한다. 릴리스 조건을 충족하지 못하면 배포 작업은 실행되지 않는다.
+`.github/workflows/pages-build.yml`은 수동 실행에서 GitHub Pages base path를 적용하고, canonical 검증과 사이트 생성을 통과한 Pages 전용 artifact를 `github-pages` environment에 배포한다. 이 workflow는 `--release` 검증을 실행하지 않으며, 릴리스 검증은 아래 절차로 별도 수행한다.
 
 빌드 작업은 `contents: read`, `pages: read` 권한만 사용한다. 배포 작업은 `pages: write`, `id-token: write` 권한만 사용한다.
 
