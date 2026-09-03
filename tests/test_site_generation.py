@@ -633,10 +633,13 @@ def test_llm_usage_and_skill_page_are_responsive(generated_site: Path) -> None:
     assert "grid-template-columns: repeat(3, minmax(0, 1fr));" in llm_styles
     assert "max-width: 880px;" in llm_styles
     assert "overflow: auto;" in llm_styles
-    assert "white-space: pre-wrap;" in llm_styles
-    assert "overflow-wrap: anywhere;" in llm_styles
-    assert "white-space: inherit;" in llm_styles
-    assert "overflow-wrap: inherit;" in llm_styles
+    assert "white-space: pre-wrap;" not in llm_styles
+    assert ".llm-guide__prompt .code-block pre" not in llm_styles
+    code_block_styles = stylesheet.partition(".code-block pre {")[2].partition("}")[0]
+    assert "overflow: auto;" in code_block_styles
+    assert "white-space: pre;" in code_block_styles
+    assert "word-break: normal;" in code_block_styles
+    assert "overflow-wrap: normal;" in code_block_styles
     assert ".llm-guide__steps { grid-template-columns: 1fr;" in compact_styles
     assert ".skill-document__body { margin-top: var(--space-6);" in compact_styles
 
@@ -859,6 +862,8 @@ def test_tables_only_force_horizontal_scroll_for_intrinsic_overflow(
     assert "overflow: auto;" in table_scroll_styles
     assert "min-width: min(640px, 100%);" in table_styles
     assert "min-width: 640px;" not in table_styles
+    table_cell_styles = stylesheet.partition("th, td {")[2].partition("}")[0]
+    assert "white-space: nowrap;" in table_cell_styles
     site_script = (generated_site / "assets" / "site.js").read_text(encoding="utf-8")
     assert 'document.querySelectorAll(".code-block pre, .table-scroll")' in site_script
     assert "updateHorizontalScrollRegion(region);" in site_script

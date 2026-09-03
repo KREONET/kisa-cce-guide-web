@@ -461,8 +461,6 @@ a:hover { text-decoration-thickness: 2px; }
 .llm-guide__prompt { max-width: 880px; }
 .llm-guide__prompt h3 { margin: 0; color: var(--ink); font-size: 20px; }
 .llm-guide__prompt .code-block { margin-top: var(--space-4); }
-.llm-guide__prompt .code-block pre { white-space: pre-wrap; overflow-wrap: anywhere; }
-.llm-guide__prompt .code-block pre code { white-space: inherit; overflow-wrap: inherit; }
 .skill-page { max-width: 1120px; }
 .skill-document { margin-top: 0; }
 .skill-page__header { padding-bottom: var(--space-8); border-bottom: 1px solid var(--hairline); }
@@ -904,7 +902,7 @@ caption {
   letter-spacing: .04em;
   text-align: left;
 }
-th, td { padding: var(--space-3) var(--space-4); border-right: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); text-align: left; vertical-align: top; }
+th, td { padding: var(--space-3) var(--space-4); border-right: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); text-align: left; vertical-align: top; white-space: nowrap; }
 th:last-child, td:last-child { border-right: 0; }
 th { background: var(--surface-soft); color: var(--ink); font-weight: 700; }
 tbody tr:nth-child(even) { background: var(--table-stripe); }
