@@ -1,15 +1,15 @@
 # Highlight.js browser assets
 
-This directory contains selected self-hosted files from
-`@highlightjs/cdn-assets` version `11.12.0`.
+This directory stores selected files from `@highlightjs/cdn-assets` version `11.12.0`
+for self-hosting.
 
 - Upstream: <https://github.com/highlightjs/highlight.js>
 - Package: <https://www.npmjs.com/package/@highlightjs/cdn-assets/v/11.12.0>
 - Package integrity: `sha512-KvOKXODaiFmId9xaq3xc5xCL66wVLUuOngDbO9B/kewbFTqdGbn2nJxNhN3H5R1cgDTVj6R8vH0zgiNDEGjpDw==`
 - License: BSD-3-Clause, preserved in `LICENSE`
 
-The common browser build handles the primary code languages. The individually
-vendored language modules cover additional languages present in the guide.
+The common browser build covers the main code languages used in the guide.
+Separate language modules cover additional languages used in the guide.
 
 | File | SHA-256 |
 | --- | --- |
